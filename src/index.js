@@ -1,7 +1,6 @@
-import TodoAppComponent from "./components/todo-app";
+import "./index.scss";
+
+import { AppComponent } from "./components/app/app";
 
 const root = document.querySelector("#root");
-
-const cmp = new TodoAppComponent(root);
-
-cmp.mount();
+new AppComponent(root).mount();

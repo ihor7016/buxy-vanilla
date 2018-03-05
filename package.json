@@ -4,16 +4,24 @@
   "description": "",
   "private": true,
   "scripts": {
-    "format": "prettier --write \"*.{js,json,css,scss}\"",
+    "format": "prettier --write \"./**/*.{js,json,css,scss}\"",
     "precommit": "lint-staged",
     "start": "webpack-dev-server"
   },
   "license": "MIT",
   "devDependencies": {
+    "css-loader": "^0.28.10",
+    "ejs-loader": "^0.3.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
+    "node-sass": "^4.7.2",
     "prettier": "^1.11.1",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
