@@ -1,4 +1,4 @@
-import template from "./dialog-add-transaction.html";
+import template from "./add-transaction-dialog.html";
 
 export class AddTransactionComponent {
   constructor(mountPoint) {
