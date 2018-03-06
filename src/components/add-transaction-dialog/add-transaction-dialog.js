@@ -1,6 +1,7 @@
 import template from "./add-transaction-dialog.html";
 import button from "./add-transaction-button.html";
-// import { MDCSelect } from "@material/select/index";
+
+// import { MDCSelect } from "@material/select";
 
 // console.log(MDCSelect);
 
