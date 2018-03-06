@@ -1,6 +1,6 @@
 <!-- del ID -->
 <!-- remove open  mdc-dialog--open  -->
-<aside id="my-mdc-dialog" class="mdc-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
+<aside id="my-mdc-dialog" class="mdc-dialog mdc-dialog--open" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
   <div class="mdc-dialog__surface">
     <header class="mdc-dialog__header">
       <h2 class="mdc-dialog__header__title">
@@ -9,92 +9,107 @@
     </header>
     <!-- del ID -->
     <section id="my-mdc-dialog-description" class="mdc-dialog__body">
-      <h3 class="mdc-typography--subheading2">Type</h3>
-      <div class="mdc-radio">
-        <!-- ID? -->
-        <input class="mdc-radio__native-control" type="radio" id="add-transaction-expense" name="radios" checked>
-        <div class="mdc-radio__background">
-          <div class="mdc-radio__outer-circle"></div>
-          <div class="mdc-radio__inner-circle"></div>
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell">
+            <h3 class="mdc-typography--subheading2">Type: </h3>
+          </div>
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-radio">
+              <!-- ID? -->
+              <input class="mdc-radio__native-control" type="radio" id="add-transaction-expense" name="radios" checked>
+              <div class="mdc-radio__background">
+                <div class="mdc-radio__outer-circle"></div>
+                <div class="mdc-radio__inner-circle"></div>
+              </div>
+            </div>
+            <!-- ID? -->
+            <label id="add-transaction-expense-label" for="add-transaction-expense">Expence</label>
+            <div class="mdc-radio">
+              <!-- ID? -->
+              <input class="mdc-radio__native-control" type="radio" id="add-transaction-income" name="radios" checked>
+              <div class="mdc-radio__background">
+                <div class="mdc-radio__outer-circle"></div>
+                <div class="mdc-radio__inner-circle"></div>
+              </div>
+            </div>
+            <!-- ID? -->
+            <label id="add-transaction-income-label" for="add-transaction-income">Income</label>
+          </div>
         </div>
       </div>
-      <!-- ID? -->
-      <label id="add-transaction-expense-label" for="add-transaction-expense">Expence</label>
 
-      <div class="mdc-radio">
-        <!-- ID? -->
-        <input class="mdc-radio__native-control" type="radio" id="add-transaction-income" name="radios" checked>
-        <div class="mdc-radio__background">
-          <div class="mdc-radio__outer-circle"></div>
-          <div class="mdc-radio__inner-circle"></div>
-        </div>
-      </div>
-      <!-- ID? -->
-      <label id="add-transaction-income-label" for="add-transaction-income">Income</label>
       <h3 class="mdc-typography--subheading2">Description</h3>
       <div class="mdc-text-field mdc-text-field--fullwidth">
         <input class="mdc-text-field__input" type="text" placeholder="Description" aria-label="Description">
       </div>
-      <h3 class="mdc-typography--subheading2">Amount</h3>
-      <div class="mdc-text-field">
-        <input type="text" id="my-text-field" class="mdc-text-field__input">
-        <label class="mdc-text-field__label" for="my-text-field">Type an amount</label>
-        <div class="mdc-line-ripple"></div>
-      </div>
 
-      <!-- FIX JS SELECT -->
-      <h3 class="mdc-typography--subheading2">Account</h3>
-      <div class="mdc-select" role="listbox">
-        <div class="mdc-select__surface" tabindex="0">
-          <div class="mdc-select__label">Choose Account</div>
-          <div class="mdc-select__selected-text"></div>
-          <div class="mdc-select__bottom-line"></div>
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell">
+            <h3 class="mdc-typography--subheading2">Amount</h3>
+            <div class="mdc-text-field">
+              <input type="text" id="my-text-field" class="mdc-text-field__input">
+              <label class="mdc-text-field__label" for="my-text-field">Type an amount</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <!-- FIX JS SELECT -->
+            <div class="mdc-select" role="listbox">
+              <div class="mdc-select__surface" tabindex="0">
+                <div class="mdc-select__label">Choose Account</div>
+                <div class="mdc-select__selected-text"></div>
+                <div class="mdc-select__bottom-line"></div>
+              </div>
+              <div class="mdc-menu mdc-select__menu">
+                <ul class="mdc-list mdc-menu__items">
+                  <li class="mdc-list-item" role="option" tabindex="0">
+                    Privat
+                  </li>
+                  <li class="mdc-list-item" role="option" tabindex="0">
+                    Cash
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mdc-layout-grid__cell">
+            <!-- add date as default -->
+            <h3 class="mdc-typography--subheading2">Date</h3>
+            <div class="mdc-text-field">
+              <input type="text" id="my-text-field" class="mdc-text-field__input">
+              <label class="mdc-text-field__label" for="my-text-field">Type a date</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <!-- FIX JS SELECT , remove "1" from class-->
+            <div class="mdc-select1" role="listbox">
+              <div class="mdc-select__surface" tabindex="0">
+                <div class="mdc-select__label">Choose Tag</div>
+                <div class="mdc-select__selected-text"></div>
+                <div class="mdc-select__bottom-line"></div>
+              </div>
+              <div class="mdc-menu mdc-select__menu">
+                <ul class="mdc-list mdc-menu__items">
+                  <li class="mdc-list-item" role="option" tabindex="0">
+                    Transport
+                  </li>
+                  <li class="mdc-list-item" role="option" tabindex="0">
+                    Groceries
+                  </li>
+                  <li class="mdc-list-item" role="option" tabindex="0">
+                    Entertainment
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mdc-menu mdc-select__menu">
-          <ul class="mdc-list mdc-menu__items">
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Privat
-            </li>
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Cash
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- add date as default -->
-      <h3 class="mdc-typography--subheading2">Date</h3>
-      <div class="mdc-text-field">
-        <input type="text" id="my-text-field" class="mdc-text-field__input">
-        <label class="mdc-text-field__label" for="my-text-field">Type a date</label>
-        <div class="mdc-line-ripple"></div>
-      </div>
-      <!-- FIX JS SELECT -->
-      <h3 class="mdc-typography--subheading2">Tag</h3>
-      <div class="mdc-select" role="listbox">
-        <div class="mdc-select__surface" tabindex="0">
-          <div class="mdc-select__label">Choose Tag</div>
-          <div class="mdc-select__selected-text"></div>
-          <div class="mdc-select__bottom-line"></div>
-        </div>
-        <div class="mdc-menu mdc-select__menu">
-          <ul class="mdc-list mdc-menu__items">
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Transport
-            </li>
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Groceries
-            </li>
-            <li class="mdc-list-item" role="option" tabindex="0">
-              Entertainment
-            </li>
-          </ul>
-        </div>
-      </div>
+
     </section>
     <footer class="mdc-dialog__footer">
       <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
       <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Accept</button>
     </footer>
-  </div>
-  <div class="mdc-dialog__backdrop"></div>
+    </div>
+    <div class="mdc-dialog__backdrop"></div>
 </aside>
