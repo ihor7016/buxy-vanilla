@@ -22,7 +22,9 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "@material/button": "^0.32.0",
     "@material/dialog": "^0.32.0",
+    "@material/typography": "^0.28.0",
     "normalize.css": "^8.0.0"
   }
 }
