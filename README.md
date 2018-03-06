@@ -1,5 +1,7 @@
 # BUXY
 
+![](./mockup.png)
+
 ### Install dependencies
 ```
 npm i
