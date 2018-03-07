@@ -10,6 +10,12 @@
 @import "@material/layout-grid/mdc-layout-grid";
 
 .add-transaction {
+  &__activation {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+  }
+
   &__select-menu {
     top: inherit !important;
     left: inherit !important;

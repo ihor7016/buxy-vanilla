@@ -1,20 +1,11 @@
 import template from "./add-transaction-dialog.html";
-import button from "./add-transaction-button.html";
-import { MDCDialog, MDCDialogFoundation, util } from "@material/dialog";
+import { MDCDialog } from "@material/dialog";
 import { MDCSelect } from "@material/select";
 
 export class AddTransactionComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
-  }
-
-  addTag() {
-    //
-  }
-
-  addAccount() {
-    //
   }
 
   querySelectors() {
@@ -45,11 +36,6 @@ export class AddTransactionComponent {
     );
     this.dialog.listen("MDCDialog:accept", this.handlerAccept.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handlerDecline.bind(this));
-    this.accountSelect.listen(
-      "MDCSelect:change",
-      this.handleAccountSelect.bind(this)
-    );
-    this.tagSelect.listen("MDCSelect:change", this.handleTagSelect.bind(this));
   }
 
   handlerOnclickBtnShow(evt) {
@@ -65,25 +51,7 @@ export class AddTransactionComponent {
     console.log("declined");
   }
 
-  handleAccountSelect() {
-    console.log(
-      `Selected "${
-        this.accountSelect.selectedOptions[0].textContent
-      }" at index ${this.accountSelect.selectedIndex} ` +
-        `with value "${this.accountSelect.value}"`
-    );
-  }
-
-  handleTagSelect() {
-    console.log(
-      `Selected "${this.tagSelect.selectedOptions[0].textContent}" at index ${
-        this.tagSelect.selectedIndex
-      } ` + `with value "${this.tagSelect.value}"`
-    );
-  }
-
   mount() {
-    this.mountPoint.innerHTML += button();
     this.mountPoint.innerHTML += template({
       accounts: ["Private", "Cash"],
       tags: ["Transport", "Groceries", "Entertainment"]
