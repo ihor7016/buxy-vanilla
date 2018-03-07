@@ -1,3 +1,53 @@
-.app {
-  color: red;
+
+.buxy-table-transactions{
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-radius: 2px;//doesn't work
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;//doesn't work
+  text-align: left;
+}
+
+.buxy-table-transactions-thead{
+  font-family: $font-table-transactions;
+  font-size: $font-size-table-transactions;
+
+    .buxy-table-transactions-thead__th{
+      border-bottom: 1px solid #ddd;
+      padding-left: 15px;
+    }
+    .buxy-table-transactions-thead__tr{
+      height: 40px;
+    }
+    .buxy-table-transactions-thead__tr:hover{
+      background-color:#f5f5f5;
+    }
+}
+
+.buxy-table-transactions-tbody{
+  font-family: $font-table-transactions;
+  font-size: $font-size-table-transactions;
+
+    .buxy-table-transactions-tbody__td{
+      border-bottom: 1px solid #ddd;
+      padding-left: 15px;
+    }
+    .buxy-table-transactions-tbody__tr:hover{
+      background-color:#f5f5f5;
+    }
+    .buxy-table-transactions-tbody__tr{
+      height: 40px;
+    }
+}
+
+.buxy-table-transactions-three-dots:after{
+  float: right;
+  content: '\2807';
+  font-size: 30px;
+}
+.buxy-table-transactions-content{
+  display: block;
+  float: left;
+  margin-top: 6%;
 }
