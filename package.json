@@ -24,6 +24,7 @@
   "dependencies": {
     "@material/button": "^0.32.0",
     "@material/drawer": "^0.30.0",
+    "@material/list": "^0.32.0",
     "@material/toolbar": "^0.32.0",
     "normalize.css": "^8.0.0"
   }
