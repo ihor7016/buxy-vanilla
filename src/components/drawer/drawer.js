@@ -10,7 +10,7 @@ export class DrawerComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({ name: "Ihor" });
+    this.mountPoint.innerHTML = template();
     let drawer = new MDCPersistentDrawer(
       document.querySelector(".mdc-drawer--persistent")
     );

@@ -6,6 +6,6 @@ export class ToolbarComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({ name: "Ihor" });
+    this.mountPoint.innerHTML = template();
   }
 }

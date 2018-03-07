@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({ name: "Ihor" });
+    this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.mountChildren();
   }
