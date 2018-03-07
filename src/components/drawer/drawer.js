@@ -16,6 +16,6 @@ export class DrawerComponent {
     );
     document
       .querySelector(".menu")
-      .addEventListener("click", () => (drawer.open = true));
+      .addEventListener("click", () => (drawer.open = !drawer.open));
   }
 }
