@@ -2,7 +2,30 @@
 @import "@material/button/mdc-button";
 @import "@material/typography/mdc-typography";
 @import "@material/radio/mdc-radio";
+@import "@material/menu/mdc-menu";
 @import "@material/select/mdc-select";
+@import "@material/list/mdc-list";
 @import "@material/textfield/mdc-text-field";
 @import "@material/fab/mdc-fab";
 @import "@material/layout-grid/mdc-layout-grid";
+
+.add-transaction {
+  &__select-menu {
+    top: inherit !important;
+    left: inherit !important;
+  }
+
+  &__row {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__col {
+    padding: 0;
+  }
+
+  &__account,
+  &__tag {
+    width: 100%;
+  }
+}
