@@ -7,7 +7,5 @@ export class buxyTableTransactionsComponent {
 
   mount() {
     this.mountPoint.innerHTML = template();
-    
-    
   }
 }
