@@ -7,6 +7,6 @@ export class AppComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({ name: "Ihor" });
+    this.mountPoint.innerHTML = new BarChart([10, 34], ["Spent", "Income"], "myChart");
   }
 }
