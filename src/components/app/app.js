@@ -1,5 +1,4 @@
 import template from "./app.html";
-import { BarChart } from "../barChart/barChart.js";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -7,6 +6,6 @@ export class AppComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = new BarChart([10, 34], ["Spent", "Income"], "myChart");
+    this.mountPoint.innerHTML = template({ name: "Ihor" });
   }
 }
