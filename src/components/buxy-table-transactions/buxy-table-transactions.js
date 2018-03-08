@@ -1,11 +1,13 @@
-import template from "./app.html";
+import template from "./buxy-table-transactions.html";
 
-export class AppComponent {
+export class buxyTableTransactionsComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({ name: "Ihor" });
+    this.mountPoint.innerHTML = template();
+    
+    
   }
 }
