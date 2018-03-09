@@ -7,16 +7,9 @@
 @import "@material/select/mdc-select";
 @import "@material/list/mdc-list";
 @import "@material/textfield/mdc-text-field";
-@import "@material/fab/mdc-fab";
 @import "@material/layout-grid/mdc-layout-grid";
 
-.add-transaction {
-  &__activation {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-  }
-
+.add-transaction-dialog {
   &__select-menu {
     top: inherit !important;
     left: inherit !important;

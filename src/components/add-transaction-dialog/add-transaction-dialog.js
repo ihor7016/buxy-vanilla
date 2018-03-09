@@ -8,18 +8,19 @@ export class AddTransactionComponent {
     this.props = props;
   }
 
+  showDialog() {
+    this.dialog.show();
+  }
+
   querySelectors() {
-    this.addTransactionButton = this.mountPoint.querySelector(
-      ".add-transaction__activation"
-    );
     this.addTransactionDialog = this.mountPoint.querySelector(
-      ".add-transaction__dialog"
+      ".add-transaction-dialog"
     );
     this.accountTransactionSelect = this.mountPoint.querySelector(
-      ".add-transaction__account"
+      ".add-transaction-dialog__account"
     );
     this.tagTransactionSelect = this.mountPoint.querySelector(
-      ".add-transaction__tag"
+      ".add-transaction-dialog__tag"
     );
   }
 
@@ -30,17 +31,8 @@ export class AddTransactionComponent {
   }
 
   addEventListeners() {
-    this.addTransactionButton.addEventListener(
-      "click",
-      this.handlerOnclickBtnShow.bind(this)
-    );
     this.dialog.listen("MDCDialog:accept", this.handlerAccept.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handlerDecline.bind(this));
-  }
-
-  handlerOnclickBtnShow(evt) {
-    this.dialog.lastFocusedTarget = evt.target;
-    this.dialog.show();
   }
 
   handlerAccept() {
@@ -52,7 +44,7 @@ export class AddTransactionComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML += template({
+    this.mountPoint.innerHTML = template({
       accounts: ["Private", "Cash"],
       tags: ["Transport", "Groceries", "Entertainment"]
     });

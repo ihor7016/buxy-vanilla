@@ -1,15 +1,10 @@
-<button class="mdc-fab material-icons add-transaction__activation" aria-label="Favorite">
-  <span class="mdc-fab__icon">add</span>
-</button>
-<aside class="mdc-dialog add-transaction__dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
+<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
   <div class="mdc-dialog__surface">
-
     <header class="mdc-dialog__header mdc-theme--primary-bg">
       <h2 class="mdc-dialog__header__title mdc-theme--text-primary-on-primary">
         Add transaction
       </h2>
     </header>
-
     <section class="mdc-dialog__body">
       <div class="mdc-layout-grid add-transaction__row">
         <div class="mdc-layout-grid__inner">
@@ -18,26 +13,26 @@
           </div>
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9">
             <div class="mdc-radio">
-              <input class="mdc-radio__native-control" type="radio" id="add-transaction-expense" name="radios" checked>
+              <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
                 <div class="mdc-radio__inner-circle"></div>
               </div>
             </div>
-            <label for="add-transaction-expense">Expence</label>
+            <label for="add-transaction-dialog-expense">Expence</label>
             <div class="mdc-radio">
-              <input class="mdc-radio__native-control" type="radio" id="add-transaction-income" name="radios" checked>
+              <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios" checked>
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
                 <div class="mdc-radio__inner-circle"></div>
               </div>
             </div>
-            <label for="add-transaction-income">Income</label>
+            <label for="add-transaction-dialog-income">Income</label>
           </div>
         </div>
       </div>
 
-      <div class="mdc-layout-grid add-transaction__row">
+      <div class="mdc-layout-grid add-transaction-dialog__row">
         <div class="mdc-layout-grid__inner">
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
             <h3 class="mdc-typography--subheading2">Description</h3>
@@ -50,10 +45,10 @@
         </div>
       </div>
 
-      <div class="mdc-layout-grid add-transaction__row">
+      <div class="mdc-layout-grid add-transaction-dialog__row">
         <div class="mdc-layout-grid__inner">
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
-            <div class="mdc-layout-grid add-transaction__col">
+            <div class="mdc-layout-grid add-transaction-dialog__col">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
                   <h3 class="mdc-typography--subheading2">Amount</h3>
@@ -66,13 +61,13 @@
                 </div>
               </div>
             </div>
-            <div class="mdc-select add-transaction__account" role="listbox">
+            <div class="mdc-select add-transaction-dialog__account" role="listbox">
               <div class="mdc-select__surface" tabindex="0">
                 <div class="mdc-select__label">Account</div>
                 <div class="mdc-select__selected-text"></div>
                 <div class="mdc-select__bottom-line"></div>
               </div>
-              <div class="mdc-menu mdc-select__menu add-transaction__select-menu">
+              <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">
                 <ul class="mdc-list mdc-menu__items">
                   <% for(var i=0; i<accounts.length; i++) {%>
                     <li class="mdc-list-item" role="option" tabindex="0">
@@ -84,7 +79,7 @@
             </div>
           </div>
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
-            <div class="mdc-layout-grid add-transaction__col">
+            <div class="mdc-layout-grid add-transaction-dialog__col">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
                   <h3 class="mdc-typography--subheading2">Date</h3>
@@ -97,13 +92,13 @@
                 </div>
               </div>
             </div>
-            <div class="mdc-select add-transaction__tag" role="listbox">
+            <div class="mdc-select add-transaction-dialog__tag" role="listbox">
               <div class="mdc-select__surface" tabindex="0">
                 <div class="mdc-select__label">Tag</div>
                 <div class="mdc-select__selected-text"></div>
                 <div class="mdc-select__bottom-line"></div>
               </div>
-              <div class="mdc-menu mdc-select__menu add-transaction__select-menu">
+              <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">
                 <ul class="mdc-list mdc-menu__items">
                   <% for(var i=0; i<tags.length; i++) {%>
                     <li class="mdc-list-item" role="option" tabindex="0">
@@ -115,13 +110,12 @@
             </div>
           </div>
         </div>
+      </div>
     </section>
-
     <footer class="mdc-dialog__footer">
       <button type="button" class="mdc-button mdc-button--stroked mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
       <button type="button" class="mdc-button mdc-button--raised mdc-dialog__footer__button mdc-dialog__footer__button--accept">Accept</button>
     </footer>
-
-    </div>
-    <div class="mdc-dialog__backdrop"></div>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
 </aside>

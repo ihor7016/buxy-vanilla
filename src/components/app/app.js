@@ -6,19 +6,37 @@ export class AppComponent {
     this.mountPoint = mountPoint;
   }
 
+  handlerOnclickBtnAddTransaction() {
+    this.addTransacionDialog.showDialog();
+  }
+
   querySelectors() {
+    this.addTransactionButton = this.mountPoint.querySelector(
+      ".app__add-transaction-dialog-activation"
+    );
     this.addTransactionDialogPoint = this.mountPoint.querySelector(
       ".app__add-transaction-dialog"
     );
   }
 
+  addEventListeners() {
+    this.addTransactionButton.addEventListener(
+      "click",
+      this.handlerOnclickBtnAddTransaction.bind(this)
+    );
+  }
+
   mountChildren() {
-    new AddTransactionComponent(this.addTransactionDialogPoint).mount();
+    this.addTransacionDialog = new AddTransactionComponent(
+      this.addTransactionDialogPoint
+    );
+    this.addTransacionDialog.mount();
   }
 
   mount() {
     this.mountPoint.innerHTML = template({ name: "Ihor" });
     this.querySelectors();
+    this.addEventListeners();
     this.mountChildren();
   }
 }
