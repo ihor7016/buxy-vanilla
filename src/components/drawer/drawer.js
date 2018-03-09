@@ -4,18 +4,29 @@ import {
   MDCPersistentDrawerFoundation,
   util
 } from "@material/drawer";
+
 export class DrawerComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
 
-  mount() {
-    this.mountPoint.innerHTML = template();
-    let drawer = new MDCPersistentDrawer(
+  querySelectors() {
+    this.drawer = new MDCPersistentDrawer(
       document.querySelector(".mdc-drawer--persistent")
     );
-    document
-      .querySelector(".menu")
-      .addEventListener("click", () => (drawer.open = !drawer.open));
+    this.menu = document.querySelector(".menu");
+  }
+
+  addEventListeners() {
+    this.menu.addEventListener(
+      "click",
+      () => (this.drawer.open = !this.drawer.open)
+    );
+  }
+
+  mount() {
+    this.mountPoint.innerHTML = template();
+    this.querySelectors();
+    this.addEventListeners();
   }
 }
