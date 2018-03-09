@@ -1,13 +1,13 @@
-@import "@material/theme/mdc-theme";
+@import "@material/typography/mdc-typography";
+@import "@material/layout-grid/mdc-layout-grid";
 @import "@material/dialog/mdc-dialog";
 @import "@material/button/mdc-button";
-@import "@material/typography/mdc-typography";
+@import "@material/form-field/mdc-form-field";
+@import "@material/textfield/mdc-text-field";
 @import "@material/radio/mdc-radio";
 @import "@material/menu/mdc-menu";
 @import "@material/select/mdc-select";
 @import "@material/list/mdc-list";
-@import "@material/textfield/mdc-text-field";
-@import "@material/layout-grid/mdc-layout-grid";
 
 .add-transaction-dialog {
   &__select-menu {
@@ -22,6 +22,11 @@
 
   &__col {
     padding: 0;
+  }
+
+  &__expence,
+  &__income {
+    margin: 10px;
   }
 
   &__account,
