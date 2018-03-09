@@ -1,6 +1,7 @@
 import template from "./app.html";
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
+
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
