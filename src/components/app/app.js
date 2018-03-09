@@ -8,7 +8,7 @@ export class AppComponent {
 
   querySelectors() {
      this.buxyTableTransactionsMountPoint = this.mountPoint.querySelector(
-      ".buxy-table-transactions"
+      ".app-buxy-table-transactions"
     );
   }
 
