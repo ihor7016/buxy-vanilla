@@ -5,7 +5,11 @@
 .drawer {
   height: 100%;
   &__list-item {
+    position: relative;
     &-more {
+      position: absolute !important;
+      right: 10px;
+      top: 12px;
       width: 24px !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
@@ -14,8 +18,8 @@
     }
 
     &-icon {
-      padding-right: 15px;
-      margin-right: 0;
+      //padding-right: 15px;
+      //margin-right: 0;
     }
   }
 }
