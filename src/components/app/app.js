@@ -1,5 +1,5 @@
 import template from "./app.html";
-import { TableTransactionsComponent } from "../buxy-table-transactions/buxy-table-transactions";
+import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
 export class AppComponent {
   constructor(mountPoint) {
