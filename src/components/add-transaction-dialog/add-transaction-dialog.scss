@@ -16,17 +16,18 @@
   }
 
   &__row {
-    padding-top: 0;
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+
+    &--col {
+      justify-content: space-between;
+    }
   }
 
   &__col {
-    padding: 0;
-  }
-
-  &__expence,
-  &__income {
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
   }
 
   &__account,
