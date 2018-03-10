@@ -6,7 +6,7 @@ export class AppComponent {
     this.mountPoint = mountPoint;
   }
 
-  handleOnclickBtnAddTag() {
+  handleAddTagOnclick() {
     this.addTagDialog.showDialog();
   }
 
@@ -22,7 +22,7 @@ export class AppComponent {
   addEventListeners() {
     this.addTagButton.addEventListener(
       "click",
-      this.handleOnclickBtnAddTag.bind(this)
+      this.handleAddTagOnclick.bind(this)
     );
   }
 
