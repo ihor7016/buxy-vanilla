@@ -9,14 +9,22 @@ export class AppComponent {
 
   querySelectors() {
     this.toolbarMountPoint = this.mountPoint.querySelector(
-      ".app__toolbar-point"
+      ".app__container-toolbar-point"
     );
     this.drawerMountPoint = this.mountPoint.querySelector(".app__drawer-point");
   }
 
   mountChildren() {
-    new ToolbarComponent(this.toolbarMountPoint).mount();
-    new DrawerComponent(this.drawerMountPoint).mount();
+    this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
+      onMenuClicked: this.handleToolbarMenuClick.bind(this)
+    });
+    this.toolBarComponent.mount();
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint);
+    this.drawerComponent.mount();
+  }
+
+  handleToolbarMenuClick() {
+    this.drawerComponent.toggleDrawer();
   }
 
   mount() {

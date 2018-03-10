@@ -4,16 +4,10 @@
 .toolbar {
   display: inline-flex;
   flex-direction: column;
-  flex-grow: 1;
   height: 100%;
   box-sizing: border-box;
   &__button {
-    margin-right: 10px;
-    background: none;
-    border-right: none;
-    border-top: none;
-    border-left: none;
-    border-bottom: 1px solid white;
+    text-decoration: underline;
     @include mdc-button-ink-color(rgb(255, 255, 255));
   }
 }

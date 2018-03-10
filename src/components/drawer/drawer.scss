@@ -2,12 +2,12 @@
 @import "@material/list/mdc-list";
 
 .drawer {
+  height: 100%;
   &__list-item {
-    padding: 0 15px 15px;
     &-more {
       position: absolute;
       right: 5px;
-      top: 15px;
+      top: 13px;
     }
   }
 }

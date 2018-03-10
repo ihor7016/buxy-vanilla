@@ -11,22 +11,17 @@ export class DrawerComponent {
   }
 
   querySelectors() {
-    this.drawer = new MDCPersistentDrawer(
-      document.querySelector(".mdc-drawer--persistent")
-    );
-    this.menu = document.querySelector(".menu");
+    this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
+    this.drawer = new MDCPersistentDrawer(this.drawerRoot);
+    this.menu = this.mountPoint.querySelector(".toolbar__menu");
   }
 
-  addEventListeners() {
-    this.menu.addEventListener(
-      "click",
-      () => (this.drawer.open = !this.drawer.open)
-    );
+  toggleDrawer() {
+    this.drawer.open = !this.drawer.open;
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.addEventListeners();
   }
 }
