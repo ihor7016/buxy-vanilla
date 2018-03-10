@@ -15,11 +15,9 @@
       padding-right: 0 !important;
       min-width: 0 !important;
       height: 24px !important;
-    }
-
-    &-icon {
-      //padding-right: 15px;
-      //margin-right: 0;
+      &-icon {
+        color: $icon-color-accent;
+      }
     }
   }
 }
