@@ -16,20 +16,13 @@
   &__row {
     display: flex;
     flex-direction: row;
-
-    &--col {
-      justify-content: space-between;
-    }
+    justify-content: space-between;
   }
 
   &__col {
     display: flex;
     flex-direction: column;
     flex-basis: 45%;
-
-    &--fullwidth {
-      flex-basis: 100%;
-    }
   }
 
   &__type,
