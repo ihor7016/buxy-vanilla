@@ -1,8 +1,8 @@
-import template from "./add-account-dialog.html";
+import template from "./add-tag-dialog.html";
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 
-export class AddAccountComponent {
+export class AddTagComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
@@ -20,17 +20,13 @@ export class AddAccountComponent {
   }
 
   querySelectors() {
-    this.addAccountDialog = this.mountPoint.querySelector(
-      ".add-account-dialog"
-    );
-    this.accountTextField = this.mountPoint.querySelector(
-      ".add-account-dialog__account"
-    );
+    this.addTagDialog = this.mountPoint.querySelector(".add-tag-dialog");
+    this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addAccountDialog);
-    this.account = new MDCTextField(this.accountTextField);
+    this.dialog = new MDCDialog(this.addTagDialog);
+    this.tag = new MDCTextField(this.tagTextField);
   }
 
   addEventListeners() {

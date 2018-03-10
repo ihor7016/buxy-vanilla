@@ -1,34 +1,34 @@
 import template from "./app.html";
-import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
+import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
 
-  handleOnclickBtnAddAccount() {
-    this.addAccountDialog.showDialog();
+  handleOnclickBtnAddTag() {
+    this.addTagDialog.showDialog();
   }
 
   querySelectors() {
-    this.addAccountButton = this.mountPoint.querySelector(
-      ".app__add-account-dialog-activation"
+    this.addTagButton = this.mountPoint.querySelector(
+      ".app__add-tag-dialog-activation"
     );
-    this.addAccountMountPoint = this.mountPoint.querySelector(
-      ".app__add-account-dialog"
+    this.addTagMountPoint = this.mountPoint.querySelector(
+      ".app__add-tag-dialog"
     );
   }
 
   addEventListeners() {
-    this.addAccountButton.addEventListener(
+    this.addTagButton.addEventListener(
       "click",
-      this.handleOnclickBtnAddAccount.bind(this)
+      this.handleOnclickBtnAddTag.bind(this)
     );
   }
 
   mountChildren() {
-    this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
-    this.addAccountDialog.mount();
+    this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
+    this.addTagDialog.mount();
   }
 
   mount() {
