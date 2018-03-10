@@ -1,9 +1,5 @@
 import template from "./drawer.html";
-import {
-  MDCPersistentDrawer,
-  MDCPersistentDrawerFoundation,
-  util
-} from "@material/drawer";
+import { MDCPersistentDrawer } from "@material/drawer";
 
 export class DrawerComponent {
   constructor(mountPoint) {

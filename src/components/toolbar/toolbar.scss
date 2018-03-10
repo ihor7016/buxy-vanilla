@@ -7,7 +7,6 @@
   height: 100%;
   box-sizing: border-box;
   &__button {
-    text-decoration: underline;
     @include mdc-button-ink-color(rgb(255, 255, 255));
   }
 }
