@@ -6,7 +6,7 @@ export class AppComponent {
     this.mountPoint = mountPoint;
   }
 
-  handlerOnclickBtnAddTransaction() {
+  handleAddTransactionClick() {
     this.addTransacionDialog.showDialog();
   }
 
@@ -22,7 +22,7 @@ export class AppComponent {
   addEventListeners() {
     this.addTransactionButton.addEventListener(
       "click",
-      this.handlerOnclickBtnAddTransaction.bind(this)
+      this.handleAddTransactionClick.bind(this)
     );
   }
 
