@@ -1,6 +1,6 @@
 import template from "./buxy-table-transactions.html";
 
-export class buxyTableTransactionsComponent {
+export class TableTransactionsComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }

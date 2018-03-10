@@ -1,5 +1,5 @@
 import template from "./app.html";
-import { buxyTableTransactionsComponent } from "../buxy-table-transactions/buxy-table-transactions";
+import { TableTransactionsComponent } from "../buxy-table-transactions/buxy-table-transactions";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -7,13 +7,13 @@ export class AppComponent {
   }
 
   querySelectors() {
-     this.buxyTableTransactionsMountPoint = this.mountPoint.querySelector(
-      ".app-buxy-table-transactions"
+     this.tableTransactionsMountPoint = this.mountPoint.querySelector(
+      ".app__table-transactions"
     );
   }
 
   mountChildren() {
-    new buxyTableTransactionsComponent(this.buxyTableTransactionsMountPoint).mount();
+    new TableTransactionsComponent(this.tableTransactionsMountPoint).mount();
   }
 
   mount() {
