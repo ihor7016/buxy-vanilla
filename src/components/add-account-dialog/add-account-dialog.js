@@ -11,11 +11,11 @@ export class AddAccountComponent {
     this.dialog.show();
   }
 
-  handlerAccept() {
+  handleAccept() {
     console.log("accepted");
   }
 
-  handlerDecline() {
+  handleDecline() {
     console.log("declined");
   }
 
@@ -34,8 +34,8 @@ export class AddAccountComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handlerAccept.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.handlerDecline.bind(this));
+    this.dialog.listen("MDCDialog:accept", this.handleAccept.bind(this));
+    this.dialog.listen("MDCDialog:cancel", this.handleDecline.bind(this));
   }
 
   mount() {

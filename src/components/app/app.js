@@ -6,7 +6,7 @@ export class AppComponent {
     this.mountPoint = mountPoint;
   }
 
-  handleOnclickBtnAddAccount() {
+  handleAddAccountClick() {
     this.addAccountDialog.showDialog();
   }
 
@@ -22,7 +22,7 @@ export class AppComponent {
   addEventListeners() {
     this.addAccountButton.addEventListener(
       "click",
-      this.handleOnclickBtnAddAccount.bind(this)
+      this.handleAddAccountClick.bind(this)
     );
   }
 
