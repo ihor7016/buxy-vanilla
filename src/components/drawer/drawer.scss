@@ -1,13 +1,21 @@
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
+@import "@material/button/mdc-button";
 
 .drawer {
   height: 100%;
   &__list-item {
-    &-more {
+    &-button {
+      padding-right: 15px;
+      margin-right: 0;
       position: absolute;
-      right: 5px;
-      top: 13px;
+      right: -30px;
+      top: 7px;
+    }
+
+    &-icon {
+      padding-right: 15px;
+      margin-right: 0;
     }
   }
 }
