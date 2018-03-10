@@ -53,15 +53,15 @@ export class AddTransactionComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleAccept.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.handleDecline.bind(this));
+    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
 
-  handleAccept() {
+  handleOk() {
     console.log("accepted");
   }
 
-  handleDecline() {
+  handleCancel() {
     console.log("declined");
   }
 
