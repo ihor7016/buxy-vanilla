@@ -1,6 +1,7 @@
 import template from "./add-account-dialog.html";
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
+import { MDCSelect } from "@material/select";
 
 export class AddAccountComponent {
   constructor(mountPoint) {
@@ -26,11 +27,19 @@ export class AddAccountComponent {
     this.accountTextField = this.mountPoint.querySelector(
       ".add-account-dialog__account"
     );
+    this.typeAccountSelect = this.mountPoint.querySelector(
+      ".add-account-dialog__type"
+    );
+    this.currencyAccountSelect = this.mountPoint.querySelector(
+      ".add-account-dialog__currency"
+    );
   }
 
   initMDC() {
     this.dialog = new MDCDialog(this.addAccountDialog);
     this.account = new MDCTextField(this.accountTextField);
+    this.type = new MDCSelect(this.typeAccountSelect);
+    this.currency = new MDCSelect(this.currencyAccountSelect);
   }
 
   addEventListeners() {
@@ -39,7 +48,10 @@ export class AddAccountComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({
+      types: ["checking", "savings", "credit card", "cash"],
+      currencies: ["Ukraine, UAH", "United States, USD", "Europe, EUR"]
+    });
     this.querySelectors();
     this.initMDC();
     this.addEventListeners();

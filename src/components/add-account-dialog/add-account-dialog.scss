@@ -3,3 +3,37 @@
 @import "@material/form-field/mdc-form-field";
 @import "@material/textfield/mdc-text-field";
 @import "@material/button/mdc-button";
+@import "@material/menu/mdc-menu";
+@import "@material/select/mdc-select";
+@import "@material/list/mdc-list";
+
+.add-account-dialog {
+  &__select-menu {
+    top: inherit !important;
+    left: inherit !important;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+
+    &--col {
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+
+    &--fullwidth {
+      flex-basis: 100%;
+    }
+  }
+
+  &__type,
+  &__currency {
+    width: 100%;
+  }
+}
