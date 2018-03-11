@@ -1,0 +1,26 @@
+.add-transaction-dialog {
+  &__select-menu {
+    top: inherit !important;
+    left: inherit !important;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+
+    &--col {
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+  }
+
+  &__account,
+  &__tag {
+    width: 100%;
+  }
+}
