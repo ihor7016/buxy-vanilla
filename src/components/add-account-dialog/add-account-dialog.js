@@ -1,4 +1,5 @@
 import template from "./add-account-dialog.html";
+
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
