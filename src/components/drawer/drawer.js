@@ -37,6 +37,7 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.initMDC();
     this.addEventListeners();
   }
 }
