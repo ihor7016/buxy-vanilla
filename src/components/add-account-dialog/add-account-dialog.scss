@@ -1,0 +1,23 @@
+.add-account-dialog {
+  &__select-menu {
+    top: inherit !important;
+    left: inherit !important;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+  }
+
+  &__type,
+  &__currency {
+    width: 100%;
+  }
+}
