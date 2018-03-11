@@ -7,7 +7,7 @@ export class PieChartComponent {
   }
 
   querySelectors() {
-    this.pieChart = this.mountPoint.querySelector(".pie-chart__visual");
+    this.pieChartCtx = this.mountPoint.querySelector(".pie-chart__visual");
   }
 
   mount() {
@@ -17,7 +17,7 @@ export class PieChartComponent {
   }
 
   createPieChart() {
-    let myPieChart = new Chart(this.pieChart, {
+    let pieChart = new Chart(this.pieChartCtx, {
       type: "pie",
       data: {
         datasets: [
