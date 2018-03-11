@@ -9,11 +9,14 @@ export class DrawerComponent {
 
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
-    this.drawer = new MDCPersistentDrawer(this.drawerRoot);
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
+  }
+
+  initMDC() {
+    this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
   addEventListeners() {
@@ -34,6 +37,7 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.initMDC();
     this.addEventListeners();
   }
 }
