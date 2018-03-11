@@ -1,5 +1,12 @@
 @import "~normalize.css";
+
+@import "~@material/toolbar/dist/mdc.toolbar.css";
+@import "~@material/button/dist/mdc.button.css";
+@import "~@material/drawer/dist/mdc.drawer.css";
+@import "~@material/list/dist/mdc.list.css";
+
 @import "./components/variables";
+
 @import "./components/page/page";
 @import "./components/app/app";
 @import "./components/drawer/drawer";

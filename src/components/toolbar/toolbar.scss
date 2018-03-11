@@ -1,12 +1,10 @@
-@import "@material/toolbar/mdc-toolbar";
-@import "@material/button/mdc-button";
-
 .toolbar {
   display: inline-flex;
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
-  &__button {
-    @include mdc-button-ink-color($color-text-light);
+  &__button,
+  &__button:not(:disabled) {
+    color: white;
   }
 }

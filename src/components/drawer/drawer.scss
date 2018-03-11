@@ -1,20 +1,16 @@
-@import "@material/drawer/mdc-drawer";
-@import "@material/list/mdc-list";
-@import "@material/button/mdc-button";
-
 .drawer {
   height: 100%;
   &__list-item {
     position: relative;
     &-more {
-      position: absolute !important;
+      position: absolute;
       right: 10px;
       top: 12px;
-      width: 24px !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      min-width: 0 !important;
-      height: 24px !important;
+      width: 24px;
+      padding-left: 0;
+      padding-right: 0;
+      min-width: 0;
+      height: 24px;
       &-icon {
         color: $icon-color-accent;
       }
