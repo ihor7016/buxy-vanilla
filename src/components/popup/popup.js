@@ -7,7 +7,7 @@ export class PopupComponent {
   }
 
   querySelectors() {
-    this.menuRoot = document.querySelector("#menu");
+    this.menuRoot = document.querySelector(".menu");
   }
 
   init() {
