@@ -2,8 +2,9 @@ import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 
 export class DrawerComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -22,9 +23,8 @@ export class DrawerComponent {
     );
   }
 
-  // to fix: transfer event
   handleAddAccountClick() {
-    this.addAccountDialog.showDialog();
+    this.props.onAddAccountClick();
   }
 
   toggleDrawer() {
@@ -34,5 +34,6 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.addEventListeners();
   }
 }

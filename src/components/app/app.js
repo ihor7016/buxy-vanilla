@@ -38,7 +38,9 @@ export class AppComponent {
       onMenuClicked: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.drawerComponent = new DrawerComponent(this.drawerMountPoint);
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
+      onAddAccountClick: this.handleAddAccountClick.bind(this)
+    });
     this.drawerComponent.mount();
     this.addTransacionDialog = new AddTransactionComponent(
       this.addTransactionDialogPoint
@@ -54,6 +56,10 @@ export class AppComponent {
 
   handleAddTransactionClick() {
     this.addTransacionDialog.showDialog();
+  }
+
+  handleAddAccountClick() {
+    this.addAccountDialog.showDialog();
   }
 
   mount() {
