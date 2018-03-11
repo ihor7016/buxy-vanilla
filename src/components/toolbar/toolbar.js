@@ -11,10 +11,10 @@ export class ToolbarComponent {
   }
 
   addEventListeners() {
-    this.menu.addEventListener("click", this.onMenuClicked.bind(this));
+    this.menu.addEventListener("click", this.handleMenuClick.bind(this));
   }
 
-  onMenuClicked() {
+  handleMenuClick() {
     this.props.onMenuClicked();
   }
 
