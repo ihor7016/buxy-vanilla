@@ -42,10 +42,10 @@ export class AppComponent {
       onAddAccountClick: this.handleAddAccountClick.bind(this)
     });
     this.drawerComponent.mount();
-    this.addTransacionDialog = new AddTransactionComponent(
+    this.addTransactionDialog = new AddTransactionComponent(
       this.addTransactionDialogPoint
     );
-    this.addTransacionDialog.mount();
+    this.addTransactionDialog.mount();
     this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
     this.addAccountDialog.mount();
   }
@@ -55,7 +55,7 @@ export class AppComponent {
   }
 
   handleAddTransactionClick() {
-    this.addTransacionDialog.showDialog();
+    this.addTransactionDialog.showDialog();
   }
 
   handleAddAccountClick() {
