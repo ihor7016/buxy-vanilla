@@ -1,9 +1,9 @@
 import template from "./app.html";
-import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
+import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 
 export class AppComponent {
   constructor(mountPoint) {
