@@ -24,8 +24,16 @@
   },
   "dependencies": {
     "@material/button": "^0.32.0",
+    "@material/drawer": "^0.30.0",
+    "@material/list": "^0.32.0",
+    "@material/ripple": "^0.32.0",
+    "@material/toolbar": "^0.32.0",
     "@material/dialog": "^0.32.0",
+    "@material/fab": "^0.32.0",
     "@material/form-field": "^0.32.0",
+    "@material/menu": "^0.31.0",
+    "@material/radio": "^0.32.0",
+    "@material/select": "^0.32.0",
     "@material/textfield": "^0.32.0",
     "@material/typography": "^0.28.0",
     "normalize.css": "^8.0.0"
