@@ -1,4 +1,4 @@
-import template from "./pieChart.html";
+import template from "./pie-chart.html";
 import Chart from "chart.js";
 
 export class PieChartComponent {
