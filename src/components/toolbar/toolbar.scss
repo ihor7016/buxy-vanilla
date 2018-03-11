@@ -1,0 +1,10 @@
+.toolbar {
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  &__button,
+  &__button:not(:disabled) {
+    color: white;
+  }
+}
