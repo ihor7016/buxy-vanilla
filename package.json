@@ -22,9 +22,11 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "@material/animation": "^0.25.0",
     "@material/button": "^0.32.0",
     "@material/drawer": "^0.30.0",
     "@material/list": "^0.32.0",
+    "@material/menu": "^0.31.0",
     "@material/ripple": "^0.32.0",
     "@material/toolbar": "^0.32.0",
     "@material/typography": "^0.28.0",
