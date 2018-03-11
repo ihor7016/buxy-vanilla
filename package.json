@@ -22,6 +22,12 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "@material/button": "^0.32.0",
+    "@material/drawer": "^0.30.0",
+    "@material/list": "^0.32.0",
+    "@material/ripple": "^0.32.0",
+    "@material/toolbar": "^0.32.0",
+    "@material/typography": "^0.28.0",
     "normalize.css": "^8.0.0"
   }
 }
