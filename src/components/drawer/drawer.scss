@@ -2,18 +2,15 @@
   height: 100%;
   &__list-item {
     position: relative;
-    &-more {
-      position: absolute;
-      right: 10px;
-      top: 12px;
-      width: 24px;
-      padding-left: 0;
-      padding-right: 0;
-      min-width: 0;
-      height: 24px;
-      &-icon {
-        color: $icon-color-accent;
-      }
-    }
+  }
+  &__more {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 24px;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0;
+    height: 24px;
   }
 }

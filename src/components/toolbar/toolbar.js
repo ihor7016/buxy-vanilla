@@ -1,9 +1,9 @@
 import template from "./toolbar.html";
 
 export class ToolbarComponent {
-  constructor(mountPoint, onMenuClickListener) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
-    this.onMenuClickListener = onMenuClickListener;
+    this.props = props;
   }
 
   querySelectors() {
@@ -11,9 +11,11 @@ export class ToolbarComponent {
   }
 
   addEventListeners() {
-    this.menu.addEventListener("click", () =>
-      this.onMenuClickListener.onMenuClicked()
-    );
+    this.menu.addEventListener("click", this.onMenuClicked.bind(this));
+  }
+
+  onMenuClicked() {
+    this.props.onMenuClicked();
   }
 
   mount() {
