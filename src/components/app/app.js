@@ -13,7 +13,6 @@ export class AppComponent {
       ".app__container-toolbar-point"
     );
     this.drawerMountPoint = this.mountPoint.querySelector(".app__drawer-point");
-    this.menuButton = document.querySelector("#menu-button");
     this.popupMountPoint = document.querySelector(".popup_mount_point");
   }
 
@@ -22,17 +21,19 @@ export class AppComponent {
       onMenuClicked: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.drawerComponent = new DrawerComponent(this.drawerMountPoint);
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
+      onMenuPopupClicked: this.handlePopupMenuClick.bind(this)
+    });
     this.drawerComponent.mount();
     this.popup = new PopupComponent(this.popupMountPoint);
     this.popup.mount();
-    this.menuButton.addEventListener("click", () => {
-      this.popup.toggle();
-    });
   }
 
   handleToolbarMenuClick() {
     this.drawerComponent.toggleDrawer();
+  }
+  handlePopupMenuClick(target) {
+    this.popup.toggle();
   }
 
   mount() {
