@@ -1,7 +1,12 @@
 @import "~normalize.css";
 
+@import "~@material/typography/dist/mdc.typography";
+@import "~@material/dialog/dist/mdc.dialog";
+@import "~@material/form-field/dist/mdc.form-field";
+@import "~@material/textfield/dist/mdc.textfield";
+@import "~@material/button/dist/mdc.button";
+
 @import "./components/variables";
 
 @import "./components/page/page";
 @import "./components/app/app";
-@import "./components/add-tag-dialog/add-tag-dialog";
