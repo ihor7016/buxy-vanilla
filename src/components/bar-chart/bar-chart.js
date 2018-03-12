@@ -31,11 +31,6 @@ export class BarChartComponent {
         legend: {
           display: false
         },
-        title: {
-          display: true,
-          text: "Trend",
-          fontSize: 14
-        },
         scales: {
           yAxes: [
             {
@@ -62,7 +57,7 @@ export class BarChartComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({ title: "Trend" });
     this.querySelectors();
     this.createBarChart();
   }
