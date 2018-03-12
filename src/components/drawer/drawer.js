@@ -25,12 +25,6 @@ export class DrawerComponent {
   }
 
   addEventListeners() {
-    for (let i = 0; i < this.moreButtons.length; i++) {
-      this.moreButtons[i].addEventListener(
-        "click",
-        this.onMenuClicked.bind(this)
-      );
-    }
     this.addAccountButton.addEventListener(
       "click",
       this.handleAddAccountClick.bind(this)
