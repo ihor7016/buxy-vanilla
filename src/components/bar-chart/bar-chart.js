@@ -8,21 +8,22 @@ export class BarChartComponent {
   }
 
   querySelectors() {
-    this.ctx = this.mountPoint.querySelector(".bar-chart");
+    this.barChartCtx = this.mountPoint.querySelector(".bar-chart__visual");
   }
 
-  initChart() {
-    this.barChart = new Chart(this.ctx, {
+  createBarChart() {
+    Chart.defaults.global.defaultFontFamily = "'Roboto', sans-serif";
+    Chart.defaults.global.defaultFontColor = "rgba(0, 0, 0, 0.87)";
+    Chart.defaults.global.defaultFontStyle = "500";
+    this.barChart = new Chart(this.barChartCtx, {
       type: "bar",
       data: {
-        labels: ["income", "expense"],
+        labels: ["Income", "Expense"],
         datasets: [
           {
             label: "Value",
             data: [5000, 3000],
-            backgroundColor: ["rgba(0, 255, 0, 0.2)", "rgba(255, 0, 0, 0.2)"],
-            borderColor: ["rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)"],
-            borderWidth: 1
+            backgroundColor: ["#2e7d32", "#c62828"]
           }
         ]
       },
@@ -30,12 +31,28 @@ export class BarChartComponent {
         legend: {
           display: false
         },
+        title: {
+          display: true,
+          text: "Trend",
+          fontSize: 14
+        },
         scales: {
           yAxes: [
             {
-              stacked: true,
               ticks: {
                 beginAtZero: true
+              },
+              gridLines: {
+                display: false,
+                color: "rgba(0, 0, 0, 0.12)"
+              }
+            }
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+                color: "rgba(0, 0, 0, 0.12)"
               }
             }
           ]
@@ -47,6 +64,6 @@ export class BarChartComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.initChart();
+    this.createBarChart();
   }
 }
