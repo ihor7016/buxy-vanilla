@@ -12,9 +12,6 @@ export class BarChartComponent {
   }
 
   createBarChart() {
-    Chart.defaults.global.defaultFontFamily = "'Roboto', sans-serif";
-    Chart.defaults.global.defaultFontColor = "rgba(0, 0, 0, 0.87)";
-    Chart.defaults.global.defaultFontStyle = "500";
     this.barChart = new Chart(this.barChartCtx, {
       type: "bar",
       data: {
@@ -23,7 +20,9 @@ export class BarChartComponent {
           {
             label: "Value",
             data: [5000, 3000],
-            backgroundColor: ["#2e7d32", "#c62828"]
+            backgroundColor: ["rgba(0, 255, 0, 0.2)", "rgba(255, 0, 0, 0.2)"],
+            borderColor: ["rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)"],
+            borderWidth: 1
           }
         ]
       },
@@ -35,19 +34,24 @@ export class BarChartComponent {
           yAxes: [
             {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontFamily: "'Roboto', sans-serif",
+                fontStyle: "500"
               },
               gridLines: {
-                display: false,
-                color: "rgba(0, 0, 0, 0.12)"
+                display: false
               }
             }
           ],
           xAxes: [
             {
+              barPercentage: 0.5,
+              ticks: {
+                fontFamily: "'Roboto', sans-serif",
+                fontStyle: "500"
+              },
               gridLines: {
-                display: false,
-                color: "rgba(0, 0, 0, 0.12)"
+                display: false
               }
             }
           ]
@@ -57,7 +61,7 @@ export class BarChartComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({ title: "Trend" });
+    this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.createBarChart();
   }
