@@ -29,6 +29,7 @@
     "@material/drawer": "^0.30.0",
     "@material/fab": "^0.32.0",
     "@material/form-field": "^0.32.0",
+    "@material/layout-grid": "^0.24.0",
     "@material/list": "^0.32.0",
     "@material/menu": "^0.31.0",
     "@material/radio": "^0.32.0",

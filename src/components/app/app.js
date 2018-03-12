@@ -30,8 +30,6 @@ export class AppComponent {
       ".app__add-tag-dialog"
     );
     this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
-    /// delete
-    this.barChartPoint1 = this.mountPoint.querySelector(".app__bar-chart1");
   }
 
   addEventListeners() {
@@ -61,9 +59,6 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.barChart = new BarChartComponent(this.barChartPoint);
     this.barChart.mount();
-    ///delete
-    this.barChart1 = new BarChartComponent(this.barChartPoint1);
-    this.barChart1.mount();
   }
 
   handleToolbarMenuClick() {
