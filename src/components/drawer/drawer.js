@@ -13,6 +13,9 @@ export class DrawerComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".drawer__add-account-dialog-activation"
     );
+    this.addTagButton = this.mountPoint.querySelector(
+      ".drawer__add-tag-dialog-activation"
+    );
   }
 
   initMDC() {
@@ -24,10 +27,18 @@ export class DrawerComponent {
       "click",
       this.handleAddAccountClick.bind(this)
     );
+    this.addTagButton.addEventListener(
+      "click",
+      this.handleAddTagOnclick.bind(this)
+    );
   }
 
   handleAddAccountClick() {
     this.props.onAddAccountClick();
+  }
+
+  handleAddTagOnclick() {
+    this.props.onAddTagClick();
   }
 
   toggleDrawer() {
