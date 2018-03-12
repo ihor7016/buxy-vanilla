@@ -5,6 +5,7 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
+import { PopupComponent } from "../popup/popup";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -35,6 +36,7 @@ export class AppComponent {
       "click",
       this.handleAddTransactionClick.bind(this)
     );
+    this.popupMountPoint = document.querySelector(".popup_mount_point");
   }
 
   mountChildren() {
@@ -44,7 +46,8 @@ export class AppComponent {
     this.toolBarComponent.mount();
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
       onAddAccountClick: this.handleAddAccountClick.bind(this),
-      onAddTagClick: this.handleAddTagOnclick.bind(this)
+      onAddTagClick: this.handleAddTagOnclick.bind(this),
+      onMenuPopupClicked: this.handlePopupMenuClick.bind(this)
     });
     this.drawerComponent.mount();
     this.addTransactionDialog = new AddTransactionComponent(
@@ -55,10 +58,15 @@ export class AppComponent {
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
+    this.popup = new PopupComponent(this.popupMountPoint);
+    this.popup.mount();
   }
 
   handleToolbarMenuClick() {
     this.drawerComponent.toggleDrawer();
+  }
+  handlePopupMenuClick(target) {
+    this.popup.toggle();
   }
 
   handleAddTransactionClick() {

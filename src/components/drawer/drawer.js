@@ -10,6 +10,8 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
+    this.moreButtons = this.mountPoint.querySelectorAll(".button-more");
+
     this.addAccountButton = this.mountPoint.querySelector(
       ".drawer__add-account-dialog-activation"
     );
@@ -23,6 +25,12 @@ export class DrawerComponent {
   }
 
   addEventListeners() {
+    for (let i = 0; i < this.moreButtons.length; i++) {
+      this.moreButtons[i].addEventListener(
+        "click",
+        this.onMenuClicked.bind(this)
+      );
+    }
     this.addAccountButton.addEventListener(
       "click",
       this.handleAddAccountClick.bind(this)
@@ -39,6 +47,10 @@ export class DrawerComponent {
 
   handleAddTagOnclick() {
     this.props.onAddTagClick();
+  }
+
+  onMenuClicked(e) {
+    this.props.onMenuPopupClicked(e.target);
   }
 
   toggleDrawer() {
