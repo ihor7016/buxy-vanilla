@@ -1,5 +1,6 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
+import { ButtonmoreComponent } from "../buttonMore/buttonmore";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -18,10 +19,16 @@ export class DrawerComponent {
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
+
+    this.moreBtnMountPoint = this.mountPoint.querySelector(".more_btn");
   }
 
   initMDC() {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
+  }
+
+  initMoreBtns() {
+    new ButtonmoreComponent(this.moreBtnMountPoint).mount();
   }
 
   addEventListeners() {
@@ -55,6 +62,7 @@ export class DrawerComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMDC();
+    this.initMoreBtns();
     this.addEventListeners();
   }
 }
