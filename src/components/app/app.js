@@ -5,6 +5,7 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
+import { BarChartComponent } from "../bar-chart/bar-chart";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -28,6 +29,7 @@ export class AppComponent {
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
+    this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
   }
 
   addEventListeners() {
@@ -55,6 +57,8 @@ export class AppComponent {
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
+    this.barChart = new BarChartComponent(this.barChartPoint);
+    this.barChart.mount();
   }
 
   handleToolbarMenuClick() {
