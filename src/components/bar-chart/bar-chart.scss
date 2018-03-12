@@ -1,3 +1,7 @@
 .bar-chart {
-  margin: 8px;
+  padding: 20px;
+
+  &__visual {
+    width: 100%;
+  }
 }
