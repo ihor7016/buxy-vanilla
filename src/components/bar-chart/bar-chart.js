@@ -20,9 +20,7 @@ export class BarChartComponent {
           {
             label: "Value",
             data: [5000, 3000],
-            backgroundColor: ["rgba(0, 255, 0, 0.2)", "rgba(255, 0, 0, 0.2)"],
-            borderColor: ["rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)"],
-            borderWidth: 1
+            backgroundColor: ["#4caf50", "#f44336"]
           }
         ]
       },
@@ -37,9 +35,6 @@ export class BarChartComponent {
                 beginAtZero: true,
                 fontFamily: "'Roboto', sans-serif",
                 fontStyle: "500"
-              },
-              gridLines: {
-                display: false
               }
             }
           ],
@@ -49,9 +44,6 @@ export class BarChartComponent {
               ticks: {
                 fontFamily: "'Roboto', sans-serif",
                 fontStyle: "500"
-              },
-              gridLines: {
-                display: false
               }
             }
           ]
