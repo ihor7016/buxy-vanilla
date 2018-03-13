@@ -4,9 +4,9 @@
   &__list-item {
     overflow: visible;
   }
-  //&__list-item:hover {
-  //  background: rgba(76, 175, 80, 0.3)
-  //}
+  &__list-item:hover {
+    background-color: $color-primary;
+  }
 
   &__buttonmore-zorder {
     z-index: 2;
