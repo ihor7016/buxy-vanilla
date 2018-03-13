@@ -7,7 +7,7 @@ export class PieChartComponent {
   }
 
   querySelectors() {
-    this.pieChartCtx = this.mountPoint.querySelector(".pie-chart");
+    this.pieChartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
   mount() {

@@ -8,7 +8,7 @@ export class BarChartComponent {
   }
 
   querySelectors() {
-    this.barChartCtx = this.mountPoint.querySelector(".bar-chart");
+    this.barChartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
   createBarChart() {
@@ -25,7 +25,6 @@ export class BarChartComponent {
         ]
       },
       options: {
-        maintainAspectRatio: false,
         legend: {
           display: false
         },
