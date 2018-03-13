@@ -1,12 +1,14 @@
 .drawer {
   height: 100%;
+
   &__list-item {
     overflow: visible;
-    position: relative;
   }
+  //&__list-item:hover {
+  //  background: rgba(76, 175, 80, 0.3)
+  //}
+
   &__buttonmore-zorder {
-    z-index: 99;
-  }
-  &__group {
+    z-index: 2;
   }
 }

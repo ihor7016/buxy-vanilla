@@ -10,7 +10,6 @@ import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
-
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
@@ -38,6 +37,7 @@ export class AppComponent {
     );
     this.pieChartPoint = this.mountPoint.querySelector(".app__pie-chart");
     this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
+    this.popupMountPoint = document.querySelector(".app__popup-menu");
   }
 
   addEventListeners() {
@@ -45,7 +45,6 @@ export class AppComponent {
       "click",
       this.handleAddTransactionClick.bind(this)
     );
-    this.popupMountPoint = document.querySelector(".popup_mount_point");
   }
 
   mountChildren() {

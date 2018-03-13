@@ -12,7 +12,7 @@ export class ButtonmoreComponent {
     this.buttonMore = this.mountPoint.querySelector(".button-more__more");
   }
 
-  init() {
+  initMDC() {
     this.menu = new MDCMenu(this.menuRoot);
   }
 
@@ -32,7 +32,7 @@ export class ButtonmoreComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.init();
+    this.initMDC();
     this.addListeners();
   }
 }
