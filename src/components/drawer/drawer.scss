@@ -1,8 +1,8 @@
 .drawer {
   height: 100%;
-
   &__list-item {
     overflow: visible;
+    position: relative;
   }
   &__buttonmore-zorder {
     z-index: 99;
@@ -12,5 +12,7 @@
 }
 
 .more_btn {
-  position: relative;
+  position: absolute;
+  right: 10px;
+  top: 12px;
 }
