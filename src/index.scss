@@ -1,6 +1,5 @@
 @import "~normalize.css";
 @import "~@material/elevation/dist/mdc.elevation.css";
-@import "./components/table-transactions/table-transactions";
 
 @import "~@material/toolbar/dist/mdc.toolbar";
 @import "~@material/drawer/dist/mdc.drawer";
@@ -14,6 +13,8 @@
 @import "~@material/radio/dist/mdc.radio";
 @import "~@material/menu/dist/mdc.menu";
 @import "~@material/select/dist/mdc.select";
+@import "~@material/card/dist/mdc.card";
+@import "~@material/layout-grid/dist/mdc.layout-grid";
 
 @import "./components/variables";
 
@@ -23,3 +24,5 @@
 @import "./components/toolbar/toolbar";
 @import "./components/add-transaction-dialog/add-transaction-dialog";
 @import "./components/add-account-dialog/add-account-dialog";
+@import "./components/pie-chart/pie-chart";
+@import "./components/table-transactions/table-transactions";
