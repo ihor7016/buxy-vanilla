@@ -47,7 +47,13 @@ export class DrawerComponent {
   }
 
   onMoreBtnClick(e) {
-    console.log(e);
+    let all = this.mountPoint.querySelectorAll(".drawer__list-item");
+    for (let i = 0; i < all.length; i++) {
+      all[i].classList.remove("drawer__buttonmore-zorder");
+    }
+    e.target
+      .closest(".drawer__list-item")
+      .classList.toggle("drawer__buttonmore-zorder");
   }
 
   handleAddAccountClick() {
@@ -56,10 +62,6 @@ export class DrawerComponent {
 
   handleAddTagOnclick() {
     this.props.onAddTagClick();
-  }
-
-  onMenuClicked(e) {
-    this.props.onMenuPopupClicked(e.target);
   }
 
   toggleDrawer() {

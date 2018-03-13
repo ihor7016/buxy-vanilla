@@ -3,7 +3,6 @@
   }
   &__more {
     //position: absolute;
-
     width: 24px;
     padding-left: 0;
     padding-right: 0;
@@ -12,5 +11,9 @@
   }
   &__popup {
     position: fixed;
+    width: 400px;
   }
+}
+.g {
+  z-index: 999999999;
 }

@@ -1,6 +1,16 @@
 .drawer {
   height: 100%;
+
+  &__list-item {
+    overflow: visible;
+  }
+  &____buttonmore-zorder {
+    z-index: 99;
+  }
+  &__group {
+  }
 }
+
 .more_btn {
   position: relative;
 }
