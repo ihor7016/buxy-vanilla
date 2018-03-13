@@ -1,5 +1,25 @@
 @import "~normalize.css";
-@import "~@material/button/dist/mdc.button.css";
 @import "~@material/elevation/dist/mdc.elevation.css";
-@import "./components/page/page";
 @import "./components/table-transactions/table-transactions";
+
+@import "~@material/toolbar/dist/mdc.toolbar";
+@import "~@material/drawer/dist/mdc.drawer";
+@import "~@material/list/dist/mdc.list";
+@import "~@material/fab/dist/mdc.fab";
+@import "~@material/typography/dist/mdc.typography";
+@import "~@material/dialog/dist/mdc.dialog";
+@import "~@material/button/dist/mdc.button";
+@import "~@material/form-field/dist/mdc.form-field";
+@import "~@material/textfield/dist/mdc.textfield";
+@import "~@material/radio/dist/mdc.radio";
+@import "~@material/menu/dist/mdc.menu";
+@import "~@material/select/dist/mdc.select";
+
+@import "./components/variables";
+
+@import "./components/page/page";
+@import "./components/app/app";
+@import "./components/drawer/drawer";
+@import "./components/toolbar/toolbar";
+@import "./components/add-transaction-dialog/add-transaction-dialog";
+@import "./components/add-account-dialog/add-account-dialog";
