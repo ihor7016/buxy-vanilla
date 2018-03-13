@@ -5,6 +5,7 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
+import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 
 export class AppComponent {
@@ -29,9 +30,8 @@ export class AppComponent {
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
+    this.pieChartPoint = this.mountPoint.querySelector(".app__pie-chart");
     this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
-    // only for test. remove before merging
-    this.barChartPoint1 = this.mountPoint.querySelector(".app__bar-chart1");
   }
 
   addEventListeners() {
@@ -59,11 +59,10 @@ export class AppComponent {
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
+    this.pieChart = new PieChartComponent(this.pieChartPoint);
+    this.pieChart.mount();
     this.barChart = new BarChartComponent(this.barChartPoint);
     this.barChart.mount();
-    // only for test. remove before merging
-    this.barChart1 = new BarChartComponent(this.barChartPoint1);
-    this.barChart1.mount();
   }
 
   handleToolbarMenuClick() {
