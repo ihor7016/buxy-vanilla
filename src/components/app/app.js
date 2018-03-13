@@ -6,6 +6,7 @@ import { AddTransactionComponent } from "../add-transaction-dialog/add-transacti
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { PieChartComponent } from "../pie-chart/pie-chart";
+import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
 export class AppComponent {
@@ -34,6 +35,7 @@ export class AppComponent {
       ".app__add-tag-dialog"
     );
     this.pieChartPoint = this.mountPoint.querySelector(".app__pie-chart");
+    this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
   }
 
   addEventListeners() {
@@ -64,6 +66,8 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.pieChart = new PieChartComponent(this.pieChartPoint);
     this.pieChart.mount();
+    this.barChart = new BarChartComponent(this.barChartPoint);
+    this.barChart.mount();
   }
 
   handleToolbarMenuClick() {
