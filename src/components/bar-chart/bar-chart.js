@@ -25,6 +25,7 @@ export class BarChartComponent {
         ]
       },
       options: {
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
