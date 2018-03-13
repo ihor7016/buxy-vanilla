@@ -5,7 +5,6 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
-import { ButtonmoreComponent } from "../buttonMore/buttonmore";
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
@@ -37,7 +36,6 @@ export class AppComponent {
     );
     this.pieChartPoint = this.mountPoint.querySelector(".app__pie-chart");
     this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
-    this.popupMountPoint = document.querySelector(".app__popup-menu");
   }
 
   addEventListeners() {
