@@ -1,5 +1,4 @@
 @import "~normalize.css";
-@import "~@material/elevation/dist/mdc.elevation.css";
 
 @import "~@material/toolbar/dist/mdc.toolbar";
 @import "~@material/drawer/dist/mdc.drawer";
@@ -15,6 +14,7 @@
 @import "~@material/select/dist/mdc.select";
 @import "~@material/card/dist/mdc.card";
 @import "~@material/layout-grid/dist/mdc.layout-grid";
+@import "~@material/elevation/dist/mdc.elevation";
 
 @import "./components/variables";
 

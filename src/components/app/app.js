@@ -1,12 +1,12 @@
 import template from "./app.html";
 
-import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { PieChartComponent } from "../pie-chart/pie-chart";
+import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
 export class AppComponent {
   constructor(mountPoint) {
