@@ -7,6 +7,7 @@ import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
+import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -14,6 +15,9 @@ export class AppComponent {
   }
 
   querySelectors() {
+    this.tableTransactionsMountPoint = this.mountPoint.querySelector(
+      ".app__table-transactions"
+    );
     this.toolbarMountPoint = this.mountPoint.querySelector(
       ".app__container-toolbar-point"
     );
@@ -42,6 +46,7 @@ export class AppComponent {
   }
 
   mountChildren() {
+    new TableTransactionsComponent(this.tableTransactionsMountPoint).mount();
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
       onMenuClicked: this.handleToolbarMenuClick.bind(this)
     });
