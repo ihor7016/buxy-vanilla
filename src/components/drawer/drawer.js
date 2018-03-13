@@ -11,7 +11,9 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
-    this.moreButtons = this.mountPoint.querySelectorAll(".button-more");
+    this.moreButtons = this.mountPoint.querySelectorAll(
+      ".button-more__mount-point"
+    );
 
     this.addAccountButton = this.mountPoint.querySelector(
       ".drawer__add-account-dialog-activation"
@@ -20,7 +22,9 @@ export class DrawerComponent {
       ".drawer__add-tag-dialog-activation"
     );
 
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(".more_btn");
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".button-more__mount-point"
+    );
   }
 
   initMDC() {

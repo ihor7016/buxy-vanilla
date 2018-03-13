@@ -1,4 +1,9 @@
 .button-more {
+  &__mount-point {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
   &__list-item {
   }
   &__more {
@@ -13,3 +18,9 @@
     width: 400px;
   }
 }
+
+//.more_btn {
+//  position: absolute;
+//  right: 10px;
+//  top: 12px;
+//}
