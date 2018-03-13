@@ -20,7 +20,7 @@ export class DrawerComponent {
       ".drawer__add-tag-dialog-activation"
     );
 
-    this.moreBtnMountPoint = this.mountPoint.querySelector(".more_btn");
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(".more_btn");
   }
 
   initMDC() {
@@ -28,7 +28,11 @@ export class DrawerComponent {
   }
 
   initMoreBtns() {
-    new ButtonmoreComponent(this.moreBtnMountPoint).mount();
+    for (let i = 0; i < this.moreBtnMountPoints.length; i++) {
+      new ButtonmoreComponent(this.moreBtnMountPoints[i], {
+        onMoreBtnClicked: this.onMoreBtnClick.bind(this)
+      }).mount();
+    }
   }
 
   addEventListeners() {
@@ -40,6 +44,10 @@ export class DrawerComponent {
       "click",
       this.handleAddTagOnclick.bind(this)
     );
+  }
+
+  onMoreBtnClick(e) {
+    console.log(e);
   }
 
   handleAddAccountClick() {

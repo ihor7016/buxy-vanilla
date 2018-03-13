@@ -2,13 +2,14 @@ import template from "./buttonmore.html";
 import { MDCMenu } from "@material/menu";
 
 export class ButtonmoreComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
-    this.menuRoot = document.querySelector(".menu");
-    this.buttonMore = document.querySelector(".button-more__more");
+    this.menuRoot = this.mountPoint.querySelector(".menu");
+    this.buttonMore = this.mountPoint.querySelector(".button-more__more");
   }
 
   init() {
@@ -16,9 +17,12 @@ export class ButtonmoreComponent {
   }
 
   addListeners() {
-    this.buttonMore.addEventListener("click", e => {
-      this.toggle();
-    });
+    this.buttonMore.addEventListener("click", this.handleBtnClick.bind(this));
+  }
+
+  handleBtnClick(event) {
+    this.toggle();
+    this.props.onMoreBtnClicked(event);
   }
 
   toggle() {

@@ -57,8 +57,6 @@ export class AppComponent {
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
-    this.buttonmore = new ButtonmoreComponent(this.popupMountPoint);
-    this.buttonmore.mount();
   }
 
   handleToolbarMenuClick() {
