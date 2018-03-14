@@ -12,16 +12,39 @@ export class TableTransactionsComponent {
     );
   }
 
-  addTransaction(isIncome, date, amount, desc, tag, account) {
+  addTransactionFromDialog(isIncome, date, amount, desc, tag, account) {
     isIncome ? (amount = "+ " + amount) : (amount = "- " + amount);
+    this.addTransaction({
+      date: date,
+      amount: amount,
+      desc: desc,
+      tag: tag,
+      account: account
+    });
+  }
+
+  addStoredTransactions(list) {
+    console.log(list);
+    list.forEach(row => this.addTransaction(row));
+  }
+
+  addTransaction(row) {
     this.transactionPoint.innerHTML += `
     <tr class="table-transactions__tr table-transactions__highlighted">
-      <td class="table-transactions__td table-transactions__date">${date}</td>
-      <td class="table-transactions__td table-transactions__amount">${amount}</td>
-      <td class="table-transactions__td table-transactions__desc">${desc}</td>
-      <td class="table-transactions__td table-transactions__tag">${tag}</td>
+      <td class="table-transactions__td table-transactions__date">${
+        row.date
+      }</td>
+      <td class="table-transactions__td table-transactions__amount">${
+        row.amount
+      }</td>
+      <td class="table-transactions__td table-transactions__desc">${
+        row.desc
+      }</td>
+      <td class="table-transactions__td table-transactions__tag">${row.tag}</td>
       <td class="table-transactions__td">
-        <span class="table-transactions__span table-transactions__account">${account}</span>
+        <span class="table-transactions__span table-transactions__account">${
+          row.account
+        }</span>
         <button class="table-transactions__button mdc-button">
           <i class="material-icons mdc-button__icon table-transactions__icon">more_vert</i>
         </button>
@@ -61,6 +84,5 @@ export class TableTransactionsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    console.log(this.getTransactionsData());
   }
 }

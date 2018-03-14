@@ -15,7 +15,6 @@ import { TransactionListService } from "../../services/transaction-service";
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
-    this.transactionListService = new TransactionListService();
   }
 
   querySelectors() {
@@ -83,8 +82,24 @@ export class AppComponent {
     this.barChart.mount();
   }
 
+  initServices() {
+    this.transactionListService = new TransactionListService({
+      returnList: this.sendStoredTransactionList.bind(this)
+    });
+  }
+
+  /// ??? try to find another way
+  addStoredData() {
+    this.transactionListService.get();
+  }
+
+  /// ??? try to find another way
+  sendStoredTransactionList(list) {
+    this.tableTransactionsComponent.addStoredTransactions(list);
+  }
+
   handleAddTransactionSubmit(isIncome, date, amount, desc, tag, account) {
-    this.tableTransactionsComponent.addTransaction(
+    this.tableTransactionsComponent.addTransactionFromDialog(
       isIncome,
       date,
       amount,
@@ -123,5 +138,7 @@ export class AppComponent {
     this.querySelectors();
     this.addEventListeners();
     this.mountChildren();
+    this.initServices();
+    this.addStoredData();
   }
 }
