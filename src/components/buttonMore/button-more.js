@@ -1,7 +1,7 @@
 import template from "./button-more.html";
 import { MDCMenu } from "@material/menu";
 
-export class ButtonmoreComponent {
+export class ButtonMoreComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;

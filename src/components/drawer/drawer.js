@@ -1,6 +1,6 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
-import { ButtonmoreComponent } from "../buttonMore/button-more";
+import { ButtonMoreComponent } from "../buttonMore/button-more";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -37,7 +37,7 @@ export class DrawerComponent {
 
   initMoreBtns() {
     for (let i = 0; i < this.moreBtnMountPoints.length; i++) {
-      new ButtonmoreComponent(this.moreBtnMountPoints[i], {
+      new ButtonMoreComponent(this.moreBtnMountPoints[i], {
         onMoreBtnClicked: this.onMoreBtnClick.bind(this)
       }).mount();
     }
