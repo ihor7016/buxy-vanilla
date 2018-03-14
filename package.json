@@ -6,13 +6,21 @@
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json,css,scss}\"",
     "precommit": "lint-staged",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.10",
     "ejs-loader": "^0.3.1",
     "husky": "^0.14.3",
+    "jest": "^22.4.2",
     "js-beautify": "^1.7.5",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.7.2",
