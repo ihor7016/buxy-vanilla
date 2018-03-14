@@ -14,10 +14,6 @@ export class AboutComponent {
     console.log("accepted");
   }
 
-  handleCancel() {
-    console.log("declined");
-  }
-
   querySelectors() {
     this.addTagDialog = this.mountPoint.querySelector(".about-dialog");
   }
@@ -28,7 +24,6 @@ export class AboutComponent {
 
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
 
   mount() {
