@@ -16,6 +16,9 @@ export class DrawerComponent {
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
+    this.aboutButton = this.mountPoint.querySelector(
+      ".toolbar__about-dialog-activation"
+    );
   }
 
   initMDC() {
