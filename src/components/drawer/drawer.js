@@ -24,6 +24,10 @@ export class DrawerComponent {
 
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".button-more__mount-point"
+
+    this.aboutButton = this.mountPoint.querySelector(
+      ".toolbar__about-dialog-activation"
+
     );
   }
 
