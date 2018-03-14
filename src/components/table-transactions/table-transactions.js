@@ -7,15 +7,18 @@ export class TableTransactionsComponent {
   }
 
   querySelectors() {
-    this.moreButtons = this.mountPoint.querySelectorAll(
-      ".button-more__mount-point"
-    );
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".button-more__mount-point"
+      ".table-transactions__more-button"
     );
   }
-
+  initMoreBtns() {
+    Array.from(this.moreBtnMountPoints).forEach(point => {
+      new ButtonMoreComponent(point, "left").mount();
+    });
+  }
   mount() {
     this.mountPoint.innerHTML = template();
+    this.querySelectors();
+    this.initMoreBtns();
   }
 }
