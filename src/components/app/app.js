@@ -15,7 +15,7 @@ import { TransactionListService } from "../../services/transaction-service";
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
-    this.transactionService = new TransactionListService();
+    this.transactionListService = new TransactionListService();
   }
 
   querySelectors() {
@@ -52,7 +52,8 @@ export class AppComponent {
 
   mountChildren() {
     this.tableTransactionsComponent = new TableTransactionsComponent(
-      this.tableTransactionsMountPoint
+      this.tableTransactionsMountPoint,
+      { onDataChange: this.handleTransactionListChange.bind(this) }
     );
     this.tableTransactionsComponent.mount();
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
@@ -91,6 +92,10 @@ export class AppComponent {
       tag,
       account
     );
+  }
+
+  handleTransactionListChange(list) {
+    this.transactionListService.set(list);
   }
 
   handleToolbarMenuClick() {

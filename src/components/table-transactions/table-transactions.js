@@ -1,8 +1,9 @@
 import template from "./table-transactions.html";
 
 export class TableTransactionsComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -27,6 +28,7 @@ export class TableTransactionsComponent {
       </td>
     </tr>
     `;
+    this.handleDataChange();
   }
 
   getTransactionsData() {
@@ -50,6 +52,10 @@ export class TableTransactionsComponent {
       });
     }
     return transactionsList;
+  }
+
+  handleDataChange() {
+    this.props.onDataChange(this.getTransactionsData());
   }
 
   mount() {
