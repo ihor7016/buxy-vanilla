@@ -10,9 +10,12 @@ import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
+import { TransactionListService } from "../../services/transaction-service";
+
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
+    this.transactionService = new TransactionListService();
   }
 
   querySelectors() {
@@ -48,7 +51,10 @@ export class AppComponent {
   }
 
   mountChildren() {
-    new TableTransactionsComponent(this.tableTransactionsMountPoint).mount();
+    this.tableTransactionsComponent = new TableTransactionsComponent(
+      this.tableTransactionsMountPoint
+    );
+    this.tableTransactionsComponent.mount();
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
       onMenuClicked: this.handleToolbarMenuClick.bind(this),
       onAboutClick: this.handleAboutOnclick.bind(this)
@@ -60,7 +66,8 @@ export class AppComponent {
     });
     this.drawerComponent.mount();
     this.addTransactionDialog = new AddTransactionComponent(
-      this.addTransactionDialogPoint
+      this.addTransactionDialogPoint,
+      { addTransaction: this.handleAddTransactionSubmit.bind(this) }
     );
     this.addTransactionDialog.mount();
     this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
@@ -73,6 +80,17 @@ export class AppComponent {
     this.pieChart.mount();
     this.barChart = new BarChartComponent(this.barChartPoint);
     this.barChart.mount();
+  }
+
+  handleAddTransactionSubmit(isIncome, date, amount, desc, tag, account) {
+    this.tableTransactionsComponent.addTransaction(
+      isIncome,
+      date,
+      amount,
+      desc,
+      tag,
+      account
+    );
   }
 
   handleToolbarMenuClick() {

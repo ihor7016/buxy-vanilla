@@ -59,6 +59,14 @@ export class AddTransactionComponent {
 
   handleOk() {
     console.log("accepted");
+    this.props.addTransaction(
+      this.income.checked,
+      this.date.value,
+      this.amount.value,
+      this.description.value,
+      this.tagSelect.value,
+      this.accountSelect.value
+    );
   }
 
   handleCancel() {
