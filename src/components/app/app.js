@@ -5,6 +5,7 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
+import { AboutComponent } from "../about-dialog/about-dialog";
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
@@ -34,6 +35,7 @@ export class AppComponent {
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
+    this.aboutMountPoint = this.mountPoint.querySelector(".app__about-dialog");
     this.pieChartPoint = this.mountPoint.querySelector(".app__pie-chart");
     this.barChartPoint = this.mountPoint.querySelector(".app__bar-chart");
   }
@@ -48,7 +50,8 @@ export class AppComponent {
   mountChildren() {
     new TableTransactionsComponent(this.tableTransactionsMountPoint).mount();
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
-      onMenuClicked: this.handleToolbarMenuClick.bind(this)
+      onMenuClicked: this.handleToolbarMenuClick.bind(this),
+      onAboutClick: this.handleAboutOnclick.bind(this)
     });
     this.toolBarComponent.mount();
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
@@ -64,6 +67,8 @@ export class AppComponent {
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
+    this.aboutDialog = new AboutComponent(this.aboutMountPoint);
+    this.aboutDialog.mount();
     this.pieChart = new PieChartComponent(this.pieChartPoint);
     this.pieChart.mount();
     this.barChart = new BarChartComponent(this.barChartPoint);
@@ -72,6 +77,10 @@ export class AppComponent {
 
   handleToolbarMenuClick() {
     this.drawerComponent.toggleDrawer();
+  }
+
+  handleAboutOnclick() {
+    this.aboutDialog.showDialog();
   }
 
   handleAddTransactionClick() {
