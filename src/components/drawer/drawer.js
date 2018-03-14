@@ -34,7 +34,7 @@ export class DrawerComponent {
 
   initMoreBtns() {
     Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point).mount();
+      new ButtonMoreComponent(point, "right").mount();
     });
   }
 

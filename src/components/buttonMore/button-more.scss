@@ -1,4 +1,12 @@
 .button-more {
+  &__popup-right {
+    margin-top: 26px;
+    margin-left: 25px;
+  }
+  &__popup-left {
+    margin-top: 26px;
+    margin-left: -170px;
+  }
   &__more {
     width: 24px;
     padding-left: 0;
