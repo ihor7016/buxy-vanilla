@@ -1,4 +1,4 @@
-import template from "./buttonmore.html";
+import template from "./button-more.html";
 import { MDCMenu } from "@material/menu";
 
 export class ButtonmoreComponent {
