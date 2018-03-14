@@ -16,7 +16,7 @@ export class ButtonMoreComponent {
     this.menu = new MDCMenu(this.menuRoot);
   }
 
-  addListeners() {
+  addEventListener() {
     this.buttonMore.addEventListener("click", this.handleBtnClick.bind(this));
   }
 
@@ -33,6 +33,6 @@ export class ButtonMoreComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMDC();
-    this.addListeners();
+    this.addEventListener();
   }
 }
