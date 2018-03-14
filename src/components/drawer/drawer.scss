@@ -1,6 +1,10 @@
 .drawer {
   height: 100%;
-
+  &__mount-point {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
   &__list-item {
     overflow: visible;
   }
