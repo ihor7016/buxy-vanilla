@@ -33,11 +33,11 @@ export class DrawerComponent {
   }
 
   initMoreBtns() {
-    for (let i = 0; i < this.moreBtnMountPoints.length; i++) {
-      new ButtonMoreComponent(this.moreBtnMountPoints[i], {
+    Array.from(this.moreBtnMountPoints).forEach(point => {
+      new ButtonMoreComponent(point, {
         onMoreBtnClicked: this.onMoreBtnClick.bind(this)
       }).mount();
-    }
+    });
   }
 
   addEventListeners() {
