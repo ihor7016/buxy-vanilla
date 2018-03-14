@@ -2,9 +2,8 @@ import template from "./button-more.html";
 import { MDCMenu } from "@material/menu";
 
 export class ButtonMoreComponent {
-  constructor(mountPoint, props) {
+  constructor(mountPoint) {
     this.mountPoint = mountPoint;
-    this.props = props;
   }
 
   querySelectors() {
@@ -22,7 +21,6 @@ export class ButtonMoreComponent {
 
   handleBtnClick(event) {
     this.toggle();
-    this.props.onMoreBtnClicked(event);
   }
 
   toggle() {

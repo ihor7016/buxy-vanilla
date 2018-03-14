@@ -34,9 +34,7 @@ export class DrawerComponent {
 
   initMoreBtns() {
     Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point, {
-        onMoreBtnClicked: this.onMoreBtnClick.bind(this)
-      }).mount();
+      new ButtonMoreComponent(point).mount();
     });
   }
 
@@ -49,16 +47,6 @@ export class DrawerComponent {
       "click",
       this.handleAddTagOnclick.bind(this)
     );
-  }
-
-  onMoreBtnClick(e) {
-    let all = this.mountPoint.querySelectorAll(".drawer__list-item");
-    for (let i = 0; i < all.length; i++) {
-      all[i].classList.remove("drawer__buttonmore-zorder");
-    }
-    e.target
-      .closest(".drawer__list-item")
-      .classList.toggle("drawer__buttonmore-zorder");
   }
 
   handleAddAccountClick() {
