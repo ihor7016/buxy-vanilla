@@ -26,7 +26,6 @@ export class TableTransactionsComponent {
   }
 
   addStoredTransactions(list) {
-    console.log(list);
     if (list) list.forEach(row => this.addTransaction(row));
     this.handleDataChange();
   }

@@ -6,7 +6,6 @@ export class TransactionListService {
     this.props = props;
   }
   get() {
-    console.log(StorageService.get("transactionList"));
     StorageService.get("transactionList").then(
       list => {
         this.props.returnList(list);
