@@ -12,22 +12,24 @@ export class PieChartComponent {
   }
 
   drawFromList(list) {
-    let data = {
-      tags: [],
-      amounts: []
-    };
+    let dataset = {};
+    let tags = [];
+    let amounts = [];
     const expenceList = list.filter(row => {
       return row.type == "-";
     });
     expenceList.forEach(row => {
-      if (data.tags.indexOf(row.tag) == -1) {
-        data.tags.push(row.tag);
-        data.amounts.push(row.amount);
+      if (row.tag in dataset) {
+        dataset[row.tag] += row.amount;
       } else {
-        data.amounts[data.tags.indexOf(row.tag)] += row.amount;
+        dataset[row.tag] = row.amount;
       }
     });
-    this.drawPieChart(data.tags, data.amounts);
+    for (let tag in dataset) {
+      tags.push(tag);
+      amounts.push(dataset[tag]);
+    }
+    this.drawPieChart(tags, amounts);
   }
 
   randomColorGenerator() {
