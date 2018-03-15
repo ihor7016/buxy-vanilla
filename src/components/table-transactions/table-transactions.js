@@ -106,13 +106,13 @@ export class TableTransactionsComponent {
         account: this.accounts[i].innerText
       });
     }
-    return transactionsList;
+    return transactionsList.reverse();
   }
 
   handleDataChange() {
     const list = this.getTransactionsData();
-    this.props.onDataChange(list);
     this.setStoredData(list);
+    this.props.onDataChange(list);
     this.initMoreBtns();
   }
 

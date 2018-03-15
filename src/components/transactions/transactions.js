@@ -49,7 +49,10 @@ export class TransactionsComponent {
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
     this.addTransactionDialogComponent = new AddTransactionComponent(
-      this.addTransactionDialogMountPoint
+      this.addTransactionDialogMountPoint,
+      {
+        addTransaction: this.handleAddTransactionSubmit.bind(this)
+      }
     );
     this.addTransactionDialogComponent.mount();
   }
@@ -67,6 +70,7 @@ export class TransactionsComponent {
 
   handleTransactionListChange(list) {
     this.barChartComponent.drawFromList(list);
+    this.pieChartComponent.drawFromList(list);
   }
 
   handleAddTransactionClick() {

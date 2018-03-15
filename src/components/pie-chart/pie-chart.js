@@ -4,6 +4,7 @@ import Chart from "chart.js";
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
+    this.colors = [];
   }
 
   querySelectors() {
@@ -11,37 +12,48 @@ export class PieChartComponent {
   }
 
   drawFromList(list) {
-    let data = [];
-    let tags = [];
-    let colors = [];
-    list.reduce((prev, curr, index, array) => {
-      // something
-    }, data);
-
-    this.drawPieChart(data, tags, colors);
+    let data = {
+      tags: [],
+      amounts: []
+    };
+    const expenceList = list.filter(row => {
+      return row.type == "-";
+    });
+    expenceList.forEach(row => {
+      if (data.tags.indexOf(row.tag) == -1) {
+        data.tags.push(row.tag);
+        data.amounts.push(row.amount);
+      } else {
+        data.amounts[data.tags.indexOf(row.tag)] += row.amount;
+      }
+    });
+    this.drawPieChart(data.tags, data.amounts);
   }
 
   randomColorGenerator() {
     return "#" + (Math.random().toString(16) + "0000000").slice(2, 8);
   }
 
-  drawPieChart(data, tags, colors) {
+  drawPieChart(tags, amounts) {
+    while (this.colors.length < tags.length) {
+      this.colors.push(this.randomColorGenerator());
+    }
     if (this.pieChart) {
-      this.pieChart.data.datasets[0].data = data;
-      this.pieChart.data.datasets[0].backgroundColor = colors;
+      this.pieChart.data.datasets[0].data = amounts;
+      this.pieChart.data.datasets[0].backgroundColor = this.colors;
       this.pieChart.data.labels = tags;
-      this.pieChart.udate();
+      this.pieChart.update();
     } else {
       this.pieChart = new Chart(this.pieChartCtx, {
         type: "pie",
         data: {
           datasets: [
             {
-              data: [10, 20, 30],
-              backgroundColor: ["#673AB7", "#F44336", "#FFC107"]
+              data: amounts,
+              backgroundColor: this.colors
             }
           ],
-          labels: ["Transport", "Groceries", "Entertainment"]
+          labels: tags
         },
         options: {
           legend: {
@@ -59,6 +71,5 @@ export class PieChartComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.drawPieChart();
   }
 }
