@@ -1,5 +1,6 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
+import { ButtonMoreComponent } from "../button-more/button-more";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -10,19 +11,31 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
+
     this.addAccountButton = this.mountPoint.querySelector(
       ".drawer__add-account-dialog-activation"
     );
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
-    this.aboutButton = this.mountPoint.querySelector(
-      ".toolbar__about-dialog-activation"
+
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".drawer__more-button"
     );
   }
 
   initMDC() {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
+  }
+
+  initMoreBtns() {
+    Array.from(this.moreBtnMountPoints).forEach(point => {
+      new ButtonMoreComponent(point, {
+        position: "right",
+        onDeleteClicked: this.handleDeleteClick.bind(this),
+        onEditClicked: this.handleEditClick.bind(this)
+      }).mount();
+    });
   }
 
   addEventListeners() {
@@ -34,6 +47,13 @@ export class DrawerComponent {
       "click",
       this.handleAddTagOnclick.bind(this)
     );
+  }
+
+  handleEditClick() {
+    console.log("handleEditClick");
+  }
+  handleDeleteClick() {
+    console.log("handleDeleteClick");
   }
 
   handleAddAccountClick() {
@@ -52,6 +72,7 @@ export class DrawerComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMDC();
+    this.initMoreBtns();
     this.addEventListeners();
   }
 }

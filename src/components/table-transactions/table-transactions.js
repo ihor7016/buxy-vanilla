@@ -1,4 +1,5 @@
 import template from "./table-transactions.html";
+import { ButtonMoreComponent } from "../button-more/button-more";
 
 export class TableTransactionsComponent {
   constructor(mountPoint, props) {
@@ -48,34 +49,36 @@ export class TableTransactionsComponent {
         <span class="table-transactions__span table-transactions__account">${
           row.account
         }</span>
-        <button class="table-transactions__button mdc-button">
-          <i class="material-icons mdc-button__icon table-transactions__icon">more_vert</i>
-        </button>
+        <div class="table-transactions__more-button"></div>
       </td>
     </tr>
     `;
   }
 
-  getTransactionsData() {
-    let transactionsList = [];
-    let dates = this.mountPoint.querySelectorAll(".table-transactions__date");
-    let types = this.mountPoint.querySelectorAll(".table-transactions__type");
-    let amounts = this.mountPoint.querySelectorAll(
+  querySelectorsTransactions() {
+    this.dates = this.mountPoint.querySelectorAll(".table-transactions__date");
+    this.types = this.mountPoint.querySelectorAll(".table-transactions__type");
+    this.amounts = this.mountPoint.querySelectorAll(
       ".table-transactions__amount"
     );
-    let descs = this.mountPoint.querySelectorAll(".table-transactions__desc");
-    let tags = this.mountPoint.querySelectorAll(".table-transactions__tag");
-    let accounts = this.mountPoint.querySelectorAll(
+    this.descs = this.mountPoint.querySelectorAll(".table-transactions__desc");
+    this.tags = this.mountPoint.querySelectorAll(".table-transactions__tag");
+    this.accounts = this.mountPoint.querySelectorAll(
       ".table-transactions__account"
     );
-    for (let i = 0; i < dates.length; i++) {
+  }
+
+  getTransactionsData() {
+    this.querySelectorsTransactions();
+    let transactionsList = [];
+    for (let i = 0; i < this.dates.length; i++) {
       transactionsList.push({
-        date: dates[i].innerText,
-        type: types[i].innerText,
-        amount: parseInt(amounts[i].innerText),
-        desc: descs[i].innerText,
-        tag: tags[i].innerText,
-        account: accounts[i].innerText
+        date: this.dates[i].innerText,
+        type: this.types[i].innerText,
+        amount: parseInt(this.amounts[i].innerText),
+        desc: this.descs[i].innerText,
+        tag: this.tags[i].innerText,
+        account: this.accounts[i].innerText
       });
     }
     return transactionsList;
@@ -83,6 +86,32 @@ export class TableTransactionsComponent {
 
   handleDataChange() {
     this.props.onDataChange(this.getTransactionsData());
+    this.initMoreBtns();
+  }
+
+  querySelectorsButtons() {
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".table-transactions__more-button"
+    );
+  }
+
+  initMoreBtns() {
+    this.querySelectorsButtons();
+    Array.from(this.moreBtnMountPoints).forEach(point => {
+      new ButtonMoreComponent(point, {
+        position: "left",
+        onDeleteClicked: this.handleDeleteClick.bind(this),
+        onEditClicked: this.handleEditClick.bind(this)
+      }).mount();
+    });
+  }
+
+  handleEditClick() {
+    console.log("handleEditClick");
+  }
+
+  handleDeleteClick() {
+    console.log("handleDeleteClick");
   }
 
   mount() {
