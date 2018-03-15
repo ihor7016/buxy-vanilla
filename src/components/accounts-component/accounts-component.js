@@ -1,5 +1,6 @@
 import template from "./accounts-component.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { Account } from "../../services/model/account";
 export class AccountsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
@@ -46,7 +47,9 @@ export class AccountsComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({
+      accounts: [new Account("Privat", "", 200), new Account("Privat", "", 200)]
+    });
     this.querySelectors();
     this.initMoreBtns();
     this.addEventListeners();
