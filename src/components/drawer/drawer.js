@@ -1,6 +1,7 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { AccountsComponent } from "../accounts-component/accounts-component";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -11,16 +12,11 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
-
-    this.addAccountButton = this.mountPoint.querySelector(
-      ".drawer__add-account-dialog-activation"
-    );
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
-
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".drawer__more-button"
+    this.accountsMountPoint = this.mountPoint.querySelector(
+      ".drawer__accounts-mountpoint"
     );
   }
 
@@ -28,21 +24,11 @@ export class DrawerComponent {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
-  initMoreBtns() {
-    Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point, {
-        position: "right",
-        onDeleteClicked: this.handleDeleteClick.bind(this),
-        onEditClicked: this.handleEditClick.bind(this)
-      }).mount();
-    });
+  mountChildren() {
+    new AccountsComponent(this.accountsMountPoint, {}).mount();
   }
 
   addEventListeners() {
-    this.addAccountButton.addEventListener(
-      "click",
-      this.handleAddAccountClick.bind(this)
-    );
     this.addTagButton.addEventListener(
       "click",
       this.handleAddTagOnclick.bind(this)
@@ -52,12 +38,9 @@ export class DrawerComponent {
   handleEditClick() {
     console.log("handleEditClick");
   }
+
   handleDeleteClick() {
     console.log("handleDeleteClick");
-  }
-
-  handleAddAccountClick() {
-    this.props.onAddAccountClick();
   }
 
   handleAddTagOnclick() {
@@ -72,7 +55,7 @@ export class DrawerComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMDC();
-    this.initMoreBtns();
+    this.mountChildren();
     this.addEventListeners();
   }
 }
