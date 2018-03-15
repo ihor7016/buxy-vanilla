@@ -40,12 +40,6 @@ export class AppComponent {
       onAboutClick: this.handleAboutOnclick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAddAccountClick: this.handleAddAccountClick.bind(this),
-      onAddTagClick: this.handleAddTagOnclick.bind(this),
-      accounts: this.getCurrentAccounts()
-    });
-    this.drawerComponent.mount();
     this.transactionsComponent = new TransactionsComponent(
       this.transactionsMountPoint
     );
@@ -62,15 +56,37 @@ export class AppComponent {
   }
 
   getCurrentAccounts() {
-    return [
-      new Account("Privat", "", "UAH"),
-      new Account("Payoneer", "", "USD")
-    ];
+    StorageService.get("accounts").then(accounts => {
+      if (!accounts) {
+        accounts = [
+          new Account("Privat", "", "UAH"),
+          new Account("Payoneer", "", "USD")
+        ];
+        StorageService.set("accounts", accounts);
+      }
+      this.initDrawer(accounts);
+    });
+  }
+
+  initDrawer(accounts) {
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
+      onAddAccountClick: this.handleAddAccountClick.bind(this),
+      onAddTagClick: this.handleAddTagOnclick.bind(this),
+      accounts: accounts
+    });
+    this.drawerComponent.mount();
   }
 
   handleAddAccountConfirmed(account) {
+    StorageService.get("accounts").then(accounts => {
+      if (!accounts) {
+        StorageService.set("accounts", [account]);
+      } else {
+        accounts.unshift(account);
+        StorageService.set("accounts", accounts);
+      }
+    });
     this.drawerComponent.addAccount(account);
-    StorageService.set("accounts", account);
   }
 
   handleToolbarMenuClick() {
@@ -92,6 +108,7 @@ export class AppComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.getCurrentAccounts();
     this.mountChildren();
   }
 }
