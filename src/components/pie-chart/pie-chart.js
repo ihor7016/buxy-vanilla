@@ -15,10 +15,8 @@ export class PieChartComponent {
     let dataset = {};
     let tags = [];
     let amounts = [];
-    const expenceList = list.filter(row => {
-      return row.type == "-";
-    });
-    expenceList.forEach(row => {
+    list.forEach(row => {
+      if (row.type == "+") return;
       if (row.tag in dataset) {
         dataset[row.tag] += row.amount;
       } else {
