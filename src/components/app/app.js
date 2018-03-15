@@ -92,7 +92,7 @@ export class AppComponent {
   }
 
   handleTransactionListChange(list) {
-    this.barChart.draw(list);
+    this.barChart.drawFromList(list);
   }
 
   handleToolbarMenuClick() {

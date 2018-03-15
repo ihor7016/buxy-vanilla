@@ -11,17 +11,17 @@ export class BarChartComponent {
     this.barChartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  draw(list) {
+  drawFromList(list) {
     let income = 0,
       expence = 0;
     list.forEach(transaction => {
       const amount = transaction.amount;
       transaction.type == "-" ? (expence += amount) : (income += amount);
     });
-    this.createBarChart(income, expence);
+    this.drawBarChart(income, expence);
   }
 
-  createBarChart(income, expence) {
+  drawBarChart(income, expence) {
     if (this.barChart) {
       this.barChart.data.datasets[0].data = [income, expence];
       this.barChart.update();
