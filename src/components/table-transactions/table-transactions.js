@@ -1,5 +1,5 @@
 import template from "./table-transactions.html";
-import { ButtonMoreComponent } from "../buttonMore/button-more";
+import { ButtonMoreComponent } from "../button-more/button-more";
 
 export class TableTransactionsComponent {
   constructor(mountPoint) {

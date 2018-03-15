@@ -1,6 +1,6 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
-import { ButtonMoreComponent } from "../buttonMore/button-more";
+import { ButtonMoreComponent } from "../button-more/button-more";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -21,10 +21,6 @@ export class DrawerComponent {
 
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__mount-point"
-    );
-
-    this.aboutButton = this.mountPoint.querySelector(
-      ".toolbar__about-dialog-activation"
     );
   }
 
