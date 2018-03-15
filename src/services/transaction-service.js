@@ -1,6 +1,6 @@
 import { StorageService } from "./storage";
 
-///try another way
+///need a review
 export class TransactionListService {
   constructor(props) {
     this.props = props;
@@ -15,8 +15,9 @@ export class TransactionListService {
     );
   }
 
-  /// use promise???
   set(value) {
-    StorageService.set("transactionList", value);
+    StorageService.set("transactionList", value).catch(error =>
+      console.error(`set transactions: ${error.message}`)
+    );
   }
 }

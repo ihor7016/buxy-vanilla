@@ -22,44 +22,48 @@ export class BarChartComponent {
   }
 
   createBarChart(income, expence) {
-    this.barChart = new Chart(this.barChartCtx, {
-      type: "bar",
-      data: {
-        labels: ["Income", "Expense"],
-        datasets: [
-          {
-            label: "Value",
-            data: [income, expence],
-            backgroundColor: ["#4caf50", "#f44336"]
-          }
-        ]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          yAxes: [
+    if (this.barChart) {
+      this.barChart.data.datasets[0].data = [income, expence];
+    } else {
+      this.barChart = new Chart(this.barChartCtx, {
+        type: "bar",
+        data: {
+          labels: ["Income", "Expense"],
+          datasets: [
             {
-              ticks: {
-                beginAtZero: true,
-                fontFamily: "'Roboto', sans-serif",
-                fontStyle: "500"
-              }
-            }
-          ],
-          xAxes: [
-            {
-              barPercentage: 0.5,
-              ticks: {
-                fontFamily: "'Roboto', sans-serif",
-                fontStyle: "500"
-              }
+              label: "Value",
+              data: [income, expence],
+              backgroundColor: ["#4caf50", "#f44336"]
             }
           ]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                  fontFamily: "'Roboto', sans-serif",
+                  fontStyle: "500"
+                }
+              }
+            ],
+            xAxes: [
+              {
+                barPercentage: 0.5,
+                ticks: {
+                  fontFamily: "'Roboto', sans-serif",
+                  fontStyle: "500"
+                }
+              }
+            ]
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   mount() {

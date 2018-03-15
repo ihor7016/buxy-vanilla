@@ -22,11 +22,13 @@ export class TableTransactionsComponent {
       tag: tag,
       account: account
     });
+    this.handleDataChange();
   }
 
   addStoredTransactions(list) {
     console.log(list);
     if (list) list.forEach(row => this.addTransaction(row));
+    this.handleDataChange();
   }
 
   addTransaction(row) {
@@ -53,7 +55,6 @@ export class TableTransactionsComponent {
       </td>
     </tr>
     `;
-    this.handleDataChange();
   }
 
   getTransactionsData() {
