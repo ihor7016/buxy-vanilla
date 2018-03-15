@@ -57,7 +57,7 @@ export class TableTransactionsComponent {
   }
 
   addTransaction(row) {
-    this.transactionPoint.innerHTML += `
+    this.transactionPoint.innerHTML = `
     <tr class="table-transactions__tr table-transactions__highlighted">
       <td class="table-transactions__td table-transactions__date">${
         row.date
@@ -77,7 +77,7 @@ export class TableTransactionsComponent {
         <div class="table-transactions__more-button"></div>
       </td>
     </tr>
-    `;
+    ${this.transactionPoint.innerHTML}`;
   }
 
   querySelectorsTransactions() {
