@@ -1,4 +1,5 @@
 import template from "./accounts-component.html";
+import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { Account } from "../../services/model/account";
 export class AccountsComponent {
@@ -15,9 +16,13 @@ export class AccountsComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".account__add-account-dialog-activation"
     );
+    this.accList = this.mountPoint.querySelector(".account__list");
   }
 
   initMoreBtns() {
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".account__more-button"
+    );
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "right",
@@ -32,6 +37,14 @@ export class AccountsComponent {
       "click",
       this.handleAddAccountClick.bind(this)
     );
+  }
+
+  addAccount(account) {
+    let element = document.createElement("div");
+    element.innerHTML = accountItemTemplate({ account: account });
+    let childNode = this.accList.childNodes[2];
+    this.accList.insertBefore(element.firstChild, childNode);
+    this.initMoreBtns();
   }
 
   handleAddAccountClick() {

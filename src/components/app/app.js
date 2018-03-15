@@ -62,10 +62,14 @@ export class AppComponent {
   }
 
   getCurrentAccounts() {
-    return [new Account("Privat", "", 200), new Account("Privat", "", 200)];
+    return [
+      new Account("Privat", "", "UAH"),
+      new Account("Payoneer", "", "USD")
+    ];
   }
 
   handleAddAccountConfirmed(account) {
+    this.drawerComponent.addAccount(account);
     StorageService.set("accounts", account);
   }
 

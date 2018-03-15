@@ -18,7 +18,7 @@ export class AddAccountComponent {
   handleOk() {
     console.log("accepted");
     let account = new Account(
-      this.accountTextField.value,
+      this.accountNameInput.value,
       this.accountType.innerText,
       this.accountCurrency.innerText
     );
@@ -35,6 +35,9 @@ export class AddAccountComponent {
     );
     this.accountTextField = this.mountPoint.querySelector(
       ".add-account-dialog__account"
+    );
+    this.accountNameInput = this.mountPoint.querySelector(
+      ".add-account-dialog__account-input"
     );
     this.typeAccountSelect = this.mountPoint.querySelector(
       ".add-account-dialog__type"
@@ -65,7 +68,7 @@ export class AddAccountComponent {
   mount() {
     this.mountPoint.innerHTML = template({
       types: ["checking", "savings", "credit card", "cash"],
-      currencies: ["Ukraine, UAH", "United States, USD", "Europe, EUR"]
+      currencies: ["UAH", "USD", "EUR"]
     });
     this.querySelectors();
     this.initMDC();

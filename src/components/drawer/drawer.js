@@ -26,7 +26,15 @@ export class DrawerComponent {
   }
 
   mountChildren() {
-    new AccountsComponent(this.accountsMountPoint, this.props).mount();
+    this.accountsComponent = new AccountsComponent(
+      this.accountsMountPoint,
+      this.props
+    );
+    this.accountsComponent.mount();
+  }
+
+  addAccount(account) {
+    this.accountsComponent.addAccount(account);
   }
 
   addEventListeners() {
