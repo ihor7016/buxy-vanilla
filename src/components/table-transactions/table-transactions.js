@@ -72,7 +72,7 @@ export class TableTransactionsComponent {
       transactionsList.push({
         date: dates[i].innerText,
         type: types[i].innerText,
-        amount: amounts[i].innerText,
+        amount: parseInt(amounts[i].innerText),
         desc: descs[i].innerText,
         tag: tags[i].innerText,
         account: accounts[i].innerText

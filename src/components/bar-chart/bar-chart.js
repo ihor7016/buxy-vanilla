@@ -15,7 +15,7 @@ export class BarChartComponent {
     let income = 0,
       expence = 0;
     list.forEach(transaction => {
-      const amount = parseInt(transaction.amount);
+      const amount = transaction.amount;
       transaction.type == "-" ? (expence += amount) : (income += amount);
     });
     this.createBarChart(income, expence);
@@ -24,6 +24,7 @@ export class BarChartComponent {
   createBarChart(income, expence) {
     if (this.barChart) {
       this.barChart.data.datasets[0].data = [income, expence];
+      this.barChart.update();
     } else {
       this.barChart = new Chart(this.barChartCtx, {
         type: "bar",
