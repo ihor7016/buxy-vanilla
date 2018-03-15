@@ -14,8 +14,20 @@ export class TableTransactionsComponent {
 
   initMoreBtns() {
     Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point, { position: "left" }).mount();
+      new ButtonMoreComponent(point, {
+        position: "left",
+        onDeleteClicked: this.handleDeleteClick.bind(this),
+        onEditClicked: this.handleEditClick.bind(this)
+      }).mount();
     });
+  }
+
+  handleEditClick() {
+    console.log("handleEditClick");
+  }
+
+  handleDeleteClick() {
+    console.log("handleDeleteClick");
   }
 
   mount() {

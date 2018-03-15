@@ -20,7 +20,7 @@ export class DrawerComponent {
     );
 
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".drawer__mount-point"
+      ".drawer__more-button"
     );
   }
 
@@ -32,8 +32,8 @@ export class DrawerComponent {
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "right",
-        onDeleteClicked: this.handleOnDeleteClick.bind(this),
-        onEditClicked: this.handleOnEditClick.bind(this)
+        onDeleteClicked: this.handleDeleteClick.bind(this),
+        onEditClicked: this.handleEditClick.bind(this)
       }).mount();
     });
   }
@@ -49,8 +49,12 @@ export class DrawerComponent {
     );
   }
 
-  handleOnEditClick() {}
-  handleOnDeleteClick() {}
+  handleEditClick() {
+    console.log("handleEditClick");
+  }
+  handleDeleteClick() {
+    console.log("handleDeleteClick");
+  }
 
   handleAddAccountClick() {
     this.props.onAddAccountClick();
