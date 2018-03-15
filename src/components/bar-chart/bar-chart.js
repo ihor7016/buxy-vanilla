@@ -11,7 +11,17 @@ export class BarChartComponent {
     this.barChartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  createBarChart() {
+  draw(list) {
+    let income = 0,
+      expence = 0;
+    list.forEach(transaction => {
+      const amount = parseInt(transaction.amount);
+      transaction.type == "-" ? (expence += amount) : (income += amount);
+    });
+    this.createBarChart(income, expence);
+  }
+
+  createBarChart(income, expence) {
     this.barChart = new Chart(this.barChartCtx, {
       type: "bar",
       data: {
@@ -19,7 +29,7 @@ export class BarChartComponent {
         datasets: [
           {
             label: "Value",
-            data: [5000, 3000],
+            data: [income, expence],
             backgroundColor: ["#4caf50", "#f44336"]
           }
         ]
@@ -55,6 +65,5 @@ export class BarChartComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.createBarChart();
   }
 }

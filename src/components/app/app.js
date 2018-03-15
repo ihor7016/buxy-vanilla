@@ -111,6 +111,7 @@ export class AppComponent {
 
   handleTransactionListChange(list) {
     this.transactionListService.set(list);
+    this.barChart.draw(list);
   }
 
   handleToolbarMenuClick() {

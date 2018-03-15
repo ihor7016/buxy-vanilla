@@ -13,9 +13,10 @@ export class TableTransactionsComponent {
   }
 
   addTransactionFromDialog(isIncome, date, amount, desc, tag, account) {
-    isIncome ? (amount = "+ " + amount) : (amount = "- " + amount);
+    isIncome ? (isIncome = "+") : (isIncome = "-");
     this.addTransaction({
       date: date,
+      type: isIncome,
       amount: amount,
       desc: desc,
       tag: tag,
@@ -25,7 +26,7 @@ export class TableTransactionsComponent {
 
   addStoredTransactions(list) {
     console.log(list);
-    list.forEach(row => this.addTransaction(row));
+    if (list) list.forEach(row => this.addTransaction(row));
   }
 
   addTransaction(row) {
@@ -34,9 +35,10 @@ export class TableTransactionsComponent {
       <td class="table-transactions__td table-transactions__date">${
         row.date
       }</td>
-      <td class="table-transactions__td table-transactions__amount">${
-        row.amount
-      }</td>
+      <td class="table-transactions__td">
+        <span class="table-transactions__type">${row.type}</span>
+        <span class="table-transactions__amount">${row.amount}</span>
+      </td>
       <td class="table-transactions__td table-transactions__desc">${
         row.desc
       }</td>
@@ -57,6 +59,7 @@ export class TableTransactionsComponent {
   getTransactionsData() {
     let transactionsList = [];
     let dates = this.mountPoint.querySelectorAll(".table-transactions__date");
+    let types = this.mountPoint.querySelectorAll(".table-transactions__type");
     let amounts = this.mountPoint.querySelectorAll(
       ".table-transactions__amount"
     );
@@ -68,6 +71,7 @@ export class TableTransactionsComponent {
     for (let i = 0; i < dates.length; i++) {
       transactionsList.push({
         date: dates[i].innerText,
+        type: types[i].innerText,
         amount: amounts[i].innerText,
         desc: descs[i].innerText,
         tag: tags[i].innerText,
