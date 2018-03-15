@@ -1,11 +1,11 @@
-import template from "./content.html";
+import template from "./transactions.html";
 
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 
-export class ContentComponent {
+export class TransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
@@ -13,19 +13,19 @@ export class ContentComponent {
 
   querySelectors() {
     this.tableTransactionsMountPoint = this.mountPoint.querySelector(
-      ".content__table-transactions"
+      ".transactions__table-transactions"
     );
     this.pieChartMountPoint = this.mountPoint.querySelector(
-      ".content__pie-chart"
+      ".transactions__pie-chart"
     );
     this.barChartMountPoint = this.mountPoint.querySelector(
-      ".content__bar-chart"
+      ".transactions__bar-chart"
     );
     this.addTransactionButton = this.mountPoint.querySelector(
-      ".content__add-transaction-dialog-activation"
+      ".transactions__add-transaction-dialog-activation"
     );
     this.addTransactionDialogMountPoint = this.mountPoint.querySelector(
-      ".content__add-transaction-dialog"
+      ".transactions__add-transaction-dialog"
     );
   }
 
