@@ -6,6 +6,10 @@ import { TransactionsComponent } from "../transactions/transactions";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
+import { PieChartComponent } from "../pie-chart/pie-chart";
+import { BarChartComponent } from "../bar-chart/bar-chart";
+import { TableTransactionsComponent } from "../table-transactions/table-transactions";
+import { StorageService } from "../../services/storage";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -44,12 +48,19 @@ export class AppComponent {
       this.transactionsMountPoint
     );
     this.transactionsComponent.mount();
-    this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
+    this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint, {
+      onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
+    });
+
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
+  }
+
+  handleAddAccountConfirmed(account) {
+    StorageService.set("accounts", account);
   }
 
   handleToolbarMenuClick() {
