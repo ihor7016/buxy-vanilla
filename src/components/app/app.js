@@ -10,8 +10,6 @@ import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 
-import { TransactionListService } from "../../services/transaction-service";
-
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
@@ -82,22 +80,6 @@ export class AppComponent {
     this.barChart.mount();
   }
 
-  initServices() {
-    this.transactionListService = new TransactionListService({
-      returnList: this.sendStoredTransactionList.bind(this)
-    });
-  }
-
-  /// ??? try to find another way
-  addStoredData() {
-    this.transactionListService.get();
-  }
-
-  /// ??? try to find another way
-  sendStoredTransactionList(list) {
-    this.tableTransactionsComponent.addStoredTransactions(list);
-  }
-
   handleAddTransactionSubmit(isIncome, date, amount, desc, tag, account) {
     this.tableTransactionsComponent.addTransactionFromDialog(
       isIncome,
@@ -110,7 +92,6 @@ export class AppComponent {
   }
 
   handleTransactionListChange(list) {
-    this.transactionListService.set(list);
     this.barChart.draw(list);
   }
 
@@ -139,7 +120,5 @@ export class AppComponent {
     this.querySelectors();
     this.addEventListeners();
     this.mountChildren();
-    this.initServices();
-    this.addStoredData();
   }
 }

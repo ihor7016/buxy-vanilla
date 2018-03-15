@@ -1,10 +1,35 @@
 import template from "./table-transactions.html";
+
 import { ButtonMoreComponent } from "../button-more/button-more";
+
+import { TransactionListService } from "../../services/transaction-service";
 
 export class TableTransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+  }
+
+  initServices() {
+    this.transactionListService = new TransactionListService();
+  }
+
+  getStoredData() {
+    this.transactionListService.get().then(
+      list => {
+        this.addStoredTransactions(list);
+      },
+      error => console.error(`get transactions: ${error.message}`)
+    );
+  }
+
+  setStoredData(list) {
+    this.transactionListService
+      .set(list)
+      .then(
+        () => console.log("ok"),
+        error => console.error(`set transactions: ${error.message}`)
+      );
   }
 
   querySelectors() {
@@ -85,7 +110,9 @@ export class TableTransactionsComponent {
   }
 
   handleDataChange() {
-    this.props.onDataChange(this.getTransactionsData());
+    const list = this.getTransactionsData();
+    this.props.onDataChange(list);
+    this.setStoredData(list);
     this.initMoreBtns();
   }
 
@@ -117,5 +144,7 @@ export class TableTransactionsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.initServices();
+    this.getStoredData();
   }
 }
