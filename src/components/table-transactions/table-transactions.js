@@ -11,11 +11,13 @@ export class TableTransactionsComponent {
       ".table-transactions__more-button"
     );
   }
+
   initMoreBtns() {
     Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point, "left").mount();
+      new ButtonMoreComponent(point, { position: "left" }).mount();
     });
   }
+
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();

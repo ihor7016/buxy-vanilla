@@ -2,18 +2,24 @@ import template from "./button-more.html";
 import { MDCMenu } from "@material/menu";
 
 export class ButtonMoreComponent {
-  constructor(mountPoint, position) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
-    this.position = position;
+    this.props = props;
   }
 
   querySelectors() {
     this.menuRoot = this.mountPoint.querySelector(".menu");
     this.buttonMore = this.mountPoint.querySelector(".button-more__more");
+    this.buttonDelete = this.mountPoint.querySelector(
+      ".button-more__popup-item-delete"
+    );
+    this.buttonEdit = this.mountPoint.querySelector(
+      ".button-more__popup-item-edit"
+    );
   }
 
   initPosition() {
-    switch (this.position) {
+    switch (this.props.position) {
       case "left":
         this.menuRoot.classList.add("button-more__popup-left");
         break;
@@ -27,8 +33,24 @@ export class ButtonMoreComponent {
     this.menu = new MDCMenu(this.menuRoot);
   }
 
-  addEventListener() {
+  addEventListeners() {
     this.buttonMore.addEventListener("click", this.handleBtnClick.bind(this));
+    this.buttonDelete.addEventListener(
+      "click",
+      this.handleItemClickDelete.bind(this)
+    );
+    this.buttonEdit.addEventListener(
+      "click",
+      this.handleItemClickEdit.bind(this)
+    );
+  }
+
+  handleItemClickDelete() {
+    this.props.onDeleteClicked();
+  }
+
+  handleItemClickEdit() {
+    this.props.onEditClicked();
   }
 
   handleBtnClick(event) {
@@ -43,7 +65,7 @@ export class ButtonMoreComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMDC();
-    this.addEventListener();
+    this.addEventListeners();
     this.initPosition();
   }
 }
