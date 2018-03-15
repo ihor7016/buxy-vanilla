@@ -13,6 +13,7 @@ export class PieChartComponent {
   drawFromList(list) {
     let data = [];
     let tags = [];
+    let colors = [];
     list.reduce((prev, curr, index, array) => {
       // something
     }, data);
@@ -36,11 +37,11 @@ export class PieChartComponent {
         data: {
           datasets: [
             {
-              data: data,
-              backgroundColor: colors
+              data: [10, 20, 30],
+              backgroundColor: ["#673AB7", "#F44336", "#FFC107"]
             }
           ],
-          labels: tags
+          labels: ["Transport", "Groceries", "Entertainment"]
         },
         options: {
           legend: {
