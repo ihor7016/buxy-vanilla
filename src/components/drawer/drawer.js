@@ -2,6 +2,7 @@ import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountsComponent } from "../accounts-component/accounts-component";
+import { Account } from "../../services/model/account";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -25,7 +26,7 @@ export class DrawerComponent {
   }
 
   mountChildren() {
-    new AccountsComponent(this.accountsMountPoint, {}).mount();
+    new AccountsComponent(this.accountsMountPoint, this.props).mount();
   }
 
   addEventListeners() {

@@ -48,7 +48,7 @@ export class AccountsComponent {
 
   mount() {
     this.mountPoint.innerHTML = template({
-      accounts: [new Account("Privat", "", 200), new Account("Privat", "", 200)]
+      accounts: this.props.accounts
     });
     this.querySelectors();
     this.initMoreBtns();

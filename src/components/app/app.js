@@ -10,6 +10,7 @@ import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { StorageService } from "../../services/storage";
+import { Account } from "../../services/model/account";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -41,7 +42,8 @@ export class AppComponent {
     this.toolBarComponent.mount();
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
       onAddAccountClick: this.handleAddAccountClick.bind(this),
-      onAddTagClick: this.handleAddTagOnclick.bind(this)
+      onAddTagClick: this.handleAddTagOnclick.bind(this),
+      accounts: this.getCurrentAccounts()
     });
     this.drawerComponent.mount();
     this.transactionsComponent = new TransactionsComponent(
@@ -57,6 +59,10 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
+  }
+
+  getCurrentAccounts() {
+    return [new Account("Privat", "", 200), new Account("Privat", "", 200)];
   }
 
   handleAddAccountConfirmed(account) {
