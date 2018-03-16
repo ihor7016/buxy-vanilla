@@ -1,8 +1,8 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
-import { AccountsComponent } from "../accounts-component/accounts-component";
-import { Account } from "../../services/model/account";
+import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
+import { Account } from "../../model/account";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -32,11 +32,15 @@ export class DrawerComponent {
   }
 
   mountChildren() {
-    this.accountsComponent = new AccountsComponent(
-      this.accountsMountPoint,
-      this.props
-    );
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
+      addAccountMountPoint: this.props.addAccountMountPoint,
+      onAddAccountConfirmed: this.onAddAccountConfirmed.bind(this)
+    });
     this.accountsComponent.mount();
+  }
+
+  onAddAccountConfirmed(account) {
+    this.addAccount(account);
   }
 
   addAccount(account) {

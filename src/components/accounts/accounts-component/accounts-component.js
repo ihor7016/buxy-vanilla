@@ -1,7 +1,9 @@
 import template from "./accounts-component.html";
 import accountItemTemplate from "./account-item.html";
-import { ButtonMoreComponent } from "../button-more/button-more";
-import { Account } from "../../services/model/account";
+import { ButtonMoreComponent } from "../../button-more/button-more";
+import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
+import { AccountService } from "../../../services/account-service";
+
 export class AccountsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
@@ -17,6 +19,28 @@ export class AccountsComponent {
       ".account__add-account-dialog-activation"
     );
     this.accList = this.mountPoint.querySelector(".account__list");
+  }
+
+  initDialogComponent() {
+    this.addAccountComponent = new AddAccountComponent(
+      this.props.addAccountMountPoint,
+      {
+        onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
+      }
+    );
+    this.addAccountComponent.mount();
+  }
+
+  handleAddAccountConfirmed(account) {
+    AccountService.get().then(accounts => {
+      if (!accounts) {
+        AccountService.set([account]);
+      } else {
+        let updatedAccounts = [account].concat(accounts);
+        AccountService.set(updatedAccounts);
+      }
+      this.props.onAddAccountConfirmed(account);
+    });
   }
 
   initMoreBtns() {
@@ -48,7 +72,7 @@ export class AccountsComponent {
   }
 
   handleAddAccountClick() {
-    this.props.onAddAccountClick();
+    this.addAccountComponent.showDialog();
   }
 
   handleEditClick() {
@@ -62,6 +86,7 @@ export class AccountsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.initDialogComponent();
     this.initMoreBtns();
     this.addEventListeners();
   }

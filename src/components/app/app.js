@@ -3,14 +3,15 @@ import template from "./app.html";
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
-import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
+import { AddAccountComponent } from "../accounts/add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { StorageService } from "../../services/storage";
-import { Account } from "../../services/model/account";
+import { Account } from "../../model/account";
+import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -40,11 +41,7 @@ export class AppComponent {
       onAboutClick: this.handleAboutOnclick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint, {
-      onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
-    });
     this.initDrawer();
-    this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
@@ -72,22 +69,10 @@ export class AppComponent {
 
   initDrawer() {
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAddAccountClick: this.handleAddAccountClick.bind(this),
-      onAddTagClick: this.handleAddTagOnclick.bind(this)
+      onAddTagClick: this.handleAddTagOnclick.bind(this),
+      addAccountMountPoint: this.addAccountMountPoint
     });
     this.drawerComponent.mount();
-  }
-
-  handleAddAccountConfirmed(account) {
-    StorageService.get("accounts").then(accounts => {
-      if (!accounts) {
-        StorageService.set("accounts", [account]);
-      } else {
-        let updatedAccounts = [account].concat(accounts);
-        StorageService.set("accounts", updatedAccounts);
-      }
-    });
-    this.drawerComponent.addAccount(account);
   }
 
   handleToolbarMenuClick() {
@@ -96,10 +81,6 @@ export class AppComponent {
 
   handleAboutOnclick() {
     this.aboutDialog.showDialog();
-  }
-
-  handleAddAccountClick() {
-    this.addAccountDialog.showDialog();
   }
 
   handleAddTagOnclick() {

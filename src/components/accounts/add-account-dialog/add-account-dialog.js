@@ -3,7 +3,7 @@ import template from "./add-account-dialog.html";
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
-import { Account } from "../../services/model/account";
+import { Account } from "../../../model/account";
 
 export class AddAccountComponent {
   constructor(mountPoint, props) {
@@ -30,7 +30,7 @@ export class AddAccountComponent {
   }
 
   querySelectors() {
-    this.addAccountDialog = this.mountPoint.querySelector(
+    this.addAccountComponent = this.mountPoint.querySelector(
       ".add-account-dialog"
     );
     this.accountTextField = this.mountPoint.querySelector(
@@ -54,7 +54,7 @@ export class AddAccountComponent {
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addAccountDialog);
+    this.dialog = new MDCDialog(this.addAccountComponent);
     this.account = new MDCTextField(this.accountTextField);
     this.type = new MDCSelect(this.typeAccountSelect);
     this.currency = new MDCSelect(this.currencyAccountSelect);
