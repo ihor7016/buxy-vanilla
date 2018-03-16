@@ -13,66 +13,82 @@ export class BarChartComponent {
     this.barChartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  drawFromList(list) {
-    let income = 0,
-      expence = 0;
-    list.forEach(transaction => {
-      let amount = transaction.amount;
-      if (transaction.account.currency != "UAH") {
-        amount = CurrencyConverterUAH.convert(
-          transaction.account.currency,
-          amount
-        );
-      }
-      transaction.type == "-" ? (expence += amount) : (income += amount);
-    });
-    this.drawBarChart(income, expence);
+  updateChart(data) {
+    let amount = data.amount;
+    if (data.account.currency != "UAH") {
+      amount = CurrencyConverterUAH.convert(data.account.currency, amount);
+    }
+    data.type == "-"
+      ? (this.dataset.expence += amount)
+      : (this.dataset.income += amount);
+    this.drawChangedChart();
   }
 
-  drawBarChart(income, expence) {
-    if (this.barChart) {
-      this.barChart.data.datasets[0].data = [income, expence];
-      this.barChart.update();
-    } else {
-      this.barChart = new Chart(this.barChartCtx, {
-        type: "bar",
-        data: {
-          labels: ["Income", "Expense"],
-          datasets: [
+  drawChangedChart() {
+    this.barChart.data.datasets[0].data = [
+      this.dataset.income,
+      this.dataset.expence
+    ];
+    this.barChart.update();
+  }
+
+  createFromList(list) {
+    this.dataset = list.reduce(
+      (data, item) => {
+        let amount = item.amount;
+        if (item.account.currency != "UAH") {
+          amount = CurrencyConverterUAH.convert(item.account.currency, amount);
+        }
+        item.type == "-" ? (data.expence += amount) : (data.income += amount);
+        return data;
+      },
+      {
+        income: 0,
+        expence: 0
+      }
+    );
+    this.drawChart();
+  }
+
+  drawChart() {
+    this.barChart = new Chart(this.barChartCtx, {
+      type: "bar",
+      data: {
+        labels: ["Income", "Expense"],
+        datasets: [
+          {
+            label: "Value",
+            data: [this.dataset.income, this.dataset.expence],
+            backgroundColor: ["#4caf50", "#f44336"]
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [
             {
-              label: "Value",
-              data: [income, expence],
-              backgroundColor: ["#4caf50", "#f44336"]
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "'Roboto', sans-serif",
+                fontStyle: "500"
+              }
+            }
+          ],
+          xAxes: [
+            {
+              barPercentage: 0.5,
+              ticks: {
+                fontFamily: "'Roboto', sans-serif",
+                fontStyle: "500"
+              }
             }
           ]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
-                  fontFamily: "'Roboto', sans-serif",
-                  fontStyle: "500"
-                }
-              }
-            ],
-            xAxes: [
-              {
-                barPercentage: 0.5,
-                ticks: {
-                  fontFamily: "'Roboto', sans-serif",
-                  fontStyle: "500"
-                }
-              }
-            ]
-          }
         }
-      });
-    }
+      }
+    });
   }
 
   mount() {

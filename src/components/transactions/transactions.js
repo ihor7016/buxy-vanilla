@@ -39,14 +39,14 @@ export class TransactionsComponent {
   showStoredTransactions(list) {
     this.list = list;
     this.tableTransactionsComponent.addStoredTransactions(list);
-    this.barChartComponent.drawFromList(list);
-    this.pieChartComponent.drawFromList(list);
+    this.barChartComponent.createFromList(list);
+    this.pieChartComponent.createFromList(list);
   }
 
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.barChartComponent.changeChart(data);
-    this.pieChartComponent.changeChart(data);
+    this.barChartComponent.updateChart(data);
+    this.pieChartComponent.updateChart(data);
   }
 
   handleAddTransactionClick() {
