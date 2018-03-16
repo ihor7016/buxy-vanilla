@@ -6,7 +6,6 @@ import { CurrencyConverterUAH } from "../../services/currency-converter-uah";
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
-    this.colors = [];
   }
 
   querySelectors() {

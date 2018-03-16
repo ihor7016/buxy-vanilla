@@ -100,8 +100,8 @@ export class TransactionsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.addEventListeners();
     this.mountChildren();
+    this.addEventListeners();
     this.initServices();
     this.getStoredData();
   }

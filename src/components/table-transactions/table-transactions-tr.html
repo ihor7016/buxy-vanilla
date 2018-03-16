@@ -1,21 +1,21 @@
 <tr class="table-transactions__tr table-transactions__highlighted">
-  <td class="table-transactions__td table-transactions__date">
+  <td class="table-transactions__td">
     <%= row.date %>
   </td>
   <td class="table-transactions__td">
-    <span class="table-transactions__type"><%= row.type %></span>
-    <span class="table-transactions__amount"><%= row.amount %></span>
-    <span class="table-transactions__account-currency"><%= row.account.currency %></span>
+    <span><%= row.type %></span>
+    <span><%= row.amount %></span>
+    <span><%= row.account.currency %></span>
   </td>
-  <td class="table-transactions__td table-transactions__desc">
+  <td class="table-transactions__td table-transactions__td--desc">
     <%= row.desc %>
   </td>
-  <td class="table-transactions__td table-transactions__tag">
+  <td class="table-transactions__td">
     <%= row.tag %>
   </td>
   <td class="table-transactions__td">
-    <span class="table-transactions__span table-transactions__account-name"><%= row.account.name %></span>,
-    <span class="table-transactions__span table-transactions__account-type"><%= row.account.type %></span>
+    <span class="table-transactions__span"><%= row.account.name %></span>,
+    <span class="table-transactions__span"><%= row.account.type %></span>
     <div class="table-transactions__more-button"></div>
   </td>
 </tr>

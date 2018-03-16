@@ -1,16 +1,17 @@
 export class CurrencyConverterUAH {
   static convert(curr, amount) {
+    let uah;
     switch (curr) {
       case "USD":
-        amount *= 27;
+        uah = amount * 27;
         break;
       case "EUR":
-        amount *= 33;
+        uah = amount * 33;
         break;
       default:
-        console.error(`convertor. no such currency: ${curr}`);
+        console.error(`converter. no such currency: ${curr}`);
         return 0;
     }
-    return amount;
+    return uah;
   }
 }
