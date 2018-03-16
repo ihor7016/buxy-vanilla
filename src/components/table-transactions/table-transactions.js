@@ -38,15 +38,21 @@ export class TableTransactionsComponent {
     );
   }
 
-  addTransactionFromDialog(isIncome, date, amount, desc, tag, account) {
-    isIncome ? (isIncome = "+") : (isIncome = "-");
+  addTransactionFromDialog(data) {
+    data.isIncome ? (data.isIncome = "+") : (data.isIncome = "-");
+    const accountInfo = data.account.split(", ");
+    const acc = {
+      name: accountInfo[0],
+      currency: accountInfo[1],
+      type: accountInfo[2]
+    };
     this.addTransaction({
-      date: date,
-      type: isIncome,
-      amount: amount,
-      desc: desc,
-      tag: tag,
-      account: account
+      date: data.date,
+      type: data.isIncome,
+      amount: data.amount,
+      desc: data.desc,
+      tag: data.tag,
+      account: acc
     });
     this.handleDataChange();
   }
@@ -65,14 +71,20 @@ export class TableTransactionsComponent {
       <td class="table-transactions__td">
         <span class="table-transactions__type">${row.type}</span>
         <span class="table-transactions__amount">${row.amount}</span>
+        <span class="table-transactions__account-currency">${
+          row.account.currency
+        }</span>
       </td>
       <td class="table-transactions__td table-transactions__desc">${
         row.desc
       }</td>
       <td class="table-transactions__td table-transactions__tag">${row.tag}</td>
       <td class="table-transactions__td">
-        <span class="table-transactions__span table-transactions__account">${
-          row.account
+        <span class="table-transactions__span table-transactions__account-name">${
+          row.account.name
+        }</span>,
+        <span class="table-transactions__span table-transactions__account-type">${
+          row.account.type
         }</span>
         <div class="table-transactions__more-button"></div>
       </td>
@@ -88,8 +100,14 @@ export class TableTransactionsComponent {
     );
     this.descs = this.mountPoint.querySelectorAll(".table-transactions__desc");
     this.tags = this.mountPoint.querySelectorAll(".table-transactions__tag");
-    this.accounts = this.mountPoint.querySelectorAll(
-      ".table-transactions__account"
+    this.accountsNames = this.mountPoint.querySelectorAll(
+      ".table-transactions__account-name"
+    );
+    this.accountsTypes = this.mountPoint.querySelectorAll(
+      ".table-transactions__account-type"
+    );
+    this.accountsCurrencies = this.mountPoint.querySelectorAll(
+      ".table-transactions__account-currency"
     );
   }
 
@@ -103,7 +121,11 @@ export class TableTransactionsComponent {
         amount: parseInt(this.amounts[i].innerText),
         desc: this.descs[i].innerText,
         tag: this.tags[i].innerText,
-        account: this.accounts[i].innerText
+        account: {
+          name: this.accountsNames[i].innerText,
+          type: this.accountsTypes[i].innerText,
+          currency: this.accountsCurrencies[i].innerText
+        }
       });
     }
     return transactionsList.reverse();

@@ -57,15 +57,8 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent.mount();
   }
 
-  handleAddTransactionSubmit(isIncome, date, amount, desc, tag, account) {
-    this.tableTransactionsComponent.addTransactionFromDialog(
-      isIncome,
-      date,
-      amount,
-      desc,
-      tag,
-      account
-    );
+  handleAddTransactionSubmit(data) {
+    this.tableTransactionsComponent.addTransactionFromDialog(data);
   }
 
   handleTransactionListChange(list) {

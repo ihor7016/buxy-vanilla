@@ -1,6 +1,8 @@
 import template from "./pie-chart.html";
 import Chart from "chart.js";
 
+import { CurrencyConverterUAH } from "../../services/currency-converter-uah";
+
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
@@ -17,6 +19,12 @@ export class PieChartComponent {
     let amounts = [];
     list.forEach(row => {
       if (row.type == "+") return;
+      if (row.account.currency != "UAH") {
+        row.amount = CurrencyConverterUAH.convert(
+          row.account.currency,
+          row.amount
+        );
+      }
       if (row.tag in dataset) {
         dataset[row.tag] += row.amount;
       } else {

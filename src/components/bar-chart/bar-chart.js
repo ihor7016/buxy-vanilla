@@ -1,6 +1,8 @@
 import template from "./bar-chart.html";
 import Chart from "chart.js";
 
+import { CurrencyConverterUAH } from "../../services/currency-converter-uah";
+
 export class BarChartComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
@@ -15,7 +17,13 @@ export class BarChartComponent {
     let income = 0,
       expence = 0;
     list.forEach(transaction => {
-      const amount = transaction.amount;
+      let amount = transaction.amount;
+      if (transaction.account.currency != "UAH") {
+        amount = CurrencyConverterUAH.convert(
+          transaction.account.currency,
+          amount
+        );
+      }
       transaction.type == "-" ? (expence += amount) : (income += amount);
     });
     this.drawBarChart(income, expence);

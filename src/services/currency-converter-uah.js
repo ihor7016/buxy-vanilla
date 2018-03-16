@@ -1,5 +1,5 @@
 export class CurrencyConverterUAH {
-  static get(curr, amount) {
+  static convert(curr, amount) {
     switch (curr) {
       case "USD":
         amount *= 27;

@@ -58,24 +58,37 @@ export class AddTransactionComponent {
   }
 
   handleOk() {
-    console.log("accepted");
-    this.props.addTransaction(
-      this.income.checked,
-      this.date.value,
-      this.amount.value,
-      this.description.value,
-      this.tagSelect.value,
-      this.accountSelect.value
-    );
+    this.props.addTransaction({
+      isIncome: this.income.checked,
+      date: this.date.value,
+      amount: this.amount.value,
+      desc: this.description.value,
+      tag: this.tagSelect.value,
+      account: this.accountSelect.value
+    });
+    this.cleanDialog();
   }
 
   handleCancel() {
-    console.log("declined");
+    this.cleanDialog();
+  }
+
+  cleanDialog() {
+    this.income.checked = true;
+    this.date.value = "";
+    this.amount.value = "";
+    this.description.value = "";
+    this.tagSelect.selectedIndex = -1;
+    this.accountSelect.selectedIndex = -1;
   }
 
   mount() {
     this.mountPoint.innerHTML = template({
-      accounts: ["Private", "Cash"],
+      accounts: [
+        "Private, USD, checking",
+        "Cash, UAH, cash",
+        "BoaBank, EUR, credit card"
+      ],
       tags: ["Transport", "Groceries", "Entertainment"]
     });
     this.querySelectors();
