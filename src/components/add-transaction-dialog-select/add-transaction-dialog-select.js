@@ -13,12 +13,12 @@ export class AddTransactionSelectComponent {
   }
 
   getTag() {
-    return this.select.value;
+    return this.getValue();
   }
 
   getAccount() {
-    return this.props.items.filter(item => {
-      return item.name == this.select.value;
+    return this.props.items.find(item => {
+      return item.name == this.getValue();
     });
   }
 
@@ -48,8 +48,8 @@ export class AddTransactionSelectComponent {
     this.select = new MDCSelect(this.selectPoint);
   }
 
-  cleanSelect() {
-    this.select.selectedIndex = -1;
+  getValue() {
+    return this.select.value.replace(/\r|\n|\s/g, "");
   }
 
   mount() {

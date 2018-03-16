@@ -18,7 +18,7 @@ export class PieChartComponent {
     if (data.account.currency != "UAH") {
       amount = CurrencyConverterUAH.convert(data.account.currency, amount);
     }
-    let i = data.tags.indexOf(data.tag);
+    let i = this.dataset.tags.indexOf(data.tag);
     if (i < 0) {
       this.dataset.tags.push(data.tag);
       this.dataset.amounts.push(amount);
