@@ -1,4 +1,5 @@
 import template from "./table-transactions.html";
+import templateRow from "./table-transactions-tr.html";
 
 import { ButtonMoreComponent } from "../button-more/button-more";
 
@@ -39,57 +40,27 @@ export class TableTransactionsComponent {
   }
 
   addTransactionFromDialog(data) {
-    data.isIncome ? (data.isIncome = "+") : (data.isIncome = "-");
+    data.type ? (data.type = "+") : (data.type = "-");
     const accountInfo = data.account.split(", ");
-    const acc = {
+    data.account = {
       name: accountInfo[0],
       currency: accountInfo[1],
       type: accountInfo[2]
     };
-    this.addTransaction({
-      date: data.date,
-      type: data.isIncome,
-      amount: data.amount,
-      desc: data.desc,
-      tag: data.tag,
-      account: acc
-    });
-    this.handleDataChange();
+    this.addTransaction(data);
   }
 
   addStoredTransactions(list) {
     if (list) list.forEach(row => this.addTransaction(row));
-    this.handleDataChange();
   }
 
   addTransaction(row) {
-    this.transactionPoint.innerHTML = `
-    <tr class="table-transactions__tr table-transactions__highlighted">
-      <td class="table-transactions__td table-transactions__date">${
-        row.date
-      }</td>
-      <td class="table-transactions__td">
-        <span class="table-transactions__type">${row.type}</span>
-        <span class="table-transactions__amount">${row.amount}</span>
-        <span class="table-transactions__account-currency">${
-          row.account.currency
-        }</span>
-      </td>
-      <td class="table-transactions__td table-transactions__desc">${
-        row.desc
-      }</td>
-      <td class="table-transactions__td table-transactions__tag">${row.tag}</td>
-      <td class="table-transactions__td">
-        <span class="table-transactions__span table-transactions__account-name">${
-          row.account.name
-        }</span>,
-        <span class="table-transactions__span table-transactions__account-type">${
-          row.account.type
-        }</span>
-        <div class="table-transactions__more-button"></div>
-      </td>
-    </tr>
-    ${this.transactionPoint.innerHTML}`;
+    console.log(row);
+    this.transactionPoint.innerHTML =
+      templateRow({
+        row: row
+      }) + this.transactionPoint.innerHTML;
+    this.handleDataChange();
   }
 
   querySelectorsTransactions() {

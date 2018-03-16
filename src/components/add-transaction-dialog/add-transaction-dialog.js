@@ -59,7 +59,7 @@ export class AddTransactionComponent {
 
   handleOk() {
     this.props.addTransaction({
-      isIncome: this.income.checked,
+      type: this.income.checked,
       date: this.date.value,
       amount: this.amount.value,
       desc: this.description.value,
