@@ -9,6 +9,7 @@ import { AddTransactionSelectComponent } from "../add-transaction-dialog-select/
 
 import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
+import { Transaction } from "../../models/transaction";
 
 export class AddTransactionComponent {
   constructor(mountPoint, props) {
@@ -115,14 +116,15 @@ export class AddTransactionComponent {
   }
 
   handleOk() {
-    this.props.addTransaction({
-      type: this.getType(),
-      date: this.date.value,
-      amount: parseInt(this.amount.value),
-      desc: this.description.value,
-      tag: this.tagSelect.getTag(),
-      account: this.accountSelect.getAccount()
-    });
+    let transaction = new Transaction(
+      this.getType(),
+      this.date.value,
+      parseInt(this.amount.value),
+      this.description.value,
+      this.tagSelect.getTag(),
+      this.accountSelect.getAccount()
+    );
+    this.props.addTransaction(transaction);
     this.cleanDialog();
   }
 
