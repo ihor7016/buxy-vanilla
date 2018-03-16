@@ -27,7 +27,7 @@ export class TransactionsComponent {
   }
 
   setStoredData(data) {
-    this.list.push(data);
+    this.list.unshift(data);
     this.transactionListService
       .set(this.list)
       .then(

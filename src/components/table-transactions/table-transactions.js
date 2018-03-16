@@ -15,34 +15,18 @@ export class TableTransactionsComponent {
   }
 
   addStoredTransactions(list) {
-    if (list) list.forEach(row => this.addTransaction(row));
+    let transHTML = "";
+    if (list) transHTML = list.map(data => templateRow({ row: data })).join("");
+    this.transactionPoint.innerHTML = transHTML;
+    this.initMoreBtns();
   }
 
-  addTransaction(row) {
-    // console.log(row);
+  addTransaction(data) {
     this.transactionPoint.innerHTML =
       templateRow({
-        row: row
+        row: data
       }) + this.transactionPoint.innerHTML;
-  }
-
-  querySelectorsTransactions() {
-    this.dates = this.mountPoint.querySelectorAll(".table-transactions__date");
-    this.types = this.mountPoint.querySelectorAll(".table-transactions__type");
-    this.amounts = this.mountPoint.querySelectorAll(
-      ".table-transactions__amount"
-    );
-    this.descs = this.mountPoint.querySelectorAll(".table-transactions__desc");
-    this.tags = this.mountPoint.querySelectorAll(".table-transactions__tag");
-    this.accountsNames = this.mountPoint.querySelectorAll(
-      ".table-transactions__account-name"
-    );
-    this.accountsTypes = this.mountPoint.querySelectorAll(
-      ".table-transactions__account-type"
-    );
-    this.accountsCurrencies = this.mountPoint.querySelectorAll(
-      ".table-transactions__account-currency"
-    );
+    this.initMoreBtns();
   }
 
   querySelectorsButtons() {
