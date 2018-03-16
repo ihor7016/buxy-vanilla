@@ -88,7 +88,7 @@ export class TableTransactionsComponent {
     for (let i = 0; i < this.dates.length; i++) {
       transactionsList.push({
         date: this.dates[i].innerText,
-        type: this.types[i].innerText,
+        type: this.types[i].innerText.replace(/\r|\n|\s/g, ""),
         amount: parseInt(this.amounts[i].innerText),
         desc: this.descs[i].innerText,
         tag: this.tags[i].innerText,
