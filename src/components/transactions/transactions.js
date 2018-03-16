@@ -5,10 +5,52 @@ import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 
+import { TransactionListService } from "../../services/transaction-service";
+
 export class TransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+  }
+
+  initServices() {
+    this.transactionListService = new TransactionListService();
+  }
+
+  getStoredData() {
+    this.transactionListService.get().then(
+      list => {
+        if (list) this.showStoredTransactions(list);
+      },
+      error => console.error(`get transactions: ${error.message}`)
+    );
+  }
+
+  setStoredData(data) {
+    this.list = [data].concat(this.list);
+    this.transactionListService
+      .set(this.list)
+      .then(
+        () => {},
+        error => console.error(`set transactions: ${error.message}`)
+      );
+  }
+
+  showStoredTransactions(list) {
+    this.list = list;
+    this.tableTransactionsComponent.addStoredTransactions(list);
+    this.barChartComponent.drawFromList(list);
+    this.pieChartComponent.drawFromList(list);
+  }
+
+  handleAddTransactionSubmit(data) {
+    this.tableTransactionsComponent.addTransaction(data);
+    this.barChartComponent.changeChart(data);
+    this.pieChartComponent.changeChart(data);
+  }
+
+  handleAddTransactionClick() {
+    this.addTransactionDialogComponent.showDialog();
   }
 
   querySelectors() {
@@ -38,10 +80,7 @@ export class TransactionsComponent {
 
   mountChildren() {
     this.tableTransactionsComponent = new TableTransactionsComponent(
-      this.tableTransactionsMountPoint,
-      {
-        onDataChange: this.handleTransactionListChange.bind(this)
-      }
+      this.tableTransactionsMountPoint
     );
     this.tableTransactionsComponent.mount();
     this.pieChartComponent = new PieChartComponent(this.pieChartMountPoint);
@@ -57,23 +96,12 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent.mount();
   }
 
-  handleAddTransactionSubmit(data) {
-    this.tableTransactionsComponent.addTransactionFromDialog(data);
-  }
-
-  handleTransactionListChange(list) {
-    this.barChartComponent.drawFromList(list);
-    this.pieChartComponent.drawFromList(list);
-  }
-
-  handleAddTransactionClick() {
-    this.addTransactionDialogComponent.showDialog();
-  }
-
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.addEventListeners();
     this.mountChildren();
+    this.initServices();
+    this.getStoredData();
   }
 }

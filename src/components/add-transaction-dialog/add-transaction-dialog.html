@@ -43,22 +43,7 @@
             <div class="mdc-line-ripple"></div>
           </div>
           <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>
-          <div class="mdc-select add-transaction-dialog__account" role="listbox">
-            <div class="mdc-select__surface" tabindex="0">
-              <div class="mdc-select__label">Account</div>
-              <div class="mdc-select__selected-text"></div>
-              <div class="mdc-select__bottom-line"></div>
-            </div>
-            <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">
-              <ul class="mdc-list mdc-menu__items">
-                <% for(let i=0; i<accounts.length; i++) {%>
-                  <li class="mdc-list-item" role="option" tabindex="0">
-                    <%= accounts[i] %>
-                  </li>
-                  <% } %>
-              </ul>
-            </div>
-          </div>
+          <div class="add-transaction-dialog__account-point"></div>
         </div>
         <div class="add-transaction-dialog__col">
           <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
@@ -66,22 +51,7 @@
             <div class="mdc-line-ripple"></div>
           </div>
           <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>
-          <div class="mdc-select add-transaction-dialog__tag" role="listbox">
-            <div class="mdc-select__surface" tabindex="0">
-              <div class="mdc-select__label">Tag</div>
-              <div class="mdc-select__selected-text"></div>
-              <div class="mdc-select__bottom-line"></div>
-            </div>
-            <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">
-              <ul class="mdc-list mdc-menu__items">
-                <% for(let i=0; i<tags.length; i++) {%>
-                  <li class="mdc-list-item" role="option" tabindex="0">
-                    <%= tags[i] %>
-                  </li>
-                  <% } %>
-              </ul>
-            </div>
-          </div>
+          <div class="add-transaction-dialog__tag-point"></div>
         </div>
       </div>
     </section>
