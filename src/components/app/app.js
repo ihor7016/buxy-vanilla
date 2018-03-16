@@ -43,7 +43,7 @@ export class AppComponent {
     this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint, {
       onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
     });
-
+    this.initDrawer();
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
@@ -62,22 +62,18 @@ export class AppComponent {
   getCurrentAccounts() {
     StorageService.get("accounts").then(accounts => {
       if (!accounts) {
-        accounts = [
-          new Account("Privat", "", "UAH"),
-          new Account("Payoneer", "", "USD")
-        ];
+        accounts = [];
         StorageService.set("accounts", accounts);
       }
-      this.initDrawer(accounts);
+      this.drawerComponent.initAccounts(accounts);
       this.mountTransactionsComponent(accounts);
     });
   }
 
-  initDrawer(accounts) {
+  initDrawer() {
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
       onAddAccountClick: this.handleAddAccountClick.bind(this),
-      onAddTagClick: this.handleAddTagOnclick.bind(this),
-      accounts: accounts
+      onAddTagClick: this.handleAddTagOnclick.bind(this)
     });
     this.drawerComponent.mount();
   }
@@ -87,8 +83,8 @@ export class AppComponent {
       if (!accounts) {
         StorageService.set("accounts", [account]);
       } else {
-        accounts.unshift(account);
-        StorageService.set("accounts", accounts);
+        let updatedAccounts = [account].concat(accounts);
+        StorageService.set("accounts", updatedAccounts);
       }
     });
     this.drawerComponent.addAccount(account);
@@ -113,7 +109,7 @@ export class AppComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.getCurrentAccounts();
     this.mountChildren();
+    this.getCurrentAccounts();
   }
 }

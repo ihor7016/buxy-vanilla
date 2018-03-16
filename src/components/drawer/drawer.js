@@ -25,6 +25,12 @@ export class DrawerComponent {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
+  initAccounts(accounts) {
+    accounts.forEach(item => {
+      this.addAccount(item);
+    });
+  }
+
   mountChildren() {
     this.accountsComponent = new AccountsComponent(
       this.accountsMountPoint,

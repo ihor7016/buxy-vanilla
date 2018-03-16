@@ -60,9 +60,7 @@ export class AccountsComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template({
-      accounts: this.props.accounts
-    });
+    this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMoreBtns();
     this.addEventListeners();
