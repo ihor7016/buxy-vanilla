@@ -19,7 +19,7 @@ export class TableTransactionsComponent {
   }
 
   addTransaction(row) {
-    console.log(row);
+    // console.log(row);
     this.transactionPoint.innerHTML =
       templateRow({
         row: row

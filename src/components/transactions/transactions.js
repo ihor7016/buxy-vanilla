@@ -27,7 +27,7 @@ export class TransactionsComponent {
   }
 
   setStoredData(data) {
-    this.list = [data].concat(this.list);
+    this.list.push(data);
     this.transactionListService
       .set(this.list)
       .then(
@@ -47,6 +47,7 @@ export class TransactionsComponent {
     this.tableTransactionsComponent.addTransaction(data);
     this.barChartComponent.updateChart(data);
     this.pieChartComponent.updateChart(data);
+    this.setStoredData(data);
   }
 
   handleAddTransactionClick() {

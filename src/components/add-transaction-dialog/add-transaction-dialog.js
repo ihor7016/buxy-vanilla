@@ -118,7 +118,7 @@ export class AddTransactionComponent {
     this.props.addTransaction({
       type: this.getType(),
       date: this.date.value,
-      amount: this.amount.value,
+      amount: parseInt(this.amount.value),
       desc: this.description.value,
       tag: this.tagSelect.getTag(),
       account: this.accountSelect.getAccount()
