@@ -40,10 +40,6 @@ export class AppComponent {
       onAboutClick: this.handleAboutOnclick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.transactionsComponent = new TransactionsComponent(
-      this.transactionsMountPoint
-    );
-    this.transactionsComponent.mount();
     this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint, {
       onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
     });
@@ -53,6 +49,14 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
+  }
+
+  mountTransactionsComponent(accounts) {
+    this.transactionsComponent = new TransactionsComponent(
+      this.transactionsMountPoint,
+      { accounts: accounts }
+    );
+    this.transactionsComponent.mount();
   }
 
   getCurrentAccounts() {
@@ -65,6 +69,7 @@ export class AppComponent {
         StorageService.set("accounts", accounts);
       }
       this.initDrawer(accounts);
+      this.mountTransactionsComponent(accounts);
     });
   }
 

@@ -46,7 +46,8 @@ export class TransactionsComponent {
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
     this.addTransactionDialog = new AddTransactionComponent(
-      this.addTransactionDialogMountPoint
+      this.addTransactionDialogMountPoint,
+      { accounts: this.props.accounts }
     );
     this.addTransactionDialog.mount();
   }
