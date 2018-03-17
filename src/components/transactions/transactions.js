@@ -22,7 +22,7 @@ export class TransactionsComponent {
   setStoredData(data) {
     this.list.unshift(data);
     TransactionListService.set(this.list)
-      .then(() => {})
+      .then()
       .catch(e => console.error(`set transactions: ${e.message}`));
   }
 

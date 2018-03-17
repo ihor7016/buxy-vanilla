@@ -13,10 +13,10 @@ export class PieChartComponent {
   }
 
   updateChart(data) {
-    if (data.type == "+") return;
+    if (data.type === "+") return;
     if (!this.pieChart) this.drawChart();
     let amount = data.amount;
-    if (data.account.currency != "UAH") {
+    if (data.account.currency !== "UAH") {
       amount = CurrencyConverterUAH.convert(data.account.currency, amount);
     }
     let i = this.dataset.tags.indexOf(data.tag);
@@ -40,13 +40,13 @@ export class PieChartComponent {
   createFromList(list) {
     let expenceList = list
       .filter(item => {
-        return item.type == "-";
+        return item.type === "-";
       })
       .reverse();
     this.dataset = expenceList.reduce(
       (data, item) => {
         let amount = item.amount;
-        if (item.account.currency != "UAH") {
+        if (item.account.currency !== "UAH") {
           amount = CurrencyConverterUAH.convert(item.account.currency, amount);
         }
         let i = data.tags.indexOf(item.tag);

@@ -15,10 +15,10 @@ export class BarChartComponent {
 
   updateChart(data) {
     let amount = data.amount;
-    if (data.account.currency != "UAH") {
+    if (data.account.currency !== "UAH") {
       amount = CurrencyConverterUAH.convert(data.account.currency, amount);
     }
-    data.type == "-"
+    data.type === "-"
       ? (this.dataset.expence += amount)
       : (this.dataset.income += amount);
     this.drawChangedChart();
@@ -37,10 +37,10 @@ export class BarChartComponent {
     this.dataset = list.reduce(
       (data, item) => {
         let amount = item.amount;
-        if (item.account.currency != "UAH") {
+        if (item.account.currency !== "UAH") {
           amount = CurrencyConverterUAH.convert(item.account.currency, amount);
         }
-        item.type == "-" ? (data.expence += amount) : (data.income += amount);
+        item.type === "-" ? (data.expence += amount) : (data.income += amount);
         return data;
       },
       {
