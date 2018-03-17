@@ -47,7 +47,7 @@ export class DrawerComponent {
   }
 
   addAccount(account) {
-    this.accountsComponent.addAccount(account);
+    this.accountsComponent.addAccountToHead(account);
   }
 
   addEventListeners() {

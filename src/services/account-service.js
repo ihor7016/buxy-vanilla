@@ -9,7 +9,6 @@ export class AccountService {
         let updatedAccounts = [account].concat(accounts);
         AccountService.set(updatedAccounts);
       }
-      resolve();
     });
   }
 

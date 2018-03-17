@@ -72,11 +72,18 @@ export class AccountsComponent {
     );
   }
 
-  addAccount(account) {
+  addAccountToHead(account) {
     let element = document.createElement("div");
     element.innerHTML = accountItemTemplate({ account: account });
     let childNode = this.accList.childNodes[2];
     this.accList.insertBefore(element.firstChild, childNode);
+    this.initMoreBtns();
+  }
+
+  addAccount(account) {
+    let element = document.createElement("div");
+    element.innerHTML = accountItemTemplate({ account: account });
+    this.accList.appendChild(element.firstChild);
     this.initMoreBtns();
   }
 
