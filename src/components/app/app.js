@@ -56,10 +56,13 @@ export class AppComponent {
   }
 
   initDrawer() {
-    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAddTagClick: this.handleAddTagOnclick.bind(this),
-      addAccountMountPoint: this.addAccountMountPoint
-    });
+    this.drawerComponent = new DrawerComponent(
+      this.drawerMountPoint,
+      this.addAccountMountPoint,
+      {
+        onAddTagClick: this.handleAddTagOnclick.bind(this)
+      }
+    );
     this.drawerComponent.mount();
   }
 

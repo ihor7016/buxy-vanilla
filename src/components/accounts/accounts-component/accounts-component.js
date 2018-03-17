@@ -5,8 +5,9 @@ import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AccountService } from "../../../services/account-service";
 
 export class AccountsComponent {
-  constructor(mountPoint, props) {
+  constructor(mountPoint, addAccountMountPoint, props) {
     this.mountPoint = mountPoint;
+    this.addAccountMountPoint = addAccountMountPoint;
     this.props = props;
   }
 
@@ -23,7 +24,7 @@ export class AccountsComponent {
 
   initDialogComponent() {
     this.addAccountComponent = new AddAccountComponent(
-      this.props.addAccountMountPoint,
+      this.addAccountMountPoint,
       {
         onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
       }

@@ -4,8 +4,9 @@ import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
 export class DrawerComponent {
-  constructor(mountPoint, props) {
+  constructor(mountPoint, dialogMountPoint, props) {
     this.mountPoint = mountPoint;
+    this.dialogMountPoint = dialogMountPoint;
     this.props = props;
   }
 
@@ -31,10 +32,13 @@ export class DrawerComponent {
   }
 
   mountChildren() {
-    this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
-      addAccountMountPoint: this.props.addAccountMountPoint,
-      onAddAccountConfirmed: this.onAddAccountConfirmed.bind(this)
-    });
+    this.accountsComponent = new AccountsComponent(
+      this.accountsMountPoint,
+      this.dialogMountPoint,
+      {
+        onAddAccountConfirmed: this.onAddAccountConfirmed.bind(this)
+      }
+    );
     this.accountsComponent.mount();
   }
 
