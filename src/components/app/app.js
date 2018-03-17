@@ -4,8 +4,14 @@ import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
-import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
+import { AddTagComponent } from "../tags/add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
+import { PieChartComponent } from "../pie-chart/pie-chart";
+import { BarChartComponent } from "../bar-chart/bar-chart";
+import { TableTransactionsComponent } from "../table-transactions/table-transactions";
+import { StorageService } from "../../services/storage";
+import { Tag } from "../../model/tag";
+import { TagsComponent } from "../tags/tags-component/tags-component";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -35,21 +41,42 @@ export class AppComponent {
       onAboutClick: this.handleAboutOnclick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAddAccountClick: this.handleAddAccountClick.bind(this),
-      onAddTagClick: this.handleAddTagOnclick.bind(this)
-    });
-    this.drawerComponent.mount();
+    this.initDrawer();
     this.transactionsComponent = new TransactionsComponent(
       this.transactionsMountPoint
     );
     this.transactionsComponent.mount();
     this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
     this.addAccountDialog.mount();
-    this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
-    this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
+  }
+
+  mountTransactionsComponent(tags) {
+    this.transactionsComponent = new TransactionsComponent(
+      this.transactionsMountPoint,
+      { tags: tags }
+    );
+    this.transactionsComponent.mount();
+  }
+
+  getTags() {
+    StorageService.get("tags").then(tags => {
+      if (!tags) {
+        tags = [];
+        StorageService.set("tags", tags);
+      }
+      this.drawerComponent.initTags(tags);
+      this.mountTransactionsComponent(tags);
+    });
+  }
+
+  initDrawer() {
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
+      onAddAccountClick: this.handleAddAccountClick.bind(this),
+      addTagMountPoint: this.addTagMountPoint
+    });
+    this.drawerComponent.mount();
   }
 
   handleToolbarMenuClick() {
@@ -64,13 +91,10 @@ export class AppComponent {
     this.addAccountDialog.showDialog();
   }
 
-  handleAddTagOnclick() {
-    this.addTagDialog.showDialog();
-  }
-
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.mountChildren();
+    this.getTags();
   }
 }

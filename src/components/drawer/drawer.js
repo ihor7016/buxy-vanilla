@@ -1,6 +1,8 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { TagsComponent } from "../tags/tags-component/tags-component";
+import { Tag } from "../../model/tag";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -15,12 +17,8 @@ export class DrawerComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".drawer__add-account-dialog-activation"
     );
-    this.addTagButton = this.mountPoint.querySelector(
-      ".drawer__add-tag-dialog-activation"
-    );
-
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".drawer__more-button"
+    this.tagsMountPoint = this.mountPoint.querySelector(
+      ".drawer__tags-mountpoint"
     );
   }
 
@@ -28,24 +26,32 @@ export class DrawerComponent {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
-  initMoreBtns() {
-    Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point, {
-        position: "right",
-        onDeleteClicked: this.handleDeleteClick.bind(this),
-        onEditClicked: this.handleEditClick.bind(this)
-      }).mount();
+  initTags(tags) {
+    tags.forEach(item => {
+      this.addTag(item);
     });
+  }
+
+  mountChildren() {
+    this.tagsComponent = new TagsComponent(this.tagsMountPoint, {
+      addTagMountPoint: this.props.addTagMountPoint,
+      onAddTagConfirmed: this.onAddTagConfirmed.bind(this)
+    });
+    this.tagsComponent.mount();
+  }
+
+  onAddTagConfirmed(tag) {
+    this.addTag(tag);
+  }
+
+  addTag(tag) {
+    this.tagsComponent.addTag(tag);
   }
 
   addEventListeners() {
     this.addAccountButton.addEventListener(
       "click",
       this.handleAddAccountClick.bind(this)
-    );
-    this.addTagButton.addEventListener(
-      "click",
-      this.handleAddTagOnclick.bind(this)
     );
   }
 
@@ -60,10 +66,6 @@ export class DrawerComponent {
     this.props.onAddAccountClick();
   }
 
-  handleAddTagOnclick() {
-    this.props.onAddTagClick();
-  }
-
   toggleDrawer() {
     this.drawer.open = !this.drawer.open;
   }
@@ -72,7 +74,7 @@ export class DrawerComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.initMDC();
-    this.initMoreBtns();
     this.addEventListeners();
+    this.mountChildren();
   }
 }
