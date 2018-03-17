@@ -28,7 +28,6 @@ export class AccountsComponent {
         onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
       }
     );
-    this.addAccountComponent.mount();
   }
 
   handleAddAccountConfirmed(account) {
@@ -72,6 +71,7 @@ export class AccountsComponent {
   }
 
   handleAddAccountClick() {
+    this.addAccountComponent.mount();
     this.addAccountComponent.showDialog();
   }
 
