@@ -5,7 +5,7 @@ import { MDCSelect } from "@material/select";
 import { MDCTextField } from "@material/textfield";
 import { MDCRadio } from "@material/radio";
 
-import { TransactionSelectComponent } from "../transaction-dialog-select/transaction-dialog-select";
+import { CustomSelectComponent } from "../custom-select/custom-select";
 
 import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
@@ -23,12 +23,12 @@ export class AddTransactionComponent {
   }
 
   showAccounts(accounts) {
-    const acc = accounts || [];
-    this.accountSelect = new TransactionSelectComponent(
-      this.accountTransactionSelect,
+    this.accounts = accounts;
+    this.accountSelect = new CustomSelectComponent(
+      this.accountSelectMountPoint,
       {
         type: "account",
-        items: acc
+        items: this.accounts.map(item => item.name) || []
       }
     );
     this.accountSelect.mount();
@@ -41,10 +41,9 @@ export class AddTransactionComponent {
   }
 
   showTags(tags) {
-    const tg = tags || [];
-    this.tagSelect = new TransactionSelectComponent(this.tagTransactionSelect, {
+    this.tagSelect = new CustomSelectComponent(this.tagSelectMountPoint, {
       type: "tag",
-      items: tg
+      items: tags || []
     });
     this.tagSelect.mount();
   }
@@ -59,10 +58,10 @@ export class AddTransactionComponent {
     this.addTransactionDialog = this.mountPoint.querySelector(
       ".add-transaction-dialog"
     );
-    this.accountTransactionSelect = this.mountPoint.querySelector(
+    this.accountSelectMountPoint = this.mountPoint.querySelector(
       ".add-transaction-dialog__account-point"
     );
-    this.tagTransactionSelect = this.mountPoint.querySelector(
+    this.tagSelectMountPoint = this.mountPoint.querySelector(
       ".add-transaction-dialog__tag-point"
     );
     this.descriptionTextField = this.mountPoint.querySelector(
@@ -100,6 +99,12 @@ export class AddTransactionComponent {
     return this.income.checked ? "+" : "-";
   }
 
+  getAccount() {
+    return this.accounts.find(
+      item => this.accountSelect.getValue() === item.name
+    );
+  }
+
   handleOk() {
     this.props.addTransaction({
       type: this.getType(),
@@ -107,7 +112,7 @@ export class AddTransactionComponent {
       amount: parseInt(this.amount.value),
       desc: this.description.value,
       tag: this.tagSelect.getValue(),
-      account: this.accountSelect.getAccount()
+      account: this.getAccount()
     });
     this.cleanDialog();
   }
