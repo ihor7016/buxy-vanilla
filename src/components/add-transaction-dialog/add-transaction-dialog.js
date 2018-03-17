@@ -5,7 +5,7 @@ import { MDCSelect } from "@material/select";
 import { MDCTextField } from "@material/textfield";
 import { MDCRadio } from "@material/radio";
 
-import { AddTransactionSelectComponent } from "../add-transaction-dialog-select/add-transaction-dialog-select";
+import { TransactionSelectComponent } from "../transaction-dialog-select/transaction-dialog-select";
 
 import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
@@ -32,7 +32,7 @@ export class AddTransactionComponent {
   }
 
   showAccounts(accounts) {
-    this.accountSelect = new AddTransactionSelectComponent(
+    this.accountSelect = new TransactionSelectComponent(
       this.accountTransactionSelect,
       {
         type: "account",
@@ -52,13 +52,10 @@ export class AddTransactionComponent {
   }
 
   showTags(tags) {
-    this.tagSelect = new AddTransactionSelectComponent(
-      this.tagTransactionSelect,
-      {
-        type: "tag",
-        items: tags
-      }
-    );
+    this.tagSelect = new TransactionSelectComponent(this.tagTransactionSelect, {
+      type: "tag",
+      items: tags
+    });
     this.tagSelect.mount();
   }
 
@@ -121,7 +118,7 @@ export class AddTransactionComponent {
       this.date.value,
       parseInt(this.amount.value),
       this.description.value,
-      this.tagSelect.getTag(),
+      this.tagSelect.getValue(),
       this.accountSelect.getAccount()
     );
     this.props.addTransaction(transaction);

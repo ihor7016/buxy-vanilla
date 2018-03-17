@@ -1,0 +1,11 @@
+.transaction-dialog-select {
+  &__account,
+  &__tag {
+    width: 100%;
+  }
+
+  &__menu {
+    top: inherit !important;
+    left: inherit !important;
+  }
+}

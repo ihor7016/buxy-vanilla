@@ -1,8 +1,8 @@
-import template from "./add-transaction-dialog-select.html";
+import template from "./transaction-dialog-select.html";
 
 import { MDCSelect } from "@material/select";
 
-export class AddTransactionSelectComponent {
+export class TransactionSelectComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
@@ -12,10 +12,6 @@ export class AddTransactionSelectComponent {
     this.select.selectedIndex = -1;
   }
 
-  getTag() {
-    return this.getValue();
-  }
-
   getAccount() {
     return this.props.items.find(item => {
       return item.name == this.getValue();
@@ -23,16 +19,24 @@ export class AddTransactionSelectComponent {
   }
 
   makeList() {
-    return this.props.items.map(item => (item.name ? item.name : item));
+    let list;
+    if (this.props.items[0].name) {
+      list = this.props.items.map(item => {
+        return item.name;
+      });
+    } else list = this.props.items;
+    return list;
   }
 
   querySelectors() {
-    this.selectPoint = this.mountPoint.firstChild;
+    this.selectPoint = this.mountPoint.querySelector(
+      ".transaction-dialog-select"
+    );
   }
 
   addClass() {
     this.selectPoint.classList.add(
-      `add-transaction-dialog__${this.props.type}`
+      `transaction-dialog-select__${this.props.type}`
     );
   }
 
@@ -45,7 +49,6 @@ export class AddTransactionSelectComponent {
   }
 
   mount() {
-    this.makeList();
     this.mountPoint.innerHTML = template({
       list: this.makeList(),
       type: this.props.type[0].toUpperCase() + this.props.type.slice(1)
