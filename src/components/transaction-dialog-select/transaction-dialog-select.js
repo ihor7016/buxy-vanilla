@@ -19,13 +19,15 @@ export class TransactionSelectComponent {
   }
 
   makeList() {
-    let list;
-    if (this.props.items[0].name) {
-      list = this.props.items.map(item => {
-        return item.name;
-      });
-    } else list = this.props.items;
-    return list;
+    return this.props.items
+      .map(
+        item => `
+          <li class="mdc-list-item" role="option" tabindex="0">
+            ${item.name ? item.name : item}
+          </li>
+        `
+      )
+      .join("");
   }
 
   querySelectors() {

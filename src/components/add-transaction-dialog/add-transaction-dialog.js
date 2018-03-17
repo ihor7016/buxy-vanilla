@@ -20,15 +20,16 @@ export class AddTransactionComponent {
   getStoredAccounts() {
     AccountListService.get()
       .then(accounts => this.showAccounts(accounts))
-      .catch(e => console.error(e.message));
+      .catch(e => console.error(`get accounts: ${e.message}`));
   }
 
   showAccounts(accounts) {
+    const acc = accounts || [];
     this.accountSelect = new TransactionSelectComponent(
       this.accountTransactionSelect,
       {
         type: "account",
-        items: accounts
+        items: acc
       }
     );
     this.accountSelect.mount();
@@ -37,13 +38,14 @@ export class AddTransactionComponent {
   getStoredTags() {
     TagListService.get()
       .then(tags => this.showTags(tags))
-      .catch(e => console.error(e.message));
+      .catch(e => console.error(`get tags: ${e.message}`));
   }
 
   showTags(tags) {
+    const tg = tags || [];
     this.tagSelect = new TransactionSelectComponent(this.tagTransactionSelect, {
       type: "tag",
-      items: tags
+      items: tg
     });
     this.tagSelect.mount();
   }

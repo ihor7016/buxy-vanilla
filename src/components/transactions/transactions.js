@@ -15,9 +15,7 @@ export class TransactionsComponent {
 
   getStoredData() {
     TransactionListService.get()
-      .then(list => {
-        if (list) this.showStoredTransactions(list);
-      })
+      .then(list => this.showStoredTransactions(list))
       .catch(e => console.error(`get transactions: ${e.message}`));
   }
 
