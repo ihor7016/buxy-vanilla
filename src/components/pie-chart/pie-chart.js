@@ -2,6 +2,7 @@ import template from "./pie-chart.html";
 import Chart from "chart.js";
 
 import { CurrencyConverterUAH } from "../../services/currency-converter-uah";
+import { ColorGenerator } from "../../services/color-generator";
 
 export class PieChartComponent {
   constructor(mountPoint) {
@@ -13,21 +14,34 @@ export class PieChartComponent {
   }
 
   updateChart(data) {
-    if (data.type === "+") return;
-    if (!this.pieChart) this.drawChart();
-    let amount = data.amount;
-    if (data.account.currency !== "UAH") {
-      amount = CurrencyConverterUAH.convert(data.account.currency, amount);
+    if (data.type === "+") {
+      return;
     }
-    let i = this.dataset.tags.indexOf(data.tag);
-    if (i < 0) {
-      this.dataset.tags.push(data.tag);
-      this.dataset.amounts.push(amount);
-      this.dataset.colors.push(this.randomColorGenerator());
-    } else {
-      this.dataset.amounts[i] += amount;
-    }
+    this.dataset = this.addCurrData(this.dataset, data);
     this.drawChangedChart();
+  }
+
+  createFromList(list) {
+    let expenceList = list.filter(item => item.type === "-").reverse();
+    this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
+    this.drawChangedChart();
+  }
+
+  addCurrData(accum, item) {
+    let data = accum;
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAH.convert(item.account.currency, amount);
+    }
+    const i = accum.tags.indexOf(item.tag);
+    if (i < 0) {
+      data.tags.push(item.tag);
+      data.amounts.push(amount);
+      data.colors.push(ColorGenerator.get());
+    } else {
+      data.amounts[i] += amount;
+    }
+    return data;
   }
 
   drawChangedChart() {
@@ -35,37 +49,6 @@ export class PieChartComponent {
     this.pieChart.data.datasets[0].backgroundColor = this.dataset.colors;
     this.pieChart.data.labels = this.dataset.tags;
     this.pieChart.update();
-  }
-
-  createFromList(list) {
-    let expenceList = list
-      .filter(item => {
-        return item.type === "-";
-      })
-      .reverse();
-    this.dataset = expenceList.reduce(
-      (data, item) => {
-        let amount = item.amount;
-        if (item.account.currency !== "UAH") {
-          amount = CurrencyConverterUAH.convert(item.account.currency, amount);
-        }
-        let i = data.tags.indexOf(item.tag);
-        if (i < 0) {
-          data.tags.push(item.tag);
-          data.amounts.push(amount);
-          data.colors.push(this.randomColorGenerator());
-        } else {
-          data.amounts[i] += amount;
-        }
-        return data;
-      },
-      {
-        tags: [],
-        amounts: [],
-        colors: []
-      }
-    );
-    this.drawChart();
   }
 
   drawChart() {
@@ -92,10 +75,6 @@ export class PieChartComponent {
     });
   }
 
-  randomColorGenerator() {
-    return "#" + (Math.random().toString(16) + "0000000").slice(2, 8);
-  }
-
   makeZeroDataset() {
     this.dataset = {
       tags: [],
@@ -108,5 +87,6 @@ export class PieChartComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.makeZeroDataset();
+    this.drawChart();
   }
 }
