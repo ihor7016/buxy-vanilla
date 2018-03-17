@@ -3,7 +3,6 @@ import template from "./add-account-dialog.html";
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
-import { Account } from "../../../model/account";
 
 export class AddAccountComponent {
   constructor(mountPoint, props) {
@@ -16,13 +15,11 @@ export class AddAccountComponent {
   }
 
   handleOk() {
-    console.log("accepted");
-    let account = new Account(
-      this.accountNameInput.value,
-      this.accountType.innerText,
-      this.accountCurrency.innerText
-    );
-    this.props.onAddAccountConfirmed(account);
+    this.props.onAddAccountConfirmed({
+      name: this.accountNameInput.value,
+      type: this.accountType.innerText,
+      currency: this.accountCurrency.innerText
+    });
   }
 
   handleCancel() {

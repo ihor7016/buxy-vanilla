@@ -10,7 +10,6 @@ import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { StorageService } from "../../services/storage";
-import { Account } from "../../model/account";
 import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
 export class AppComponent {
