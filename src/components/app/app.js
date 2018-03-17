@@ -55,17 +55,6 @@ export class AppComponent {
     this.transactionsComponent.mount();
   }
 
-  getCurrentAccounts() {
-    StorageService.get("accounts").then(accounts => {
-      if (!accounts) {
-        accounts = [];
-        StorageService.set("accounts", accounts);
-      }
-      this.drawerComponent.initAccounts(accounts);
-      this.mountTransactionsComponent(accounts);
-    });
-  }
-
   initDrawer() {
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
       onAddTagClick: this.handleAddTagOnclick.bind(this),
@@ -90,6 +79,5 @@ export class AppComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.mountChildren();
-    this.getCurrentAccounts();
   }
 }

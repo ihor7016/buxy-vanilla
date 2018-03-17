@@ -55,6 +55,22 @@ export class AccountsComponent {
     });
   }
 
+  initAccounts(accounts) {
+    accounts.forEach(item => {
+      this.addAccount(item);
+    });
+  }
+
+  getCurrentAccounts() {
+    AccountService.get().then(accounts => {
+      if (!accounts) {
+        accounts = [];
+        AccountService.set(accounts);
+      }
+      this.initAccounts(accounts);
+    });
+  }
+
   addEventListeners() {
     this.addAccountButton.addEventListener(
       "click",
@@ -89,5 +105,6 @@ export class AccountsComponent {
     this.initDialogComponent();
     this.initMoreBtns();
     this.addEventListeners();
+    this.getCurrentAccounts();
   }
 }
