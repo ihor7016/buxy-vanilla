@@ -8,7 +8,11 @@
   </div>
   <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">
     <ul class="mdc-list mdc-menu__items">
-      <%= list %>
+      <% for(let i=0; i<list.length; i++) {%>
+        <li class="mdc-list-item" role="option" tabindex="0">
+          <%= list[i] %>
+        </li>
+        <% } %>
     </ul>
   </div>
 </div>

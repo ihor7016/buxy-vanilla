@@ -23,15 +23,7 @@ export class AddTransactionSelectComponent {
   }
 
   makeList() {
-    this.list = this.props.items
-      .map(
-        item => `
-          <li class="mdc-list-item" role="option" tabindex="0">
-            ${item.name ? item.name : item}
-          </li>
-        `
-      )
-      .join("");
+    return this.props.items.map(item => (item.name ? item.name : item));
   }
 
   querySelectors() {
@@ -55,7 +47,7 @@ export class AddTransactionSelectComponent {
   mount() {
     this.makeList();
     this.mountPoint.innerHTML = template({
-      list: this.list,
+      list: this.makeList(),
       type: this.props.type[0].toUpperCase() + this.props.type.slice(1)
     });
     this.querySelectors();
