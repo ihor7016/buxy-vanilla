@@ -15,9 +15,10 @@ export class TableTransactionsComponent {
   }
 
   addStoredTransactions(list) {
-    let transHTML = "";
-    if (list) transHTML = list.map(data => templateRow({ row: data })).join("");
-    this.transactionPoint.innerHTML = transHTML;
+    const html = list
+      ? list.map(data => templateRow({ row: data })).join("")
+      : "";
+    this.transactionPoint.innerHTML = html;
     this.initMoreBtns();
   }
 
