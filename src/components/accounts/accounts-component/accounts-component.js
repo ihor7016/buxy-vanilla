@@ -32,15 +32,8 @@ export class AccountsComponent {
   }
 
   handleAddAccountConfirmed(account) {
-    AccountService.get().then(accounts => {
-      if (!accounts) {
-        AccountService.set([account]);
-      } else {
-        let updatedAccounts = [account].concat(accounts);
-        AccountService.set(updatedAccounts);
-      }
-      this.props.onAddAccountConfirmed(account);
-    });
+    AccountService.add(account);
+    this.props.onAddAccountConfirmed(account);
   }
 
   initMoreBtns() {
