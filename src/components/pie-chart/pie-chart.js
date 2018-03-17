@@ -13,6 +13,7 @@ export class PieChartComponent {
   }
 
   updateChart(data) {
+    if (!this.pieChart) this.drawChart();
     let amount = data.amount;
     if (data.account.currency != "UAH") {
       amount = CurrencyConverterUAH.convert(data.account.currency, amount);
@@ -92,8 +93,17 @@ export class PieChartComponent {
     return "#" + (Math.random().toString(16) + "0000000").slice(2, 8);
   }
 
+  makeZeroDataset() {
+    this.dataset = {
+      tags: [],
+      amounts: [],
+      colors: []
+    };
+  }
+
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.makeZeroDataset();
   }
 }

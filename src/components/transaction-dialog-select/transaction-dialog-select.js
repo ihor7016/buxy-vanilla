@@ -18,16 +18,12 @@ export class TransactionSelectComponent {
     });
   }
 
-  makeList() {
-    return this.props.items
-      .map(
-        item => `
-          <li class="mdc-list-item" role="option" tabindex="0">
-            ${item.name ? item.name : item}
-          </li>
-        `
-      )
-      .join("");
+  getList() {
+    let list;
+    if (this.props.items[0] && this.props.items[0].name) {
+      list = this.props.items.map(item => item.name);
+    } else list = this.props.items;
+    return list;
   }
 
   querySelectors() {
@@ -52,7 +48,7 @@ export class TransactionSelectComponent {
 
   mount() {
     this.mountPoint.innerHTML = template({
-      list: this.makeList(),
+      list: this.getList(),
       type: this.props.type[0].toUpperCase() + this.props.type.slice(1)
     });
     this.querySelectors();

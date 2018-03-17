@@ -27,7 +27,7 @@ export class TransactionsComponent {
   }
 
   showStoredTransactions(list) {
-    this.list = list;
+    this.list = list || [];
     this.tableTransactionsComponent.addStoredTransactions(list);
     this.barChartComponent.createFromList(list);
     this.pieChartComponent.createFromList(list);

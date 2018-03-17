@@ -25,6 +25,7 @@ export class BarChartComponent {
   }
 
   drawChangedChart() {
+    if (!this.barChart) this.drawChart();
     this.barChart.data.datasets[0].data = [
       this.dataset.income,
       this.dataset.expence
@@ -91,8 +92,16 @@ export class BarChartComponent {
     });
   }
 
+  makeZeroDataset() {
+    this.dataset = {
+      income: 0,
+      expence: 0
+    };
+  }
+
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.makeZeroDataset();
   }
 }
