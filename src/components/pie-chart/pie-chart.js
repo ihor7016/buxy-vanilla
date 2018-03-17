@@ -13,6 +13,7 @@ export class PieChartComponent {
   }
 
   updateChart(data) {
+    if (data.type == "+") return;
     if (!this.pieChart) this.drawChart();
     let amount = data.amount;
     if (data.account.currency != "UAH") {
@@ -37,9 +38,11 @@ export class PieChartComponent {
   }
 
   createFromList(list) {
-    let expenceList = list.filter(item => {
-      return item.type == "-";
-    });
+    let expenceList = list
+      .filter(item => {
+        return item.type == "-";
+      })
+      .reverse();
     this.dataset = expenceList.reduce(
       (data, item) => {
         let amount = item.amount;
