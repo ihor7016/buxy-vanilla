@@ -14,41 +14,31 @@ export class BarChartComponent {
   }
 
   updateChart(data) {
-    let amount = data.amount;
-    if (data.account.currency !== "UAH") {
-      amount = CurrencyConverterUAH.convert(data.account.currency, amount);
-    }
-    data.type === "-"
-      ? (this.dataset.expence += amount)
-      : (this.dataset.income += amount);
+    this.dataset = this.addCurrData(this.dataset, data);
     this.drawChangedChart();
   }
 
+  createFromList(list) {
+    this.dataset = list.reduce(this.addCurrData, this.dataset);
+    this.drawChangedChart();
+  }
+
+  addCurrData(accum, item) {
+    let data = accum;
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAH.convert(item.account.currency, amount);
+    }
+    item.type === "-" ? (data.expence += amount) : (data.income += amount);
+    return data;
+  }
+
   drawChangedChart() {
-    if (!this.barChart) this.drawChart();
     this.barChart.data.datasets[0].data = [
       this.dataset.income,
       this.dataset.expence
     ];
     this.barChart.update();
-  }
-
-  createFromList(list) {
-    this.dataset = list.reduce(
-      (data, item) => {
-        let amount = item.amount;
-        if (item.account.currency !== "UAH") {
-          amount = CurrencyConverterUAH.convert(item.account.currency, amount);
-        }
-        item.type === "-" ? (data.expence += amount) : (data.income += amount);
-        return data;
-      },
-      {
-        income: 0,
-        expence: 0
-      }
-    );
-    this.drawChart();
   }
 
   drawChart() {
@@ -103,5 +93,6 @@ export class BarChartComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.makeZeroDataset();
+    this.drawChart();
   }
 }
