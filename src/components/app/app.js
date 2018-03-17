@@ -45,6 +45,7 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
+    this.mountTransactionsComponent();
   }
 
   mountTransactionsComponent(accounts) {
