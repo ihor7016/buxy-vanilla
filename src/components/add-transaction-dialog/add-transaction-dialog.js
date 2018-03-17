@@ -23,12 +23,13 @@ export class AddTransactionComponent {
   }
 
   showAccounts(accounts) {
-    this.accounts = accounts;
+    this.accounts = accounts || [];
+    const acc = accounts ? accounts.map(item => item.name) : [];
     this.accountSelect = new CustomSelectComponent(
       this.accountSelectMountPoint,
       {
         type: "account",
-        items: this.accounts.map(item => item.name) || []
+        items: acc
       }
     );
     this.accountSelect.mount();

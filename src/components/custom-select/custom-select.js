@@ -24,6 +24,12 @@ export class CustomSelectComponent {
     return this.select.value.replace(/\r|\n|\s/g, "");
   }
 
+  checkList() {
+    if (!this.select.options.length) {
+      this.select.disabled = true;
+    }
+  }
+
   mount() {
     this.mountPoint.innerHTML = template({
       list: this.props.items,
@@ -31,5 +37,6 @@ export class CustomSelectComponent {
     });
     this.querySelectors();
     this.initMDC();
+    this.checkList();
   }
 }
