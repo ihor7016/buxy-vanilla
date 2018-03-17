@@ -18,10 +18,9 @@ export class AddTransactionComponent {
   }
 
   getStoredAccounts() {
-    AccountListService.get().then(
-      accounts => this.showAccounts(accounts),
-      err => console.error(err.message)
-    );
+    AccountListService.get()
+      .then(accounts => this.showAccounts(accounts))
+      .catch(e => console.error(e.message));
   }
 
   showAccounts(accounts) {
@@ -36,10 +35,9 @@ export class AddTransactionComponent {
   }
 
   getStoredTags() {
-    TagListService.get().then(
-      tags => this.showTags(tags),
-      err => console.error(err.message)
-    );
+    TagListService.get()
+      .then(tags => this.showTags(tags))
+      .catch(e => console.error(e.message));
   }
 
   showTags(tags) {

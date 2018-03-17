@@ -14,20 +14,18 @@ export class TransactionsComponent {
   }
 
   getStoredData() {
-    TransactionListService.get().then(
-      list => {
+    TransactionListService.get()
+      .then(list => {
         if (list) this.showStoredTransactions(list);
-      },
-      err => console.error(`get transactions: ${err.message}`)
-    );
+      })
+      .catch(e => console.error(`get transactions: ${e.message}`));
   }
 
   setStoredData(data) {
     this.list.unshift(data);
-    TransactionListService.set(this.list).then(
-      () => {},
-      err => console.error(`set transactions: ${err.message}`)
-    );
+    TransactionListService.set(this.list)
+      .then(() => {})
+      .catch(e => console.error(`set transactions: ${e.message}`));
   }
 
   showStoredTransactions(list) {
