@@ -13,27 +13,21 @@ export class TransactionsComponent {
     this.props = props;
   }
 
-  initServices() {
-    this.transactionListService = new TransactionListService();
-  }
-
   getStoredData() {
-    this.transactionListService.get().then(
+    TransactionListService.get().then(
       list => {
         if (list) this.showStoredTransactions(list);
       },
-      error => console.error(`get transactions: ${error.message}`)
+      err => console.error(`get transactions: ${err.message}`)
     );
   }
 
   setStoredData(data) {
     this.list.unshift(data);
-    this.transactionListService
-      .set(this.list)
-      .then(
-        () => {},
-        error => console.error(`set transactions: ${error.message}`)
-      );
+    TransactionListService.set(this.list).then(
+      () => {},
+      err => console.error(`set transactions: ${err.message}`)
+    );
   }
 
   showStoredTransactions(list) {
@@ -102,7 +96,6 @@ export class TransactionsComponent {
     this.querySelectors();
     this.mountChildren();
     this.addEventListeners();
-    this.initServices();
     this.getStoredData();
   }
 }

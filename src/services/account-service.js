@@ -1,11 +1,11 @@
 import { StorageService } from "./storage";
 
 export class AccountListService {
-  get() {
+  static get() {
     return StorageService.get("accountList");
   }
 
-  set(value) {
+  static set(value) {
     return StorageService.set("accountList", value);
   }
 }

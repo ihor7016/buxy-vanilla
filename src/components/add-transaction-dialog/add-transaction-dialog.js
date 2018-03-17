@@ -17,17 +17,10 @@ export class AddTransactionComponent {
     this.props = props;
   }
 
-  initServices() {
-    this.accountListService = new AccountListService();
-    this.tagListService = new TagListService();
-  }
-
   getStoredAccounts() {
-    this.accountListService.get().then(
-      accounts => {
-        this.showAccounts(accounts);
-      },
-      err => console.error(error.message)
+    AccountListService.get().then(
+      accounts => this.showAccounts(accounts),
+      err => console.error(err.message)
     );
   }
 
@@ -43,11 +36,9 @@ export class AddTransactionComponent {
   }
 
   getStoredTags() {
-    this.tagListService.get().then(
-      tags => {
-        this.showTags(tags);
-      },
-      err => console.error(error.message)
+    TagListService.get().then(
+      tags => this.showTags(tags),
+      err => console.error(err.message)
     );
   }
 
@@ -107,13 +98,11 @@ export class AddTransactionComponent {
   }
 
   getType() {
-    let type;
-    this.income.checked ? (type = "+") : (type = "-");
-    return type;
+    return this.income.checked ? "+" : "-";
   }
 
   handleOk() {
-    let transaction = new Transaction(
+    const transaction = new Transaction(
       this.getType(),
       this.date.value,
       parseInt(this.amount.value),
@@ -143,6 +132,5 @@ export class AddTransactionComponent {
     this.querySelectors();
     this.initMDC();
     this.addEventListeners();
-    this.initServices();
   }
 }
