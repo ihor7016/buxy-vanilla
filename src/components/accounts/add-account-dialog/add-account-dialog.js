@@ -33,6 +33,9 @@ export class AddAccountComponent {
     this.accountTextField = this.mountPoint.querySelector(
       ".add-account-dialog__account"
     );
+    this.balanceTextField = this.mountPoint.querySelector(
+      ".add-account-dialog__balance"
+    );
     this.accountNameInput = this.mountPoint.querySelector(
       ".add-account-dialog__account-input"
     );
@@ -53,6 +56,7 @@ export class AddAccountComponent {
   initMDC() {
     this.dialog = new MDCDialog(this.addAccountComponent);
     this.account = new MDCTextField(this.accountTextField);
+    this.balance = new MDCTextField(this.balanceTextField);
     this.type = new MDCSelect(this.typeAccountSelect);
     this.currency = new MDCSelect(this.currencyAccountSelect);
   }
