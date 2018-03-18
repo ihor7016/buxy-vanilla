@@ -3,14 +3,8 @@ import template from "./app.html";
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
-import { AddAccountComponent } from "../accounts/add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
-import { PieChartComponent } from "../pie-chart/pie-chart";
-import { BarChartComponent } from "../bar-chart/bar-chart";
-import { TableTransactionsComponent } from "../table-transactions/table-transactions";
-import { StorageService } from "../../services/storage";
-import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -45,13 +39,8 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
-    this.mountTransactionsComponent();
-  }
-
-  mountTransactionsComponent(accounts) {
     this.transactionsComponent = new TransactionsComponent(
-      this.transactionsMountPoint,
-      { accounts: accounts }
+      this.transactionsMountPoint
     );
     this.transactionsComponent.mount();
   }
