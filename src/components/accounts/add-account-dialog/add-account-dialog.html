@@ -9,13 +9,13 @@
       <div class="add-account-dialog__row">
         <div class="add-account-dialog__col">
           <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
-            <input type="text" class="add-account-dialog__account mdc-text-field__input" placeholder="Account">
+            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">
             <div class="mdc-line-ripple"></div>
           </div>
         </div>
         <div class="add-account-dialog__col">
           <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
-            <input type="text" class="add-account-dialog__balance mdc-text-field__input" placeholder="Initial balance">
+            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">
             <div class="mdc-line-ripple"></div>
           </div>
         </div>
@@ -31,9 +31,7 @@
             </div>
             <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">
               <ul class="mdc-list mdc-menu__items">
-                <% for(let i=0; i
-                <types.length
-                ; i++) {%>
+                <% for(let i=0; i<types.length; i++) {%>
                   <li class="mdc-list-item" role="option" tabindex="0">
                     <%= types[i] %>
                   </li>
