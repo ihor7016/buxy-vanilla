@@ -17,15 +17,15 @@ export class ToolbarComponent {
     this.menu.addEventListener("click", this.handleMenuClick.bind(this));
     this.aboutButton.addEventListener(
       "click",
-      this.handleAboutOnclick.bind(this)
+      this.handleAboutClick.bind(this)
     );
   }
 
   handleMenuClick() {
-    this.props.onMenuClicked();
+    this.props.onMenuClick();
   }
 
-  handleAboutOnclick() {
+  handleAboutClick() {
     this.props.onAboutClick();
   }
 

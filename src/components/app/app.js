@@ -31,7 +31,7 @@ export class AppComponent {
 
   mountChildren() {
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
-      onMenuClicked: this.handleToolbarMenuClick.bind(this),
+      onMenuClick: this.handleToolbarMenuClick.bind(this),
       onAboutClick: this.handleAboutOnclick.bind(this)
     });
     this.toolBarComponent.mount();
