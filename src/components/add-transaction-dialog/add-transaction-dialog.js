@@ -124,7 +124,7 @@ export class AddTransactionComponent {
   }
 
   cleanDialog() {
-    this.income.checked = true;
+    this.expence.checked = true;
     this.date.value = "";
     this.amount.value = "";
     this.description.value = "";

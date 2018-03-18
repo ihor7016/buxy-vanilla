@@ -7,6 +7,7 @@ import { ColorGeneratorService } from "../../services/color-generator";
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
+    this.dataset = { tags: [], amounts: [], colors: [] };
   }
 
   querySelectors() {
@@ -78,18 +79,9 @@ export class PieChartComponent {
     });
   }
 
-  makeZeroDataset() {
-    this.dataset = {
-      tags: [],
-      amounts: [],
-      colors: []
-    };
-  }
-
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.makeZeroDataset();
     this.draw();
   }
 }

@@ -7,6 +7,7 @@ export class BarChartComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+    this.dataset = { income: 0, expence: 0 };
   }
 
   querySelectors() {
@@ -85,17 +86,9 @@ export class BarChartComponent {
     });
   }
 
-  makeZeroDataset() {
-    this.dataset = {
-      income: 0,
-      expence: 0
-    };
-  }
-
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.makeZeroDataset();
     this.draw();
   }
 }
