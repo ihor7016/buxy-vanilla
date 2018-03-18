@@ -67,7 +67,7 @@ export class AddTransactionComponent {
 
   mount() {
     this.mountPoint.innerHTML = template({
-      accounts: this.props.accounts,
+      accounts: ["Private", "Cash"],
       tags: ["Transport", "Groceries", "Entertainment"]
     });
     this.querySelectors();
