@@ -96,8 +96,12 @@ export class AccountsComponent {
     console.log("handleEditClick");
   }
 
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
+  handleDeleteClick(event) {
+    let moreButton = event.target.closest(".button-more");
+    let listItem = moreButton.closest(".account__list-item");
+    let index = Array.from(this.accList.children).indexOf(listItem) - 1;
+    AccountService.remove(index);
+    this.accList.removeChild(listItem);
   }
 
   mount() {

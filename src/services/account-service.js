@@ -12,6 +12,13 @@ export class AccountService {
     });
   }
 
+  static remove(index) {
+    AccountService.get().then(accounts => {
+      accounts.splice(index, 1);
+      AccountService.set(accounts);
+    });
+  }
+
   static get() {
     return StorageService.get("accounts");
   }
