@@ -15,25 +15,22 @@ export class TableTransactionsComponent {
   }
 
   addStoredTransactions(list) {
-    const html = list ? list.map(data => this.createHtml(data)).join("") : "";
+    const html = list
+      ? list.map(data => templateRow({ row: data })).join("")
+      : "";
     this.transactionPoint.innerHTML = html;
     this.initMoreBtns();
   }
 
   addTransaction(data) {
     this.transactionPoint.innerHTML =
-      this.createHtml(data) + this.transactionPoint.innerHTML;
+      templateRow({
+        row: data
+      }) + this.transactionPoint.innerHTML;
     this.initMoreBtns();
   }
 
-  createHtml(data) {
-    return `
-      <tr class="table-transactions__tr table-transactions__highlighted" data-id=
-      ${data.id}>
-      ${templateRow({ row: data })}
-      </tr>
-    `;
-  }
+  createHtml(data) {}
 
   querySelectorsButtons() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
