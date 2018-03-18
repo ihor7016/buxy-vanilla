@@ -35,8 +35,8 @@ export class TransactionsComponent {
 
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.barChartComponent.updateChart(data);
-    this.pieChartComponent.updateChart(data);
+    this.barChartComponent.update(data);
+    this.pieChartComponent.update(data);
     this.setStoredData(data);
   }
 

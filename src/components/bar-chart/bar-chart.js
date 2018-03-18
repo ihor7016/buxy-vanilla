@@ -10,17 +10,17 @@ export class BarChartComponent {
   }
 
   querySelectors() {
-    this.barChartCtx = this.mountPoint.querySelector(".chart__visual");
+    this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  updateChart(data) {
+  update(data) {
     this.dataset = this.addCurrData(this.dataset, data);
-    this.drawChangedChart();
+    this.drawChanged();
   }
 
   createFromList(list) {
     this.dataset = list.reduce(this.addCurrData, this.dataset);
-    this.drawChangedChart();
+    this.drawChanged();
   }
 
   addCurrData(accum, item) {
@@ -33,16 +33,16 @@ export class BarChartComponent {
     return data;
   }
 
-  drawChangedChart() {
-    this.barChart.data.datasets[0].data = [
+  drawChanged() {
+    this.chart.data.datasets[0].data = [
       this.dataset.income,
       this.dataset.expence
     ];
-    this.barChart.update();
+    this.chart.update();
   }
 
-  drawChart() {
-    this.barChart = new Chart(this.barChartCtx, {
+  draw() {
+    this.chart = new Chart(this.chartCtx, {
       type: "bar",
       data: {
         labels: ["Income", "Expense"],
@@ -93,6 +93,6 @@ export class BarChartComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.makeZeroDataset();
-    this.drawChart();
+    this.draw();
   }
 }

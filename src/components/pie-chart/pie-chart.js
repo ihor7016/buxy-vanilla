@@ -10,21 +10,21 @@ export class PieChartComponent {
   }
 
   querySelectors() {
-    this.pieChartCtx = this.mountPoint.querySelector(".chart__visual");
+    this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  updateChart(data) {
+  update(data) {
     if (data.type === "+") {
       return;
     }
     this.dataset = this.addCurrData(this.dataset, data);
-    this.drawChangedChart();
+    this.drawChanged();
   }
 
   createFromList(list) {
     let expenceList = list.filter(item => item.type === "-").reverse();
     this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
-    this.drawChangedChart();
+    this.drawChanged();
   }
 
   addCurrData(accum, item) {
@@ -44,15 +44,15 @@ export class PieChartComponent {
     return data;
   }
 
-  drawChangedChart() {
-    this.pieChart.data.datasets[0].data = this.dataset.amounts;
-    this.pieChart.data.datasets[0].backgroundColor = this.dataset.colors;
-    this.pieChart.data.labels = this.dataset.tags;
-    this.pieChart.update();
+  drawChanged() {
+    this.chart.data.datasets[0].data = this.dataset.amounts;
+    this.chart.data.datasets[0].backgroundColor = this.dataset.colors;
+    this.chart.data.labels = this.dataset.tags;
+    this.chart.update();
   }
 
-  drawChart() {
-    this.pieChart = new Chart(this.pieChartCtx, {
+  draw() {
+    this.chart = new Chart(this.chartCtx, {
       type: "pie",
       data: {
         datasets: [
@@ -87,6 +87,6 @@ export class PieChartComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.makeZeroDataset();
-    this.drawChart();
+    this.draw();
   }
 }
