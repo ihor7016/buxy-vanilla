@@ -113,7 +113,8 @@ export class AddTransactionComponent {
       amount: parseInt(this.amount.value),
       desc: this.description.value,
       tag: this.tagSelect.getValue(),
-      account: this.getAccount()
+      account: this.getAccount(),
+      id: Date.now()
     });
     this.cleanDialog();
   }

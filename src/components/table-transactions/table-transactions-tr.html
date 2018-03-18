@@ -1,21 +1,19 @@
-<tr class="table-transactions__tr table-transactions__highlighted">
-  <td class="table-transactions__td">
-    <%= row.date %>
-  </td>
-  <td class="table-transactions__td">
-    <span><%= row.type %></span>
-    <span><%= row.amount %></span>
-    <span><%= row.account.currency %></span>
-  </td>
-  <td class="table-transactions__td table-transactions__td--desc">
-    <%= row.desc %>
-  </td>
-  <td class="table-transactions__td">
-    <%= row.tag %>
-  </td>
-  <td class="table-transactions__td">
-    <span class="table-transactions__span"><%= row.account.name %></span>,
-    <span class="table-transactions__span"><%= row.account.type %></span>
-    <div class="table-transactions__more-button"></div>
-  </td>
-</tr>
+<td class="table-transactions__td">
+  <%= row.date %>
+</td>
+<td class="table-transactions__td">
+  <span><%= row.type %></span>
+  <span><%= row.amount %></span>
+  <span><%= row.account.currency %></span>
+</td>
+<td class="table-transactions__td table-transactions__td--desc">
+  <%= row.desc %>
+</td>
+<td class="table-transactions__td">
+  <%= row.tag %>
+</td>
+<td class="table-transactions__td">
+  <span class="table-transactions__span"><%= row.account.name %></span>,
+  <span class="table-transactions__span"><%= row.account.type %></span>
+  <div class="table-transactions__more-button"></div>
+</td>
