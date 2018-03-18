@@ -1,8 +1,8 @@
 import template from "./pie-chart.html";
 import Chart from "chart.js";
 
-import { CurrencyConverterUAH } from "../../services/currency-converter-uah";
-import { ColorGenerator } from "../../services/color-generator";
+import { CurrencyConverterUAHService } from "../../services/currency-converter-uah";
+import { ColorGeneratorService } from "../../services/color-generator";
 
 export class PieChartComponent {
   constructor(mountPoint) {
@@ -31,13 +31,16 @@ export class PieChartComponent {
     let data = accum;
     let amount = item.amount;
     if (item.account.currency !== "UAH") {
-      amount = CurrencyConverterUAH.convert(item.account.currency, amount);
+      amount = CurrencyConverterUAHService.convert(
+        item.account.currency,
+        amount
+      );
     }
     const i = accum.tags.indexOf(item.tag);
     if (i < 0) {
       data.tags.push(item.tag);
       data.amounts.push(amount);
-      data.colors.push(ColorGenerator.get());
+      data.colors.push(ColorGeneratorService.get());
     } else {
       data.amounts[i] += amount;
     }

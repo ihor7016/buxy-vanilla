@@ -21,9 +21,9 @@ export class TransactionsComponent {
 
   setStoredData(data) {
     this.list.unshift(data);
-    TransactionListService.set(this.list)
-      .then()
-      .catch(e => console.error(`set transactions: ${e.message}`));
+    TransactionListService.set(this.list).catch(e =>
+      console.error(`set transactions: ${e.message}`)
+    );
   }
 
   showStoredTransactions(list) {

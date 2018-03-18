@@ -1,4 +1,4 @@
-export class CurrencyConverterUAH {
+export class CurrencyConverterUAHService {
   static convert(curr, amount) {
     if (curr === "USD") {
       return amount * 27;
