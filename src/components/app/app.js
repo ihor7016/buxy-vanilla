@@ -6,9 +6,6 @@ import { TransactionsComponent } from "../transactions/transactions";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../tags/add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
-import { PieChartComponent } from "../pie-chart/pie-chart";
-import { BarChartComponent } from "../bar-chart/bar-chart";
-import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { StorageService } from "../../services/storage";
 import { Tag } from "../../model/tag";
 import { TagsComponent } from "../tags/tags-component/tags-component";
@@ -52,14 +49,6 @@ export class AppComponent {
     this.aboutDialog.mount();
   }
 
-  mountTransactionsComponent(tags) {
-    this.transactionsComponent = new TransactionsComponent(
-      this.transactionsMountPoint,
-      { tags: tags }
-    );
-    this.transactionsComponent.mount();
-  }
-
   getTags() {
     StorageService.get("tags").then(tags => {
       if (!tags) {
@@ -67,7 +56,6 @@ export class AppComponent {
         StorageService.set("tags", tags);
       }
       this.drawerComponent.initTags(tags);
-      this.mountTransactionsComponent(tags);
     });
   }
 
