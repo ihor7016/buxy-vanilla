@@ -30,8 +30,6 @@ export class TableTransactionsComponent {
     this.initMoreBtns();
   }
 
-  createHtml(data) {}
-
   querySelectorsButtons() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".table-transactions__more-button"
