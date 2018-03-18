@@ -17,6 +17,7 @@ export class AddAccountComponent {
   handleOk() {
     this.props.onAddAccountConfirmed({
       name: this.accountNameInput.value,
+      balance: this.balanceNameInput.value,
       type: this.accountType.innerText,
       currency: this.accountCurrency.innerText
     });
@@ -38,6 +39,9 @@ export class AddAccountComponent {
     );
     this.accountNameInput = this.mountPoint.querySelector(
       ".add-account-dialog__account-input"
+    );
+    this.balanceNameInput = this.mountPoint.querySelector(
+      ".add-account-dialog__balance-input"
     );
     this.typeAccountSelect = this.mountPoint.querySelector(
       ".add-account-dialog__type"
