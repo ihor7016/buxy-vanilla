@@ -17,35 +17,24 @@ export class AddTransactionComponent {
   }
 
   getStoredAccounts() {
-    AccountListService.get()
-      .then(accounts => this.showAccounts(accounts))
-      .catch(e => console.error(`get accounts: ${e.message}`));
+    AccountListService.get().then(accounts => this.showAccounts(accounts));
   }
 
   showAccounts(accounts) {
-    this.accounts = accounts ? accounts : [];
-    this.accountSelect = new CustomSelectComponent(
-      this.accountSelectMountPoint,
-      {
-        type: "account",
-        items: this.accounts.map(item => item.name)
-      }
-    );
-    this.accountSelect.mount();
+    if (accounts && accounts.length > 0) {
+      this.accounts = accounts;
+      this.accountSelect.addItems(accounts.map(item => item.name));
+    }
   }
 
   getStoredTags() {
-    TagListService.get()
-      .then(tags => this.showTags(tags))
-      .catch(e => console.error(`get tags: ${e.message}`));
+    TagListService.get().then(tags => this.showTags(tags));
   }
 
   showTags(tags) {
-    this.tagSelect = new CustomSelectComponent(this.tagSelectMountPoint, {
-      type: "tag",
-      items: tags || []
-    });
-    this.tagSelect.mount();
+    if (tags && tags.length > 0) {
+      this.tagSelect.addItems(tags);
+    }
   }
 
   showDialog() {
@@ -81,6 +70,20 @@ export class AddTransactionComponent {
     );
   }
 
+  mountChildren() {
+    this.tagSelect = new CustomSelectComponent(this.tagSelectMountPoint, {
+      type: "tag"
+    });
+    this.tagSelect.mount();
+    this.accountSelect = new CustomSelectComponent(
+      this.accountSelectMountPoint,
+      {
+        type: "account"
+      }
+    );
+    this.accountSelect.mount();
+  }
+
   initMDC() {
     this.dialog = new MDCDialog(this.addTransactionDialog);
     this.description = new MDCTextField(this.descriptionTextField);
@@ -113,7 +116,7 @@ export class AddTransactionComponent {
       desc: this.description.value,
       tag: this.tagSelect.getValue(),
       account: this.getAccount(),
-      id: Date.now()
+      id: Date.now().toString()
     });
     this.cleanDialog();
   }
@@ -134,6 +137,7 @@ export class AddTransactionComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.initMDC();
     this.addEventListeners();
   }

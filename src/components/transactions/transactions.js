@@ -14,31 +14,28 @@ export class TransactionsComponent {
   }
 
   getStoredData() {
-    TransactionListService.get()
-      .then(list => this.showStoredTransactions(list))
-      .catch(e => console.error(`get transactions: ${e.message}`));
-  }
-
-  setStoredData(data) {
-    this.list.unshift(data);
-    TransactionListService.set(this.list).catch(e =>
-      console.error(`set transactions: ${e.message}`)
+    TransactionListService.get().then(list =>
+      this.showStoredTransactions(list)
     );
   }
 
-  showStoredTransactions(list) {
-    this.list = list || [];
-    this.checkEmptyState();
-    this.tableTransactionsComponent.addStoredTransactions(this.list);
-    this.barChartComponent.createFromList(this.list);
-    this.pieChartComponent.createFromList(this.list);
+  addStoredData(data) {
+    TransactionListService.add(data);
+  }
+
+  showStoredTransactions(storedList) {
+    const list = storedList || [];
+    this.checkEmptyState(list);
+    this.tableTransactionsComponent.addStoredTransactions(list);
+    this.barChartComponent.createFromList(list);
+    this.pieChartComponent.createFromList(list);
   }
 
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
     this.barChartComponent.update(data);
     this.pieChartComponent.update(data);
-    this.setStoredData(data);
+    this.addStoredData(data);
     this.checkEmptyState();
   }
 
@@ -46,14 +43,9 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent.showDialog();
   }
 
-  checkEmptyState() {
-    if (!this.list.length) {
-      this.transactionsContent.classList.add("transactions__block--hidden");
-      this.emptyState.classList.remove("transactions__block--hidden");
-    } else {
-      this.transactionsContent.classList.remove("transactions__block--hidden");
-      this.emptyState.classList.add("transactions__block--hidden");
-    }
+  showEmptyState() {
+    this.transactionsContent.classList.add("transactions__block--hidden");
+    this.emptyState.classList.remove("transactions__block--hidden");
   }
 
   querySelectors() {
