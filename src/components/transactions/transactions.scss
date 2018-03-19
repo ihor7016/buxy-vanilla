@@ -1,6 +1,12 @@
 .transactions {
   padding: 15px 40px 15px 40px;
 
+  &__block {
+    &--hidden {
+      display: none;
+    }
+  }
+
   &__empty-state {
     margin: 50px auto;
     text-align: center;

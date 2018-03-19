@@ -28,7 +28,7 @@ export class TransactionsComponent {
 
   showStoredTransactions(list) {
     this.list = list || [];
-    this.toggleEmptyState();
+    this.checkEmptyState();
     this.tableTransactionsComponent.addStoredTransactions(this.list);
     this.barChartComponent.createFromList(this.list);
     this.pieChartComponent.createFromList(this.list);
@@ -39,20 +39,20 @@ export class TransactionsComponent {
     this.barChartComponent.update(data);
     this.pieChartComponent.update(data);
     this.setStoredData(data);
-    this.toggleEmptyState();
+    this.checkEmptyState();
   }
 
   handleAddTransactionClick() {
     this.addTransactionDialogComponent.showDialog();
   }
 
-  toggleEmptyState() {
+  checkEmptyState() {
     if (!this.list.length) {
-      this.transactionsContent.style.display = "none";
-      this.emptyState.style.display = "block";
+      this.transactionsContent.classList.add("transactions__block--hidden");
+      this.emptyState.classList.remove("transactions__block--hidden");
     } else {
-      this.transactionsContent.style.display = "block";
-      this.emptyState.style.display = "none";
+      this.transactionsContent.classList.remove("transactions__block--hidden");
+      this.emptyState.classList.add("transactions__block--hidden");
     }
   }
 
