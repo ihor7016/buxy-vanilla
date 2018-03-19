@@ -56,6 +56,12 @@ export class AddAccountDialogComponent {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
+
+  clean() {
+    this.accountNameInput.value = "";
+    this.balanceNameInput.value = "";
+  }
+
   handleOk() {
     this.props.onAddAccountConfirmed({
       name: this.accountNameInput.value,
@@ -63,10 +69,12 @@ export class AddAccountDialogComponent {
       type: this.accountType.innerText,
       currency: this.accountCurrency.innerText
     });
+    this.clean();
   }
 
   handleCancel() {
     console.log("declined");
+    this.clean();
   }
 
   mount() {
