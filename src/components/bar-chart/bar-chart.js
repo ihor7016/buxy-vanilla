@@ -14,8 +14,12 @@ export class BarChartComponent {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  update(data) {
-    this.dataset = this.addCurrData(this.dataset, data);
+  update(action, data) {
+    if (action === "add") {
+      this.dataset = this.addCurrData(this.dataset, data);
+    } else {
+      this.dataset = this.delCurrData(this.dataset, data);
+    }
     this.drawChanged();
   }
 
@@ -34,6 +38,19 @@ export class BarChartComponent {
       );
     }
     item.type === "-" ? (data.expence += amount) : (data.income += amount);
+    return data;
+  }
+
+  delCurrData(accum, item) {
+    const data = Object.assign({}, accum);
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAHService.convert(
+        item.account.currency,
+        amount
+      );
+    }
+    item.type === "-" ? (data.expence -= amount) : (data.income -= amount);
     return data;
   }
 

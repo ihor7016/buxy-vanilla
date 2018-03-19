@@ -113,7 +113,7 @@ export class AddTransactionComponent {
       desc: this.description.value,
       tag: this.tagSelect.getValue(),
       account: this.getAccount(),
-      id: Date.now()
+      id: Date.now().toString()
     });
     this.cleanDialog();
   }
