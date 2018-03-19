@@ -1,9 +1,14 @@
 <div class="transactions mdc-layout-grid">
-  <div class="mdc-layout-grid__inner">
-    <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>
-    <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>
+  <div class="transactions__content transactions__block">
+    <div class="mdc-layout-grid__inner">
+      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>
+      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>
+    </div>
+    <div class="transactions__table-transactions"></div>
   </div>
-  <div class="transactions__table-transactions"></div>
+  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">
+    <p>You don't have any transactions</p>
+  </div>
   <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">
     <span class="mdc-fab__icon">add</span>
   </button>

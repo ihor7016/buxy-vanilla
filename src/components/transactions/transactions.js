@@ -14,42 +14,53 @@ export class TransactionsComponent {
   }
 
   getStoredData() {
-    TransactionListService.get()
-      .then(list => this.showStoredTransactions(list))
-      .catch(e => console.error(`get transactions: ${e.message}`));
-  }
-
-  setStoredData() {
-    TransactionListService.set(this.list).catch(e =>
-      console.error(`set transactions: ${e.message}`)
+    TransactionListService.get().then(list =>
+      this.showStoredTransactions(list)
     );
   }
 
-  showStoredTransactions(list) {
-    this.list = list || [];
-    this.tableTransactionsComponent.addStoredTransactions(list);
-    this.barChartComponent.createFromList(list);
-    this.pieChartComponent.createFromList(list);
+  addStoredData(data) {
+    TransactionListService.add(data);
+  }
+
+  showStoredTransactions(storedList) {
+    if (storedList && storedList.length) {
+      this.tableTransactionsComponent.addStoredTransactions(storedList);
+      this.barChartComponent.createFromList(storedList);
+      this.pieChartComponent.createFromList(storedList);
+    } else {
+      this.showEmptyState();
+    }
   }
 
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.barChartComponent.update("add", data);
-    this.pieChartComponent.update("add", data);
-    this.list.unshift(data);
-    this.setStoredData();
+    this.barChartComponent.update(data);
+    this.pieChartComponent.update(data);
+    this.addStoredData(data);
+    this.hideEmptyState();
   }
 
-  handleTransactionDelete(id) {
-    const i = this.list.findIndex(elem => elem.id === id);
-    this.barChartComponent.update("del", this.list[i]);
-    this.pieChartComponent.update("del", this.list[i]);
-    this.list.splice(i, 1);
-    this.setStoredData();
-  }
+  // handleTransactionDelete(id) {
+  //   const i = this.list.findIndex(elem => elem.id === id);
+  //   this.barChartComponent.update("del", this.list[i]);
+  //   this.pieChartComponent.update("del", this.list[i]);
+  //   this.list.splice(i, 1);
+  //   this.setStoredData();
+  // }
 
   handleAddTransactionClick() {
     this.addTransactionDialogComponent.showDialog();
+  }
+
+  showEmptyState() {
+    this.transactionsContent.classList.add("transactions__block--hidden");
+    this.emptyState.classList.remove("transactions__block--hidden");
+  }
+
+  hideEmptyState() {
+    this.transactionsContent.classList.remove("transactions__block--hidden");
+    this.emptyState.classList.add("transactions__block--hidden");
   }
 
   querySelectors() {
@@ -67,6 +78,12 @@ export class TransactionsComponent {
     );
     this.addTransactionDialogMountPoint = this.mountPoint.querySelector(
       ".transactions__add-transaction-dialog"
+    );
+    this.transactionsContent = this.mountPoint.querySelector(
+      ".transactions__content"
+    );
+    this.emptyState = this.mountPoint.querySelector(
+      ".transactions__empty-state"
     );
   }
 

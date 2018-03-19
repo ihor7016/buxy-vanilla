@@ -32,8 +32,7 @@ export class PieChartComponent {
     this.drawChanged();
   }
 
-  addCurrData(accum, item) {
-    const data = Object.assign({}, accum);
+  addCurrData(data, item) {
     let amount = item.amount;
     if (item.account.currency !== "UAH") {
       amount = CurrencyConverterUAHService.convert(
@@ -41,7 +40,7 @@ export class PieChartComponent {
         amount
       );
     }
-    const i = accum.tags.indexOf(item.tag);
+    const i = data.tags.indexOf(item.tag);
     if (i < 0) {
       data.tags.push(item.tag);
       data.amounts.push(amount);

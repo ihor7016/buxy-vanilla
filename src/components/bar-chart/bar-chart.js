@@ -28,8 +28,7 @@ export class BarChartComponent {
     this.drawChanged();
   }
 
-  addCurrData(accum, item) {
-    const data = Object.assign({}, accum);
+  addCurrData(data, item) {
     let amount = item.amount;
     if (item.account.currency !== "UAH") {
       amount = CurrencyConverterUAHService.convert(

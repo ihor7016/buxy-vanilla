@@ -1,7 +1,7 @@
 import template from "./about-dialog.html";
 import { MDCDialog } from "@material/dialog";
 
-export class AboutComponent {
+export class AboutDialogComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
@@ -15,11 +15,11 @@ export class AboutComponent {
   }
 
   querySelectors() {
-    this.addTagDialog = this.mountPoint.querySelector(".about-dialog");
+    this.aboutDialog = this.mountPoint.querySelector(".about-dialog");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagDialog);
+    this.dialog = new MDCDialog(this.aboutDialog);
   }
 
   addEventListeners() {
