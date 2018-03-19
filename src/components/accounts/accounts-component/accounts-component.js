@@ -2,7 +2,7 @@ import template from "./accounts-component.html";
 import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../../button-more/button-more";
 import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
-import { AccountService } from "../../../services/account-service";
+import { AccountListService } from "../../../services/account-service";
 
 export class AccountsComponent {
   constructor(mountPoint, props) {
@@ -22,7 +22,7 @@ export class AccountsComponent {
   }
 
   handleAddAccountConfirmed(account) {
-    AccountService.add(account);
+    AccountListService.add(account);
     this.addAccountToHead(account);
   }
 
@@ -46,10 +46,10 @@ export class AccountsComponent {
   }
 
   getCurrentAccounts() {
-    AccountService.get().then(accounts => {
+    AccountListService.get().then(accounts => {
       if (!accounts) {
         accounts = [];
-        AccountService.set(accounts);
+        AccountListService.set(accounts);
       }
       this.initAccounts(accounts);
     });
