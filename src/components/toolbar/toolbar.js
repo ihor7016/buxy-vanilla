@@ -1,6 +1,6 @@
 import template from "./toolbar.html";
 
-import { AboutComponent } from "../about-dialog/about-dialog";
+import { AboutDialogComponent } from "../about-dialog/about-dialog";
 
 export class ToolbarComponent {
   constructor(mountPoint, props) {
@@ -19,7 +19,7 @@ export class ToolbarComponent {
   }
 
   mountChildren() {
-    this.aboutDialog = new AboutComponent(this.aboutMountPoint);
+    this.aboutDialog = new AboutDialogComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
   }
 
