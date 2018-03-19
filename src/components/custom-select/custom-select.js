@@ -8,12 +8,26 @@ export class CustomSelectComponent {
     this.props = props;
   }
 
+  addItems(list) {
+    this.menu.innerHTML = list
+      .map(elem => {
+        return `
+        <li class="mdc-list-item" role="option" tabindex="0">
+          ${elem}
+        </li>
+        `;
+      })
+      .join("");
+    this.checkList();
+  }
+
   clean() {
     this.select.selectedIndex = -1;
   }
 
   querySelectors() {
     this.selectPoint = this.mountPoint.querySelector(".custom-select");
+    this.menu = this.mountPoint.querySelector(".custom-select__menu-items");
   }
 
   initMDC() {
@@ -27,12 +41,13 @@ export class CustomSelectComponent {
   checkList() {
     if (!this.select.options.length) {
       this.select.disabled = true;
+    } else {
+      this.select.disabled = false;
     }
   }
 
   mount() {
     this.mountPoint.innerHTML = template({
-      list: this.props.items,
       type: this.props.type[0].toUpperCase() + this.props.type.slice(1)
     });
     this.querySelectors();
