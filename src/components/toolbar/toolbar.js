@@ -1,5 +1,7 @@
 import template from "./toolbar.html";
 
+import { AboutDialogComponent } from "../about-dialog/about-dialog";
+
 export class ToolbarComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
@@ -11,27 +13,36 @@ export class ToolbarComponent {
     this.aboutButton = this.mountPoint.querySelector(
       ".toolbar__about-dialog-activation"
     );
+    this.aboutMountPoint = this.mountPoint.querySelector(
+      ".toolbar__about-dialog"
+    );
+  }
+
+  mountChildren() {
+    this.aboutDialog = new AboutDialogComponent(this.aboutMountPoint);
+    this.aboutDialog.mount();
   }
 
   addEventListeners() {
     this.menu.addEventListener("click", this.handleMenuClick.bind(this));
     this.aboutButton.addEventListener(
       "click",
-      this.handleAboutOnclick.bind(this)
+      this.handleAboutClick.bind(this)
     );
   }
 
   handleMenuClick() {
-    this.props.onMenuClicked();
+    this.props.onMenuClick();
   }
 
-  handleAboutOnclick() {
-    this.props.onAboutClick();
+  handleAboutClick() {
+    this.aboutDialog.showDialog();
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.addEventListeners();
   }
 }
