@@ -39,7 +39,10 @@ export class AppComponent {
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
     this.transactionsComponent = new TransactionsComponent(
-      this.transactionsMountPoint
+      this.transactionsMountPoint,
+      {
+        onTransactionAdded: this.handleTransactionAdded.bind(this)
+      }
     );
     this.transactionsComponent.mount();
   }
@@ -69,6 +72,10 @@ export class AppComponent {
       }
     );
     this.accountsComponent.mount();
+  }
+
+  handleTransactionAdded(data) {
+    this.accountsComponent.updateAccountData(data);
   }
 
   handleAddAccountClicked() {

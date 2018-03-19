@@ -45,13 +45,23 @@ export class AccountsComponent {
     });
   }
 
-  getCurrentAccounts() {
+  initData() {
+    this.accountsList.innerHTML = "";
     AccountListService.get().then(accounts => {
       if (!accounts) {
         accounts = [];
         AccountListService.set(accounts);
       }
       this.initAccounts(accounts);
+    });
+  }
+
+  updateAccountData(transaction) {
+    AccountListService.update(
+      transaction.account,
+      parseInt(transaction.type + transaction.amount)
+    ).then(_ => {
+      this.initData();
     });
   }
 
@@ -90,6 +100,6 @@ export class AccountsComponent {
     this.querySelectors();
     this.initMoreBtns();
     this.addEventListeners();
-    this.getCurrentAccounts();
+    this.initData();
   }
 }
