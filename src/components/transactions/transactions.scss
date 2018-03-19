@@ -1,7 +1,11 @@
 .transactions {
-  display: flex;
-  flex-direction: column;
   padding: 15px 40px 15px 40px;
+
+  &__empty-state {
+    margin: 50px auto;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.26);
+  }
 
   &__add-transaction-dialog-activation {
     position: fixed;
