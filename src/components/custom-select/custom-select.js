@@ -1,4 +1,5 @@
 import template from "./custom-select.html";
+import templateItems from "./custom-select-items.html";
 
 import { MDCSelect } from "@material/select";
 
@@ -9,15 +10,7 @@ export class CustomSelectComponent {
   }
 
   addItems(list) {
-    this.menu.innerHTML = list
-      .map(elem => {
-        return `
-        <li class="mdc-list-item" role="option" tabindex="0">
-          ${elem}
-        </li>
-        `;
-      })
-      .join("");
+    this.menu.innerHTML = templateItems({ list: list });
     this.checkList();
   }
 
