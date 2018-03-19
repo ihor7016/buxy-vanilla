@@ -2,12 +2,12 @@ import { StorageService } from "./storage";
 
 export class AccountService {
   static add(account) {
-    return AccountService.get().then(accounts => {
+    return this.get().then(accounts => {
       if (!accounts) {
-        AccountService.set([account]);
+        this.set([account]);
       } else {
         let updatedAccounts = [account].concat(accounts);
-        AccountService.set(updatedAccounts);
+        this.set(updatedAccounts);
       }
     });
   }
