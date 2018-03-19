@@ -15,11 +15,11 @@ export class AboutDialogComponent {
   }
 
   querySelectors() {
-    this.addTagDialog = this.mountPoint.querySelector(".about-dialog");
+    this.aboutDialog = this.mountPoint.querySelector(".about-dialog");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagDialog);
+    this.dialog = new MDCDialog(this.aboutDialog);
   }
 
   addEventListeners() {
