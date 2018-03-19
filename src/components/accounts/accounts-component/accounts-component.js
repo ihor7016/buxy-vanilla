@@ -1,13 +1,12 @@
 import template from "./accounts-component.html";
 import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../../button-more/button-more";
-import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
+import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
 import { AccountService } from "../../../services/account-service";
 
 export class AccountsComponent {
-  constructor(mountPoint, addAccountMountPoint, props) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
-    this.addAccountMountPoint = addAccountMountPoint;
     this.props = props;
   }
 
@@ -22,18 +21,9 @@ export class AccountsComponent {
     this.accList = this.mountPoint.querySelector(".account__list");
   }
 
-  initDialogComponent() {
-    this.addAccountComponent = new AddAccountComponent(
-      this.addAccountMountPoint,
-      {
-        onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
-      }
-    );
-  }
-
   handleAddAccountConfirmed(account) {
     AccountService.add(account);
-    this.props.onAddAccountConfirmed(account);
+    this.addAccountToHead(account);
   }
 
   initMoreBtns() {
@@ -88,8 +78,7 @@ export class AccountsComponent {
   }
 
   handleAddAccountClick() {
-    this.addAccountComponent.mount();
-    this.addAccountComponent.showDialog();
+    this.props.onAddAccountClicked();
   }
 
   handleEditClick() {
@@ -103,7 +92,6 @@ export class AccountsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.initDialogComponent();
     this.initMoreBtns();
     this.addEventListeners();
     this.getCurrentAccounts();

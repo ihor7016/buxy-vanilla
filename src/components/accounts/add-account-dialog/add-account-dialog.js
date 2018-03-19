@@ -4,7 +4,7 @@ import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
 
-export class AddAccountComponent {
+export class AddAccountDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
@@ -14,21 +14,8 @@ export class AddAccountComponent {
     this.dialog.show();
   }
 
-  handleOk() {
-    this.props.onAddAccountConfirmed({
-      name: this.accountNameInput.value,
-      balance: this.balanceNameInput.value,
-      type: this.accountType.innerText,
-      currency: this.accountCurrency.innerText
-    });
-  }
-
-  handleCancel() {
-    console.log("declined");
-  }
-
   querySelectors() {
-    this.addAccountComponent = this.mountPoint.querySelector(
+    this.addAccountDialogComponent = this.mountPoint.querySelector(
       ".add-account-dialog"
     );
     this.accountTextField = this.mountPoint.querySelector(
@@ -58,7 +45,7 @@ export class AddAccountComponent {
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addAccountComponent);
+    this.dialog = new MDCDialog(this.addAccountDialogComponent);
     this.account = new MDCTextField(this.accountTextField);
     this.balance = new MDCTextField(this.balanceTextField);
     this.type = new MDCSelect(this.typeAccountSelect);
@@ -68,6 +55,18 @@ export class AddAccountComponent {
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+  }
+  handleOk() {
+    this.props.onAddAccountConfirmed({
+      name: this.accountNameInput.value,
+      balance: this.balanceNameInput.value,
+      type: this.accountType.innerText,
+      currency: this.accountCurrency.innerText
+    });
+  }
+
+  handleCancel() {
+    console.log("declined");
   }
 
   mount() {

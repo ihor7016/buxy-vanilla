@@ -5,6 +5,8 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
+import { AddAccountDialogComponent } from "../accounts/add-account-dialog/add-account-dialog";
+import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -35,6 +37,8 @@ export class AppComponent {
     });
     this.toolBarComponent.mount();
     this.initDrawer();
+    this.initAddAccountDialogComponent();
+    this.initAccountComponent();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
@@ -46,14 +50,38 @@ export class AppComponent {
   }
 
   initDrawer() {
-    this.drawerComponent = new DrawerComponent(
-      this.drawerMountPoint,
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
+      onAddTagClick: this.handleAddTagOnclick.bind(this)
+    });
+    this.drawerComponent.mount();
+  }
+
+  initAddAccountDialogComponent() {
+    this.addAccountDialogComponent = new AddAccountDialogComponent(
       this.addAccountMountPoint,
       {
-        onAddTagClick: this.handleAddTagOnclick.bind(this)
+        onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
       }
     );
-    this.drawerComponent.mount();
+    this.addAccountDialogComponent.mount();
+  }
+
+  initAccountComponent() {
+    this.accountsComponent = new AccountsComponent(
+      this.drawerComponent.getAccountsMountPoint(),
+      {
+        onAddAccountClicked: this.handleAddAccountClicked.bind(this)
+      }
+    );
+    this.accountsComponent.mount();
+  }
+
+  handleAddAccountClicked() {
+    this.addAccountDialogComponent.showDialog();
+  }
+
+  handleAddAccountConfirmed(account) {
+    this.accountsComponent.handleAddAccountConfirmed(account);
   }
 
   handleToolbarMenuClick() {

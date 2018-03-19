@@ -4,9 +4,8 @@ import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
 export class DrawerComponent {
-  constructor(mountPoint, dialogMountPoint, props) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
-    this.dialogMountPoint = dialogMountPoint;
     this.props = props;
   }
 
@@ -28,22 +27,6 @@ export class DrawerComponent {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
-  initAccounts(accounts) {
-    accounts.forEach(item => {
-      this.addAccount(item);
-    });
-  }
-
-  mountChildren() {
-    this.accountsComponent = new AccountsComponent(
-      this.accountsMountPoint,
-      this.dialogMountPoint,
-      {
-        onAddAccountConfirmed: this.onAddAccountConfirmed.bind(this)
-      }
-    );
-    this.accountsComponent.mount();
-  }
   initMoreBtns() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
@@ -55,13 +38,6 @@ export class DrawerComponent {
         onEditClicked: this.handleEditClick.bind(this)
       }).mount();
     });
-  }
-  onAddAccountConfirmed(account) {
-    this.addAccount(account);
-  }
-
-  addAccount(account) {
-    this.accountsComponent.addAccountToHead(account);
   }
 
   addEventListeners() {
@@ -92,7 +68,10 @@ export class DrawerComponent {
     this.querySelectors();
     this.initMoreBtns();
     this.initMDC();
-    this.mountChildren();
     this.addEventListeners();
+  }
+
+  getAccountsMountPoint() {
+    return this.accountsMountPoint;
   }
 }
