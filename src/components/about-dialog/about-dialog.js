@@ -1,7 +1,7 @@
 import template from "./about-dialog.html";
 import { MDCDialog } from "@material/dialog";
 
-export class AboutComponent {
+export class AboutDialogComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
