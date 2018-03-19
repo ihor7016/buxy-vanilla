@@ -8,6 +8,7 @@ import { AboutComponent } from "../about-dialog/about-dialog";
 import { AddAccountDialogComponent } from "../accounts/add-account-dialog/add-account-dialog";
 import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
 
+
 export class AppComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
@@ -27,13 +28,11 @@ export class AppComponent {
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
-    this.aboutMountPoint = this.mountPoint.querySelector(".app__about-dialog");
   }
 
   mountChildren() {
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
-      onMenuClicked: this.handleToolbarMenuClick.bind(this),
-      onAboutClick: this.handleAboutOnclick.bind(this)
+      onMenuClick: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
     this.initDrawer();
@@ -82,14 +81,24 @@ export class AppComponent {
 
   handleAddAccountConfirmed(account) {
     this.accountsComponent.handleAddAccountConfirmed(account);
+    this.transactionsComponent.mount();
+    this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
+    this.addAccountDialog.mount();
+    this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
+    this.addTagDialog.mount();
   }
 
   handleToolbarMenuClick() {
     this.drawerComponent.toggleDrawer();
   }
 
+
   handleAboutOnclick() {
     this.aboutDialog.showDialog();
+  }
+  
+  handleAddAccountClick() {
+    this.addAccountDialog.showDialog();
   }
 
   handleAddTagOnclick() {

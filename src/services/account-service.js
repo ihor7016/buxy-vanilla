@@ -1,6 +1,7 @@
 import { StorageService } from "./storage";
 
-export class AccountService {
+export class AccountListService {
+  
   static add(account) {
     return this.get().then(accounts => {
       if (!accounts) {
@@ -13,10 +14,11 @@ export class AccountService {
   }
 
   static get() {
-    return StorageService.get("accounts");
+    return StorageService.get("accountList");
   }
 
-  static set(accounts) {
-    StorageService.set("accounts", accounts);
+  static set(value) {
+    return StorageService.set("accountList", value);
+
   }
 }

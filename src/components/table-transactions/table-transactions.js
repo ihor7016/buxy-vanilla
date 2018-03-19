@@ -1,4 +1,6 @@
 import template from "./table-transactions.html";
+import templateRow from "./table-transactions-tr.html";
+
 import { ButtonMoreComponent } from "../button-more/button-more";
 
 export class TableTransactionsComponent {
@@ -7,12 +9,35 @@ export class TableTransactionsComponent {
   }
 
   querySelectors() {
+    this.transactionPoint = this.mountPoint.querySelector(
+      ".table-transaction__tbody"
+    );
+  }
+
+  addStoredTransactions(list) {
+    const html = list
+      ? list.map(data => templateRow({ row: data })).join("")
+      : "";
+    this.transactionPoint.innerHTML = html;
+    this.initMoreBtns();
+  }
+
+  addTransaction(data) {
+    this.transactionPoint.innerHTML =
+      templateRow({
+        row: data
+      }) + this.transactionPoint.innerHTML;
+    this.initMoreBtns();
+  }
+
+  querySelectorsButtons() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".table-transactions__more-button"
     );
   }
 
   initMoreBtns() {
+    this.querySelectorsButtons();
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "left",
@@ -33,6 +58,5 @@ export class TableTransactionsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.initMoreBtns();
   }
 }
