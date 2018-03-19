@@ -18,7 +18,7 @@ export class AccountsComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".account__add-account-dialog-activation"
     );
-    this.accList = this.mountPoint.querySelector(".account__list");
+    this.accountsList = this.mountPoint.querySelector(".account__list-items");
   }
 
   handleAddAccountConfirmed(account) {
@@ -63,17 +63,13 @@ export class AccountsComponent {
   }
 
   addAccountToHead(account) {
-    let element = document.createElement("div");
-    element.innerHTML = accountItemTemplate({ account: account });
-    let childNode = this.accList.childNodes[2];
-    this.accList.insertBefore(element.firstChild, childNode);
+    this.accountsList.innerHTML =
+      accountItemTemplate({ account: account }) + this.accountsList.innerHTML;
     this.initMoreBtns();
   }
 
   addAccount(account) {
-    let element = document.createElement("div");
-    element.innerHTML = accountItemTemplate({ account: account });
-    this.accList.appendChild(element.firstChild);
+    this.accountsList.innerHTML += accountItemTemplate({ account: account });
     this.initMoreBtns();
   }
 
