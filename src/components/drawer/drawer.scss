@@ -1,5 +1,17 @@
 .drawer {
   height: 100%;
+  &__more-button {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
+  &__list-item:hover {
+    background-color: $color-primary;
+  }
+  &__list-item,
+  &__list-item.mdc-list-item {
+    overflow: visible;
+  }
   &__nav,
   &__nav.mdc-drawer__drawer {
     overflow: visible;

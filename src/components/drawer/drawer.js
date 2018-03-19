@@ -19,6 +19,9 @@ export class DrawerComponent {
     this.accountsMountPoint = this.mountPoint.querySelector(
       ".drawer__accounts-mountpoint"
     );
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".drawer__more-button"
+    );
   }
 
   initMDC() {
@@ -41,7 +44,18 @@ export class DrawerComponent {
     );
     this.accountsComponent.mount();
   }
-
+  initMoreBtns() {
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".drawer__more-button"
+    );
+    Array.from(this.moreBtnMountPoints).forEach(point => {
+      new ButtonMoreComponent(point, {
+        position: "right",
+        onDeleteClicked: this.handleDeleteClick.bind(this),
+        onEditClicked: this.handleEditClick.bind(this)
+      }).mount();
+    });
+  }
   onAddAccountConfirmed(account) {
     this.addAccount(account);
   }
@@ -76,6 +90,7 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.initMoreBtns();
     this.initMDC();
     this.mountChildren();
     this.addEventListeners();
