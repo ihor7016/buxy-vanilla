@@ -1,6 +1,7 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -22,6 +23,17 @@ export class DrawerComponent {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
     );
+
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".drawer__confirm-dialog"
+    );
+  }
+
+  mountChildren() {
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint
+    );
+    this.confirmDialog.mount();
   }
 
   initMDC() {
@@ -54,6 +66,7 @@ export class DrawerComponent {
   }
   handleDeleteClick() {
     console.log("handleDeleteClick");
+    this.confirmDialog.showDialog();
   }
 
   handleAddAccountClick() {
@@ -71,6 +84,7 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.initMDC();
     this.initMoreBtns();
     this.addEventListeners();

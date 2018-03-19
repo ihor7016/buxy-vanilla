@@ -6,8 +6,6 @@ import { TransactionsComponent } from "../transactions/transactions";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
-import { ButtonMoreComponent } from "../button-more/button-more";
-import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -29,9 +27,6 @@ export class AppComponent {
       ".app__add-tag-dialog"
     );
     this.aboutMountPoint = this.mountPoint.querySelector(".app__about-dialog");
-    this.confirmDialogMountPoint = this.mountPoint.querySelector(
-      ".app__confirm-dialog"
-    );
   }
 
   mountChildren() {
@@ -55,10 +50,6 @@ export class AppComponent {
     this.addTagDialog.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
     this.aboutDialog.mount();
-    this.confirmDialog = new ConfirmDialogComponent(
-      this.confirmDialogMountPoint
-    );
-    this.confirmDialog.mount();
   }
 
   handleToolbarMenuClick() {
@@ -75,10 +66,6 @@ export class AppComponent {
 
   handleAddTagOnclick() {
     this.addTagDialog.showDialog();
-  }
-
-  handleConfirmOnclick() {
-    this.confirmDialog.showDialog();
   }
 
   mount() {

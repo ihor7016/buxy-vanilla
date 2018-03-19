@@ -1,5 +1,6 @@
 import template from "./table-transactions.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TableTransactionsComponent {
   constructor(mountPoint) {
@@ -10,6 +11,17 @@ export class TableTransactionsComponent {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".table-transactions__more-button"
     );
+
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".table-transactions__confirm-dialog"
+    );
+  }
+
+  mountChildren() {
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint
+    );
+    this.confirmDialog.mount();
   }
 
   initMoreBtns() {
@@ -28,11 +40,13 @@ export class TableTransactionsComponent {
 
   handleDeleteClick() {
     console.log("handleDeleteClick");
+    this.confirmDialog.showDialog();
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.initMoreBtns();
   }
 }
