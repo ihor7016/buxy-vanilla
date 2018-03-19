@@ -28,6 +28,10 @@
     padding-left: 15px;
     font-size: 13px;
     color: #757575;
+
+    &--desc {
+      text-transform: capitalize;
+    }
   }
 
   &__span {

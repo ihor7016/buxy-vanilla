@@ -5,7 +5,6 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
-import { AboutComponent } from "../about-dialog/about-dialog";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -26,13 +25,11 @@ export class AppComponent {
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
-    this.aboutMountPoint = this.mountPoint.querySelector(".app__about-dialog");
   }
 
   mountChildren() {
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
-      onMenuClicked: this.handleToolbarMenuClick.bind(this),
-      onAboutClick: this.handleAboutOnclick.bind(this)
+      onMenuClick: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
@@ -48,16 +45,10 @@ export class AppComponent {
     this.addAccountDialog.mount();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
-    this.aboutDialog = new AboutComponent(this.aboutMountPoint);
-    this.aboutDialog.mount();
   }
 
   handleToolbarMenuClick() {
     this.drawerComponent.toggleDrawer();
-  }
-
-  handleAboutOnclick() {
-    this.aboutDialog.showDialog();
   }
 
   handleAddAccountClick() {

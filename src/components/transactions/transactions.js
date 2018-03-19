@@ -5,10 +5,40 @@ import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 
+import { TransactionListService } from "../../services/transaction-service";
+
 export class TransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+  }
+
+  getStoredData() {
+    TransactionListService.get().then(list =>
+      this.showStoredTransactions(list)
+    );
+  }
+
+  addStoredData(data) {
+    TransactionListService.add(data);
+  }
+
+  showStoredTransactions(storedList) {
+    const list = storedList || [];
+    this.tableTransactionsComponent.addStoredTransactions(list);
+    this.barChartComponent.createFromList(list);
+    this.pieChartComponent.createFromList(list);
+  }
+
+  handleAddTransactionSubmit(data) {
+    this.tableTransactionsComponent.addTransaction(data);
+    this.barChartComponent.update(data);
+    this.pieChartComponent.update(data);
+    this.addStoredData(data);
+  }
+
+  handleAddTransactionClick() {
+    this.addTransactionDialogComponent.showDialog();
   }
 
   querySelectors() {
@@ -45,20 +75,20 @@ export class TransactionsComponent {
     this.pieChartComponent.mount();
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
-    this.addTransactionDialog = new AddTransactionComponent(
-      this.addTransactionDialogMountPoint
+    this.addTransactionDialogComponent = new AddTransactionComponent(
+      this.addTransactionDialogMountPoint,
+      {
+        addTransaction: this.handleAddTransactionSubmit.bind(this)
+      }
     );
-    this.addTransactionDialog.mount();
-  }
-
-  handleAddTransactionClick() {
-    this.addTransactionDialog.showDialog();
+    this.addTransactionDialogComponent.mount();
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.addEventListeners();
     this.mountChildren();
+    this.addEventListeners();
+    this.getStoredData();
   }
 }
