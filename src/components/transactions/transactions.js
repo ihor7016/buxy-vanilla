@@ -23,6 +23,12 @@ export class TransactionsComponent {
     TransactionListService.add(data);
   }
 
+  delStoredData(id) {
+    TransactionListService.del(id).then(list =>
+      this.showStoredTransactions(list)
+    );
+  }
+
   showStoredTransactions(storedList) {
     if (storedList && storedList.length) {
       this.tableTransactionsComponent.addStoredTransactions(storedList);
@@ -41,13 +47,9 @@ export class TransactionsComponent {
     this.hideEmptyState();
   }
 
-  // handleTransactionDelete(id) {
-  //   const i = this.list.findIndex(elem => elem.id === id);
-  //   this.barChartComponent.update("del", this.list[i]);
-  //   this.pieChartComponent.update("del", this.list[i]);
-  //   this.list.splice(i, 1);
-  //   this.setStoredData();
-  // }
+  handleTransactionDelete(id) {
+    this.delStoredData(id);
+  }
 
   handleAddTransactionClick() {
     this.addTransactionDialogComponent.showDialog();
