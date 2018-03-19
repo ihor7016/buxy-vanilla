@@ -10,11 +10,9 @@ export class TransactionListService {
   }
 
   static add(data) {
-    return this.get()
-      .then(list => {
-        const newList = list ? [data].concat(list) : [data];
-        this.set(newList);
-      })
-      .catch(e => console.error(`get transactions: ${e.message}`));
+    return this.get().then(list => {
+      const newList = list ? [data].concat(list) : [data];
+      this.set(newList);
+    });
   }
 }

@@ -14,15 +14,13 @@ export class TransactionsComponent {
   }
 
   getStoredData() {
-    TransactionListService.get()
-      .then(list => this.showStoredTransactions(list))
-      .catch(e => console.error(`get transactions: ${e.message}`));
+    TransactionListService.get().then(list =>
+      this.showStoredTransactions(list)
+    );
   }
 
   addStoredData(data) {
-    TransactionListService.add(data).catch(e =>
-      console.error(`add transaction: ${e.message}`)
-    );
+    TransactionListService.add(data);
   }
 
   showStoredTransactions(storedList) {
