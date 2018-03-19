@@ -58,8 +58,8 @@ export class TableTransactionsComponent {
     console.log("handleEditClick");
   }
 
-  handleDeleteClick(target) {
-    this.delTransaction(target.closest(".table-transactions__tr"));
+  handleDeleteClick(e) {
+    this.delTransaction(e.target.closest(".table-transactions__tr"));
   }
 
   mount() {
