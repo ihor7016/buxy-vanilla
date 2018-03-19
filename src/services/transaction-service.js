@@ -8,4 +8,13 @@ export class TransactionListService {
   static set(value) {
     return StorageService.set("transactionList", value);
   }
+
+  static add(data) {
+    return this.get()
+      .then(list => {
+        const newList = list ? [data].concat(list) : [data];
+        this.set(newList);
+      })
+      .catch(e => console.error(`get transactions: ${e.message}`));
+  }
 }

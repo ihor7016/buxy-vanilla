@@ -19,15 +19,14 @@ export class TransactionsComponent {
       .catch(e => console.error(`get transactions: ${e.message}`));
   }
 
-  setStoredData(data) {
-    this.list.unshift(data);
-    TransactionListService.set(this.list).catch(e =>
-      console.error(`set transactions: ${e.message}`)
+  addStoredData(data) {
+    TransactionListService.add(data).catch(e =>
+      console.error(`add transaction: ${e.message}`)
     );
   }
 
-  showStoredTransactions(list) {
-    this.list = list || [];
+  showStoredTransactions(storedList) {
+    const list = storedList || [];
     this.tableTransactionsComponent.addStoredTransactions(list);
     this.barChartComponent.createFromList(list);
     this.pieChartComponent.createFromList(list);
@@ -37,7 +36,7 @@ export class TransactionsComponent {
     this.tableTransactionsComponent.addTransaction(data);
     this.barChartComponent.update(data);
     this.pieChartComponent.update(data);
-    this.setStoredData(data);
+    this.addStoredData(data);
   }
 
   handleAddTransactionClick() {
