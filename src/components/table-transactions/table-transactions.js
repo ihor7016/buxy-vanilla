@@ -13,6 +13,10 @@ export class TableTransactionsComponent {
     this.transactionPoint = this.mountPoint.querySelector(
       ".table-transaction__tbody"
     );
+
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".table-transactions__confirm-dialog"
+    );
   }
 
   addStoredTransactions(list) {
@@ -34,10 +38,6 @@ export class TableTransactionsComponent {
   querySelectorsButtons() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".table-transactions__more-button"
-    );
-
-    this.confirmDialogMountPoint = this.mountPoint.querySelector(
-      ".table-transactions__confirm-dialog"
     );
   }
 

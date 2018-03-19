@@ -10,11 +10,11 @@ export class ConfirmDialogComponent {
     this.dialog.show();
   }
 
-  handleOk() {
+  onOkClick() {
     console.log("accepted");
   }
 
-  handleCancel() {
+  onCancelClick() {
     console.log("declined");
   }
 
@@ -27,12 +27,15 @@ export class ConfirmDialogComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+    this.dialog.listen("MDCDialog:accept", this.onOkClick.bind(this));
+    this.dialog.listen("MDCDialog:cancel", this.onCancelClick.bind(this));
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({
+      type: "account",
+      name: "Privat"
+    });
     this.querySelectors();
     this.initMDC();
     this.addEventListeners();
