@@ -6,6 +6,7 @@ import { TransactionsComponent } from "../transactions/transactions";
 import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AboutComponent } from "../about-dialog/about-dialog";
+import { ButtonMoreComponent } from "../button-more/button-more";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class AppComponent {

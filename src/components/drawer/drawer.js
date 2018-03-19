@@ -1,7 +1,6 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
-import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -55,7 +54,6 @@ export class DrawerComponent {
   }
   handleDeleteClick() {
     console.log("handleDeleteClick");
-    this.confirmDialog.showDialog();
   }
 
   handleAddAccountClick() {
