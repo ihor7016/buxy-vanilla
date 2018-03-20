@@ -47,8 +47,7 @@ export class TableTransactionsComponent {
       {
         type: "transaction",
         name: "name",
-        onOkClicked: this.handleOkClick.bind(this),
-        onCancelClicked: this.handleCancelClick.bind(this)
+        onOkClicked: this.handleOkClick.bind(this)
       }
     );
     this.confirmDialog.mount();
@@ -56,10 +55,6 @@ export class TableTransactionsComponent {
 
   handleOkClick() {
     console.log("accepted");
-  }
-
-  handleCancelClick() {
-    console.log("declined");
   }
 
   initMoreBtns() {
@@ -78,7 +73,6 @@ export class TableTransactionsComponent {
   }
 
   handleDeleteClick() {
-    console.log("handleDeleteClick");
     this.confirmDialog.showDialog();
   }
 

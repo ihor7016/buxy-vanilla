@@ -15,10 +15,6 @@ export class ConfirmDialogComponent {
     this.props.onOkClicked();
   }
 
-  handleCancelClick() {
-    this.props.onCancelClicked();
-  }
-
   querySelectors() {
     this.confirmDialog = this.mountPoint.querySelector(".confirm-dialog");
   }
@@ -29,7 +25,6 @@ export class ConfirmDialogComponent {
 
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOkClick.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.handleCancelClick.bind(this));
   }
 
   mount() {
