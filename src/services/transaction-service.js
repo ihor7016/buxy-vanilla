@@ -18,9 +18,13 @@ export class TransactionListService {
 
   static del(id) {
     return this.get().then(list => {
+      const data = list.find(elem => elem.id === id);
       const newList = list.filter(elem => elem.id !== id);
       this.set(newList);
-      return newList;
+      return {
+        data: data,
+        list: newList
+      };
     });
   }
 }

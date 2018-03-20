@@ -7,22 +7,26 @@ import { ColorGeneratorService } from "../../services/color-generator";
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
+    this.dataset = { tags: [], amounts: [], colors: [] };
   }
 
   querySelectors() {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  update(data) {
+  update(action, data) {
     if (data.type === "+") {
       return;
     }
-    this.dataset = this.addCurrData(this.dataset, data);
+    if (action === "add") {
+      this.dataset = this.addCurrData(this.dataset, data);
+    } else if (action === "del") {
+      this.dataset = this.delCurrData(this.dataset, data);
+    }
     this.drawChanged();
   }
 
   createFromList(list) {
-    this.makeZeroData();
     let expenceList = list.filter(item => item.type === "-").reverse();
     this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
     this.drawChanged();
@@ -43,6 +47,24 @@ export class PieChartComponent {
       data.colors.push(ColorGeneratorService.get());
     } else {
       data.amounts[i] += amount;
+    }
+    return data;
+  }
+
+  delCurrData(data, item) {
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAHService.convert(
+        item.account.currency,
+        amount
+      );
+    }
+    const i = data.tags.indexOf(item.tag);
+    data.amounts[i] -= amount;
+    if (data.amounts[i] < 0.01) {
+      data.tags.splice(i, 1);
+      data.amounts.splice(i, 1);
+      data.colors.splice(i, 1);
     }
     return data;
   }
@@ -78,14 +100,9 @@ export class PieChartComponent {
     });
   }
 
-  makeZeroData() {
-    this.dataset = { tags: [], amounts: [], colors: [] };
-  }
-
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.makeZeroData();
     this.draw();
   }
 }

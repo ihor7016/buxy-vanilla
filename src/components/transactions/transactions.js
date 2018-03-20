@@ -24,27 +24,29 @@ export class TransactionsComponent {
   }
 
   delStoredData(id) {
-    TransactionListService.del(id).then(list =>
-      this.showStoredTransactions(list)
-    );
+    TransactionListService.del(id).then(data => {
+      this.updateCharts("del", data.data);
+      this.checkEmptyState(data.list);
+    });
   }
 
   showStoredTransactions(storedList) {
-    if (storedList && storedList.length) {
-      this.tableTransactionsComponent.addStoredTransactions(storedList);
-      this.barChartComponent.createFromList(storedList);
-      this.pieChartComponent.createFromList(storedList);
-    } else {
-      this.showEmptyState();
-    }
+    this.tableTransactionsComponent.addStoredTransactions(storedList);
+    this.barChartComponent.createFromList(storedList);
+    this.pieChartComponent.createFromList(storedList);
+    this.checkEmptyState(storedList);
+  }
+
+  updateCharts(action, data) {
+    this.barChartComponent.update(action, data);
+    this.pieChartComponent.update(action, data);
   }
 
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.barChartComponent.update(data);
-    this.pieChartComponent.update(data);
+    this.updateCharts("add", data);
     this.addStoredData(data);
-    this.hideEmptyState();
+    this.checkEmptyState([data]);
   }
 
   handleTransactionDelete(id) {
@@ -55,14 +57,14 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent.showDialog();
   }
 
-  showEmptyState() {
-    this.transactionsContent.classList.add("transactions__block--hidden");
-    this.emptyState.classList.remove("transactions__block--hidden");
-  }
-
-  hideEmptyState() {
-    this.transactionsContent.classList.remove("transactions__block--hidden");
-    this.emptyState.classList.add("transactions__block--hidden");
+  checkEmptyState(list) {
+    if (list && list.length) {
+      this.transactionsContent.classList.remove("transactions__block--hidden");
+      this.emptyState.classList.add("transactions__block--hidden");
+    } else {
+      this.transactionsContent.classList.add("transactions__block--hidden");
+      this.emptyState.classList.remove("transactions__block--hidden");
+    }
   }
 
   querySelectors() {
