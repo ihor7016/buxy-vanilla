@@ -18,7 +18,7 @@ export class AccountsComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".accounts__add-account-dialog-activation"
     );
-    this.addAccountMountPoint = this.accountsRoot.querySelector(
+    this.addAccountMountPoint = document.querySelector(
       ".app__add-account-dialog"
     );
     this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
