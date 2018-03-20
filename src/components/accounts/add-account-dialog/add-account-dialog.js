@@ -60,12 +60,14 @@ export class AddAccountDialogComponent {
   clean() {
     this.accountNameInput.value = "";
     this.balanceNameInput.value = "";
+    this.type.selectedIndex = -1;
+    this.currency.selectedIndex = -1;
   }
 
   handleOk() {
-    this.props.onAddAccountConfirmed({
-      name: this.accountNameInput.value,
-      balance: this.balanceNameInput.value,
+    this.props.onAddAccountConfirm({
+      name: parseInt(this.accountNameInput.value),
+      balance: parseInt(this.balanceNameInput.value),
       type: this.accountType.innerText,
       currency: this.accountCurrency.innerText
     });
@@ -79,7 +81,19 @@ export class AddAccountDialogComponent {
 
   mount() {
     this.mountPoint.innerHTML = template({
-      types: ["checking", "savings", "credit card", "cash"],
+      types: [
+        "checking",
+        "savings",
+        "credit card",
+        "cash",
+        "investiment",
+        "loan",
+        "cd",
+        "real estate",
+        "vehicle",
+        "insurance",
+        "other"
+      ],
       currencies: ["UAH", "USD", "EUR"]
     });
     this.querySelectors();

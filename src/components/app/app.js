@@ -58,7 +58,7 @@ export class AppComponent {
     this.addAccountDialogComponent = new AddAccountDialogComponent(
       this.addAccountMountPoint,
       {
-        onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
+        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
       }
     );
     this.addAccountDialogComponent.mount();

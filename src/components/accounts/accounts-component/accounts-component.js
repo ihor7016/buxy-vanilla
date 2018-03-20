@@ -1,7 +1,6 @@
-import template from "./accounts-component.html";
+import template from "./accounts.html";
 import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../../button-more/button-more";
-import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
 import { AccountListService } from "../../../services/account-service";
 
 export class AccountsComponent {
@@ -13,12 +12,12 @@ export class AccountsComponent {
   querySelectors() {
     this.accountsRoot = this.mountPoint.querySelector(".accounts");
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".account__more-button"
+      ".accounts__more-button"
     );
     this.addAccountButton = this.mountPoint.querySelector(
-      ".account__add-account-dialog-activation"
+      ".accounts__add-account-dialog-activation"
     );
-    this.accountsList = this.mountPoint.querySelector(".account__list-items");
+    this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
   }
 
   handleAddAccountConfirmed(account) {
@@ -28,13 +27,13 @@ export class AccountsComponent {
 
   initMoreBtns() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".account__more-button"
+      ".accounts__more-button"
     );
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "right",
-        onDeleteClicked: this.handleDeleteClick.bind(this),
-        onEditClicked: this.handleEditClick.bind(this)
+        onDeleteClick: this.handleDeleteClick.bind(this),
+        onEditClick: this.handleEditClick.bind(this)
       }).mount();
     });
   }
@@ -60,7 +59,7 @@ export class AccountsComponent {
     AccountListService.update(
       transaction.account,
       parseInt(transaction.type + transaction.amount)
-    ).then(_ => {
+    ).then(() => {
       this.initData();
     });
   }
