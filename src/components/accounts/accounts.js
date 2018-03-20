@@ -1,7 +1,7 @@
 import template from "./accounts.html";
 import accountItemTemplate from "./account-item.html";
-import { ButtonMoreComponent } from "../../button-more/button-more";
-import { AccountListService } from "../../../services/account-service";
+import { ButtonMoreComponent } from "../button-more/button-more";
+import { AccountListService } from "../../services/account-service";
 import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
 
 export class AccountsComponent {

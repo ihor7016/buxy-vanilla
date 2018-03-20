@@ -4,7 +4,7 @@ import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
-import { AccountsComponent } from "../accounts/accounts/accounts";
+import { AccountsComponent } from "../accounts/accounts";
 
 export class AppComponent {
   constructor(mountPoint) {

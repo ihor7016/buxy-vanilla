@@ -1,7 +1,6 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
-import { AccountsComponent } from "../accounts/accounts/accounts";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
