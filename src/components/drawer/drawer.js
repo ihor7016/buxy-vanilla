@@ -22,12 +22,15 @@ export class DrawerComponent {
       ".drawer__more-button"
     );
   }
+
   updateAccountData(transaction) {
     this.accountsComponent.updateAccountData(transaction);
   }
 
   initAccountComponent() {
-    this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
+      onAccountDelete: this.props.onAccountDelete
+    });
     this.accountsComponent.mount();
   }
 
@@ -54,6 +57,7 @@ export class DrawerComponent {
       this.handleAddTagOnclick.bind(this)
     );
   }
+
   handleEditClick() {}
 
   handleDeleteClick() {}

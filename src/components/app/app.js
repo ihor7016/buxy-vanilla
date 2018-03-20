@@ -42,9 +42,14 @@ export class AppComponent {
 
   initDrawer() {
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAddTagClick: this.handleAddTagOnclick.bind(this)
+      onAddTagClick: this.handleAddTagOnclick.bind(this),
+      onAccountDelete: this.handleAccountDelete.bind(this)
     });
     this.drawerComponent.mount();
+  }
+
+  handleAccountDelete() {
+    this.transactionsComponent.loadStoredData();
   }
 
   handleTransactionAdded(data) {

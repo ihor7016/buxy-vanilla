@@ -13,7 +13,7 @@ export class TransactionsComponent {
     this.props = props;
   }
 
-  getStoredData() {
+  loadStoredData() {
     TransactionListService.get().then(list =>
       this.showStoredTransactions(list)
     );
@@ -123,6 +123,6 @@ export class TransactionsComponent {
     this.querySelectors();
     this.mountChildren();
     this.addEventListeners();
-    this.getStoredData();
+    this.loadStoredData();
   }
 }

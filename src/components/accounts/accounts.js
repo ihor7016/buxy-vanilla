@@ -3,6 +3,7 @@ import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountListService } from "../../services/account-service";
 import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
+import { TransactionListService } from "../../services/transaction-service";
 
 export class AccountsComponent {
   constructor(mountPoint, props) {
@@ -106,9 +107,24 @@ export class AccountsComponent {
   handleDeleteClick(event) {
     let moreButton = event.target.closest(".button-more");
     let listItem = moreButton.closest(".accounts__list-item");
-    let index = Array.from(this.accountsList.children).indexOf(listItem) - 1;
+    let index = Array.from(this.accountsList.children).indexOf(listItem);
     AccountListService.remove(index);
     this.accountsList.removeChild(listItem);
+    AccountListService.get()
+      .then(accounts => {
+        return accounts[index];
+      })
+      .then(account => {
+        TransactionListService.get().then(transactions => {
+          TransactionListService.set(
+            transactions.filter(item => {
+              return item.account.id !== account.id;
+            })
+          ).then(() => {
+            this.props.onAccountDelete();
+          });
+        });
+      });
   }
 
   mount() {
