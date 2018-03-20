@@ -1,11 +1,22 @@
 import { StorageService } from "./storage";
 
-export class TagService {
-  static get() {
-    return StorageService.get("tags");
+export class TagListService {
+  static add() {
+    return this.get().then(tags => {
+      if (!tags) {
+        this.set([tag]);
+      } else {
+        let updatedTags = [tag].concat(tags);
+        this.set(updatedTags);
+      }
+    });
   }
 
-  static set(tags) {
-    StorageService.set("tags", tags);
+  static get() {
+    return StorageService.get("tagList");
+  }
+
+  static set(value) {
+    return StorageService.set("tagList", value);
   }
 }

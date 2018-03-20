@@ -2,9 +2,8 @@ import template from "./add-tag-dialog.html";
 
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
-import { Tag } from "../../../model/tag";
 
-export class AddTagComponent {
+export class AddTagDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
@@ -14,30 +13,37 @@ export class AddTagComponent {
     this.dialog.show();
   }
 
-  handleOk() {
-    console.log("accepted");
-    let tag = new Tag(this.tagNameInput.value);
-    this.props.onAddTagConfirmed(tag);
-  }
-
-  handleCancel() {
-    console.log("declined");
-  }
-
   querySelectors() {
-    this.addTagComponent = this.mountPoint.querySelector(".add-tag-dialog");
+    this.addTagDialogComponent = this.mountPoint.querySelector(
+      ".add-tag-dialog"
+    );
     this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
     this.tagNameInput = this.mountPoint.querySelector(".mdc-text-field__input");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagComponent);
+    this.dialog = new MDCDialog(this.addTagDialogComponent);
     this.tag = new MDCTextField(this.tagTextField);
   }
 
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+  }
+
+  clean() {
+    this.tagNameInput.value = "";
+  }
+
+  handleOk() {
+    this.props.onAddTagConfirm({
+      name: this.tagNameInput.value
+    });
+    this.clean();
+  }
+
+  handleCancel() {
+    this.clean();
   }
 
   mount() {

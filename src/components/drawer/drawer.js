@@ -1,8 +1,7 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
-import { TagsComponent } from "../tags/tags-component/tags-component";
-import { Tag } from "../../model/tag";
+import { TagsComponent } from "../tags/tags";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -22,30 +21,13 @@ export class DrawerComponent {
     );
   }
 
-  initMDC() {
-    this.drawer = new MDCPersistentDrawer(this.drawerRoot);
-  }
-
-  initTags(tags) {
-    tags.forEach(item => {
-      this.addTag(item);
-    });
-  }
-
-  mountChildren() {
-    this.tagsComponent = new TagsComponent(this.tagsMountPoint, {
-      addTagMountPoint: this.props.addTagMountPoint,
-      onAddTagConfirmed: this.onAddTagConfirmed.bind(this)
-    });
+  initTagComponent() {
+    this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
   }
 
-  onAddTagConfirmed(tag) {
-    this.addTag(tag);
-  }
-
-  addTag(tag) {
-    this.tagsComponent.addTag(tag);
+  initMDC() {
+    this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
   addEventListeners() {
@@ -53,13 +35,6 @@ export class DrawerComponent {
       "click",
       this.handleAddAccountClick.bind(this)
     );
-  }
-
-  handleEditClick() {
-    console.log("handleEditClick");
-  }
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
   }
 
   handleAddAccountClick() {
@@ -75,6 +50,6 @@ export class DrawerComponent {
     this.querySelectors();
     this.initMDC();
     this.addEventListeners();
-    this.mountChildren();
+    this.initTagComponent();
   }
 }
