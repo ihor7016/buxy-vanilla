@@ -52,16 +52,14 @@ export class TableTransactionsComponent {
     this.confirmDialog = new ConfirmDialogComponent(
       this.confirmDialogMountPoint,
       {
-        type: "transaction",
-        name: "name",
-        onOkClicked: this.handleOkClick.bind(this)
+        onOkClick: this.handleOkClick.bind(this)
       }
     );
     this.confirmDialog.mount();
   }
 
-  handleOkClick() {
-    console.log("accepted");
+  handleOkClick(elem) {
+    this.delTransaction(elem);
   }
 
   initMoreBtns() {
@@ -79,9 +77,9 @@ export class TableTransactionsComponent {
     console.log("handleEditClick");
   }
 
-  handleDeleteClick() {
-    // this.confirmDialog.showDialog();
-    this.delTransaction(e.target.closest(".table-transactions__tr"));
+  handleDeleteClick(e) {
+    this.confirmDialog.showInfo(e.target.closest(".table-transactions__tr"));
+    this.confirmDialog.showDialog();
   }
 
   mount() {
