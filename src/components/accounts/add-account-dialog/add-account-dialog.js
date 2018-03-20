@@ -75,7 +75,6 @@ export class AddAccountDialogComponent {
   }
 
   handleCancel() {
-    console.log("declined");
     this.clean();
   }
 
