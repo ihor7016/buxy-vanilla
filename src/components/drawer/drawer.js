@@ -31,7 +31,11 @@ export class DrawerComponent {
 
   mountChildren() {
     this.confirmDialog = new ConfirmDialogComponent(
-      this.confirmDialogMountPoint
+      this.confirmDialogMountPoint,
+      {
+        type: "account/tag",
+        name: "name"
+      }
     );
     this.confirmDialog.mount();
   }

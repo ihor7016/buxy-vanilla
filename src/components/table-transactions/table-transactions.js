@@ -43,7 +43,11 @@ export class TableTransactionsComponent {
 
   mountChildren() {
     this.confirmDialog = new ConfirmDialogComponent(
-      this.confirmDialogMountPoint
+      this.confirmDialogMountPoint,
+      {
+        type: "transaction",
+        name: "name"
+      }
     );
     this.confirmDialog.mount();
   }

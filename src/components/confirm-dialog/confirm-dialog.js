@@ -2,20 +2,23 @@ import template from "./confirm-dialog.html";
 import { MDCDialog } from "@material/dialog";
 
 export class ConfirmDialogComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   showDialog() {
     this.dialog.show();
   }
 
-  onOkClick() {
+  handleOkClick() {
     console.log("accepted");
+    this.props.onOkClicked();
   }
 
-  onCancelClick() {
+  handleCancelClick() {
     console.log("declined");
+    this.props.onCancelClicked();
   }
 
   querySelectors() {
@@ -27,14 +30,14 @@ export class ConfirmDialogComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.onOkClick.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.onCancelClick.bind(this));
+    this.dialog.listen("MDCDialog:accept", this.handleOkClick.bind(this));
+    this.dialog.listen("MDCDialog:cancel", this.handleCancelClick.bind(this));
   }
 
   mount() {
     this.mountPoint.innerHTML = template({
-      type: "account",
-      name: "Privat"
+      type: this.props.type,
+      name: this.props.name
     });
     this.querySelectors();
     this.initMDC();
