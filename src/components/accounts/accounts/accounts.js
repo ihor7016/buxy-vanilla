@@ -19,7 +19,7 @@ export class AccountsComponent {
       ".accounts__add-account-dialog-activation"
     );
     this.addAccountMountPoint = document.querySelector(
-      ".app__add-account-dialog"
+      ".accounts__add-account-dialog"
     );
     this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
   }

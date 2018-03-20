@@ -66,7 +66,7 @@ export class AddAccountDialogComponent {
 
   handleOk() {
     this.props.onAddAccountConfirm({
-      name: parseInt(this.accountNameInput.value),
+      name: this.accountNameInput.value,
       balance: parseInt(this.balanceNameInput.value),
       type: this.accountType.innerText,
       currency: this.accountCurrency.innerText

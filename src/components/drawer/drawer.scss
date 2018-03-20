@@ -15,5 +15,6 @@
   &__nav,
   &__nav.mdc-drawer__drawer {
     overflow: visible;
+    will-change: unset;
   }
 }

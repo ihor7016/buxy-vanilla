@@ -14,7 +14,9 @@ export class AccountListService {
 
   static update(transactionAccount, amount) {
     return this.get()
-      .then(accounts => this.initAccounts(accounts || []))
+      .then(accounts => {
+        return this.initAccounts(accounts || []);
+      })
       .then(accounts => {
         let account = accounts.find(item => {
           return item.name === transactionAccount.name;
@@ -38,5 +40,6 @@ export class AccountListService {
 
   static initAccounts(accounts) {
     this.set(accounts);
+    return accounts;
   }
 }
