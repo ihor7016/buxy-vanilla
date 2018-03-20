@@ -15,4 +15,12 @@ export class TransactionListService {
       this.set(newList);
     });
   }
+
+  static del(id) {
+    return this.get().then(list => {
+      const newList = list.filter(elem => elem.id !== id);
+      this.set(newList);
+      return newList;
+    });
+  }
 }

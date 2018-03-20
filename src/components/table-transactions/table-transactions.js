@@ -5,8 +5,9 @@ import { ButtonMoreComponent } from "../button-more/button-more";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TableTransactionsComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -33,6 +34,12 @@ export class TableTransactionsComponent {
         row: data
       }) + this.transactionPoint.innerHTML;
     this.initMoreBtns();
+  }
+
+  delTransaction(elem) {
+    const id = elem.dataset.id;
+    this.props.onDataDelete(id);
+    this.transactionPoint.removeChild(elem);
   }
 
   querySelectorsButtons() {
@@ -74,6 +81,10 @@ export class TableTransactionsComponent {
 
   handleDeleteClick() {
     this.confirmDialog.showDialog();
+  }
+
+  handleDeleteClick(e) {
+    this.delTransaction(e.target.closest(".table-transactions__tr"));
   }
 
   mount() {
