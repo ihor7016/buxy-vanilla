@@ -4,7 +4,6 @@ import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
-import { AccountsComponent } from "../accounts/accounts";
 
 export class AppComponent {
   constructor(mountPoint) {
@@ -30,7 +29,6 @@ export class AppComponent {
     });
     this.toolBarComponent.mount();
     this.initDrawer();
-    this.initAccountComponent();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
     this.transactionsComponent = new TransactionsComponent(
@@ -49,25 +47,8 @@ export class AppComponent {
     this.drawerComponent.mount();
   }
 
-  initAccountComponent() {
-    this.accountsComponent = new AccountsComponent(
-      this.drawerComponent.getAccountsMountPoint(),
-      {
-        onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
-      }
-    );
-    this.accountsComponent.mount();
-  }
-
   handleTransactionAdded(data) {
-    this.accountsComponent.updateAccountData(data);
-  }
-
-  handleAddAccountConfirmed(account) {
-    this.accountsComponent.handleAddAccountConfirmed(account);
-    this.transactionsComponent.mount();
-    this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
-    this.addTagDialog.mount();
+    this.drawerComponent.updateAccountData(data);
   }
 
   handleToolbarMenuClick() {

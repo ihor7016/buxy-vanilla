@@ -1,6 +1,7 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { AccountsComponent } from "../accounts/accounts";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -20,6 +21,14 @@ export class DrawerComponent {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
     );
+  }
+  updateAccountData(transaction) {
+    this.accountsComponent.updateAccountData(transaction);
+  }
+
+  initAccountComponent() {
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
+    this.accountsComponent.mount();
   }
 
   initMDC() {
@@ -45,14 +54,9 @@ export class DrawerComponent {
       this.handleAddTagOnclick.bind(this)
     );
   }
+  handleEditClick() {}
 
-  handleEditClick() {
-    console.log("handleEditClick");
-  }
-
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
-  }
+  handleDeleteClick() {}
 
   handleAddTagOnclick() {
     this.props.onAddTagClick();
@@ -68,9 +72,6 @@ export class DrawerComponent {
     this.initMoreBtns();
     this.initMDC();
     this.addEventListeners();
-  }
-
-  getAccountsMountPoint() {
-    return this.accountsMountPoint;
+    this.initAccountComponent();
   }
 }

@@ -18,12 +18,10 @@ export class AccountListService {
         return accounts || [];
       })
       .then(accounts => {
-        let account = accounts.find(item => {
+        let index = accounts.findIndex(item => {
           return item.name === transactionAccount.name;
         });
-        let index = accounts.findIndex(item => {
-          return item.name === account.name;
-        });
+        let account = accounts[index];
         account.balance = account.balance + amount;
         accounts[index] = account;
         this.set(accounts);
