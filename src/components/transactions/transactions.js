@@ -44,6 +44,7 @@ export class TransactionsComponent {
     this.barChartComponent.update(data);
     this.pieChartComponent.update(data);
     this.addStoredData(data);
+    this.props.onTransactionAdded(data);
     this.hideEmptyState();
   }
 
