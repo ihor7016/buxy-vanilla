@@ -8,8 +8,9 @@ export class ConfirmDialogComponent {
     this.props = props;
   }
 
-  showDialog() {
+  showDialog(data) {
     this.dialog.show();
+    this.showInfo(data);
   }
 
   handleOkClick() {

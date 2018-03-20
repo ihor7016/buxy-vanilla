@@ -78,8 +78,7 @@ export class TableTransactionsComponent {
   }
 
   handleDeleteClick(e) {
-    this.confirmDialog.showInfo(e.target.closest(".table-transactions__tr"));
-    this.confirmDialog.showDialog();
+    this.confirmDialog.showDialog(e.target.closest(".table-transactions__tr"));
   }
 
   mount() {
