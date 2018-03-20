@@ -1,6 +1,8 @@
 import template from "./bar-chart.html";
 import Chart from "chart.js";
 
+import { CurrencyConverterUAHService } from "../../services/currency-converter-uah";
+
 export class BarChartComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
@@ -8,18 +10,49 @@ export class BarChartComponent {
   }
 
   querySelectors() {
-    this.barChartCtx = this.mountPoint.querySelector(".chart__visual");
+    this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  createBarChart() {
-    this.barChart = new Chart(this.barChartCtx, {
+  update(data) {
+    this.dataset = this.addCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  createFromList(list) {
+    this.makeZeroData();
+    this.dataset = list.reduce(this.addCurrData, this.dataset);
+    this.drawChanged();
+  }
+
+  addCurrData(data, item) {
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAHService.convert(
+        item.account.currency,
+        amount
+      );
+    }
+    item.type === "-" ? (data.expence += amount) : (data.income += amount);
+    return data;
+  }
+
+  drawChanged() {
+    this.chart.data.datasets[0].data = [
+      this.dataset.income,
+      this.dataset.expence
+    ];
+    this.chart.update();
+  }
+
+  draw() {
+    this.chart = new Chart(this.chartCtx, {
       type: "bar",
       data: {
         labels: ["Income", "Expense"],
         datasets: [
           {
             label: "Value",
-            data: [5000, 3000],
+            data: [this.dataset.income, this.dataset.expence],
             backgroundColor: ["#4caf50", "#f44336"]
           }
         ]
@@ -52,9 +85,14 @@ export class BarChartComponent {
     });
   }
 
+  makeZeroData() {
+    this.dataset = { income: 0, expence: 0 };
+  }
+
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.createBarChart();
+    this.makeZeroData();
+    this.draw();
   }
 }

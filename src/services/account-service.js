@@ -1,29 +1,45 @@
 import { StorageService } from "./storage";
 
-export class AccountService {
+export class AccountListService {
   static add(account) {
-    return AccountService.get().then(accounts => {
+    return this.get().then(accounts => {
       if (!accounts) {
-        AccountService.set([account]);
+        this.set([account]);
       } else {
         let updatedAccounts = [account].concat(accounts);
-        AccountService.set(updatedAccounts);
+        this.set(updatedAccounts);
       }
     });
   }
 
   static remove(index) {
-    AccountService.get().then(accounts => {
+    this.get().then(accounts => {
       accounts.splice(index, 1);
-      AccountService.set(accounts);
+      this.set(accounts);
     });
   }
 
-  static get() {
-    return StorageService.get("accounts");
+  static update(transactionAccount, amount) {
+    return this.get()
+      .then(accounts => {
+        return accounts || [];
+      })
+      .then(accounts => {
+        let index = accounts.findIndex(item => {
+          return item.name === transactionAccount.name;
+        });
+        let account = accounts[index];
+        account.balance = account.balance + amount;
+        accounts[index] = account;
+        this.set(accounts);
+      });
   }
 
-  static set(accounts) {
-    StorageService.set("accounts", accounts);
+  static get() {
+    return StorageService.get("accountList");
+  }
+
+  static set(value) {
+    return StorageService.set("accountList", value);
   }
 }

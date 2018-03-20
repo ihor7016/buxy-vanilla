@@ -4,7 +4,7 @@ import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
 
-export class AddAccountComponent {
+export class AddAccountDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
@@ -14,20 +14,8 @@ export class AddAccountComponent {
     this.dialog.show();
   }
 
-  handleOk() {
-    this.props.onAddAccountConfirmed({
-      name: this.accountNameInput.value,
-      type: this.accountType.innerText,
-      currency: this.accountCurrency.innerText
-    });
-  }
-
-  handleCancel() {
-    console.log("declined");
-  }
-
   querySelectors() {
-    this.addAccountComponent = this.mountPoint.querySelector(
+    this.addAccountDialogComponent = this.mountPoint.querySelector(
       ".add-account-dialog"
     );
     this.accountTextField = this.mountPoint.querySelector(
@@ -38,6 +26,9 @@ export class AddAccountComponent {
     );
     this.accountNameInput = this.mountPoint.querySelector(
       ".add-account-dialog__account-input"
+    );
+    this.balanceNameInput = this.mountPoint.querySelector(
+      ".add-account-dialog__balance-input"
     );
     this.typeAccountSelect = this.mountPoint.querySelector(
       ".add-account-dialog__type"
@@ -54,7 +45,7 @@ export class AddAccountComponent {
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addAccountComponent);
+    this.dialog = new MDCDialog(this.addAccountDialogComponent);
     this.account = new MDCTextField(this.accountTextField);
     this.balance = new MDCTextField(this.balanceTextField);
     this.type = new MDCSelect(this.typeAccountSelect);
@@ -66,9 +57,42 @@ export class AddAccountComponent {
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
 
+  clean() {
+    this.accountNameInput.value = "";
+    this.balanceNameInput.value = "";
+    this.type.selectedIndex = -1;
+    this.currency.selectedIndex = -1;
+  }
+
+  handleOk() {
+    this.props.onAddAccountConfirm({
+      name: this.accountNameInput.value,
+      balance: parseInt(this.balanceNameInput.value),
+      type: this.accountType.innerText,
+      currency: this.accountCurrency.innerText
+    });
+    this.clean();
+  }
+
+  handleCancel() {
+    this.clean();
+  }
+
   mount() {
     this.mountPoint.innerHTML = template({
-      types: ["checking", "savings", "credit card", "cash"],
+      types: [
+        "checking",
+        "savings",
+        "credit card",
+        "cash",
+        "investiment",
+        "loan",
+        "cd",
+        "real estate",
+        "vehicle",
+        "insurance",
+        "other"
+      ],
       currencies: ["UAH", "USD", "EUR"]
     });
     this.querySelectors();
