@@ -22,10 +22,6 @@ export class DrawerComponent {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
     );
-
-    this.confirmDialogMountPoint = this.mountPoint.querySelector(
-      ".drawer__confirm-dialog"
-    );
   }
 
   initMDC() {
@@ -58,7 +54,6 @@ export class DrawerComponent {
   }
   handleDeleteClick() {
     console.log("handleDeleteClick");
-    this.confirmDialog.showDialog();
   }
 
   handleAddAccountClick() {
