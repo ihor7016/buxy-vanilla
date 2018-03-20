@@ -5,7 +5,7 @@ import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 import { AddAccountDialogComponent } from "../accounts/add-account-dialog/add-account-dialog";
-import { AccountsComponent } from "../accounts/accounts-component/accounts-component";
+import { AccountsComponent } from "../accounts/accounts/accounts";
 
 export class AppComponent {
   constructor(mountPoint) {
