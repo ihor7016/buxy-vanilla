@@ -12,12 +12,10 @@ export class ConfirmDialogComponent {
   }
 
   handleOkClick() {
-    console.log("accepted");
     this.props.onOkClicked();
   }
 
   handleCancelClick() {
-    console.log("declined");
     this.props.onCancelClicked();
   }
 

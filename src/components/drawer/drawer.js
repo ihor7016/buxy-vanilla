@@ -34,10 +34,20 @@ export class DrawerComponent {
       this.confirmDialogMountPoint,
       {
         type: "account/tag",
-        name: "name"
+        name: "name",
+        onOkClicked: this.handleOkClick.bind(this),
+        onCancelClicked: this.handleCancelClick.bind(this)
       }
     );
     this.confirmDialog.mount();
+  }
+
+  handleOkClick() {
+    console.log("accepted");
+  }
+
+  handleCancelClick() {
+    console.log("declined");
   }
 
   initMDC() {
