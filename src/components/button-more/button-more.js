@@ -45,6 +45,7 @@ export class ButtonMoreComponent {
     );
   }
 
+
   handleItemClickDelete() {
     this.props.onDeleteClick();
   }

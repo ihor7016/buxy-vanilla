@@ -7,7 +7,6 @@ import { ColorGeneratorService } from "../../services/color-generator";
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
-    this.dataset = { tags: [], amounts: [], colors: [] };
   }
 
   querySelectors() {
@@ -23,6 +22,7 @@ export class PieChartComponent {
   }
 
   createFromList(list) {
+    this.makeZeroData();
     let expenceList = list.filter(item => item.type === "-").reverse();
     this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
     this.drawChanged();
@@ -78,9 +78,14 @@ export class PieChartComponent {
     });
   }
 
+  makeZeroData() {
+    this.dataset = { tags: [], amounts: [], colors: [] };
+  }
+
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.makeZeroData();
     this.draw();
   }
 }

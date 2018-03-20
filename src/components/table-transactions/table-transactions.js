@@ -4,8 +4,9 @@ import templateRow from "./table-transactions-tr.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 
 export class TableTransactionsComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -30,6 +31,12 @@ export class TableTransactionsComponent {
     this.initMoreBtns();
   }
 
+  delTransaction(elem) {
+    const id = elem.dataset.id;
+    this.props.onDataDelete(id);
+    this.transactionPoint.removeChild(elem);
+  }
+
   querySelectorsButtons() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".table-transactions__more-button"
@@ -51,8 +58,8 @@ export class TableTransactionsComponent {
     console.log("handleEditClick");
   }
 
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
+  handleDeleteClick(e) {
+    this.delTransaction(e.target.closest(".table-transactions__tr"));
   }
 
   mount() {
