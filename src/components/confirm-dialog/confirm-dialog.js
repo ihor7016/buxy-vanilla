@@ -9,8 +9,8 @@ export class ConfirmDialogComponent {
   }
 
   showDialog(data) {
-    this.dialog.show();
     this.showInfo(data);
+    this.dialog.show();
   }
 
   handleOkClick() {

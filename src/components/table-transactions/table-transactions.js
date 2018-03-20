@@ -52,13 +52,13 @@ export class TableTransactionsComponent {
     this.confirmDialog = new ConfirmDialogComponent(
       this.confirmDialogMountPoint,
       {
-        onOkClick: this.handleOkClick.bind(this)
+        onOkClick: this.handleDeleteConfirm.bind(this)
       }
     );
     this.confirmDialog.mount();
   }
 
-  handleOkClick(elem) {
+  handleDeleteConfirm(elem) {
     this.delTransaction(elem);
   }
 
@@ -85,6 +85,5 @@ export class TableTransactionsComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.mountChildren();
-    this.initMoreBtns();
   }
 }
