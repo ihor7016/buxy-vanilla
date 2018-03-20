@@ -23,6 +23,12 @@ export class TransactionsComponent {
     TransactionListService.add(data);
   }
 
+  delStoredData(id) {
+    TransactionListService.del(id).then(list =>
+      this.showStoredTransactions(list)
+    );
+  }
+
   showStoredTransactions(storedList) {
     if (storedList && storedList.length) {
       this.tableTransactionsComponent.addStoredTransactions(storedList);
@@ -40,6 +46,10 @@ export class TransactionsComponent {
     this.addStoredData(data);
     this.props.onTransactionAdded(data);
     this.hideEmptyState();
+  }
+
+  handleTransactionDelete(id) {
+    this.delStoredData(id);
   }
 
   handleAddTransactionClick() {
@@ -89,7 +99,10 @@ export class TransactionsComponent {
 
   mountChildren() {
     this.tableTransactionsComponent = new TableTransactionsComponent(
-      this.tableTransactionsMountPoint
+      this.tableTransactionsMountPoint,
+      {
+        onDataDelete: this.handleTransactionDelete.bind(this)
+      }
     );
     this.tableTransactionsComponent.mount();
     this.pieChartComponent = new PieChartComponent(this.pieChartMountPoint);
