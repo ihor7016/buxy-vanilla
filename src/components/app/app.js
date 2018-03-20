@@ -4,7 +4,6 @@ import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
-import { AddAccountDialogComponent } from "../accounts/add-account-dialog/add-account-dialog";
 import { AccountsComponent } from "../accounts/accounts/accounts";
 
 export class AppComponent {
@@ -20,9 +19,6 @@ export class AppComponent {
     this.transactionsMountPoint = this.mountPoint.querySelector(
       ".app__container-content"
     );
-    this.addAccountMountPoint = this.mountPoint.querySelector(
-      ".app__add-account-dialog"
-    );
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
@@ -34,7 +30,6 @@ export class AppComponent {
     });
     this.toolBarComponent.mount();
     this.initDrawer();
-    this.initAddAccountDialogComponent();
     this.initAccountComponent();
     this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
     this.addTagDialog.mount();
@@ -54,21 +49,11 @@ export class AppComponent {
     this.drawerComponent.mount();
   }
 
-  initAddAccountDialogComponent() {
-    this.addAccountDialogComponent = new AddAccountDialogComponent(
-      this.addAccountMountPoint,
-      {
-        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
-      }
-    );
-    this.addAccountDialogComponent.mount();
-  }
-
   initAccountComponent() {
     this.accountsComponent = new AccountsComponent(
       this.drawerComponent.getAccountsMountPoint(),
       {
-        onAddAccountClicked: this.handleAddAccountClicked.bind(this)
+        onAddAccountConfirmed: this.handleAddAccountConfirmed.bind(this)
       }
     );
     this.accountsComponent.mount();
@@ -76,10 +61,6 @@ export class AppComponent {
 
   handleTransactionAdded(data) {
     this.accountsComponent.updateAccountData(data);
-  }
-
-  handleAddAccountClicked() {
-    this.addAccountDialogComponent.showDialog();
   }
 
   handleAddAccountConfirmed(account) {

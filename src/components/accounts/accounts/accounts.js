@@ -2,6 +2,7 @@ import template from "./accounts.html";
 import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../../button-more/button-more";
 import { AccountListService } from "../../../services/account-service";
+import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
 
 export class AccountsComponent {
   constructor(mountPoint, props) {
@@ -17,12 +18,19 @@ export class AccountsComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".accounts__add-account-dialog-activation"
     );
+    this.addAccountMountPoint = this.accountsRoot.querySelector(
+      ".app__add-account-dialog"
+    );
     this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
   }
 
   handleAddAccountConfirmed(account) {
     AccountListService.add(account);
     this.addAccountToHead(account);
+  }
+
+  handleAddAccountClicked() {
+    this.addAccountDialogComponent.showDialog();
   }
 
   initMoreBtns() {
@@ -36,6 +44,16 @@ export class AccountsComponent {
         onEditClick: this.handleEditClick.bind(this)
       }).mount();
     });
+  }
+
+  initAddAccountDialogComponent() {
+    this.addAccountDialogComponent = new AddAccountDialogComponent(
+      this.addAccountMountPoint,
+      {
+        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+      }
+    );
+    this.addAccountDialogComponent.mount();
   }
 
   initAccounts(accounts) {
@@ -67,7 +85,7 @@ export class AccountsComponent {
   addEventListeners() {
     this.addAccountButton.addEventListener(
       "click",
-      this.handleAddAccountClick.bind(this)
+      this.handleAddAccountClicked.bind(this)
     );
   }
 
@@ -80,10 +98,6 @@ export class AccountsComponent {
   addAccount(account) {
     this.accountsList.innerHTML += accountItemTemplate({ account: account });
     this.initMoreBtns();
-  }
-
-  handleAddAccountClick() {
-    this.props.onAddAccountClicked();
   }
 
   handleEditClick() {
@@ -99,6 +113,7 @@ export class AccountsComponent {
     this.querySelectors();
     this.initMoreBtns();
     this.addEventListeners();
+    this.initAddAccountDialogComponent();
     this.initData();
   }
 }
