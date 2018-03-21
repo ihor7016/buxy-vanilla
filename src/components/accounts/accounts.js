@@ -82,6 +82,15 @@ export class AccountsComponent {
     });
   }
 
+  updateAccountDataDelete(transaction) {
+    AccountListService.update(
+      transaction.account,
+      -parseInt(transaction.type + transaction.amount)
+    ).then(() => {
+      this.initData();
+    });
+  }
+
   addEventListeners() {
     this.addAccountButton.addEventListener(
       "click",
