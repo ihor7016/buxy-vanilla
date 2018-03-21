@@ -4,6 +4,7 @@ import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountListService } from "../../services/account-service";
 import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
 import { TransactionListService } from "../../services/transaction-service";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class AccountsComponent {
   constructor(mountPoint, props) {
@@ -20,6 +21,10 @@ export class AccountsComponent {
     );
     this.addAccountMountPoint = document.querySelector(
       ".accounts__add-account-dialog"
+    );
+
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".accounts__delete-confirm-dialog"
     );
     this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
   }
@@ -106,7 +111,25 @@ export class AccountsComponent {
 
   handleDeleteClick(event) {
     let moreButton = event.target.closest(".button-more");
-    let listItem = moreButton.closest(".accounts__list-item");
+    this.listItem = moreButton.closest(".accounts__list-item");
+    this.confirmDialog.showDialog("account", this.listItem.innerText);
+  }
+
+  initConfirmDialog() {
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint,
+      {
+        onOkClick: this.handleDeleteConfirm.bind(this)
+      }
+    );
+    this.confirmDialog.mount();
+  }
+
+  handleDeleteConfirm() {
+    this.delAccount(this.listItem);
+  }
+
+  delAccount(listItem) {
     let index = Array.from(this.accountsList.children).indexOf(listItem);
     AccountListService.del(index);
     this.accountsList.removeChild(listItem);
@@ -122,6 +145,7 @@ export class AccountsComponent {
     this.initMoreBtns();
     this.addEventListeners();
     this.initAddAccountDialogComponent();
+    this.initConfirmDialog();
     this.initData();
   }
 }
