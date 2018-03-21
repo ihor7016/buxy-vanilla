@@ -125,6 +125,6 @@ export class TransactionsComponent {
     this.querySelectors();
     this.mountChildren();
     this.addEventListeners();
-    this.getStoredData();
+    this.loadStoredData();
   }
 }
