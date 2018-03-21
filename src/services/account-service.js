@@ -12,7 +12,7 @@ export class AccountListService {
     });
   }
 
-  static remove(index) {
+  static del(index) {
     this.get().then(accounts => {
       accounts.splice(index, 1);
       this.set(accounts);
@@ -26,7 +26,7 @@ export class AccountListService {
       })
       .then(accounts => {
         let index = accounts.findIndex(item => {
-          return item.name === transactionAccount.name;
+          return item.id === transactionAccount.id;
         });
         let account = accounts[index];
         account.balance = account.balance + amount;

@@ -23,4 +23,14 @@ export class TransactionListService {
       return newList;
     });
   }
+
+  static deleteByAccountId(accountId) {
+    return TransactionListService.get().then(transactions => {
+      TransactionListService.set(
+        transactions.filter(item => {
+          return item.account.id !== accountId;
+        })
+      );
+    });
+  }
 }

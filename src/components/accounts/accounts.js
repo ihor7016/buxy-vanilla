@@ -108,23 +108,12 @@ export class AccountsComponent {
     let moreButton = event.target.closest(".button-more");
     let listItem = moreButton.closest(".accounts__list-item");
     let index = Array.from(this.accountsList.children).indexOf(listItem);
-    AccountListService.remove(index);
+    AccountListService.del(index);
     this.accountsList.removeChild(listItem);
-    AccountListService.get()
-      .then(accounts => {
-        return accounts[index];
-      })
-      .then(account => {
-        TransactionListService.get().then(transactions => {
-          TransactionListService.set(
-            transactions.filter(item => {
-              return item.account.id !== account.id;
-            })
-          ).then(() => {
-            this.props.onAccountDelete();
-          });
-        });
-      });
+    let accountId = listItem.getAttribute("account-id");
+    TransactionListService.deleteByAccountId(accountId).then(() => {
+      this.props.onAccountDelete();
+    });
   }
 
   mount() {
