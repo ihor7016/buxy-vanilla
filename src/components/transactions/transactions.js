@@ -25,22 +25,22 @@ export class TransactionsComponent {
   }
 
   delStoredData(id) {
-    TransactionListService.del(id).then(list => {
-      this.updateList(list);
-      this.checkEmptyState(list);
-    });
+    TransactionListService.del(id).then(list => this.updateList(list));
   }
 
   updateList(newList) {
     this.list = newList;
+    this.checkEmptyState();
   }
 
   showStoredTransactions(storedList) {
-    this.updateList(storedList);
-    this.tableTransactionsComponent.addStoredTransactions(storedList);
-    this.barChartComponent.createFromList(storedList);
-    this.pieChartComponent.createFromList(storedList);
-    this.checkEmptyState(storedList);
+    if (storedList) {
+      this.updateList(storedList);
+      this.tableTransactionsComponent.addStoredTransactions(storedList);
+      this.barChartComponent.createFromList(storedList);
+      this.pieChartComponent.createFromList(storedList);
+    }
+    this.checkEmptyState();
   }
 
   updateCharts(action, data) {
@@ -53,7 +53,6 @@ export class TransactionsComponent {
     this.updateCharts("add", data);
     this.addStoredData(data);
     this.props.onTransactionAdded(data);
-    this.checkEmptyState([data]);
   }
 
   handleTransactionDelete(id) {
@@ -67,8 +66,8 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent.showDialog();
   }
 
-  checkEmptyState(list) {
-    if (list && list.length) {
+  checkEmptyState() {
+    if (this.list.length) {
       this.transactionsContent.classList.remove("transactions__block--hidden");
       this.emptyState.classList.add("transactions__block--hidden");
     } else {
