@@ -57,7 +57,9 @@ export class TransactionsComponent {
   }
 
   handleTransactionDelete(id) {
-    this.updateCharts("del", this.list.find(elem => elem.id === id));
+    const data = this.list.find(elem => elem.id === id);
+    this.props.onTransactionDelete(data);
+    this.updateCharts("del", data);
     this.delStoredData(id);
   }
 
