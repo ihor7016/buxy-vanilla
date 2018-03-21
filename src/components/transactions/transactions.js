@@ -13,7 +13,7 @@ export class TransactionsComponent {
     this.props = props;
   }
 
-  getStoredData() {
+  loadStoredData() {
     TransactionListService.get().then(list =>
       this.showStoredTransactions(list)
     );
@@ -46,6 +46,7 @@ export class TransactionsComponent {
     this.tableTransactionsComponent.addTransaction(data);
     this.updateCharts("add", data);
     this.addStoredData(data);
+    this.props.onTransactionAdded(data);
     this.checkEmptyState([data]);
   }
 
