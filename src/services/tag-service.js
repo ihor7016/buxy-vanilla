@@ -1,7 +1,7 @@
 import { StorageService } from "./storage";
 
 export class TagListService {
-  static add() {
+  static add(tag) {
     return this.get().then(tags => {
       if (!tags) {
         this.set([tag]);

@@ -13,18 +13,9 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
-
-    this.addAccountButton = this.mountPoint.querySelector(
-      ".drawer__add-account-dialog-activation"
-    );
     this.tagsMountPoint = this.mountPoint.querySelector(
       ".drawer__tags-mountpoint"
     );
-  }
-
-  initTagComponent() {
-    this.tagsComponent = new TagsComponent(this.tagsMountPoint);
-    this.tagsComponent.mount();
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
@@ -34,6 +25,11 @@ export class DrawerComponent {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
     );
+  }
+
+  initTagComponent() {
+    this.tagsComponent = new TagsComponent(this.tagsMountPoint);
+    this.tagsComponent.mount();
   }
   updateAccountData(transaction) {
     this.accountsComponent.updateAccountData(transaction);
@@ -48,20 +44,6 @@ export class DrawerComponent {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
-  addEventListeners() {
-    this.addAccountButton.addEventListener(
-      "click",
-      this.handleAddAccountClick.bind(this)
-    );
-      this.addTagButton.addEventListener(
-      "click",
-      this.handleAddTagOnclick.bind(this)
-    );
-  }
-
-  handleAddAccountClick() {
-    this.props.onAddAccountClick();
-  }
   initMoreBtns() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
@@ -79,7 +61,6 @@ export class DrawerComponent {
 
   handleDeleteClick() {}
 
-
   toggleDrawer() {
     this.drawer.open = !this.drawer.open;
   }
@@ -87,11 +68,9 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.addEventListeners();
     this.initMoreBtns();
     this.initMDC();
-    this.addEventListeners();
-    this.initAccountComponent();  
+    this.initAccountComponent();
     this.initTagComponent();
   }
 }
