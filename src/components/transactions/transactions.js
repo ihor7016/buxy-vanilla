@@ -5,10 +5,74 @@ import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
 import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
 
+import { TransactionListService } from "../../services/transaction-service";
+
 export class TransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+    this.list = [];
+  }
+
+  loadStoredData() {
+    TransactionListService.get().then(list =>
+      this.showStoredTransactions(list)
+    );
+  }
+
+  addStoredData(data) {
+    TransactionListService.add(data).then(list => this.updateList(list));
+  }
+
+  delStoredData(id) {
+    TransactionListService.del(id).then(list => {
+      this.updateList(list);
+      this.checkEmptyState(list);
+    });
+  }
+
+  updateList(newList) {
+    this.list = newList;
+  }
+
+  showStoredTransactions(storedList) {
+    this.updateList(storedList);
+    this.tableTransactionsComponent.addStoredTransactions(storedList);
+    this.barChartComponent.createFromList(storedList);
+    this.pieChartComponent.createFromList(storedList);
+    this.checkEmptyState(storedList);
+  }
+
+  updateCharts(action, data) {
+    this.barChartComponent.update(action, data);
+    this.pieChartComponent.update(action, data);
+  }
+
+  handleAddTransactionSubmit(data) {
+    this.tableTransactionsComponent.addTransaction(data);
+    this.updateCharts("add", data);
+    this.addStoredData(data);
+    this.props.onTransactionAdded(data);
+    this.checkEmptyState([data]);
+  }
+
+  handleTransactionDelete(id) {
+    this.updateCharts("del", this.list.find(elem => elem.id === id));
+    this.delStoredData(id);
+  }
+
+  handleAddTransactionClick() {
+    this.addTransactionDialogComponent.showDialog();
+  }
+
+  checkEmptyState(list) {
+    if (list && list.length) {
+      this.transactionsContent.classList.remove("transactions__block--hidden");
+      this.emptyState.classList.add("transactions__block--hidden");
+    } else {
+      this.transactionsContent.classList.add("transactions__block--hidden");
+      this.emptyState.classList.remove("transactions__block--hidden");
+    }
   }
 
   querySelectors() {
@@ -27,6 +91,12 @@ export class TransactionsComponent {
     this.addTransactionDialogMountPoint = this.mountPoint.querySelector(
       ".transactions__add-transaction-dialog"
     );
+    this.transactionsContent = this.mountPoint.querySelector(
+      ".transactions__content"
+    );
+    this.emptyState = this.mountPoint.querySelector(
+      ".transactions__empty-state"
+    );
   }
 
   addEventListeners() {
@@ -38,27 +108,30 @@ export class TransactionsComponent {
 
   mountChildren() {
     this.tableTransactionsComponent = new TableTransactionsComponent(
-      this.tableTransactionsMountPoint
+      this.tableTransactionsMountPoint,
+      {
+        onDataDelete: this.handleTransactionDelete.bind(this)
+      }
     );
     this.tableTransactionsComponent.mount();
     this.pieChartComponent = new PieChartComponent(this.pieChartMountPoint);
     this.pieChartComponent.mount();
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
-    this.addTransactionDialog = new AddTransactionComponent(
-      this.addTransactionDialogMountPoint
+    this.addTransactionDialogComponent = new AddTransactionComponent(
+      this.addTransactionDialogMountPoint,
+      {
+        addTransaction: this.handleAddTransactionSubmit.bind(this)
+      }
     );
-    this.addTransactionDialog.mount();
-  }
-
-  handleAddTransactionClick() {
-    this.addTransactionDialog.showDialog();
+    this.addTransactionDialogComponent.mount();
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.addEventListeners();
     this.mountChildren();
+    this.addEventListeners();
+    this.loadStoredData();
   }
 }

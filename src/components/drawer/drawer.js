@@ -2,6 +2,7 @@ import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagsComponent } from "../tags/tags";
+import { AccountsComponent } from "../accounts/accounts";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -24,6 +25,23 @@ export class DrawerComponent {
   initTagComponent() {
     this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
+    this.addTagButton = this.mountPoint.querySelector(
+      ".drawer__add-tag-dialog-activation"
+    );
+    this.accountsMountPoint = this.mountPoint.querySelector(
+      ".drawer__accounts-mountpoint"
+    );
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".drawer__more-button"
+    );
+  }
+  updateAccountData(transaction) {
+    this.accountsComponent.updateAccountData(transaction);
+  }
+
+  initAccountComponent() {
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
+    this.accountsComponent.mount();
   }
 
   initMDC() {
@@ -35,11 +53,32 @@ export class DrawerComponent {
       "click",
       this.handleAddAccountClick.bind(this)
     );
+      this.addTagButton.addEventListener(
+      "click",
+      this.handleAddTagOnclick.bind(this)
+    );
   }
 
   handleAddAccountClick() {
     this.props.onAddAccountClick();
   }
+  initMoreBtns() {
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".drawer__more-button"
+    );
+    Array.from(this.moreBtnMountPoints).forEach(point => {
+      new ButtonMoreComponent(point, {
+        position: "right",
+        onDeleteClicked: this.handleDeleteClick.bind(this),
+        onEditClicked: this.handleEditClick.bind(this)
+      }).mount();
+    });
+  }
+
+  handleEditClick() {}
+
+  handleDeleteClick() {}
+
 
   toggleDrawer() {
     this.drawer.open = !this.drawer.open;
@@ -48,8 +87,11 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.addEventListeners();
+    this.initMoreBtns();
     this.initMDC();
     this.addEventListeners();
+    this.initAccountComponent();  
     this.initTagComponent();
   }
 }
