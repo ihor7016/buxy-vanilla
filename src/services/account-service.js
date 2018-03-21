@@ -13,7 +13,7 @@ export class AccountListService {
   }
 
   static del(index) {
-    this.get().then(accounts => {
+    return this.get().then(accounts => {
       accounts.splice(index, 1);
       this.set(accounts);
     });
