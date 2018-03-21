@@ -48,8 +48,8 @@ export class TableTransactionsComponent {
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "left",
-        onDeleteClicked: this.handleDeleteClick.bind(this),
-        onEditClicked: this.handleEditClick.bind(this)
+        onDeleteClick: this.handleDeleteClick.bind(this),
+        onEditClick: this.handleEditClick.bind(this)
       }).mount();
     });
   }
