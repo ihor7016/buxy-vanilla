@@ -3,7 +3,6 @@ import template from "./app.html";
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
 import { TransactionsComponent } from "../transactions/transactions";
-import { AddAccountComponent } from "../add-account-dialog/add-account-dialog";
 import { AddTagComponent } from "../add-tag-dialog/add-tag-dialog";
 
 export class AppComponent {
@@ -19,9 +18,6 @@ export class AppComponent {
     this.transactionsMountPoint = this.mountPoint.querySelector(
       ".app__container-content"
     );
-    this.addAccountMountPoint = this.mountPoint.querySelector(
-      ".app__add-account-dialog"
-    );
     this.addTagMountPoint = this.mountPoint.querySelector(
       ".app__add-tag-dialog"
     );
@@ -32,27 +28,31 @@ export class AppComponent {
       onMenuClick: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
+    this.initDrawer();
+    this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
+    this.addTagDialog.mount();
+    this.transactionsComponent = new TransactionsComponent(
+      this.transactionsMountPoint,
+      {
+        onTransactionAdded: this.handleTransactionAdded.bind(this)
+      }
+    );
+    this.transactionsComponent.mount();
+  }
+
+  initDrawer() {
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAddAccountClick: this.handleAddAccountClick.bind(this),
       onAddTagClick: this.handleAddTagOnclick.bind(this)
     });
     this.drawerComponent.mount();
-    this.transactionsComponent = new TransactionsComponent(
-      this.transactionsMountPoint
-    );
-    this.transactionsComponent.mount();
-    this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
-    this.addAccountDialog.mount();
-    this.addTagDialog = new AddTagComponent(this.addTagMountPoint);
-    this.addTagDialog.mount();
+  }
+
+  handleTransactionAdded(data) {
+    this.drawerComponent.updateAccountData(data);
   }
 
   handleToolbarMenuClick() {
     this.drawerComponent.toggleDrawer();
-  }
-
-  handleAddAccountClick() {
-    this.addAccountDialog.showDialog();
   }
 
   handleAddTagOnclick() {

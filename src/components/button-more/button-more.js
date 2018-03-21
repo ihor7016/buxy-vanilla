@@ -46,11 +46,11 @@ export class ButtonMoreComponent {
   }
 
   handleItemClickDelete(e) {
-    this.props.onDeleteClicked(e);
+    this.props.onDeleteClick(e);
   }
 
   handleItemClickEdit(e) {
-    this.props.onEditClicked(e);
+    this.props.onEditClick(e);
   }
 
   handleBtnClick(event) {

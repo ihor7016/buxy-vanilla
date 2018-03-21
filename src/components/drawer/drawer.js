@@ -1,6 +1,7 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { AccountsComponent } from "../accounts/accounts";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -11,17 +12,23 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
-
-    this.addAccountButton = this.mountPoint.querySelector(
-      ".drawer__add-account-dialog-activation"
-    );
     this.addTagButton = this.mountPoint.querySelector(
       ".drawer__add-tag-dialog-activation"
     );
-
+    this.accountsMountPoint = this.mountPoint.querySelector(
+      ".drawer__accounts-mountpoint"
+    );
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
     );
+  }
+  updateAccountData(transaction) {
+    this.accountsComponent.updateAccountData(transaction);
+  }
+
+  initAccountComponent() {
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
+    this.accountsComponent.mount();
   }
 
   initMDC() {
@@ -29,6 +36,9 @@ export class DrawerComponent {
   }
 
   initMoreBtns() {
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".drawer__more-button"
+    );
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "right",
@@ -39,26 +49,14 @@ export class DrawerComponent {
   }
 
   addEventListeners() {
-    this.addAccountButton.addEventListener(
-      "click",
-      this.handleAddAccountClick.bind(this)
-    );
     this.addTagButton.addEventListener(
       "click",
       this.handleAddTagOnclick.bind(this)
     );
   }
+  handleEditClick() {}
 
-  handleEditClick() {
-    console.log("handleEditClick");
-  }
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
-  }
-
-  handleAddAccountClick() {
-    this.props.onAddAccountClick();
-  }
+  handleDeleteClick() {}
 
   handleAddTagOnclick() {
     this.props.onAddTagClick();
@@ -71,8 +69,9 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.initMDC();
     this.initMoreBtns();
+    this.initMDC();
     this.addEventListeners();
+    this.initAccountComponent();
   }
 }
