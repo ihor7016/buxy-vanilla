@@ -27,16 +27,18 @@ export class AppComponent {
 
   mountChildren() {
     this.toolBarComponent = new ToolbarComponent(this.toolbarMountPoint, {
-      onMenuClicked: this.handleToolbarMenuClick.bind(this),
-      onAboutClick: this.handleAboutOnclick.bind(this)
+      onMenuClick: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
     this.initDrawer();
     this.addAccountDialog = new AddAccountComponent(this.addAccountMountPoint);
     this.addAccountDialog.mount();
-
+    
     this.transactionsComponent = new TransactionsComponent(
-      this.transactionsMountPoint
+      this.transactionsMountPoint,
+      {
+        onTransactionAdded: this.handleTransactionAdded.bind(this)
+      }
     );
     this.transactionsComponent.mount();
     this.aboutDialog = new AboutComponent(this.aboutMountPoint);
@@ -54,8 +56,8 @@ export class AppComponent {
     this.drawerComponent.toggleDrawer();
   }
 
-  handleAddAccountClick() {
-    this.addAccountDialog.showDialog();
+  handleToolbarMenuClick() {
+    this.drawerComponent.toggleDrawer();
   }
 
   handleAboutOnclick() {

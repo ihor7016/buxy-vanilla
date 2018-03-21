@@ -25,6 +25,14 @@ export class DrawerComponent {
     this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
   }
+  updateAccountData(transaction) {
+    this.accountsComponent.updateAccountData(transaction);
+  }
+
+  initAccountComponent() {
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
+    this.accountsComponent.mount();
+  }
 
   initMDC() {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);

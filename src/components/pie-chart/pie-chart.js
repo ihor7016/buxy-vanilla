@@ -1,32 +1,70 @@
 import template from "./pie-chart.html";
 import Chart from "chart.js";
 
+import { CurrencyConverterUAHService } from "../../services/currency-converter-uah";
+import { ColorGeneratorService } from "../../services/color-generator";
+
 export class PieChartComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
 
   querySelectors() {
-    this.pieChartCtx = this.mountPoint.querySelector(".chart__visual");
+    this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  mount() {
-    this.mountPoint.innerHTML = template();
-    this.querySelectors();
-    this.createPieChart();
+  update(data) {
+    if (data.type === "+") {
+      return;
+    }
+    this.dataset = this.addCurrData(this.dataset, data);
+    this.drawChanged();
   }
 
-  createPieChart() {
-    let pieChart = new Chart(this.pieChartCtx, {
+  createFromList(list) {
+    this.makeZeroData();
+    let expenceList = list.filter(item => item.type === "-").reverse();
+    this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
+    this.drawChanged();
+  }
+
+  addCurrData(data, item) {
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAHService.convert(
+        item.account.currency,
+        amount
+      );
+    }
+    const i = data.tags.indexOf(item.tag);
+    if (i < 0) {
+      data.tags.push(item.tag);
+      data.amounts.push(amount);
+      data.colors.push(ColorGeneratorService.get());
+    } else {
+      data.amounts[i] += amount;
+    }
+    return data;
+  }
+
+  drawChanged() {
+    this.chart.data.datasets[0].data = this.dataset.amounts;
+    this.chart.data.datasets[0].backgroundColor = this.dataset.colors;
+    this.chart.data.labels = this.dataset.tags;
+    this.chart.update();
+  }
+
+  draw() {
+    this.chart = new Chart(this.chartCtx, {
       type: "pie",
       data: {
         datasets: [
           {
-            data: [10, 20, 30],
-            backgroundColor: ["#673AB7", "#F44336", "#FFC107"]
+            data: this.dataset.amounts,
+            backgroundColor: this.dataset.colors
           }
         ],
-        labels: ["Transport", "Groceries", "Entertainment"]
+        labels: this.dataset.tags
       },
       options: {
         legend: {
@@ -38,5 +76,16 @@ export class PieChartComponent {
         }
       }
     });
+  }
+
+  makeZeroData() {
+    this.dataset = { tags: [], amounts: [], colors: [] };
+  }
+
+  mount() {
+    this.mountPoint.innerHTML = template();
+    this.querySelectors();
+    this.makeZeroData();
+    this.draw();
   }
 }
