@@ -11,6 +11,7 @@ export class TransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+    this.list = [];
   }
 
   loadStoredData() {
@@ -20,35 +21,43 @@ export class TransactionsComponent {
   }
 
   addStoredData(data) {
-    TransactionListService.add(data);
+    TransactionListService.add(data).then(list => this.updateList(list));
   }
 
   delStoredData(id) {
-    TransactionListService.del(id).then(list =>
-      this.showStoredTransactions(list)
-    );
+    TransactionListService.del(id).then(list => {
+      this.updateList(list);
+      this.checkEmptyState(list);
+    });
+  }
+
+  updateList(newList) {
+    this.list = newList;
   }
 
   showStoredTransactions(storedList) {
-    if (storedList && storedList.length) {
-      this.tableTransactionsComponent.addStoredTransactions(storedList);
-      this.barChartComponent.createFromList(storedList);
-      this.pieChartComponent.createFromList(storedList);
-    } else {
-      this.showEmptyState();
-    }
+    this.updateList(storedList);
+    this.tableTransactionsComponent.addStoredTransactions(storedList);
+    this.barChartComponent.createFromList(storedList);
+    this.pieChartComponent.createFromList(storedList);
+    this.checkEmptyState(storedList);
+  }
+
+  updateCharts(action, data) {
+    this.barChartComponent.update(action, data);
+    this.pieChartComponent.update(action, data);
   }
 
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.barChartComponent.update(data);
-    this.pieChartComponent.update(data);
+    this.updateCharts("add", data);
     this.addStoredData(data);
     this.props.onTransactionAdded(data);
-    this.hideEmptyState();
+    this.checkEmptyState([data]);
   }
 
   handleTransactionDelete(id) {
+    this.updateCharts("del", this.list.find(elem => elem.id === id));
     this.delStoredData(id);
   }
 
@@ -56,14 +65,14 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent.showDialog();
   }
 
-  showEmptyState() {
-    this.transactionsContent.classList.add("transactions__block--hidden");
-    this.emptyState.classList.remove("transactions__block--hidden");
-  }
-
-  hideEmptyState() {
-    this.transactionsContent.classList.remove("transactions__block--hidden");
-    this.emptyState.classList.add("transactions__block--hidden");
+  checkEmptyState(list) {
+    if (list && list.length) {
+      this.transactionsContent.classList.remove("transactions__block--hidden");
+      this.emptyState.classList.add("transactions__block--hidden");
+    } else {
+      this.transactionsContent.classList.add("transactions__block--hidden");
+      this.emptyState.classList.remove("transactions__block--hidden");
+    }
   }
 
   querySelectors() {

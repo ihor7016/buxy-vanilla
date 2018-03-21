@@ -2,6 +2,7 @@ import template from "./table-transactions.html";
 import templateRow from "./table-transactions-tr.html";
 
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TableTransactionsComponent {
   constructor(mountPoint, props) {
@@ -12,6 +13,10 @@ export class TableTransactionsComponent {
   querySelectors() {
     this.transactionPoint = this.mountPoint.querySelector(
       ".table-transaction__tbody"
+    );
+
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".table-transactions__confirm-dialog"
     );
   }
 
@@ -43,13 +48,27 @@ export class TableTransactionsComponent {
     );
   }
 
+  mountChildren() {
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint,
+      {
+        onOkClick: this.handleDeleteConfirm.bind(this)
+      }
+    );
+    this.confirmDialog.mount();
+  }
+
+  handleDeleteConfirm() {
+    this.delTransaction(this.rowToDelete);
+  }
+
   initMoreBtns() {
     this.querySelectorsButtons();
     Array.from(this.moreBtnMountPoints).forEach(point => {
       new ButtonMoreComponent(point, {
         position: "left",
-        onDeleteClicked: this.handleDeleteClick.bind(this),
-        onEditClicked: this.handleEditClick.bind(this)
+        onDeleteClick: this.handleDeleteClick.bind(this),
+        onEditClick: this.handleEditClick.bind(this)
       }).mount();
     });
   }
@@ -59,11 +78,16 @@ export class TableTransactionsComponent {
   }
 
   handleDeleteClick(e) {
-    this.delTransaction(e.target.closest(".table-transactions__tr"));
+    this.rowToDelete = e.target.closest(".table-transactions__tr");
+    const elemDescription = this.rowToDelete.querySelector(
+      ".table-transactions__td--desc"
+    ).innerHTML;
+    this.confirmDialog.showDialog("transaction", elemDescription);
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
   }
 }
