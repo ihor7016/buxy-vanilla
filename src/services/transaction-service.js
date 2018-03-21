@@ -13,18 +13,15 @@ export class TransactionListService {
     return this.get().then(list => {
       const newList = list ? [data].concat(list) : [data];
       this.set(newList);
+      return newList;
     });
   }
 
   static del(id) {
     return this.get().then(list => {
-      const data = list.find(elem => elem.id === id);
       const newList = list.filter(elem => elem.id !== id);
       this.set(newList);
-      return {
-        data: data,
-        list: newList
-      };
+      return newList;
     });
   }
 }

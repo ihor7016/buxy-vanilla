@@ -11,6 +11,7 @@ export class TransactionsComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+    this.list = [];
   }
 
   loadStoredData() {
@@ -20,17 +21,22 @@ export class TransactionsComponent {
   }
 
   addStoredData(data) {
-    TransactionListService.add(data);
+    TransactionListService.add(data).then(list => this.updateList(list));
   }
 
   delStoredData(id) {
-    TransactionListService.del(id).then(data => {
-      this.updateCharts("del", data.data);
-      this.checkEmptyState(data.list);
+    TransactionListService.del(id).then(list => {
+      this.updateList(list);
+      this.checkEmptyState(list);
     });
   }
 
+  updateList(newList) {
+    this.list = newList;
+  }
+
   showStoredTransactions(storedList) {
+    this.updateList(storedList);
     this.tableTransactionsComponent.addStoredTransactions(storedList);
     this.barChartComponent.createFromList(storedList);
     this.pieChartComponent.createFromList(storedList);
@@ -51,6 +57,7 @@ export class TransactionsComponent {
   }
 
   handleTransactionDelete(id) {
+    this.updateCharts("del", this.list.find(elem => elem.id === id));
     this.delStoredData(id);
   }
 
