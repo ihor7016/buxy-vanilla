@@ -2,6 +2,7 @@ import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountsComponent } from "../accounts/accounts";
+import { TagsComponent } from "../tags/tags";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
@@ -12,23 +13,33 @@ export class DrawerComponent {
   querySelectors() {
     this.drawerRoot = this.mountPoint.querySelector(".mdc-drawer--persistent");
     this.menu = this.mountPoint.querySelector(".toolbar__menu");
-    this.addTagButton = this.mountPoint.querySelector(
-      ".drawer__add-tag-dialog-activation"
-    );
     this.accountsMountPoint = this.mountPoint.querySelector(
       ".drawer__accounts-mountpoint"
+    );
+    this.tagsMountPoint = this.mountPoint.querySelector(
+      ".drawer__tags-mountpoint"
     );
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".drawer__more-button"
     );
   }
+
   updateAccountData(transaction) {
     this.accountsComponent.updateAccountData(transaction);
+  }
+
+  updateTagData(transaction) {
+    this.tagsComponent.updateTagData(transaction);
   }
 
   initAccountComponent() {
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
     this.accountsComponent.mount();
+  }
+
+  initTagComponent() {
+    this.tagsComponent = new TagsComponent(this.tagsMountPoint);
+    this.tagsComponent.mount();
   }
 
   initMDC() {
@@ -48,19 +59,9 @@ export class DrawerComponent {
     });
   }
 
-  addEventListeners() {
-    this.addTagButton.addEventListener(
-      "click",
-      this.handleAddTagOnclick.bind(this)
-    );
-  }
   handleEditClick() {}
 
   handleDeleteClick() {}
-
-  handleAddTagOnclick() {
-    this.props.onAddTagClick();
-  }
 
   toggleDrawer() {
     this.drawer.open = !this.drawer.open;
@@ -71,7 +72,7 @@ export class DrawerComponent {
     this.querySelectors();
     this.initMoreBtns();
     this.initMDC();
-    this.addEventListeners();
     this.initAccountComponent();
+    this.initTagComponent();
   }
 }
