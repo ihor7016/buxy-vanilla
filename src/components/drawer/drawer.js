@@ -26,6 +26,10 @@ export class DrawerComponent {
     this.accountsComponent.updateAccountData(transaction);
   }
 
+  updateAccountDataDelete(transaction) {
+    this.accountsComponent.updateAccountDataDelete(transaction);
+  }
+
   initAccountComponent() {
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
     this.accountsComponent.mount();
