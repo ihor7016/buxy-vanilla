@@ -8,18 +8,20 @@ export class ConfirmDialogComponent {
   }
 
   showDialog(type, name) {
-    this.confirmDialogType.innerText = type;
-    this.confirmDialogName.innerText = name;
+    Array.from(this.confirmDialogTypes).forEach(el => {
+      el.innerHTML = type;
+    });
+    this.confirmDialogName.innerHTML = name;
     this.dialog.show();
   }
 
   handleOkClick() {
-    this.props.onOkClick(this.elem);
+    this.props.onOkClick();
   }
 
   querySelectors() {
     this.confirmDialog = this.mountPoint.querySelector(".confirm-dialog");
-    this.confirmDialogType = this.mountPoint.querySelector(
+    this.confirmDialogTypes = this.mountPoint.querySelectorAll(
       ".confirm-dialog__type"
     );
     this.confirmDialogName = this.mountPoint.querySelector(

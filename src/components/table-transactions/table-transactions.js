@@ -58,8 +58,8 @@ export class TableTransactionsComponent {
     this.confirmDialog.mount();
   }
 
-  handleDeleteConfirm(elem) {
-    this.delTransaction(elem);
+  handleDeleteConfirm() {
+    this.delTransaction(this.rowToDelete);
   }
 
   initMoreBtns() {
@@ -78,11 +78,11 @@ export class TableTransactionsComponent {
   }
 
   handleDeleteClick(e) {
-    const row = e.target.closest(".table-transactions__tr");
-    const rowDescription = row.querySelector(".table-transactions__td--desc")
-      .innerHTML;
-    const type = "transaction";
-    this.confirmDialog.showDialog(type, rowDescription);
+    this.rowToDelete = e.target.closest(".table-transactions__tr");
+    const elemDescription = this.rowToDelete.querySelector(
+      ".table-transactions__td--desc"
+    ).innerHTML;
+    this.confirmDialog.showDialog("transaction", elemDescription);
   }
 
   mount() {
