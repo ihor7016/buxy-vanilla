@@ -28,6 +28,10 @@
     padding-left: 15px;
     font-size: 13px;
     color: #757575;
+
+    &--desc {
+      text-transform: capitalize;
+    }
   }
 
   &__span {
@@ -50,5 +54,11 @@
     position: absolute;
     top: -6px;
     right: -5px;
+  }
+  &__more-button {
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
   }
 }
