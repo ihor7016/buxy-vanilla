@@ -78,7 +78,11 @@ export class TableTransactionsComponent {
   }
 
   handleDeleteClick(e) {
-    this.confirmDialog.showDialog(e.target.closest(".table-transactions__tr"));
+    const row = e.target.closest(".table-transactions__tr");
+    const rowDescription = row.querySelector(".table-transactions__td--desc")
+      .innerHTML;
+    const type = "transaction";
+    this.confirmDialog.showDialog(type, rowDescription);
   }
 
   mount() {
