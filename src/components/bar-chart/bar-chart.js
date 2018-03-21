@@ -7,19 +7,23 @@ export class BarChartComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+    this.dataset = { income: 0, expence: 0 };
   }
 
   querySelectors() {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  update(data) {
-    this.dataset = this.addCurrData(this.dataset, data);
+  update(action, data) {
+    if (action === "add") {
+      this.dataset = this.addCurrData(this.dataset, data);
+    } else if (action === "del") {
+      this.dataset = this.delCurrData(this.dataset, data);
+    }
     this.drawChanged();
   }
 
   createFromList(list) {
-    this.makeZeroData();
     this.dataset = list.reduce(this.addCurrData, this.dataset);
     this.drawChanged();
   }
@@ -33,6 +37,18 @@ export class BarChartComponent {
       );
     }
     item.type === "-" ? (data.expence += amount) : (data.income += amount);
+    return data;
+  }
+
+  delCurrData(data, item) {
+    let amount = item.amount;
+    if (item.account.currency !== "UAH") {
+      amount = CurrencyConverterUAHService.convert(
+        item.account.currency,
+        amount
+      );
+    }
+    item.type === "-" ? (data.expence -= amount) : (data.income -= amount);
     return data;
   }
 
@@ -85,14 +101,9 @@ export class BarChartComponent {
     });
   }
 
-  makeZeroData() {
-    this.dataset = { income: 0, expence: 0 };
-  }
-
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.makeZeroData();
     this.draw();
   }
 }

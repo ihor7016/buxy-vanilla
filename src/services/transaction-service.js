@@ -13,6 +13,7 @@ export class TransactionListService {
     return this.get().then(list => {
       const newList = list ? [data].concat(list) : [data];
       this.set(newList);
+      return newList;
     });
   }
 
