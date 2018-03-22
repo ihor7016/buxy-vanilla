@@ -28,6 +28,11 @@ export class DrawerComponent {
     this.accountsComponent.updateAccountDataDelete(transaction);
   }
 
+  initAccountComponent() {
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
+      onAccountDelete: this.props.onAccountDelete
+    });
+  }
   mountChildren() {
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
     this.accountsComponent.mount();
