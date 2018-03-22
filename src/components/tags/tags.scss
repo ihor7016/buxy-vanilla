@@ -1,0 +1,14 @@
+.tags {
+  &__more-button {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
+  &__list-item,
+  &__list-item.mdc-list-item {
+    overflow: visible;
+  }
+  &__list-item:hover {
+    background-color: $color-primary;
+  }
+}
