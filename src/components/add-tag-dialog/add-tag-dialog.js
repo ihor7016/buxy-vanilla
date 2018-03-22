@@ -28,6 +28,7 @@ export class AddTagDialogComponent {
 
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
 
   clean() {
@@ -38,6 +39,10 @@ export class AddTagDialogComponent {
     this.props.onAddTagConfirm({
       name: this.tagNameInput.value
     });
+    this.clean();
+  }
+
+  handleCancel() {
     this.clean();
   }
 
