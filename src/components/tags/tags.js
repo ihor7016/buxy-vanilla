@@ -14,7 +14,9 @@ export class TagsComponent {
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
-    this.addTagMountPoint = document.querySelector(".tags__add-tag-dialog");
+    this.addTagMountPoint = this.mountPoint.querySelector(
+      ".tags__add-tag-dialog"
+    );
     this.tagsList = this.mountPoint.querySelector(".tags__list-items");
   }
 
@@ -40,7 +42,7 @@ export class TagsComponent {
     });
   }
 
-  initAddTagDialogComponent() {
+  mountChildren() {
     this.addTagDialogComponent = new AddTagDialogComponent(
       this.addTagMountPoint,
       {
@@ -96,9 +98,8 @@ export class TagsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.addEventListeners();
-    this.initAddTagDialogComponent();
     this.initData();
-    this.initMoreBtns();
   }
 }
