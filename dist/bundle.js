@@ -68,7 +68,7 @@
   /******/
   /******/ /******/ __webpack_require__.p = "/dist/"; // Load entry module and return exports
   /******/
-  /******/ /******/ return __webpack_require__((__webpack_require__.s = 169));
+  /******/ /******/ return __webpack_require__((__webpack_require__.s = 171));
   /******/
 })(
   /************************************************************************/
@@ -2189,7 +2189,7 @@
               try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(258)("./" + name);
+                __webpack_require__(261)("./" + name);
                 getSetGlobalLocale(oldLocale);
               } catch (e) {}
             }
@@ -5181,7 +5181,7 @@
         });
 
         /* WEBPACK VAR INJECTION */
-      }.call(exports, __webpack_require__(257)(module)));
+      }.call(exports, __webpack_require__(260)(module)));
 
       /***/
     },
@@ -5190,9 +5190,9 @@
       "use strict";
 
       module.exports = __webpack_require__(13);
-      module.exports.easing = __webpack_require__(231);
-      module.exports.canvas = __webpack_require__(232);
-      module.exports.options = __webpack_require__(233);
+      module.exports.easing = __webpack_require__(234);
+      module.exports.canvas = __webpack_require__(235);
+      module.exports.options = __webpack_require__(236);
 
       /***/
     },
@@ -5429,7 +5429,7 @@
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
-      var color = __webpack_require__(42);
+      var color = __webpack_require__(44);
       var helpers = __webpack_require__(1);
 
       function interpolate(start, view, model, ease) {
@@ -5555,10 +5555,10 @@
       "use strict";
 
       module.exports = {};
-      module.exports.Arc = __webpack_require__(239);
-      module.exports.Line = __webpack_require__(240);
-      module.exports.Point = __webpack_require__(241);
-      module.exports.Rectangle = __webpack_require__(242);
+      module.exports.Arc = __webpack_require__(242);
+      module.exports.Line = __webpack_require__(243);
+      module.exports.Point = __webpack_require__(244);
+      module.exports.Rectangle = __webpack_require__(245);
 
       /***/
     },
@@ -5615,10 +5615,10 @@
         9
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        199
+        201
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
-        201
+        203
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -5775,7 +5775,7 @@
         29
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        197
+        199
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
         18
@@ -6528,7 +6528,7 @@
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(
-        182
+        184
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -6538,7 +6538,7 @@
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        183
+        185
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -7073,7 +7073,7 @@
         };
       })();
 
-      var _buttonMore = __webpack_require__(188);
+      var _buttonMore = __webpack_require__(190);
 
       var _buttonMore2 = _interopRequireDefault(_buttonMore);
 
@@ -7205,10 +7205,10 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(
-        189
+        191
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        190
+        192
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
         27
@@ -7750,22 +7750,22 @@
         31
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
-        208
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_line_ripple_index__ = __webpack_require__(
-        209
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_text_index__ = __webpack_require__(
         210
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__icon_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_line_ripple_index__ = __webpack_require__(
         211
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__material_floating_label_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_text_index__ = __webpack_require__(
         212
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__outline_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__icon_index__ = __webpack_require__(
         213
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__material_floating_label_index__ = __webpack_require__(
+        214
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__outline_index__ = __webpack_require__(
+        215
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -8323,7 +8323,7 @@
         32
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        204
+        206
       );
       /**
        * @license
@@ -8471,7 +8471,7 @@
         33
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        205
+        207
       );
       /**
        * @license
@@ -8645,7 +8645,7 @@
         34
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        206
+        208
       );
       /**
        * @license
@@ -8763,7 +8763,7 @@
         35
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        207
+        209
       );
       /**
        * @license
@@ -9069,13 +9069,13 @@
         16
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bottom_line_index__ = __webpack_require__(
-        214
+        216
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__label_index__ = __webpack_require__(
-        217
+        219
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
-        220
+        222
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(
         40
@@ -9522,9 +9522,20 @@
             }
           },
           {
+            key: "del",
+            value: function del(index) {
+              var _this2 = this;
+
+              return this.get().then(function(accounts) {
+                accounts.splice(index, 1);
+                _this2.set(accounts);
+              });
+            }
+          },
+          {
             key: "update",
             value: function update(transactionAccount, amount) {
-              var _this2 = this;
+              var _this3 = this;
 
               return this.get()
                 .then(function(accounts) {
@@ -9532,12 +9543,12 @@
                 })
                 .then(function(accounts) {
                   var index = accounts.findIndex(function(item) {
-                    return item.name === transactionAccount.name;
+                    return item.id === transactionAccount.id;
                   });
                   var account = accounts[index];
                   account.balance = account.balance + amount;
                   accounts[index] = account;
-                  _this2.set(accounts);
+                  _this3.set(accounts);
                 });
             }
           },
@@ -10482,59 +10493,270 @@
     },
     /* 41 */
     /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TransactionListService = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _storage = __webpack_require__(17);
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TransactionListService = (exports.TransactionListService = (function() {
+        function TransactionListService() {
+          _classCallCheck(this, TransactionListService);
+        }
+
+        _createClass(TransactionListService, null, [
+          {
+            key: "get",
+            value: function get() {
+              return _storage.StorageService.get("transactionList");
+            }
+          },
+          {
+            key: "set",
+            value: function set(value) {
+              return _storage.StorageService.set("transactionList", value);
+            }
+          },
+          {
+            key: "add",
+            value: function add(data) {
+              var _this = this;
+
+              return this.get().then(function(list) {
+                var newList = list ? [data].concat(list) : [data];
+                _this.set(newList);
+                return newList;
+              });
+            }
+          },
+          {
+            key: "del",
+            value: function del(id) {
+              var _this2 = this;
+
+              return this.get().then(function(list) {
+                var newList = list.filter(function(elem) {
+                  return elem.id !== id;
+                });
+                _this2.set(newList);
+                return newList;
+              });
+            }
+          },
+          {
+            key: "deleteByAccountId",
+            value: function deleteByAccountId(accountId) {
+              return TransactionListService.get().then(function(transactions) {
+                if (transactions) {
+                  return TransactionListService.set(
+                    transactions.filter(function(item) {
+                      return item.account.id !== accountId;
+                    })
+                  );
+                }
+              });
+            }
+          }
+        ]);
+
+        return TransactionListService;
+      })());
+
+      /***/
+    },
+    /* 42 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.ConfirmDialogComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _confirmDialog = __webpack_require__(223);
+
+      var _confirmDialog2 = _interopRequireDefault(_confirmDialog);
+
+      var _dialog = __webpack_require__(8);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var ConfirmDialogComponent = (exports.ConfirmDialogComponent = (function() {
+        function ConfirmDialogComponent(mountPoint, props) {
+          _classCallCheck(this, ConfirmDialogComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(ConfirmDialogComponent, [
+          {
+            key: "showDialog",
+            value: function showDialog(type, name) {
+              Array.from(this.confirmDialogTypes).forEach(function(el) {
+                el.innerHTML = type;
+              });
+              this.confirmDialogName.innerHTML = name;
+              this.dialog.show();
+            }
+          },
+          {
+            key: "handleOkClick",
+            value: function handleOkClick() {
+              this.props.onOkClick();
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.confirmDialog = this.mountPoint.querySelector(
+                ".confirm-dialog"
+              );
+              this.confirmDialogTypes = this.mountPoint.querySelectorAll(
+                ".confirm-dialog__type"
+              );
+              this.confirmDialogName = this.mountPoint.querySelector(
+                ".confirm-dialog__name"
+              );
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.dialog = new _dialog.MDCDialog(this.confirmDialog);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.dialog.listen(
+                "MDCDialog:accept",
+                this.handleOkClick.bind(this)
+              );
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _confirmDialog2.default)();
+              this.querySelectors();
+              this.initMDC();
+              this.addEventListeners();
+            }
+          }
+        ]);
+
+        return ConfirmDialogComponent;
+      })());
+
+      /***/
+    },
+    /* 43 */
+    /***/ function(module, exports, __webpack_require__) {
       /**
        * @namespace Chart
        */
-      var Chart = __webpack_require__(230)();
+      var Chart = __webpack_require__(233)();
 
       Chart.helpers = __webpack_require__(1);
 
       // @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
-      __webpack_require__(234)(Chart);
+      __webpack_require__(237)(Chart);
 
       Chart.defaults = __webpack_require__(2);
       Chart.Element = __webpack_require__(5);
       Chart.elements = __webpack_require__(6);
-      Chart.Interaction = __webpack_require__(43);
+      Chart.Interaction = __webpack_require__(45);
       Chart.layouts = __webpack_require__(10);
-      Chart.platform = __webpack_require__(44);
-      Chart.plugins = __webpack_require__(45);
+      Chart.platform = __webpack_require__(46);
+      Chart.plugins = __webpack_require__(47);
       Chart.Ticks = __webpack_require__(11);
 
-      __webpack_require__(245)(Chart);
-      __webpack_require__(246)(Chart);
-      __webpack_require__(247)(Chart);
       __webpack_require__(248)(Chart);
       __webpack_require__(249)(Chart);
       __webpack_require__(250)(Chart);
-
       __webpack_require__(251)(Chart);
       __webpack_require__(252)(Chart);
       __webpack_require__(253)(Chart);
+
       __webpack_require__(254)(Chart);
       __webpack_require__(255)(Chart);
       __webpack_require__(256)(Chart);
+      __webpack_require__(257)(Chart);
+      __webpack_require__(258)(Chart);
+      __webpack_require__(259)(Chart);
 
       // Controllers must be loaded after elements
       // See Chart.core.datasetController.dataElementType
-      __webpack_require__(259)(Chart);
-      __webpack_require__(260)(Chart);
-      __webpack_require__(261)(Chart);
       __webpack_require__(262)(Chart);
       __webpack_require__(263)(Chart);
       __webpack_require__(264)(Chart);
       __webpack_require__(265)(Chart);
-
       __webpack_require__(266)(Chart);
       __webpack_require__(267)(Chart);
       __webpack_require__(268)(Chart);
+
       __webpack_require__(269)(Chart);
       __webpack_require__(270)(Chart);
       __webpack_require__(271)(Chart);
       __webpack_require__(272)(Chart);
+      __webpack_require__(273)(Chart);
+      __webpack_require__(274)(Chart);
+      __webpack_require__(275)(Chart);
 
       // Loading built-it plugins
-      var plugins = __webpack_require__(273);
+      var plugins = __webpack_require__(276);
       for (var k in plugins) {
         if (plugins.hasOwnProperty(k)) {
           Chart.plugins.register(plugins[k]);
@@ -10607,11 +10829,11 @@
 
       /***/
     },
-    /* 42 */
+    /* 44 */
     /***/ function(module, exports, __webpack_require__) {
       /* MIT license */
-      var convert = __webpack_require__(235);
-      var string = __webpack_require__(237);
+      var convert = __webpack_require__(238);
+      var string = __webpack_require__(240);
 
       var Color = function(obj) {
         if (obj instanceof Color) {
@@ -11101,7 +11323,7 @@
 
       /***/
     },
-    /* 43 */
+    /* 45 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -11445,13 +11667,13 @@
 
       /***/
     },
-    /* 44 */
+    /* 46 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var helpers = __webpack_require__(1);
-      var basic = __webpack_require__(243);
-      var dom = __webpack_require__(244);
+      var basic = __webpack_require__(246);
+      var dom = __webpack_require__(247);
 
       // @TODO Make possible to select another platform at build time.
       var implementation = dom._enabled ? dom : basic;
@@ -11526,7 +11748,7 @@
 
       /***/
     },
-    /* 45 */
+    /* 47 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -11913,7 +12135,7 @@
 
       /***/
     },
-    /* 46 */
+    /* 48 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -11999,7 +12221,7 @@
 
       /***/
     },
-    /* 47 */
+    /* 49 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12197,7 +12419,7 @@
 
       /***/
     },
-    /* 48 */
+    /* 50 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12266,7 +12488,7 @@
 
       /***/
     },
-    /* 49 */
+    /* 51 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12335,7 +12557,7 @@
 
       /***/
     },
-    /* 50 */
+    /* 52 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12517,7 +12739,7 @@
 
       /***/
     },
-    /* 51 */
+    /* 53 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12586,7 +12808,7 @@
 
       /***/
     },
-    /* 52 */
+    /* 54 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12705,7 +12927,7 @@
 
       /***/
     },
-    /* 53 */
+    /* 55 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12774,7 +12996,7 @@
 
       /***/
     },
-    /* 54 */
+    /* 56 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12890,7 +13112,7 @@
 
       /***/
     },
-    /* 55 */
+    /* 57 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13049,7 +13271,7 @@
 
       /***/
     },
-    /* 56 */
+    /* 58 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13149,7 +13371,7 @@
 
       /***/
     },
-    /* 57 */
+    /* 59 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13215,7 +13437,7 @@
 
       /***/
     },
-    /* 58 */
+    /* 60 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13346,7 +13568,7 @@
 
       /***/
     },
-    /* 59 */
+    /* 61 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13481,7 +13703,7 @@
 
       /***/
     },
-    /* 60 */
+    /* 62 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13597,7 +13819,7 @@
 
       /***/
     },
-    /* 61 */
+    /* 63 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13758,7 +13980,7 @@
 
       /***/
     },
-    /* 62 */
+    /* 64 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13864,7 +14086,7 @@
 
       /***/
     },
-    /* 63 */
+    /* 65 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14062,7 +14284,7 @@
 
       /***/
     },
-    /* 64 */
+    /* 66 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14137,7 +14359,7 @@
 
       /***/
     },
-    /* 65 */
+    /* 67 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14246,7 +14468,7 @@
 
       /***/
     },
-    /* 66 */
+    /* 68 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14316,7 +14538,7 @@
 
       /***/
     },
-    /* 67 */
+    /* 69 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14402,7 +14624,7 @@
 
       /***/
     },
-    /* 68 */
+    /* 70 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14488,7 +14710,7 @@
 
       /***/
     },
-    /* 69 */
+    /* 71 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14574,7 +14796,7 @@
 
       /***/
     },
-    /* 70 */
+    /* 72 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14677,7 +14899,7 @@
 
       /***/
     },
-    /* 71 */
+    /* 73 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14796,7 +15018,7 @@
 
       /***/
     },
-    /* 72 */
+    /* 74 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14873,7 +15095,7 @@
 
       /***/
     },
-    /* 73 */
+    /* 75 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14946,7 +15168,7 @@
 
       /***/
     },
-    /* 74 */
+    /* 76 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15023,7 +15245,7 @@
 
       /***/
     },
-    /* 75 */
+    /* 77 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15100,7 +15322,7 @@
 
       /***/
     },
-    /* 76 */
+    /* 78 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15172,7 +15394,7 @@
 
       /***/
     },
-    /* 77 */
+    /* 79 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15249,7 +15471,7 @@
 
       /***/
     },
-    /* 78 */
+    /* 80 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15330,7 +15552,7 @@
 
       /***/
     },
-    /* 79 */
+    /* 81 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15451,7 +15673,7 @@
 
       /***/
     },
-    /* 80 */
+    /* 82 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15572,7 +15794,7 @@
 
       /***/
     },
-    /* 81 */
+    /* 83 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15671,7 +15893,7 @@
 
       /***/
     },
-    /* 82 */
+    /* 84 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15761,7 +15983,7 @@
 
       /***/
     },
-    /* 83 */
+    /* 85 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15837,7 +16059,7 @@
 
       /***/
     },
-    /* 84 */
+    /* 86 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15960,7 +16182,7 @@
 
       /***/
     },
-    /* 85 */
+    /* 87 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16091,7 +16313,7 @@
 
       /***/
     },
-    /* 86 */
+    /* 88 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16161,7 +16383,7 @@
 
       /***/
     },
-    /* 87 */
+    /* 89 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16254,7 +16476,7 @@
 
       /***/
     },
-    /* 88 */
+    /* 90 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16338,7 +16560,7 @@
 
       /***/
     },
-    /* 89 */
+    /* 91 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16426,7 +16648,7 @@
 
       /***/
     },
-    /* 90 */
+    /* 92 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16516,7 +16738,7 @@
 
       /***/
     },
-    /* 91 */
+    /* 93 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16628,7 +16850,7 @@
 
       /***/
     },
-    /* 92 */
+    /* 94 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16717,7 +16939,7 @@
 
       /***/
     },
-    /* 93 */
+    /* 95 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16850,7 +17072,7 @@
 
       /***/
     },
-    /* 94 */
+    /* 96 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16984,7 +17206,7 @@
 
       /***/
     },
-    /* 95 */
+    /* 97 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17089,7 +17311,7 @@
 
       /***/
     },
-    /* 96 */
+    /* 98 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17223,7 +17445,7 @@
 
       /***/
     },
-    /* 97 */
+    /* 99 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17389,7 +17611,7 @@
 
       /***/
     },
-    /* 98 */
+    /* 100 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17522,7 +17744,7 @@
 
       /***/
     },
-    /* 99 */
+    /* 101 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17629,7 +17851,7 @@
 
       /***/
     },
-    /* 100 */
+    /* 102 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17719,7 +17941,7 @@
 
       /***/
     },
-    /* 101 */
+    /* 103 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17872,7 +18094,7 @@
 
       /***/
     },
-    /* 102 */
+    /* 104 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17951,7 +18173,7 @@
 
       /***/
     },
-    /* 103 */
+    /* 105 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18041,7 +18263,7 @@
 
       /***/
     },
-    /* 104 */
+    /* 106 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18131,7 +18353,7 @@
 
       /***/
     },
-    /* 105 */
+    /* 107 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18238,7 +18460,7 @@
 
       /***/
     },
-    /* 106 */
+    /* 108 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18335,7 +18557,7 @@
 
       /***/
     },
-    /* 107 */
+    /* 109 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18405,7 +18627,7 @@
 
       /***/
     },
-    /* 108 */
+    /* 110 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18541,7 +18763,7 @@
 
       /***/
     },
-    /* 109 */
+    /* 111 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18632,7 +18854,7 @@
 
       /***/
     },
-    /* 110 */
+    /* 112 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18729,7 +18951,7 @@
 
       /***/
     },
-    /* 111 */
+    /* 113 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18876,7 +19098,7 @@
 
       /***/
     },
-    /* 112 */
+    /* 114 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18954,7 +19176,7 @@
 
       /***/
     },
-    /* 113 */
+    /* 115 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19091,7 +19313,7 @@
 
       /***/
     },
-    /* 114 */
+    /* 116 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19202,7 +19424,7 @@
 
       /***/
     },
-    /* 115 */
+    /* 117 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19331,7 +19553,7 @@
 
       /***/
     },
-    /* 116 */
+    /* 118 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19405,7 +19627,7 @@
 
       /***/
     },
-    /* 117 */
+    /* 119 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19505,7 +19727,7 @@
 
       /***/
     },
-    /* 118 */
+    /* 120 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19598,7 +19820,7 @@
 
       /***/
     },
-    /* 119 */
+    /* 121 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19814,7 +20036,7 @@
 
       /***/
     },
-    /* 120 */
+    /* 122 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19904,7 +20126,7 @@
 
       /***/
     },
-    /* 121 */
+    /* 123 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19994,7 +20216,7 @@
 
       /***/
     },
-    /* 122 */
+    /* 124 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20064,7 +20286,7 @@
 
       /***/
     },
-    /* 123 */
+    /* 125 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20168,7 +20390,7 @@
 
       /***/
     },
-    /* 124 */
+    /* 126 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20240,7 +20462,7 @@
 
       /***/
     },
-    /* 125 */
+    /* 127 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20373,7 +20595,7 @@
 
       /***/
     },
-    /* 126 */
+    /* 128 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20488,7 +20710,7 @@
 
       /***/
     },
-    /* 127 */
+    /* 129 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20603,7 +20825,7 @@
 
       /***/
     },
-    /* 128 */
+    /* 130 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20673,7 +20895,7 @@
 
       /***/
     },
-    /* 129 */
+    /* 131 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20807,7 +21029,7 @@
 
       /***/
     },
-    /* 130 */
+    /* 132 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20951,7 +21173,7 @@
 
       /***/
     },
-    /* 131 */
+    /* 133 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21026,7 +21248,7 @@
 
       /***/
     },
-    /* 132 */
+    /* 134 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21097,7 +21319,7 @@
 
       /***/
     },
-    /* 133 */
+    /* 135 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21182,7 +21404,7 @@
 
       /***/
     },
-    /* 134 */
+    /* 136 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21400,7 +21622,7 @@
 
       /***/
     },
-    /* 135 */
+    /* 137 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21494,7 +21716,7 @@
 
       /***/
     },
-    /* 136 */
+    /* 138 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21564,7 +21786,7 @@
 
       /***/
     },
-    /* 137 */
+    /* 139 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21645,7 +21867,7 @@
 
       /***/
     },
-    /* 138 */
+    /* 140 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21811,7 +22033,7 @@
 
       /***/
     },
-    /* 139 */
+    /* 141 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21996,7 +22218,7 @@
 
       /***/
     },
-    /* 140 */
+    /* 142 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22074,7 +22296,7 @@
 
       /***/
     },
-    /* 141 */
+    /* 143 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22202,7 +22424,7 @@
 
       /***/
     },
-    /* 142 */
+    /* 144 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22330,7 +22552,7 @@
 
       /***/
     },
-    /* 143 */
+    /* 145 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22428,7 +22650,7 @@
 
       /***/
     },
-    /* 144 */
+    /* 146 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22507,7 +22729,7 @@
 
       /***/
     },
-    /* 145 */
+    /* 147 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22576,7 +22798,7 @@
 
       /***/
     },
-    /* 146 */
+    /* 148 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22718,7 +22940,7 @@
 
       /***/
     },
-    /* 147 */
+    /* 149 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22817,7 +23039,7 @@
 
       /***/
     },
-    /* 148 */
+    /* 150 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22894,7 +23116,7 @@
 
       /***/
     },
-    /* 149 */
+    /* 151 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23020,7 +23242,7 @@
 
       /***/
     },
-    /* 150 */
+    /* 152 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23097,7 +23319,7 @@
 
       /***/
     },
-    /* 151 */
+    /* 153 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23169,7 +23391,7 @@
 
       /***/
     },
-    /* 152 */
+    /* 154 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23309,7 +23531,7 @@
 
       /***/
     },
-    /* 153 */
+    /* 155 */
     /***/ function(module, exports, __webpack_require__) {
       (function(global, factory) {
         true
@@ -23414,7 +23636,7 @@
 
       /***/
     },
-    /* 154 */
+    /* 156 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23517,7 +23739,7 @@
 
       /***/
     },
-    /* 155 */
+    /* 157 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23589,7 +23811,7 @@
 
       /***/
     },
-    /* 156 */
+    /* 158 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23661,7 +23883,7 @@
 
       /***/
     },
-    /* 157 */
+    /* 159 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js language configuration
 
@@ -23784,7 +24006,7 @@
 
       /***/
     },
-    /* 158 */
+    /* 160 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23959,7 +24181,7 @@
 
       /***/
     },
-    /* 159 */
+    /* 161 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24053,7 +24275,7 @@
 
       /***/
     },
-    /* 160 */
+    /* 162 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24121,7 +24343,7 @@
 
       /***/
     },
-    /* 161 */
+    /* 163 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24189,7 +24411,7 @@
 
       /***/
     },
-    /* 162 */
+    /* 164 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24278,7 +24500,7 @@
 
       /***/
     },
-    /* 163 */
+    /* 165 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24356,7 +24578,7 @@
 
       /***/
     },
-    /* 164 */
+    /* 166 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24424,7 +24646,7 @@
 
       /***/
     },
-    /* 165 */
+    /* 167 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24547,7 +24769,7 @@
 
       /***/
     },
-    /* 166 */
+    /* 168 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24664,7 +24886,7 @@
 
       /***/
     },
-    /* 167 */
+    /* 169 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24781,7 +25003,7 @@
 
       /***/
     },
-    /* 168 */
+    /* 170 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -24837,22 +25059,22 @@
 
       /***/
     },
-    /* 169 */
+    /* 171 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
-      __webpack_require__(170);
+      __webpack_require__(172);
 
-      var _app = __webpack_require__(175);
+      var _app = __webpack_require__(177);
 
       var root = document.querySelector("#root");
       new _app.AppComponent(root).mount();
 
       /***/
     },
-    /* 170 */
+    /* 172 */
     /***/ function(module, exports, __webpack_require__) {
-      var content = __webpack_require__(171);
+      var content = __webpack_require__(173);
 
       if (typeof content === "string") content = [[module.i, content, ""]];
 
@@ -24864,7 +25086,7 @@
       options.transform = transform;
       options.insertInto = undefined;
 
-      var update = __webpack_require__(173)(content, options);
+      var update = __webpack_require__(175)(content, options);
 
       if (content.locals) module.exports = content.locals;
 
@@ -24907,9 +25129,9 @@
 
       /***/
     },
-    /* 171 */
+    /* 173 */
     /***/ function(module, exports, __webpack_require__) {
-      exports = module.exports = __webpack_require__(172)(false);
+      exports = module.exports = __webpack_require__(174)(false);
       // imports
 
       // module
@@ -24923,7 +25145,7 @@
 
       /***/
     },
-    /* 172 */
+    /* 174 */
     /***/ function(module, exports) {
       /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -25012,7 +25234,7 @@
 
       /***/
     },
-    /* 173 */
+    /* 175 */
     /***/ function(module, exports, __webpack_require__) {
       /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -25080,7 +25302,7 @@
       var singletonCounter = 0;
       var stylesInsertedAtTop = [];
 
-      var fixUrls = __webpack_require__(174);
+      var fixUrls = __webpack_require__(176);
 
       module.exports = function(list, options) {
         if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -25418,7 +25640,7 @@
 
       /***/
     },
-    /* 174 */
+    /* 176 */
     /***/ function(module, exports) {
       /**
        * When source maps are enabled, `style-loader` uses a link element with a data-uri to
@@ -25522,7 +25744,7 @@
 
       /***/
     },
-    /* 175 */
+    /* 177 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25548,15 +25770,15 @@
         };
       })();
 
-      var _app = __webpack_require__(176);
+      var _app = __webpack_require__(178);
 
       var _app2 = _interopRequireDefault(_app);
 
-      var _drawer = __webpack_require__(177);
+      var _drawer = __webpack_require__(179);
 
-      var _toolbar = __webpack_require__(221);
+      var _toolbar = __webpack_require__(224);
 
-      var _transactions = __webpack_require__(226);
+      var _transactions = __webpack_require__(229);
 
       var _addTagDialog = __webpack_require__(296);
 
@@ -25626,10 +25848,17 @@
               this.drawerComponent = new _drawer.DrawerComponent(
                 this.drawerMountPoint,
                 {
-                  onAddTagClick: this.handleAddTagOnclick.bind(this)
+                  onAddTagClick: this.handleAddTagOnclick.bind(this),
+                  onAccountDelete: this.handleAccountDelete.bind(this)
                 }
               );
               this.drawerComponent.mount();
+            }
+          },
+          {
+            key: "handleAccountDelete",
+            value: function handleAccountDelete() {
+              this.transactionsComponent.loadStoredData();
             }
           },
           {
@@ -25671,7 +25900,7 @@
 
       /***/
     },
-    /* 176 */
+    /* 178 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -25679,14 +25908,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="app mdc-typography">\n  <div class="app__drawer-point"></div>\n  <div class="app__container">\n    <div class="app__container-toolbar-point"></div>\n    <div class="app__container-content"></div>\n    <div class="app__add-tag-dialog"></div>\n  </div>\n</div>';
+            '<div class="app mdc-typography">\r\n  <div class="app__drawer-point"></div>\r\n  <div class="app__container">\r\n    <div class="app__container-toolbar-point"></div>\r\n    <div class="app__container-content"></div>\r\n    <div class="app__add-tag-dialog"></div>\r\n  </div>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 177 */
+    /* 179 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25712,15 +25941,15 @@
         };
       })();
 
-      var _drawer = __webpack_require__(178);
+      var _drawer = __webpack_require__(180);
 
       var _drawer2 = _interopRequireDefault(_drawer);
 
-      var _drawer3 = __webpack_require__(179);
+      var _drawer3 = __webpack_require__(181);
 
       var _buttonMore = __webpack_require__(15);
 
-      var _accounts = __webpack_require__(192);
+      var _accounts = __webpack_require__(194);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -25775,7 +26004,10 @@
             key: "initAccountComponent",
             value: function initAccountComponent() {
               this.accountsComponent = new _accounts.AccountsComponent(
-                this.accountsMountPoint
+                this.accountsMountPoint,
+                {
+                  onAccountDelete: this.props.onAccountDelete
+                }
               );
               this.accountsComponent.mount();
             }
@@ -25850,7 +26082,7 @@
 
       /***/
     },
-    /* 178 */
+    /* 180 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -25858,14 +26090,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\n  <nav class="mdc-drawer__drawer drawer__nav">\n    <div class="drawer__group mdc-list-group">\n      <div class="drawer__accounts-mountpoint"></div>\n      <hr class="mdc-list-divider">\n      <nav class="mdc-list--non-interactive">\n        <a class="drawer__list-item mdc-list-item drawer__add-tag-dialog-activation" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n          Add new tag\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Transport\n          <div class="drawer__more-button"></div>\n\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Groceries\n          <div class="drawer__more-button"></div>\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Entertainment\n          <div class="drawer__more-button"></div>\n        </a>\n      </nav>\n    </div>\n  </nav>\n</aside>';
+            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\r\n  <nav class="mdc-drawer__drawer drawer__nav">\r\n    <div class="drawer__group mdc-list-group">\r\n      <div class="drawer__accounts-mountpoint"></div>\r\n      <hr class="mdc-list-divider">\r\n      <nav class="mdc-list--non-interactive">\r\n        <a class="drawer__list-item mdc-list-item drawer__add-tag-dialog-activation" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\r\n          Add new tag\r\n        </a>\r\n        <a class="drawer__list-item mdc-list-item" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\r\n          </i>Transport\r\n          <div class="drawer__more-button"></div>\r\n\r\n        </a>\r\n        <a class="drawer__list-item mdc-list-item" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\r\n          </i>Groceries\r\n          <div class="drawer__more-button"></div>\r\n        </a>\r\n        <a class="drawer__list-item mdc-list-item" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\r\n          </i>Entertainment\r\n          <div class="drawer__more-button"></div>\r\n        </a>\r\n      </nav>\r\n    </div>\r\n  </nav>\r\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 179 */
+    /* 181 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -25873,7 +26105,7 @@
         14
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__temporary__ = __webpack_require__(
-        180
+        182
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -25890,7 +26122,7 @@
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__persistent__ = __webpack_require__(
-        185
+        187
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -25931,14 +26163,14 @@
 
       /***/
     },
-    /* 180 */
+    /* 182 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        181
+        183
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(
         14
@@ -26091,14 +26323,14 @@
 
       /***/
     },
-    /* 181 */
+    /* 183 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
         12
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        184
+        186
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -26248,7 +26480,7 @@
 
       /***/
     },
-    /* 182 */
+    /* 184 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -26276,7 +26508,7 @@
 
       /***/
     },
-    /* 183 */
+    /* 185 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
@@ -26564,7 +26796,7 @@
 
       /***/
     },
-    /* 184 */
+    /* 186 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
@@ -26608,14 +26840,14 @@
 
       /***/
     },
-    /* 185 */
+    /* 187 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        186
+        188
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(
         14
@@ -26753,14 +26985,14 @@
 
       /***/
     },
-    /* 186 */
+    /* 188 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
         12
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        187
+        189
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -26822,7 +27054,7 @@
 
       /***/
     },
-    /* 187 */
+    /* 189 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
@@ -26864,7 +27096,7 @@
 
       /***/
     },
-    /* 188 */
+    /* 190 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -26872,14 +27104,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="button-more mdc-menu-anchor">\n  <button class="button-more__more button-more mdc-button">\n    <i\n      class="button-more__more-icon  material-icons"\n      title="More options">more_vert</i></button>\n  <div class="mdc-menu menu" tabindex="-1">\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\n        Edit\n      </li>\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\n        Delete\n      </li>\n    </ul>\n  </div>\n</div>';
+            '<div class="button-more mdc-menu-anchor">\r\n  <button class="button-more__more button-more mdc-button">\r\n    <i\r\n      class="button-more__more-icon  material-icons"\r\n      title="More options">more_vert</i></button>\r\n  <div class="mdc-menu menu" tabindex="-1">\r\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\r\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\r\n        Edit\r\n      </li>\r\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\r\n        Delete\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 189 */
+    /* 191 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -27056,7 +27288,7 @@
 
       /***/
     },
-    /* 190 */
+    /* 192 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -27077,7 +27309,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        191
+        193
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         27
@@ -27892,7 +28124,7 @@
 
       /***/
     },
-    /* 191 */
+    /* 193 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* unused harmony export MDCMenuAdapter */
@@ -28061,7 +28293,7 @@
 
       /***/
     },
-    /* 192 */
+    /* 194 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -28087,11 +28319,11 @@
         };
       })();
 
-      var _accounts = __webpack_require__(193);
+      var _accounts = __webpack_require__(195);
 
       var _accounts2 = _interopRequireDefault(_accounts);
 
-      var _accountItem = __webpack_require__(194);
+      var _accountItem = __webpack_require__(196);
 
       var _accountItem2 = _interopRequireDefault(_accountItem);
 
@@ -28099,7 +28331,11 @@
 
       var _accountService = __webpack_require__(28);
 
-      var _addAccountDialog = __webpack_require__(195);
+      var _addAccountDialog = __webpack_require__(197);
+
+      var _transactionService = __webpack_require__(41);
+
+      var _confirmDialog = __webpack_require__(42);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -28123,7 +28359,6 @@
           {
             key: "querySelectors",
             value: function querySelectors() {
-              this.accountsRoot = this.mountPoint.querySelector(".accounts");
               this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
                 ".accounts__more-button"
               );
@@ -28133,9 +28368,20 @@
               this.addAccountMountPoint = document.querySelector(
                 ".accounts__add-account-dialog"
               );
+
+              this.confirmDialogMountPoint = this.mountPoint.querySelector(
+                ".accounts__delete-confirm-dialog"
+              );
               this.accountsList = this.mountPoint.querySelector(
                 ".accounts__list-items"
               );
+            }
+          },
+          {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.initAddAccountDialogComponent();
+              this.initConfirmDialog();
             }
           },
           {
@@ -28146,8 +28392,8 @@
             }
           },
           {
-            key: "handleAddAccountClicked",
-            value: function handleAddAccountClicked() {
+            key: "handleAddAccountClick",
+            value: function handleAddAccountClick() {
               this.addAccountDialogComponent.showDialog();
             }
           },
@@ -28236,7 +28482,7 @@
             value: function addEventListeners() {
               this.addAccountButton.addEventListener(
                 "click",
-                this.handleAddAccountClicked.bind(this)
+                this.handleAddAccountClick.bind(this)
               );
             }
           },
@@ -28266,8 +28512,52 @@
           },
           {
             key: "handleDeleteClick",
-            value: function handleDeleteClick() {
-              console.log("handleDeleteClick");
+            value: function handleDeleteClick(event) {
+              var moreButton = event.target.closest(".button-more");
+              this.listItem = moreButton.closest(".accounts__list-item");
+              this.confirmDialog.showDialog("account", this.listItem.innerText);
+            }
+          },
+          {
+            key: "initConfirmDialog",
+            value: function initConfirmDialog() {
+              this.confirmDialog = new _confirmDialog.ConfirmDialogComponent(
+                this.confirmDialogMountPoint,
+                {
+                  onOkClick: this.handleDeleteConfirm.bind(this)
+                }
+              );
+              this.confirmDialog.mount();
+            }
+          },
+          {
+            key: "handleDeleteConfirm",
+            value: function handleDeleteConfirm() {
+              this.delAccount(this.listItem);
+            }
+          },
+          {
+            key: "delAccount",
+            value: function delAccount(listItem) {
+              var _this6 = this;
+
+              var accountId = listItem.dataset.id;
+              _transactionService.TransactionListService.deleteByAccountId(
+                accountId
+              )
+                .then(function() {
+                  var index = Array.from(_this6.accountsList.children).indexOf(
+                    listItem
+                  );
+                  return _accountService.AccountListService.del(index).then(
+                    function() {
+                      _this6.accountsList.removeChild(listItem);
+                    }
+                  );
+                })
+                .then(function() {
+                  _this6.props.onAccountDelete();
+                });
             }
           },
           {
@@ -28275,9 +28565,9 @@
             value: function mount() {
               this.mountPoint.innerHTML = (0, _accounts2.default)();
               this.querySelectors();
+              this.mountChildren();
               this.initMoreBtns();
               this.addEventListeners();
-              this.initAddAccountDialogComponent();
               this.initData();
             }
           }
@@ -28288,43 +28578,45 @@
 
       /***/
     },
-    /* 193 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "";
-        with (obj) {
-          __p +=
-            '<div class="accounts">\n  <nav class="accounts__list  mdc-list--non-interactive">\n    <a class="accounts__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\n      <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n      Add new account\n    </a>\n  </nav>\n  <nav class="accounts__list-items  mdc-list--non-interactive">\n  </nav>\n  <div class="accounts__add-account-dialog"></div>\n</div>';
-        }
-        return __p;
-      };
-
-      /***/
-    },
-    /* 194 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "";
-        with (obj) {
-          __p +=
-            '<a class="accounts__list-item mdc-list-item" href="#">\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\n  ' +
-            ((__t = account.name) == null ? "" : __t) +
-            "\n  " +
-            ((__t = account.balance) == null ? "" : __t) +
-            "\n  " +
-            ((__t = account.currency) == null ? "" : __t) +
-            '\n  <div class="accounts__more-button"></div>\n</a>';
-        }
-        return __p;
-      };
-
-      /***/
-    },
     /* 195 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<div class="accounts">\r\n  <nav class="accounts__list  mdc-list--non-interactive">\r\n    <a class="accounts__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\r\n      <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\r\n      Add new account\r\n    </a>\r\n  </nav>\r\n  <nav class="accounts__list-items  mdc-list--non-interactive">\r\n  </nav>\r\n  <div class="accounts__add-account-dialog"></div>\r\n  <div class="accounts__delete-confirm-dialog"></div>\r\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 196 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<a class="accounts__list-item mdc-list-item" data-id="' +
+            ((__t = account.id) == null ? "" : __t) +
+            '" href="#">\r\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\r\n  ' +
+            ((__t = account.name) == null ? "" : __t) +
+            "\r\n  " +
+            ((__t = account.balance) == null ? "" : __t) +
+            "\r\n  " +
+            ((__t = account.currency) == null ? "" : __t) +
+            '\r\n  <div class="accounts__more-button"></div>\r\n</a>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 197 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -28350,7 +28642,7 @@
         };
       })();
 
-      var _addAccountDialog = __webpack_require__(196);
+      var _addAccountDialog = __webpack_require__(198);
 
       var _addAccountDialog2 = _interopRequireDefault(_addAccountDialog);
 
@@ -28455,7 +28747,10 @@
                 name: this.accountNameInput.value,
                 balance: parseInt(this.balanceNameInput.value),
                 type: this.accountType.innerText,
-                currency: this.accountCurrency.innerText
+                currency: this.accountCurrency.innerText,
+                id: Math.random()
+                  .toString(36)
+                  .substring(2)
               });
               this.clean();
             }
@@ -28497,7 +28792,7 @@
 
       /***/
     },
-    /* 196 */
+    /* 198 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -28509,30 +28804,30 @@
         }
         with (obj) {
           __p +=
-            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
+            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add account\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="add-account-dialog__row">\r\n        <div class="add-account-dialog__col">\r\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n        </div>\r\n        <div class="add-account-dialog__col">\r\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\r\n      <div class="add-account-dialog__row">\r\n        <div class="add-account-dialog__col">\r\n          <div class="mdc-select add-account-dialog__type" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Type</div>\r\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
           for (let i = 0; i < types.length; i++) {
             __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
+              '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
               ((__t = types[i]) == null ? "" : __t) +
-              "\n                  </li>\n                  ";
+              "\r\n                  </li>\r\n                  ";
           }
           __p +=
-            '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Currency</div>\n              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
+            '\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class="add-account-dialog__col">\r\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Currency</div>\r\n              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
           for (let i = 0; i < currencies.length; i++) {
             __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
+              '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
               ((__t = currencies[i]) == null ? "" : __t) +
-              "\n                  </li>\n                  ";
+              "\r\n                  </li>\r\n                  ";
           }
           __p +=
-            '\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\n      </button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\r\n      </button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 197 */
+    /* 199 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -28542,7 +28837,7 @@
         29
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        198
+        200
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
         18
@@ -29203,7 +29498,7 @@
 
       /***/
     },
-    /* 198 */
+    /* 200 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -29274,14 +29569,14 @@
 
       /***/
     },
-    /* 199 */
+    /* 201 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        200
+        202
       );
       /**
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -29500,7 +29795,7 @@
 
       /***/
     },
-    /* 200 */
+    /* 202 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -29541,7 +29836,7 @@
 
       /***/
     },
-    /* 201 */
+    /* 203 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -29549,7 +29844,7 @@
         "createFocusTrapInstance"
       ] = createFocusTrapInstance;
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(
-        202
+        204
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap___default = __webpack_require__.n(
         __WEBPACK_IMPORTED_MODULE_0_focus_trap__
@@ -29583,9 +29878,9 @@
 
       /***/
     },
-    /* 202 */
+    /* 204 */
     /***/ function(module, exports, __webpack_require__) {
-      var tabbable = __webpack_require__(203);
+      var tabbable = __webpack_require__(205);
 
       var listeningFocusTrap = null;
 
@@ -29857,7 +30152,7 @@
 
       /***/
     },
-    /* 203 */
+    /* 205 */
     /***/ function(module, exports) {
       module.exports = function(el, options) {
         options = options || {};
@@ -29989,7 +30284,7 @@
 
       /***/
     },
-    /* 204 */
+    /* 206 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30024,7 +30319,7 @@
 
       /***/
     },
-    /* 205 */
+    /* 207 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30072,7 +30367,7 @@
 
       /***/
     },
-    /* 206 */
+    /* 208 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30106,7 +30401,7 @@
 
       /***/
     },
-    /* 207 */
+    /* 209 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30141,7 +30436,7 @@
 
       /***/
     },
-    /* 208 */
+    /* 210 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -30643,7 +30938,7 @@
 
       /***/
     },
-    /* 209 */
+    /* 211 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30741,7 +31036,7 @@
 
       /***/
     },
-    /* 210 */
+    /* 212 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30829,7 +31124,7 @@
 
       /***/
     },
-    /* 211 */
+    /* 213 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30921,7 +31216,7 @@
 
       /***/
     },
-    /* 212 */
+    /* 214 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31018,7 +31313,7 @@
 
       /***/
     },
-    /* 213 */
+    /* 215 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31121,7 +31416,7 @@
 
       /***/
     },
-    /* 214 */
+    /* 216 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31138,7 +31433,7 @@
         38
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        215
+        217
       );
       /* unused harmony reexport MDCSelectBottomLineFoundation */
       /**
@@ -31202,7 +31497,7 @@
 
       /***/
     },
-    /* 215 */
+    /* 217 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -31212,7 +31507,7 @@
         38
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        216
+        218
       );
       /**
        * @license
@@ -31291,7 +31586,7 @@
 
       /***/
     },
-    /* 216 */
+    /* 218 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -31317,7 +31612,7 @@
 
       /***/
     },
-    /* 217 */
+    /* 219 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31334,7 +31629,7 @@
         39
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        218
+        220
       );
       /* unused harmony reexport MDCSelectLabelFoundation */
       /**
@@ -31392,7 +31687,7 @@
 
       /***/
     },
-    /* 218 */
+    /* 220 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -31402,7 +31697,7 @@
         39
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        219
+        221
       );
       /**
        * @license
@@ -31475,7 +31770,7 @@
 
       /***/
     },
-    /* 219 */
+    /* 221 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       const cssClasses = {
@@ -31485,7 +31780,7 @@
 
       /***/
     },
-    /* 220 */
+    /* 222 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
@@ -31875,7 +32170,22 @@
 
       /***/
     },
-    /* 221 */
+    /* 223 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<aside class="confirm-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Delete\r\n        <span class="confirm-dialog__type"></span>\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div>\r\n        Are you sure you want to delete\r\n        <span class="confirm-dialog__type"></span> &quot;\r\n        <span class="confirm-dialog__name"></span>&quot;?\r\n      </div>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 224 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -31901,11 +32211,11 @@
         };
       })();
 
-      var _toolbar = __webpack_require__(222);
+      var _toolbar = __webpack_require__(225);
 
       var _toolbar2 = _interopRequireDefault(_toolbar);
 
-      var _aboutDialog = __webpack_require__(223);
+      var _aboutDialog = __webpack_require__(226);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -31988,7 +32298,7 @@
 
       /***/
     },
-    /* 222 */
+    /* 225 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -31996,14 +32306,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\n  <div class="toolbar__container mdc-toolbar__row">\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\n    </section>\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\n        About\n      </button>\n    </section>\n  </div>\n  <div class="toolbar__about-dialog"></div>\n</header>';
+            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\r\n  <div class="toolbar__container mdc-toolbar__row">\r\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\r\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\r\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\r\n    </section>\r\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\r\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\r\n        About\r\n      </button>\r\n    </section>\r\n  </div>\r\n  <div class="toolbar__about-dialog"></div>\r\n</header>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 223 */
+    /* 226 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32029,13 +32339,13 @@
         };
       })();
 
-      var _aboutDialog = __webpack_require__(224);
+      var _aboutDialog = __webpack_require__(227);
 
       var _aboutDialog2 = _interopRequireDefault(_aboutDialog);
 
       var _dialog = __webpack_require__(8);
 
-      var _package = __webpack_require__(225);
+      var _package = __webpack_require__(228);
 
       var _package2 = _interopRequireDefault(_package);
 
@@ -32092,7 +32402,7 @@
 
       /***/
     },
-    /* 224 */
+    /* 227 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32100,16 +32410,16 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="about-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header about-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        About\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <p>Buxy - a simple finance tracking app</p>\n      <p>\n        Version\n        ' +
+            '<aside class="about-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header about-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        About\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <p>Buxy - a simple finance tracking app</p>\r\n      <p>\r\n        Version\r\n        ' +
             ((__t = version) == null ? "" : __t) +
-            '\n      </p>\n      <p>Developed by:\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\n        <a href="https://github.com/gift-a">@gift-a</a>\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '\r\n      </p>\r\n      <p>Developed by:\r\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\r\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\r\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\r\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\r\n        <a href="https://github.com/gift-a">@gift-a</a>\r\n      </p>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 225 */
+    /* 228 */
     /***/ function(module, exports) {
       module.exports = {
         name: "buxy-vanilla",
@@ -32171,7 +32481,7 @@
 
       /***/
     },
-    /* 226 */
+    /* 229 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32197,19 +32507,19 @@
         };
       })();
 
-      var _transactions = __webpack_require__(227);
+      var _transactions = __webpack_require__(230);
 
       var _transactions2 = _interopRequireDefault(_transactions);
 
-      var _pieChart = __webpack_require__(228);
+      var _pieChart = __webpack_require__(231);
 
-      var _barChart = __webpack_require__(278);
+      var _barChart = __webpack_require__(281);
 
-      var _tableTransactions = __webpack_require__(280);
+      var _tableTransactions = __webpack_require__(283);
 
-      var _addTransactionDialog = __webpack_require__(285);
+      var _addTransactionDialog = __webpack_require__(286);
 
-      var _transactionService = __webpack_require__(295);
+      var _transactionService = __webpack_require__(41);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32416,7 +32726,7 @@
 
       /***/
     },
-    /* 227 */
+    /* 230 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32424,14 +32734,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="transactions mdc-layout-grid">\n  <div class="transactions__content transactions__block">\n    <div class="mdc-layout-grid__inner">\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n    </div>\n    <div class="transactions__table-transactions"></div>\n  </div>\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\n    <p>You don\'t have any transactions</p>\n  </div>\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\n    <span class="mdc-fab__icon">add</span>\n  </button>\n  <div class="transactions__add-transaction-dialog"></div>\n</div>';
+            '<div class="transactions mdc-layout-grid">\r\n  <div class="transactions__content transactions__block">\r\n    <div class="mdc-layout-grid__inner">\r\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\r\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\r\n    </div>\r\n    <div class="transactions__table-transactions"></div>\r\n  </div>\r\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\r\n    <p>You don\'t have any transactions</p>\r\n  </div>\r\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\r\n    <span class="mdc-fab__icon">add</span>\r\n  </button>\r\n  <div class="transactions__add-transaction-dialog"></div>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 228 */
+    /* 231 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32457,17 +32767,17 @@
         };
       })();
 
-      var _pieChart = __webpack_require__(229);
+      var _pieChart = __webpack_require__(232);
 
       var _pieChart2 = _interopRequireDefault(_pieChart);
 
-      var _chart = __webpack_require__(41);
+      var _chart = __webpack_require__(43);
 
       var _chart2 = _interopRequireDefault(_chart);
 
-      var _currencyConverterUah = __webpack_require__(168);
+      var _currencyConverterUah = __webpack_require__(170);
 
-      var _colorGenerator = __webpack_require__(277);
+      var _colorGenerator = __webpack_require__(280);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32611,7 +32921,7 @@
 
       /***/
     },
-    /* 229 */
+    /* 232 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32619,14 +32929,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="chart">\n  <canvas class="chart__visual"></canvas>\n</div>';
+            '<div class="chart">\r\n  <canvas class="chart__visual"></canvas>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 230 */
+    /* 233 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32679,7 +32989,7 @@
 
       /***/
     },
-    /* 231 */
+    /* 234 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32951,7 +33261,7 @@
 
       /***/
     },
-    /* 232 */
+    /* 235 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -33200,7 +33510,7 @@
 
       /***/
     },
-    /* 233 */
+    /* 236 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -33303,13 +33613,13 @@
 
       /***/
     },
-    /* 234 */
+    /* 237 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
       /* global document: false */
 
-      var color = __webpack_require__(42);
+      var color = __webpack_require__(44);
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
 
@@ -34034,9 +34344,9 @@
 
       /***/
     },
-    /* 235 */
+    /* 238 */
     /***/ function(module, exports, __webpack_require__) {
-      var conversions = __webpack_require__(236);
+      var conversions = __webpack_require__(239);
 
       var convert = function() {
         return new Converter();
@@ -34128,7 +34438,7 @@
 
       /***/
     },
-    /* 236 */
+    /* 239 */
     /***/ function(module, exports) {
       /* MIT license */
 
@@ -34874,10 +35184,10 @@
 
       /***/
     },
-    /* 237 */
+    /* 240 */
     /***/ function(module, exports, __webpack_require__) {
       /* MIT license */
-      var colorNames = __webpack_require__(238);
+      var colorNames = __webpack_require__(241);
 
       module.exports = {
         getRgba: getRgba,
@@ -35128,7 +35438,7 @@
 
       /***/
     },
-    /* 238 */
+    /* 241 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35285,7 +35595,7 @@
 
       /***/
     },
-    /* 239 */
+    /* 242 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35409,7 +35719,7 @@
 
       /***/
     },
-    /* 240 */
+    /* 243 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35515,7 +35825,7 @@
 
       /***/
     },
-    /* 241 */
+    /* 244 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35642,7 +35952,7 @@
 
       /***/
     },
-    /* 242 */
+    /* 245 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35875,7 +36185,7 @@
 
       /***/
     },
-    /* 243 */
+    /* 246 */
     /***/ function(module, exports) {
       /**
        * Platform fallback implementation (minimal).
@@ -35895,7 +36205,7 @@
 
       /***/
     },
-    /* 244 */
+    /* 247 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /**
@@ -36388,7 +36698,7 @@
 
       /***/
     },
-    /* 245 */
+    /* 248 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
@@ -36574,16 +36884,16 @@
 
       /***/
     },
-    /* 246 */
+    /* 249 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
-      var Interaction = __webpack_require__(43);
+      var Interaction = __webpack_require__(45);
       var layouts = __webpack_require__(10);
-      var platform = __webpack_require__(44);
-      var plugins = __webpack_require__(45);
+      var platform = __webpack_require__(46);
+      var plugins = __webpack_require__(47);
 
       module.exports = function(Chart) {
         // Create a dictionary of chart types, to allow for extension of existing types
@@ -37620,7 +37930,7 @@
 
       /***/
     },
-    /* 247 */
+    /* 250 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -38000,7 +38310,7 @@
 
       /***/
     },
-    /* 248 */
+    /* 251 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -38054,7 +38364,7 @@
 
       /***/
     },
-    /* 249 */
+    /* 252 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -39138,7 +39448,7 @@
 
       /***/
     },
-    /* 250 */
+    /* 253 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40215,7 +40525,7 @@
 
       /***/
     },
-    /* 251 */
+    /* 254 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40430,7 +40740,7 @@
 
       /***/
     },
-    /* 252 */
+    /* 255 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40587,7 +40897,7 @@
 
       /***/
     },
-    /* 253 */
+    /* 256 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40805,7 +41115,7 @@
 
       /***/
     },
-    /* 254 */
+    /* 257 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -41182,7 +41492,7 @@
 
       /***/
     },
-    /* 255 */
+    /* 258 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -41851,7 +42161,7 @@
 
       /***/
     },
-    /* 256 */
+    /* 259 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
@@ -42729,7 +43039,7 @@
 
       /***/
     },
-    /* 257 */
+    /* 260 */
     /***/ function(module, exports) {
       module.exports = function(module) {
         if (!module.webpackPolyfill) {
@@ -42756,253 +43066,253 @@
 
       /***/
     },
-    /* 258 */
+    /* 261 */
     /***/ function(module, exports, __webpack_require__) {
       var map = {
-        "./af": 46,
-        "./af.js": 46,
-        "./ar": 47,
-        "./ar-dz": 48,
-        "./ar-dz.js": 48,
-        "./ar-kw": 49,
-        "./ar-kw.js": 49,
-        "./ar-ly": 50,
-        "./ar-ly.js": 50,
-        "./ar-ma": 51,
-        "./ar-ma.js": 51,
-        "./ar-sa": 52,
-        "./ar-sa.js": 52,
-        "./ar-tn": 53,
-        "./ar-tn.js": 53,
-        "./ar.js": 47,
-        "./az": 54,
-        "./az.js": 54,
-        "./be": 55,
-        "./be.js": 55,
-        "./bg": 56,
-        "./bg.js": 56,
-        "./bm": 57,
-        "./bm.js": 57,
-        "./bn": 58,
-        "./bn.js": 58,
-        "./bo": 59,
-        "./bo.js": 59,
-        "./br": 60,
-        "./br.js": 60,
-        "./bs": 61,
-        "./bs.js": 61,
-        "./ca": 62,
-        "./ca.js": 62,
-        "./cs": 63,
-        "./cs.js": 63,
-        "./cv": 64,
-        "./cv.js": 64,
-        "./cy": 65,
-        "./cy.js": 65,
-        "./da": 66,
-        "./da.js": 66,
-        "./de": 67,
-        "./de-at": 68,
-        "./de-at.js": 68,
-        "./de-ch": 69,
-        "./de-ch.js": 69,
-        "./de.js": 67,
-        "./dv": 70,
-        "./dv.js": 70,
-        "./el": 71,
-        "./el.js": 71,
-        "./en-au": 72,
-        "./en-au.js": 72,
-        "./en-ca": 73,
-        "./en-ca.js": 73,
-        "./en-gb": 74,
-        "./en-gb.js": 74,
-        "./en-ie": 75,
-        "./en-ie.js": 75,
-        "./en-il": 76,
-        "./en-il.js": 76,
-        "./en-nz": 77,
-        "./en-nz.js": 77,
-        "./eo": 78,
-        "./eo.js": 78,
-        "./es": 79,
-        "./es-do": 80,
-        "./es-do.js": 80,
-        "./es-us": 81,
-        "./es-us.js": 81,
-        "./es.js": 79,
-        "./et": 82,
-        "./et.js": 82,
-        "./eu": 83,
-        "./eu.js": 83,
-        "./fa": 84,
-        "./fa.js": 84,
-        "./fi": 85,
-        "./fi.js": 85,
-        "./fo": 86,
-        "./fo.js": 86,
-        "./fr": 87,
-        "./fr-ca": 88,
-        "./fr-ca.js": 88,
-        "./fr-ch": 89,
-        "./fr-ch.js": 89,
-        "./fr.js": 87,
-        "./fy": 90,
-        "./fy.js": 90,
-        "./gd": 91,
-        "./gd.js": 91,
-        "./gl": 92,
-        "./gl.js": 92,
-        "./gom-latn": 93,
-        "./gom-latn.js": 93,
-        "./gu": 94,
-        "./gu.js": 94,
-        "./he": 95,
-        "./he.js": 95,
-        "./hi": 96,
-        "./hi.js": 96,
-        "./hr": 97,
-        "./hr.js": 97,
-        "./hu": 98,
-        "./hu.js": 98,
-        "./hy-am": 99,
-        "./hy-am.js": 99,
-        "./id": 100,
-        "./id.js": 100,
-        "./is": 101,
-        "./is.js": 101,
-        "./it": 102,
-        "./it.js": 102,
-        "./ja": 103,
-        "./ja.js": 103,
-        "./jv": 104,
-        "./jv.js": 104,
-        "./ka": 105,
-        "./ka.js": 105,
-        "./kk": 106,
-        "./kk.js": 106,
-        "./km": 107,
-        "./km.js": 107,
-        "./kn": 108,
-        "./kn.js": 108,
-        "./ko": 109,
-        "./ko.js": 109,
-        "./ky": 110,
-        "./ky.js": 110,
-        "./lb": 111,
-        "./lb.js": 111,
-        "./lo": 112,
-        "./lo.js": 112,
-        "./lt": 113,
-        "./lt.js": 113,
-        "./lv": 114,
-        "./lv.js": 114,
-        "./me": 115,
-        "./me.js": 115,
-        "./mi": 116,
-        "./mi.js": 116,
-        "./mk": 117,
-        "./mk.js": 117,
-        "./ml": 118,
-        "./ml.js": 118,
-        "./mr": 119,
-        "./mr.js": 119,
-        "./ms": 120,
-        "./ms-my": 121,
-        "./ms-my.js": 121,
-        "./ms.js": 120,
-        "./mt": 122,
-        "./mt.js": 122,
-        "./my": 123,
-        "./my.js": 123,
-        "./nb": 124,
-        "./nb.js": 124,
-        "./ne": 125,
-        "./ne.js": 125,
-        "./nl": 126,
-        "./nl-be": 127,
-        "./nl-be.js": 127,
-        "./nl.js": 126,
-        "./nn": 128,
-        "./nn.js": 128,
-        "./pa-in": 129,
-        "./pa-in.js": 129,
-        "./pl": 130,
-        "./pl.js": 130,
-        "./pt": 131,
-        "./pt-br": 132,
-        "./pt-br.js": 132,
-        "./pt.js": 131,
-        "./ro": 133,
-        "./ro.js": 133,
-        "./ru": 134,
-        "./ru.js": 134,
-        "./sd": 135,
-        "./sd.js": 135,
-        "./se": 136,
-        "./se.js": 136,
-        "./si": 137,
-        "./si.js": 137,
-        "./sk": 138,
-        "./sk.js": 138,
-        "./sl": 139,
-        "./sl.js": 139,
-        "./sq": 140,
-        "./sq.js": 140,
-        "./sr": 141,
-        "./sr-cyrl": 142,
-        "./sr-cyrl.js": 142,
-        "./sr.js": 141,
-        "./ss": 143,
-        "./ss.js": 143,
-        "./sv": 144,
-        "./sv.js": 144,
-        "./sw": 145,
-        "./sw.js": 145,
-        "./ta": 146,
-        "./ta.js": 146,
-        "./te": 147,
-        "./te.js": 147,
-        "./tet": 148,
-        "./tet.js": 148,
-        "./tg": 149,
-        "./tg.js": 149,
-        "./th": 150,
-        "./th.js": 150,
-        "./tl-ph": 151,
-        "./tl-ph.js": 151,
-        "./tlh": 152,
-        "./tlh.js": 152,
-        "./tr": 153,
-        "./tr.js": 153,
-        "./tzl": 154,
-        "./tzl.js": 154,
-        "./tzm": 155,
-        "./tzm-latn": 156,
-        "./tzm-latn.js": 156,
-        "./tzm.js": 155,
-        "./ug-cn": 157,
-        "./ug-cn.js": 157,
-        "./uk": 158,
-        "./uk.js": 158,
-        "./ur": 159,
-        "./ur.js": 159,
-        "./uz": 160,
-        "./uz-latn": 161,
-        "./uz-latn.js": 161,
-        "./uz.js": 160,
-        "./vi": 162,
-        "./vi.js": 162,
-        "./x-pseudo": 163,
-        "./x-pseudo.js": 163,
-        "./yo": 164,
-        "./yo.js": 164,
-        "./zh-cn": 165,
-        "./zh-cn.js": 165,
-        "./zh-hk": 166,
-        "./zh-hk.js": 166,
-        "./zh-tw": 167,
-        "./zh-tw.js": 167
+        "./af": 48,
+        "./af.js": 48,
+        "./ar": 49,
+        "./ar-dz": 50,
+        "./ar-dz.js": 50,
+        "./ar-kw": 51,
+        "./ar-kw.js": 51,
+        "./ar-ly": 52,
+        "./ar-ly.js": 52,
+        "./ar-ma": 53,
+        "./ar-ma.js": 53,
+        "./ar-sa": 54,
+        "./ar-sa.js": 54,
+        "./ar-tn": 55,
+        "./ar-tn.js": 55,
+        "./ar.js": 49,
+        "./az": 56,
+        "./az.js": 56,
+        "./be": 57,
+        "./be.js": 57,
+        "./bg": 58,
+        "./bg.js": 58,
+        "./bm": 59,
+        "./bm.js": 59,
+        "./bn": 60,
+        "./bn.js": 60,
+        "./bo": 61,
+        "./bo.js": 61,
+        "./br": 62,
+        "./br.js": 62,
+        "./bs": 63,
+        "./bs.js": 63,
+        "./ca": 64,
+        "./ca.js": 64,
+        "./cs": 65,
+        "./cs.js": 65,
+        "./cv": 66,
+        "./cv.js": 66,
+        "./cy": 67,
+        "./cy.js": 67,
+        "./da": 68,
+        "./da.js": 68,
+        "./de": 69,
+        "./de-at": 70,
+        "./de-at.js": 70,
+        "./de-ch": 71,
+        "./de-ch.js": 71,
+        "./de.js": 69,
+        "./dv": 72,
+        "./dv.js": 72,
+        "./el": 73,
+        "./el.js": 73,
+        "./en-au": 74,
+        "./en-au.js": 74,
+        "./en-ca": 75,
+        "./en-ca.js": 75,
+        "./en-gb": 76,
+        "./en-gb.js": 76,
+        "./en-ie": 77,
+        "./en-ie.js": 77,
+        "./en-il": 78,
+        "./en-il.js": 78,
+        "./en-nz": 79,
+        "./en-nz.js": 79,
+        "./eo": 80,
+        "./eo.js": 80,
+        "./es": 81,
+        "./es-do": 82,
+        "./es-do.js": 82,
+        "./es-us": 83,
+        "./es-us.js": 83,
+        "./es.js": 81,
+        "./et": 84,
+        "./et.js": 84,
+        "./eu": 85,
+        "./eu.js": 85,
+        "./fa": 86,
+        "./fa.js": 86,
+        "./fi": 87,
+        "./fi.js": 87,
+        "./fo": 88,
+        "./fo.js": 88,
+        "./fr": 89,
+        "./fr-ca": 90,
+        "./fr-ca.js": 90,
+        "./fr-ch": 91,
+        "./fr-ch.js": 91,
+        "./fr.js": 89,
+        "./fy": 92,
+        "./fy.js": 92,
+        "./gd": 93,
+        "./gd.js": 93,
+        "./gl": 94,
+        "./gl.js": 94,
+        "./gom-latn": 95,
+        "./gom-latn.js": 95,
+        "./gu": 96,
+        "./gu.js": 96,
+        "./he": 97,
+        "./he.js": 97,
+        "./hi": 98,
+        "./hi.js": 98,
+        "./hr": 99,
+        "./hr.js": 99,
+        "./hu": 100,
+        "./hu.js": 100,
+        "./hy-am": 101,
+        "./hy-am.js": 101,
+        "./id": 102,
+        "./id.js": 102,
+        "./is": 103,
+        "./is.js": 103,
+        "./it": 104,
+        "./it.js": 104,
+        "./ja": 105,
+        "./ja.js": 105,
+        "./jv": 106,
+        "./jv.js": 106,
+        "./ka": 107,
+        "./ka.js": 107,
+        "./kk": 108,
+        "./kk.js": 108,
+        "./km": 109,
+        "./km.js": 109,
+        "./kn": 110,
+        "./kn.js": 110,
+        "./ko": 111,
+        "./ko.js": 111,
+        "./ky": 112,
+        "./ky.js": 112,
+        "./lb": 113,
+        "./lb.js": 113,
+        "./lo": 114,
+        "./lo.js": 114,
+        "./lt": 115,
+        "./lt.js": 115,
+        "./lv": 116,
+        "./lv.js": 116,
+        "./me": 117,
+        "./me.js": 117,
+        "./mi": 118,
+        "./mi.js": 118,
+        "./mk": 119,
+        "./mk.js": 119,
+        "./ml": 120,
+        "./ml.js": 120,
+        "./mr": 121,
+        "./mr.js": 121,
+        "./ms": 122,
+        "./ms-my": 123,
+        "./ms-my.js": 123,
+        "./ms.js": 122,
+        "./mt": 124,
+        "./mt.js": 124,
+        "./my": 125,
+        "./my.js": 125,
+        "./nb": 126,
+        "./nb.js": 126,
+        "./ne": 127,
+        "./ne.js": 127,
+        "./nl": 128,
+        "./nl-be": 129,
+        "./nl-be.js": 129,
+        "./nl.js": 128,
+        "./nn": 130,
+        "./nn.js": 130,
+        "./pa-in": 131,
+        "./pa-in.js": 131,
+        "./pl": 132,
+        "./pl.js": 132,
+        "./pt": 133,
+        "./pt-br": 134,
+        "./pt-br.js": 134,
+        "./pt.js": 133,
+        "./ro": 135,
+        "./ro.js": 135,
+        "./ru": 136,
+        "./ru.js": 136,
+        "./sd": 137,
+        "./sd.js": 137,
+        "./se": 138,
+        "./se.js": 138,
+        "./si": 139,
+        "./si.js": 139,
+        "./sk": 140,
+        "./sk.js": 140,
+        "./sl": 141,
+        "./sl.js": 141,
+        "./sq": 142,
+        "./sq.js": 142,
+        "./sr": 143,
+        "./sr-cyrl": 144,
+        "./sr-cyrl.js": 144,
+        "./sr.js": 143,
+        "./ss": 145,
+        "./ss.js": 145,
+        "./sv": 146,
+        "./sv.js": 146,
+        "./sw": 147,
+        "./sw.js": 147,
+        "./ta": 148,
+        "./ta.js": 148,
+        "./te": 149,
+        "./te.js": 149,
+        "./tet": 150,
+        "./tet.js": 150,
+        "./tg": 151,
+        "./tg.js": 151,
+        "./th": 152,
+        "./th.js": 152,
+        "./tl-ph": 153,
+        "./tl-ph.js": 153,
+        "./tlh": 154,
+        "./tlh.js": 154,
+        "./tr": 155,
+        "./tr.js": 155,
+        "./tzl": 156,
+        "./tzl.js": 156,
+        "./tzm": 157,
+        "./tzm-latn": 158,
+        "./tzm-latn.js": 158,
+        "./tzm.js": 157,
+        "./ug-cn": 159,
+        "./ug-cn.js": 159,
+        "./uk": 160,
+        "./uk.js": 160,
+        "./ur": 161,
+        "./ur.js": 161,
+        "./uz": 162,
+        "./uz-latn": 163,
+        "./uz-latn.js": 163,
+        "./uz.js": 162,
+        "./vi": 164,
+        "./vi.js": 164,
+        "./x-pseudo": 165,
+        "./x-pseudo.js": 165,
+        "./yo": 166,
+        "./yo.js": 166,
+        "./zh-cn": 167,
+        "./zh-cn.js": 167,
+        "./zh-hk": 168,
+        "./zh-hk.js": 168,
+        "./zh-tw": 169,
+        "./zh-tw.js": 169
       };
       function webpackContext(req) {
         return __webpack_require__(webpackContextResolve(req));
@@ -43019,11 +43329,11 @@
       };
       webpackContext.resolve = webpackContextResolve;
       module.exports = webpackContext;
-      webpackContext.id = 258;
+      webpackContext.id = 261;
 
       /***/
     },
-    /* 259 */
+    /* 262 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -43605,7 +43915,7 @@
 
       /***/
     },
-    /* 260 */
+    /* 263 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -43822,7 +44132,7 @@
 
       /***/
     },
-    /* 261 */
+    /* 264 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44238,7 +44548,7 @@
 
       /***/
     },
-    /* 262 */
+    /* 265 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44722,7 +45032,7 @@
 
       /***/
     },
-    /* 263 */
+    /* 266 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45004,7 +45314,7 @@
 
       /***/
     },
-    /* 264 */
+    /* 267 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45320,7 +45630,7 @@
 
       /***/
     },
-    /* 265 */
+    /* 268 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45369,7 +45679,7 @@
 
       /***/
     },
-    /* 266 */
+    /* 269 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45383,7 +45693,7 @@
 
       /***/
     },
-    /* 267 */
+    /* 270 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45396,7 +45706,7 @@
 
       /***/
     },
-    /* 268 */
+    /* 271 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45410,7 +45720,7 @@
 
       /***/
     },
-    /* 269 */
+    /* 272 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45424,7 +45734,7 @@
 
       /***/
     },
-    /* 270 */
+    /* 273 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45438,7 +45748,7 @@
 
       /***/
     },
-    /* 271 */
+    /* 274 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45452,7 +45762,7 @@
 
       /***/
     },
-    /* 272 */
+    /* 275 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45465,18 +45775,18 @@
 
       /***/
     },
-    /* 273 */
+    /* 276 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       module.exports = {};
-      module.exports.filler = __webpack_require__(274);
-      module.exports.legend = __webpack_require__(275);
-      module.exports.title = __webpack_require__(276);
+      module.exports.filler = __webpack_require__(277);
+      module.exports.legend = __webpack_require__(278);
+      module.exports.title = __webpack_require__(279);
 
       /***/
     },
-    /* 274 */
+    /* 277 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /**
@@ -45801,7 +46111,7 @@
 
       /***/
     },
-    /* 275 */
+    /* 278 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46463,7 +46773,7 @@
 
       /***/
     },
-    /* 276 */
+    /* 279 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46742,7 +47052,7 @@
 
       /***/
     },
-    /* 277 */
+    /* 280 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46792,7 +47102,7 @@
 
       /***/
     },
-    /* 278 */
+    /* 281 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46818,15 +47128,15 @@
         };
       })();
 
-      var _barChart = __webpack_require__(279);
+      var _barChart = __webpack_require__(282);
 
       var _barChart2 = _interopRequireDefault(_barChart);
 
-      var _chart = __webpack_require__(41);
+      var _chart = __webpack_require__(43);
 
       var _chart2 = _interopRequireDefault(_chart);
 
-      var _currencyConverterUah = __webpack_require__(168);
+      var _currencyConverterUah = __webpack_require__(170);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -46972,7 +47282,7 @@
 
       /***/
     },
-    /* 279 */
+    /* 282 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -46980,14 +47290,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="chart">\n  <canvas class="chart__visual"></canvas>\n</div>';
+            '<div class="chart">\r\n  <canvas class="chart__visual"></canvas>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 280 */
+    /* 283 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47013,17 +47323,17 @@
         };
       })();
 
-      var _tableTransactions = __webpack_require__(281);
+      var _tableTransactions = __webpack_require__(284);
 
       var _tableTransactions2 = _interopRequireDefault(_tableTransactions);
 
-      var _tableTransactionsTr = __webpack_require__(282);
+      var _tableTransactionsTr = __webpack_require__(285);
 
       var _tableTransactionsTr2 = _interopRequireDefault(_tableTransactionsTr);
 
       var _buttonMore = __webpack_require__(15);
 
-      var _confirmDialog = __webpack_require__(283);
+      var _confirmDialog = __webpack_require__(42);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -47160,7 +47470,7 @@
 
       /***/
     },
-    /* 281 */
+    /* 284 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47168,14 +47478,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="table-transactions">\n  <table class="table-transactions__table mdc-elevation--z2">\n    <thead class="table-transactions__thead">\n      <tr class="table-transactions__tr">\n        <th class="table-transactions__th">Date</th>\n        <th class="table-transactions__th">Amount</th>\n        <th class="table-transactions__th">Description</th>\n        <th class="table-transactions__th">Tags</th>\n        <th class="table-transactions__th">Account</th>\n      </tr>\n    </thead>\n    <tbody class="table-transaction__tbody">\n    </tbody>\n  </table>\n  <div class="table-transactions__confirm-dialog"></div>\n</div>';
+            '<div class="table-transactions">\r\n  <table class="table-transactions__table mdc-elevation--z2">\r\n    <thead class="table-transactions__thead">\r\n      <tr class="table-transactions__tr">\r\n        <th class="table-transactions__th">Date</th>\r\n        <th class="table-transactions__th">Amount</th>\r\n        <th class="table-transactions__th">Description</th>\r\n        <th class="table-transactions__th">Tags</th>\r\n        <th class="table-transactions__th">Account</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody class="table-transaction__tbody">\r\n    </tbody>\r\n  </table>\r\n  <div class="table-transactions__confirm-dialog"></div>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 282 */
+    /* 285 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47185,157 +47495,30 @@
           __p +=
             '<tr class="table-transactions__tr table-transactions__highlighted" data-id="' +
             ((__t = row.id) == null ? "" : __t) +
-            '">\n  <td class="table-transactions__td">\n    ' +
+            '">\r\n  <td class="table-transactions__td">\r\n    ' +
             ((__t = row.date) == null ? "" : __t) +
-            '\n  </td>\n  <td class="table-transactions__td">\n    <span>' +
+            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    <span>' +
             ((__t = row.type) == null ? "" : __t) +
-            "</span>\n    <span>" +
+            "</span>\r\n    <span>" +
             ((__t = row.amount) == null ? "" : __t) +
-            "</span>\n    <span>" +
+            "</span>\r\n    <span>" +
             ((__t = row.account.currency) == null ? "" : __t) +
-            '</span>\n  </td>\n  <td class="table-transactions__td table-transactions__td--desc">\n    ' +
+            '</span>\r\n  </td>\r\n  <td class="table-transactions__td table-transactions__td--desc">\r\n    ' +
             ((__t = row.desc) == null ? "" : __t) +
-            '\n  </td>\n  <td class="table-transactions__td">\n    ' +
+            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    ' +
             ((__t = row.tag) == null ? "" : __t) +
-            '\n  </td>\n  <td class="table-transactions__td">\n    <span class="table-transactions__span">' +
+            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    <span class="table-transactions__span">' +
             ((__t = row.account.name) == null ? "" : __t) +
-            '</span>,\n    <span class="table-transactions__span">' +
+            '</span>,\r\n    <span class="table-transactions__span">' +
             ((__t = row.account.type) == null ? "" : __t) +
-            '</span>\n    <div class="table-transactions__more-button"></div>\n  </td>\n</tr>';
+            '</span>\r\n    <div class="table-transactions__more-button"></div>\r\n  </td>\r\n</tr>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 283 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ConfirmDialogComponent = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _confirmDialog = __webpack_require__(284);
-
-      var _confirmDialog2 = _interopRequireDefault(_confirmDialog);
-
-      var _dialog = __webpack_require__(8);
-
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-      }
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var ConfirmDialogComponent = (exports.ConfirmDialogComponent = (function() {
-        function ConfirmDialogComponent(mountPoint, props) {
-          _classCallCheck(this, ConfirmDialogComponent);
-
-          this.mountPoint = mountPoint;
-          this.props = props;
-        }
-
-        _createClass(ConfirmDialogComponent, [
-          {
-            key: "showDialog",
-            value: function showDialog(type, name) {
-              Array.from(this.confirmDialogTypes).forEach(function(el) {
-                el.innerHTML = type;
-              });
-              this.confirmDialogName.innerHTML = name;
-              this.dialog.show();
-            }
-          },
-          {
-            key: "handleOkClick",
-            value: function handleOkClick() {
-              this.props.onOkClick();
-            }
-          },
-          {
-            key: "querySelectors",
-            value: function querySelectors() {
-              this.confirmDialog = this.mountPoint.querySelector(
-                ".confirm-dialog"
-              );
-              this.confirmDialogTypes = this.mountPoint.querySelectorAll(
-                ".confirm-dialog__type"
-              );
-              this.confirmDialogName = this.mountPoint.querySelector(
-                ".confirm-dialog__name"
-              );
-            }
-          },
-          {
-            key: "initMDC",
-            value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.confirmDialog);
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.dialog.listen(
-                "MDCDialog:accept",
-                this.handleOkClick.bind(this)
-              );
-            }
-          },
-          {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _confirmDialog2.default)();
-              this.querySelectors();
-              this.initMDC();
-              this.addEventListeners();
-            }
-          }
-        ]);
-
-        return ConfirmDialogComponent;
-      })());
-
-      /***/
-    },
-    /* 284 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "";
-        with (obj) {
-          __p +=
-            '<aside class="confirm-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Delete\n        <span class="confirm-dialog__type"></span>\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div>\n        Are you sure you want to delete\n        <span class="confirm-dialog__type"></span> &quot;\n        <span class="confirm-dialog__name"></span>&quot;?\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
-        }
-        return __p;
-      };
-
-      /***/
-    },
-    /* 285 */
+    /* 286 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47361,7 +47544,7 @@
         };
       })();
 
-      var _addTransactionDialog = __webpack_require__(286);
+      var _addTransactionDialog = __webpack_require__(287);
 
       var _addTransactionDialog2 = _interopRequireDefault(
         _addTransactionDialog
@@ -47373,13 +47556,13 @@
 
       var _textfield = __webpack_require__(19);
 
-      var _radio = __webpack_require__(287);
+      var _radio = __webpack_require__(288);
 
-      var _customSelect = __webpack_require__(291);
+      var _customSelect = __webpack_require__(292);
 
       var _accountService = __webpack_require__(28);
 
-      var _tagService = __webpack_require__(294);
+      var _tagService = __webpack_require__(295);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -47585,7 +47768,7 @@
 
       /***/
     },
-    /* 286 */
+    /* 287 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47593,14 +47776,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n  <div class="mdc-dialog__surface">\n\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add transaction\n      </h2>\n    </header>\n\n    <section class="mdc-dialog__body">\n      <div class="add-transaction-dialog__row">\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__expence">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-expense">Expence</label>\n        </div>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__income">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios">\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-income">Income</label>\n        </div>\n      </div>\n      <div class="add-transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Description">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\n      <div class="add-transaction-dialog__row add-transaction-dialog__row--col">\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="mdc-text-field__input" placeholder="Amount">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>\n          <div class="add-transaction-dialog__account-point"></div>\n        </div>\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="date" class="mdc-text-field__input" placeholder="Date">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\n          <div class="add-transaction-dialog__tag-point"></div>\n        </div>\n      </div>\n    </section>\n\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\r\n  <div class="mdc-dialog__surface">\r\n\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add transaction\r\n      </h2>\r\n    </header>\r\n\r\n    <section class="mdc-dialog__body">\r\n      <div class="add-transaction-dialog__row">\r\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\r\n        <div class="mdc-form-field">\r\n          <div class="mdc-radio add-transaction-dialog__expence">\r\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>\r\n            <div class="mdc-radio__background">\r\n              <div class="mdc-radio__outer-circle"></div>\r\n              <div class="mdc-radio__inner-circle"></div>\r\n            </div>\r\n          </div>\r\n          <label for="add-transaction-dialog-expense">Expence</label>\r\n        </div>\r\n        <div class="mdc-form-field">\r\n          <div class="mdc-radio add-transaction-dialog__income">\r\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios">\r\n            <div class="mdc-radio__background">\r\n              <div class="mdc-radio__outer-circle"></div>\r\n              <div class="mdc-radio__inner-circle"></div>\r\n            </div>\r\n          </div>\r\n          <label for="add-transaction-dialog-income">Income</label>\r\n        </div>\r\n      </div>\r\n      <div class="add-transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n        <input type="text" class="mdc-text-field__input" placeholder="Description">\r\n        <div class="mdc-line-ripple"></div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\r\n      <div class="add-transaction-dialog__row add-transaction-dialog__row--col">\r\n        <div class="add-transaction-dialog__col">\r\n          <div class="add-transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="mdc-text-field__input" placeholder="Amount">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>\r\n          <div class="add-transaction-dialog__account-point"></div>\r\n        </div>\r\n        <div class="add-transaction-dialog__col">\r\n          <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="date" class="mdc-text-field__input" placeholder="Date">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\r\n          <div class="add-transaction-dialog__tag-point"></div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 287 */
+    /* 288 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -47618,7 +47801,7 @@
         26
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        288
+        289
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__ = __webpack_require__(
         9
@@ -47772,7 +47955,7 @@
 
       /***/
     },
-    /* 288 */
+    /* 289 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -47782,10 +47965,10 @@
         26
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter__ = __webpack_require__(
-        289
+        290
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
-        290
+        291
       );
       /**
        * @license
@@ -47890,7 +48073,7 @@
 
       /***/
     },
-    /* 289 */
+    /* 290 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_selection_control_index__ = __webpack_require__(
@@ -47947,7 +48130,7 @@
 
       /***/
     },
-    /* 290 */
+    /* 291 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -47994,7 +48177,7 @@
 
       /***/
     },
-    /* 291 */
+    /* 292 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -48020,11 +48203,11 @@
         };
       })();
 
-      var _customSelect = __webpack_require__(292);
+      var _customSelect = __webpack_require__(293);
 
       var _customSelect2 = _interopRequireDefault(_customSelect);
 
-      var _customSelectItems = __webpack_require__(293);
+      var _customSelectItems = __webpack_require__(294);
 
       var _customSelectItems2 = _interopRequireDefault(_customSelectItems);
 
@@ -48116,7 +48299,7 @@
 
       /***/
     },
-    /* 292 */
+    /* 293 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -48124,16 +48307,16 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="mdc-select custom-select" role="listbox">\n  <div class="mdc-select__surface" tabindex="0">\n    <div class="mdc-select__label">\n      ' +
+            '<div class="mdc-select custom-select" role="listbox">\r\n  <div class="mdc-select__surface" tabindex="0">\r\n    <div class="mdc-select__label">\r\n      ' +
             ((__t = type) == null ? "" : __t) +
-            '\n    </div>\n    <div class="mdc-select__selected-text"></div>\n    <div class="mdc-select__bottom-line"></div>\n  </div>\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\n  </div>\n</div>';
+            '\r\n    </div>\r\n    <div class="mdc-select__selected-text"></div>\r\n    <div class="mdc-select__bottom-line"></div>\r\n  </div>\r\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\r\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\r\n  </div>\r\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 293 */
+    /* 294 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -48146,9 +48329,9 @@
         with (obj) {
           for (let i = 0; i < list.length; i++) {
             __p +=
-              '\n  <li class="mdc-list-item" role="option" tabindex="0">\n    ' +
+              '\r\n  <li class="mdc-list-item" role="option" tabindex="0">\r\n    ' +
               ((__t = list[i]) == null ? "" : __t) +
-              "\n  </li>\n  ";
+              "\r\n  </li>\r\n  ";
           }
         }
         return __p;
@@ -48156,7 +48339,7 @@
 
       /***/
     },
-    /* 294 */
+    /* 295 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -48211,91 +48394,6 @@
         ]);
 
         return TagListService;
-      })());
-
-      /***/
-    },
-    /* 295 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.TransactionListService = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _storage = __webpack_require__(17);
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var TransactionListService = (exports.TransactionListService = (function() {
-        function TransactionListService() {
-          _classCallCheck(this, TransactionListService);
-        }
-
-        _createClass(TransactionListService, null, [
-          {
-            key: "get",
-            value: function get() {
-              return _storage.StorageService.get("transactionList");
-            }
-          },
-          {
-            key: "set",
-            value: function set(value) {
-              return _storage.StorageService.set("transactionList", value);
-            }
-          },
-          {
-            key: "add",
-            value: function add(data) {
-              var _this = this;
-
-              return this.get().then(function(list) {
-                var newList = list ? [data].concat(list) : [data];
-                _this.set(newList);
-                return newList;
-              });
-            }
-          },
-          {
-            key: "del",
-            value: function del(id) {
-              var _this2 = this;
-
-              return this.get().then(function(list) {
-                var newList = list.filter(function(elem) {
-                  return elem.id !== id;
-                });
-                _this2.set(newList);
-                return newList;
-              });
-            }
-          }
-        ]);
-
-        return TransactionListService;
       })());
 
       /***/
@@ -48422,7 +48520,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add tag\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\n        Type tag name\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add tag\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\r\n        <div class="mdc-line-ripple"></div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\r\n        Type tag name\r\n      </p>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
         }
         return __p;
       };
