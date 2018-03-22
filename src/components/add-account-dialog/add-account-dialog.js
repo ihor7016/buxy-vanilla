@@ -42,6 +42,12 @@ export class AddAccountDialogComponent {
     this.accountCurrency = this.mountPoint.querySelector(
       ".add-account-dialog__currency-text"
     );
+    this.accountNameRipple = this.mountPoint.querySelector(
+      ".add-account-dialog__input-ripple"
+    );
+    this.accountNameHelperText = this.mountPoint.querySelector(
+      ".add-account-dialog__account-helper-text"
+    );
   }
 
   initMDC() {
@@ -55,6 +61,28 @@ export class AddAccountDialogComponent {
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+    this.accountNameInput.onkeydown = this.handleKeyBoardEvent.bind(this);
+    this.accountNameInput.onkeyup = this.handleKeyBoardEvent.bind(this);
+    this.accountNameInput.onkeypress = this.handleKeyBoardEvent.bind(this);
+    this.balanceNameInput.onkeydown = this.handleKeyBoardEvent.bind(this);
+    this.balanceNameInput.onkeyup = this.handleKeyBoardEvent.bind(this);
+    this.balanceNameInput.onkeypress = this.handleKeyBoardEvent.bind(this);
+  }
+
+  handleKeyBoardEvent(event) {
+    let accountName = this.accountNameInput.value;
+    if (accountName.length < 3) {
+      this.accountNameRipple.classList.add(
+        "add-account-dialog__input-ripple-error"
+      );
+      this.accountNameHelperText.innerText =
+        "Name should be more than 3 symbols";
+    } else {
+      this.accountNameRipple.classList.remove(
+        "add-account-dialog__input-ripple-error"
+      );
+      this.accountNameHelperText.innerText = "";
+    }
   }
 
   clean() {

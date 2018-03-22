@@ -3,6 +3,10 @@
     top: inherit !important;
     left: inherit !important;
   }
+  &__input-ripple-error,
+  &__input-ripple-error.mdc-line-ripple {
+    background-color: red;
+  }
 
   &__row {
     display: flex;
