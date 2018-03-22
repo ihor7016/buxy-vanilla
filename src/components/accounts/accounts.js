@@ -29,6 +29,11 @@ export class AccountsComponent {
     this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
   }
 
+  mountChildren() {
+    this.initAddAccountDialogComponent();
+    this.initConfirmDialog();
+  }
+
   handleAddAccountConfirmed(account) {
     AccountListService.add(account);
     this.addAccountToHead(account);
@@ -130,23 +135,25 @@ export class AccountsComponent {
   }
 
   delAccount(listItem) {
-    let index = Array.from(this.accountsList.children).indexOf(listItem);
-    AccountListService.del(index).then(() => {
-      this.accountsList.removeChild(listItem);
-    });
     let accountId = listItem.dataset.id;
-    TransactionListService.deleteByAccountId(accountId).then(() => {
-      this.props.onAccountDelete();
-    });
+    TransactionListService.deleteByAccountId(accountId)
+      .then(() => {
+        let index = Array.from(this.accountsList.children).indexOf(listItem);
+        return AccountListService.del(index).then(() => {
+          this.accountsList.removeChild(listItem);
+        });
+      })
+      .then(() => {
+        this.props.onAccountDelete();
+      });
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.initMoreBtns();
     this.addEventListeners();
-    this.initAddAccountDialogComponent();
-    this.initConfirmDialog();
     this.initData();
   }
 }

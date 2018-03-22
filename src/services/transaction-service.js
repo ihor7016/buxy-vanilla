@@ -27,11 +27,13 @@ export class TransactionListService {
 
   static deleteByAccountId(accountId) {
     return TransactionListService.get().then(transactions => {
-      TransactionListService.set(
-        transactions.filter(item => {
-          return item.account.id !== accountId;
-        })
-      );
+      if (transactions) {
+        return TransactionListService.set(
+          transactions.filter(item => {
+            return item.account.id !== accountId;
+          })
+        );
+      }
     });
   }
 }
