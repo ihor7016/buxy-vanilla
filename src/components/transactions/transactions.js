@@ -3,7 +3,7 @@ import template from "./transactions.html";
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
-import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
+import { TransactionDialogComponent } from "../transaction-dialog/transaction-dialog";
 
 import { TransactionListService } from "../../services/transaction-service";
 
@@ -89,7 +89,7 @@ export class TransactionsComponent {
     this.addTransactionButton = this.mountPoint.querySelector(
       ".transactions__add-transaction-dialog-activation"
     );
-    this.addTransactionDialogMountPoint = this.mountPoint.querySelector(
+    this.transactionDialogMountPoint = this.mountPoint.querySelector(
       ".transactions__add-transaction-dialog"
     );
     this.transactionsContent = this.mountPoint.querySelector(
@@ -119,10 +119,11 @@ export class TransactionsComponent {
     this.pieChartComponent.mount();
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
-    this.addTransactionDialogComponent = new AddTransactionComponent(
-      this.addTransactionDialogMountPoint,
+    this.addTransactionDialogComponent = new TransactionDialogComponent(
+      this.transactionDialogMountPoint,
       {
-        addTransaction: this.handleAddTransactionSubmit.bind(this)
+        addTransaction: this.handleAddTransactionSubmit.bind(this),
+        type: "Add"
       }
     );
     this.addTransactionDialogComponent.mount();

@@ -1,4 +1,4 @@
-import template from "./add-transaction-dialog.html";
+import template from "./transaction-dialog.html";
 
 import { MDCDialog } from "@material/dialog";
 import { MDCSelect } from "@material/select";
@@ -10,7 +10,7 @@ import { CustomSelectComponent } from "../custom-select/custom-select";
 import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
 
-export class AddTransactionComponent {
+export class TransactionDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
@@ -135,7 +135,7 @@ export class AddTransactionComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({ type: this.props.type });
     this.querySelectors();
     this.mountChildren();
     this.initMDC();
