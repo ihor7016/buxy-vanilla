@@ -11,9 +11,6 @@ export class TagsComponent {
 
   querySelectors() {
     this.tagsRoot = this.mountPoint.querySelector(".tags");
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".tags__more-button"
-    );
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
@@ -80,12 +77,10 @@ export class TagsComponent {
   addTagToHead(tag) {
     this.tagsList.innerHTML =
       tagItemTemplate({ tag: tag }) + this.tagsList.innerHTML;
-    this.initMoreBtns();
   }
 
   addTag(tag) {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
-    this.initMoreBtns();
   }
 
   handleEditClick() {
@@ -99,7 +94,6 @@ export class TagsComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.initMoreBtns();
     this.addEventListeners();
     this.initAddTagDialogComponent();
     this.initData();
