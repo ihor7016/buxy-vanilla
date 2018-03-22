@@ -1,37 +1,47 @@
 import template from "./add-tag-dialog.html";
+
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 
-export class AddTagComponent {
-  constructor(mountPoint) {
+export class AddTagDialogComponent {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   showDialog() {
     this.dialog.show();
   }
 
-  handleOk() {
-    console.log("accepted");
-  }
-
-  handleCancel() {
-    console.log("declined");
-  }
-
   querySelectors() {
-    this.addTagDialog = this.mountPoint.querySelector(".add-tag-dialog");
+    this.addTagDialogComponent = this.mountPoint.querySelector(
+      ".add-tag-dialog"
+    );
     this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
+    this.tagNameInput = this.mountPoint.querySelector(".mdc-text-field__input");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagDialog);
+    this.dialog = new MDCDialog(this.addTagDialogComponent);
     this.tag = new MDCTextField(this.tagTextField);
   }
 
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+  }
+
+  clean() {
+    this.tagNameInput.value = "";
+  }
+
+  handleOk() {
+    this.props.onAddTagConfirm(this.tagNameInput.value);
+    this.clean();
+  }
+
+  handleCancel() {
+    this.clean();
   }
 
   mount() {

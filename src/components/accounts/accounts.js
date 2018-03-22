@@ -19,7 +19,7 @@ export class AccountsComponent {
     this.addAccountButton = this.mountPoint.querySelector(
       ".accounts__add-account-dialog-activation"
     );
-    this.addAccountMountPoint = document.querySelector(
+    this.addAccountMountPoint = this.mountPoint.querySelector(
       ".accounts__add-account-dialog"
     );
 
@@ -126,7 +126,9 @@ export class AccountsComponent {
   handleDeleteClick(event) {
     let moreButton = event.target.closest(".button-more");
     this.listItem = moreButton.closest(".accounts__list-item");
-    this.confirmDialog.showDialog("account", this.listItem.innerText);
+    let accountName = this.listItem.querySelector(".accounts__list-item-name")
+      .innerText;
+    this.confirmDialog.showDialog("account", accountName);
   }
 
   initConfirmDialog() {
