@@ -28,16 +28,8 @@ export class DrawerComponent {
     this.accountsComponent.updateAccountData(transaction);
   }
 
-  updateTagData(transaction) {
-    this.tagsComponent.updateTagData(transaction);
-  }
-
   updateAccountDataDelete(transaction) {
     this.accountsComponent.updateAccountDataDelete(transaction);
-  }
-
-  updateTagDataDelete(transaction) {
-    this.tagsComponent.updateTagDataDelete(transaction);
   }
 
   initAccountComponent() {

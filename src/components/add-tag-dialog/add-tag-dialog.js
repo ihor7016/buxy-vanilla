@@ -28,7 +28,6 @@ export class AddTagDialogComponent {
 
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
 
   clean() {
@@ -40,10 +39,6 @@ export class AddTagDialogComponent {
       name: this.tagNameInput.value
     });
     this.clean();
-  }
-
-  handleCancel() {
-    console.log("declined");
   }
 
   mount() {

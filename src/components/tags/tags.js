@@ -5,9 +5,8 @@ import { TagListService } from "../../services/tag-service";
 import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
 
 export class TagsComponent {
-  constructor(mountPoint, props) {
+  constructor(mountPoint) {
     this.mountPoint = mountPoint;
-    this.props = props;
   }
 
   querySelectors() {
@@ -68,15 +67,6 @@ export class TagsComponent {
         TagListService.set(tags);
       }
       this.initTags(tags);
-    });
-  }
-
-  updateTagData(transaction) {
-    TagListService.update(
-      transaction.tag,
-      parseInt(transaction.type + transaction.amount)
-    ).then(() => {
-      this.initData();
     });
   }
 
