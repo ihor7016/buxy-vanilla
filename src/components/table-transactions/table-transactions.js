@@ -3,6 +3,7 @@ import templateRow from "./table-transactions-tr.html";
 
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
+import { TransactionDialogComponent } from "../transaction-dialog/transaction-dialog";
 
 export class TableTransactionsComponent {
   constructor(mountPoint, props) {
@@ -17,6 +18,9 @@ export class TableTransactionsComponent {
 
     this.confirmDialogMountPoint = this.mountPoint.querySelector(
       ".table-transactions__confirm-dialog"
+    );
+    this.editTransactionDialogMountPoint = this.mountPoint.querySelector(
+      ".table-transactions__edit-transaction-dialog"
     );
   }
 
@@ -56,6 +60,18 @@ export class TableTransactionsComponent {
       }
     );
     this.confirmDialog.mount();
+    this.editTransactionDialogComponent = new TransactionDialogComponent(
+      this.editTransactionDialogMountPoint,
+      {
+        editTransaction: this.handleEditTransactionSubmit.bind(this),
+        type: "Edit"
+      }
+    );
+    this.editTransactionDialogComponent.mount();
+  }
+
+  handleEditTransactionSubmit() {
+    //..
   }
 
   handleDeleteConfirm() {
@@ -74,7 +90,7 @@ export class TableTransactionsComponent {
   }
 
   handleEditClick() {
-    console.log("handleEditClick");
+    this.editTransactionDialogComponent.showDialog();
   }
 
   handleDeleteClick(e) {

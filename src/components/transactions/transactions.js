@@ -89,7 +89,7 @@ export class TransactionsComponent {
     this.addTransactionButton = this.mountPoint.querySelector(
       ".transactions__add-transaction-dialog-activation"
     );
-    this.transactionDialogMountPoint = this.mountPoint.querySelector(
+    this.addTransactionDialogMountPoint = this.mountPoint.querySelector(
       ".transactions__add-transaction-dialog"
     );
     this.transactionsContent = this.mountPoint.querySelector(
@@ -120,7 +120,7 @@ export class TransactionsComponent {
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
     this.addTransactionDialogComponent = new TransactionDialogComponent(
-      this.transactionDialogMountPoint,
+      this.addTransactionDialogMountPoint,
       {
         addTransaction: this.handleAddTransactionSubmit.bind(this),
         type: "Add"
