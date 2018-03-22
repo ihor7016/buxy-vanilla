@@ -1,6 +1,5 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
-import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountsComponent } from "../accounts/accounts";
 import { TagsComponent } from "../tags/tags";
 
@@ -19,9 +18,6 @@ export class DrawerComponent {
     this.tagsMountPoint = this.mountPoint.querySelector(
       ".drawer__tags-mountpoint"
     );
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".drawer__more-button"
-    );
   }
 
   updateAccountData(transaction) {
@@ -32,12 +28,9 @@ export class DrawerComponent {
     this.accountsComponent.updateAccountDataDelete(transaction);
   }
 
-  initAccountComponent() {
+  mountChildren() {
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
     this.accountsComponent.mount();
-  }
-
-  initTagComponent() {
     this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
   }
@@ -46,23 +39,6 @@ export class DrawerComponent {
     this.drawer = new MDCPersistentDrawer(this.drawerRoot);
   }
 
-  initMoreBtns() {
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".drawer__more-button"
-    );
-    Array.from(this.moreBtnMountPoints).forEach(point => {
-      new ButtonMoreComponent(point, {
-        position: "right",
-        onDeleteClicked: this.handleDeleteClick.bind(this),
-        onEditClicked: this.handleEditClick.bind(this)
-      }).mount();
-    });
-  }
-
-  handleEditClick() {}
-
-  handleDeleteClick() {}
-
   toggleDrawer() {
     this.drawer.open = !this.drawer.open;
   }
@@ -70,9 +46,7 @@ export class DrawerComponent {
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
-    this.initMoreBtns();
     this.initMDC();
-    this.initAccountComponent();
-    this.initTagComponent();
+    this.mountChildren();
   }
 }
