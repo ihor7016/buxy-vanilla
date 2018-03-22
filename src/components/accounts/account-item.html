@@ -1,6 +1,8 @@
 <a class="accounts__list-item mdc-list-item" data-id="<%= account.id %>" href="#">
   <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>
-  <%= account.name %>
+  <p class="accounts__list-item-name">
+    <%= account.name %>
+  </p>
   <%= account.balance %>
   <%= account.currency %>
   <div class="accounts__more-button"></div>
