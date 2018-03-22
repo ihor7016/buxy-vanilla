@@ -102,7 +102,7 @@ export class TableTransactionsComponent {
       account: this.rowToEdit.querySelector(".table-transactions__tag")
         .innerHTML
     };
-    this.editTransactionDialogComponent.showDialog();
+    this.editTransactionDialogComponent.showDialog(values);
   }
 
   handleDeleteClick(e) {
