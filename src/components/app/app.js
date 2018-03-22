@@ -24,7 +24,10 @@ export class AppComponent {
       onMenuClick: this.handleToolbarMenuClick.bind(this)
     });
     this.toolBarComponent.mount();
-    this.initDrawer();
+    this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
+      onAccountDelete: this.handleAccountDelete.bind(this)
+    });
+    this.drawerComponent.mount();
     this.transactionsComponent = new TransactionsComponent(
       this.transactionsMountPoint,
       {
@@ -33,11 +36,6 @@ export class AppComponent {
       }
     );
     this.transactionsComponent.mount();
-  }
-
-  initDrawer() {
-    this.drawerComponent = new DrawerComponent(this.drawerMountPoint);
-    this.drawerComponent.mount();
   }
 
   handleAccountDelete() {
