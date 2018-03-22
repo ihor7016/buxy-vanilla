@@ -36,9 +36,7 @@ export class AddTagDialogComponent {
   }
 
   handleOk() {
-    this.props.onAddTagConfirm({
-      name: this.tagNameInput.value
-    });
+    this.props.onAddTagConfirm(this.tagNameInput.value);
     this.clean();
   }
 
