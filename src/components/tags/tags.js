@@ -77,10 +77,12 @@ export class TagsComponent {
   addTagToHead(tag) {
     this.tagsList.innerHTML =
       tagItemTemplate({ tag: tag }) + this.tagsList.innerHTML;
+    this.initMoreBtns();
   }
 
   addTag(tag) {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
+    this.initMoreBtns();
   }
 
   handleEditClick() {
@@ -97,5 +99,6 @@ export class TagsComponent {
     this.addEventListeners();
     this.initAddTagDialogComponent();
     this.initData();
+    this.initMoreBtns();
   }
 }

@@ -28,16 +28,15 @@ export class DrawerComponent {
     this.accountsComponent.updateAccountDataDelete(transaction);
   }
 
-  initAccountComponent() {
-    this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
-      onAccountDelete: this.props.onAccountDelete
-    });
-  }
   mountChildren() {
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
     this.accountsComponent.mount();
     this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
+    this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
+      onAccountDelete: this.props.onAccountDelete
+    });
+    this.accountsComponent.mount();
   }
 
   initMDC() {
