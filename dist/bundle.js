@@ -68,7 +68,7 @@
   /******/
   /******/ /******/ __webpack_require__.p = "/dist/"; // Load entry module and return exports
   /******/
-  /******/ /******/ return __webpack_require__((__webpack_require__.s = 165));
+  /******/ /******/ return __webpack_require__((__webpack_require__.s = 169));
   /******/
 })(
   /************************************************************************/
@@ -2189,7 +2189,7 @@
               try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(255)("./" + name);
+                __webpack_require__(258)("./" + name);
                 getSetGlobalLocale(oldLocale);
               } catch (e) {}
             }
@@ -5181,7 +5181,7 @@
         });
 
         /* WEBPACK VAR INJECTION */
-      }.call(exports, __webpack_require__(254)(module)));
+      }.call(exports, __webpack_require__(257)(module)));
 
       /***/
     },
@@ -5190,9 +5190,9 @@
       "use strict";
 
       module.exports = __webpack_require__(13);
-      module.exports.easing = __webpack_require__(228);
-      module.exports.canvas = __webpack_require__(229);
-      module.exports.options = __webpack_require__(230);
+      module.exports.easing = __webpack_require__(231);
+      module.exports.canvas = __webpack_require__(232);
+      module.exports.options = __webpack_require__(233);
 
       /***/
     },
@@ -5429,7 +5429,7 @@
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
-      var color = __webpack_require__(39);
+      var color = __webpack_require__(42);
       var helpers = __webpack_require__(1);
 
       function interpolate(start, view, model, ease) {
@@ -5555,10 +5555,10 @@
       "use strict";
 
       module.exports = {};
-      module.exports.Arc = __webpack_require__(236);
-      module.exports.Line = __webpack_require__(237);
-      module.exports.Point = __webpack_require__(238);
-      module.exports.Rectangle = __webpack_require__(239);
+      module.exports.Arc = __webpack_require__(239);
+      module.exports.Line = __webpack_require__(240);
+      module.exports.Point = __webpack_require__(241);
+      module.exports.Rectangle = __webpack_require__(242);
 
       /***/
     },
@@ -5607,6 +5607,159 @@
     /* 8 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
+      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
+        7
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_ripple_index__ = __webpack_require__(
+        9
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
+        199
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
+        201
+      );
+      /* harmony reexport (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "MDCDialogFoundation",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"];
+        }
+      );
+      /* harmony reexport (module object) */ __webpack_require__.d(
+        __webpack_exports__,
+        "util",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_3__util__;
+        }
+      );
+      /**
+       * Copyright 2017 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      class MDCDialog extends __WEBPACK_IMPORTED_MODULE_0__material_base_index__[
+        "a" /* MDCComponent */
+      ] {
+        static attachTo(root) {
+          return new MDCDialog(root);
+        }
+
+        get open() {
+          return this.foundation_.isOpen();
+        }
+
+        get acceptButton_() {
+          return this.root_.querySelector(
+            __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */].strings
+              .ACCEPT_SELECTOR
+          );
+        }
+
+        get dialogSurface_() {
+          return this.root_.querySelector(
+            __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */].strings
+              .DIALOG_SURFACE_SELECTOR
+          );
+        }
+
+        initialize() {
+          this.focusTrap_ = __WEBPACK_IMPORTED_MODULE_3__util__[
+            "createFocusTrapInstance"
+          ](this.dialogSurface_, this.acceptButton_);
+          this.footerBtnRipples_ = [];
+
+          const footerBtns = this.root_.querySelectorAll(
+            ".mdc-dialog__footer__button"
+          );
+          for (let i = 0, footerBtn; (footerBtn = footerBtns[i]); i++) {
+            this.footerBtnRipples_.push(
+              new __WEBPACK_IMPORTED_MODULE_1__material_ripple_index__[
+                "a" /* MDCRipple */
+              ](footerBtn)
+            );
+          }
+        }
+
+        destroy() {
+          this.footerBtnRipples_.forEach(ripple => ripple.destroy());
+          super.destroy();
+        }
+
+        show() {
+          this.foundation_.open();
+        }
+
+        close() {
+          this.foundation_.close();
+        }
+
+        getDefaultFoundation() {
+          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
+            "a" /* default */
+          ]({
+            addClass: className => this.root_.classList.add(className),
+            removeClass: className => this.root_.classList.remove(className),
+            addBodyClass: className => document.body.classList.add(className),
+            removeBodyClass: className =>
+              document.body.classList.remove(className),
+            eventTargetHasClass: (target, className) =>
+              target.classList.contains(className),
+            registerInteractionHandler: (evt, handler) =>
+              this.root_.addEventListener(evt, handler),
+            deregisterInteractionHandler: (evt, handler) =>
+              this.root_.removeEventListener(evt, handler),
+            registerSurfaceInteractionHandler: (evt, handler) =>
+              this.dialogSurface_.addEventListener(evt, handler),
+            deregisterSurfaceInteractionHandler: (evt, handler) =>
+              this.dialogSurface_.removeEventListener(evt, handler),
+            registerDocumentKeydownHandler: handler =>
+              document.addEventListener("keydown", handler),
+            deregisterDocumentKeydownHandler: handler =>
+              document.removeEventListener("keydown", handler),
+            registerTransitionEndHandler: handler =>
+              this.dialogSurface_.addEventListener("transitionend", handler),
+            deregisterTransitionEndHandler: handler =>
+              this.dialogSurface_.removeEventListener("transitionend", handler),
+            notifyAccept: () =>
+              this.emit(
+                __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */]
+                  .strings.ACCEPT_EVENT
+              ),
+            notifyCancel: () =>
+              this.emit(
+                __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */]
+                  .strings.CANCEL_EVENT
+              ),
+            trapFocusOnSurface: () => this.focusTrap_.activate(),
+            untrapFocusOnSurface: () => this.focusTrap_.deactivate(),
+            isDialog: el => el === this.dialogSurface_,
+            layoutFooterRipples: () =>
+              this.footerBtnRipples_.forEach(ripple => ripple.layout())
+          });
+        }
+      }
+      /* harmony export (immutable) */ __webpack_exports__[
+        "MDCDialog"
+      ] = MDCDialog;
+
+      /***/
+    },
+    /* 9 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
         __webpack_exports__,
         "a",
@@ -5619,13 +5772,13 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        23
+        29
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        188
+        197
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
-        15
+        18
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -5812,7 +5965,7 @@
 
       /***/
     },
-    /* 9 */
+    /* 10 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -6288,7 +6441,7 @@
 
       /***/
     },
-    /* 10 */
+    /* 11 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -6371,11 +6524,11 @@
 
       /***/
     },
-    /* 11 */
+    /* 12 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(
-        178
+        182
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -6385,7 +6538,7 @@
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        179
+        183
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -6409,159 +6562,6 @@
        * See the License for the specific language governing permissions and
        * limitations under the License.
        */
-
-      /***/
-    },
-    /* 12 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
-        7
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_ripple_index__ = __webpack_require__(
-        8
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        190
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
-        192
-      );
-      /* harmony reexport (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "MDCDialogFoundation",
-        function() {
-          return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"];
-        }
-      );
-      /* harmony reexport (module object) */ __webpack_require__.d(
-        __webpack_exports__,
-        "util",
-        function() {
-          return __WEBPACK_IMPORTED_MODULE_3__util__;
-        }
-      );
-      /**
-       * Copyright 2017 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      class MDCDialog extends __WEBPACK_IMPORTED_MODULE_0__material_base_index__[
-        "a" /* MDCComponent */
-      ] {
-        static attachTo(root) {
-          return new MDCDialog(root);
-        }
-
-        get open() {
-          return this.foundation_.isOpen();
-        }
-
-        get acceptButton_() {
-          return this.root_.querySelector(
-            __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */].strings
-              .ACCEPT_SELECTOR
-          );
-        }
-
-        get dialogSurface_() {
-          return this.root_.querySelector(
-            __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */].strings
-              .DIALOG_SURFACE_SELECTOR
-          );
-        }
-
-        initialize() {
-          this.focusTrap_ = __WEBPACK_IMPORTED_MODULE_3__util__[
-            "createFocusTrapInstance"
-          ](this.dialogSurface_, this.acceptButton_);
-          this.footerBtnRipples_ = [];
-
-          const footerBtns = this.root_.querySelectorAll(
-            ".mdc-dialog__footer__button"
-          );
-          for (let i = 0, footerBtn; (footerBtn = footerBtns[i]); i++) {
-            this.footerBtnRipples_.push(
-              new __WEBPACK_IMPORTED_MODULE_1__material_ripple_index__[
-                "a" /* MDCRipple */
-              ](footerBtn)
-            );
-          }
-        }
-
-        destroy() {
-          this.footerBtnRipples_.forEach(ripple => ripple.destroy());
-          super.destroy();
-        }
-
-        show() {
-          this.foundation_.open();
-        }
-
-        close() {
-          this.foundation_.close();
-        }
-
-        getDefaultFoundation() {
-          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
-            "a" /* default */
-          ]({
-            addClass: className => this.root_.classList.add(className),
-            removeClass: className => this.root_.classList.remove(className),
-            addBodyClass: className => document.body.classList.add(className),
-            removeBodyClass: className =>
-              document.body.classList.remove(className),
-            eventTargetHasClass: (target, className) =>
-              target.classList.contains(className),
-            registerInteractionHandler: (evt, handler) =>
-              this.root_.addEventListener(evt, handler),
-            deregisterInteractionHandler: (evt, handler) =>
-              this.root_.removeEventListener(evt, handler),
-            registerSurfaceInteractionHandler: (evt, handler) =>
-              this.dialogSurface_.addEventListener(evt, handler),
-            deregisterSurfaceInteractionHandler: (evt, handler) =>
-              this.dialogSurface_.removeEventListener(evt, handler),
-            registerDocumentKeydownHandler: handler =>
-              document.addEventListener("keydown", handler),
-            deregisterDocumentKeydownHandler: handler =>
-              document.removeEventListener("keydown", handler),
-            registerTransitionEndHandler: handler =>
-              this.dialogSurface_.addEventListener("transitionend", handler),
-            deregisterTransitionEndHandler: handler =>
-              this.dialogSurface_.removeEventListener("transitionend", handler),
-            notifyAccept: () =>
-              this.emit(
-                __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */]
-                  .strings.ACCEPT_EVENT
-              ),
-            notifyCancel: () =>
-              this.emit(
-                __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */]
-                  .strings.CANCEL_EVENT
-              ),
-            trapFocusOnSurface: () => this.focusTrap_.activate(),
-            untrapFocusOnSurface: () => this.focusTrap_.deactivate(),
-            isDialog: el => el === this.dialogSurface_,
-            layoutFooterRipples: () =>
-              this.footerBtnRipples_.forEach(ripple => ripple.layout())
-          });
-        }
-      }
-      /* harmony export (immutable) */ __webpack_exports__[
-        "MDCDialog"
-      ] = MDCDialog;
 
       /***/
     },
@@ -7048,6 +7048,503 @@
       /***/
     },
     /* 15 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.ButtonMoreComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _buttonMore = __webpack_require__(188);
+
+      var _buttonMore2 = _interopRequireDefault(_buttonMore);
+
+      var _menu = __webpack_require__(16);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var ButtonMoreComponent = (exports.ButtonMoreComponent = (function() {
+        function ButtonMoreComponent(mountPoint, props) {
+          _classCallCheck(this, ButtonMoreComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(ButtonMoreComponent, [
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.menuRoot = this.mountPoint.querySelector(".menu");
+              this.buttonMore = this.mountPoint.querySelector(
+                ".button-more__more"
+              );
+              this.buttonDelete = this.mountPoint.querySelector(
+                ".button-more__popup-item-delete"
+              );
+              this.buttonEdit = this.mountPoint.querySelector(
+                ".button-more__popup-item-edit"
+              );
+            }
+          },
+          {
+            key: "initPosition",
+            value: function initPosition() {
+              switch (this.props.position) {
+                case "left":
+                  this.menuRoot.classList.add("button-more__popup-left");
+                  break;
+                case "right":
+                  this.menuRoot.classList.add("button-more__popup-right");
+                  break;
+              }
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.menu = new _menu.MDCMenu(this.menuRoot);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.buttonMore.addEventListener(
+                "click",
+                this.handleBtnClick.bind(this)
+              );
+              this.buttonDelete.addEventListener(
+                "click",
+                this.handleItemClickDelete.bind(this)
+              );
+              this.buttonEdit.addEventListener(
+                "click",
+                this.handleItemClickEdit.bind(this)
+              );
+            }
+          },
+          {
+            key: "handleItemClickDelete",
+            value: function handleItemClickDelete(e) {
+              this.props.onDeleteClick(e);
+            }
+          },
+          {
+            key: "handleItemClickEdit",
+            value: function handleItemClickEdit(e) {
+              this.props.onEditClick(e);
+            }
+          },
+          {
+            key: "handleBtnClick",
+            value: function handleBtnClick(event) {
+              this.toggle();
+            }
+          },
+          {
+            key: "toggle",
+            value: function toggle() {
+              this.menu.open = !this.menu.open;
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _buttonMore2.default)();
+              this.querySelectors();
+              this.initMDC();
+              this.addEventListeners();
+              this.initPosition();
+            }
+          }
+        ]);
+
+        return ButtonMoreComponent;
+      })());
+
+      /***/
+    },
+    /* 16 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "MDCMenu",
+        function() {
+          return MDCMenu;
+        }
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
+        4
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(
+        189
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
+        190
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
+        27
+      );
+      /* harmony reexport (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "MDCMenuFoundation",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_2__foundation__["b"];
+        }
+      );
+      /* harmony reexport (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "AnchorMargin",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"];
+        }
+      );
+      /* harmony reexport (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "Corner",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_3__constants__["a"];
+        }
+      );
+      /* harmony reexport (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "CornerBit",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_3__constants__["b"];
+        }
+      );
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /**
+       * @extends MDCComponent<!MDCMenuFoundation>
+       */
+      class MDCMenu extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
+        "a" /* default */
+      ] {
+        /** @param {...?} args */
+        constructor(...args) {
+          super(...args);
+          /** @private {!Element} */
+          this.previousFocus_;
+        }
+
+        /**
+         * @param {!Element} root
+         * @return {!MDCMenu}
+         */
+        static attachTo(root) {
+          return new MDCMenu(root);
+        }
+
+        /** @return {boolean} */
+        get open() {
+          return this.foundation_.isOpen();
+        }
+
+        /** @param {boolean} value */
+        set open(value) {
+          if (value) {
+            this.foundation_.open();
+          } else {
+            this.foundation_.close();
+          }
+        }
+
+        /** @param {{focusIndex: ?number}=} options */
+        show({ focusIndex = null } = {}) {
+          this.foundation_.open({ focusIndex: focusIndex });
+        }
+
+        hide() {
+          this.foundation_.close();
+        }
+
+        /**
+         * @param {Corner} corner Default anchor corner alignment of top-left
+         *     menu corner.
+         */
+        setAnchorCorner(corner) {
+          this.foundation_.setAnchorCorner(corner);
+        }
+
+        /**
+         * @param {AnchorMargin} margin
+         */
+        setAnchorMargin(margin) {
+          this.foundation_.setAnchorMargin(margin);
+        }
+
+        /**
+         * Return the item container element inside the component.
+         * @return {?Element}
+         */
+        get itemsContainer_() {
+          return this.root_.querySelector(
+            __WEBPACK_IMPORTED_MODULE_2__foundation__[
+              "b" /* MDCMenuFoundation */
+            ].strings.ITEMS_SELECTOR
+          );
+        }
+
+        /**
+         * Return the items within the menu. Note that this only contains the set of elements within
+         * the items container that are proper list items, and not supplemental / presentational DOM
+         * elements.
+         * @return {!Array<!Element>}
+         */
+        get items() {
+          const { itemsContainer_: itemsContainer } = this;
+          return [].slice.call(
+            itemsContainer.querySelectorAll(".mdc-list-item[role]")
+          );
+        }
+
+        /**
+         * Return the item within the menu that is selected.
+         * @param {number} index
+         * @return {?Element}
+         */
+        getOptionByIndex(index) {
+          const items = this.items;
+
+          if (index < items.length) {
+            return this.items[index];
+          } else {
+            return null;
+          }
+        }
+
+        /** @param {number} index */
+        set selectedItemIndex(index) {
+          this.foundation_.setSelectedIndex(index);
+        }
+
+        /** @return {number} */
+        get selectedItemIndex() {
+          return this.foundation_.getSelectedIndex();
+        }
+
+        /** @param {!boolean} rememberSelection */
+        set rememberSelection(rememberSelection) {
+          this.foundation_.setRememberSelection(rememberSelection);
+        }
+
+        /** @param {boolean} quickOpen */
+        set quickOpen(quickOpen) {
+          this.foundation_.setQuickOpen(quickOpen);
+        }
+
+        /** @return {!MDCMenuFoundation} */
+        getDefaultFoundation() {
+          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
+            "b" /* MDCMenuFoundation */
+          ]({
+            addClass: className => this.root_.classList.add(className),
+            removeClass: className => this.root_.classList.remove(className),
+            hasClass: className => this.root_.classList.contains(className),
+            hasNecessaryDom: () => Boolean(this.itemsContainer_),
+            getAttributeForEventTarget: (target, attributeName) =>
+              target.getAttribute(attributeName),
+            getInnerDimensions: () => {
+              const { itemsContainer_: itemsContainer } = this;
+              return {
+                width: itemsContainer.offsetWidth,
+                height: itemsContainer.offsetHeight
+              };
+            },
+            hasAnchor: () =>
+              this.root_.parentElement &&
+              this.root_.parentElement.classList.contains("mdc-menu-anchor"),
+            getAnchorDimensions: () =>
+              this.root_.parentElement.getBoundingClientRect(),
+            getWindowDimensions: () => {
+              return { width: window.innerWidth, height: window.innerHeight };
+            },
+            getNumberOfItems: () => this.items.length,
+            registerInteractionHandler: (type, handler) =>
+              this.root_.addEventListener(type, handler),
+            deregisterInteractionHandler: (type, handler) =>
+              this.root_.removeEventListener(type, handler),
+            registerBodyClickHandler: handler =>
+              document.body.addEventListener("click", handler),
+            deregisterBodyClickHandler: handler =>
+              document.body.removeEventListener("click", handler),
+            getIndexForEventTarget: target => this.items.indexOf(target),
+            notifySelected: evtData =>
+              this.emit(
+                __WEBPACK_IMPORTED_MODULE_2__foundation__[
+                  "b" /* MDCMenuFoundation */
+                ].strings.SELECTED_EVENT,
+                {
+                  index: evtData.index,
+                  item: this.items[evtData.index]
+                }
+              ),
+            notifyCancel: () =>
+              this.emit(
+                __WEBPACK_IMPORTED_MODULE_2__foundation__[
+                  "b" /* MDCMenuFoundation */
+                ].strings.CANCEL_EVENT,
+                {}
+              ),
+            saveFocus: () => {
+              this.previousFocus_ = document.activeElement;
+            },
+            restoreFocus: () => {
+              if (this.previousFocus_) {
+                this.previousFocus_.focus();
+              }
+            },
+            isFocused: () => document.activeElement === this.root_,
+            focus: () => this.root_.focus(),
+            getFocusedItemIndex: () =>
+              this.items.indexOf(document.activeElement),
+            focusItemAtIndex: index => this.items[index].focus(),
+            isRtl: () =>
+              getComputedStyle(this.root_).getPropertyValue("direction") ===
+              "rtl",
+            setTransformOrigin: origin => {
+              this.root_.style[
+                `${Object(
+                  __WEBPACK_IMPORTED_MODULE_1__util__[
+                    "a" /* getTransformPropertyName */
+                  ]
+                )(window)}-origin`
+              ] = origin;
+            },
+            setPosition: position => {
+              this.root_.style.left = "left" in position ? position.left : null;
+              this.root_.style.right =
+                "right" in position ? position.right : null;
+              this.root_.style.top = "top" in position ? position.top : null;
+              this.root_.style.bottom =
+                "bottom" in position ? position.bottom : null;
+            },
+            setMaxHeight: height => {
+              this.root_.style.maxHeight = height;
+            },
+            setAttrForOptionAtIndex: (index, attr, value) =>
+              this.items[index].setAttribute(attr, value),
+            rmAttrForOptionAtIndex: (index, attr) =>
+              this.items[index].removeAttribute(attr),
+            addClassForOptionAtIndex: (index, className) =>
+              this.items[index].classList.add(className),
+            rmClassForOptionAtIndex: (index, className) =>
+              this.items[index].classList.remove(className)
+          });
+        }
+      }
+
+      /***/
+    },
+    /* 17 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var StorageService = (exports.StorageService = (function() {
+        function StorageService() {
+          _classCallCheck(this, StorageService);
+        }
+
+        _createClass(StorageService, null, [
+          {
+            key: "get",
+            value: function get(name) {
+              return new Promise(function(resolve) {
+                var data = localStorage.getItem(name);
+                var obj = JSON.parse(data);
+                resolve(obj);
+              });
+            }
+          },
+          {
+            key: "set",
+            value: function set(name, obj) {
+              return new Promise(function(resolve) {
+                var data = JSON.stringify(obj);
+                localStorage.setItem(name, data);
+                resolve();
+              });
+            }
+          }
+        ]);
+
+        return StorageService;
+      })());
+
+      /***/
+    },
+    /* 18 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -7226,7 +7723,7 @@
 
       /***/
     },
-    /* 16 */
+    /* 19 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -7241,10 +7738,10 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_ripple_index__ = __webpack_require__(
-        8
+        9
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_ripple_util__ = __webpack_require__(
-        15
+        18
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
         30
@@ -7253,22 +7750,22 @@
         31
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
-        209
+        208
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_line_ripple_index__ = __webpack_require__(
-        210
+        209
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_text_index__ = __webpack_require__(
-        211
+        210
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__icon_index__ = __webpack_require__(
-        212
+        211
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__material_floating_label_index__ = __webpack_require__(
-        213
+        212
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__outline_index__ = __webpack_require__(
-        214
+        213
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -7816,7 +8313,7 @@
 
       /***/
     },
-    /* 17 */
+    /* 20 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -7826,7 +8323,7 @@
         32
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        205
+        204
       );
       /**
        * @license
@@ -7964,7 +8461,7 @@
 
       /***/
     },
-    /* 18 */
+    /* 21 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -7974,7 +8471,7 @@
         33
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        206
+        205
       );
       /**
        * @license
@@ -8138,7 +8635,7 @@
 
       /***/
     },
-    /* 19 */
+    /* 22 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -8148,7 +8645,7 @@
         34
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        207
+        206
       );
       /**
        * @license
@@ -8256,7 +8753,7 @@
 
       /***/
     },
-    /* 20 */
+    /* 23 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -8266,7 +8763,7 @@
         35
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        208
+        207
       );
       /**
        * @license
@@ -8394,7 +8891,7 @@
 
       /***/
     },
-    /* 21 */
+    /* 24 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -8558,172 +9055,7 @@
 
       /***/
     },
-    /* 22 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /* unused harmony export MDCSelectionControlState */
-      /* unused harmony export MDCSelectionControl */
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_ripple_index__ = __webpack_require__(
-        8
-      );
-      /**
-       * @license
-       * Copyright 2017 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      /* eslint-disable no-unused-vars */
-
-      /* eslint-enable no-unused-vars */
-
-      /**
-       * @typedef {!{
-       *   checked: boolean,
-       *   indeterminate: boolean,
-       *   disabled: boolean,
-       *   value: ?string
-       * }}
-       */
-      let MDCSelectionControlState;
-
-      /**
-       * @record
-       */
-      class MDCSelectionControl {
-        /** @return {?MDCRipple} */
-        get ripple() {}
-      }
-
-      /***/
-    },
-    /* 23 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      /* eslint no-unused-vars: [2, {"args": "none"}] */
-
-      /**
-       * Adapter for MDC Ripple. Provides an interface for managing
-       * - classes
-       * - dom
-       * - CSS variables
-       * - position
-       * - dimensions
-       * - scroll position
-       * - event handlers
-       * - unbounded, active and disabled states
-       *
-       * Additionally, provides type information for the adapter to the Closure
-       * compiler.
-       *
-       * Implement this adapter for your framework of choice to delegate updates to
-       * the component in your framework of choice. See architecture documentation
-       * for more details.
-       * https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md
-       *
-       * @record
-       */
-      class MDCRippleAdapter {
-        /** @return {boolean} */
-        browserSupportsCssVars() {}
-
-        /** @return {boolean} */
-        isUnbounded() {}
-
-        /** @return {boolean} */
-        isSurfaceActive() {}
-
-        /** @return {boolean} */
-        isSurfaceDisabled() {}
-
-        /** @param {string} className */
-        addClass(className) {}
-
-        /** @param {string} className */
-        removeClass(className) {}
-
-        /** @param {!EventTarget} target */
-        containsEventTarget(target) {}
-
-        /**
-         * @param {string} evtType
-         * @param {!Function} handler
-         */
-        registerInteractionHandler(evtType, handler) {}
-
-        /**
-         * @param {string} evtType
-         * @param {!Function} handler
-         */
-        deregisterInteractionHandler(evtType, handler) {}
-
-        /**
-         * @param {string} evtType
-         * @param {!Function} handler
-         */
-        registerDocumentInteractionHandler(evtType, handler) {}
-
-        /**
-         * @param {string} evtType
-         * @param {!Function} handler
-         */
-        deregisterDocumentInteractionHandler(evtType, handler) {}
-
-        /**
-         * @param {!Function} handler
-         */
-        registerResizeHandler(handler) {}
-
-        /**
-         * @param {!Function} handler
-         */
-        deregisterResizeHandler(handler) {}
-
-        /**
-         * @param {string} varName
-         * @param {?number|string} value
-         */
-        updateCssVariable(varName, value) {}
-
-        /** @return {!ClientRect} */
-        computeBoundingRect() {}
-
-        /** @return {{x: number, y: number}} */
-        getWindowPageOffset() {}
-      }
-
-      /* unused harmony default export */ var _unused_webpack_default_export = MDCRippleAdapter;
-
-      /***/
-    },
-    /* 24 */
+    /* 25 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -8731,22 +9063,22 @@
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_ripple_index__ = __webpack_require__(
-        8
+        9
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_menu_index__ = __webpack_require__(
-        25
+        16
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bottom_line_index__ = __webpack_require__(
-        198
+        214
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__label_index__ = __webpack_require__(
-        201
+        217
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
-        204
+        220
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(
-        29
+        40
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -8826,9 +9158,9 @@
 
         initialize(
           menuFactory = el =>
-            new __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
-              "a" /* MDCMenu */
-            ](el),
+            new __WEBPACK_IMPORTED_MODULE_2__material_menu_index__["MDCMenu"](
+              el
+            ),
           labelFactory = el =>
             new __WEBPACK_IMPORTED_MODULE_4__label_index__[
               "a" /* MDCSelectLabel */
@@ -8962,41 +9294,17 @@
 
       /***/
     },
-    /* 25 */
+    /* 26 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "a",
-        function() {
-          return MDCMenu;
-        }
+      /* unused harmony export MDCSelectionControlState */
+      /* unused harmony export MDCSelectionControl */
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_ripple_index__ = __webpack_require__(
+        9
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
-        4
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(
-        195
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        196
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
-        26
-      );
-      /* harmony reexport (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "b",
-        function() {
-          return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"];
-        }
-      );
-      /* unused harmony reexport AnchorMargin */
-      /* unused harmony reexport Corner */
-      /* unused harmony reexport CornerBit */
       /**
        * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
+       * Copyright 2017 Google Inc. All Rights Reserved.
        *
        * Licensed under the Apache License, Version 2.0 (the "License");
        * you may not use this file except in compliance with the License.
@@ -9011,229 +9319,31 @@
        * limitations under the License.
        */
 
+      /* eslint-disable no-unused-vars */
+
+      /* eslint-enable no-unused-vars */
+
       /**
-       * @extends MDCComponent<!MDCMenuFoundation>
+       * @typedef {!{
+       *   checked: boolean,
+       *   indeterminate: boolean,
+       *   disabled: boolean,
+       *   value: ?string
+       * }}
        */
-      class MDCMenu extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
-        "a" /* default */
-      ] {
-        /** @param {...?} args */
-        constructor(...args) {
-          super(...args);
-          /** @private {!Element} */
-          this.previousFocus_;
-        }
+      let MDCSelectionControlState;
 
-        /**
-         * @param {!Element} root
-         * @return {!MDCMenu}
-         */
-        static attachTo(root) {
-          return new MDCMenu(root);
-        }
-
-        /** @return {boolean} */
-        get open() {
-          return this.foundation_.isOpen();
-        }
-
-        /** @param {boolean} value */
-        set open(value) {
-          if (value) {
-            this.foundation_.open();
-          } else {
-            this.foundation_.close();
-          }
-        }
-
-        /** @param {{focusIndex: ?number}=} options */
-        show({ focusIndex = null } = {}) {
-          this.foundation_.open({ focusIndex: focusIndex });
-        }
-
-        hide() {
-          this.foundation_.close();
-        }
-
-        /**
-         * @param {Corner} corner Default anchor corner alignment of top-left
-         *     menu corner.
-         */
-        setAnchorCorner(corner) {
-          this.foundation_.setAnchorCorner(corner);
-        }
-
-        /**
-         * @param {AnchorMargin} margin
-         */
-        setAnchorMargin(margin) {
-          this.foundation_.setAnchorMargin(margin);
-        }
-
-        /**
-         * Return the item container element inside the component.
-         * @return {?Element}
-         */
-        get itemsContainer_() {
-          return this.root_.querySelector(
-            __WEBPACK_IMPORTED_MODULE_2__foundation__[
-              "a" /* MDCMenuFoundation */
-            ].strings.ITEMS_SELECTOR
-          );
-        }
-
-        /**
-         * Return the items within the menu. Note that this only contains the set of elements within
-         * the items container that are proper list items, and not supplemental / presentational DOM
-         * elements.
-         * @return {!Array<!Element>}
-         */
-        get items() {
-          const { itemsContainer_: itemsContainer } = this;
-          return [].slice.call(
-            itemsContainer.querySelectorAll(".mdc-list-item[role]")
-          );
-        }
-
-        /**
-         * Return the item within the menu that is selected.
-         * @param {number} index
-         * @return {?Element}
-         */
-        getOptionByIndex(index) {
-          const items = this.items;
-
-          if (index < items.length) {
-            return this.items[index];
-          } else {
-            return null;
-          }
-        }
-
-        /** @param {number} index */
-        set selectedItemIndex(index) {
-          this.foundation_.setSelectedIndex(index);
-        }
-
-        /** @return {number} */
-        get selectedItemIndex() {
-          return this.foundation_.getSelectedIndex();
-        }
-
-        /** @param {!boolean} rememberSelection */
-        set rememberSelection(rememberSelection) {
-          this.foundation_.setRememberSelection(rememberSelection);
-        }
-
-        /** @param {boolean} quickOpen */
-        set quickOpen(quickOpen) {
-          this.foundation_.setQuickOpen(quickOpen);
-        }
-
-        /** @return {!MDCMenuFoundation} */
-        getDefaultFoundation() {
-          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
-            "a" /* MDCMenuFoundation */
-          ]({
-            addClass: className => this.root_.classList.add(className),
-            removeClass: className => this.root_.classList.remove(className),
-            hasClass: className => this.root_.classList.contains(className),
-            hasNecessaryDom: () => Boolean(this.itemsContainer_),
-            getAttributeForEventTarget: (target, attributeName) =>
-              target.getAttribute(attributeName),
-            getInnerDimensions: () => {
-              const { itemsContainer_: itemsContainer } = this;
-              return {
-                width: itemsContainer.offsetWidth,
-                height: itemsContainer.offsetHeight
-              };
-            },
-            hasAnchor: () =>
-              this.root_.parentElement &&
-              this.root_.parentElement.classList.contains("mdc-menu-anchor"),
-            getAnchorDimensions: () =>
-              this.root_.parentElement.getBoundingClientRect(),
-            getWindowDimensions: () => {
-              return { width: window.innerWidth, height: window.innerHeight };
-            },
-            getNumberOfItems: () => this.items.length,
-            registerInteractionHandler: (type, handler) =>
-              this.root_.addEventListener(type, handler),
-            deregisterInteractionHandler: (type, handler) =>
-              this.root_.removeEventListener(type, handler),
-            registerBodyClickHandler: handler =>
-              document.body.addEventListener("click", handler),
-            deregisterBodyClickHandler: handler =>
-              document.body.removeEventListener("click", handler),
-            getIndexForEventTarget: target => this.items.indexOf(target),
-            notifySelected: evtData =>
-              this.emit(
-                __WEBPACK_IMPORTED_MODULE_2__foundation__[
-                  "a" /* MDCMenuFoundation */
-                ].strings.SELECTED_EVENT,
-                {
-                  index: evtData.index,
-                  item: this.items[evtData.index]
-                }
-              ),
-            notifyCancel: () =>
-              this.emit(
-                __WEBPACK_IMPORTED_MODULE_2__foundation__[
-                  "a" /* MDCMenuFoundation */
-                ].strings.CANCEL_EVENT,
-                {}
-              ),
-            saveFocus: () => {
-              this.previousFocus_ = document.activeElement;
-            },
-            restoreFocus: () => {
-              if (this.previousFocus_) {
-                this.previousFocus_.focus();
-              }
-            },
-            isFocused: () => document.activeElement === this.root_,
-            focus: () => this.root_.focus(),
-            getFocusedItemIndex: () =>
-              this.items.indexOf(document.activeElement),
-            focusItemAtIndex: index => this.items[index].focus(),
-            isRtl: () =>
-              getComputedStyle(this.root_).getPropertyValue("direction") ===
-              "rtl",
-            setTransformOrigin: origin => {
-              this.root_.style[
-                `${Object(
-                  __WEBPACK_IMPORTED_MODULE_1__util__[
-                    "a" /* getTransformPropertyName */
-                  ]
-                )(window)}-origin`
-              ] = origin;
-            },
-            setPosition: position => {
-              this.root_.style.left = "left" in position ? position.left : null;
-              this.root_.style.right =
-                "right" in position ? position.right : null;
-              this.root_.style.top = "top" in position ? position.top : null;
-              this.root_.style.bottom =
-                "bottom" in position ? position.bottom : null;
-            },
-            setMaxHeight: height => {
-              this.root_.style.maxHeight = height;
-            },
-            setAttrForOptionAtIndex: (index, attr, value) =>
-              this.items[index].setAttribute(attr, value),
-            rmAttrForOptionAtIndex: (index, attr) =>
-              this.items[index].removeAttribute(attr),
-            addClassForOptionAtIndex: (index, className) =>
-              this.items[index].classList.add(className),
-            rmClassForOptionAtIndex: (index, className) =>
-              this.items[index].classList.remove(className)
-          });
-        }
+      /**
+       * @record
+       */
+      class MDCSelectionControl {
+        /** @return {?MDCRipple} */
+        get ripple() {}
       }
 
       /***/
     },
-    /* 26 */
+    /* 27 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -9356,103 +9466,97 @@
 
       /***/
     },
-    /* 27 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /**
-       * @license
-       * Copyright 2017 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      /* eslint no-unused-vars: [2, {"args": "none"}] */
-
-      /**
-       * Adapter for MDC Select Bottom Line.
-       *
-       * Defines the shape of the adapter expected by the foundation. Implement this
-       * adapter to integrate the Select label into your framework. See
-       * https://github.com/material-components/material-components-web/blob/master/docs/authoring-components.md
-       * for more information.
-       *
-       * @record
-       */
-      class MDCSelectBottomLineAdapter {
-        /**
-         * Adds a class to the bottom line element.
-         * @param {string} className
-         */
-        addClass(className) {}
-
-        /**
-         * Removes a class from the bottom line element.
-         * @param {string} className
-         */
-        removeClass(className) {}
-      }
-
-      /* unused harmony default export */ var _unused_webpack_default_export = MDCSelectBottomLineAdapter;
-
-      /***/
-    },
     /* 28 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
+    /***/ function(module, exports, __webpack_require__) {
       "use strict";
-      /**
-       * @license
-       * Copyright 2017 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
 
-      /* eslint no-unused-vars: [2, {"args": "none"}] */
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AccountListService = undefined;
 
-      /**
-       * Adapter for MDC Select Label.
-       *
-       * Defines the shape of the adapter expected by the foundation. Implement this
-       * adapter to integrate the Select label into your framework. See
-       * https://github.com/material-components/material-components-web/blob/master/docs/authoring-components.md
-       * for more information.
-       *
-       * @record
-       */
-      class MDCSelectLabelAdapter {
-        /**
-         * Adds a class to the label element.
-         * @param {string} className
-         */
-        addClass(className) {}
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
 
-        /**
-         * Removes a class from the label element.
-         * @param {string} className
-         */
-        removeClass(className) {}
+      var _storage = __webpack_require__(17);
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
       }
 
-      /* unused harmony default export */ var _unused_webpack_default_export = MDCSelectLabelAdapter;
+      var AccountListService = (exports.AccountListService = (function() {
+        function AccountListService() {
+          _classCallCheck(this, AccountListService);
+        }
+
+        _createClass(AccountListService, null, [
+          {
+            key: "add",
+            value: function add(account) {
+              var _this = this;
+
+              return this.get().then(function(accounts) {
+                if (!accounts) {
+                  _this.set([account]);
+                } else {
+                  var updatedAccounts = [account].concat(accounts);
+                  _this.set(updatedAccounts);
+                }
+              });
+            }
+          },
+          {
+            key: "update",
+            value: function update(transactionAccount, amount) {
+              var _this2 = this;
+
+              return this.get()
+                .then(function(accounts) {
+                  return accounts || [];
+                })
+                .then(function(accounts) {
+                  var index = accounts.findIndex(function(item) {
+                    return item.name === transactionAccount.name;
+                  });
+                  var account = accounts[index];
+                  account.balance = account.balance + amount;
+                  accounts[index] = account;
+                  _this2.set(accounts);
+                });
+            }
+          },
+          {
+            key: "get",
+            value: function get() {
+              return _storage.StorageService.get("accountList");
+            }
+          },
+          {
+            key: "set",
+            value: function set(value) {
+              return _storage.StorageService.set("accountList", value);
+            }
+          }
+        ]);
+
+        return AccountListService;
+      })());
 
       /***/
     },
@@ -9460,6 +9564,7 @@
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
+       * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
        *
        * Licensed under the Apache License, Version 2.0 (the "License");
@@ -9474,24 +9579,100 @@
        * See the License for the specific language governing permissions and
        * limitations under the License.
        */
-      const cssClasses = {
-        BOX: "mdc-select--box",
-        DISABLED: "mdc-select--disabled",
-        OPEN: "mdc-select--open",
-        ROOT: "mdc-select",
-        SCROLL_LOCK: "mdc-select-scroll-lock"
-      };
-      /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
 
-      const strings = {
-        CHANGE_EVENT: "MDCSelect:change",
-        BOTTOM_LINE_SELECTOR: ".mdc-select__bottom-line",
-        LABEL_SELECTOR: ".mdc-select__label",
-        MENU_SELECTOR: ".mdc-select__menu",
-        SURFACE_SELECTOR: ".mdc-select__surface",
-        SELECTED_TEXT_SELECTOR: ".mdc-select__selected-text"
-      };
-      /* harmony export (immutable) */ __webpack_exports__["b"] = strings;
+      /* eslint no-unused-vars: [2, {"args": "none"}] */
+
+      /**
+       * Adapter for MDC Ripple. Provides an interface for managing
+       * - classes
+       * - dom
+       * - CSS variables
+       * - position
+       * - dimensions
+       * - scroll position
+       * - event handlers
+       * - unbounded, active and disabled states
+       *
+       * Additionally, provides type information for the adapter to the Closure
+       * compiler.
+       *
+       * Implement this adapter for your framework of choice to delegate updates to
+       * the component in your framework of choice. See architecture documentation
+       * for more details.
+       * https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md
+       *
+       * @record
+       */
+      class MDCRippleAdapter {
+        /** @return {boolean} */
+        browserSupportsCssVars() {}
+
+        /** @return {boolean} */
+        isUnbounded() {}
+
+        /** @return {boolean} */
+        isSurfaceActive() {}
+
+        /** @return {boolean} */
+        isSurfaceDisabled() {}
+
+        /** @param {string} className */
+        addClass(className) {}
+
+        /** @param {string} className */
+        removeClass(className) {}
+
+        /** @param {!EventTarget} target */
+        containsEventTarget(target) {}
+
+        /**
+         * @param {string} evtType
+         * @param {!Function} handler
+         */
+        registerInteractionHandler(evtType, handler) {}
+
+        /**
+         * @param {string} evtType
+         * @param {!Function} handler
+         */
+        deregisterInteractionHandler(evtType, handler) {}
+
+        /**
+         * @param {string} evtType
+         * @param {!Function} handler
+         */
+        registerDocumentInteractionHandler(evtType, handler) {}
+
+        /**
+         * @param {string} evtType
+         * @param {!Function} handler
+         */
+        deregisterDocumentInteractionHandler(evtType, handler) {}
+
+        /**
+         * @param {!Function} handler
+         */
+        registerResizeHandler(handler) {}
+
+        /**
+         * @param {!Function} handler
+         */
+        deregisterResizeHandler(handler) {}
+
+        /**
+         * @param {string} varName
+         * @param {?number|string} value
+         */
+        updateCssVariable(varName, value) {}
+
+        /** @return {!ClientRect} */
+        computeBoundingRect() {}
+
+        /** @return {{x: number, y: number}} */
+        getWindowPageOffset() {}
+      }
+
+      /* unused harmony default export */ var _unused_webpack_default_export = MDCRippleAdapter;
 
       /***/
     },
@@ -9573,19 +9754,19 @@
       /* unused harmony export NativeInputType */
       /* unused harmony export FoundationMapType */
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_line_ripple_foundation__ = __webpack_require__(
-        17
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper_text_foundation__ = __webpack_require__(
-        18
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon_foundation__ = __webpack_require__(
-        19
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_floating_label_foundation__ = __webpack_require__(
         20
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__outline_foundation__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper_text_foundation__ = __webpack_require__(
         21
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon_foundation__ = __webpack_require__(
+        22
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_floating_label_foundation__ = __webpack_require__(
+        23
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__outline_foundation__ = __webpack_require__(
+        24
       );
       /**
        * @license
@@ -10161,60 +10342,199 @@
       /***/
     },
     /* 38 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /**
+       * @license
+       * Copyright 2017 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /* eslint no-unused-vars: [2, {"args": "none"}] */
+
+      /**
+       * Adapter for MDC Select Bottom Line.
+       *
+       * Defines the shape of the adapter expected by the foundation. Implement this
+       * adapter to integrate the Select label into your framework. See
+       * https://github.com/material-components/material-components-web/blob/master/docs/authoring-components.md
+       * for more information.
+       *
+       * @record
+       */
+      class MDCSelectBottomLineAdapter {
+        /**
+         * Adds a class to the bottom line element.
+         * @param {string} className
+         */
+        addClass(className) {}
+
+        /**
+         * Removes a class from the bottom line element.
+         * @param {string} className
+         */
+        removeClass(className) {}
+      }
+
+      /* unused harmony default export */ var _unused_webpack_default_export = MDCSelectBottomLineAdapter;
+
+      /***/
+    },
+    /* 39 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /**
+       * @license
+       * Copyright 2017 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /* eslint no-unused-vars: [2, {"args": "none"}] */
+
+      /**
+       * Adapter for MDC Select Label.
+       *
+       * Defines the shape of the adapter expected by the foundation. Implement this
+       * adapter to integrate the Select label into your framework. See
+       * https://github.com/material-components/material-components-web/blob/master/docs/authoring-components.md
+       * for more information.
+       *
+       * @record
+       */
+      class MDCSelectLabelAdapter {
+        /**
+         * Adds a class to the label element.
+         * @param {string} className
+         */
+        addClass(className) {}
+
+        /**
+         * Removes a class from the label element.
+         * @param {string} className
+         */
+        removeClass(className) {}
+      }
+
+      /* unused harmony default export */ var _unused_webpack_default_export = MDCSelectLabelAdapter;
+
+      /***/
+    },
+    /* 40 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /**
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      const cssClasses = {
+        BOX: "mdc-select--box",
+        DISABLED: "mdc-select--disabled",
+        OPEN: "mdc-select--open",
+        ROOT: "mdc-select",
+        SCROLL_LOCK: "mdc-select-scroll-lock"
+      };
+      /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
+
+      const strings = {
+        CHANGE_EVENT: "MDCSelect:change",
+        BOTTOM_LINE_SELECTOR: ".mdc-select__bottom-line",
+        LABEL_SELECTOR: ".mdc-select__label",
+        MENU_SELECTOR: ".mdc-select__menu",
+        SURFACE_SELECTOR: ".mdc-select__surface",
+        SELECTED_TEXT_SELECTOR: ".mdc-select__selected-text"
+      };
+      /* harmony export (immutable) */ __webpack_exports__["b"] = strings;
+
+      /***/
+    },
+    /* 41 */
     /***/ function(module, exports, __webpack_require__) {
       /**
        * @namespace Chart
        */
-      var Chart = __webpack_require__(227)();
+      var Chart = __webpack_require__(230)();
 
       Chart.helpers = __webpack_require__(1);
 
       // @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
-      __webpack_require__(231)(Chart);
+      __webpack_require__(234)(Chart);
 
       Chart.defaults = __webpack_require__(2);
       Chart.Element = __webpack_require__(5);
       Chart.elements = __webpack_require__(6);
-      Chart.Interaction = __webpack_require__(40);
-      Chart.layouts = __webpack_require__(9);
-      Chart.platform = __webpack_require__(41);
-      Chart.plugins = __webpack_require__(42);
-      Chart.Ticks = __webpack_require__(10);
+      Chart.Interaction = __webpack_require__(43);
+      Chart.layouts = __webpack_require__(10);
+      Chart.platform = __webpack_require__(44);
+      Chart.plugins = __webpack_require__(45);
+      Chart.Ticks = __webpack_require__(11);
 
-      __webpack_require__(242)(Chart);
-      __webpack_require__(243)(Chart);
-      __webpack_require__(244)(Chart);
       __webpack_require__(245)(Chart);
       __webpack_require__(246)(Chart);
       __webpack_require__(247)(Chart);
-
       __webpack_require__(248)(Chart);
       __webpack_require__(249)(Chart);
       __webpack_require__(250)(Chart);
+
       __webpack_require__(251)(Chart);
       __webpack_require__(252)(Chart);
       __webpack_require__(253)(Chart);
+      __webpack_require__(254)(Chart);
+      __webpack_require__(255)(Chart);
+      __webpack_require__(256)(Chart);
 
       // Controllers must be loaded after elements
       // See Chart.core.datasetController.dataElementType
-      __webpack_require__(256)(Chart);
-      __webpack_require__(257)(Chart);
-      __webpack_require__(258)(Chart);
       __webpack_require__(259)(Chart);
       __webpack_require__(260)(Chart);
       __webpack_require__(261)(Chart);
       __webpack_require__(262)(Chart);
-
       __webpack_require__(263)(Chart);
       __webpack_require__(264)(Chart);
       __webpack_require__(265)(Chart);
+
       __webpack_require__(266)(Chart);
       __webpack_require__(267)(Chart);
       __webpack_require__(268)(Chart);
       __webpack_require__(269)(Chart);
+      __webpack_require__(270)(Chart);
+      __webpack_require__(271)(Chart);
+      __webpack_require__(272)(Chart);
 
       // Loading built-it plugins
-      var plugins = __webpack_require__(270);
+      var plugins = __webpack_require__(273);
       for (var k in plugins) {
         if (plugins.hasOwnProperty(k)) {
           Chart.plugins.register(plugins[k]);
@@ -10287,11 +10607,11 @@
 
       /***/
     },
-    /* 39 */
+    /* 42 */
     /***/ function(module, exports, __webpack_require__) {
       /* MIT license */
-      var convert = __webpack_require__(232);
-      var string = __webpack_require__(234);
+      var convert = __webpack_require__(235);
+      var string = __webpack_require__(237);
 
       var Color = function(obj) {
         if (obj instanceof Color) {
@@ -10781,7 +11101,7 @@
 
       /***/
     },
-    /* 40 */
+    /* 43 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -11125,13 +11445,13 @@
 
       /***/
     },
-    /* 41 */
+    /* 44 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var helpers = __webpack_require__(1);
-      var basic = __webpack_require__(240);
-      var dom = __webpack_require__(241);
+      var basic = __webpack_require__(243);
+      var dom = __webpack_require__(244);
 
       // @TODO Make possible to select another platform at build time.
       var implementation = dom._enabled ? dom : basic;
@@ -11206,7 +11526,7 @@
 
       /***/
     },
-    /* 42 */
+    /* 45 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -11593,7 +11913,7 @@
 
       /***/
     },
-    /* 43 */
+    /* 46 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -11679,7 +11999,7 @@
 
       /***/
     },
-    /* 44 */
+    /* 47 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -11877,7 +12197,7 @@
 
       /***/
     },
-    /* 45 */
+    /* 48 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -11946,7 +12266,7 @@
 
       /***/
     },
-    /* 46 */
+    /* 49 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12015,7 +12335,7 @@
 
       /***/
     },
-    /* 47 */
+    /* 50 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12197,7 +12517,7 @@
 
       /***/
     },
-    /* 48 */
+    /* 51 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12266,7 +12586,7 @@
 
       /***/
     },
-    /* 49 */
+    /* 52 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12385,7 +12705,7 @@
 
       /***/
     },
-    /* 50 */
+    /* 53 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12454,7 +12774,7 @@
 
       /***/
     },
-    /* 51 */
+    /* 54 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12570,7 +12890,7 @@
 
       /***/
     },
-    /* 52 */
+    /* 55 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12729,7 +13049,7 @@
 
       /***/
     },
-    /* 53 */
+    /* 56 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12829,7 +13149,7 @@
 
       /***/
     },
-    /* 54 */
+    /* 57 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12895,7 +13215,7 @@
 
       /***/
     },
-    /* 55 */
+    /* 58 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13026,7 +13346,7 @@
 
       /***/
     },
-    /* 56 */
+    /* 59 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13161,7 +13481,7 @@
 
       /***/
     },
-    /* 57 */
+    /* 60 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13277,7 +13597,7 @@
 
       /***/
     },
-    /* 58 */
+    /* 61 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13438,7 +13758,7 @@
 
       /***/
     },
-    /* 59 */
+    /* 62 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13544,7 +13864,7 @@
 
       /***/
     },
-    /* 60 */
+    /* 63 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13742,7 +14062,7 @@
 
       /***/
     },
-    /* 61 */
+    /* 64 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13817,7 +14137,7 @@
 
       /***/
     },
-    /* 62 */
+    /* 65 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13926,7 +14246,7 @@
 
       /***/
     },
-    /* 63 */
+    /* 66 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13996,7 +14316,7 @@
 
       /***/
     },
-    /* 64 */
+    /* 67 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14082,7 +14402,7 @@
 
       /***/
     },
-    /* 65 */
+    /* 68 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14168,7 +14488,7 @@
 
       /***/
     },
-    /* 66 */
+    /* 69 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14254,7 +14574,7 @@
 
       /***/
     },
-    /* 67 */
+    /* 70 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14357,7 +14677,7 @@
 
       /***/
     },
-    /* 68 */
+    /* 71 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14476,7 +14796,7 @@
 
       /***/
     },
-    /* 69 */
+    /* 72 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14553,7 +14873,7 @@
 
       /***/
     },
-    /* 70 */
+    /* 73 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14626,7 +14946,7 @@
 
       /***/
     },
-    /* 71 */
+    /* 74 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14703,7 +15023,7 @@
 
       /***/
     },
-    /* 72 */
+    /* 75 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14780,7 +15100,7 @@
 
       /***/
     },
-    /* 73 */
+    /* 76 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14852,7 +15172,7 @@
 
       /***/
     },
-    /* 74 */
+    /* 77 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14929,7 +15249,7 @@
 
       /***/
     },
-    /* 75 */
+    /* 78 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15010,7 +15330,7 @@
 
       /***/
     },
-    /* 76 */
+    /* 79 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15131,7 +15451,7 @@
 
       /***/
     },
-    /* 77 */
+    /* 80 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15252,7 +15572,7 @@
 
       /***/
     },
-    /* 78 */
+    /* 81 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15351,7 +15671,7 @@
 
       /***/
     },
-    /* 79 */
+    /* 82 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15441,7 +15761,7 @@
 
       /***/
     },
-    /* 80 */
+    /* 83 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15517,7 +15837,7 @@
 
       /***/
     },
-    /* 81 */
+    /* 84 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15640,7 +15960,7 @@
 
       /***/
     },
-    /* 82 */
+    /* 85 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15771,7 +16091,7 @@
 
       /***/
     },
-    /* 83 */
+    /* 86 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15841,7 +16161,7 @@
 
       /***/
     },
-    /* 84 */
+    /* 87 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15934,7 +16254,7 @@
 
       /***/
     },
-    /* 85 */
+    /* 88 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16018,7 +16338,7 @@
 
       /***/
     },
-    /* 86 */
+    /* 89 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16106,7 +16426,7 @@
 
       /***/
     },
-    /* 87 */
+    /* 90 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16196,7 +16516,7 @@
 
       /***/
     },
-    /* 88 */
+    /* 91 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16308,7 +16628,7 @@
 
       /***/
     },
-    /* 89 */
+    /* 92 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16397,7 +16717,7 @@
 
       /***/
     },
-    /* 90 */
+    /* 93 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16530,7 +16850,7 @@
 
       /***/
     },
-    /* 91 */
+    /* 94 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16664,7 +16984,7 @@
 
       /***/
     },
-    /* 92 */
+    /* 95 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16769,7 +17089,7 @@
 
       /***/
     },
-    /* 93 */
+    /* 96 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16903,7 +17223,7 @@
 
       /***/
     },
-    /* 94 */
+    /* 97 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17069,7 +17389,7 @@
 
       /***/
     },
-    /* 95 */
+    /* 98 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17202,7 +17522,7 @@
 
       /***/
     },
-    /* 96 */
+    /* 99 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17309,7 +17629,7 @@
 
       /***/
     },
-    /* 97 */
+    /* 100 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17399,7 +17719,7 @@
 
       /***/
     },
-    /* 98 */
+    /* 101 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17552,7 +17872,7 @@
 
       /***/
     },
-    /* 99 */
+    /* 102 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17631,7 +17951,7 @@
 
       /***/
     },
-    /* 100 */
+    /* 103 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17721,7 +18041,7 @@
 
       /***/
     },
-    /* 101 */
+    /* 104 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17811,7 +18131,7 @@
 
       /***/
     },
-    /* 102 */
+    /* 105 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17918,7 +18238,7 @@
 
       /***/
     },
-    /* 103 */
+    /* 106 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18015,7 +18335,7 @@
 
       /***/
     },
-    /* 104 */
+    /* 107 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18085,7 +18405,7 @@
 
       /***/
     },
-    /* 105 */
+    /* 108 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18221,7 +18541,7 @@
 
       /***/
     },
-    /* 106 */
+    /* 109 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18312,7 +18632,7 @@
 
       /***/
     },
-    /* 107 */
+    /* 110 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18409,7 +18729,7 @@
 
       /***/
     },
-    /* 108 */
+    /* 111 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18556,7 +18876,7 @@
 
       /***/
     },
-    /* 109 */
+    /* 112 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18634,7 +18954,7 @@
 
       /***/
     },
-    /* 110 */
+    /* 113 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18771,7 +19091,7 @@
 
       /***/
     },
-    /* 111 */
+    /* 114 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18882,7 +19202,7 @@
 
       /***/
     },
-    /* 112 */
+    /* 115 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19011,7 +19331,7 @@
 
       /***/
     },
-    /* 113 */
+    /* 116 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19085,7 +19405,7 @@
 
       /***/
     },
-    /* 114 */
+    /* 117 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19185,7 +19505,7 @@
 
       /***/
     },
-    /* 115 */
+    /* 118 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19278,7 +19598,7 @@
 
       /***/
     },
-    /* 116 */
+    /* 119 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19494,7 +19814,7 @@
 
       /***/
     },
-    /* 117 */
+    /* 120 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19584,7 +19904,7 @@
 
       /***/
     },
-    /* 118 */
+    /* 121 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19674,7 +19994,7 @@
 
       /***/
     },
-    /* 119 */
+    /* 122 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19744,7 +20064,7 @@
 
       /***/
     },
-    /* 120 */
+    /* 123 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19848,7 +20168,7 @@
 
       /***/
     },
-    /* 121 */
+    /* 124 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19920,7 +20240,7 @@
 
       /***/
     },
-    /* 122 */
+    /* 125 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20053,7 +20373,7 @@
 
       /***/
     },
-    /* 123 */
+    /* 126 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20168,7 +20488,7 @@
 
       /***/
     },
-    /* 124 */
+    /* 127 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20283,7 +20603,7 @@
 
       /***/
     },
-    /* 125 */
+    /* 128 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20353,7 +20673,7 @@
 
       /***/
     },
-    /* 126 */
+    /* 129 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20487,7 +20807,7 @@
 
       /***/
     },
-    /* 127 */
+    /* 130 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20631,7 +20951,7 @@
 
       /***/
     },
-    /* 128 */
+    /* 131 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20706,7 +21026,7 @@
 
       /***/
     },
-    /* 129 */
+    /* 132 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20777,7 +21097,7 @@
 
       /***/
     },
-    /* 130 */
+    /* 133 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20862,7 +21182,7 @@
 
       /***/
     },
-    /* 131 */
+    /* 134 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21080,7 +21400,7 @@
 
       /***/
     },
-    /* 132 */
+    /* 135 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21174,7 +21494,7 @@
 
       /***/
     },
-    /* 133 */
+    /* 136 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21244,7 +21564,7 @@
 
       /***/
     },
-    /* 134 */
+    /* 137 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21325,7 +21645,7 @@
 
       /***/
     },
-    /* 135 */
+    /* 138 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21491,7 +21811,7 @@
 
       /***/
     },
-    /* 136 */
+    /* 139 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21676,7 +21996,7 @@
 
       /***/
     },
-    /* 137 */
+    /* 140 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21754,7 +22074,7 @@
 
       /***/
     },
-    /* 138 */
+    /* 141 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21882,7 +22202,7 @@
 
       /***/
     },
-    /* 139 */
+    /* 142 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22010,7 +22330,7 @@
 
       /***/
     },
-    /* 140 */
+    /* 143 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22108,7 +22428,7 @@
 
       /***/
     },
-    /* 141 */
+    /* 144 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22187,7 +22507,7 @@
 
       /***/
     },
-    /* 142 */
+    /* 145 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22256,7 +22576,7 @@
 
       /***/
     },
-    /* 143 */
+    /* 146 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22398,7 +22718,7 @@
 
       /***/
     },
-    /* 144 */
+    /* 147 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22497,7 +22817,7 @@
 
       /***/
     },
-    /* 145 */
+    /* 148 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22574,7 +22894,7 @@
 
       /***/
     },
-    /* 146 */
+    /* 149 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22700,7 +23020,7 @@
 
       /***/
     },
-    /* 147 */
+    /* 150 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22777,7 +23097,7 @@
 
       /***/
     },
-    /* 148 */
+    /* 151 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22849,7 +23169,7 @@
 
       /***/
     },
-    /* 149 */
+    /* 152 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22989,7 +23309,7 @@
 
       /***/
     },
-    /* 150 */
+    /* 153 */
     /***/ function(module, exports, __webpack_require__) {
       (function(global, factory) {
         true
@@ -23094,7 +23414,7 @@
 
       /***/
     },
-    /* 151 */
+    /* 154 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23197,7 +23517,7 @@
 
       /***/
     },
-    /* 152 */
+    /* 155 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23269,7 +23589,7 @@
 
       /***/
     },
-    /* 153 */
+    /* 156 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23341,7 +23661,7 @@
 
       /***/
     },
-    /* 154 */
+    /* 157 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js language configuration
 
@@ -23464,7 +23784,7 @@
 
       /***/
     },
-    /* 155 */
+    /* 158 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23639,7 +23959,7 @@
 
       /***/
     },
-    /* 156 */
+    /* 159 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23733,7 +24053,7 @@
 
       /***/
     },
-    /* 157 */
+    /* 160 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23801,7 +24121,7 @@
 
       /***/
     },
-    /* 158 */
+    /* 161 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23869,7 +24189,7 @@
 
       /***/
     },
-    /* 159 */
+    /* 162 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23958,7 +24278,7 @@
 
       /***/
     },
-    /* 160 */
+    /* 163 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24036,7 +24356,7 @@
 
       /***/
     },
-    /* 161 */
+    /* 164 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24104,7 +24424,7 @@
 
       /***/
     },
-    /* 162 */
+    /* 165 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24227,7 +24547,7 @@
 
       /***/
     },
-    /* 163 */
+    /* 166 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24344,7 +24664,7 @@
 
       /***/
     },
-    /* 164 */
+    /* 167 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24461,22 +24781,78 @@
 
       /***/
     },
-    /* 165 */
+    /* 168 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
-      __webpack_require__(166);
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
 
-      var _app = __webpack_require__(171);
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var CurrencyConverterUAHService = (exports.CurrencyConverterUAHService = (function() {
+        function CurrencyConverterUAHService() {
+          _classCallCheck(this, CurrencyConverterUAHService);
+        }
+
+        _createClass(CurrencyConverterUAHService, null, [
+          {
+            key: "convert",
+            value: function convert(curr, amount) {
+              if (curr === "USD") {
+                return amount * 27;
+              }
+              if (curr === "EUR") {
+                return amount * 33;
+              }
+              return 0;
+            }
+          }
+        ]);
+
+        return CurrencyConverterUAHService;
+      })());
+
+      /***/
+    },
+    /* 169 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__(170);
+
+      var _app = __webpack_require__(175);
 
       var root = document.querySelector("#root");
       new _app.AppComponent(root).mount();
 
       /***/
     },
-    /* 166 */
+    /* 170 */
     /***/ function(module, exports, __webpack_require__) {
-      var content = __webpack_require__(167);
+      var content = __webpack_require__(171);
 
       if (typeof content === "string") content = [[module.i, content, ""]];
 
@@ -24488,7 +24864,7 @@
       options.transform = transform;
       options.insertInto = undefined;
 
-      var update = __webpack_require__(169)(content, options);
+      var update = __webpack_require__(173)(content, options);
 
       if (content.locals) module.exports = content.locals;
 
@@ -24531,15 +24907,15 @@
 
       /***/
     },
-    /* 167 */
+    /* 171 */
     /***/ function(module, exports, __webpack_require__) {
-      exports = module.exports = __webpack_require__(168)(false);
+      exports = module.exports = __webpack_require__(172)(false);
       // imports
 
       // module
       exports.push([
         module.i,
-        '/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers.\n */\nbody {\n  margin: 0; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Remove the gray background on active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10.\n */\nimg {\n  border-style: none; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\n[type="button"],\n[type="reset"],\n[type="submit"] {\n  -webkit-appearance: button; }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type="button"]::-moz-focus-inner,\n[type="reset"]::-moz-focus-inner,\n[type="submit"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type="button"]:-moz-focusring,\n[type="reset"]:-moz-focusring,\n[type="submit"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n[type="checkbox"],\n[type="radio"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type="number"]::-webkit-inner-spin-button,\n[type="number"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type="search"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n[type="search"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\ndetails {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Misc\n   ========================================================================== */\n/**\n * Add the correct display in IE 10+.\n */\ntemplate {\n  display: none; }\n\n/**\n * Add the correct display in IE 10.\n */\n[hidden] {\n  display: none; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-toolbar {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee);\n  color: white;\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  justify-content: space-between;\n  box-sizing: border-box;\n  width: 100%; }\n\n.mdc-toolbar .mdc-toolbar__icon {\n  color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon::before, .mdc-toolbar .mdc-toolbar__icon::after {\n  background-color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon:hover::before {\n  opacity: 0.08; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):focus::before, .mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-toolbar__row {\n  display: flex;\n  position: relative;\n  align-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n  min-height: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__row {\n    min-height: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__row {\n    min-height: 56px; } }\n\n.mdc-toolbar__section {\n  display: inline-flex;\n  flex: 1;\n  align-items: start;\n  justify-content: center;\n  box-sizing: border-box;\n  min-width: 0;\n  height: 100%;\n  padding: 8px;\n  z-index: 1; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section {\n    padding: 0 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section {\n    padding: 4px 0; } }\n\n.mdc-toolbar__section--align-start {\n  padding-left: 12px;\n  padding-right: 0;\n  justify-content: flex-start;\n  order: -1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n  padding-left: 0;\n  padding-right: 12px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n.mdc-toolbar__section--align-end {\n  padding-left: 0;\n  padding-right: 12px;\n  justify-content: flex-end;\n  order: 1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 0; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n.mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin-left: 24px;\n  margin-right: 0;\n  align-self: center;\n  padding: 12px 0;\n  line-height: 1.5rem;\n  z-index: 1; }\n\n[dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 24px; }\n\n.mdc-toolbar__icon, .mdc-toolbar__menu-icon {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  position: relative;\n  align-items: start;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  padding: 12px;\n  border: none;\n  outline: none;\n  background-color: transparent;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__menu-icon::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--unbounded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-activation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-deactivation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__menu-icon + .mdc-toolbar__title {\n  margin-left: 8px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 8px; }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n    margin-left: 0;\n    margin-right: 16px; } }\n\n.mdc-toolbar--fixed {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 4; }\n\n.mdc-toolbar--flexible {\n  --mdc-toolbar-ratio-to-extend-flexible: 4; }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n  height: 256px;\n  height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }\n\n@media (max-width: 599px) {\n  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n    height: 224px;\n    height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {\n  position: absolute;\n  content: ""; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n  align-self: flex-end;\n  line-height: 1.5rem; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  transition: opacity .2s ease;\n  opacity: 1; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {\n  opacity: 0; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {\n  font-weight: 500; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar-fixed-adjust {\n  margin-top: 64px; }\n\n@media (max-width: 959px) and (max-height: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 56px; } }\n\n.mdc-toolbar__section--shrink-to-fit {\n  flex: none; }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--persistent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  width: 0; }\n\n.mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--persistent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--persistent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--persistent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--persistent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--persistent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--persistent.mdc-drawer--permanent,\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n.mdc-drawer--persistent.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--open {\n  width: 240px;\n  pointer-events: auto; }\n\n.mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--persistent.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-drawer--permanent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-flex: 0;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden; }\n\n.mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--permanent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--permanent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--permanent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--permanent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--permanent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--permanent.mdc-drawer--permanent,\n.mdc-drawer--permanent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-drawer--permanent--floating {\n  border-left: 0;\n  border-right: none;\n  background: none; }\n\n[dir="rtl"] .mdc-drawer--permanent--floating, .mdc-drawer--permanent--floating[dir="rtl"] {\n  border-left: none;\n  border-right: 0; }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--temporary {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  position: fixed;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  overflow: hidden;\n  contain: strict;\n  z-index: 5;\n  /* Shaded background */ }\n\n.mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--temporary .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--temporary .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--temporary .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--temporary .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--temporary .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--temporary.mdc-drawer--permanent,\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--temporary::before {\n  background-color: rgba(0, 0, 0, 0.6); }\n\n.mdc-drawer--temporary::before {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  opacity: var(--mdc-temporary-drawer-opacity, 0);\n  content: "";\n  will-change: opacity; }\n\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: calc(100% - 56px);\n  max-width: 280px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none;\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__drawer {\n    width: calc(100% - 64px);\n    max-width: 320px; } }\n\n.mdc-drawer--temporary .mdc-drawer__content {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  margin: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y; }\n\n.mdc-drawer--temporary .mdc-drawer__footer {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  -ms-flex-negative: 0;\n  flex-shrink: 0; }\n\n.mdc-drawer--temporary.mdc-drawer--animating::before {\n  -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open {\n  pointer-events: auto; }\n\n.mdc-drawer--temporary.mdc-drawer--open::before {\n  opacity: 1;\n  opacity: var(--mdc-temporary-drawer-opacity, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--temporary.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n.mdc-drawer-scroll-lock {\n  overflow: hidden; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 0;\n  line-height: 1.5rem;\n  list-style-type: none; }\n\n.mdc-list-item__secondary-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-list-item__graphic {\n  background-color: transparent; }\n\n.mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list-item__meta {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  padding-bottom: 4px;\n  font-size: .812rem; }\n\n.mdc-list-item {\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  height: 48px;\n  padding: 0 16px;\n  overflow: hidden; }\n\n.mdc-list-item:focus {\n  outline: none; }\n\n.mdc-list-item--selected,\n.mdc-list-item--activated {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item--selected .mdc-list-item__graphic,\n.mdc-list-item--activated .mdc-list-item__graphic {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 32px;\n  width: 24px;\n  height: 24px;\n  display: inline-flex;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list-item__graphic {\n  margin-left: 32px;\n  margin-right: 0; }\n\n.mdc-list-item__meta {\n  margin-left: auto;\n  margin-right: 0; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__meta,\n[dir="rtl"] .mdc-list-item .mdc-list-item__meta {\n  margin-left: 0;\n  margin-right: auto; }\n\n.mdc-list-item__text,\n.mdc-list-item__secondary-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: block; }\n\n.mdc-list-item__secondary-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-list--dense .mdc-list-item__secondary-text {\n  font-size: inherit; }\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px; }\n\n.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 36px;\n  width: 20px;\n  height: 20px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 36px;\n  margin-right: 0; }\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px; }\n\n.mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 16px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 16px;\n  margin-right: 0; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  background-color: black; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before {\n  opacity: 0.04; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before {\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before {\n  opacity: 0.08; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.2; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.24; }\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px; }\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item {\n  height: 48px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 20px;\n  width: 36px;\n  height: 36px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 20px;\n  margin-right: 0; }\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; }\n\n.mdc-list-divider {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-list-divider--padded {\n  margin: 0 16px; }\n\n.mdc-list-divider--inset {\n  margin-left: 72px;\n  margin-right: 0;\n  width: calc(100% - 72px); }\n\n.mdc-list-group[dir="rtl"] .mdc-list-divider--inset,\n[dir="rtl"] .mdc-list-group .mdc-list-divider--inset {\n  margin-left: 0;\n  margin-right: 72px; }\n\n.mdc-list-divider--inset.mdc-list-divider--padded {\n  width: calc(100% - 72px - 16px); }\n\n.mdc-list-group .mdc-list {\n  padding: 0; }\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0.75rem 16px; }\n\n.mdc-list-group__subheader {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n.mdc-fab {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  display: inline-flex;\n  position: relative;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 56px;\n  height: 56px;\n  padding: 0;\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  border: none;\n  border-radius: 50%;\n  fill: currentColor;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  /* @alternate */\n  background-color: #018786;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-secondary, white); }\n\n.mdc-fab::before, .mdc-fab::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-fab::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-fab.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-fab.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab::before, .mdc-fab::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-fab::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-fab:hover, .mdc-fab:focus {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active, .mdc-fab:focus {\n  outline: none; }\n\n.mdc-fab:hover {\n  cursor: pointer; }\n\n.mdc-fab > svg {\n  width: 100%; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-fab::before, .mdc-fab::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab::before, .mdc-fab::after {\n    background-color: var(--mdc-theme-text-primary-on-secondary, white); } }\n\n.mdc-fab:hover::before {\n  opacity: 0.08; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):focus::before, .mdc-fab.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-fab:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-fab.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-fab--mini {\n  width: 40px;\n  height: 40px; }\n\n.mdc-fab__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  transition: -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  will-change: transform; }\n\n.mdc-fab--exited {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: opacity 15ms linear 150ms, -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  opacity: 0; }\n\n.mdc-fab--exited .mdc-fab__icon {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1); }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  line-height: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  line-height: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.8125rem;\n  line-height: 3rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  line-height: 2rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  line-height: 1.5rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase; }\n\n.mdc-typography--adjust-margin.mdc-typography--button {\n  margin: inherit; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-dialog {\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  visibility: hidden;\n  z-index: 5; }\n\n.mdc-dialog__backdrop {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87);\n  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  z-index: -1; }\n\n.mdc-dialog__surface {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: inline-flex;\n  flex-direction: column;\n  width: calc(100% - 30px);\n  min-width: 640px;\n  max-width: 865px;\n  -webkit-transform: translateY(150px) scale(0.8);\n  transform: translateY(150px) scale(0.8);\n  border-radius: 2px;\n  opacity: 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__surface,\n[dir="rtl"] .mdc-dialog .mdc-dialog__surface {\n  text-align: right; }\n\n.mdc-dialog__header {\n  display: flex;\n  align-items: center;\n  padding: 24px 24px 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__header,\n[dir="rtl"] .mdc-dialog .mdc-dialog__header {\n  text-align: right; }\n\n.mdc-dialog__header__empty {\n  padding: 0; }\n\n.mdc-dialog__header__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  flex: 1;\n  margin: 0; }\n\n.mdc-dialog__body {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin-top: 20px;\n  padding: 0 24px 24px; }\n\n.mdc-dialog__body--scrollable {\n  max-height: 195px;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  overflow-x: auto;\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch; }\n\n.mdc-dialog__footer {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-end;\n  padding: 8px; }\n\n.mdc-dialog__footer__button {\n  margin-left: 0;\n  margin-right: 8px; }\n\n[dir="rtl"] .mdc-dialog__footer__button, .mdc-dialog__footer__button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-dialog__footer__button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-dialog__footer__button:last-child, .mdc-dialog__footer__button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-dialog__action {\n  /* @alternate */\n  color: #018786;\n  color: var(--mdc-theme-secondary, #018786); }\n\n@media (max-width: 640px) {\n  .mdc-dialog {\n    min-width: 280px; }\n  .mdc-dialog__surface {\n    min-width: 280px; }\n  .mdc-dialog__body {\n    line-height: 24px; } }\n\n.mdc-dialog--animating {\n  visibility: visible; }\n\n.mdc-dialog--animating .mdc-dialog__backdrop {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--animating .mdc-dialog__surface {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--open {\n  visibility: visible; }\n\n.mdc-dialog--open .mdc-dialog__backdrop {\n  opacity: .3; }\n\n.mdc-dialog--open .mdc-dialog__surface {\n  -webkit-transform: translateY(0) scale(1);\n  transform: translateY(0) scale(1);\n  opacity: 1; }\n\n.mdc-dialog-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  min-width: 64px;\n  height: 36px;\n  padding: 0 16px;\n  border: none;\n  outline: none;\n  text-align: center;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  vertical-align: middle;\n  border-radius: 2px; }\n\n.mdc-button::before, .mdc-button::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-button::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-button.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-button.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-button.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-button.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button::before, .mdc-button::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-button:active {\n  outline: none; }\n\n.mdc-button:hover {\n  cursor: pointer; }\n\n.mdc-button:disabled {\n  background-color: transparent;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-button:not(:disabled) {\n  background-color: transparent; }\n\n.mdc-button:not(:disabled) {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button::before, .mdc-button::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button::before, .mdc-button::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button:hover::before {\n  opacity: 0.04; }\n\n.mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-button:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-button.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-button .mdc-button__icon {\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  margin-right: 8px;\n  font-size: 18px;\n  line-height: inherit;\n  vertical-align: top; }\n\n.mdc-button--raised:disabled,\n.mdc-button--unelevated:disabled {\n  background-color: rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised:not(:disabled),\n  .mdc-button--unelevated:not(:disabled) {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white); }\n\n.mdc-button--raised::before, .mdc-button--raised::after,\n.mdc-button--unelevated::before,\n.mdc-button--unelevated::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised::before, .mdc-button--raised::after,\n  .mdc-button--unelevated::before,\n  .mdc-button--unelevated::after {\n    background-color: var(--mdc-theme-text-primary-on-primary, white); } }\n\n.mdc-button--raised:hover::before,\n.mdc-button--unelevated:hover::before {\n  opacity: 0.08; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-ripple-upgraded--background-focused::before,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):focus::before,\n.mdc-button--unelevated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded)::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):active::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-button--raised.mdc-ripple-upgraded,\n.mdc-button--unelevated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-button--raised {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-button--raised:hover, .mdc-button--raised:focus {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:active {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:disabled {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--stroked {\n  border-style: solid;\n  padding-right: 14px;\n  padding-left: 14px;\n  border-width: 2px;\n  line-height: 32px; }\n\n.mdc-button--stroked:disabled {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.38);\n  border-color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--stroked.mdc-button--dense {\n  line-height: 27px; }\n\n.mdc-button--stroked.mdc-button--compact {\n  padding-right: 6px;\n  padding-left: 6px; }\n\n.mdc-button--stroked:not(:disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button--compact {\n  padding: 0 8px; }\n\n.mdc-button--dense {\n  height: 32px;\n  font-size: .8125rem;\n  line-height: 32px; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* stylelint-disable selector-max-type */\n.mdc-form-field {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  display: inline-flex;\n  align-items: center;\n  vertical-align: middle; }\n\n.mdc-form-field > label {\n  order: 0;\n  margin-right: auto;\n  padding-left: 4px; }\n\n[dir="rtl"] .mdc-form-field > label, .mdc-form-field[dir="rtl"] > label {\n  margin-left: auto;\n  padding-right: 4px; }\n\n.mdc-form-field--align-end > label {\n  order: -1;\n  margin-left: auto;\n  padding-right: 4px; }\n\n[dir="rtl"] .mdc-form-field--align-end > label, .mdc-form-field--align-end[dir="rtl"] > label {\n  margin-right: auto;\n  padding-left: 4px; }\n\n/* stylelint-enable selector-max-type */\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-floating-label {\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  cursor: text; }\n\n[dir="rtl"] .mdc-floating-label, .mdc-floating-label[dir="rtl"] {\n  right: 0;\n  left: auto;\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-floating-label--float-above {\n  cursor: auto; }\n\n.mdc-floating-label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-standard 250ms 1;\n  animation: mdc-floating-label-shake-float-above-standard 250ms 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n.mdc-line-ripple {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  z-index: 2; }\n\n.mdc-line-ripple--active {\n  -webkit-transform: scaleX(1);\n  transform: scaleX(1);\n  opacity: 1; }\n\n.mdc-line-ripple--deactivating {\n  opacity: 0; }\n\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-text-field-helper-text {\n  margin: 0;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  font-size: .75rem;\n  will-change: opacity; }\n\n.mdc-text-field + .mdc-text-field-helper-text {\n  margin-bottom: 8px; }\n\n.mdc-text-field-helper-text--persistent {\n  transition: none;\n  opacity: 1;\n  will-change: initial; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  position: absolute;\n  bottom: 16px;\n  cursor: pointer; }\n\n.mdc-text-field__icon:not([tabindex]),\n.mdc-text-field__icon[tabindex="-1"] {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-text-field__idle-outline {\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 4px);\n  height: calc(100% - 4px);\n  transition: opacity 100ms ease;\n  border: 1px solid;\n  opacity: 1; }\n\n.mdc-text-field__outline {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 1px);\n  height: calc(100% - 2px);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  overflow: hidden; }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field__outline::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field__outline::before, .mdc-text-field__outline::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field__outline svg {\n  position: absolute;\n  width: 100%;\n  height: 100%; }\n\n.mdc-text-field__outline-path {\n  stroke-width: 1px;\n  transition: stroke 180ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  fill: transparent; }\n\n.mdc-text-field {\n  display: inline-block;\n  position: relative;\n  margin-bottom: 8px;\n  will-change: opacity, transform, color; }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: black; }\n\n.mdc-text-field .mdc-line-ripple {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {\n  color: black; }\n\n.mdc-text-field__input {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  width: 100%;\n  padding: 0 0 8px;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  border: none;\n  border-bottom: 1px solid;\n  border-radius: 0;\n  background: none;\n  font-size: inherit;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.mdc-text-field__input::-webkit-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:focus {\n  outline: none; }\n\n.mdc-text-field__input:invalid {\n  box-shadow: none; }\n\n.mdc-text-field__input:-webkit-autofill + .mdc-floating-label {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75);\n  cursor: auto; }\n\n.mdc-text-field--outlined {\n  height: 56px;\n  border: none; }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  /* @alternate */\n  stroke: #6200ee;\n  stroke: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) scale(0.75);\n  transform: translateY(-130%) scale(0.75); }\n\n.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1; }\n\n.mdc-text-field--outlined .mdc-text-field__input {\n  display: flex;\n  height: 30px;\n  padding: 12px;\n  border: none;\n  background-color: transparent;\n  z-index: 1; }\n\n.mdc-text-field--outlined .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  transition: -webkit-transform 260ms ease;\n  transition: transform 260ms ease;\n  transition: transform 260ms ease, -webkit-transform 260ms ease; }\n\n[dir="rtl"] .mdc-text-field--outlined .mdc-floating-label, .mdc-text-field--outlined .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--outlined .mdc-text-field__icon {\n  z-index: 2; }\n\n.mdc-text-field--outlined .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid; }\n\n.mdc-text-field--outlined .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined.mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke-width: 2px; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  color: rgba(0, 0, 0, 0.38); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled:not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: none; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__outline-path {\n  stroke-width: 1px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense {\n  height: 48px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) scale(0.923);\n  transform: translateY(-145%) scale(0.923); }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 7px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label {\n  bottom: 18px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__icon {\n  top: 12px; }\n\n.mdc-text-field--box {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px 4px 0 0;\n  display: inline-flex;\n  position: relative;\n  height: 56px;\n  margin-top: 16px;\n  overflow: hidden; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field--box::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field--box::before, .mdc-text-field--box::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field--box:hover::before {\n  opacity: 0.04; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):focus::before, .mdc-text-field--box:not(.mdc-ripple-upgraded):focus-within::before, .mdc-text-field--box.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field--box.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field--box:not(.mdc-text-field--disabled) {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n.mdc-text-field--box .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.75);\n  transform: translateY(-50%) scale(0.75); }\n\n.mdc-text-field--box .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1; }\n\n.mdc-text-field--box .mdc-text-field__input {\n  align-self: flex-end;\n  box-sizing: border-box;\n  height: 100%;\n  padding: 20px 16px 0; }\n\n.mdc-text-field--box .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  width: calc(100% - 48px);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  pointer-events: none;\n  overflow: hidden;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-text-field--box .mdc-floating-label, .mdc-text-field--box .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--box.mdc-text-field--disabled {\n  background-color: rgba(0, 0, 0, 0.02);\n  border-bottom: none; }\n\n.mdc-text-field--box.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-90%) scale(0.923);\n  transform: translateY(-90%) scale(0.923); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1; }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 0; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon {\n  left: 15px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__icon, .mdc-text-field--with-leading-icon .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 15px; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__input {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__input, .mdc-text-field--with-leading-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n.mdc-text-field--with-leading-icon .mdc-floating-label {\n  left: 48px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-floating-label, .mdc-text-field--with-leading-icon .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 48px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) translateX(-32px) scale(0.75);\n  transform: translateY(-130%) translateX(-32px) scale(0.75); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-130%) translateX(32px) scale(0.75);\n  transform: translateY(-130%) translateX(32px) scale(0.75); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) translateX(-21px) scale(0.923);\n  transform: translateY(-145%) translateX(-21px) scale(0.923); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-145%) translateX(21px) scale(0.923);\n  transform: translateY(-145%) translateX(21px) scale(0.923); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  left: initial;\n  right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__icon, .mdc-text-field--with-trailing-icon .mdc-text-field__icon[dir="rtl"] {\n  left: 15px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__input {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__input, .mdc-text-field--with-trailing-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  bottom: 16px;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: 12px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 12px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label {\n  left: 38px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 38px; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: initial;\n  right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: 12px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) {\n  display: inline-flex;\n  position: relative;\n  align-items: flex-end;\n  box-sizing: border-box;\n  margin-top: 16px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box):not(.mdc-text-field--textarea):not(.mdc-text-field--outlined) {\n  height: 48px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) .mdc-floating-label {\n  pointer-events: none; }\n\n.mdc-text-field--dense {\n  margin-top: 12px;\n  margin-bottom: 4px;\n  font-size: .813rem; }\n\n.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-110%) scale(0.923);\n  transform: translateY(-110%) scale(0.923); }\n\n.mdc-text-field__input:required + .mdc-floating-label::after {\n  margin-left: 1px;\n  content: "*"; }\n\n.mdc-text-field--textarea {\n  border-radius: 4px;\n  display: flex;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: initial;\n  transition: none;\n  border: 1px solid;\n  overflow: hidden; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  border-radius: 4px 4px 0 0; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  border-radius: 2px; }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.923);\n  transform: translateY(-50%) scale(0.923); }\n\n.mdc-text-field--textarea .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-textarea 250ms 1;\n  animation: mdc-floating-label-shake-float-above-textarea 250ms 1; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  margin: 0;\n  padding: 16px;\n  padding-top: 32px;\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  left: 1px;\n  right: initial;\n  background-color: white;\n  top: 18px;\n  bottom: auto;\n  margin-top: 2px;\n  margin-left: 8px;\n  padding: 8px;\n  line-height: 1.15; }\n\n[dir="rtl"] .mdc-text-field--textarea .mdc-floating-label, .mdc-text-field--textarea .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 1px; }\n\n.mdc-text-field--fullwidth {\n  width: 100%; }\n\n.mdc-text-field--fullwidth .mdc-text-field__input {\n  resize: vertical; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) {\n  display: block;\n  box-sizing: border-box;\n  height: 56px;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid;\n  outline: none; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) .mdc-text-field__input {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  resize: none;\n  border: none !important; }\n\n.mdc-text-field--fullwidth.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--dense + .mdc-text-field-helper-text {\n  margin-bottom: 4px; }\n\n.mdc-text-field--box + .mdc-text-field-helper-text,\n.mdc-text-field--outlined + .mdc-text-field-helper-text {\n  margin-right: 16px;\n  margin-left: 16px; }\n\n.mdc-form-field > .mdc-text-field + label {\n  align-self: flex-start; }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused .mdc-text-field__input:required + .mdc-floating-label::after {\n  color: #d50000; }\n\n.mdc-text-field--focused + .mdc-text-field-helper-text:not(.mdc-text-field-helper-text--validation-msg) {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-line-ripple {\n  background-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  color: #d50000; }\n\n.mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) {\n  border-color: #d50000; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--disabled {\n  pointer-events: none; }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__icon {\n  color: rgba(0, 0, 0, 0.3); }\n\n.mdc-text-field--disabled:not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: 1px dotted; }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  cursor: default; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled {\n  border-color: rgba(35, 31, 32, 0.26);\n  background-color: #f9f9f9;\n  border-style: solid; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input:focus {\n  border-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input {\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-floating-label {\n  background-color: #f9f9f9; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__idle-outline {\n  opacity: 0; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__outline {\n  opacity: 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n.mdc-radio {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  flex: 0 0 auto;\n  box-sizing: border-box;\n  width: 40px;\n  height: 40px;\n  padding: 10px;\n  cursor: pointer;\n  will-change: opacity, transform, border-color, background-color, color; }\n\n.mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.54);\n  border-color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-radio .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: #018786;\n  border-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {\n  /* @alternate */\n  background-color: #018786;\n  background-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__background::before {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio .mdc-radio__background::before {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio::before, .mdc-radio::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-radio.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio::before, .mdc-radio::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-radio.mdc-ripple-upgraded::before, .mdc-radio.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio::before, .mdc-radio::after {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio::before, .mdc-radio::after {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio:hover::before {\n  opacity: 0.04; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):focus::before, .mdc-radio.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-radio:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-radio.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-radio__background {\n  display: inline-block;\n  position: absolute;\n  left: 10px;\n  box-sizing: border-box;\n  width: 50%;\n  height: 50%; }\n\n.mdc-radio__background::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio__outer-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 50%; }\n\n.mdc-radio__inner-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%; }\n\n.mdc-radio__native-control {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  opacity: 0;\n  cursor: inherit;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded .mdc-radio__background::before {\n  content: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background,\n.mdc-radio__native-control:disabled + .mdc-radio__background {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle {\n  transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle {\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio--disabled {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background {\n  cursor: default; }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {\n  border-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {\n  background-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:focus + .mdc-radio__background::before {\n  -webkit-transform: scale(2, 2);\n  transform: scale(2, 2);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .26; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-menu {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: none;\n  position: absolute;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  min-width: 170px;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  border-radius: 2px;\n  opacity: 0;\n  white-space: nowrap;\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform, opacity;\n  z-index: 4; }\n\n.mdc-menu:focus {\n  outline: none; }\n\n.mdc-menu--animating-open {\n  display: inline-block;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8);\n  -webkit-transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu--open {\n  display: inline-block;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1; }\n\n.mdc-menu--animating-closed {\n  display: inline-block;\n  -webkit-transition: opacity 0.075s linear;\n  transition: opacity 0.075s linear;\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu__items {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform; }\n\n.mdc-menu__items > .mdc-list-item {\n  cursor: pointer; }\n\n.mdc-menu--animating .mdc-menu__items {\n  overflow-y: hidden; }\n\n.mdc-menu--animating-open > .mdc-menu__items {\n  -webkit-transform: scale(1.25);\n  transform: scale(1.25); }\n\n.mdc-menu--open > .mdc-menu__items {\n  -webkit-transform: scale(1);\n  transform: scale(1); }\n\n[dir="rtl"] .mdc-menu {\n  -webkit-transform-origin: top right;\n  transform-origin: top right; }\n\n.mdc-menu .mdc-list-group,\n.mdc-menu .mdc-list {\n  padding: 8px 0; }\n\n.mdc-menu .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-menu .mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"] {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"]:focus::before {\n  opacity: 0; }\n\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-select__label {\n  left: 0;\n  right: initial;\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  pointer-events: none;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-select__label, .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-select[dir="rtl"] .mdc-select__label,\n[dir="rtl"] .mdc-select .mdc-select__label {\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-select__label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-select__bottom-line {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleY(1);\n  transform: scaleY(1);\n  -webkit-transform-origin: bottom;\n  transform-origin: bottom;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-select__bottom-line::after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  content: "";\n  z-index: 2; }\n\n.mdc-select__bottom-line--active::after {\n  opacity: 1; }\n\n.mdc-select {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  display: inline-flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  box-sizing: border-box;\n  height: 48px;\n  border: none;\n  outline: none;\n  background-repeat: no-repeat;\n  background-position: right 8px bottom 8px;\n  cursor: pointer;\n  overflow: visible; }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface,\n.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line {\n  background-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line::after {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__label, .mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__label {\n  color: rgba(98, 0, 238, 0.87); }\n\n[dir="rtl"] .mdc-select, .mdc-select[dir="rtl"] {\n  background-position: left 8px bottom 8px; }\n\n.mdc-select__menu {\n  position: fixed;\n  top: 0;\n  left: 0;\n  max-height: 100%;\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  z-index: 4; }\n\n.mdc-select__surface {\n  padding-left: 0;\n  padding-right: 26px;\n  display: flex;\n  position: relative;\n  flex-grow: 1;\n  width: 100%;\n  height: 48px;\n  padding-bottom: 8px;\n  border: none;\n  outline: none;\n  overflow: hidden; }\n\n[dir="rtl"] .mdc-select__surface, .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 0; }\n\n.mdc-select__surface::before, .mdc-select__surface::after {\n  background-color: black; }\n\n.mdc-select__surface:hover::before {\n  opacity: 0.04; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):focus::before, .mdc-select__surface.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-select__surface.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-select__selected-text {\n  display: flex;\n  position: absolute;\n  bottom: 8px;\n  align-items: flex-end;\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  white-space: nowrap;\n  overflow: hidden; }\n\n.mdc-select .mdc-select__surface:focus .mdc-select__bottom-line::after {\n  -webkit-transform: scale(1, 2);\n  transform: scale(1, 2);\n  opacity: 1; }\n\n.mdc-select--box {\n  height: 56px;\n  border-radius: 4px 4px 0 0;\n  background-position: right 10px center; }\n\n.mdc-select--box:not(.mdc-select--disabled) .mdc-select__surface {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n[dir="rtl"] .mdc-select--box, .mdc-select--box[dir="rtl"] {\n  background-position: left 10px center; }\n\n.mdc-select--box .mdc-select__surface {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  padding-left: 16px;\n  padding-right: 26px;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  height: 56px;\n  padding-bottom: 0;\n  border-radius: 4px 4px 0 0; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__surface, .mdc-select--box .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 16px; }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-select--box .mdc-select__surface::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-select--box .mdc-select__label {\n  left: 16px;\n  right: initial;\n  bottom: 12px; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__label, .mdc-select--box .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-select--box .mdc-select__label--float-above {\n  -webkit-transform: translateY(-40%) scale(0.75, 0.75);\n  transform: translateY(-40%) scale(0.75, 0.75); }\n\n.mdc-select--box .mdc-select__selected-text {\n  position: inherit;\n  bottom: 0;\n  margin-bottom: 6px; }\n\n.mdc-select--open .mdc-select__surface::before {\n  opacity: 0.12; }\n\n.mdc-select--open .mdc-select__selected-text {\n  -webkit-transform: translateY(8px);\n  transform: translateY(8px);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0; }\n\n.mdc-select--open .mdc-select__bottom-line::after {\n  -webkit-transform: scaleY(2);\n  transform: scaleY(2);\n  opacity: 1; }\n\n.mdc-select--disabled {\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  border-bottom-width: 1px;\n  border-bottom-style: dotted;\n  opacity: .38;\n  cursor: default;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-select--disabled .mdc-select__label {\n  color: black; }\n\n.mdc-select--disabled .mdc-select__bottom-line {\n  display: none; }\n\n.mdc-select-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-card {\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  border-radius: 2px;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box; }\n\n.mdc-card--stroked {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  border: 1px solid #dbdbdb; }\n\n.mdc-card__media {\n  position: relative;\n  box-sizing: border-box;\n  background-repeat: no-repeat;\n  background-size: cover; }\n\n.mdc-card__media::before {\n  display: block;\n  content: ""; }\n\n.mdc-card__media:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__media:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__media--square::before {\n  margin-top: 100%; }\n\n.mdc-card__media--16-9::before {\n  margin-top: 56.25%; }\n\n.mdc-card__media-content {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  box-sizing: border-box; }\n\n.mdc-card__primary-action {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer;\n  overflow: hidden; }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-card__primary-action::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  background-color: black; }\n\n.mdc-card__primary-action:hover::before {\n  opacity: 0.04; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):focus::before, .mdc-card__primary-action.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-card__primary-action:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__primary-action:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__actions {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  min-height: 52px;\n  padding: 8px; }\n\n.mdc-card__actions--full-bleed {\n  padding: 0; }\n\n.mdc-card__action-buttons,\n.mdc-card__action-icons {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box; }\n\n.mdc-card__action-icons {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));\n  flex-grow: 1;\n  justify-content: flex-end; }\n\n.mdc-card__action-buttons + .mdc-card__action-icons {\n  margin-left: 16px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action-buttons + .mdc-card__action-icons, .mdc-card__action-buttons + .mdc-card__action-icons[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 16px; }\n\n.mdc-card__action {\n  display: inline-flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  justify-content: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-card__action:focus {\n  outline: none; }\n\n.mdc-card__action--button {\n  margin-left: 0;\n  margin-right: 8px;\n  padding: 0 8px; }\n\n[dir="rtl"] .mdc-card__action--button, .mdc-card__action--button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-card__action--button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action--button:last-child, .mdc-card__action--button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-card__actions--full-bleed .mdc-card__action--button {\n  justify-content: space-between;\n  width: 100%;\n  height: auto;\n  max-height: none;\n  margin: 0;\n  padding: 8px 16px;\n  text-align: left; }\n\n[dir="rtl"] .mdc-card__actions--full-bleed .mdc-card__action--button, .mdc-card__actions--full-bleed .mdc-card__action--button[dir="rtl"] {\n  text-align: right; }\n\n.mdc-card__action--icon {\n  margin: -6px 0;\n  padding: 12px; }\n\n.mdc-card__action--icon:not(:disabled) {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n:root {\n  --mdc-layout-grid-margin-desktop: 24px;\n  --mdc-layout-grid-gutter-desktop: 24px;\n  --mdc-layout-grid-column-width-desktop: 72px;\n  --mdc-layout-grid-margin-tablet: 16px;\n  --mdc-layout-grid-gutter-tablet: 16px;\n  --mdc-layout-grid-column-width-tablet: 72px;\n  --mdc-layout-grid-margin-phone: 16px;\n  --mdc-layout-grid-gutter-phone: 16px;\n  --mdc-layout-grid-column-width-phone: 72px; }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 24px;\n    padding: var(--mdc-layout-grid-margin-desktop, 24px); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-tablet, 16px); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-phone, 16px); } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 24px;\n      grid-gap: var(--mdc-layout-grid-gutter-desktop, 24px);\n      grid-template-columns: repeat(12, minmax(0, 1fr)); } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);\n      grid-template-columns: repeat(8, minmax(0, 1fr)); } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-phone, 16px);\n      grid-template-columns: repeat(4, minmax(0, 1fr)); } } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__cell {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n    width: calc(8.33333% - 24px);\n    width: calc(8.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n    width: calc(16.66667% - 24px);\n    width: calc(16.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n    width: calc(25% - 24px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n    width: calc(41.66667% - 24px);\n    width: calc(41.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n    width: calc(50% - 24px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n    width: calc(58.33333% - 24px);\n    width: calc(58.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n    width: calc(66.66667% - 24px);\n    width: calc(66.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n    width: calc(75% - 24px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n      width: auto;\n      grid-column-end: span 9; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n    width: calc(83.33333% - 24px);\n    width: calc(83.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n      width: auto;\n      grid-column-end: span 10; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n    width: calc(91.66667% - 24px);\n    width: calc(91.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n      width: auto;\n      grid-column-end: span 11; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n    width: calc(100% - 24px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n      width: auto;\n      grid-column-end: span 12; } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__cell {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n    width: calc(12.5% - 16px);\n    width: calc(12.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n    width: calc(37.5% - 16px);\n    width: calc(37.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n    width: calc(62.5% - 16px);\n    width: calc(62.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n    width: calc(87.5% - 16px);\n    width: calc(87.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n      width: auto;\n      grid-column-end: span 8; } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__cell {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n      width: auto;\n      grid-column-end: span 4; } } }\n\n.mdc-layout-grid__cell--order-1 {\n  -webkit-box-ordinal-group: 2;\n  -ms-flex-order: 1;\n  order: 1; }\n\n.mdc-layout-grid__cell--order-2 {\n  -webkit-box-ordinal-group: 3;\n  -ms-flex-order: 2;\n  order: 2; }\n\n.mdc-layout-grid__cell--order-3 {\n  -webkit-box-ordinal-group: 4;\n  -ms-flex-order: 3;\n  order: 3; }\n\n.mdc-layout-grid__cell--order-4 {\n  -webkit-box-ordinal-group: 5;\n  -ms-flex-order: 4;\n  order: 4; }\n\n.mdc-layout-grid__cell--order-5 {\n  -webkit-box-ordinal-group: 6;\n  -ms-flex-order: 5;\n  order: 5; }\n\n.mdc-layout-grid__cell--order-6 {\n  -webkit-box-ordinal-group: 7;\n  -ms-flex-order: 6;\n  order: 6; }\n\n.mdc-layout-grid__cell--order-7 {\n  -webkit-box-ordinal-group: 8;\n  -ms-flex-order: 7;\n  order: 7; }\n\n.mdc-layout-grid__cell--order-8 {\n  -webkit-box-ordinal-group: 9;\n  -ms-flex-order: 8;\n  order: 8; }\n\n.mdc-layout-grid__cell--order-9 {\n  -webkit-box-ordinal-group: 10;\n  -ms-flex-order: 9;\n  order: 9; }\n\n.mdc-layout-grid__cell--order-10 {\n  -webkit-box-ordinal-group: 11;\n  -ms-flex-order: 10;\n  order: 10; }\n\n.mdc-layout-grid__cell--order-11 {\n  -webkit-box-ordinal-group: 12;\n  -ms-flex-order: 11;\n  order: 11; }\n\n.mdc-layout-grid__cell--order-12 {\n  -webkit-box-ordinal-group: 13;\n  -ms-flex-order: 12;\n  order: 12; }\n\n.mdc-layout-grid__cell--align-top {\n  -ms-flex-item-align: start;\n  align-self: flex-start; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-top {\n    -ms-flex-item-align: start;\n    align-self: start; } }\n\n.mdc-layout-grid__cell--align-middle {\n  -ms-flex-item-align: center;\n  align-self: center; }\n\n.mdc-layout-grid__cell--align-bottom {\n  -ms-flex-item-align: end;\n  align-self: flex-end; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-bottom {\n    -ms-flex-item-align: end;\n    align-self: end; } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 1176px;\n    width: calc( var(--mdc-layout-grid-column-width-desktop, 72px) * 12 + var(--mdc-layout-grid-gutter-desktop, 24px) * 11 + var(--mdc-layout-grid-margin-desktop, 24px) * 2); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 720px;\n    width: calc( var(--mdc-layout-grid-column-width-tablet, 72px) * 8 + var(--mdc-layout-grid-gutter-tablet, 16px) * 7 + var(--mdc-layout-grid-margin-tablet, 16px) * 2); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 368px;\n    width: calc( var(--mdc-layout-grid-column-width-phone, 72px) * 4 + var(--mdc-layout-grid-gutter-phone, 16px) * 3 + var(--mdc-layout-grid-margin-phone, 16px) * 2); } }\n\n.mdc-layout-grid--align-left {\n  margin-right: auto;\n  margin-left: 0; }\n\n.mdc-layout-grid--align-right {\n  margin-right: 0;\n  margin-left: auto; }\n\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n.mdc-elevation--z0 {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z1 {\n  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z2 {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z3 {\n  -webkit-box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z4 {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z5 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z6 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z7 {\n  -webkit-box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z8 {\n  -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z9 {\n  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z10 {\n  -webkit-box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z11 {\n  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z12 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z13 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z14 {\n  -webkit-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z15 {\n  -webkit-box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z16 {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z17 {\n  -webkit-box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z18 {\n  -webkit-box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z19 {\n  -webkit-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z20 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z21 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z22 {\n  -webkit-box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z23 {\n  -webkit-box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z24 {\n  -webkit-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation-transition {\n  -webkit-transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.page {\n  padding: 0; }\n\n.app {\n  display: flex;\n  height: 100vh; }\n  .app__container {\n    width: 100%;\n    display: flex;\n    flex-direction: column; }\n    .app__container-content {\n      display: flex;\n      flex-direction: column;\n      height: 100%;\n      padding: 15px 40px 15px 40px;\n      background-color: #eeeeee;\n      width: 100%; }\n  .app__add-transaction-dialog-activation {\n    position: fixed;\n    right: 20px;\n    bottom: 20px; }\n\n.drawer {\n  height: 100%; }\n  .drawer__list-item {\n    position: relative; }\n  .drawer__more {\n    position: absolute;\n    right: 10px;\n    top: 12px;\n    width: 24px;\n    padding-left: 0;\n    padding-right: 0;\n    min-width: 0;\n    height: 24px; }\n\n.toolbar {\n  display: inline-flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box; }\n  .toolbar__button, .toolbar__button:not(:disabled) {\n    color: white; }\n\n.add-transaction-dialog__select-menu {\n  top: inherit !important;\n  left: inherit !important; }\n\n.add-transaction-dialog__row {\n  display: flex;\n  flex-direction: row; }\n  .add-transaction-dialog__row--col {\n    justify-content: space-between; }\n\n.add-transaction-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-transaction-dialog__account, .add-transaction-dialog__tag {\n  width: 100%; }\n\n.add-account-dialog__select-menu {\n  top: inherit !important;\n  left: inherit !important; }\n\n.add-account-dialog__row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.add-account-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__type, .add-account-dialog__currency {\n  width: 100%; }\n\n.table-transactions {\n  border: 1px solid #ddd;\n  border-collapse: collapse;\n  width: 100%;\n  min-width: 600px;\n  text-align: left;\n  box-sizing: border-box;\n  background-color: #fff;\n  margin-top: 30px; }\n  .table-transactions__tr {\n    height: 40px; }\n  .table-transactions__highlighted:hover {\n    background-color: #f5f5f5; }\n  .table-transactions__th {\n    border-bottom: 1px solid #ddd;\n    padding-left: 15px;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.54); }\n  .table-transactions__td {\n    border-bottom: 1px solid #ddd;\n    padding-left: 15px;\n    font-size: 13px;\n    color: #757575; }\n  .table-transactions__span {\n    line-height: 35px; }\n  .table-transactions__button {\n    position: relative;\n    float: right;\n    padding-left: 0;\n    padding-right: 0;\n    width: 24px;\n    min-width: 0;\n    height: 24px;\n    margin-right: 5px;\n    margin-top: 5px; }\n  .table-transactions__icon {\n    position: absolute;\n    top: -6px;\n    right: -5px; }\n\n.chart {\n  padding: 20px; }\n  .chart__visual {\n    margin: 0 auto; }\n',
+        '/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers.\n */\nbody {\n  margin: 0; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Remove the gray background on active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10.\n */\nimg {\n  border-style: none; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\n[type="button"],\n[type="reset"],\n[type="submit"] {\n  -webkit-appearance: button; }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type="button"]::-moz-focus-inner,\n[type="reset"]::-moz-focus-inner,\n[type="submit"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type="button"]:-moz-focusring,\n[type="reset"]:-moz-focusring,\n[type="submit"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n[type="checkbox"],\n[type="radio"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type="number"]::-webkit-inner-spin-button,\n[type="number"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type="search"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n[type="search"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\ndetails {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Misc\n   ========================================================================== */\n/**\n * Add the correct display in IE 10+.\n */\ntemplate {\n  display: none; }\n\n/**\n * Add the correct display in IE 10.\n */\n[hidden] {\n  display: none; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-toolbar {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee);\n  color: white;\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  justify-content: space-between;\n  box-sizing: border-box;\n  width: 100%; }\n\n.mdc-toolbar .mdc-toolbar__icon {\n  color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon::before, .mdc-toolbar .mdc-toolbar__icon::after {\n  background-color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon:hover::before {\n  opacity: 0.08; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):focus::before, .mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-toolbar__row {\n  display: flex;\n  position: relative;\n  align-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n  min-height: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__row {\n    min-height: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__row {\n    min-height: 56px; } }\n\n.mdc-toolbar__section {\n  display: inline-flex;\n  flex: 1;\n  align-items: start;\n  justify-content: center;\n  box-sizing: border-box;\n  min-width: 0;\n  height: 100%;\n  padding: 8px;\n  z-index: 1; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section {\n    padding: 0 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section {\n    padding: 4px 0; } }\n\n.mdc-toolbar__section--align-start {\n  padding-left: 12px;\n  padding-right: 0;\n  justify-content: flex-start;\n  order: -1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n  padding-left: 0;\n  padding-right: 12px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n.mdc-toolbar__section--align-end {\n  padding-left: 0;\n  padding-right: 12px;\n  justify-content: flex-end;\n  order: 1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 0; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n.mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin-left: 24px;\n  margin-right: 0;\n  align-self: center;\n  padding: 12px 0;\n  line-height: 1.5rem;\n  z-index: 1; }\n\n[dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 24px; }\n\n.mdc-toolbar__icon, .mdc-toolbar__menu-icon {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  position: relative;\n  align-items: start;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  padding: 12px;\n  border: none;\n  outline: none;\n  background-color: transparent;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__menu-icon::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--unbounded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-activation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-deactivation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__menu-icon + .mdc-toolbar__title {\n  margin-left: 8px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 8px; }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n    margin-left: 0;\n    margin-right: 16px; } }\n\n.mdc-toolbar--fixed {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 4; }\n\n.mdc-toolbar--flexible {\n  --mdc-toolbar-ratio-to-extend-flexible: 4; }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n  height: 256px;\n  height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }\n\n@media (max-width: 599px) {\n  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n    height: 224px;\n    height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {\n  position: absolute;\n  content: ""; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n  align-self: flex-end;\n  line-height: 1.5rem; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  transition: opacity .2s ease;\n  opacity: 1; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {\n  opacity: 0; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {\n  font-weight: 500; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar-fixed-adjust {\n  margin-top: 64px; }\n\n@media (max-width: 959px) and (max-height: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 56px; } }\n\n.mdc-toolbar__section--shrink-to-fit {\n  flex: none; }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--persistent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  width: 0; }\n\n.mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--persistent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--persistent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--persistent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--persistent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--persistent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--persistent.mdc-drawer--permanent,\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n.mdc-drawer--persistent.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--open {\n  width: 240px;\n  pointer-events: auto; }\n\n.mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--persistent.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-drawer--permanent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-flex: 0;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden; }\n\n.mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--permanent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--permanent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--permanent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--permanent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--permanent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--permanent.mdc-drawer--permanent,\n.mdc-drawer--permanent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-drawer--permanent--floating {\n  border-left: 0;\n  border-right: none;\n  background: none; }\n\n[dir="rtl"] .mdc-drawer--permanent--floating, .mdc-drawer--permanent--floating[dir="rtl"] {\n  border-left: none;\n  border-right: 0; }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--temporary {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  position: fixed;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  overflow: hidden;\n  contain: strict;\n  z-index: 5;\n  /* Shaded background */ }\n\n.mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--temporary .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--temporary .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--temporary .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--temporary .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--temporary .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--temporary.mdc-drawer--permanent,\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--temporary::before {\n  background-color: rgba(0, 0, 0, 0.6); }\n\n.mdc-drawer--temporary::before {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  opacity: var(--mdc-temporary-drawer-opacity, 0);\n  content: "";\n  will-change: opacity; }\n\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: calc(100% - 56px);\n  max-width: 280px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none;\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__drawer {\n    width: calc(100% - 64px);\n    max-width: 320px; } }\n\n.mdc-drawer--temporary .mdc-drawer__content {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  margin: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y; }\n\n.mdc-drawer--temporary .mdc-drawer__footer {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  -ms-flex-negative: 0;\n  flex-shrink: 0; }\n\n.mdc-drawer--temporary.mdc-drawer--animating::before {\n  -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open {\n  pointer-events: auto; }\n\n.mdc-drawer--temporary.mdc-drawer--open::before {\n  opacity: 1;\n  opacity: var(--mdc-temporary-drawer-opacity, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--temporary.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n.mdc-drawer-scroll-lock {\n  overflow: hidden; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 0;\n  line-height: 1.5rem;\n  list-style-type: none; }\n\n.mdc-list-item__secondary-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-list-item__graphic {\n  background-color: transparent; }\n\n.mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list-item__meta {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  padding-bottom: 4px;\n  font-size: .812rem; }\n\n.mdc-list-item {\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  height: 48px;\n  padding: 0 16px;\n  overflow: hidden; }\n\n.mdc-list-item:focus {\n  outline: none; }\n\n.mdc-list-item--selected,\n.mdc-list-item--activated {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item--selected .mdc-list-item__graphic,\n.mdc-list-item--activated .mdc-list-item__graphic {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 32px;\n  width: 24px;\n  height: 24px;\n  display: inline-flex;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list-item__graphic {\n  margin-left: 32px;\n  margin-right: 0; }\n\n.mdc-list-item__meta {\n  margin-left: auto;\n  margin-right: 0; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__meta,\n[dir="rtl"] .mdc-list-item .mdc-list-item__meta {\n  margin-left: 0;\n  margin-right: auto; }\n\n.mdc-list-item__text,\n.mdc-list-item__secondary-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: block; }\n\n.mdc-list-item__secondary-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-list--dense .mdc-list-item__secondary-text {\n  font-size: inherit; }\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px; }\n\n.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 36px;\n  width: 20px;\n  height: 20px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 36px;\n  margin-right: 0; }\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px; }\n\n.mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 16px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 16px;\n  margin-right: 0; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  background-color: black; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before {\n  opacity: 0.04; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before {\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before {\n  opacity: 0.08; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.2; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.24; }\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px; }\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item {\n  height: 48px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 20px;\n  width: 36px;\n  height: 36px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 20px;\n  margin-right: 0; }\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; }\n\n.mdc-list-divider {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-list-divider--padded {\n  margin: 0 16px; }\n\n.mdc-list-divider--inset {\n  margin-left: 72px;\n  margin-right: 0;\n  width: calc(100% - 72px); }\n\n.mdc-list-group[dir="rtl"] .mdc-list-divider--inset,\n[dir="rtl"] .mdc-list-group .mdc-list-divider--inset {\n  margin-left: 0;\n  margin-right: 72px; }\n\n.mdc-list-divider--inset.mdc-list-divider--padded {\n  width: calc(100% - 72px - 16px); }\n\n.mdc-list-group .mdc-list {\n  padding: 0; }\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0.75rem 16px; }\n\n.mdc-list-group__subheader {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n.mdc-fab {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  display: inline-flex;\n  position: relative;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 56px;\n  height: 56px;\n  padding: 0;\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  border: none;\n  border-radius: 50%;\n  fill: currentColor;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  /* @alternate */\n  background-color: #018786;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-secondary, white); }\n\n.mdc-fab::before, .mdc-fab::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-fab::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-fab.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-fab.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab::before, .mdc-fab::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-fab::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-fab:hover, .mdc-fab:focus {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active, .mdc-fab:focus {\n  outline: none; }\n\n.mdc-fab:hover {\n  cursor: pointer; }\n\n.mdc-fab > svg {\n  width: 100%; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-fab::before, .mdc-fab::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab::before, .mdc-fab::after {\n    background-color: var(--mdc-theme-text-primary-on-secondary, white); } }\n\n.mdc-fab:hover::before {\n  opacity: 0.08; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):focus::before, .mdc-fab.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-fab:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-fab.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-fab--mini {\n  width: 40px;\n  height: 40px; }\n\n.mdc-fab__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  transition: -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  will-change: transform; }\n\n.mdc-fab--exited {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: opacity 15ms linear 150ms, -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  opacity: 0; }\n\n.mdc-fab--exited .mdc-fab__icon {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1); }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  line-height: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  line-height: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.8125rem;\n  line-height: 3rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  line-height: 2rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  line-height: 1.5rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase; }\n\n.mdc-typography--adjust-margin.mdc-typography--button {\n  margin: inherit; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-dialog {\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  visibility: hidden;\n  z-index: 5; }\n\n.mdc-dialog__backdrop {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87);\n  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  z-index: -1; }\n\n.mdc-dialog__surface {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: inline-flex;\n  flex-direction: column;\n  width: calc(100% - 30px);\n  min-width: 640px;\n  max-width: 865px;\n  -webkit-transform: translateY(150px) scale(0.8);\n  transform: translateY(150px) scale(0.8);\n  border-radius: 2px;\n  opacity: 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__surface,\n[dir="rtl"] .mdc-dialog .mdc-dialog__surface {\n  text-align: right; }\n\n.mdc-dialog__header {\n  display: flex;\n  align-items: center;\n  padding: 24px 24px 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__header,\n[dir="rtl"] .mdc-dialog .mdc-dialog__header {\n  text-align: right; }\n\n.mdc-dialog__header__empty {\n  padding: 0; }\n\n.mdc-dialog__header__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  flex: 1;\n  margin: 0; }\n\n.mdc-dialog__body {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin-top: 20px;\n  padding: 0 24px 24px; }\n\n.mdc-dialog__body--scrollable {\n  max-height: 195px;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  overflow-x: auto;\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch; }\n\n.mdc-dialog__footer {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-end;\n  padding: 8px; }\n\n.mdc-dialog__footer__button {\n  margin-left: 0;\n  margin-right: 8px; }\n\n[dir="rtl"] .mdc-dialog__footer__button, .mdc-dialog__footer__button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-dialog__footer__button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-dialog__footer__button:last-child, .mdc-dialog__footer__button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-dialog__action {\n  /* @alternate */\n  color: #018786;\n  color: var(--mdc-theme-secondary, #018786); }\n\n@media (max-width: 640px) {\n  .mdc-dialog {\n    min-width: 280px; }\n  .mdc-dialog__surface {\n    min-width: 280px; }\n  .mdc-dialog__body {\n    line-height: 24px; } }\n\n.mdc-dialog--animating {\n  visibility: visible; }\n\n.mdc-dialog--animating .mdc-dialog__backdrop {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--animating .mdc-dialog__surface {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--open {\n  visibility: visible; }\n\n.mdc-dialog--open .mdc-dialog__backdrop {\n  opacity: .3; }\n\n.mdc-dialog--open .mdc-dialog__surface {\n  -webkit-transform: translateY(0) scale(1);\n  transform: translateY(0) scale(1);\n  opacity: 1; }\n\n.mdc-dialog-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  min-width: 64px;\n  height: 36px;\n  padding: 0 16px;\n  border: none;\n  outline: none;\n  text-align: center;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  vertical-align: middle;\n  border-radius: 2px; }\n\n.mdc-button::before, .mdc-button::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-button::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-button.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-button.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-button.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-button.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button::before, .mdc-button::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-button:active {\n  outline: none; }\n\n.mdc-button:hover {\n  cursor: pointer; }\n\n.mdc-button:disabled {\n  background-color: transparent;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-button:not(:disabled) {\n  background-color: transparent; }\n\n.mdc-button:not(:disabled) {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button::before, .mdc-button::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button::before, .mdc-button::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button:hover::before {\n  opacity: 0.04; }\n\n.mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-button:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-button.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-button .mdc-button__icon {\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  margin-right: 8px;\n  font-size: 18px;\n  line-height: inherit;\n  vertical-align: top; }\n\n.mdc-button--raised:disabled,\n.mdc-button--unelevated:disabled {\n  background-color: rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised:not(:disabled),\n  .mdc-button--unelevated:not(:disabled) {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white); }\n\n.mdc-button--raised::before, .mdc-button--raised::after,\n.mdc-button--unelevated::before,\n.mdc-button--unelevated::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised::before, .mdc-button--raised::after,\n  .mdc-button--unelevated::before,\n  .mdc-button--unelevated::after {\n    background-color: var(--mdc-theme-text-primary-on-primary, white); } }\n\n.mdc-button--raised:hover::before,\n.mdc-button--unelevated:hover::before {\n  opacity: 0.08; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-ripple-upgraded--background-focused::before,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):focus::before,\n.mdc-button--unelevated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded)::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):active::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-button--raised.mdc-ripple-upgraded,\n.mdc-button--unelevated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-button--raised {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-button--raised:hover, .mdc-button--raised:focus {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:active {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:disabled {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--stroked {\n  border-style: solid;\n  padding-right: 14px;\n  padding-left: 14px;\n  border-width: 2px;\n  line-height: 32px; }\n\n.mdc-button--stroked:disabled {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.38);\n  border-color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--stroked.mdc-button--dense {\n  line-height: 27px; }\n\n.mdc-button--stroked.mdc-button--compact {\n  padding-right: 6px;\n  padding-left: 6px; }\n\n.mdc-button--stroked:not(:disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button--compact {\n  padding: 0 8px; }\n\n.mdc-button--dense {\n  height: 32px;\n  font-size: .8125rem;\n  line-height: 32px; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* stylelint-disable selector-max-type */\n.mdc-form-field {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  display: inline-flex;\n  align-items: center;\n  vertical-align: middle; }\n\n.mdc-form-field > label {\n  order: 0;\n  margin-right: auto;\n  padding-left: 4px; }\n\n[dir="rtl"] .mdc-form-field > label, .mdc-form-field[dir="rtl"] > label {\n  margin-left: auto;\n  padding-right: 4px; }\n\n.mdc-form-field--align-end > label {\n  order: -1;\n  margin-left: auto;\n  padding-right: 4px; }\n\n[dir="rtl"] .mdc-form-field--align-end > label, .mdc-form-field--align-end[dir="rtl"] > label {\n  margin-right: auto;\n  padding-left: 4px; }\n\n/* stylelint-enable selector-max-type */\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-floating-label {\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  cursor: text; }\n\n[dir="rtl"] .mdc-floating-label, .mdc-floating-label[dir="rtl"] {\n  right: 0;\n  left: auto;\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-floating-label--float-above {\n  cursor: auto; }\n\n.mdc-floating-label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-standard 250ms 1;\n  animation: mdc-floating-label-shake-float-above-standard 250ms 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n.mdc-line-ripple {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  z-index: 2; }\n\n.mdc-line-ripple--active {\n  -webkit-transform: scaleX(1);\n  transform: scaleX(1);\n  opacity: 1; }\n\n.mdc-line-ripple--deactivating {\n  opacity: 0; }\n\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-text-field-helper-text {\n  margin: 0;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  font-size: .75rem;\n  will-change: opacity; }\n\n.mdc-text-field + .mdc-text-field-helper-text {\n  margin-bottom: 8px; }\n\n.mdc-text-field-helper-text--persistent {\n  transition: none;\n  opacity: 1;\n  will-change: initial; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  position: absolute;\n  bottom: 16px;\n  cursor: pointer; }\n\n.mdc-text-field__icon:not([tabindex]),\n.mdc-text-field__icon[tabindex="-1"] {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-text-field__idle-outline {\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 4px);\n  height: calc(100% - 4px);\n  transition: opacity 100ms ease;\n  border: 1px solid;\n  opacity: 1; }\n\n.mdc-text-field__outline {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 1px);\n  height: calc(100% - 2px);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  overflow: hidden; }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field__outline::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field__outline::before, .mdc-text-field__outline::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field__outline svg {\n  position: absolute;\n  width: 100%;\n  height: 100%; }\n\n.mdc-text-field__outline-path {\n  stroke-width: 1px;\n  transition: stroke 180ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  fill: transparent; }\n\n.mdc-text-field {\n  display: inline-block;\n  position: relative;\n  margin-bottom: 8px;\n  will-change: opacity, transform, color; }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: black; }\n\n.mdc-text-field .mdc-line-ripple {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {\n  color: black; }\n\n.mdc-text-field__input {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  width: 100%;\n  padding: 0 0 8px;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  border: none;\n  border-bottom: 1px solid;\n  border-radius: 0;\n  background: none;\n  font-size: inherit;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.mdc-text-field__input::-webkit-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:focus {\n  outline: none; }\n\n.mdc-text-field__input:invalid {\n  box-shadow: none; }\n\n.mdc-text-field__input:-webkit-autofill + .mdc-floating-label {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75);\n  cursor: auto; }\n\n.mdc-text-field--outlined {\n  height: 56px;\n  border: none; }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  /* @alternate */\n  stroke: #6200ee;\n  stroke: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) scale(0.75);\n  transform: translateY(-130%) scale(0.75); }\n\n.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1; }\n\n.mdc-text-field--outlined .mdc-text-field__input {\n  display: flex;\n  height: 30px;\n  padding: 12px;\n  border: none;\n  background-color: transparent;\n  z-index: 1; }\n\n.mdc-text-field--outlined .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  transition: -webkit-transform 260ms ease;\n  transition: transform 260ms ease;\n  transition: transform 260ms ease, -webkit-transform 260ms ease; }\n\n[dir="rtl"] .mdc-text-field--outlined .mdc-floating-label, .mdc-text-field--outlined .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--outlined .mdc-text-field__icon {\n  z-index: 2; }\n\n.mdc-text-field--outlined .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid; }\n\n.mdc-text-field--outlined .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined.mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke-width: 2px; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  color: rgba(0, 0, 0, 0.38); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled:not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: none; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__outline-path {\n  stroke-width: 1px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense {\n  height: 48px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) scale(0.923);\n  transform: translateY(-145%) scale(0.923); }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 7px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label {\n  bottom: 18px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__icon {\n  top: 12px; }\n\n.mdc-text-field--box {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px 4px 0 0;\n  display: inline-flex;\n  position: relative;\n  height: 56px;\n  margin-top: 16px;\n  overflow: hidden; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field--box::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field--box::before, .mdc-text-field--box::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field--box:hover::before {\n  opacity: 0.04; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):focus::before, .mdc-text-field--box:not(.mdc-ripple-upgraded):focus-within::before, .mdc-text-field--box.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field--box.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field--box:not(.mdc-text-field--disabled) {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n.mdc-text-field--box .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.75);\n  transform: translateY(-50%) scale(0.75); }\n\n.mdc-text-field--box .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1; }\n\n.mdc-text-field--box .mdc-text-field__input {\n  align-self: flex-end;\n  box-sizing: border-box;\n  height: 100%;\n  padding: 20px 16px 0; }\n\n.mdc-text-field--box .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  width: calc(100% - 48px);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  pointer-events: none;\n  overflow: hidden;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-text-field--box .mdc-floating-label, .mdc-text-field--box .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--box.mdc-text-field--disabled {\n  background-color: rgba(0, 0, 0, 0.02);\n  border-bottom: none; }\n\n.mdc-text-field--box.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-90%) scale(0.923);\n  transform: translateY(-90%) scale(0.923); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1; }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 0; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon {\n  left: 15px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__icon, .mdc-text-field--with-leading-icon .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 15px; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__input {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__input, .mdc-text-field--with-leading-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n.mdc-text-field--with-leading-icon .mdc-floating-label {\n  left: 48px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-floating-label, .mdc-text-field--with-leading-icon .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 48px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) translateX(-32px) scale(0.75);\n  transform: translateY(-130%) translateX(-32px) scale(0.75); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-130%) translateX(32px) scale(0.75);\n  transform: translateY(-130%) translateX(32px) scale(0.75); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) translateX(-21px) scale(0.923);\n  transform: translateY(-145%) translateX(-21px) scale(0.923); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-145%) translateX(21px) scale(0.923);\n  transform: translateY(-145%) translateX(21px) scale(0.923); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  left: initial;\n  right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__icon, .mdc-text-field--with-trailing-icon .mdc-text-field__icon[dir="rtl"] {\n  left: 15px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__input {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__input, .mdc-text-field--with-trailing-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  bottom: 16px;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: 12px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 12px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label {\n  left: 38px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 38px; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: initial;\n  right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: 12px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) {\n  display: inline-flex;\n  position: relative;\n  align-items: flex-end;\n  box-sizing: border-box;\n  margin-top: 16px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box):not(.mdc-text-field--textarea):not(.mdc-text-field--outlined) {\n  height: 48px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) .mdc-floating-label {\n  pointer-events: none; }\n\n.mdc-text-field--dense {\n  margin-top: 12px;\n  margin-bottom: 4px;\n  font-size: .813rem; }\n\n.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-110%) scale(0.923);\n  transform: translateY(-110%) scale(0.923); }\n\n.mdc-text-field__input:required + .mdc-floating-label::after {\n  margin-left: 1px;\n  content: "*"; }\n\n.mdc-text-field--textarea {\n  border-radius: 4px;\n  display: flex;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: initial;\n  transition: none;\n  border: 1px solid;\n  overflow: hidden; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  border-radius: 4px 4px 0 0; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  border-radius: 2px; }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.923);\n  transform: translateY(-50%) scale(0.923); }\n\n.mdc-text-field--textarea .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-textarea 250ms 1;\n  animation: mdc-floating-label-shake-float-above-textarea 250ms 1; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  margin: 0;\n  padding: 16px;\n  padding-top: 32px;\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  left: 1px;\n  right: initial;\n  background-color: white;\n  top: 18px;\n  bottom: auto;\n  margin-top: 2px;\n  margin-left: 8px;\n  padding: 8px;\n  line-height: 1.15; }\n\n[dir="rtl"] .mdc-text-field--textarea .mdc-floating-label, .mdc-text-field--textarea .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 1px; }\n\n.mdc-text-field--fullwidth {\n  width: 100%; }\n\n.mdc-text-field--fullwidth .mdc-text-field__input {\n  resize: vertical; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) {\n  display: block;\n  box-sizing: border-box;\n  height: 56px;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid;\n  outline: none; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) .mdc-text-field__input {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  resize: none;\n  border: none !important; }\n\n.mdc-text-field--fullwidth.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--dense + .mdc-text-field-helper-text {\n  margin-bottom: 4px; }\n\n.mdc-text-field--box + .mdc-text-field-helper-text,\n.mdc-text-field--outlined + .mdc-text-field-helper-text {\n  margin-right: 16px;\n  margin-left: 16px; }\n\n.mdc-form-field > .mdc-text-field + label {\n  align-self: flex-start; }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused .mdc-text-field__input:required + .mdc-floating-label::after {\n  color: #d50000; }\n\n.mdc-text-field--focused + .mdc-text-field-helper-text:not(.mdc-text-field-helper-text--validation-msg) {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-line-ripple {\n  background-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  color: #d50000; }\n\n.mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) {\n  border-color: #d50000; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--disabled {\n  pointer-events: none; }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__icon {\n  color: rgba(0, 0, 0, 0.3); }\n\n.mdc-text-field--disabled:not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: 1px dotted; }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  cursor: default; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled {\n  border-color: rgba(35, 31, 32, 0.26);\n  background-color: #f9f9f9;\n  border-style: solid; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input:focus {\n  border-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input {\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-floating-label {\n  background-color: #f9f9f9; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__idle-outline {\n  opacity: 0; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__outline {\n  opacity: 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n.mdc-radio {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  flex: 0 0 auto;\n  box-sizing: border-box;\n  width: 40px;\n  height: 40px;\n  padding: 10px;\n  cursor: pointer;\n  will-change: opacity, transform, border-color, background-color, color; }\n\n.mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.54);\n  border-color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-radio .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: #018786;\n  border-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {\n  /* @alternate */\n  background-color: #018786;\n  background-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__background::before {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio .mdc-radio__background::before {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio::before, .mdc-radio::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-radio.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio::before, .mdc-radio::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-radio.mdc-ripple-upgraded::before, .mdc-radio.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio::before, .mdc-radio::after {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio::before, .mdc-radio::after {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio:hover::before {\n  opacity: 0.04; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):focus::before, .mdc-radio.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-radio:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-radio.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-radio__background {\n  display: inline-block;\n  position: absolute;\n  left: 10px;\n  box-sizing: border-box;\n  width: 50%;\n  height: 50%; }\n\n.mdc-radio__background::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio__outer-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 50%; }\n\n.mdc-radio__inner-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%; }\n\n.mdc-radio__native-control {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  opacity: 0;\n  cursor: inherit;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded .mdc-radio__background::before {\n  content: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background,\n.mdc-radio__native-control:disabled + .mdc-radio__background {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle {\n  transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle {\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio--disabled {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background {\n  cursor: default; }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {\n  border-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {\n  background-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:focus + .mdc-radio__background::before {\n  -webkit-transform: scale(2, 2);\n  transform: scale(2, 2);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .26; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-menu {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: none;\n  position: absolute;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  min-width: 170px;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  border-radius: 2px;\n  opacity: 0;\n  white-space: nowrap;\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform, opacity;\n  z-index: 4; }\n\n.mdc-menu:focus {\n  outline: none; }\n\n.mdc-menu--animating-open {\n  display: inline-block;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8);\n  -webkit-transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu--open {\n  display: inline-block;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1; }\n\n.mdc-menu--animating-closed {\n  display: inline-block;\n  -webkit-transition: opacity 0.075s linear;\n  transition: opacity 0.075s linear;\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu__items {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform; }\n\n.mdc-menu__items > .mdc-list-item {\n  cursor: pointer; }\n\n.mdc-menu--animating .mdc-menu__items {\n  overflow-y: hidden; }\n\n.mdc-menu--animating-open > .mdc-menu__items {\n  -webkit-transform: scale(1.25);\n  transform: scale(1.25); }\n\n.mdc-menu--open > .mdc-menu__items {\n  -webkit-transform: scale(1);\n  transform: scale(1); }\n\n[dir="rtl"] .mdc-menu {\n  -webkit-transform-origin: top right;\n  transform-origin: top right; }\n\n.mdc-menu .mdc-list-group,\n.mdc-menu .mdc-list {\n  padding: 8px 0; }\n\n.mdc-menu .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-menu .mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"] {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"]:focus::before {\n  opacity: 0; }\n\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-select__label {\n  left: 0;\n  right: initial;\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  pointer-events: none;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-select__label, .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-select[dir="rtl"] .mdc-select__label,\n[dir="rtl"] .mdc-select .mdc-select__label {\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-select__label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-select__bottom-line {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleY(1);\n  transform: scaleY(1);\n  -webkit-transform-origin: bottom;\n  transform-origin: bottom;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-select__bottom-line::after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  content: "";\n  z-index: 2; }\n\n.mdc-select__bottom-line--active::after {\n  opacity: 1; }\n\n.mdc-select {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  display: inline-flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  box-sizing: border-box;\n  height: 48px;\n  border: none;\n  outline: none;\n  background-repeat: no-repeat;\n  background-position: right 8px bottom 8px;\n  cursor: pointer;\n  overflow: visible; }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface,\n.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line {\n  background-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line::after {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__label, .mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__label {\n  color: rgba(98, 0, 238, 0.87); }\n\n[dir="rtl"] .mdc-select, .mdc-select[dir="rtl"] {\n  background-position: left 8px bottom 8px; }\n\n.mdc-select__menu {\n  position: fixed;\n  top: 0;\n  left: 0;\n  max-height: 100%;\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  z-index: 4; }\n\n.mdc-select__surface {\n  padding-left: 0;\n  padding-right: 26px;\n  display: flex;\n  position: relative;\n  flex-grow: 1;\n  width: 100%;\n  height: 48px;\n  padding-bottom: 8px;\n  border: none;\n  outline: none;\n  overflow: hidden; }\n\n[dir="rtl"] .mdc-select__surface, .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 0; }\n\n.mdc-select__surface::before, .mdc-select__surface::after {\n  background-color: black; }\n\n.mdc-select__surface:hover::before {\n  opacity: 0.04; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):focus::before, .mdc-select__surface.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-select__surface.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-select__selected-text {\n  display: flex;\n  position: absolute;\n  bottom: 8px;\n  align-items: flex-end;\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  white-space: nowrap;\n  overflow: hidden; }\n\n.mdc-select .mdc-select__surface:focus .mdc-select__bottom-line::after {\n  -webkit-transform: scale(1, 2);\n  transform: scale(1, 2);\n  opacity: 1; }\n\n.mdc-select--box {\n  height: 56px;\n  border-radius: 4px 4px 0 0;\n  background-position: right 10px center; }\n\n.mdc-select--box:not(.mdc-select--disabled) .mdc-select__surface {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n[dir="rtl"] .mdc-select--box, .mdc-select--box[dir="rtl"] {\n  background-position: left 10px center; }\n\n.mdc-select--box .mdc-select__surface {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  padding-left: 16px;\n  padding-right: 26px;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  height: 56px;\n  padding-bottom: 0;\n  border-radius: 4px 4px 0 0; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__surface, .mdc-select--box .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 16px; }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-select--box .mdc-select__surface::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-select--box .mdc-select__label {\n  left: 16px;\n  right: initial;\n  bottom: 12px; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__label, .mdc-select--box .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-select--box .mdc-select__label--float-above {\n  -webkit-transform: translateY(-40%) scale(0.75, 0.75);\n  transform: translateY(-40%) scale(0.75, 0.75); }\n\n.mdc-select--box .mdc-select__selected-text {\n  position: inherit;\n  bottom: 0;\n  margin-bottom: 6px; }\n\n.mdc-select--open .mdc-select__surface::before {\n  opacity: 0.12; }\n\n.mdc-select--open .mdc-select__selected-text {\n  -webkit-transform: translateY(8px);\n  transform: translateY(8px);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0; }\n\n.mdc-select--open .mdc-select__bottom-line::after {\n  -webkit-transform: scaleY(2);\n  transform: scaleY(2);\n  opacity: 1; }\n\n.mdc-select--disabled {\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  border-bottom-width: 1px;\n  border-bottom-style: dotted;\n  opacity: .38;\n  cursor: default;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-select--disabled .mdc-select__label {\n  color: black; }\n\n.mdc-select--disabled .mdc-select__bottom-line {\n  display: none; }\n\n.mdc-select-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-card {\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  border-radius: 2px;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box; }\n\n.mdc-card--stroked {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  border: 1px solid #dbdbdb; }\n\n.mdc-card__media {\n  position: relative;\n  box-sizing: border-box;\n  background-repeat: no-repeat;\n  background-size: cover; }\n\n.mdc-card__media::before {\n  display: block;\n  content: ""; }\n\n.mdc-card__media:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__media:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__media--square::before {\n  margin-top: 100%; }\n\n.mdc-card__media--16-9::before {\n  margin-top: 56.25%; }\n\n.mdc-card__media-content {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  box-sizing: border-box; }\n\n.mdc-card__primary-action {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer;\n  overflow: hidden; }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-card__primary-action::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  background-color: black; }\n\n.mdc-card__primary-action:hover::before {\n  opacity: 0.04; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):focus::before, .mdc-card__primary-action.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-card__primary-action:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__primary-action:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__actions {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  min-height: 52px;\n  padding: 8px; }\n\n.mdc-card__actions--full-bleed {\n  padding: 0; }\n\n.mdc-card__action-buttons,\n.mdc-card__action-icons {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box; }\n\n.mdc-card__action-icons {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));\n  flex-grow: 1;\n  justify-content: flex-end; }\n\n.mdc-card__action-buttons + .mdc-card__action-icons {\n  margin-left: 16px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action-buttons + .mdc-card__action-icons, .mdc-card__action-buttons + .mdc-card__action-icons[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 16px; }\n\n.mdc-card__action {\n  display: inline-flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  justify-content: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-card__action:focus {\n  outline: none; }\n\n.mdc-card__action--button {\n  margin-left: 0;\n  margin-right: 8px;\n  padding: 0 8px; }\n\n[dir="rtl"] .mdc-card__action--button, .mdc-card__action--button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-card__action--button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action--button:last-child, .mdc-card__action--button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-card__actions--full-bleed .mdc-card__action--button {\n  justify-content: space-between;\n  width: 100%;\n  height: auto;\n  max-height: none;\n  margin: 0;\n  padding: 8px 16px;\n  text-align: left; }\n\n[dir="rtl"] .mdc-card__actions--full-bleed .mdc-card__action--button, .mdc-card__actions--full-bleed .mdc-card__action--button[dir="rtl"] {\n  text-align: right; }\n\n.mdc-card__action--icon {\n  margin: -6px 0;\n  padding: 12px; }\n\n.mdc-card__action--icon:not(:disabled) {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n:root {\n  --mdc-layout-grid-margin-desktop: 24px;\n  --mdc-layout-grid-gutter-desktop: 24px;\n  --mdc-layout-grid-column-width-desktop: 72px;\n  --mdc-layout-grid-margin-tablet: 16px;\n  --mdc-layout-grid-gutter-tablet: 16px;\n  --mdc-layout-grid-column-width-tablet: 72px;\n  --mdc-layout-grid-margin-phone: 16px;\n  --mdc-layout-grid-gutter-phone: 16px;\n  --mdc-layout-grid-column-width-phone: 72px; }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 24px;\n    padding: var(--mdc-layout-grid-margin-desktop, 24px); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-tablet, 16px); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-phone, 16px); } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 24px;\n      grid-gap: var(--mdc-layout-grid-gutter-desktop, 24px);\n      grid-template-columns: repeat(12, minmax(0, 1fr)); } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);\n      grid-template-columns: repeat(8, minmax(0, 1fr)); } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-phone, 16px);\n      grid-template-columns: repeat(4, minmax(0, 1fr)); } } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__cell {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n    width: calc(8.33333% - 24px);\n    width: calc(8.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n    width: calc(16.66667% - 24px);\n    width: calc(16.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n    width: calc(25% - 24px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n    width: calc(41.66667% - 24px);\n    width: calc(41.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n    width: calc(50% - 24px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n    width: calc(58.33333% - 24px);\n    width: calc(58.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n    width: calc(66.66667% - 24px);\n    width: calc(66.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n    width: calc(75% - 24px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n      width: auto;\n      grid-column-end: span 9; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n    width: calc(83.33333% - 24px);\n    width: calc(83.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n      width: auto;\n      grid-column-end: span 10; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n    width: calc(91.66667% - 24px);\n    width: calc(91.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n      width: auto;\n      grid-column-end: span 11; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n    width: calc(100% - 24px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n      width: auto;\n      grid-column-end: span 12; } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__cell {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n    width: calc(12.5% - 16px);\n    width: calc(12.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n    width: calc(37.5% - 16px);\n    width: calc(37.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n    width: calc(62.5% - 16px);\n    width: calc(62.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n    width: calc(87.5% - 16px);\n    width: calc(87.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n      width: auto;\n      grid-column-end: span 8; } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__cell {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n      width: auto;\n      grid-column-end: span 4; } } }\n\n.mdc-layout-grid__cell--order-1 {\n  -webkit-box-ordinal-group: 2;\n  -ms-flex-order: 1;\n  order: 1; }\n\n.mdc-layout-grid__cell--order-2 {\n  -webkit-box-ordinal-group: 3;\n  -ms-flex-order: 2;\n  order: 2; }\n\n.mdc-layout-grid__cell--order-3 {\n  -webkit-box-ordinal-group: 4;\n  -ms-flex-order: 3;\n  order: 3; }\n\n.mdc-layout-grid__cell--order-4 {\n  -webkit-box-ordinal-group: 5;\n  -ms-flex-order: 4;\n  order: 4; }\n\n.mdc-layout-grid__cell--order-5 {\n  -webkit-box-ordinal-group: 6;\n  -ms-flex-order: 5;\n  order: 5; }\n\n.mdc-layout-grid__cell--order-6 {\n  -webkit-box-ordinal-group: 7;\n  -ms-flex-order: 6;\n  order: 6; }\n\n.mdc-layout-grid__cell--order-7 {\n  -webkit-box-ordinal-group: 8;\n  -ms-flex-order: 7;\n  order: 7; }\n\n.mdc-layout-grid__cell--order-8 {\n  -webkit-box-ordinal-group: 9;\n  -ms-flex-order: 8;\n  order: 8; }\n\n.mdc-layout-grid__cell--order-9 {\n  -webkit-box-ordinal-group: 10;\n  -ms-flex-order: 9;\n  order: 9; }\n\n.mdc-layout-grid__cell--order-10 {\n  -webkit-box-ordinal-group: 11;\n  -ms-flex-order: 10;\n  order: 10; }\n\n.mdc-layout-grid__cell--order-11 {\n  -webkit-box-ordinal-group: 12;\n  -ms-flex-order: 11;\n  order: 11; }\n\n.mdc-layout-grid__cell--order-12 {\n  -webkit-box-ordinal-group: 13;\n  -ms-flex-order: 12;\n  order: 12; }\n\n.mdc-layout-grid__cell--align-top {\n  -ms-flex-item-align: start;\n  align-self: flex-start; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-top {\n    -ms-flex-item-align: start;\n    align-self: start; } }\n\n.mdc-layout-grid__cell--align-middle {\n  -ms-flex-item-align: center;\n  align-self: center; }\n\n.mdc-layout-grid__cell--align-bottom {\n  -ms-flex-item-align: end;\n  align-self: flex-end; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-bottom {\n    -ms-flex-item-align: end;\n    align-self: end; } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 1176px;\n    width: calc( var(--mdc-layout-grid-column-width-desktop, 72px) * 12 + var(--mdc-layout-grid-gutter-desktop, 24px) * 11 + var(--mdc-layout-grid-margin-desktop, 24px) * 2); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 720px;\n    width: calc( var(--mdc-layout-grid-column-width-tablet, 72px) * 8 + var(--mdc-layout-grid-gutter-tablet, 16px) * 7 + var(--mdc-layout-grid-margin-tablet, 16px) * 2); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 368px;\n    width: calc( var(--mdc-layout-grid-column-width-phone, 72px) * 4 + var(--mdc-layout-grid-gutter-phone, 16px) * 3 + var(--mdc-layout-grid-margin-phone, 16px) * 2); } }\n\n.mdc-layout-grid--align-left {\n  margin-right: auto;\n  margin-left: 0; }\n\n.mdc-layout-grid--align-right {\n  margin-right: 0;\n  margin-left: auto; }\n\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n.mdc-elevation--z0 {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z1 {\n  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z2 {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z3 {\n  -webkit-box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z4 {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z5 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z6 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z7 {\n  -webkit-box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z8 {\n  -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z9 {\n  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z10 {\n  -webkit-box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z11 {\n  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z12 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z13 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z14 {\n  -webkit-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z15 {\n  -webkit-box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z16 {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z17 {\n  -webkit-box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z18 {\n  -webkit-box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z19 {\n  -webkit-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z20 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z21 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z22 {\n  -webkit-box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z23 {\n  -webkit-box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z24 {\n  -webkit-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation-transition {\n  -webkit-transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.page {\n  padding: 0; }\n\n.app {\n  display: flex;\n  min-height: 100vh; }\n  .app__container {\n    width: 100%;\n    display: flex;\n    flex-direction: column; }\n    .app__container-content {\n      height: 100%;\n      background-color: #eeeeee; }\n\n.drawer {\n  height: 100%; }\n  .drawer__more-button {\n    position: absolute;\n    right: 10px;\n    top: 12px; }\n  .drawer__list-item:hover {\n    background-color: #eeeeee; }\n  .drawer__list-item, .drawer__list-item.mdc-list-item {\n    overflow: visible; }\n  .drawer__nav, .drawer__nav.mdc-drawer__drawer {\n    overflow: visible;\n    will-change: unset; }\n\n.toolbar {\n  display: inline-flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box; }\n  .toolbar__button, .toolbar__button:not(:disabled) {\n    color: white; }\n\n.transactions {\n  display: flex;\n  flex-direction: column;\n  padding: 15px 40px 15px 40px;\n  height: 100%; }\n  .transactions__block--hidden {\n    display: none; }\n  .transactions__empty-state {\n    margin: auto;\n    text-align: center;\n    color: rgba(0, 0, 0, 0.26); }\n  .transactions__add-transaction-dialog-activation {\n    position: fixed;\n    right: 12px;\n    bottom: 12px; }\n\n.add-transaction-dialog__row {\n  display: flex;\n  flex-direction: row; }\n  .add-transaction-dialog__row--col {\n    justify-content: space-between; }\n\n.add-transaction-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__select-menu {\n  top: inherit !important;\n  left: inherit !important; }\n\n.add-account-dialog__row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.add-account-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__type, .add-account-dialog__currency {\n  width: 100%; }\n\n.button-more__popup-right {\n  margin-top: 26px;\n  margin-left: 25px; }\n\n.button-more__popup-left {\n  margin-top: 26px;\n  margin-right: 25px; }\n\n.button-more__more {\n  width: 24px;\n  padding-left: 0;\n  padding-right: 0;\n  min-width: 0;\n  height: 24px; }\n\n.table-transactions__table {\n  border: 1px solid #ddd;\n  border-collapse: collapse;\n  width: 100%;\n  min-width: 600px;\n  text-align: left;\n  box-sizing: border-box;\n  background-color: #fff;\n  margin-top: 30px; }\n\n.table-transactions__tr {\n  height: 40px; }\n\n.table-transactions__highlighted:hover {\n  background-color: #f5f5f5; }\n\n.table-transactions__th {\n  border-bottom: 1px solid #ddd;\n  padding-left: 15px;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54); }\n\n.table-transactions__td {\n  border-bottom: 1px solid #ddd;\n  padding-left: 15px;\n  font-size: 13px;\n  color: #757575; }\n  .table-transactions__td--desc {\n    text-transform: capitalize; }\n\n.table-transactions__span {\n  line-height: 35px; }\n\n.table-transactions__button {\n  position: relative;\n  float: right;\n  padding-left: 0;\n  padding-right: 0;\n  width: 24px;\n  min-width: 0;\n  height: 24px;\n  margin-right: 5px;\n  margin-top: 5px; }\n\n.table-transactions__icon {\n  position: absolute;\n  top: -6px;\n  right: -5px; }\n\n.table-transactions__more-button {\n  position: relative;\n  float: right;\n  margin-right: 5px;\n  margin-top: 5px; }\n\n.chart {\n  padding: 20px; }\n  .chart__visual {\n    margin: 0 auto; }\n\n.accounts__more-button {\n  position: absolute;\n  right: 10px;\n  top: 12px; }\n\n.accounts__list-item, .accounts__list-item.mdc-list-item {\n  overflow: visible; }\n\n.accounts__list-item:hover {\n  background-color: #eeeeee; }\n\n.custom-select {\n  width: 100%; }\n  .custom-select__menu {\n    top: inherit !important;\n    left: inherit !important; }\n\n.about-dialog__header {\n  color: black; }\n',
         ""
       ]);
 
@@ -24547,7 +24923,7 @@
 
       /***/
     },
-    /* 168 */
+    /* 172 */
     /***/ function(module, exports) {
       /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -24636,7 +25012,7 @@
 
       /***/
     },
-    /* 169 */
+    /* 173 */
     /***/ function(module, exports, __webpack_require__) {
       /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -24704,7 +25080,7 @@
       var singletonCounter = 0;
       var stylesInsertedAtTop = [];
 
-      var fixUrls = __webpack_require__(170);
+      var fixUrls = __webpack_require__(174);
 
       module.exports = function(list, options) {
         if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -25042,7 +25418,7 @@
 
       /***/
     },
-    /* 170 */
+    /* 174 */
     /***/ function(module, exports) {
       /**
        * When source maps are enabled, `style-loader` uses a link element with a data-uri to
@@ -25146,7 +25522,7 @@
 
       /***/
     },
-    /* 171 */
+    /* 175 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25172,27 +25548,17 @@
         };
       })();
 
-      var _app = __webpack_require__(172);
+      var _app = __webpack_require__(176);
 
       var _app2 = _interopRequireDefault(_app);
 
-      var _drawer = __webpack_require__(173);
+      var _drawer = __webpack_require__(177);
 
-      var _toolbar = __webpack_require__(184);
+      var _toolbar = __webpack_require__(221);
 
-      var _addTransactionDialog = __webpack_require__(186);
+      var _transactions = __webpack_require__(226);
 
-      var _addAccountDialog = __webpack_require__(219);
-
-      var _addTagDialog = __webpack_require__(221);
-
-      var _aboutDialog = __webpack_require__(223);
-
-      var _pieChart = __webpack_require__(225);
-
-      var _barChart = __webpack_require__(274);
-
-      var _tableTransactions = __webpack_require__(276);
+      var _addTagDialog = __webpack_require__(296);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -25215,117 +25581,73 @@
           {
             key: "querySelectors",
             value: function querySelectors() {
-              this.tableTransactionsMountPoint = this.mountPoint.querySelector(
-                ".app__table-transactions"
-              );
               this.toolbarMountPoint = this.mountPoint.querySelector(
                 ".app__container-toolbar-point"
               );
               this.drawerMountPoint = this.mountPoint.querySelector(
                 ".app__drawer-point"
               );
-              this.addTransactionButton = this.mountPoint.querySelector(
-                ".app__add-transaction-dialog-activation"
-              );
-              this.addTransactionDialogPoint = this.mountPoint.querySelector(
-                ".app__add-transaction-dialog"
-              );
-              this.addAccountMountPoint = this.mountPoint.querySelector(
-                ".app__add-account-dialog"
+              this.transactionsMountPoint = this.mountPoint.querySelector(
+                ".app__container-content"
               );
               this.addTagMountPoint = this.mountPoint.querySelector(
                 ".app__add-tag-dialog"
-              );
-              this.aboutMountPoint = this.mountPoint.querySelector(
-                ".app__about-dialog"
-              );
-              this.pieChartPoint = this.mountPoint.querySelector(
-                ".app__pie-chart"
-              );
-              this.barChartPoint = this.mountPoint.querySelector(
-                ".app__bar-chart"
-              );
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.addTransactionButton.addEventListener(
-                "click",
-                this.handleAddTransactionClick.bind(this)
               );
             }
           },
           {
             key: "mountChildren",
             value: function mountChildren() {
-              new _tableTransactions.TableTransactionsComponent(
-                this.tableTransactionsMountPoint
-              ).mount();
               this.toolBarComponent = new _toolbar.ToolbarComponent(
                 this.toolbarMountPoint,
                 {
-                  onMenuClicked: this.handleToolbarMenuClick.bind(this),
-                  onAboutClick: this.handleAboutOnclick.bind(this)
+                  onMenuClick: this.handleToolbarMenuClick.bind(this)
                 }
               );
               this.toolBarComponent.mount();
-              this.drawerComponent = new _drawer.DrawerComponent(
-                this.drawerMountPoint,
-                {
-                  onAddAccountClick: this.handleAddAccountClick.bind(this),
-                  onAddTagClick: this.handleAddTagOnclick.bind(this)
-                }
-              );
-              this.drawerComponent.mount();
-              this.addTransactionDialog = new _addTransactionDialog.AddTransactionComponent(
-                this.addTransactionDialogPoint
-              );
-              this.addTransactionDialog.mount();
-              this.addAccountDialog = new _addAccountDialog.AddAccountComponent(
-                this.addAccountMountPoint
-              );
-              this.addAccountDialog.mount();
+              this.initDrawer();
               this.addTagDialog = new _addTagDialog.AddTagComponent(
                 this.addTagMountPoint
               );
               this.addTagDialog.mount();
-              this.aboutDialog = new _aboutDialog.AboutComponent(
-                this.aboutMountPoint
+              this.transactionsComponent = new _transactions.TransactionsComponent(
+                this.transactionsMountPoint,
+                {
+                  onTransactionAdded: this.handleTransactionAdded.bind(this),
+                  onTransactionDelete: this.handleTransactionDelete.bind(this)
+                }
               );
-              this.aboutDialog.mount();
-              this.pieChart = new _pieChart.PieChartComponent(
-                this.pieChartPoint
+              this.transactionsComponent.mount();
+            }
+          },
+          {
+            key: "initDrawer",
+            value: function initDrawer() {
+              this.drawerComponent = new _drawer.DrawerComponent(
+                this.drawerMountPoint,
+                {
+                  onAddTagClick: this.handleAddTagOnclick.bind(this)
+                }
               );
-              this.pieChart.mount();
-              this.barChart = new _barChart.BarChartComponent(
-                this.barChartPoint
-              );
-              this.barChart.mount();
+              this.drawerComponent.mount();
+            }
+          },
+          {
+            key: "handleTransactionAdded",
+            value: function handleTransactionAdded(data) {
+              this.drawerComponent.updateAccountData(data);
+            }
+          },
+          {
+            key: "handleTransactionDelete",
+            value: function handleTransactionDelete(data) {
+              this.drawerComponent.updateAccountDataDelete(data);
             }
           },
           {
             key: "handleToolbarMenuClick",
             value: function handleToolbarMenuClick() {
               this.drawerComponent.toggleDrawer();
-            }
-          },
-          {
-            key: "handleAboutOnclick",
-            value: function handleAboutOnclick() {
-              this.aboutDialog.showDialog();
-            }
-          },
-          {
-            key: "handleAddTransactionClick",
-            value: function handleAddTransactionClick() {
-              this.addTransactionDialog.showDialog();
-            }
-          },
-          {
-            key: "handleAddAccountClick",
-            value: function handleAddAccountClick() {
-              this.addAccountDialog.showDialog();
             }
           },
           {
@@ -25339,7 +25661,6 @@
             value: function mount() {
               this.mountPoint.innerHTML = (0, _app2.default)();
               this.querySelectors();
-              this.addEventListeners();
               this.mountChildren();
             }
           }
@@ -25350,7 +25671,7 @@
 
       /***/
     },
-    /* 172 */
+    /* 176 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -25358,14 +25679,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="app mdc-typography">\n\n  <div class="app__drawer-point"></div>\n  <div class="app__container">\n\n    <div class="app__container-toolbar-point"></div>\n    <div class="app__container-content mdc-layout-grid">\n      <div class="mdc-layout-grid__inner">\n        <div class="app__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n        <div class="app__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n      </div>\n      <div class="app__table-transactions"></div>\n      <button class="mdc-fab material-icons app__add-transaction-dialog-activation" aria-label="Favorite">\n        <span class="mdc-fab__icon">add</span>\n      </button>\n    </div>\n    <div class="app__add-transaction-dialog"></div>\n    <div class="app__add-account-dialog"></div>\n    <div class="app__add-tag-dialog"></div>\n    <div class="app__about-dialog"></div>\n  </div>\n</div>';
+            '<div class="app mdc-typography">\n  <div class="app__drawer-point"></div>\n  <div class="app__container">\n    <div class="app__container-toolbar-point"></div>\n    <div class="app__container-content"></div>\n    <div class="app__add-tag-dialog"></div>\n  </div>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 173 */
+    /* 177 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25391,11 +25712,15 @@
         };
       })();
 
-      var _drawer = __webpack_require__(174);
+      var _drawer = __webpack_require__(178);
 
       var _drawer2 = _interopRequireDefault(_drawer);
 
-      var _drawer3 = __webpack_require__(175);
+      var _drawer3 = __webpack_require__(179);
+
+      var _buttonMore = __webpack_require__(15);
+
+      var _accounts = __webpack_require__(192);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -25423,15 +25748,36 @@
                 ".mdc-drawer--persistent"
               );
               this.menu = this.mountPoint.querySelector(".toolbar__menu");
-              this.addAccountButton = this.mountPoint.querySelector(
-                ".drawer__add-account-dialog-activation"
-              );
               this.addTagButton = this.mountPoint.querySelector(
                 ".drawer__add-tag-dialog-activation"
               );
-              this.aboutButton = this.mountPoint.querySelector(
-                ".toolbar__about-dialog-activation"
+              this.accountsMountPoint = this.mountPoint.querySelector(
+                ".drawer__accounts-mountpoint"
               );
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".drawer__more-button"
+              );
+            }
+          },
+          {
+            key: "updateAccountData",
+            value: function updateAccountData(transaction) {
+              this.accountsComponent.updateAccountData(transaction);
+            }
+          },
+          {
+            key: "updateAccountDataDelete",
+            value: function updateAccountDataDelete(transaction) {
+              this.accountsComponent.updateAccountDataDelete(transaction);
+            }
+          },
+          {
+            key: "initAccountComponent",
+            value: function initAccountComponent() {
+              this.accountsComponent = new _accounts.AccountsComponent(
+                this.accountsMountPoint
+              );
+              this.accountsComponent.mount();
             }
           },
           {
@@ -25441,12 +25787,25 @@
             }
           },
           {
+            key: "initMoreBtns",
+            value: function initMoreBtns() {
+              var _this = this;
+
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".drawer__more-button"
+              );
+              Array.from(this.moreBtnMountPoints).forEach(function(point) {
+                new _buttonMore.ButtonMoreComponent(point, {
+                  position: "right",
+                  onDeleteClicked: _this.handleDeleteClick.bind(_this),
+                  onEditClicked: _this.handleEditClick.bind(_this)
+                }).mount();
+              });
+            }
+          },
+          {
             key: "addEventListeners",
             value: function addEventListeners() {
-              this.addAccountButton.addEventListener(
-                "click",
-                this.handleAddAccountClick.bind(this)
-              );
               this.addTagButton.addEventListener(
                 "click",
                 this.handleAddTagOnclick.bind(this)
@@ -25454,10 +25813,12 @@
             }
           },
           {
-            key: "handleAddAccountClick",
-            value: function handleAddAccountClick() {
-              this.props.onAddAccountClick();
-            }
+            key: "handleEditClick",
+            value: function handleEditClick() {}
+          },
+          {
+            key: "handleDeleteClick",
+            value: function handleDeleteClick() {}
           },
           {
             key: "handleAddTagOnclick",
@@ -25476,8 +25837,10 @@
             value: function mount() {
               this.mountPoint.innerHTML = (0, _drawer2.default)();
               this.querySelectors();
+              this.initMoreBtns();
               this.initMDC();
               this.addEventListeners();
+              this.initAccountComponent();
             }
           }
         ]);
@@ -25487,7 +25850,7 @@
 
       /***/
     },
-    /* 174 */
+    /* 178 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -25495,14 +25858,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\n  <nav class="mdc-drawer__drawer">\n    <div class="drawer__group mdc-list-group">\n      <nav class="drawer__list mdc-list">\n        <a class="drawer__list-item mdc-list-item drawer__add-account-dialog-activation" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n          Add new account\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>Privat\n          -\n          $200\n          <button class="drawer__more mdc-button">\n            <i class="drawer__more-icon  material-icons"\n              title="More options">more_vert</i></button>\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>Cash\n          -\n          UAH300\n          <button class="drawer__more mdc-button">\n            <i\n              class="drawer__more-icon  material-icons"\n              title="More options">more_vert</i></button>\n        </a>\n      </nav>\n      <hr class="mdc-list-divider">\n      <nav class="mdc-list">\n        <a class="drawer__list-item mdc-list-item drawer__add-tag-dialog-activation" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n          Add new tag\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Transport\n          <button class="drawer__more mdc-button">\n            <i\n              class="drawer__more-icon  material-icons"\n              title="More options">more_vert</i></button>\n        </a>\n        <a class="drawer__list-item  mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Groceries\n          <button class=" drawer__more mdc-button">\n            <i\n              class="drawer__more-icon  material-icons"\n              title="More options">more_vert</i></button>\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Entertainment\n          <button class="drawer__more mdc-button">\n            <i\n              class="drawer__more-icon  material-icons"\n              title="More options">more_vert</i></button>\n        </a>\n      </nav>\n    </div>\n  </nav>\n</aside>';
+            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\n  <nav class="mdc-drawer__drawer drawer__nav">\n    <div class="drawer__group mdc-list-group">\n      <div class="drawer__accounts-mountpoint"></div>\n      <hr class="mdc-list-divider">\n      <nav class="mdc-list--non-interactive">\n        <a class="drawer__list-item mdc-list-item drawer__add-tag-dialog-activation" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n          Add new tag\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Transport\n          <div class="drawer__more-button"></div>\n\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Groceries\n          <div class="drawer__more-button"></div>\n        </a>\n        <a class="drawer__list-item mdc-list-item" href="#">\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\n          </i>Entertainment\n          <div class="drawer__more-button"></div>\n        </a>\n      </nav>\n    </div>\n  </nav>\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 175 */
+    /* 179 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -25510,7 +25873,7 @@
         14
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__temporary__ = __webpack_require__(
-        176
+        180
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -25527,7 +25890,7 @@
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__persistent__ = __webpack_require__(
-        181
+        185
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -25568,14 +25931,14 @@
 
       /***/
     },
-    /* 176 */
+    /* 180 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        177
+        181
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(
         14
@@ -25728,14 +26091,14 @@
 
       /***/
     },
-    /* 177 */
+    /* 181 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
-        11
+        12
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        180
+        184
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -25885,7 +26248,7 @@
 
       /***/
     },
-    /* 178 */
+    /* 182 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -25913,7 +26276,7 @@
 
       /***/
     },
-    /* 179 */
+    /* 183 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
@@ -26201,11 +26564,11 @@
 
       /***/
     },
-    /* 180 */
+    /* 184 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
-        11
+        12
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -26245,14 +26608,14 @@
 
       /***/
     },
-    /* 181 */
+    /* 185 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        182
+        186
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(
         14
@@ -26390,14 +26753,14 @@
 
       /***/
     },
-    /* 182 */
+    /* 186 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
-        11
+        12
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        183
+        187
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -26459,11 +26822,11 @@
 
       /***/
     },
-    /* 183 */
+    /* 187 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
-        11
+        12
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -26501,105 +26864,7 @@
 
       /***/
     },
-    /* 184 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ToolbarComponent = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _toolbar = __webpack_require__(185);
-
-      var _toolbar2 = _interopRequireDefault(_toolbar);
-
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-      }
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var ToolbarComponent = (exports.ToolbarComponent = (function() {
-        function ToolbarComponent(mountPoint, props) {
-          _classCallCheck(this, ToolbarComponent);
-
-          this.mountPoint = mountPoint;
-          this.props = props;
-        }
-
-        _createClass(ToolbarComponent, [
-          {
-            key: "querySelectors",
-            value: function querySelectors() {
-              this.menu = this.mountPoint.querySelector(".toolbar__menu");
-              this.aboutButton = this.mountPoint.querySelector(
-                ".toolbar__about-dialog-activation"
-              );
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.menu.addEventListener(
-                "click",
-                this.handleMenuClick.bind(this)
-              );
-              this.aboutButton.addEventListener(
-                "click",
-                this.handleAboutOnclick.bind(this)
-              );
-            }
-          },
-          {
-            key: "handleMenuClick",
-            value: function handleMenuClick() {
-              this.props.onMenuClicked();
-            }
-          },
-          {
-            key: "handleAboutOnclick",
-            value: function handleAboutOnclick() {
-              this.props.onAboutClick();
-            }
-          },
-          {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _toolbar2.default)();
-              this.querySelectors();
-              this.addEventListeners();
-            }
-          }
-        ]);
-
-        return ToolbarComponent;
-      })());
-
-      /***/
-    },
-    /* 185 */
+    /* 188 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -26607,1658 +26872,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\n  <div class="toolbar__container mdc-toolbar__row">\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\n    </section>\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\n      <button class="toolbar__button mdc-button">\n        Export\n      </button>\n      <button class="toolbar__button mdc-button">\n        Import\n      </button>\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\n        About\n      </button>\n    </section>\n  </div>\n</header>';
+            '<div class="button-more mdc-menu-anchor">\n  <button class="button-more__more button-more mdc-button">\n    <i\n      class="button-more__more-icon  material-icons"\n      title="More options">more_vert</i></button>\n  <div class="mdc-menu menu" tabindex="-1">\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\n        Edit\n      </li>\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\n        Delete\n      </li>\n    </ul>\n  </div>\n</div>';
         }
         return __p;
       };
-
-      /***/
-    },
-    /* 186 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.AddTransactionComponent = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _addTransactionDialog = __webpack_require__(187);
-
-      var _addTransactionDialog2 = _interopRequireDefault(
-        _addTransactionDialog
-      );
-
-      var _dialog = __webpack_require__(12);
-
-      var _select = __webpack_require__(24);
-
-      var _textfield = __webpack_require__(16);
-
-      var _radio = __webpack_require__(215);
-
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-      }
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var AddTransactionComponent = (exports.AddTransactionComponent = (function() {
-        function AddTransactionComponent(mountPoint, props) {
-          _classCallCheck(this, AddTransactionComponent);
-
-          this.mountPoint = mountPoint;
-          this.props = props;
-        }
-
-        _createClass(AddTransactionComponent, [
-          {
-            key: "showDialog",
-            value: function showDialog() {
-              this.dialog.show();
-            }
-          },
-          {
-            key: "querySelectors",
-            value: function querySelectors() {
-              this.addTransactionDialog = this.mountPoint.querySelector(
-                ".add-transaction-dialog"
-              );
-              this.accountTransactionSelect = this.mountPoint.querySelector(
-                ".add-transaction-dialog__account"
-              );
-              this.tagTransactionSelect = this.mountPoint.querySelector(
-                ".add-transaction-dialog__tag"
-              );
-              this.descriptionTextField = this.mountPoint.querySelector(
-                ".add-transaction-dialog__description"
-              );
-              this.amountTextField = this.mountPoint.querySelector(
-                ".add-transaction-dialog__amount"
-              );
-              this.dateTextField = this.mountPoint.querySelector(
-                ".add-transaction-dialog__date"
-              );
-              this.incomeRadio = this.mountPoint.querySelector(
-                ".add-transaction-dialog__income"
-              );
-              this.expenceRadio = this.mountPoint.querySelector(
-                ".add-transaction-dialog__expence"
-              );
-            }
-          },
-          {
-            key: "initMDC",
-            value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.addTransactionDialog);
-              this.accountSelect = new _select.MDCSelect(
-                this.accountTransactionSelect
-              );
-              this.tagSelect = new _select.MDCSelect(this.tagTransactionSelect);
-              this.description = new _textfield.MDCTextField(
-                this.descriptionTextField
-              );
-              this.amount = new _textfield.MDCTextField(this.amountTextField);
-              this.date = new _textfield.MDCTextField(this.dateTextField);
-              this.income = new _radio.MDCRadio(this.incomeRadio);
-              this.expence = new _radio.MDCRadio(this.expenceRadio);
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-              this.dialog.listen(
-                "MDCDialog:cancel",
-                this.handleCancel.bind(this)
-              );
-            }
-          },
-          {
-            key: "handleOk",
-            value: function handleOk() {
-              console.log("accepted");
-            }
-          },
-          {
-            key: "handleCancel",
-            value: function handleCancel() {
-              console.log("declined");
-            }
-          },
-          {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _addTransactionDialog2.default)({
-                accounts: ["Private", "Cash"],
-                tags: ["Transport", "Groceries", "Entertainment"]
-              });
-              this.querySelectors();
-              this.initMDC();
-              this.addEventListeners();
-            }
-          }
-        ]);
-
-        return AddTransactionComponent;
-      })());
-
-      /***/
-    },
-    /* 187 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "",
-          __j = Array.prototype.join;
-        function print() {
-          __p += __j.call(arguments, "");
-        }
-        with (obj) {
-          __p +=
-            '<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n  <div class="mdc-dialog__surface">\n\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add transaction\n      </h2>\n    </header>\n\n    <section class="mdc-dialog__body">\n      <div class="add-transaction-dialog__row">\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__expence">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-expense">Expence</label>\n        </div>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__income">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios" checked>\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-income">Income</label>\n        </div>\n      </div>\n      <div class="add-transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Description">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\n      <div class="add-transaction-dialog__row add-transaction-dialog__row--col">\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="mdc-text-field__input" placeholder="Amount">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>\n          <div class="mdc-select add-transaction-dialog__account" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Account</div>\n              <div class="mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
-          for (let i = 0; i < accounts.length; i++) {
-            __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
-              ((__t = accounts[i]) == null ? "" : __t) +
-              "\n                  </li>\n                  ";
-          }
-          __p +=
-            '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="date" class="mdc-text-field__input" placeholder="Date">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\n          <div class="mdc-select add-transaction-dialog__tag" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Tag</div>\n              <div class="mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-transaction-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
-          for (let i = 0; i < tags.length; i++) {
-            __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
-              ((__t = tags[i]) == null ? "" : __t) +
-              "\n                  </li>\n                  ";
-          }
-          __p +=
-            '\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
-        }
-        return __p;
-      };
-
-      /***/
-    },
-    /* 188 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
-        3
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        23
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        189
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
-        15
-      );
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      /**
-       * @typedef {!{
-       *   isActivated: (boolean|undefined),
-       *   hasDeactivationUXRun: (boolean|undefined),
-       *   wasActivatedByPointer: (boolean|undefined),
-       *   wasElementMadeActive: (boolean|undefined),
-       *   activationEvent: Event,
-       *   isProgrammatic: (boolean|undefined)
-       * }}
-       */
-      let ActivationStateType;
-
-      /**
-       * @typedef {!{
-       *   activate: (string|undefined),
-       *   deactivate: (string|undefined),
-       *   focus: (string|undefined),
-       *   blur: (string|undefined)
-       * }}
-       */
-      let ListenerInfoType;
-
-      /**
-       * @typedef {!{
-       *   activate: function(!Event),
-       *   deactivate: function(!Event),
-       *   focus: function(),
-       *   blur: function()
-       * }}
-       */
-      let ListenersType;
-
-      /**
-       * @typedef {!{
-       *   x: number,
-       *   y: number
-       * }}
-       */
-      let PointType;
-
-      // Activation events registered on the root element of each instance for activation
-      const ACTIVATION_EVENT_TYPES = [
-        "touchstart",
-        "pointerdown",
-        "mousedown",
-        "keydown"
-      ];
-
-      // Deactivation events registered on documentElement when a pointer-related down event occurs
-      const POINTER_DEACTIVATION_EVENT_TYPES = [
-        "touchend",
-        "pointerup",
-        "mouseup"
-      ];
-
-      // Tracks activations that have occurred on the current frame, to avoid simultaneous nested activations
-      /** @type {!Array<!EventTarget>} */
-      let activatedTargets = [];
-
-      /**
-       * @extends {MDCFoundation<!MDCRippleAdapter>}
-       */
-      class MDCRippleFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
-        "a" /* default */
-      ] {
-        static get cssClasses() {
-          return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        }
-
-        static get strings() {
-          return __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */];
-        }
-
-        static get numbers() {
-          return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */];
-        }
-
-        static get defaultAdapter() {
-          return {
-            browserSupportsCssVars: () => /* boolean - cached */ {},
-            isUnbounded: () => /* boolean */ {},
-            isSurfaceActive: () => /* boolean */ {},
-            isSurfaceDisabled: () => /* boolean */ {},
-            addClass: (/* className: string */) => {},
-            removeClass: (/* className: string */) => {},
-            containsEventTarget: (/* target: !EventTarget */) => {},
-            registerInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
-            deregisterInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
-            registerDocumentInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
-            deregisterDocumentInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
-            registerResizeHandler: (/* handler: EventListener */) => {},
-            deregisterResizeHandler: (/* handler: EventListener */) => {},
-            updateCssVariable: (/* varName: string, value: string */) => {},
-            computeBoundingRect: () => /* ClientRect */ {},
-            getWindowPageOffset: () => /* {x: number, y: number} */ {}
-          };
-        }
-
-        constructor(adapter) {
-          super(Object.assign(MDCRippleFoundation.defaultAdapter, adapter));
-
-          /** @private {number} */
-          this.layoutFrame_ = 0;
-
-          /** @private {!ClientRect} */
-          this.frame_ = /** @type {!ClientRect} */ ({ width: 0, height: 0 });
-
-          /** @private {!ActivationStateType} */
-          this.activationState_ = this.defaultActivationState_();
-
-          /** @private {number} */
-          this.initialSize_ = 0;
-
-          /** @private {number} */
-          this.maxRadius_ = 0;
-
-          /** @private {function(!Event)} */
-          this.activateHandler_ = e => this.activate_(e);
-
-          /** @private {function(!Event)} */
-          this.deactivateHandler_ = e => this.deactivate_(e);
-
-          /** @private {function(?Event=)} */
-          this.focusHandler_ = () =>
-            requestAnimationFrame(() =>
-              this.adapter_.addClass(MDCRippleFoundation.cssClasses.BG_FOCUSED)
-            );
-
-          /** @private {function(?Event=)} */
-          this.blurHandler_ = () =>
-            requestAnimationFrame(() =>
-              this.adapter_.removeClass(
-                MDCRippleFoundation.cssClasses.BG_FOCUSED
-              )
-            );
-
-          /** @private {!Function} */
-          this.resizeHandler_ = () => this.layout();
-
-          /** @private {!{left: number, top:number}} */
-          this.unboundedCoords_ = {
-            left: 0,
-            top: 0
-          };
-
-          /** @private {number} */
-          this.fgScale_ = 0;
-
-          /** @private {number} */
-          this.activationTimer_ = 0;
-
-          /** @private {number} */
-          this.fgDeactivationRemovalTimer_ = 0;
-
-          /** @private {boolean} */
-          this.activationAnimationHasEnded_ = false;
-
-          /** @private {!Function} */
-          this.activationTimerCallback_ = () => {
-            this.activationAnimationHasEnded_ = true;
-            this.runDeactivationUXLogicIfReady_();
-          };
-
-          /** @private {?Event} */
-          this.previousActivationEvent_ = null;
-        }
-
-        /**
-         * We compute this property so that we are not querying information about the client
-         * until the point in time where the foundation requests it. This prevents scenarios where
-         * client-side feature-detection may happen too early, such as when components are rendered on the server
-         * and then initialized at mount time on the client.
-         * @return {boolean}
-         * @private
-         */
-        isSupported_() {
-          return this.adapter_.browserSupportsCssVars();
-        }
-
-        /**
-         * @return {!ActivationStateType}
-         */
-        defaultActivationState_() {
-          return {
-            isActivated: false,
-            hasDeactivationUXRun: false,
-            wasActivatedByPointer: false,
-            wasElementMadeActive: false,
-            activationEvent: null,
-            isProgrammatic: false
-          };
-        }
-
-        init() {
-          if (!this.isSupported_()) {
-            return;
-          }
-          this.registerRootHandlers_();
-
-          const { ROOT, UNBOUNDED } = MDCRippleFoundation.cssClasses;
-          requestAnimationFrame(() => {
-            this.adapter_.addClass(ROOT);
-            if (this.adapter_.isUnbounded()) {
-              this.adapter_.addClass(UNBOUNDED);
-            }
-            this.layoutInternal_();
-          });
-        }
-
-        destroy() {
-          if (!this.isSupported_()) {
-            return;
-          }
-          this.deregisterRootHandlers_();
-          this.deregisterDeactivationHandlers_();
-
-          const { ROOT, UNBOUNDED } = MDCRippleFoundation.cssClasses;
-          requestAnimationFrame(() => {
-            this.adapter_.removeClass(ROOT);
-            this.adapter_.removeClass(UNBOUNDED);
-            this.removeCssVars_();
-          });
-        }
-
-        /** @private */
-        registerRootHandlers_() {
-          ACTIVATION_EVENT_TYPES.forEach(type => {
-            this.adapter_.registerInteractionHandler(
-              type,
-              this.activateHandler_
-            );
-          });
-          this.adapter_.registerInteractionHandler("focus", this.focusHandler_);
-          this.adapter_.registerInteractionHandler("blur", this.blurHandler_);
-          this.adapter_.registerResizeHandler(this.resizeHandler_);
-        }
-
-        /**
-         * @param {!Event} e
-         * @private
-         */
-        registerDeactivationHandlers_(e) {
-          if (e.type === "keydown") {
-            this.adapter_.registerInteractionHandler(
-              "keyup",
-              this.deactivateHandler_
-            );
-          } else {
-            POINTER_DEACTIVATION_EVENT_TYPES.forEach(type => {
-              this.adapter_.registerDocumentInteractionHandler(
-                type,
-                this.deactivateHandler_
-              );
-            });
-          }
-        }
-
-        /** @private */
-        deregisterRootHandlers_() {
-          ACTIVATION_EVENT_TYPES.forEach(type => {
-            this.adapter_.deregisterInteractionHandler(
-              type,
-              this.activateHandler_
-            );
-          });
-          this.adapter_.deregisterInteractionHandler(
-            "focus",
-            this.focusHandler_
-          );
-          this.adapter_.deregisterInteractionHandler("blur", this.blurHandler_);
-          this.adapter_.deregisterResizeHandler(this.resizeHandler_);
-        }
-
-        /** @private */
-        deregisterDeactivationHandlers_() {
-          this.adapter_.deregisterInteractionHandler(
-            "keyup",
-            this.deactivateHandler_
-          );
-          POINTER_DEACTIVATION_EVENT_TYPES.forEach(type => {
-            this.adapter_.deregisterDocumentInteractionHandler(
-              type,
-              this.deactivateHandler_
-            );
-          });
-        }
-
-        /** @private */
-        removeCssVars_() {
-          const { strings } = MDCRippleFoundation;
-          Object.keys(strings).forEach(k => {
-            if (k.indexOf("VAR_") === 0) {
-              this.adapter_.updateCssVariable(strings[k], null);
-            }
-          });
-        }
-
-        /**
-         * @param {?Event} e
-         * @private
-         */
-        activate_(e) {
-          if (this.adapter_.isSurfaceDisabled()) {
-            return;
-          }
-
-          const activationState = this.activationState_;
-          if (activationState.isActivated) {
-            return;
-          }
-
-          // Avoid reacting to follow-on events fired by touch device after an already-processed user interaction
-          const previousActivationEvent = this.previousActivationEvent_;
-          const isSameInteraction =
-            previousActivationEvent &&
-            e &&
-            previousActivationEvent.type !== e.type;
-          if (isSameInteraction) {
-            return;
-          }
-
-          activationState.isActivated = true;
-          activationState.isProgrammatic = e === null;
-          activationState.activationEvent = e;
-          activationState.wasActivatedByPointer = activationState.isProgrammatic
-            ? false
-            : e.type === "mousedown" ||
-              e.type === "touchstart" ||
-              e.type === "pointerdown";
-
-          const hasActivatedChild =
-            e &&
-            activatedTargets.length > 0 &&
-            activatedTargets.some(target =>
-              this.adapter_.containsEventTarget(target)
-            );
-          if (hasActivatedChild) {
-            // Immediately reset activation state, while preserving logic that prevents touch follow-on events
-            this.resetActivationState_();
-            return;
-          }
-
-          if (e) {
-            activatedTargets.push(/** @type {!EventTarget} */ (e.target));
-            this.registerDeactivationHandlers_(e);
-          }
-
-          requestAnimationFrame(() => {
-            // This needs to be wrapped in an rAF call b/c web browsers
-            // report active states inconsistently when they're called within
-            // event handling code:
-            // - https://bugs.chromium.org/p/chromium/issues/detail?id=635971
-            // - https://bugzilla.mozilla.org/show_bug.cgi?id=1293741
-            activationState.wasElementMadeActive =
-              e && e.type === "keydown"
-                ? this.adapter_.isSurfaceActive()
-                : true;
-            if (activationState.wasElementMadeActive) {
-              this.animateActivation_();
-            } else {
-              // Reset activation state immediately if element was not made active.
-              this.activationState_ = this.defaultActivationState_();
-            }
-
-            // Reset array on next frame after the current event has had a chance to bubble to prevent ancestor ripples
-            activatedTargets = [];
-          });
-        }
-
-        /**
-         * @param {?Event=} event Optional event containing position information.
-         */
-        activate(event = null) {
-          this.activate_(event);
-        }
-
-        /** @private */
-        animateActivation_() {
-          const {
-            VAR_FG_TRANSLATE_START,
-            VAR_FG_TRANSLATE_END
-          } = MDCRippleFoundation.strings;
-          const {
-            FG_DEACTIVATION,
-            FG_ACTIVATION
-          } = MDCRippleFoundation.cssClasses;
-          const { DEACTIVATION_TIMEOUT_MS } = MDCRippleFoundation.numbers;
-
-          let translateStart = "";
-          let translateEnd = "";
-
-          if (!this.adapter_.isUnbounded()) {
-            const {
-              startPoint,
-              endPoint
-            } = this.getFgTranslationCoordinates_();
-            translateStart = `${startPoint.x}px, ${startPoint.y}px`;
-            translateEnd = `${endPoint.x}px, ${endPoint.y}px`;
-          }
-
-          this.adapter_.updateCssVariable(
-            VAR_FG_TRANSLATE_START,
-            translateStart
-          );
-          this.adapter_.updateCssVariable(VAR_FG_TRANSLATE_END, translateEnd);
-          // Cancel any ongoing activation/deactivation animations
-          clearTimeout(this.activationTimer_);
-          clearTimeout(this.fgDeactivationRemovalTimer_);
-          this.rmBoundedActivationClasses_();
-          this.adapter_.removeClass(FG_DEACTIVATION);
-
-          // Force layout in order to re-trigger the animation.
-          this.adapter_.computeBoundingRect();
-          this.adapter_.addClass(FG_ACTIVATION);
-          this.activationTimer_ = setTimeout(
-            () => this.activationTimerCallback_(),
-            DEACTIVATION_TIMEOUT_MS
-          );
-        }
-
-        /**
-         * @private
-         * @return {{startPoint: PointType, endPoint: PointType}}
-         */
-        getFgTranslationCoordinates_() {
-          const {
-            activationEvent,
-            wasActivatedByPointer
-          } = this.activationState_;
-
-          let startPoint;
-          if (wasActivatedByPointer) {
-            startPoint = Object(
-              __WEBPACK_IMPORTED_MODULE_3__util__[
-                "c" /* getNormalizedEventCoords */
-              ]
-            )(
-              /** @type {!Event} */ (activationEvent),
-              this.adapter_.getWindowPageOffset(),
-              this.adapter_.computeBoundingRect()
-            );
-          } else {
-            startPoint = {
-              x: this.frame_.width / 2,
-              y: this.frame_.height / 2
-            };
-          }
-          // Center the element around the start point.
-          startPoint = {
-            x: startPoint.x - this.initialSize_ / 2,
-            y: startPoint.y - this.initialSize_ / 2
-          };
-
-          const endPoint = {
-            x: this.frame_.width / 2 - this.initialSize_ / 2,
-            y: this.frame_.height / 2 - this.initialSize_ / 2
-          };
-
-          return { startPoint, endPoint };
-        }
-
-        /** @private */
-        runDeactivationUXLogicIfReady_() {
-          // This method is called both when a pointing device is released, and when the activation animation ends.
-          // The deactivation animation should only run after both of those occur.
-          const { FG_DEACTIVATION } = MDCRippleFoundation.cssClasses;
-          const { hasDeactivationUXRun, isActivated } = this.activationState_;
-          const activationHasEnded = hasDeactivationUXRun || !isActivated;
-
-          if (activationHasEnded && this.activationAnimationHasEnded_) {
-            this.rmBoundedActivationClasses_();
-            this.adapter_.addClass(FG_DEACTIVATION);
-            this.fgDeactivationRemovalTimer_ = setTimeout(() => {
-              this.adapter_.removeClass(FG_DEACTIVATION);
-            }, __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].FG_DEACTIVATION_MS);
-          }
-        }
-
-        /** @private */
-        rmBoundedActivationClasses_() {
-          const { FG_ACTIVATION } = MDCRippleFoundation.cssClasses;
-          this.adapter_.removeClass(FG_ACTIVATION);
-          this.activationAnimationHasEnded_ = false;
-          this.adapter_.computeBoundingRect();
-        }
-
-        resetActivationState_() {
-          this.previousActivationEvent_ = this.activationState_.activationEvent;
-          this.activationState_ = this.defaultActivationState_();
-          // Touch devices may fire additional events for the same interaction within a short time.
-          // Store the previous event until it's safe to assume that subsequent events are for new interactions.
-          setTimeout(
-            () => (this.previousActivationEvent_ = null),
-            MDCRippleFoundation.numbers.TAP_DELAY_MS
-          );
-        }
-
-        /**
-         * @param {?Event} e
-         * @private
-         */
-        deactivate_(e) {
-          const activationState = this.activationState_;
-          // This can happen in scenarios such as when you have a keyup event that blurs the element.
-          if (!activationState.isActivated) {
-            return;
-          }
-
-          const state = /** @type {!ActivationStateType} */ (Object.assign(
-            {},
-            activationState
-          ));
-
-          if (activationState.isProgrammatic) {
-            const evtObject = null;
-            requestAnimationFrame(() =>
-              this.animateDeactivation_(evtObject, state)
-            );
-            this.resetActivationState_();
-          } else {
-            this.deregisterDeactivationHandlers_();
-            requestAnimationFrame(() => {
-              this.activationState_.hasDeactivationUXRun = true;
-              this.animateDeactivation_(e, state);
-              this.resetActivationState_();
-            });
-          }
-        }
-
-        /**
-         * @param {?Event=} event Optional event containing position information.
-         */
-        deactivate(event = null) {
-          this.deactivate_(event);
-        }
-
-        /**
-         * @param {Event} e
-         * @param {!ActivationStateType} options
-         * @private
-         */
-        animateDeactivation_(
-          e,
-          { wasActivatedByPointer, wasElementMadeActive }
-        ) {
-          if (wasActivatedByPointer || wasElementMadeActive) {
-            this.runDeactivationUXLogicIfReady_();
-          }
-        }
-
-        layout() {
-          if (this.layoutFrame_) {
-            cancelAnimationFrame(this.layoutFrame_);
-          }
-          this.layoutFrame_ = requestAnimationFrame(() => {
-            this.layoutInternal_();
-            this.layoutFrame_ = 0;
-          });
-        }
-
-        /** @private */
-        layoutInternal_() {
-          this.frame_ = this.adapter_.computeBoundingRect();
-          const maxDim = Math.max(this.frame_.height, this.frame_.width);
-
-          // Surface diameter is treated differently for unbounded vs. bounded ripples.
-          // Unbounded ripple diameter is calculated smaller since the surface is expected to already be padded appropriately
-          // to extend the hitbox, and the ripple is expected to meet the edges of the padded hitbox (which is typically
-          // square). Bounded ripples, on the other hand, are fully expected to expand beyond the surface's longest diameter
-          // (calculated based on the diagonal plus a constant padding), and are clipped at the surface's border via
-          // `overflow: hidden`.
-          const getBoundedRadius = () => {
-            const hypotenuse = Math.sqrt(
-              Math.pow(this.frame_.width, 2) + Math.pow(this.frame_.height, 2)
-            );
-            return hypotenuse + MDCRippleFoundation.numbers.PADDING;
-          };
-
-          this.maxRadius_ = this.adapter_.isUnbounded()
-            ? maxDim
-            : getBoundedRadius();
-
-          // Ripple is sized as a fraction of the largest dimension of the surface, then scales up using a CSS scale transform
-          this.initialSize_ =
-            maxDim * MDCRippleFoundation.numbers.INITIAL_ORIGIN_SCALE;
-          this.fgScale_ = this.maxRadius_ / this.initialSize_;
-
-          this.updateLayoutCssVars_();
-        }
-
-        /** @private */
-        updateLayoutCssVars_() {
-          const {
-            VAR_FG_SIZE,
-            VAR_LEFT,
-            VAR_TOP,
-            VAR_FG_SCALE
-          } = MDCRippleFoundation.strings;
-
-          this.adapter_.updateCssVariable(
-            VAR_FG_SIZE,
-            `${this.initialSize_}px`
-          );
-          this.adapter_.updateCssVariable(VAR_FG_SCALE, this.fgScale_);
-
-          if (this.adapter_.isUnbounded()) {
-            this.unboundedCoords_ = {
-              left: Math.round(this.frame_.width / 2 - this.initialSize_ / 2),
-              top: Math.round(this.frame_.height / 2 - this.initialSize_ / 2)
-            };
-
-            this.adapter_.updateCssVariable(
-              VAR_LEFT,
-              `${this.unboundedCoords_.left}px`
-            );
-            this.adapter_.updateCssVariable(
-              VAR_TOP,
-              `${this.unboundedCoords_.top}px`
-            );
-          }
-        }
-
-        /** @param {boolean} unbounded */
-        setUnbounded(unbounded) {
-          const { UNBOUNDED } = MDCRippleFoundation.cssClasses;
-          if (unbounded) {
-            this.adapter_.addClass(UNBOUNDED);
-          } else {
-            this.adapter_.removeClass(UNBOUNDED);
-          }
-        }
-      }
-
-      /* harmony default export */ __webpack_exports__[
-        "a"
-      ] = MDCRippleFoundation;
 
       /***/
     },
     /* 189 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "a",
-        function() {
-          return cssClasses;
-        }
-      );
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "c",
-        function() {
-          return strings;
-        }
-      );
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "b",
-        function() {
-          return numbers;
-        }
-      );
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      const cssClasses = {
-        // Ripple is a special case where the "root" component is really a "mixin" of sorts,
-        // given that it's an 'upgrade' to an existing component. That being said it is the root
-        // CSS class that all other CSS classes derive from.
-        ROOT: "mdc-ripple-upgraded",
-        UNBOUNDED: "mdc-ripple-upgraded--unbounded",
-        BG_FOCUSED: "mdc-ripple-upgraded--background-focused",
-        FG_ACTIVATION: "mdc-ripple-upgraded--foreground-activation",
-        FG_DEACTIVATION: "mdc-ripple-upgraded--foreground-deactivation"
-      };
-
-      const strings = {
-        VAR_LEFT: "--mdc-ripple-left",
-        VAR_TOP: "--mdc-ripple-top",
-        VAR_FG_SIZE: "--mdc-ripple-fg-size",
-        VAR_FG_SCALE: "--mdc-ripple-fg-scale",
-        VAR_FG_TRANSLATE_START: "--mdc-ripple-fg-translate-start",
-        VAR_FG_TRANSLATE_END: "--mdc-ripple-fg-translate-end"
-      };
-
-      const numbers = {
-        PADDING: 10,
-        INITIAL_ORIGIN_SCALE: 0.6,
-        DEACTIVATION_TIMEOUT_MS: 225, // Corresponds to $mdc-ripple-translate-duration (i.e. activation animation duration)
-        FG_DEACTIVATION_MS: 150, // Corresponds to $mdc-ripple-fade-out-duration (i.e. deactivation animation duration)
-        TAP_DELAY_MS: 300 // Delay between touch and simulated mouse events on touch devices
-      };
-
-      /***/
-    },
-    /* 190 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
-        7
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        191
-      );
-      /**
-       * Copyright 2017 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      class MDCDialogFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_index__[
-        "b" /* MDCFoundation */
-      ] {
-        static get cssClasses() {
-          return __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */];
-        }
-
-        static get strings() {
-          return __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */];
-        }
-
-        static get defaultAdapter() {
-          return {
-            addClass: (/* className: string */) => {},
-            removeClass: (/* className: string */) => {},
-            addBodyClass: (/* className: string */) => {},
-            removeBodyClass: (/* className: string */) => {},
-            eventTargetHasClass: (/* target: EventTarget, className: string */) =>
-              /* boolean */ false,
-            registerInteractionHandler: (/* evt: string, handler: EventListener */) => {},
-            deregisterInteractionHandler: (/* evt: string, handler: EventListener */) => {},
-            registerSurfaceInteractionHandler: (/* evt: string, handler: EventListener */) => {},
-            deregisterSurfaceInteractionHandler: (/* evt: string, handler: EventListener */) => {},
-            registerDocumentKeydownHandler: (/* handler: EventListener */) => {},
-            deregisterDocumentKeydownHandler: (/* handler: EventListener */) => {},
-            registerTransitionEndHandler: (/* handler: EventListener */) => {},
-            deregisterTransitionEndHandler: (/* handler: EventListener */) => {},
-            notifyAccept: () => {},
-            notifyCancel: () => {},
-            trapFocusOnSurface: () => {},
-            untrapFocusOnSurface: () => {},
-            isDialog: (/* el: Element */) => /* boolean */ false,
-            layoutFooterRipples: () => {}
-          };
-        }
-
-        constructor(adapter) {
-          super(Object.assign(MDCDialogFoundation.defaultAdapter, adapter));
-          this.isOpen_ = false;
-          this.componentClickHandler_ = evt => {
-            if (
-              this.adapter_.eventTargetHasClass(
-                evt.target,
-                __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-                  .BACKDROP
-              )
-            ) {
-              this.cancel(true);
-            }
-          };
-          this.dialogClickHandler_ = evt => this.handleDialogClick_(evt);
-          this.documentKeydownHandler_ = evt => {
-            if ((evt.key && evt.key === "Escape") || evt.keyCode === 27) {
-              this.cancel(true);
-            }
-          };
-          this.transitionEndHandler_ = evt => this.handleTransitionEnd_(evt);
-        }
-
-        destroy() {
-          // Ensure that dialog is cleaned up when destroyed
-          if (this.isOpen_) {
-            this.adapter_.deregisterSurfaceInteractionHandler(
-              "click",
-              this.dialogClickHandler_
-            );
-            this.adapter_.deregisterDocumentKeydownHandler(
-              this.documentKeydownHandler_
-            );
-            this.adapter_.deregisterInteractionHandler(
-              "click",
-              this.componentClickHandler_
-            );
-            this.adapter_.untrapFocusOnSurface();
-            this.adapter_.deregisterTransitionEndHandler(
-              this.transitionEndHandler_
-            );
-            this.adapter_.removeClass(MDCDialogFoundation.cssClasses.ANIMATING);
-            this.adapter_.removeClass(MDCDialogFoundation.cssClasses.OPEN);
-            this.enableScroll_();
-          }
-        }
-
-        open() {
-          this.isOpen_ = true;
-          this.disableScroll_();
-          this.adapter_.registerDocumentKeydownHandler(
-            this.documentKeydownHandler_
-          );
-          this.adapter_.registerSurfaceInteractionHandler(
-            "click",
-            this.dialogClickHandler_
-          );
-          this.adapter_.registerInteractionHandler(
-            "click",
-            this.componentClickHandler_
-          );
-          this.adapter_.registerTransitionEndHandler(
-            this.transitionEndHandler_
-          );
-          this.adapter_.addClass(MDCDialogFoundation.cssClasses.ANIMATING);
-          this.adapter_.addClass(MDCDialogFoundation.cssClasses.OPEN);
-        }
-
-        close() {
-          this.isOpen_ = false;
-          this.adapter_.deregisterSurfaceInteractionHandler(
-            "click",
-            this.dialogClickHandler_
-          );
-          this.adapter_.deregisterDocumentKeydownHandler(
-            this.documentKeydownHandler_
-          );
-          this.adapter_.deregisterInteractionHandler(
-            "click",
-            this.componentClickHandler_
-          );
-          this.adapter_.untrapFocusOnSurface();
-          this.adapter_.registerTransitionEndHandler(
-            this.transitionEndHandler_
-          );
-          this.adapter_.addClass(MDCDialogFoundation.cssClasses.ANIMATING);
-          this.adapter_.removeClass(MDCDialogFoundation.cssClasses.OPEN);
-        }
-
-        isOpen() {
-          return this.isOpen_;
-        }
-
-        accept(shouldNotify) {
-          if (shouldNotify) {
-            this.adapter_.notifyAccept();
-          }
-
-          this.close();
-        }
-
-        cancel(shouldNotify) {
-          if (shouldNotify) {
-            this.adapter_.notifyCancel();
-          }
-
-          this.close();
-        }
-
-        handleDialogClick_(evt) {
-          const { target } = evt;
-          if (
-            this.adapter_.eventTargetHasClass(
-              target,
-              __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-                .ACCEPT_BTN
-            )
-          ) {
-            this.accept(true);
-          } else if (
-            this.adapter_.eventTargetHasClass(
-              target,
-              __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-                .CANCEL_BTN
-            )
-          ) {
-            this.cancel(true);
-          }
-        }
-
-        handleTransitionEnd_(evt) {
-          if (this.adapter_.isDialog(evt.target)) {
-            this.adapter_.deregisterTransitionEndHandler(
-              this.transitionEndHandler_
-            );
-            this.adapter_.removeClass(MDCDialogFoundation.cssClasses.ANIMATING);
-            if (this.isOpen_) {
-              this.adapter_.trapFocusOnSurface();
-              this.adapter_.layoutFooterRipples();
-            } else {
-              this.enableScroll_();
-            }
-          }
-        }
-
-        disableScroll_() {
-          this.adapter_.addBodyClass(
-            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-              .SCROLL_LOCK
-          );
-        }
-
-        enableScroll_() {
-          this.adapter_.removeBodyClass(
-            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-              .SCROLL_LOCK
-          );
-        }
-      }
-      /* harmony export (immutable) */ __webpack_exports__[
-        "a"
-      ] = MDCDialogFoundation;
-
-      /***/
-    },
-    /* 191 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /**
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      const cssClasses = {
-        ROOT: "mdc-dialog",
-        OPEN: "mdc-dialog--open",
-        ANIMATING: "mdc-dialog--animating",
-        BACKDROP: "mdc-dialog__backdrop",
-        SCROLL_LOCK: "mdc-dialog-scroll-lock",
-        ACCEPT_BTN: "mdc-dialog__footer__button--accept",
-        CANCEL_BTN: "mdc-dialog__footer__button--cancel"
-      };
-      /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
-
-      const strings = {
-        OPEN_DIALOG_SELECTOR: ".mdc-dialog--open",
-        DIALOG_SURFACE_SELECTOR: ".mdc-dialog__surface",
-        ACCEPT_SELECTOR: ".mdc-dialog__footer__button--accept",
-        ACCEPT_EVENT: "MDCDialog:accept",
-        CANCEL_EVENT: "MDCDialog:cancel"
-      };
-      /* harmony export (immutable) */ __webpack_exports__["b"] = strings;
-
-      /***/
-    },
-    /* 192 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-      /* harmony export (immutable) */ __webpack_exports__[
-        "createFocusTrapInstance"
-      ] = createFocusTrapInstance;
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(
-        193
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap___default = __webpack_require__.n(
-        __WEBPACK_IMPORTED_MODULE_0_focus_trap__
-      );
-      /**
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      function createFocusTrapInstance(
-        surfaceEl,
-        acceptButtonEl,
-        focusTrapFactory = __WEBPACK_IMPORTED_MODULE_0_focus_trap___default.a
-      ) {
-        return focusTrapFactory(surfaceEl, {
-          initialFocus: acceptButtonEl,
-          clickOutsideDeactivates: true
-        });
-      }
-
-      /***/
-    },
-    /* 193 */
-    /***/ function(module, exports, __webpack_require__) {
-      var tabbable = __webpack_require__(194);
-
-      var listeningFocusTrap = null;
-
-      function focusTrap(element, userOptions) {
-        var tabbableNodes = [];
-        var firstTabbableNode = null;
-        var lastTabbableNode = null;
-        var nodeFocusedBeforeActivation = null;
-        var active = false;
-        var paused = false;
-        var tabEvent = null;
-
-        var container =
-          typeof element === "string"
-            ? document.querySelector(element)
-            : element;
-
-        var config = userOptions || {};
-        config.returnFocusOnDeactivate =
-          userOptions && userOptions.returnFocusOnDeactivate !== undefined
-            ? userOptions.returnFocusOnDeactivate
-            : true;
-        config.escapeDeactivates =
-          userOptions && userOptions.escapeDeactivates !== undefined
-            ? userOptions.escapeDeactivates
-            : true;
-
-        var trap = {
-          activate: activate,
-          deactivate: deactivate,
-          pause: pause,
-          unpause: unpause
-        };
-
-        return trap;
-
-        function activate(activateOptions) {
-          if (active) return;
-
-          var defaultedActivateOptions = {
-            onActivate:
-              activateOptions && activateOptions.onActivate !== undefined
-                ? activateOptions.onActivate
-                : config.onActivate
-          };
-
-          active = true;
-          paused = false;
-          nodeFocusedBeforeActivation = document.activeElement;
-
-          if (defaultedActivateOptions.onActivate) {
-            defaultedActivateOptions.onActivate();
-          }
-
-          addListeners();
-          return trap;
-        }
-
-        function deactivate(deactivateOptions) {
-          if (!active) return;
-
-          var defaultedDeactivateOptions = {
-            returnFocus:
-              deactivateOptions && deactivateOptions.returnFocus !== undefined
-                ? deactivateOptions.returnFocus
-                : config.returnFocusOnDeactivate,
-            onDeactivate:
-              deactivateOptions && deactivateOptions.onDeactivate !== undefined
-                ? deactivateOptions.onDeactivate
-                : config.onDeactivate
-          };
-
-          removeListeners();
-
-          if (defaultedDeactivateOptions.onDeactivate) {
-            defaultedDeactivateOptions.onDeactivate();
-          }
-
-          if (defaultedDeactivateOptions.returnFocus) {
-            setTimeout(function() {
-              tryFocus(nodeFocusedBeforeActivation);
-            }, 0);
-          }
-
-          active = false;
-          paused = false;
-          return this;
-        }
-
-        function pause() {
-          if (paused || !active) return;
-          paused = true;
-          removeListeners();
-        }
-
-        function unpause() {
-          if (!paused || !active) return;
-          paused = false;
-          addListeners();
-        }
-
-        function addListeners() {
-          if (!active) return;
-
-          // There can be only one listening focus trap at a time
-          if (listeningFocusTrap) {
-            listeningFocusTrap.pause();
-          }
-          listeningFocusTrap = trap;
-
-          updateTabbableNodes();
-          tryFocus(firstFocusNode());
-          document.addEventListener("focus", checkFocus, true);
-          document.addEventListener("click", checkClick, true);
-          document.addEventListener("mousedown", checkPointerDown, true);
-          document.addEventListener("touchstart", checkPointerDown, true);
-          document.addEventListener("keydown", checkKey, true);
-
-          return trap;
-        }
-
-        function removeListeners() {
-          if (!active || listeningFocusTrap !== trap) return;
-
-          document.removeEventListener("focus", checkFocus, true);
-          document.removeEventListener("click", checkClick, true);
-          document.removeEventListener("mousedown", checkPointerDown, true);
-          document.removeEventListener("touchstart", checkPointerDown, true);
-          document.removeEventListener("keydown", checkKey, true);
-
-          listeningFocusTrap = null;
-
-          return trap;
-        }
-
-        function getNodeForOption(optionName) {
-          var optionValue = config[optionName];
-          var node = optionValue;
-          if (!optionValue) {
-            return null;
-          }
-          if (typeof optionValue === "string") {
-            node = document.querySelector(optionValue);
-            if (!node) {
-              throw new Error("`" + optionName + "` refers to no known node");
-            }
-          }
-          if (typeof optionValue === "function") {
-            node = optionValue();
-            if (!node) {
-              throw new Error("`" + optionName + "` did not return a node");
-            }
-          }
-          return node;
-        }
-
-        function firstFocusNode() {
-          var node;
-          if (getNodeForOption("initialFocus") !== null) {
-            node = getNodeForOption("initialFocus");
-          } else if (container.contains(document.activeElement)) {
-            node = document.activeElement;
-          } else {
-            node = tabbableNodes[0] || getNodeForOption("fallbackFocus");
-          }
-
-          if (!node) {
-            throw new Error(
-              "You can't have a focus-trap without at least one focusable element"
-            );
-          }
-
-          return node;
-        }
-
-        // This needs to be done on mousedown and touchstart instead of click
-        // so that it precedes the focus event
-        function checkPointerDown(e) {
-          if (config.clickOutsideDeactivates && !container.contains(e.target)) {
-            deactivate({ returnFocus: false });
-          }
-        }
-
-        function checkClick(e) {
-          if (config.clickOutsideDeactivates) return;
-          if (container.contains(e.target)) return;
-          e.preventDefault();
-          e.stopImmediatePropagation();
-        }
-
-        function checkFocus(e) {
-          if (container.contains(e.target)) return;
-          e.preventDefault();
-          e.stopImmediatePropagation();
-          // Checking for a blur method here resolves a Firefox issue (#15)
-          if (typeof e.target.blur === "function") e.target.blur();
-
-          if (tabEvent) {
-            readjustFocus(tabEvent);
-          }
-        }
-
-        function checkKey(e) {
-          if (e.key === "Tab" || e.keyCode === 9) {
-            handleTab(e);
-          }
-
-          if (config.escapeDeactivates !== false && isEscapeEvent(e)) {
-            deactivate();
-          }
-        }
-
-        function handleTab(e) {
-          updateTabbableNodes();
-
-          if (
-            e.target.hasAttribute("tabindex") &&
-            Number(e.target.getAttribute("tabindex")) < 0
-          ) {
-            return (tabEvent = e);
-          }
-
-          e.preventDefault();
-          var currentFocusIndex = tabbableNodes.indexOf(e.target);
-
-          if (e.shiftKey) {
-            if (
-              e.target === firstTabbableNode ||
-              tabbableNodes.indexOf(e.target) === -1
-            ) {
-              return tryFocus(lastTabbableNode);
-            }
-            return tryFocus(tabbableNodes[currentFocusIndex - 1]);
-          }
-
-          if (e.target === lastTabbableNode) return tryFocus(firstTabbableNode);
-
-          tryFocus(tabbableNodes[currentFocusIndex + 1]);
-        }
-
-        function updateTabbableNodes() {
-          tabbableNodes = tabbable(container);
-          firstTabbableNode = tabbableNodes[0];
-          lastTabbableNode = tabbableNodes[tabbableNodes.length - 1];
-        }
-
-        function readjustFocus(e) {
-          if (e.shiftKey) return tryFocus(lastTabbableNode);
-
-          tryFocus(firstTabbableNode);
-        }
-      }
-
-      function isEscapeEvent(e) {
-        return e.key === "Escape" || e.key === "Esc" || e.keyCode === 27;
-      }
-
-      function tryFocus(node) {
-        if (!node || !node.focus) return;
-        if (node === document.activeElement) return;
-
-        node.focus();
-        if (node.tagName.toLowerCase() === "input") {
-          node.select();
-        }
-      }
-
-      module.exports = focusTrap;
-
-      /***/
-    },
-    /* 194 */
-    /***/ function(module, exports) {
-      module.exports = function(el, options) {
-        options = options || {};
-
-        var elementDocument = el.ownerDocument || el;
-        var basicTabbables = [];
-        var orderedTabbables = [];
-
-        // A node is "available" if
-        // - it's computed style
-        var isUnavailable = createIsUnavailable(elementDocument);
-
-        var candidateSelectors = [
-          "input",
-          "select",
-          "a[href]",
-          "textarea",
-          "button",
-          "[tabindex]"
-        ];
-
-        var candidates = el.querySelectorAll(candidateSelectors.join(","));
-
-        if (options.includeContainer) {
-          var matches =
-            Element.prototype.matches ||
-            Element.prototype.msMatchesSelector ||
-            Element.prototype.webkitMatchesSelector;
-
-          if (
-            candidateSelectors.some(function(candidateSelector) {
-              return matches.call(el, candidateSelector);
-            })
-          ) {
-            candidates = Array.prototype.slice.apply(candidates);
-            candidates.unshift(el);
-          }
-        }
-
-        var candidate, candidateIndex;
-        for (var i = 0, l = candidates.length; i < l; i++) {
-          candidate = candidates[i];
-          candidateIndex =
-            parseInt(candidate.getAttribute("tabindex"), 10) ||
-            candidate.tabIndex;
-
-          if (
-            candidateIndex < 0 ||
-            (candidate.tagName === "INPUT" && candidate.type === "hidden") ||
-            candidate.disabled ||
-            isUnavailable(candidate, elementDocument)
-          ) {
-            continue;
-          }
-
-          if (candidateIndex === 0) {
-            basicTabbables.push(candidate);
-          } else {
-            orderedTabbables.push({
-              index: i,
-              tabIndex: candidateIndex,
-              node: candidate
-            });
-          }
-        }
-
-        var tabbableNodes = orderedTabbables
-          .sort(function(a, b) {
-            return a.tabIndex === b.tabIndex
-              ? a.index - b.index
-              : a.tabIndex - b.tabIndex;
-          })
-          .map(function(a) {
-            return a.node;
-          });
-
-        Array.prototype.push.apply(tabbableNodes, basicTabbables);
-
-        return tabbableNodes;
-      };
-
-      function createIsUnavailable(elementDocument) {
-        // Node cache must be refreshed on every check, in case
-        // the content of the element has changed
-        var isOffCache = [];
-
-        // "off" means `display: none;`, as opposed to "hidden",
-        // which means `visibility: hidden;`. getComputedStyle
-        // accurately reflects visiblity in context but not
-        // "off" state, so we need to recursively check parents.
-
-        function isOff(node, nodeComputedStyle) {
-          if (node === elementDocument.documentElement) return false;
-
-          // Find the cached node (Array.prototype.find not available in IE9)
-          for (var i = 0, length = isOffCache.length; i < length; i++) {
-            if (isOffCache[i][0] === node) return isOffCache[i][1];
-          }
-
-          nodeComputedStyle =
-            nodeComputedStyle ||
-            elementDocument.defaultView.getComputedStyle(node);
-
-          var result = false;
-
-          if (nodeComputedStyle.display === "none") {
-            result = true;
-          } else if (node.parentNode) {
-            result = isOff(node.parentNode);
-          }
-
-          isOffCache.push([node, result]);
-
-          return result;
-        }
-
-        return function isUnavailable(node) {
-          if (node === elementDocument.documentElement) return false;
-
-          var computedStyle = elementDocument.defaultView.getComputedStyle(
-            node
-          );
-
-          if (isOff(node, computedStyle)) return true;
-
-          return computedStyle.visibility === "hidden";
-        };
-      }
-
-      /***/
-    },
-    /* 195 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -28435,25 +27056,31 @@
 
       /***/
     },
-    /* 196 */
+    /* 190 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
         __webpack_exports__,
-        "a",
+        "b",
         function() {
           return MDCMenuFoundation;
         }
       );
-      /* unused harmony export AnchorMargin */
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "a",
+        function() {
+          return AnchorMargin;
+        }
+      );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        197
+        191
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        26
+        27
       );
       /**
        * @license
@@ -29265,7 +27892,7 @@
 
       /***/
     },
-    /* 197 */
+    /* 191 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* unused harmony export MDCMenuAdapter */
@@ -29434,6 +28061,1148 @@
 
       /***/
     },
+    /* 192 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AccountsComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _accounts = __webpack_require__(193);
+
+      var _accounts2 = _interopRequireDefault(_accounts);
+
+      var _accountItem = __webpack_require__(194);
+
+      var _accountItem2 = _interopRequireDefault(_accountItem);
+
+      var _buttonMore = __webpack_require__(15);
+
+      var _accountService = __webpack_require__(28);
+
+      var _addAccountDialog = __webpack_require__(195);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var AccountsComponent = (exports.AccountsComponent = (function() {
+        function AccountsComponent(mountPoint, props) {
+          _classCallCheck(this, AccountsComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(AccountsComponent, [
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.accountsRoot = this.mountPoint.querySelector(".accounts");
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".accounts__more-button"
+              );
+              this.addAccountButton = this.mountPoint.querySelector(
+                ".accounts__add-account-dialog-activation"
+              );
+              this.addAccountMountPoint = document.querySelector(
+                ".accounts__add-account-dialog"
+              );
+              this.accountsList = this.mountPoint.querySelector(
+                ".accounts__list-items"
+              );
+            }
+          },
+          {
+            key: "handleAddAccountConfirmed",
+            value: function handleAddAccountConfirmed(account) {
+              _accountService.AccountListService.add(account);
+              this.addAccountToHead(account);
+            }
+          },
+          {
+            key: "handleAddAccountClicked",
+            value: function handleAddAccountClicked() {
+              this.addAccountDialogComponent.showDialog();
+            }
+          },
+          {
+            key: "initMoreBtns",
+            value: function initMoreBtns() {
+              var _this = this;
+
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".accounts__more-button"
+              );
+              Array.from(this.moreBtnMountPoints).forEach(function(point) {
+                new _buttonMore.ButtonMoreComponent(point, {
+                  position: "right",
+                  onDeleteClick: _this.handleDeleteClick.bind(_this),
+                  onEditClick: _this.handleEditClick.bind(_this)
+                }).mount();
+              });
+            }
+          },
+          {
+            key: "initAddAccountDialogComponent",
+            value: function initAddAccountDialogComponent() {
+              this.addAccountDialogComponent = new _addAccountDialog.AddAccountDialogComponent(
+                this.addAccountMountPoint,
+                {
+                  onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+                }
+              );
+              this.addAccountDialogComponent.mount();
+            }
+          },
+          {
+            key: "initAccounts",
+            value: function initAccounts(accounts) {
+              var _this2 = this;
+
+              accounts.forEach(function(item) {
+                _this2.addAccount(item);
+              });
+            }
+          },
+          {
+            key: "initData",
+            value: function initData() {
+              var _this3 = this;
+
+              this.accountsList.innerHTML = "";
+              _accountService.AccountListService.get().then(function(accounts) {
+                if (!accounts) {
+                  accounts = [];
+                  _accountService.AccountListService.set(accounts);
+                }
+                _this3.initAccounts(accounts);
+              });
+            }
+          },
+          {
+            key: "updateAccountData",
+            value: function updateAccountData(transaction) {
+              var _this4 = this;
+
+              _accountService.AccountListService.update(
+                transaction.account,
+                parseInt(transaction.type + transaction.amount)
+              ).then(function() {
+                _this4.initData();
+              });
+            }
+          },
+          {
+            key: "updateAccountDataDelete",
+            value: function updateAccountDataDelete(transaction) {
+              var _this5 = this;
+
+              _accountService.AccountListService.update(
+                transaction.account,
+                -parseInt(transaction.type + transaction.amount)
+              ).then(function() {
+                _this5.initData();
+              });
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.addAccountButton.addEventListener(
+                "click",
+                this.handleAddAccountClicked.bind(this)
+              );
+            }
+          },
+          {
+            key: "addAccountToHead",
+            value: function addAccountToHead(account) {
+              this.accountsList.innerHTML =
+                (0, _accountItem2.default)({ account: account }) +
+                this.accountsList.innerHTML;
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "addAccount",
+            value: function addAccount(account) {
+              this.accountsList.innerHTML += (0, _accountItem2.default)({
+                account: account
+              });
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "handleEditClick",
+            value: function handleEditClick() {
+              console.log("handleEditClick");
+            }
+          },
+          {
+            key: "handleDeleteClick",
+            value: function handleDeleteClick() {
+              console.log("handleDeleteClick");
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _accounts2.default)();
+              this.querySelectors();
+              this.initMoreBtns();
+              this.addEventListeners();
+              this.initAddAccountDialogComponent();
+              this.initData();
+            }
+          }
+        ]);
+
+        return AccountsComponent;
+      })());
+
+      /***/
+    },
+    /* 193 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<div class="accounts">\n  <nav class="accounts__list  mdc-list--non-interactive">\n    <a class="accounts__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\n      <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n      Add new account\n    </a>\n  </nav>\n  <nav class="accounts__list-items  mdc-list--non-interactive">\n  </nav>\n  <div class="accounts__add-account-dialog"></div>\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 194 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<a class="accounts__list-item mdc-list-item" href="#">\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\n  ' +
+            ((__t = account.name) == null ? "" : __t) +
+            "\n  " +
+            ((__t = account.balance) == null ? "" : __t) +
+            "\n  " +
+            ((__t = account.currency) == null ? "" : __t) +
+            '\n  <div class="accounts__more-button"></div>\n</a>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 195 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AddAccountDialogComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _addAccountDialog = __webpack_require__(196);
+
+      var _addAccountDialog2 = _interopRequireDefault(_addAccountDialog);
+
+      var _dialog = __webpack_require__(8);
+
+      var _textfield = __webpack_require__(19);
+
+      var _select = __webpack_require__(25);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var AddAccountDialogComponent = (exports.AddAccountDialogComponent = (function() {
+        function AddAccountDialogComponent(mountPoint, props) {
+          _classCallCheck(this, AddAccountDialogComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(AddAccountDialogComponent, [
+          {
+            key: "showDialog",
+            value: function showDialog() {
+              this.dialog.show();
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.addAccountDialogComponent = this.mountPoint.querySelector(
+                ".add-account-dialog"
+              );
+              this.accountTextField = this.mountPoint.querySelector(
+                ".add-account-dialog__account"
+              );
+              this.balanceTextField = this.mountPoint.querySelector(
+                ".add-account-dialog__balance"
+              );
+              this.accountNameInput = this.mountPoint.querySelector(
+                ".add-account-dialog__account-input"
+              );
+              this.balanceNameInput = this.mountPoint.querySelector(
+                ".add-account-dialog__balance-input"
+              );
+              this.typeAccountSelect = this.mountPoint.querySelector(
+                ".add-account-dialog__type"
+              );
+              this.currencyAccountSelect = this.mountPoint.querySelector(
+                ".add-account-dialog__currency"
+              );
+              this.accountType = this.mountPoint.querySelector(
+                ".add-account-dialog__type-text"
+              );
+              this.accountCurrency = this.mountPoint.querySelector(
+                ".add-account-dialog__currency-text"
+              );
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.dialog = new _dialog.MDCDialog(
+                this.addAccountDialogComponent
+              );
+              this.account = new _textfield.MDCTextField(this.accountTextField);
+              this.balance = new _textfield.MDCTextField(this.balanceTextField);
+              this.type = new _select.MDCSelect(this.typeAccountSelect);
+              this.currency = new _select.MDCSelect(this.currencyAccountSelect);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+              this.dialog.listen(
+                "MDCDialog:cancel",
+                this.handleCancel.bind(this)
+              );
+            }
+          },
+          {
+            key: "clean",
+            value: function clean() {
+              this.accountNameInput.value = "";
+              this.balanceNameInput.value = "";
+              this.type.selectedIndex = -1;
+              this.currency.selectedIndex = -1;
+            }
+          },
+          {
+            key: "handleOk",
+            value: function handleOk() {
+              this.props.onAddAccountConfirm({
+                name: this.accountNameInput.value,
+                balance: parseInt(this.balanceNameInput.value),
+                type: this.accountType.innerText,
+                currency: this.accountCurrency.innerText
+              });
+              this.clean();
+            }
+          },
+          {
+            key: "handleCancel",
+            value: function handleCancel() {
+              this.clean();
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _addAccountDialog2.default)({
+                types: [
+                  "checking",
+                  "savings",
+                  "credit card",
+                  "cash",
+                  "investiment",
+                  "loan",
+                  "cd",
+                  "real estate",
+                  "vehicle",
+                  "insurance",
+                  "other"
+                ],
+                currencies: ["UAH", "USD", "EUR"]
+              });
+              this.querySelectors();
+              this.initMDC();
+              this.addEventListeners();
+            }
+          }
+        ]);
+
+        return AddAccountDialogComponent;
+      })());
+
+      /***/
+    },
+    /* 196 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "",
+          __j = Array.prototype.join;
+        function print() {
+          __p += __j.call(arguments, "");
+        }
+        with (obj) {
+          __p +=
+            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
+          for (let i = 0; i < types.length; i++) {
+            __p +=
+              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
+              ((__t = types[i]) == null ? "" : __t) +
+              "\n                  </li>\n                  ";
+          }
+          __p +=
+            '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Currency</div>\n              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
+          for (let i = 0; i < currencies.length; i++) {
+            __p +=
+              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
+              ((__t = currencies[i]) == null ? "" : __t) +
+              "\n                  </li>\n                  ";
+          }
+          __p +=
+            '\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\n      </button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 197 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
+        3
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
+        29
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
+        198
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
+        18
+      );
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /**
+       * @typedef {!{
+       *   isActivated: (boolean|undefined),
+       *   hasDeactivationUXRun: (boolean|undefined),
+       *   wasActivatedByPointer: (boolean|undefined),
+       *   wasElementMadeActive: (boolean|undefined),
+       *   activationEvent: Event,
+       *   isProgrammatic: (boolean|undefined)
+       * }}
+       */
+      let ActivationStateType;
+
+      /**
+       * @typedef {!{
+       *   activate: (string|undefined),
+       *   deactivate: (string|undefined),
+       *   focus: (string|undefined),
+       *   blur: (string|undefined)
+       * }}
+       */
+      let ListenerInfoType;
+
+      /**
+       * @typedef {!{
+       *   activate: function(!Event),
+       *   deactivate: function(!Event),
+       *   focus: function(),
+       *   blur: function()
+       * }}
+       */
+      let ListenersType;
+
+      /**
+       * @typedef {!{
+       *   x: number,
+       *   y: number
+       * }}
+       */
+      let PointType;
+
+      // Activation events registered on the root element of each instance for activation
+      const ACTIVATION_EVENT_TYPES = [
+        "touchstart",
+        "pointerdown",
+        "mousedown",
+        "keydown"
+      ];
+
+      // Deactivation events registered on documentElement when a pointer-related down event occurs
+      const POINTER_DEACTIVATION_EVENT_TYPES = [
+        "touchend",
+        "pointerup",
+        "mouseup"
+      ];
+
+      // Tracks activations that have occurred on the current frame, to avoid simultaneous nested activations
+      /** @type {!Array<!EventTarget>} */
+      let activatedTargets = [];
+
+      /**
+       * @extends {MDCFoundation<!MDCRippleAdapter>}
+       */
+      class MDCRippleFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
+        "a" /* default */
+      ] {
+        static get cssClasses() {
+          return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        }
+
+        static get strings() {
+          return __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */];
+        }
+
+        static get numbers() {
+          return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */];
+        }
+
+        static get defaultAdapter() {
+          return {
+            browserSupportsCssVars: () => /* boolean - cached */ {},
+            isUnbounded: () => /* boolean */ {},
+            isSurfaceActive: () => /* boolean */ {},
+            isSurfaceDisabled: () => /* boolean */ {},
+            addClass: (/* className: string */) => {},
+            removeClass: (/* className: string */) => {},
+            containsEventTarget: (/* target: !EventTarget */) => {},
+            registerInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
+            deregisterInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
+            registerDocumentInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
+            deregisterDocumentInteractionHandler: (/* evtType: string, handler: EventListener */) => {},
+            registerResizeHandler: (/* handler: EventListener */) => {},
+            deregisterResizeHandler: (/* handler: EventListener */) => {},
+            updateCssVariable: (/* varName: string, value: string */) => {},
+            computeBoundingRect: () => /* ClientRect */ {},
+            getWindowPageOffset: () => /* {x: number, y: number} */ {}
+          };
+        }
+
+        constructor(adapter) {
+          super(Object.assign(MDCRippleFoundation.defaultAdapter, adapter));
+
+          /** @private {number} */
+          this.layoutFrame_ = 0;
+
+          /** @private {!ClientRect} */
+          this.frame_ = /** @type {!ClientRect} */ ({ width: 0, height: 0 });
+
+          /** @private {!ActivationStateType} */
+          this.activationState_ = this.defaultActivationState_();
+
+          /** @private {number} */
+          this.initialSize_ = 0;
+
+          /** @private {number} */
+          this.maxRadius_ = 0;
+
+          /** @private {function(!Event)} */
+          this.activateHandler_ = e => this.activate_(e);
+
+          /** @private {function(!Event)} */
+          this.deactivateHandler_ = e => this.deactivate_(e);
+
+          /** @private {function(?Event=)} */
+          this.focusHandler_ = () =>
+            requestAnimationFrame(() =>
+              this.adapter_.addClass(MDCRippleFoundation.cssClasses.BG_FOCUSED)
+            );
+
+          /** @private {function(?Event=)} */
+          this.blurHandler_ = () =>
+            requestAnimationFrame(() =>
+              this.adapter_.removeClass(
+                MDCRippleFoundation.cssClasses.BG_FOCUSED
+              )
+            );
+
+          /** @private {!Function} */
+          this.resizeHandler_ = () => this.layout();
+
+          /** @private {!{left: number, top:number}} */
+          this.unboundedCoords_ = {
+            left: 0,
+            top: 0
+          };
+
+          /** @private {number} */
+          this.fgScale_ = 0;
+
+          /** @private {number} */
+          this.activationTimer_ = 0;
+
+          /** @private {number} */
+          this.fgDeactivationRemovalTimer_ = 0;
+
+          /** @private {boolean} */
+          this.activationAnimationHasEnded_ = false;
+
+          /** @private {!Function} */
+          this.activationTimerCallback_ = () => {
+            this.activationAnimationHasEnded_ = true;
+            this.runDeactivationUXLogicIfReady_();
+          };
+
+          /** @private {?Event} */
+          this.previousActivationEvent_ = null;
+        }
+
+        /**
+         * We compute this property so that we are not querying information about the client
+         * until the point in time where the foundation requests it. This prevents scenarios where
+         * client-side feature-detection may happen too early, such as when components are rendered on the server
+         * and then initialized at mount time on the client.
+         * @return {boolean}
+         * @private
+         */
+        isSupported_() {
+          return this.adapter_.browserSupportsCssVars();
+        }
+
+        /**
+         * @return {!ActivationStateType}
+         */
+        defaultActivationState_() {
+          return {
+            isActivated: false,
+            hasDeactivationUXRun: false,
+            wasActivatedByPointer: false,
+            wasElementMadeActive: false,
+            activationEvent: null,
+            isProgrammatic: false
+          };
+        }
+
+        init() {
+          if (!this.isSupported_()) {
+            return;
+          }
+          this.registerRootHandlers_();
+
+          const { ROOT, UNBOUNDED } = MDCRippleFoundation.cssClasses;
+          requestAnimationFrame(() => {
+            this.adapter_.addClass(ROOT);
+            if (this.adapter_.isUnbounded()) {
+              this.adapter_.addClass(UNBOUNDED);
+            }
+            this.layoutInternal_();
+          });
+        }
+
+        destroy() {
+          if (!this.isSupported_()) {
+            return;
+          }
+          this.deregisterRootHandlers_();
+          this.deregisterDeactivationHandlers_();
+
+          const { ROOT, UNBOUNDED } = MDCRippleFoundation.cssClasses;
+          requestAnimationFrame(() => {
+            this.adapter_.removeClass(ROOT);
+            this.adapter_.removeClass(UNBOUNDED);
+            this.removeCssVars_();
+          });
+        }
+
+        /** @private */
+        registerRootHandlers_() {
+          ACTIVATION_EVENT_TYPES.forEach(type => {
+            this.adapter_.registerInteractionHandler(
+              type,
+              this.activateHandler_
+            );
+          });
+          this.adapter_.registerInteractionHandler("focus", this.focusHandler_);
+          this.adapter_.registerInteractionHandler("blur", this.blurHandler_);
+          this.adapter_.registerResizeHandler(this.resizeHandler_);
+        }
+
+        /**
+         * @param {!Event} e
+         * @private
+         */
+        registerDeactivationHandlers_(e) {
+          if (e.type === "keydown") {
+            this.adapter_.registerInteractionHandler(
+              "keyup",
+              this.deactivateHandler_
+            );
+          } else {
+            POINTER_DEACTIVATION_EVENT_TYPES.forEach(type => {
+              this.adapter_.registerDocumentInteractionHandler(
+                type,
+                this.deactivateHandler_
+              );
+            });
+          }
+        }
+
+        /** @private */
+        deregisterRootHandlers_() {
+          ACTIVATION_EVENT_TYPES.forEach(type => {
+            this.adapter_.deregisterInteractionHandler(
+              type,
+              this.activateHandler_
+            );
+          });
+          this.adapter_.deregisterInteractionHandler(
+            "focus",
+            this.focusHandler_
+          );
+          this.adapter_.deregisterInteractionHandler("blur", this.blurHandler_);
+          this.adapter_.deregisterResizeHandler(this.resizeHandler_);
+        }
+
+        /** @private */
+        deregisterDeactivationHandlers_() {
+          this.adapter_.deregisterInteractionHandler(
+            "keyup",
+            this.deactivateHandler_
+          );
+          POINTER_DEACTIVATION_EVENT_TYPES.forEach(type => {
+            this.adapter_.deregisterDocumentInteractionHandler(
+              type,
+              this.deactivateHandler_
+            );
+          });
+        }
+
+        /** @private */
+        removeCssVars_() {
+          const { strings } = MDCRippleFoundation;
+          Object.keys(strings).forEach(k => {
+            if (k.indexOf("VAR_") === 0) {
+              this.adapter_.updateCssVariable(strings[k], null);
+            }
+          });
+        }
+
+        /**
+         * @param {?Event} e
+         * @private
+         */
+        activate_(e) {
+          if (this.adapter_.isSurfaceDisabled()) {
+            return;
+          }
+
+          const activationState = this.activationState_;
+          if (activationState.isActivated) {
+            return;
+          }
+
+          // Avoid reacting to follow-on events fired by touch device after an already-processed user interaction
+          const previousActivationEvent = this.previousActivationEvent_;
+          const isSameInteraction =
+            previousActivationEvent &&
+            e &&
+            previousActivationEvent.type !== e.type;
+          if (isSameInteraction) {
+            return;
+          }
+
+          activationState.isActivated = true;
+          activationState.isProgrammatic = e === null;
+          activationState.activationEvent = e;
+          activationState.wasActivatedByPointer = activationState.isProgrammatic
+            ? false
+            : e.type === "mousedown" ||
+              e.type === "touchstart" ||
+              e.type === "pointerdown";
+
+          const hasActivatedChild =
+            e &&
+            activatedTargets.length > 0 &&
+            activatedTargets.some(target =>
+              this.adapter_.containsEventTarget(target)
+            );
+          if (hasActivatedChild) {
+            // Immediately reset activation state, while preserving logic that prevents touch follow-on events
+            this.resetActivationState_();
+            return;
+          }
+
+          if (e) {
+            activatedTargets.push(/** @type {!EventTarget} */ (e.target));
+            this.registerDeactivationHandlers_(e);
+          }
+
+          requestAnimationFrame(() => {
+            // This needs to be wrapped in an rAF call b/c web browsers
+            // report active states inconsistently when they're called within
+            // event handling code:
+            // - https://bugs.chromium.org/p/chromium/issues/detail?id=635971
+            // - https://bugzilla.mozilla.org/show_bug.cgi?id=1293741
+            activationState.wasElementMadeActive =
+              e && e.type === "keydown"
+                ? this.adapter_.isSurfaceActive()
+                : true;
+            if (activationState.wasElementMadeActive) {
+              this.animateActivation_();
+            } else {
+              // Reset activation state immediately if element was not made active.
+              this.activationState_ = this.defaultActivationState_();
+            }
+
+            // Reset array on next frame after the current event has had a chance to bubble to prevent ancestor ripples
+            activatedTargets = [];
+          });
+        }
+
+        /**
+         * @param {?Event=} event Optional event containing position information.
+         */
+        activate(event = null) {
+          this.activate_(event);
+        }
+
+        /** @private */
+        animateActivation_() {
+          const {
+            VAR_FG_TRANSLATE_START,
+            VAR_FG_TRANSLATE_END
+          } = MDCRippleFoundation.strings;
+          const {
+            FG_DEACTIVATION,
+            FG_ACTIVATION
+          } = MDCRippleFoundation.cssClasses;
+          const { DEACTIVATION_TIMEOUT_MS } = MDCRippleFoundation.numbers;
+
+          let translateStart = "";
+          let translateEnd = "";
+
+          if (!this.adapter_.isUnbounded()) {
+            const {
+              startPoint,
+              endPoint
+            } = this.getFgTranslationCoordinates_();
+            translateStart = `${startPoint.x}px, ${startPoint.y}px`;
+            translateEnd = `${endPoint.x}px, ${endPoint.y}px`;
+          }
+
+          this.adapter_.updateCssVariable(
+            VAR_FG_TRANSLATE_START,
+            translateStart
+          );
+          this.adapter_.updateCssVariable(VAR_FG_TRANSLATE_END, translateEnd);
+          // Cancel any ongoing activation/deactivation animations
+          clearTimeout(this.activationTimer_);
+          clearTimeout(this.fgDeactivationRemovalTimer_);
+          this.rmBoundedActivationClasses_();
+          this.adapter_.removeClass(FG_DEACTIVATION);
+
+          // Force layout in order to re-trigger the animation.
+          this.adapter_.computeBoundingRect();
+          this.adapter_.addClass(FG_ACTIVATION);
+          this.activationTimer_ = setTimeout(
+            () => this.activationTimerCallback_(),
+            DEACTIVATION_TIMEOUT_MS
+          );
+        }
+
+        /**
+         * @private
+         * @return {{startPoint: PointType, endPoint: PointType}}
+         */
+        getFgTranslationCoordinates_() {
+          const {
+            activationEvent,
+            wasActivatedByPointer
+          } = this.activationState_;
+
+          let startPoint;
+          if (wasActivatedByPointer) {
+            startPoint = Object(
+              __WEBPACK_IMPORTED_MODULE_3__util__[
+                "c" /* getNormalizedEventCoords */
+              ]
+            )(
+              /** @type {!Event} */ (activationEvent),
+              this.adapter_.getWindowPageOffset(),
+              this.adapter_.computeBoundingRect()
+            );
+          } else {
+            startPoint = {
+              x: this.frame_.width / 2,
+              y: this.frame_.height / 2
+            };
+          }
+          // Center the element around the start point.
+          startPoint = {
+            x: startPoint.x - this.initialSize_ / 2,
+            y: startPoint.y - this.initialSize_ / 2
+          };
+
+          const endPoint = {
+            x: this.frame_.width / 2 - this.initialSize_ / 2,
+            y: this.frame_.height / 2 - this.initialSize_ / 2
+          };
+
+          return { startPoint, endPoint };
+        }
+
+        /** @private */
+        runDeactivationUXLogicIfReady_() {
+          // This method is called both when a pointing device is released, and when the activation animation ends.
+          // The deactivation animation should only run after both of those occur.
+          const { FG_DEACTIVATION } = MDCRippleFoundation.cssClasses;
+          const { hasDeactivationUXRun, isActivated } = this.activationState_;
+          const activationHasEnded = hasDeactivationUXRun || !isActivated;
+
+          if (activationHasEnded && this.activationAnimationHasEnded_) {
+            this.rmBoundedActivationClasses_();
+            this.adapter_.addClass(FG_DEACTIVATION);
+            this.fgDeactivationRemovalTimer_ = setTimeout(() => {
+              this.adapter_.removeClass(FG_DEACTIVATION);
+            }, __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].FG_DEACTIVATION_MS);
+          }
+        }
+
+        /** @private */
+        rmBoundedActivationClasses_() {
+          const { FG_ACTIVATION } = MDCRippleFoundation.cssClasses;
+          this.adapter_.removeClass(FG_ACTIVATION);
+          this.activationAnimationHasEnded_ = false;
+          this.adapter_.computeBoundingRect();
+        }
+
+        resetActivationState_() {
+          this.previousActivationEvent_ = this.activationState_.activationEvent;
+          this.activationState_ = this.defaultActivationState_();
+          // Touch devices may fire additional events for the same interaction within a short time.
+          // Store the previous event until it's safe to assume that subsequent events are for new interactions.
+          setTimeout(
+            () => (this.previousActivationEvent_ = null),
+            MDCRippleFoundation.numbers.TAP_DELAY_MS
+          );
+        }
+
+        /**
+         * @param {?Event} e
+         * @private
+         */
+        deactivate_(e) {
+          const activationState = this.activationState_;
+          // This can happen in scenarios such as when you have a keyup event that blurs the element.
+          if (!activationState.isActivated) {
+            return;
+          }
+
+          const state = /** @type {!ActivationStateType} */ (Object.assign(
+            {},
+            activationState
+          ));
+
+          if (activationState.isProgrammatic) {
+            const evtObject = null;
+            requestAnimationFrame(() =>
+              this.animateDeactivation_(evtObject, state)
+            );
+            this.resetActivationState_();
+          } else {
+            this.deregisterDeactivationHandlers_();
+            requestAnimationFrame(() => {
+              this.activationState_.hasDeactivationUXRun = true;
+              this.animateDeactivation_(e, state);
+              this.resetActivationState_();
+            });
+          }
+        }
+
+        /**
+         * @param {?Event=} event Optional event containing position information.
+         */
+        deactivate(event = null) {
+          this.deactivate_(event);
+        }
+
+        /**
+         * @param {Event} e
+         * @param {!ActivationStateType} options
+         * @private
+         */
+        animateDeactivation_(
+          e,
+          { wasActivatedByPointer, wasElementMadeActive }
+        ) {
+          if (wasActivatedByPointer || wasElementMadeActive) {
+            this.runDeactivationUXLogicIfReady_();
+          }
+        }
+
+        layout() {
+          if (this.layoutFrame_) {
+            cancelAnimationFrame(this.layoutFrame_);
+          }
+          this.layoutFrame_ = requestAnimationFrame(() => {
+            this.layoutInternal_();
+            this.layoutFrame_ = 0;
+          });
+        }
+
+        /** @private */
+        layoutInternal_() {
+          this.frame_ = this.adapter_.computeBoundingRect();
+          const maxDim = Math.max(this.frame_.height, this.frame_.width);
+
+          // Surface diameter is treated differently for unbounded vs. bounded ripples.
+          // Unbounded ripple diameter is calculated smaller since the surface is expected to already be padded appropriately
+          // to extend the hitbox, and the ripple is expected to meet the edges of the padded hitbox (which is typically
+          // square). Bounded ripples, on the other hand, are fully expected to expand beyond the surface's longest diameter
+          // (calculated based on the diagonal plus a constant padding), and are clipped at the surface's border via
+          // `overflow: hidden`.
+          const getBoundedRadius = () => {
+            const hypotenuse = Math.sqrt(
+              Math.pow(this.frame_.width, 2) + Math.pow(this.frame_.height, 2)
+            );
+            return hypotenuse + MDCRippleFoundation.numbers.PADDING;
+          };
+
+          this.maxRadius_ = this.adapter_.isUnbounded()
+            ? maxDim
+            : getBoundedRadius();
+
+          // Ripple is sized as a fraction of the largest dimension of the surface, then scales up using a CSS scale transform
+          this.initialSize_ =
+            maxDim * MDCRippleFoundation.numbers.INITIAL_ORIGIN_SCALE;
+          this.fgScale_ = this.maxRadius_ / this.initialSize_;
+
+          this.updateLayoutCssVars_();
+        }
+
+        /** @private */
+        updateLayoutCssVars_() {
+          const {
+            VAR_FG_SIZE,
+            VAR_LEFT,
+            VAR_TOP,
+            VAR_FG_SCALE
+          } = MDCRippleFoundation.strings;
+
+          this.adapter_.updateCssVariable(
+            VAR_FG_SIZE,
+            `${this.initialSize_}px`
+          );
+          this.adapter_.updateCssVariable(VAR_FG_SCALE, this.fgScale_);
+
+          if (this.adapter_.isUnbounded()) {
+            this.unboundedCoords_ = {
+              left: Math.round(this.frame_.width / 2 - this.initialSize_ / 2),
+              top: Math.round(this.frame_.height / 2 - this.initialSize_ / 2)
+            };
+
+            this.adapter_.updateCssVariable(
+              VAR_LEFT,
+              `${this.unboundedCoords_.left}px`
+            );
+            this.adapter_.updateCssVariable(
+              VAR_TOP,
+              `${this.unboundedCoords_.top}px`
+            );
+          }
+        }
+
+        /** @param {boolean} unbounded */
+        setUnbounded(unbounded) {
+          const { UNBOUNDED } = MDCRippleFoundation.cssClasses;
+          if (unbounded) {
+            this.adapter_.addClass(UNBOUNDED);
+          } else {
+            this.adapter_.removeClass(UNBOUNDED);
+          }
+        }
+      }
+
+      /* harmony default export */ __webpack_exports__[
+        "a"
+      ] = MDCRippleFoundation;
+
+      /***/
+    },
     /* 198 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
@@ -29441,19 +29210,23 @@
         __webpack_exports__,
         "a",
         function() {
-          return MDCSelectBottomLine;
+          return cssClasses;
         }
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
-        4
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "c",
+        function() {
+          return strings;
+        }
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        27
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "b",
+        function() {
+          return numbers;
+        }
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        199
-      );
-      /* unused harmony reexport MDCSelectBottomLineFoundation */
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -29471,65 +29244,47 @@
        * limitations under the License.
        */
 
-      /**
-       * @extends {MDCComponent<!MDCSelectBottomLineFoundation>}
-       * @final
-       */
-      class MDCSelectBottomLine extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
-        "a" /* default */
-      ] {
-        /**
-         * @param {!Element} root
-         * @return {!MDCSelectBottomLine}
-         */
-        static attachTo(root) {
-          return new MDCSelectBottomLine(root);
-        }
+      const cssClasses = {
+        // Ripple is a special case where the "root" component is really a "mixin" of sorts,
+        // given that it's an 'upgrade' to an existing component. That being said it is the root
+        // CSS class that all other CSS classes derive from.
+        ROOT: "mdc-ripple-upgraded",
+        UNBOUNDED: "mdc-ripple-upgraded--unbounded",
+        BG_FOCUSED: "mdc-ripple-upgraded--background-focused",
+        FG_ACTIVATION: "mdc-ripple-upgraded--foreground-activation",
+        FG_DEACTIVATION: "mdc-ripple-upgraded--foreground-deactivation"
+      };
 
-        /**
-         * Activates the bottom line active class
-         */
-        activate() {
-          this.foundation_.activate();
-        }
+      const strings = {
+        VAR_LEFT: "--mdc-ripple-left",
+        VAR_TOP: "--mdc-ripple-top",
+        VAR_FG_SIZE: "--mdc-ripple-fg-size",
+        VAR_FG_SCALE: "--mdc-ripple-fg-scale",
+        VAR_FG_TRANSLATE_START: "--mdc-ripple-fg-translate-start",
+        VAR_FG_TRANSLATE_END: "--mdc-ripple-fg-translate-end"
+      };
 
-        /**
-         * Deactivates the bottom line active class
-         */
-        deactivate() {
-          this.foundation_.deactivate();
-        }
-
-        /**
-         * @return {!MDCSelectBottomLineFoundation}
-         */
-        getDefaultFoundation() {
-          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
-            "a" /* default */
-          ]({
-            addClass: className => this.root_.classList.add(className),
-            removeClass: className => this.root_.classList.remove(className)
-          });
-        }
-      }
+      const numbers = {
+        PADDING: 10,
+        INITIAL_ORIGIN_SCALE: 0.6,
+        DEACTIVATION_TIMEOUT_MS: 225, // Corresponds to $mdc-ripple-translate-duration (i.e. activation animation duration)
+        FG_DEACTIVATION_MS: 150, // Corresponds to $mdc-ripple-fade-out-duration (i.e. deactivation animation duration)
+        TAP_DELAY_MS: 300 // Delay between touch and simulated mouse events on touch devices
+      };
 
       /***/
     },
     /* 199 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
-        3
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
+        7
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        27
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
         200
       );
       /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
+       * Copyright 2017 Google Inc. All Rights Reserved.
        *
        * Licensed under the Apache License, Version 2.0 (the "License");
        * you may not use this file except in compliance with the License.
@@ -29544,63 +29299,204 @@
        * limitations under the License.
        */
 
-      /**
-       * @extends {MDCFoundation<!MDCSelectBottomLineAdapter>}
-       * @final
-       */
-      class MDCSelectBottomLineFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
-        "a" /* default */
+      class MDCDialogFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_index__[
+        "b" /* MDCFoundation */
       ] {
-        /** @return enum {string} */
         static get cssClasses() {
-          return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+          return __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */];
         }
 
-        /**
-         * {@see MDCSelectBottomLineAdapter} for typing information on parameters and return
-         * types.
-         * @return {!MDCSelectBottomLineAdapter}
-         */
+        static get strings() {
+          return __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */];
+        }
+
         static get defaultAdapter() {
-          return /** @type {!MDCSelectBottomLineAdapter} */ ({
-            addClass: () => {},
-            removeClass: () => {}
-          });
+          return {
+            addClass: (/* className: string */) => {},
+            removeClass: (/* className: string */) => {},
+            addBodyClass: (/* className: string */) => {},
+            removeBodyClass: (/* className: string */) => {},
+            eventTargetHasClass: (/* target: EventTarget, className: string */) =>
+              /* boolean */ false,
+            registerInteractionHandler: (/* evt: string, handler: EventListener */) => {},
+            deregisterInteractionHandler: (/* evt: string, handler: EventListener */) => {},
+            registerSurfaceInteractionHandler: (/* evt: string, handler: EventListener */) => {},
+            deregisterSurfaceInteractionHandler: (/* evt: string, handler: EventListener */) => {},
+            registerDocumentKeydownHandler: (/* handler: EventListener */) => {},
+            deregisterDocumentKeydownHandler: (/* handler: EventListener */) => {},
+            registerTransitionEndHandler: (/* handler: EventListener */) => {},
+            deregisterTransitionEndHandler: (/* handler: EventListener */) => {},
+            notifyAccept: () => {},
+            notifyCancel: () => {},
+            trapFocusOnSurface: () => {},
+            untrapFocusOnSurface: () => {},
+            isDialog: (/* el: Element */) => /* boolean */ false,
+            layoutFooterRipples: () => {}
+          };
         }
 
-        /**
-         * Adds the active class to bottom line
-         */
-        activate() {
-          this.adapter_.addClass(
-            __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */]
-              .BOTTOM_LINE_ACTIVE
-          );
-        }
-
-        /**
-         * Removes the active class from the bottom line
-         */
-        deactivate() {
-          this.adapter_.removeClass(
-            __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */]
-              .BOTTOM_LINE_ACTIVE
-          );
-        }
-
-        /**
-         * @param {!MDCSelectBottomLineAdapter} adapter
-         */
         constructor(adapter) {
-          super(
-            Object.assign(MDCSelectBottomLineFoundation.defaultAdapter, adapter)
+          super(Object.assign(MDCDialogFoundation.defaultAdapter, adapter));
+          this.isOpen_ = false;
+          this.componentClickHandler_ = evt => {
+            if (
+              this.adapter_.eventTargetHasClass(
+                evt.target,
+                __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+                  .BACKDROP
+              )
+            ) {
+              this.cancel(true);
+            }
+          };
+          this.dialogClickHandler_ = evt => this.handleDialogClick_(evt);
+          this.documentKeydownHandler_ = evt => {
+            if ((evt.key && evt.key === "Escape") || evt.keyCode === 27) {
+              this.cancel(true);
+            }
+          };
+          this.transitionEndHandler_ = evt => this.handleTransitionEnd_(evt);
+        }
+
+        destroy() {
+          // Ensure that dialog is cleaned up when destroyed
+          if (this.isOpen_) {
+            this.adapter_.deregisterSurfaceInteractionHandler(
+              "click",
+              this.dialogClickHandler_
+            );
+            this.adapter_.deregisterDocumentKeydownHandler(
+              this.documentKeydownHandler_
+            );
+            this.adapter_.deregisterInteractionHandler(
+              "click",
+              this.componentClickHandler_
+            );
+            this.adapter_.untrapFocusOnSurface();
+            this.adapter_.deregisterTransitionEndHandler(
+              this.transitionEndHandler_
+            );
+            this.adapter_.removeClass(MDCDialogFoundation.cssClasses.ANIMATING);
+            this.adapter_.removeClass(MDCDialogFoundation.cssClasses.OPEN);
+            this.enableScroll_();
+          }
+        }
+
+        open() {
+          this.isOpen_ = true;
+          this.disableScroll_();
+          this.adapter_.registerDocumentKeydownHandler(
+            this.documentKeydownHandler_
+          );
+          this.adapter_.registerSurfaceInteractionHandler(
+            "click",
+            this.dialogClickHandler_
+          );
+          this.adapter_.registerInteractionHandler(
+            "click",
+            this.componentClickHandler_
+          );
+          this.adapter_.registerTransitionEndHandler(
+            this.transitionEndHandler_
+          );
+          this.adapter_.addClass(MDCDialogFoundation.cssClasses.ANIMATING);
+          this.adapter_.addClass(MDCDialogFoundation.cssClasses.OPEN);
+        }
+
+        close() {
+          this.isOpen_ = false;
+          this.adapter_.deregisterSurfaceInteractionHandler(
+            "click",
+            this.dialogClickHandler_
+          );
+          this.adapter_.deregisterDocumentKeydownHandler(
+            this.documentKeydownHandler_
+          );
+          this.adapter_.deregisterInteractionHandler(
+            "click",
+            this.componentClickHandler_
+          );
+          this.adapter_.untrapFocusOnSurface();
+          this.adapter_.registerTransitionEndHandler(
+            this.transitionEndHandler_
+          );
+          this.adapter_.addClass(MDCDialogFoundation.cssClasses.ANIMATING);
+          this.adapter_.removeClass(MDCDialogFoundation.cssClasses.OPEN);
+        }
+
+        isOpen() {
+          return this.isOpen_;
+        }
+
+        accept(shouldNotify) {
+          if (shouldNotify) {
+            this.adapter_.notifyAccept();
+          }
+
+          this.close();
+        }
+
+        cancel(shouldNotify) {
+          if (shouldNotify) {
+            this.adapter_.notifyCancel();
+          }
+
+          this.close();
+        }
+
+        handleDialogClick_(evt) {
+          const { target } = evt;
+          if (
+            this.adapter_.eventTargetHasClass(
+              target,
+              __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+                .ACCEPT_BTN
+            )
+          ) {
+            this.accept(true);
+          } else if (
+            this.adapter_.eventTargetHasClass(
+              target,
+              __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+                .CANCEL_BTN
+            )
+          ) {
+            this.cancel(true);
+          }
+        }
+
+        handleTransitionEnd_(evt) {
+          if (this.adapter_.isDialog(evt.target)) {
+            this.adapter_.deregisterTransitionEndHandler(
+              this.transitionEndHandler_
+            );
+            this.adapter_.removeClass(MDCDialogFoundation.cssClasses.ANIMATING);
+            if (this.isOpen_) {
+              this.adapter_.trapFocusOnSurface();
+              this.adapter_.layoutFooterRipples();
+            } else {
+              this.enableScroll_();
+            }
+          }
+        }
+
+        disableScroll_() {
+          this.adapter_.addBodyClass(
+            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+              .SCROLL_LOCK
+          );
+        }
+
+        enableScroll_() {
+          this.adapter_.removeBodyClass(
+            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+              .SCROLL_LOCK
           );
         }
       }
-
-      /* harmony default export */ __webpack_exports__[
+      /* harmony export (immutable) */ __webpack_exports__[
         "a"
-      ] = MDCSelectBottomLineFoundation;
+      ] = MDCDialogFoundation;
 
       /***/
     },
@@ -29624,34 +29520,41 @@
        */
 
       const cssClasses = {
-        BOTTOM_LINE_ACTIVE: "mdc-select__bottom-line--active"
+        ROOT: "mdc-dialog",
+        OPEN: "mdc-dialog--open",
+        ANIMATING: "mdc-dialog--animating",
+        BACKDROP: "mdc-dialog__backdrop",
+        SCROLL_LOCK: "mdc-dialog-scroll-lock",
+        ACCEPT_BTN: "mdc-dialog__footer__button--accept",
+        CANCEL_BTN: "mdc-dialog__footer__button--cancel"
       };
       /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
+
+      const strings = {
+        OPEN_DIALOG_SELECTOR: ".mdc-dialog--open",
+        DIALOG_SURFACE_SELECTOR: ".mdc-dialog__surface",
+        ACCEPT_SELECTOR: ".mdc-dialog__footer__button--accept",
+        ACCEPT_EVENT: "MDCDialog:accept",
+        CANCEL_EVENT: "MDCDialog:cancel"
+      };
+      /* harmony export (immutable) */ __webpack_exports__["b"] = strings;
 
       /***/
     },
     /* 201 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "a",
-        function() {
-          return MDCSelectLabel;
-        }
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
-        4
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        28
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
+      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+      /* harmony export (immutable) */ __webpack_exports__[
+        "createFocusTrapInstance"
+      ] = createFocusTrapInstance;
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(
         202
       );
-      /* unused harmony reexport MDCSelectLabelFoundation */
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap___default = __webpack_require__.n(
+        __WEBPACK_IMPORTED_MODULE_0_focus_trap__
+      );
       /**
-       * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
        *
        * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29667,528 +29570,426 @@
        * limitations under the License.
        */
 
-      /**
-       * @extends {MDCComponent<!MDCSelectLabelFoundation>}
-       * @final
-       */
-      class MDCSelectLabel extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
-        "a" /* default */
-      ] {
-        /**
-         * @param {!Element} root
-         * @return {!MDCSelectLabel}
-         */
-        static attachTo(root) {
-          return new MDCSelectLabel(root);
-        }
-
-        /**
-         * Styles the label to float or defloat as necessary.
-         * @param {string} value The value of the input.
-         */
-        float(value) {
-          this.foundation_.styleFloat(value);
-        }
-
-        /**
-         * @return {!MDCSelectLabelFoundation}
-         */
-        getDefaultFoundation() {
-          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
-            "a" /* default */
-          ]({
-            addClass: className => this.root_.classList.add(className),
-            removeClass: className => this.root_.classList.remove(className)
-          });
-        }
+      function createFocusTrapInstance(
+        surfaceEl,
+        acceptButtonEl,
+        focusTrapFactory = __WEBPACK_IMPORTED_MODULE_0_focus_trap___default.a
+      ) {
+        return focusTrapFactory(surfaceEl, {
+          initialFocus: acceptButtonEl,
+          clickOutsideDeactivates: true
+        });
       }
 
       /***/
     },
     /* 202 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
-        3
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        28
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        203
-      );
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
+    /***/ function(module, exports, __webpack_require__) {
+      var tabbable = __webpack_require__(203);
 
-      /**
-       * @extends {MDCFoundation<!MDCSelectLabelAdapter>}
-       * @final
-       */
-      class MDCSelectLabelFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
-        "a" /* default */
-      ] {
-        /** @return enum {string} */
-        static get cssClasses() {
-          return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        }
+      var listeningFocusTrap = null;
 
-        /**
-         * {@see MDCSelectLabelAdapter} for typing information on parameters and return
-         * types.
-         * @return {!MDCSelectLabelAdapter}
-         */
-        static get defaultAdapter() {
-          return /** @type {!MDCSelectLabelAdapter} */ ({
-            addClass: () => {},
-            removeClass: () => {},
-            getWidth: () => {}
-          });
-        }
+      function focusTrap(element, userOptions) {
+        var tabbableNodes = [];
+        var firstTabbableNode = null;
+        var lastTabbableNode = null;
+        var nodeFocusedBeforeActivation = null;
+        var active = false;
+        var paused = false;
+        var tabEvent = null;
 
-        /**
-         * @param {!MDCSelectLabelAdapter} adapter
-         */
-        constructor(adapter) {
-          super(
-            Object.assign(MDCSelectLabelFoundation.defaultAdapter, adapter)
-          );
-        }
+        var container =
+          typeof element === "string"
+            ? document.querySelector(element)
+            : element;
 
-        /**
-         * Styles the label to float or defloat as necessary.
-         * @param {string} value The value of the input.
-         */
-        styleFloat(value) {
-          const { LABEL_FLOAT_ABOVE } = MDCSelectLabelFoundation.cssClasses;
-          if (!!value) {
-            this.adapter_.addClass(LABEL_FLOAT_ABOVE);
-          } else {
-            this.adapter_.removeClass(LABEL_FLOAT_ABOVE);
+        var config = userOptions || {};
+        config.returnFocusOnDeactivate =
+          userOptions && userOptions.returnFocusOnDeactivate !== undefined
+            ? userOptions.returnFocusOnDeactivate
+            : true;
+        config.escapeDeactivates =
+          userOptions && userOptions.escapeDeactivates !== undefined
+            ? userOptions.escapeDeactivates
+            : true;
+
+        var trap = {
+          activate: activate,
+          deactivate: deactivate,
+          pause: pause,
+          unpause: unpause
+        };
+
+        return trap;
+
+        function activate(activateOptions) {
+          if (active) return;
+
+          var defaultedActivateOptions = {
+            onActivate:
+              activateOptions && activateOptions.onActivate !== undefined
+                ? activateOptions.onActivate
+                : config.onActivate
+          };
+
+          active = true;
+          paused = false;
+          nodeFocusedBeforeActivation = document.activeElement;
+
+          if (defaultedActivateOptions.onActivate) {
+            defaultedActivateOptions.onActivate();
           }
+
+          addListeners();
+          return trap;
+        }
+
+        function deactivate(deactivateOptions) {
+          if (!active) return;
+
+          var defaultedDeactivateOptions = {
+            returnFocus:
+              deactivateOptions && deactivateOptions.returnFocus !== undefined
+                ? deactivateOptions.returnFocus
+                : config.returnFocusOnDeactivate,
+            onDeactivate:
+              deactivateOptions && deactivateOptions.onDeactivate !== undefined
+                ? deactivateOptions.onDeactivate
+                : config.onDeactivate
+          };
+
+          removeListeners();
+
+          if (defaultedDeactivateOptions.onDeactivate) {
+            defaultedDeactivateOptions.onDeactivate();
+          }
+
+          if (defaultedDeactivateOptions.returnFocus) {
+            setTimeout(function() {
+              tryFocus(nodeFocusedBeforeActivation);
+            }, 0);
+          }
+
+          active = false;
+          paused = false;
+          return this;
+        }
+
+        function pause() {
+          if (paused || !active) return;
+          paused = true;
+          removeListeners();
+        }
+
+        function unpause() {
+          if (!paused || !active) return;
+          paused = false;
+          addListeners();
+        }
+
+        function addListeners() {
+          if (!active) return;
+
+          // There can be only one listening focus trap at a time
+          if (listeningFocusTrap) {
+            listeningFocusTrap.pause();
+          }
+          listeningFocusTrap = trap;
+
+          updateTabbableNodes();
+          tryFocus(firstFocusNode());
+          document.addEventListener("focus", checkFocus, true);
+          document.addEventListener("click", checkClick, true);
+          document.addEventListener("mousedown", checkPointerDown, true);
+          document.addEventListener("touchstart", checkPointerDown, true);
+          document.addEventListener("keydown", checkKey, true);
+
+          return trap;
+        }
+
+        function removeListeners() {
+          if (!active || listeningFocusTrap !== trap) return;
+
+          document.removeEventListener("focus", checkFocus, true);
+          document.removeEventListener("click", checkClick, true);
+          document.removeEventListener("mousedown", checkPointerDown, true);
+          document.removeEventListener("touchstart", checkPointerDown, true);
+          document.removeEventListener("keydown", checkKey, true);
+
+          listeningFocusTrap = null;
+
+          return trap;
+        }
+
+        function getNodeForOption(optionName) {
+          var optionValue = config[optionName];
+          var node = optionValue;
+          if (!optionValue) {
+            return null;
+          }
+          if (typeof optionValue === "string") {
+            node = document.querySelector(optionValue);
+            if (!node) {
+              throw new Error("`" + optionName + "` refers to no known node");
+            }
+          }
+          if (typeof optionValue === "function") {
+            node = optionValue();
+            if (!node) {
+              throw new Error("`" + optionName + "` did not return a node");
+            }
+          }
+          return node;
+        }
+
+        function firstFocusNode() {
+          var node;
+          if (getNodeForOption("initialFocus") !== null) {
+            node = getNodeForOption("initialFocus");
+          } else if (container.contains(document.activeElement)) {
+            node = document.activeElement;
+          } else {
+            node = tabbableNodes[0] || getNodeForOption("fallbackFocus");
+          }
+
+          if (!node) {
+            throw new Error(
+              "You can't have a focus-trap without at least one focusable element"
+            );
+          }
+
+          return node;
+        }
+
+        // This needs to be done on mousedown and touchstart instead of click
+        // so that it precedes the focus event
+        function checkPointerDown(e) {
+          if (config.clickOutsideDeactivates && !container.contains(e.target)) {
+            deactivate({ returnFocus: false });
+          }
+        }
+
+        function checkClick(e) {
+          if (config.clickOutsideDeactivates) return;
+          if (container.contains(e.target)) return;
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+
+        function checkFocus(e) {
+          if (container.contains(e.target)) return;
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          // Checking for a blur method here resolves a Firefox issue (#15)
+          if (typeof e.target.blur === "function") e.target.blur();
+
+          if (tabEvent) {
+            readjustFocus(tabEvent);
+          }
+        }
+
+        function checkKey(e) {
+          if (e.key === "Tab" || e.keyCode === 9) {
+            handleTab(e);
+          }
+
+          if (config.escapeDeactivates !== false && isEscapeEvent(e)) {
+            deactivate();
+          }
+        }
+
+        function handleTab(e) {
+          updateTabbableNodes();
+
+          if (
+            e.target.hasAttribute("tabindex") &&
+            Number(e.target.getAttribute("tabindex")) < 0
+          ) {
+            return (tabEvent = e);
+          }
+
+          e.preventDefault();
+          var currentFocusIndex = tabbableNodes.indexOf(e.target);
+
+          if (e.shiftKey) {
+            if (
+              e.target === firstTabbableNode ||
+              tabbableNodes.indexOf(e.target) === -1
+            ) {
+              return tryFocus(lastTabbableNode);
+            }
+            return tryFocus(tabbableNodes[currentFocusIndex - 1]);
+          }
+
+          if (e.target === lastTabbableNode) return tryFocus(firstTabbableNode);
+
+          tryFocus(tabbableNodes[currentFocusIndex + 1]);
+        }
+
+        function updateTabbableNodes() {
+          tabbableNodes = tabbable(container);
+          firstTabbableNode = tabbableNodes[0];
+          lastTabbableNode = tabbableNodes[tabbableNodes.length - 1];
+        }
+
+        function readjustFocus(e) {
+          if (e.shiftKey) return tryFocus(lastTabbableNode);
+
+          tryFocus(firstTabbableNode);
         }
       }
 
-      /* harmony default export */ __webpack_exports__[
-        "a"
-      ] = MDCSelectLabelFoundation;
+      function isEscapeEvent(e) {
+        return e.key === "Escape" || e.key === "Esc" || e.keyCode === 27;
+      }
+
+      function tryFocus(node) {
+        if (!node || !node.focus) return;
+        if (node === document.activeElement) return;
+
+        node.focus();
+        if (node.tagName.toLowerCase() === "input") {
+          node.select();
+        }
+      }
+
+      module.exports = focusTrap;
 
       /***/
     },
     /* 203 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      const cssClasses = {
-        LABEL_FLOAT_ABOVE: "mdc-select__label--float-above"
+    /***/ function(module, exports) {
+      module.exports = function(el, options) {
+        options = options || {};
+
+        var elementDocument = el.ownerDocument || el;
+        var basicTabbables = [];
+        var orderedTabbables = [];
+
+        // A node is "available" if
+        // - it's computed style
+        var isUnavailable = createIsUnavailable(elementDocument);
+
+        var candidateSelectors = [
+          "input",
+          "select",
+          "a[href]",
+          "textarea",
+          "button",
+          "[tabindex]"
+        ];
+
+        var candidates = el.querySelectorAll(candidateSelectors.join(","));
+
+        if (options.includeContainer) {
+          var matches =
+            Element.prototype.matches ||
+            Element.prototype.msMatchesSelector ||
+            Element.prototype.webkitMatchesSelector;
+
+          if (
+            candidateSelectors.some(function(candidateSelector) {
+              return matches.call(el, candidateSelector);
+            })
+          ) {
+            candidates = Array.prototype.slice.apply(candidates);
+            candidates.unshift(el);
+          }
+        }
+
+        var candidate, candidateIndex;
+        for (var i = 0, l = candidates.length; i < l; i++) {
+          candidate = candidates[i];
+          candidateIndex =
+            parseInt(candidate.getAttribute("tabindex"), 10) ||
+            candidate.tabIndex;
+
+          if (
+            candidateIndex < 0 ||
+            (candidate.tagName === "INPUT" && candidate.type === "hidden") ||
+            candidate.disabled ||
+            isUnavailable(candidate, elementDocument)
+          ) {
+            continue;
+          }
+
+          if (candidateIndex === 0) {
+            basicTabbables.push(candidate);
+          } else {
+            orderedTabbables.push({
+              index: i,
+              tabIndex: candidateIndex,
+              node: candidate
+            });
+          }
+        }
+
+        var tabbableNodes = orderedTabbables
+          .sort(function(a, b) {
+            return a.tabIndex === b.tabIndex
+              ? a.index - b.index
+              : a.tabIndex - b.tabIndex;
+          })
+          .map(function(a) {
+            return a.node;
+          });
+
+        Array.prototype.push.apply(tabbableNodes, basicTabbables);
+
+        return tabbableNodes;
       };
-      /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
+
+      function createIsUnavailable(elementDocument) {
+        // Node cache must be refreshed on every check, in case
+        // the content of the element has changed
+        var isOffCache = [];
+
+        // "off" means `display: none;`, as opposed to "hidden",
+        // which means `visibility: hidden;`. getComputedStyle
+        // accurately reflects visiblity in context but not
+        // "off" state, so we need to recursively check parents.
+
+        function isOff(node, nodeComputedStyle) {
+          if (node === elementDocument.documentElement) return false;
+
+          // Find the cached node (Array.prototype.find not available in IE9)
+          for (var i = 0, length = isOffCache.length; i < length; i++) {
+            if (isOffCache[i][0] === node) return isOffCache[i][1];
+          }
+
+          nodeComputedStyle =
+            nodeComputedStyle ||
+            elementDocument.defaultView.getComputedStyle(node);
+
+          var result = false;
+
+          if (nodeComputedStyle.display === "none") {
+            result = true;
+          } else if (node.parentNode) {
+            result = isOff(node.parentNode);
+          }
+
+          isOffCache.push([node, result]);
+
+          return result;
+        }
+
+        return function isUnavailable(node) {
+          if (node === elementDocument.documentElement) return false;
+
+          var computedStyle = elementDocument.defaultView.getComputedStyle(
+            node
+          );
+
+          if (isOff(node, computedStyle)) return true;
+
+          return computedStyle.visibility === "hidden";
+        };
+      }
 
       /***/
     },
     /* 204 */
-    /***/ function(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
-        7
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        29
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_menu_index__ = __webpack_require__(
-        25
-      );
-      /**
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-
-      const OPENER_KEYS = [
-        { key: "ArrowUp", keyCode: 38, forType: "keydown" },
-        { key: "ArrowDown", keyCode: 40, forType: "keydown" },
-        { key: "Space", keyCode: 32, forType: "keyup" }
-      ];
-
-      class MDCSelectFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_index__[
-        "b" /* MDCFoundation */
-      ] {
-        static get cssClasses() {
-          return __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */];
-        }
-
-        static get strings() {
-          return __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */];
-        }
-
-        static get defaultAdapter() {
-          return {
-            addClass: (/* className: string */) => {},
-            removeClass: (/* className: string */) => {},
-            floatLabel: (/* value: boolean */) => {},
-            activateBottomLine: () => {},
-            deactivateBottomLine: () => {},
-            addBodyClass: (/* className: string */) => {},
-            removeBodyClass: (/* className: string */) => {},
-            setAttr: (/* attr: string, value: string */) => {},
-            rmAttr: (/* attr: string */) => {},
-            computeBoundingRect: () => /* {left: number, top: number} */ ({
-              left: 0,
-              top: 0
-            }),
-            registerInteractionHandler: (/* type: string, handler: EventListener */) => {},
-            deregisterInteractionHandler: (/* type: string, handler: EventListener */) => {},
-            focus: () => {},
-            makeTabbable: () => {},
-            makeUntabbable: () => {},
-            getComputedStyleValue: (/* propertyName: string */) =>
-              /* string */ "",
-            setStyle: (/* propertyName: string, value: string */) => {},
-            create2dRenderingContext: () => /* {font: string, measureText: (string) => {width: number}} */ ({
-              font: "",
-              measureText: () => ({ width: 0 })
-            }),
-            setMenuElStyle: (/* propertyName: string, value: string */) => {},
-            setMenuElAttr: (/* attr: string, value: string */) => {},
-            rmMenuElAttr: (/* attr: string */) => {},
-            getMenuElOffsetHeight: () => /* number */ 0,
-            openMenu: (/* focusIndex: number */) => {},
-            isMenuOpen: () => /* boolean */ false,
-            setSelectedTextContent: (/* textContent: string */) => {},
-            getNumberOfOptions: () => /* number */ 0,
-            getTextForOptionAtIndex: (/* index: number */) => /* string */ "",
-            getValueForOptionAtIndex: (/* index: number */) => /* string */ "",
-            setAttrForOptionAtIndex: (/* index: number, attr: string, value: string */) => {},
-            rmAttrForOptionAtIndex: (/* index: number, attr: string */) => {},
-            getOffsetTopForOptionAtIndex: (/* index: number */) =>
-              /* number */ 0,
-            registerMenuInteractionHandler: (/* type: string, handler: EventListener */) => {},
-            deregisterMenuInteractionHandler: (/* type: string, handler: EventListener */) => {},
-            notifyChange: () => {},
-            getWindowInnerHeight: () => /* number */ 0
-          };
-        }
-
-        constructor(adapter) {
-          super(Object.assign(MDCSelectFoundation.defaultAdapter, adapter));
-          this.ctx_ = null;
-          this.selectedIndex_ = -1;
-          this.disabled_ = false;
-          this.isFocused_ = false;
-
-          /** @private {number} */
-          this.animationRequestId_ = 0;
-
-          this.displayHandler_ = evt => {
-            evt.preventDefault();
-            if (!this.adapter_.isMenuOpen()) {
-              this.open_();
-            }
-          };
-          this.displayViaKeyboardHandler_ = evt =>
-            this.handleDisplayViaKeyboard_(evt);
-          this.selectionHandler_ = ({ detail }) => {
-            const { index } = detail;
-
-            if (index !== this.selectedIndex_) {
-              this.setSelectedIndex(index);
-              this.adapter_.notifyChange();
-            }
-            this.close_();
-          };
-          this.cancelHandler_ = () => {
-            this.close_();
-            if (this.selectedIndex_ === -1) {
-              this.adapter_.floatLabel(false);
-            }
-          };
-        }
-
-        init() {
-          this.ctx_ = this.adapter_.create2dRenderingContext();
-          this.adapter_.registerInteractionHandler(
-            "click",
-            this.displayHandler_
-          );
-          this.adapter_.registerInteractionHandler(
-            "keydown",
-            this.displayViaKeyboardHandler_
-          );
-          this.adapter_.registerInteractionHandler(
-            "keyup",
-            this.displayViaKeyboardHandler_
-          );
-          this.adapter_.registerMenuInteractionHandler(
-            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
-              "b" /* MDCMenuFoundation */
-            ].strings.SELECTED_EVENT,
-            this.selectionHandler_
-          );
-          this.adapter_.registerMenuInteractionHandler(
-            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
-              "b" /* MDCMenuFoundation */
-            ].strings.CANCEL_EVENT,
-            this.cancelHandler_
-          );
-          this.resize();
-        }
-
-        destroy() {
-          // Drop reference to context object to prevent potential leaks
-          this.ctx_ = null;
-          cancelAnimationFrame(this.animationRequestId_);
-          this.adapter_.deregisterInteractionHandler(
-            "click",
-            this.displayHandler_
-          );
-          this.adapter_.deregisterInteractionHandler(
-            "keydown",
-            this.displayViaKeyboardHandler_
-          );
-          this.adapter_.deregisterInteractionHandler(
-            "keyup",
-            this.displayViaKeyboardHandler_
-          );
-          this.adapter_.deregisterMenuInteractionHandler(
-            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
-              "b" /* MDCMenuFoundation */
-            ].strings.SELECTED_EVENT,
-            this.selectionHandler_
-          );
-          this.adapter_.deregisterMenuInteractionHandler(
-            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
-              "b" /* MDCMenuFoundation */
-            ].strings.CANCEL_EVENT,
-            this.cancelHandler_
-          );
-        }
-
-        getValue() {
-          return this.selectedIndex_ >= 0
-            ? this.adapter_.getValueForOptionAtIndex(this.selectedIndex_)
-            : "";
-        }
-
-        getSelectedIndex() {
-          return this.selectedIndex_;
-        }
-
-        setSelectedIndex(index) {
-          const prevSelectedIndex = this.selectedIndex_;
-          if (prevSelectedIndex >= 0) {
-            this.adapter_.rmAttrForOptionAtIndex(
-              this.selectedIndex_,
-              "aria-selected"
-            );
-          }
-
-          this.selectedIndex_ =
-            index >= 0 && index < this.adapter_.getNumberOfOptions()
-              ? index
-              : -1;
-          let selectedTextContent = "";
-          if (this.selectedIndex_ >= 0) {
-            selectedTextContent = this.adapter_
-              .getTextForOptionAtIndex(this.selectedIndex_)
-              .trim();
-            this.adapter_.setAttrForOptionAtIndex(
-              this.selectedIndex_,
-              "aria-selected",
-              "true"
-            );
-            this.adapter_.floatLabel(true);
-          } else {
-            if (!this.adapter_.isMenuOpen()) {
-              this.adapter_.floatLabel(false);
-            }
-          }
-          this.adapter_.setSelectedTextContent(selectedTextContent);
-        }
-
-        isDisabled() {
-          return this.disabled_;
-        }
-
-        setDisabled(disabled) {
-          const { DISABLED } = MDCSelectFoundation.cssClasses;
-          this.disabled_ = disabled;
-          if (this.disabled_) {
-            this.adapter_.addClass(DISABLED);
-            this.adapter_.setAttr("aria-disabled", "true");
-            this.adapter_.makeUntabbable();
-          } else {
-            this.adapter_.removeClass(DISABLED);
-            this.adapter_.rmAttr("aria-disabled");
-            this.adapter_.makeTabbable();
-          }
-        }
-
-        resize() {
-          const font = this.adapter_.getComputedStyleValue("font");
-          const letterSpacing = parseFloat(
-            this.adapter_.getComputedStyleValue("letter-spacing")
-          );
-
-          if (font) {
-            this.ctx_.font = font;
-          } else {
-            const primaryFontFamily = this.adapter_
-              .getComputedStyleValue("font-family")
-              .split(",")[0];
-            const fontSize = this.adapter_.getComputedStyleValue("font-size");
-            this.ctx_.font = `${fontSize} ${primaryFontFamily}`;
-          }
-
-          let maxTextLength = 0;
-
-          for (let i = 0, l = this.adapter_.getNumberOfOptions(); i < l; i++) {
-            const surfacePaddingRight = parseInt(
-              this.adapter_.getComputedStyleValue("padding-right"),
-              10
-            );
-            const surfacePaddingLeft = parseInt(
-              this.adapter_.getComputedStyleValue("padding-left"),
-              10
-            );
-            const selectBoxAddedPadding =
-              surfacePaddingRight + surfacePaddingLeft;
-            const txt = this.adapter_.getTextForOptionAtIndex(i).trim();
-            const { width } = this.ctx_.measureText(txt);
-            const addedSpace = letterSpacing * txt.length;
-
-            maxTextLength = Math.max(
-              maxTextLength,
-              Math.ceil(width + addedSpace + selectBoxAddedPadding)
-            );
-          }
-
-          this.adapter_.setStyle("width", `${maxTextLength}px`);
-        }
-
-        open_() {
-          this.disableScroll_();
-          const { OPEN } = MDCSelectFoundation.cssClasses;
-          const focusIndex = this.selectedIndex_ < 0 ? 0 : this.selectedIndex_;
-
-          this.setMenuStylesForOpenAtIndex_(focusIndex);
-          this.adapter_.floatLabel(true);
-          this.adapter_.activateBottomLine();
-          this.adapter_.addClass(OPEN);
-          this.animationRequestId_ = requestAnimationFrame(() => {
-            this.adapter_.openMenu(focusIndex);
-            this.isFocused_ = true;
-          });
-        }
-
-        setMenuStylesForOpenAtIndex_(index) {
-          const innerHeight = this.adapter_.getWindowInnerHeight();
-          const { left, top } = this.adapter_.computeBoundingRect();
-
-          this.adapter_.setMenuElAttr("aria-hidden", "true");
-          this.adapter_.setMenuElStyle("display", "block");
-          const menuHeight = this.adapter_.getMenuElOffsetHeight();
-          const itemOffsetTop = this.adapter_.getOffsetTopForOptionAtIndex(
-            index
-          );
-          this.adapter_.setMenuElStyle("display", "");
-          this.adapter_.rmMenuElAttr("aria-hidden");
-
-          let adjustedTop = top - itemOffsetTop;
-          const overflowsTop = adjustedTop < 0;
-          const overflowsBottom = adjustedTop + menuHeight > innerHeight;
-          if (overflowsTop) {
-            adjustedTop = 0;
-          } else if (overflowsBottom) {
-            adjustedTop = Math.max(0, innerHeight - menuHeight);
-          }
-
-          this.adapter_.setMenuElStyle("left", `${left}px`);
-          this.adapter_.setMenuElStyle("top", `${adjustedTop}px`);
-          this.adapter_.setMenuElStyle(
-            "transform-origin",
-            `center ${itemOffsetTop}px`
-          );
-        }
-
-        close_() {
-          const { OPEN } = MDCSelectFoundation.cssClasses;
-          this.adapter_.removeClass(OPEN);
-          this.adapter_.deactivateBottomLine();
-          this.adapter_.focus();
-          this.enableScroll_();
-        }
-
-        handleDisplayViaKeyboard_(evt) {
-          // We use a hard-coded 2 instead of Event.AT_TARGET to avoid having to reference a browser
-          // global.
-          const EVENT_PHASE_AT_TARGET = 2;
-          if (evt.eventPhase !== EVENT_PHASE_AT_TARGET) {
-            return;
-          }
-
-          // Prevent pressing space down from scrolling the page
-          const isSpaceDown =
-            evt.type === "keydown" &&
-            (evt.key === "Space" || evt.keyCode === 32);
-          if (isSpaceDown) {
-            evt.preventDefault();
-          }
-
-          const isOpenerKey = OPENER_KEYS.some(({ key, keyCode, forType }) => {
-            return (
-              evt.type === forType &&
-              (evt.key === key || evt.keyCode === keyCode)
-            );
-          });
-
-          if (isOpenerKey) {
-            this.displayHandler_(evt);
-          }
-        }
-
-        disableScroll_() {
-          this.adapter_.addBodyClass(
-            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-              .SCROLL_LOCK
-          );
-        }
-
-        enableScroll_() {
-          this.adapter_.removeBodyClass(
-            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
-              .SCROLL_LOCK
-          );
-        }
-      }
-      /* harmony export (immutable) */ __webpack_exports__[
-        "a"
-      ] = MDCSelectFoundation;
-
-      /***/
-    },
-    /* 205 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30223,7 +30024,7 @@
 
       /***/
     },
-    /* 206 */
+    /* 205 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30271,7 +30072,7 @@
 
       /***/
     },
-    /* 207 */
+    /* 206 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30305,7 +30106,7 @@
 
       /***/
     },
-    /* 208 */
+    /* 207 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30340,7 +30141,7 @@
 
       /***/
     },
-    /* 209 */
+    /* 208 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -30350,19 +30151,19 @@
         31
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_line_ripple_foundation__ = __webpack_require__(
-        17
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helper_text_foundation__ = __webpack_require__(
-        18
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__icon_foundation__ = __webpack_require__(
-        19
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_floating_label_foundation__ = __webpack_require__(
         20
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__outline_foundation__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helper_text_foundation__ = __webpack_require__(
         21
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__icon_foundation__ = __webpack_require__(
+        22
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_floating_label_foundation__ = __webpack_require__(
+        23
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__outline_foundation__ = __webpack_require__(
+        24
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constants__ = __webpack_require__(
         30
@@ -30842,7 +30643,7 @@
 
       /***/
     },
-    /* 210 */
+    /* 209 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30859,7 +30660,7 @@
         32
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        17
+        20
       );
       /* unused harmony reexport MDCLineRippleFoundation */
       /**
@@ -30940,7 +30741,7 @@
 
       /***/
     },
-    /* 211 */
+    /* 210 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30957,7 +30758,7 @@
         33
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        18
+        21
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -31028,7 +30829,7 @@
 
       /***/
     },
-    /* 212 */
+    /* 211 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31045,7 +30846,7 @@
         34
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        19
+        22
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -31120,7 +30921,7 @@
 
       /***/
     },
-    /* 213 */
+    /* 212 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31137,7 +30938,7 @@
         35
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        20
+        23
       );
       /* unused harmony reexport MDCFloatingLabelFoundation */
       /**
@@ -31217,7 +31018,7 @@
 
       /***/
     },
-    /* 214 */
+    /* 213 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31237,7 +31038,7 @@
         36
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(
-        21
+        24
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -31320,36 +31121,26 @@
 
       /***/
     },
-    /* 215 */
+    /* 214 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       /* harmony export (binding) */ __webpack_require__.d(
         __webpack_exports__,
-        "MDCRadio",
+        "a",
         function() {
-          return MDCRadio;
+          return MDCSelectBottomLine;
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
         4
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_selection_control_index__ = __webpack_require__(
-        22
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
+        38
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        216
+        215
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__ = __webpack_require__(
-        8
-      );
-      /* harmony reexport (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "MDCRadioFoundation",
-        function() {
-          return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"];
-        }
-      );
+      /* unused harmony reexport MDCSelectBottomLineFoundation */
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -31367,145 +31158,61 @@
        * limitations under the License.
        */
 
-      /* eslint-disable no-unused-vars */
-
-      /* eslint-enable no-unused-vars */
-
       /**
-       * @extends MDCComponent<!MDCRadioFoundation>
-       * @implements {MDCSelectionControl}
+       * @extends {MDCComponent<!MDCSelectBottomLineFoundation>}
+       * @final
        */
-      class MDCRadio extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
+      class MDCSelectBottomLine extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
         "a" /* default */
       ] {
+        /**
+         * @param {!Element} root
+         * @return {!MDCSelectBottomLine}
+         */
         static attachTo(root) {
-          return new MDCRadio(root);
-        }
-
-        /** @return {boolean} */
-        get checked() {
-          return this.foundation_.isChecked();
-        }
-
-        /** @param {boolean} checked */
-        set checked(checked) {
-          this.foundation_.setChecked(checked);
-        }
-
-        /** @return {boolean} */
-        get disabled() {
-          return this.foundation_.isDisabled();
-        }
-
-        /** @param {boolean} disabled */
-        set disabled(disabled) {
-          this.foundation_.setDisabled(disabled);
-        }
-
-        /** @return {?string} */
-        get value() {
-          return this.foundation_.getValue();
-        }
-
-        /** @param {?string} value */
-        set value(value) {
-          this.foundation_.setValue(value);
-        }
-
-        /** @return {!MDCRipple} */
-        get ripple() {
-          return this.ripple_;
-        }
-
-        constructor(...args) {
-          super(...args);
-
-          /** @private {!MDCRipple} */
-          this.ripple_ = this.initRipple_();
+          return new MDCSelectBottomLine(root);
         }
 
         /**
-         * @return {!MDCRipple}
-         * @private
+         * Activates the bottom line active class
          */
-        initRipple_() {
-          const adapter = Object.assign(
-            __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__[
-              "a" /* MDCRipple */
-            ].createAdapter(this),
-            {
-              isUnbounded: () => true,
-              // Radio buttons technically go "active" whenever there is *any* keyboard interaction. This is not the
-              // UI we desire.
-              isSurfaceActive: () => false,
-              registerInteractionHandler: (type, handler) =>
-                this.nativeControl_.addEventListener(type, handler),
-              deregisterInteractionHandler: (type, handler) =>
-                this.nativeControl_.removeEventListener(type, handler)
-            }
-          );
-          const foundation = new __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__[
-            "b" /* MDCRippleFoundation */
-          ](adapter);
-          return new __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__[
-            "a" /* MDCRipple */
-          ](this.root_, foundation);
+        activate() {
+          this.foundation_.activate();
         }
 
         /**
-         * Returns the state of the native control element, or null if the native control element is not present.
-         * @return {?MDCSelectionControlState}
-         * @private
+         * Deactivates the bottom line active class
          */
-        get nativeControl_() {
-          const {
-            NATIVE_CONTROL_SELECTOR
-          } = __WEBPACK_IMPORTED_MODULE_2__foundation__[
-            "a" /* default */
-          ].strings;
-          const el = /** @type {?MDCSelectionControlState} */ (this.root_.querySelector(
-            NATIVE_CONTROL_SELECTOR
-          ));
-          return el;
+        deactivate() {
+          this.foundation_.deactivate();
         }
 
-        destroy() {
-          this.ripple_.destroy();
-          super.destroy();
-        }
-
-        /** @return {!MDCRadioFoundation} */
+        /**
+         * @return {!MDCSelectBottomLineFoundation}
+         */
         getDefaultFoundation() {
           return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
             "a" /* default */
           ]({
             addClass: className => this.root_.classList.add(className),
-            removeClass: className => this.root_.classList.remove(className),
-            getNativeControl: () =>
-              this.root_.querySelector(
-                __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */]
-                  .strings.NATIVE_CONTROL_SELECTOR
-              )
+            removeClass: className => this.root_.classList.remove(className)
           });
         }
       }
 
       /***/
     },
-    /* 216 */
+    /* 215 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
         3
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_selection_control_index__ = __webpack_require__(
-        22
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
+        38
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter__ = __webpack_require__(
-        217
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
-        218
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
+        216
       );
       /**
        * @license
@@ -31524,98 +31231,112 @@
        * limitations under the License.
        */
 
-      /* eslint-disable no-unused-vars */
-
-      /* eslint-enable no-unused-vars */
-
       /**
-       * @extends {MDCFoundation<!MDCRadioAdapter>}
+       * @extends {MDCFoundation<!MDCSelectBottomLineAdapter>}
+       * @final
        */
-      class MDCRadioFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
+      class MDCSelectBottomLineFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
         "a" /* default */
       ] {
-        /** @return enum {cssClasses} */
+        /** @return enum {string} */
         static get cssClasses() {
-          return __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* cssClasses */];
-        }
-
-        /** @return enum {strings} */
-        static get strings() {
-          return __WEBPACK_IMPORTED_MODULE_3__constants__["b" /* strings */];
-        }
-
-        /** @return {!MDCRadioAdapter} */
-        static get defaultAdapter() {
-          return /** @type {!MDCRadioAdapter} */ ({
-            addClass: (/* className: string */) => {},
-            removeClass: (/* className: string */) => {},
-            getNativeControl: () => /* !MDCSelectionControlState */ {}
-          });
-        }
-
-        /** @return {boolean} */
-        isChecked() {
-          return this.getNativeControl_().checked;
-        }
-
-        /** @param {boolean} checked */
-        setChecked(checked) {
-          this.getNativeControl_().checked = checked;
-        }
-
-        /** @return {boolean} */
-        isDisabled() {
-          return this.getNativeControl_().disabled;
-        }
-
-        /** @param {boolean} disabled */
-        setDisabled(disabled) {
-          const { DISABLED } = MDCRadioFoundation.cssClasses;
-          this.getNativeControl_().disabled = disabled;
-          if (disabled) {
-            this.adapter_.addClass(DISABLED);
-          } else {
-            this.adapter_.removeClass(DISABLED);
-          }
-        }
-
-        /** @return {?string} */
-        getValue() {
-          return this.getNativeControl_().value;
-        }
-
-        /** @param {?string} value */
-        setValue(value) {
-          this.getNativeControl_().value = value;
+          return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
         }
 
         /**
-         * @return {!MDCSelectionControlState}
-         * @private
+         * {@see MDCSelectBottomLineAdapter} for typing information on parameters and return
+         * types.
+         * @return {!MDCSelectBottomLineAdapter}
          */
-        getNativeControl_() {
-          return (
-            this.adapter_.getNativeControl() || {
-              checked: false,
-              disabled: false,
-              value: null
-            }
+        static get defaultAdapter() {
+          return /** @type {!MDCSelectBottomLineAdapter} */ ({
+            addClass: () => {},
+            removeClass: () => {}
+          });
+        }
+
+        /**
+         * Adds the active class to bottom line
+         */
+        activate() {
+          this.adapter_.addClass(
+            __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */]
+              .BOTTOM_LINE_ACTIVE
+          );
+        }
+
+        /**
+         * Removes the active class from the bottom line
+         */
+        deactivate() {
+          this.adapter_.removeClass(
+            __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */]
+              .BOTTOM_LINE_ACTIVE
+          );
+        }
+
+        /**
+         * @param {!MDCSelectBottomLineAdapter} adapter
+         */
+        constructor(adapter) {
+          super(
+            Object.assign(MDCSelectBottomLineFoundation.defaultAdapter, adapter)
           );
         }
       }
 
       /* harmony default export */ __webpack_exports__[
         "a"
-      ] = MDCRadioFoundation;
+      ] = MDCSelectBottomLineFoundation;
+
+      /***/
+    },
+    /* 216 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /**
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      const cssClasses = {
+        BOTTOM_LINE_ACTIVE: "mdc-select__bottom-line--active"
+      };
+      /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
 
       /***/
     },
     /* 217 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_selection_control_index__ = __webpack_require__(
-        22
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "a",
+        function() {
+          return MDCSelectLabel;
+        }
       );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
+        4
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
+        39
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
+        218
+      );
+      /* unused harmony reexport MDCSelectLabelFoundation */
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -31633,56 +31354,55 @@
        * limitations under the License.
        */
 
-      /* eslint-disable no-unused-vars */
-
-      /* eslint no-unused-vars: [2, {"args": "none"}] */
-
       /**
-       * Adapter for MDC Radio. Provides an interface for managing
-       * - classes
-       * - dom
-       *
-       * Additionally, provides type information for the adapter to the Closure
-       * compiler.
-       *
-       * Implement this adapter for your framework of choice to delegate updates to
-       * the component in your framework of choice. See architecture documentation
-       * for more details.
-       * https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md
-       *
-       * @record
+       * @extends {MDCComponent<!MDCSelectLabelFoundation>}
+       * @final
        */
-      class MDCRadioAdapter {
-        /** @param {string} className */
-        addClass(className) {}
+      class MDCSelectLabel extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
+        "a" /* default */
+      ] {
+        /**
+         * @param {!Element} root
+         * @return {!MDCSelectLabel}
+         */
+        static attachTo(root) {
+          return new MDCSelectLabel(root);
+        }
 
-        /** @param {string} className */
-        removeClass(className) {}
+        /**
+         * Styles the label to float or defloat as necessary.
+         * @param {string} value The value of the input.
+         */
+        float(value) {
+          this.foundation_.styleFloat(value);
+        }
 
-        /** @return {!MDCSelectionControlState} */
-        getNativeControl() {}
+        /**
+         * @return {!MDCSelectLabelFoundation}
+         */
+        getDefaultFoundation() {
+          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
+            "a" /* default */
+          ]({
+            addClass: className => this.root_.classList.add(className),
+            removeClass: className => this.root_.classList.remove(className)
+          });
+        }
       }
-
-      /* unused harmony default export */ var _unused_webpack_default_export = MDCRadioAdapter;
 
       /***/
     },
     /* 218 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "b",
-        function() {
-          return strings;
-        }
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
+        3
       );
-      /* harmony export (binding) */ __webpack_require__.d(
-        __webpack_exports__,
-        "a",
-        function() {
-          return cssClasses;
-        }
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
+        39
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
+        219
       );
       /**
        * @license
@@ -31701,182 +31421,457 @@
        * limitations under the License.
        */
 
-      /** @enum {string} */
-      const strings = {
-        NATIVE_CONTROL_SELECTOR: ".mdc-radio__native-control"
-      };
+      /**
+       * @extends {MDCFoundation<!MDCSelectLabelAdapter>}
+       * @final
+       */
+      class MDCSelectLabelFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
+        "a" /* default */
+      ] {
+        /** @return enum {string} */
+        static get cssClasses() {
+          return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        }
 
-      /** @enum {string} */
-      const cssClasses = {
-        ROOT: "mdc-radio",
-        DISABLED: "mdc-radio--disabled"
-      };
+        /**
+         * {@see MDCSelectLabelAdapter} for typing information on parameters and return
+         * types.
+         * @return {!MDCSelectLabelAdapter}
+         */
+        static get defaultAdapter() {
+          return /** @type {!MDCSelectLabelAdapter} */ ({
+            addClass: () => {},
+            removeClass: () => {},
+            getWidth: () => {}
+          });
+        }
+
+        /**
+         * @param {!MDCSelectLabelAdapter} adapter
+         */
+        constructor(adapter) {
+          super(
+            Object.assign(MDCSelectLabelFoundation.defaultAdapter, adapter)
+          );
+        }
+
+        /**
+         * Styles the label to float or defloat as necessary.
+         * @param {string} value The value of the input.
+         */
+        styleFloat(value) {
+          const { LABEL_FLOAT_ABOVE } = MDCSelectLabelFoundation.cssClasses;
+          if (!!value) {
+            this.adapter_.addClass(LABEL_FLOAT_ABOVE);
+          } else {
+            this.adapter_.removeClass(LABEL_FLOAT_ABOVE);
+          }
+        }
+      }
+
+      /* harmony default export */ __webpack_exports__[
+        "a"
+      ] = MDCSelectLabelFoundation;
 
       /***/
     },
     /* 219 */
-    /***/ function(module, exports, __webpack_require__) {
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.AddAccountComponent = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _addAccountDialog = __webpack_require__(220);
-
-      var _addAccountDialog2 = _interopRequireDefault(_addAccountDialog);
-
-      var _dialog = __webpack_require__(12);
-
-      var _textfield = __webpack_require__(16);
-
-      var _select = __webpack_require__(24);
-
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-      }
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var AddAccountComponent = (exports.AddAccountComponent = (function() {
-        function AddAccountComponent(mountPoint) {
-          _classCallCheck(this, AddAccountComponent);
-
-          this.mountPoint = mountPoint;
-        }
-
-        _createClass(AddAccountComponent, [
-          {
-            key: "showDialog",
-            value: function showDialog() {
-              this.dialog.show();
-            }
-          },
-          {
-            key: "handleOk",
-            value: function handleOk() {
-              console.log("accepted");
-            }
-          },
-          {
-            key: "handleCancel",
-            value: function handleCancel() {
-              console.log("declined");
-            }
-          },
-          {
-            key: "querySelectors",
-            value: function querySelectors() {
-              this.addAccountDialog = this.mountPoint.querySelector(
-                ".add-account-dialog"
-              );
-              this.accountTextField = this.mountPoint.querySelector(
-                ".add-account-dialog__account"
-              );
-              this.typeAccountSelect = this.mountPoint.querySelector(
-                ".add-account-dialog__type"
-              );
-              this.currencyAccountSelect = this.mountPoint.querySelector(
-                ".add-account-dialog__currency"
-              );
-            }
-          },
-          {
-            key: "initMDC",
-            value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.addAccountDialog);
-              this.account = new _textfield.MDCTextField(this.accountTextField);
-              this.type = new _select.MDCSelect(this.typeAccountSelect);
-              this.currency = new _select.MDCSelect(this.currencyAccountSelect);
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-              this.dialog.listen(
-                "MDCDialog:cancel",
-                this.handleCancel.bind(this)
-              );
-            }
-          },
-          {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _addAccountDialog2.default)({
-                types: ["checking", "savings", "credit card", "cash"],
-                currencies: [
-                  "Ukraine, UAH",
-                  "United States, USD",
-                  "Europe, EUR"
-                ]
-              });
-              this.querySelectors();
-              this.initMDC();
-              this.addEventListeners();
-            }
-          }
-        ]);
-
-        return AddAccountComponent;
-      })());
+      const cssClasses = {
+        LABEL_FLOAT_ABOVE: "mdc-select__label--float-above"
+      };
+      /* harmony export (immutable) */ __webpack_exports__["a"] = cssClasses;
 
       /***/
     },
     /* 220 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "",
-          __j = Array.prototype.join;
-        function print() {
-          __p += __j.call(arguments, "");
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
+        7
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
+        40
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_menu_index__ = __webpack_require__(
+        16
+      );
+      /**
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      const OPENER_KEYS = [
+        { key: "ArrowUp", keyCode: 38, forType: "keydown" },
+        { key: "ArrowDown", keyCode: 40, forType: "keydown" },
+        { key: "Space", keyCode: 32, forType: "keyup" }
+      ];
+
+      class MDCSelectFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_index__[
+        "b" /* MDCFoundation */
+      ] {
+        static get cssClasses() {
+          return __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */];
         }
-        with (obj) {
-          __p +=
-            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Account">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
-          for (let i = 0; i < types.length; i++) {
-            __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
-              ((__t = types[i]) == null ? "" : __t) +
-              "\n                  </li>\n                  ";
-          }
-          __p +=
-            '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Currency</div>\n              <div class="mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
-          for (let i = 0; i < currencies.length; i++) {
-            __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
-              ((__t = currencies[i]) == null ? "" : __t) +
-              "\n                  </li>\n                  ";
-          }
-          __p +=
-            '\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+
+        static get strings() {
+          return __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */];
         }
-        return __p;
-      };
+
+        static get defaultAdapter() {
+          return {
+            addClass: (/* className: string */) => {},
+            removeClass: (/* className: string */) => {},
+            floatLabel: (/* value: boolean */) => {},
+            activateBottomLine: () => {},
+            deactivateBottomLine: () => {},
+            addBodyClass: (/* className: string */) => {},
+            removeBodyClass: (/* className: string */) => {},
+            setAttr: (/* attr: string, value: string */) => {},
+            rmAttr: (/* attr: string */) => {},
+            computeBoundingRect: () => /* {left: number, top: number} */ ({
+              left: 0,
+              top: 0
+            }),
+            registerInteractionHandler: (/* type: string, handler: EventListener */) => {},
+            deregisterInteractionHandler: (/* type: string, handler: EventListener */) => {},
+            focus: () => {},
+            makeTabbable: () => {},
+            makeUntabbable: () => {},
+            getComputedStyleValue: (/* propertyName: string */) =>
+              /* string */ "",
+            setStyle: (/* propertyName: string, value: string */) => {},
+            create2dRenderingContext: () => /* {font: string, measureText: (string) => {width: number}} */ ({
+              font: "",
+              measureText: () => ({ width: 0 })
+            }),
+            setMenuElStyle: (/* propertyName: string, value: string */) => {},
+            setMenuElAttr: (/* attr: string, value: string */) => {},
+            rmMenuElAttr: (/* attr: string */) => {},
+            getMenuElOffsetHeight: () => /* number */ 0,
+            openMenu: (/* focusIndex: number */) => {},
+            isMenuOpen: () => /* boolean */ false,
+            setSelectedTextContent: (/* textContent: string */) => {},
+            getNumberOfOptions: () => /* number */ 0,
+            getTextForOptionAtIndex: (/* index: number */) => /* string */ "",
+            getValueForOptionAtIndex: (/* index: number */) => /* string */ "",
+            setAttrForOptionAtIndex: (/* index: number, attr: string, value: string */) => {},
+            rmAttrForOptionAtIndex: (/* index: number, attr: string */) => {},
+            getOffsetTopForOptionAtIndex: (/* index: number */) =>
+              /* number */ 0,
+            registerMenuInteractionHandler: (/* type: string, handler: EventListener */) => {},
+            deregisterMenuInteractionHandler: (/* type: string, handler: EventListener */) => {},
+            notifyChange: () => {},
+            getWindowInnerHeight: () => /* number */ 0
+          };
+        }
+
+        constructor(adapter) {
+          super(Object.assign(MDCSelectFoundation.defaultAdapter, adapter));
+          this.ctx_ = null;
+          this.selectedIndex_ = -1;
+          this.disabled_ = false;
+          this.isFocused_ = false;
+
+          /** @private {number} */
+          this.animationRequestId_ = 0;
+
+          this.displayHandler_ = evt => {
+            evt.preventDefault();
+            if (!this.adapter_.isMenuOpen()) {
+              this.open_();
+            }
+          };
+          this.displayViaKeyboardHandler_ = evt =>
+            this.handleDisplayViaKeyboard_(evt);
+          this.selectionHandler_ = ({ detail }) => {
+            const { index } = detail;
+
+            if (index !== this.selectedIndex_) {
+              this.setSelectedIndex(index);
+              this.adapter_.notifyChange();
+            }
+            this.close_();
+          };
+          this.cancelHandler_ = () => {
+            this.close_();
+            if (this.selectedIndex_ === -1) {
+              this.adapter_.floatLabel(false);
+            }
+          };
+        }
+
+        init() {
+          this.ctx_ = this.adapter_.create2dRenderingContext();
+          this.adapter_.registerInteractionHandler(
+            "click",
+            this.displayHandler_
+          );
+          this.adapter_.registerInteractionHandler(
+            "keydown",
+            this.displayViaKeyboardHandler_
+          );
+          this.adapter_.registerInteractionHandler(
+            "keyup",
+            this.displayViaKeyboardHandler_
+          );
+          this.adapter_.registerMenuInteractionHandler(
+            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
+              "MDCMenuFoundation"
+            ].strings.SELECTED_EVENT,
+            this.selectionHandler_
+          );
+          this.adapter_.registerMenuInteractionHandler(
+            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
+              "MDCMenuFoundation"
+            ].strings.CANCEL_EVENT,
+            this.cancelHandler_
+          );
+          this.resize();
+        }
+
+        destroy() {
+          // Drop reference to context object to prevent potential leaks
+          this.ctx_ = null;
+          cancelAnimationFrame(this.animationRequestId_);
+          this.adapter_.deregisterInteractionHandler(
+            "click",
+            this.displayHandler_
+          );
+          this.adapter_.deregisterInteractionHandler(
+            "keydown",
+            this.displayViaKeyboardHandler_
+          );
+          this.adapter_.deregisterInteractionHandler(
+            "keyup",
+            this.displayViaKeyboardHandler_
+          );
+          this.adapter_.deregisterMenuInteractionHandler(
+            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
+              "MDCMenuFoundation"
+            ].strings.SELECTED_EVENT,
+            this.selectionHandler_
+          );
+          this.adapter_.deregisterMenuInteractionHandler(
+            __WEBPACK_IMPORTED_MODULE_2__material_menu_index__[
+              "MDCMenuFoundation"
+            ].strings.CANCEL_EVENT,
+            this.cancelHandler_
+          );
+        }
+
+        getValue() {
+          return this.selectedIndex_ >= 0
+            ? this.adapter_.getValueForOptionAtIndex(this.selectedIndex_)
+            : "";
+        }
+
+        getSelectedIndex() {
+          return this.selectedIndex_;
+        }
+
+        setSelectedIndex(index) {
+          const prevSelectedIndex = this.selectedIndex_;
+          if (prevSelectedIndex >= 0) {
+            this.adapter_.rmAttrForOptionAtIndex(
+              this.selectedIndex_,
+              "aria-selected"
+            );
+          }
+
+          this.selectedIndex_ =
+            index >= 0 && index < this.adapter_.getNumberOfOptions()
+              ? index
+              : -1;
+          let selectedTextContent = "";
+          if (this.selectedIndex_ >= 0) {
+            selectedTextContent = this.adapter_
+              .getTextForOptionAtIndex(this.selectedIndex_)
+              .trim();
+            this.adapter_.setAttrForOptionAtIndex(
+              this.selectedIndex_,
+              "aria-selected",
+              "true"
+            );
+            this.adapter_.floatLabel(true);
+          } else {
+            if (!this.adapter_.isMenuOpen()) {
+              this.adapter_.floatLabel(false);
+            }
+          }
+          this.adapter_.setSelectedTextContent(selectedTextContent);
+        }
+
+        isDisabled() {
+          return this.disabled_;
+        }
+
+        setDisabled(disabled) {
+          const { DISABLED } = MDCSelectFoundation.cssClasses;
+          this.disabled_ = disabled;
+          if (this.disabled_) {
+            this.adapter_.addClass(DISABLED);
+            this.adapter_.setAttr("aria-disabled", "true");
+            this.adapter_.makeUntabbable();
+          } else {
+            this.adapter_.removeClass(DISABLED);
+            this.adapter_.rmAttr("aria-disabled");
+            this.adapter_.makeTabbable();
+          }
+        }
+
+        resize() {
+          const font = this.adapter_.getComputedStyleValue("font");
+          const letterSpacing = parseFloat(
+            this.adapter_.getComputedStyleValue("letter-spacing")
+          );
+
+          if (font) {
+            this.ctx_.font = font;
+          } else {
+            const primaryFontFamily = this.adapter_
+              .getComputedStyleValue("font-family")
+              .split(",")[0];
+            const fontSize = this.adapter_.getComputedStyleValue("font-size");
+            this.ctx_.font = `${fontSize} ${primaryFontFamily}`;
+          }
+
+          let maxTextLength = 0;
+
+          for (let i = 0, l = this.adapter_.getNumberOfOptions(); i < l; i++) {
+            const surfacePaddingRight = parseInt(
+              this.adapter_.getComputedStyleValue("padding-right"),
+              10
+            );
+            const surfacePaddingLeft = parseInt(
+              this.adapter_.getComputedStyleValue("padding-left"),
+              10
+            );
+            const selectBoxAddedPadding =
+              surfacePaddingRight + surfacePaddingLeft;
+            const txt = this.adapter_.getTextForOptionAtIndex(i).trim();
+            const { width } = this.ctx_.measureText(txt);
+            const addedSpace = letterSpacing * txt.length;
+
+            maxTextLength = Math.max(
+              maxTextLength,
+              Math.ceil(width + addedSpace + selectBoxAddedPadding)
+            );
+          }
+
+          this.adapter_.setStyle("width", `${maxTextLength}px`);
+        }
+
+        open_() {
+          this.disableScroll_();
+          const { OPEN } = MDCSelectFoundation.cssClasses;
+          const focusIndex = this.selectedIndex_ < 0 ? 0 : this.selectedIndex_;
+
+          this.setMenuStylesForOpenAtIndex_(focusIndex);
+          this.adapter_.floatLabel(true);
+          this.adapter_.activateBottomLine();
+          this.adapter_.addClass(OPEN);
+          this.animationRequestId_ = requestAnimationFrame(() => {
+            this.adapter_.openMenu(focusIndex);
+            this.isFocused_ = true;
+          });
+        }
+
+        setMenuStylesForOpenAtIndex_(index) {
+          const innerHeight = this.adapter_.getWindowInnerHeight();
+          const { left, top } = this.adapter_.computeBoundingRect();
+
+          this.adapter_.setMenuElAttr("aria-hidden", "true");
+          this.adapter_.setMenuElStyle("display", "block");
+          const menuHeight = this.adapter_.getMenuElOffsetHeight();
+          const itemOffsetTop = this.adapter_.getOffsetTopForOptionAtIndex(
+            index
+          );
+          this.adapter_.setMenuElStyle("display", "");
+          this.adapter_.rmMenuElAttr("aria-hidden");
+
+          let adjustedTop = top - itemOffsetTop;
+          const overflowsTop = adjustedTop < 0;
+          const overflowsBottom = adjustedTop + menuHeight > innerHeight;
+          if (overflowsTop) {
+            adjustedTop = 0;
+          } else if (overflowsBottom) {
+            adjustedTop = Math.max(0, innerHeight - menuHeight);
+          }
+
+          this.adapter_.setMenuElStyle("left", `${left}px`);
+          this.adapter_.setMenuElStyle("top", `${adjustedTop}px`);
+          this.adapter_.setMenuElStyle(
+            "transform-origin",
+            `center ${itemOffsetTop}px`
+          );
+        }
+
+        close_() {
+          const { OPEN } = MDCSelectFoundation.cssClasses;
+          this.adapter_.removeClass(OPEN);
+          this.adapter_.deactivateBottomLine();
+          this.adapter_.focus();
+          this.enableScroll_();
+        }
+
+        handleDisplayViaKeyboard_(evt) {
+          // We use a hard-coded 2 instead of Event.AT_TARGET to avoid having to reference a browser
+          // global.
+          const EVENT_PHASE_AT_TARGET = 2;
+          if (evt.eventPhase !== EVENT_PHASE_AT_TARGET) {
+            return;
+          }
+
+          // Prevent pressing space down from scrolling the page
+          const isSpaceDown =
+            evt.type === "keydown" &&
+            (evt.key === "Space" || evt.keyCode === 32);
+          if (isSpaceDown) {
+            evt.preventDefault();
+          }
+
+          const isOpenerKey = OPENER_KEYS.some(({ key, keyCode, forType }) => {
+            return (
+              evt.type === forType &&
+              (evt.key === key || evt.keyCode === keyCode)
+            );
+          });
+
+          if (isOpenerKey) {
+            this.displayHandler_(evt);
+          }
+        }
+
+        disableScroll_() {
+          this.adapter_.addBodyClass(
+            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+              .SCROLL_LOCK
+          );
+        }
+
+        enableScroll_() {
+          this.adapter_.removeBodyClass(
+            __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */]
+              .SCROLL_LOCK
+          );
+        }
+      }
+      /* harmony export (immutable) */ __webpack_exports__[
+        "a"
+      ] = MDCSelectFoundation;
 
       /***/
     },
@@ -31887,7 +31882,7 @@
       Object.defineProperty(exports, "__esModule", {
         value: true
       });
-      exports.AddTagComponent = undefined;
+      exports.ToolbarComponent = undefined;
 
       var _createClass = (function() {
         function defineProperties(target, props) {
@@ -31906,13 +31901,11 @@
         };
       })();
 
-      var _addTagDialog = __webpack_require__(222);
+      var _toolbar = __webpack_require__(222);
 
-      var _addTagDialog2 = _interopRequireDefault(_addTagDialog);
+      var _toolbar2 = _interopRequireDefault(_toolbar);
 
-      var _dialog = __webpack_require__(12);
-
-      var _textfield = __webpack_require__(16);
+      var _aboutDialog = __webpack_require__(223);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -31924,72 +31917,73 @@
         }
       }
 
-      var AddTagComponent = (exports.AddTagComponent = (function() {
-        function AddTagComponent(mountPoint) {
-          _classCallCheck(this, AddTagComponent);
+      var ToolbarComponent = (exports.ToolbarComponent = (function() {
+        function ToolbarComponent(mountPoint, props) {
+          _classCallCheck(this, ToolbarComponent);
 
           this.mountPoint = mountPoint;
+          this.props = props;
         }
 
-        _createClass(AddTagComponent, [
-          {
-            key: "showDialog",
-            value: function showDialog() {
-              this.dialog.show();
-            }
-          },
-          {
-            key: "handleOk",
-            value: function handleOk() {
-              console.log("accepted");
-            }
-          },
-          {
-            key: "handleCancel",
-            value: function handleCancel() {
-              console.log("declined");
-            }
-          },
+        _createClass(ToolbarComponent, [
           {
             key: "querySelectors",
             value: function querySelectors() {
-              this.addTagDialog = this.mountPoint.querySelector(
-                ".add-tag-dialog"
+              this.menu = this.mountPoint.querySelector(".toolbar__menu");
+              this.aboutButton = this.mountPoint.querySelector(
+                ".toolbar__about-dialog-activation"
               );
-              this.tagTextField = this.mountPoint.querySelector(
-                ".add-tag-dialog__tag"
+              this.aboutMountPoint = this.mountPoint.querySelector(
+                ".toolbar__about-dialog"
               );
             }
           },
           {
-            key: "initMDC",
-            value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.addTagDialog);
-              this.tag = new _textfield.MDCTextField(this.tagTextField);
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.aboutDialog = new _aboutDialog.AboutDialogComponent(
+                this.aboutMountPoint
+              );
+              this.aboutDialog.mount();
             }
           },
           {
             key: "addEventListeners",
             value: function addEventListeners() {
-              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-              this.dialog.listen(
-                "MDCDialog:cancel",
-                this.handleCancel.bind(this)
+              this.menu.addEventListener(
+                "click",
+                this.handleMenuClick.bind(this)
               );
+              this.aboutButton.addEventListener(
+                "click",
+                this.handleAboutClick.bind(this)
+              );
+            }
+          },
+          {
+            key: "handleMenuClick",
+            value: function handleMenuClick() {
+              this.props.onMenuClick();
+            }
+          },
+          {
+            key: "handleAboutClick",
+            value: function handleAboutClick() {
+              this.aboutDialog.showDialog();
             }
           },
           {
             key: "mount",
             value: function mount() {
-              this.mountPoint.innerHTML = (0, _addTagDialog2.default)();
+              this.mountPoint.innerHTML = (0, _toolbar2.default)();
               this.querySelectors();
-              this.initMDC();
+              this.mountChildren();
               this.addEventListeners();
             }
           }
         ]);
 
-        return AddTagComponent;
+        return ToolbarComponent;
       })());
 
       /***/
@@ -32002,7 +31996,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add tag\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\n        Type tag name\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\n  <div class="toolbar__container mdc-toolbar__row">\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\n    </section>\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\n        About\n      </button>\n    </section>\n  </div>\n  <div class="toolbar__about-dialog"></div>\n</header>';
         }
         return __p;
       };
@@ -32016,7 +32010,7 @@
       Object.defineProperty(exports, "__esModule", {
         value: true
       });
-      exports.AboutComponent = undefined;
+      exports.AboutDialogComponent = undefined;
 
       var _createClass = (function() {
         function defineProperties(target, props) {
@@ -32039,7 +32033,11 @@
 
       var _aboutDialog2 = _interopRequireDefault(_aboutDialog);
 
-      var _dialog = __webpack_require__(12);
+      var _dialog = __webpack_require__(8);
+
+      var _package = __webpack_require__(225);
+
+      var _package2 = _interopRequireDefault(_package);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32051,14 +32049,14 @@
         }
       }
 
-      var AboutComponent = (exports.AboutComponent = (function() {
-        function AboutComponent(mountPoint) {
-          _classCallCheck(this, AboutComponent);
+      var AboutDialogComponent = (exports.AboutDialogComponent = (function() {
+        function AboutDialogComponent(mountPoint) {
+          _classCallCheck(this, AboutDialogComponent);
 
           this.mountPoint = mountPoint;
         }
 
-        _createClass(AboutComponent, [
+        _createClass(AboutDialogComponent, [
           {
             key: "showDialog",
             value: function showDialog() {
@@ -32066,43 +32064,30 @@
             }
           },
           {
-            key: "handleOk",
-            value: function handleOk() {
-              console.log("accepted");
-            }
-          },
-          {
             key: "querySelectors",
             value: function querySelectors() {
-              this.addTagDialog = this.mountPoint.querySelector(
-                ".about-dialog"
-              );
+              this.aboutDialog = this.mountPoint.querySelector(".about-dialog");
             }
           },
           {
             key: "initMDC",
             value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.addTagDialog);
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+              this.dialog = new _dialog.MDCDialog(this.aboutDialog);
             }
           },
           {
             key: "mount",
             value: function mount() {
-              this.mountPoint.innerHTML = (0, _aboutDialog2.default)();
+              this.mountPoint.innerHTML = (0, _aboutDialog2.default)({
+                version: _package2.default.version
+              });
               this.querySelectors();
               this.initMDC();
-              this.addEventListeners();
             }
           }
         ]);
 
-        return AboutComponent;
+        return AboutDialogComponent;
       })());
 
       /***/
@@ -32115,7 +32100,9 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="about-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        About us\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <p>\n        About us bla bla bla Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '<aside class="about-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header about-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        About\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <p>Buxy - a simple finance tracking app</p>\n      <p>\n        Version\n        ' +
+            ((__t = version) == null ? "" : __t) +
+            '\n      </p>\n      <p>Developed by:\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\n        <a href="https://github.com/gift-a">@gift-a</a>\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
@@ -32123,6 +32110,328 @@
       /***/
     },
     /* 225 */
+    /***/ function(module, exports) {
+      module.exports = {
+        name: "buxy-vanilla",
+        version: "0.0.2",
+        description: "Simple finance tracking app",
+        private: true,
+        scripts: {
+          format: 'prettier --write "./**/*.{js,json,css,scss}"',
+          precommit: "lint-staged",
+          start: "webpack-dev-server",
+          "test:watch": "jest --watch",
+          "test:coverage": "jest --coverage",
+          test: "jest",
+          build: "webpack"
+        },
+        license: "MIT",
+        devDependencies: {
+          "babel-core": "^6.26.0",
+          "babel-jest": "^22.4.1",
+          "babel-loader": "^7.1.4",
+          "babel-preset-env": "^1.6.1",
+          "css-loader": "^0.28.10",
+          "ejs-loader": "^0.3.1",
+          husky: "^0.14.3",
+          jest: "^22.4.2",
+          "js-beautify": "^1.7.5",
+          "json-loader": "^0.5.7",
+          "lint-staged": "^7.0.0",
+          "node-sass": "^4.7.2",
+          prettier: "^1.11.1",
+          "sass-loader": "^6.0.7",
+          "style-loader": "^0.20.2",
+          webpack: "^3.11.0",
+          "webpack-cli": "^2.0.12",
+          "webpack-dev-server": "^2.11.2"
+        },
+        dependencies: {
+          "@material/animation": "^0.25.0",
+          "@material/button": "^0.32.0",
+          "@material/card": "^0.32.0",
+          "@material/dialog": "^0.32.0",
+          "@material/drawer": "^0.30.0",
+          "@material/elevation": "^0.28.0",
+          "@material/fab": "^0.32.0",
+          "@material/form-field": "^0.32.0",
+          "@material/layout-grid": "^0.24.0",
+          "@material/list": "^0.32.0",
+          "@material/menu": "^0.31.0",
+          "@material/radio": "^0.32.0",
+          "@material/ripple": "^0.32.0",
+          "@material/select": "^0.32.0",
+          "@material/textfield": "^0.32.0",
+          "@material/toolbar": "^0.32.0",
+          "@material/typography": "^0.28.0",
+          "chart.js": "^2.7.2",
+          "normalize.css": "^8.0.0"
+        }
+      };
+
+      /***/
+    },
+    /* 226 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TransactionsComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _transactions = __webpack_require__(227);
+
+      var _transactions2 = _interopRequireDefault(_transactions);
+
+      var _pieChart = __webpack_require__(228);
+
+      var _barChart = __webpack_require__(278);
+
+      var _tableTransactions = __webpack_require__(280);
+
+      var _addTransactionDialog = __webpack_require__(285);
+
+      var _transactionService = __webpack_require__(295);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TransactionsComponent = (exports.TransactionsComponent = (function() {
+        function TransactionsComponent(mountPoint, props) {
+          _classCallCheck(this, TransactionsComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+          this.list = [];
+        }
+
+        _createClass(TransactionsComponent, [
+          {
+            key: "loadStoredData",
+            value: function loadStoredData() {
+              var _this = this;
+
+              _transactionService.TransactionListService.get().then(function(
+                list
+              ) {
+                return _this.showStoredTransactions(list);
+              });
+            }
+          },
+          {
+            key: "addStoredData",
+            value: function addStoredData(data) {
+              var _this2 = this;
+
+              _transactionService.TransactionListService.add(data).then(
+                function(list) {
+                  return _this2.updateList(list);
+                }
+              );
+            }
+          },
+          {
+            key: "delStoredData",
+            value: function delStoredData(id) {
+              var _this3 = this;
+
+              _transactionService.TransactionListService.del(id).then(function(
+                list
+              ) {
+                return _this3.updateList(list);
+              });
+            }
+          },
+          {
+            key: "updateList",
+            value: function updateList(newList) {
+              this.list = newList;
+              this.checkEmptyState();
+            }
+          },
+          {
+            key: "showStoredTransactions",
+            value: function showStoredTransactions(storedList) {
+              if (storedList) {
+                this.updateList(storedList);
+                this.tableTransactionsComponent.addStoredTransactions(
+                  storedList
+                );
+                this.barChartComponent.createFromList(storedList);
+                this.pieChartComponent.createFromList(storedList);
+              }
+              this.checkEmptyState();
+            }
+          },
+          {
+            key: "updateCharts",
+            value: function updateCharts(action, data) {
+              this.barChartComponent.update(action, data);
+              this.pieChartComponent.update(action, data);
+            }
+          },
+          {
+            key: "handleAddTransactionSubmit",
+            value: function handleAddTransactionSubmit(data) {
+              this.tableTransactionsComponent.addTransaction(data);
+              this.updateCharts("add", data);
+              this.addStoredData(data);
+              this.props.onTransactionAdded(data);
+            }
+          },
+          {
+            key: "handleTransactionDelete",
+            value: function handleTransactionDelete(id) {
+              var data = this.list.find(function(elem) {
+                return elem.id === id;
+              });
+              this.props.onTransactionDelete(data);
+              this.updateCharts("del", data);
+              this.delStoredData(id);
+            }
+          },
+          {
+            key: "handleAddTransactionClick",
+            value: function handleAddTransactionClick() {
+              this.addTransactionDialogComponent.showDialog();
+            }
+          },
+          {
+            key: "checkEmptyState",
+            value: function checkEmptyState() {
+              if (this.list.length) {
+                this.transactionsContent.classList.remove(
+                  "transactions__block--hidden"
+                );
+                this.emptyState.classList.add("transactions__block--hidden");
+              } else {
+                this.transactionsContent.classList.add(
+                  "transactions__block--hidden"
+                );
+                this.emptyState.classList.remove("transactions__block--hidden");
+              }
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.tableTransactionsMountPoint = this.mountPoint.querySelector(
+                ".transactions__table-transactions"
+              );
+              this.pieChartMountPoint = this.mountPoint.querySelector(
+                ".transactions__pie-chart"
+              );
+              this.barChartMountPoint = this.mountPoint.querySelector(
+                ".transactions__bar-chart"
+              );
+              this.addTransactionButton = this.mountPoint.querySelector(
+                ".transactions__add-transaction-dialog-activation"
+              );
+              this.addTransactionDialogMountPoint = this.mountPoint.querySelector(
+                ".transactions__add-transaction-dialog"
+              );
+              this.transactionsContent = this.mountPoint.querySelector(
+                ".transactions__content"
+              );
+              this.emptyState = this.mountPoint.querySelector(
+                ".transactions__empty-state"
+              );
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.addTransactionButton.addEventListener(
+                "click",
+                this.handleAddTransactionClick.bind(this)
+              );
+            }
+          },
+          {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.tableTransactionsComponent = new _tableTransactions.TableTransactionsComponent(
+                this.tableTransactionsMountPoint,
+                {
+                  onDataDelete: this.handleTransactionDelete.bind(this)
+                }
+              );
+              this.tableTransactionsComponent.mount();
+              this.pieChartComponent = new _pieChart.PieChartComponent(
+                this.pieChartMountPoint
+              );
+              this.pieChartComponent.mount();
+              this.barChartComponent = new _barChart.BarChartComponent(
+                this.barChartMountPoint
+              );
+              this.barChartComponent.mount();
+              this.addTransactionDialogComponent = new _addTransactionDialog.AddTransactionComponent(
+                this.addTransactionDialogMountPoint,
+                {
+                  addTransaction: this.handleAddTransactionSubmit.bind(this)
+                }
+              );
+              this.addTransactionDialogComponent.mount();
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _transactions2.default)();
+              this.querySelectors();
+              this.mountChildren();
+              this.addEventListeners();
+              this.loadStoredData();
+            }
+          }
+        ]);
+
+        return TransactionsComponent;
+      })());
+
+      /***/
+    },
+    /* 227 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<div class="transactions mdc-layout-grid">\n  <div class="transactions__content transactions__block">\n    <div class="mdc-layout-grid__inner">\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n    </div>\n    <div class="transactions__table-transactions"></div>\n  </div>\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\n    <p>You don\'t have any transactions</p>\n  </div>\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\n    <span class="mdc-fab__icon">add</span>\n  </button>\n  <div class="transactions__add-transaction-dialog"></div>\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 228 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32148,13 +32457,17 @@
         };
       })();
 
-      var _pieChart = __webpack_require__(226);
+      var _pieChart = __webpack_require__(229);
 
       var _pieChart2 = _interopRequireDefault(_pieChart);
 
-      var _chart = __webpack_require__(38);
+      var _chart = __webpack_require__(41);
 
       var _chart2 = _interopRequireDefault(_chart);
+
+      var _currencyConverterUah = __webpack_require__(168);
+
+      var _colorGenerator = __webpack_require__(277);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32171,38 +32484,105 @@
           _classCallCheck(this, PieChartComponent);
 
           this.mountPoint = mountPoint;
+          this.dataset = { tags: [], amounts: [], colors: [] };
         }
 
         _createClass(PieChartComponent, [
           {
             key: "querySelectors",
             value: function querySelectors() {
-              this.pieChartCtx = this.mountPoint.querySelector(
-                ".chart__visual"
-              );
+              this.chartCtx = this.mountPoint.querySelector(".chart__visual");
             }
           },
           {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _pieChart2.default)();
-              this.querySelectors();
-              this.createPieChart();
+            key: "update",
+            value: function update(action, data) {
+              if (data.type === "+") {
+                return;
+              }
+              if (action === "add") {
+                this.dataset = this.addCurrData(this.dataset, data);
+              } else if (action === "del") {
+                this.dataset = this.delCurrData(this.dataset, data);
+              }
+              this.drawChanged();
             }
           },
           {
-            key: "createPieChart",
-            value: function createPieChart() {
-              var pieChart = new _chart2.default(this.pieChartCtx, {
+            key: "createFromList",
+            value: function createFromList(list) {
+              var expenceList = list
+                .filter(function(item) {
+                  return item.type === "-";
+                })
+                .reverse();
+              this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
+              this.drawChanged();
+            }
+          },
+          {
+            key: "addCurrData",
+            value: function addCurrData(data, item) {
+              var amount = item.amount;
+              if (item.account.currency !== "UAH") {
+                amount = _currencyConverterUah.CurrencyConverterUAHService.convert(
+                  item.account.currency,
+                  amount
+                );
+              }
+              var i = data.tags.indexOf(item.tag);
+              if (i < 0) {
+                data.tags.push(item.tag);
+                data.amounts.push(amount);
+                data.colors.push(_colorGenerator.ColorGeneratorService.get());
+              } else {
+                data.amounts[i] += amount;
+              }
+              return data;
+            }
+          },
+          {
+            key: "delCurrData",
+            value: function delCurrData(data, item) {
+              var amount = item.amount;
+              if (item.account.currency !== "UAH") {
+                amount = _currencyConverterUah.CurrencyConverterUAHService.convert(
+                  item.account.currency,
+                  amount
+                );
+              }
+              var i = data.tags.indexOf(item.tag);
+              data.amounts[i] -= amount;
+              if (data.amounts[i] < 0.01) {
+                data.tags.splice(i, 1);
+                data.amounts.splice(i, 1);
+                data.colors.splice(i, 1);
+              }
+              return data;
+            }
+          },
+          {
+            key: "drawChanged",
+            value: function drawChanged() {
+              this.chart.data.datasets[0].data = this.dataset.amounts;
+              this.chart.data.datasets[0].backgroundColor = this.dataset.colors;
+              this.chart.data.labels = this.dataset.tags;
+              this.chart.update();
+            }
+          },
+          {
+            key: "draw",
+            value: function draw() {
+              this.chart = new _chart2.default(this.chartCtx, {
                 type: "pie",
                 data: {
                   datasets: [
                     {
-                      data: [10, 20, 30],
-                      backgroundColor: ["#673AB7", "#F44336", "#FFC107"]
+                      data: this.dataset.amounts,
+                      backgroundColor: this.dataset.colors
                     }
                   ],
-                  labels: ["Transport", "Groceries", "Entertainment"]
+                  labels: this.dataset.tags
                 },
                 options: {
                   legend: {
@@ -32215,6 +32595,14 @@
                 }
               });
             }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _pieChart2.default)();
+              this.querySelectors();
+              this.draw();
+            }
           }
         ]);
 
@@ -32223,7 +32611,7 @@
 
       /***/
     },
-    /* 226 */
+    /* 229 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32238,7 +32626,7 @@
 
       /***/
     },
-    /* 227 */
+    /* 230 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32291,7 +32679,7 @@
 
       /***/
     },
-    /* 228 */
+    /* 231 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32563,7 +32951,7 @@
 
       /***/
     },
-    /* 229 */
+    /* 232 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32812,7 +33200,7 @@
 
       /***/
     },
-    /* 230 */
+    /* 233 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32915,13 +33303,13 @@
 
       /***/
     },
-    /* 231 */
+    /* 234 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
       /* global document: false */
 
-      var color = __webpack_require__(39);
+      var color = __webpack_require__(42);
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
 
@@ -33646,9 +34034,9 @@
 
       /***/
     },
-    /* 232 */
+    /* 235 */
     /***/ function(module, exports, __webpack_require__) {
-      var conversions = __webpack_require__(233);
+      var conversions = __webpack_require__(236);
 
       var convert = function() {
         return new Converter();
@@ -33740,7 +34128,7 @@
 
       /***/
     },
-    /* 233 */
+    /* 236 */
     /***/ function(module, exports) {
       /* MIT license */
 
@@ -34486,10 +34874,10 @@
 
       /***/
     },
-    /* 234 */
+    /* 237 */
     /***/ function(module, exports, __webpack_require__) {
       /* MIT license */
-      var colorNames = __webpack_require__(235);
+      var colorNames = __webpack_require__(238);
 
       module.exports = {
         getRgba: getRgba,
@@ -34740,7 +35128,7 @@
 
       /***/
     },
-    /* 235 */
+    /* 238 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -34897,7 +35285,7 @@
 
       /***/
     },
-    /* 236 */
+    /* 239 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35021,7 +35409,7 @@
 
       /***/
     },
-    /* 237 */
+    /* 240 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35127,7 +35515,7 @@
 
       /***/
     },
-    /* 238 */
+    /* 241 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35254,7 +35642,7 @@
 
       /***/
     },
-    /* 239 */
+    /* 242 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35487,7 +35875,7 @@
 
       /***/
     },
-    /* 240 */
+    /* 243 */
     /***/ function(module, exports) {
       /**
        * Platform fallback implementation (minimal).
@@ -35507,7 +35895,7 @@
 
       /***/
     },
-    /* 241 */
+    /* 244 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /**
@@ -36000,7 +36388,7 @@
 
       /***/
     },
-    /* 242 */
+    /* 245 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
@@ -36186,16 +36574,16 @@
 
       /***/
     },
-    /* 243 */
+    /* 246 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
-      var Interaction = __webpack_require__(40);
-      var layouts = __webpack_require__(9);
-      var platform = __webpack_require__(41);
-      var plugins = __webpack_require__(42);
+      var Interaction = __webpack_require__(43);
+      var layouts = __webpack_require__(10);
+      var platform = __webpack_require__(44);
+      var plugins = __webpack_require__(45);
 
       module.exports = function(Chart) {
         // Create a dictionary of chart types, to allow for extension of existing types
@@ -37232,7 +37620,7 @@
 
       /***/
     },
-    /* 244 */
+    /* 247 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -37612,13 +38000,13 @@
 
       /***/
     },
-    /* 245 */
+    /* 248 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
-      var layouts = __webpack_require__(9);
+      var layouts = __webpack_require__(10);
 
       module.exports = function(Chart) {
         Chart.scaleService = {
@@ -37666,14 +38054,14 @@
 
       /***/
     },
-    /* 246 */
+    /* 249 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var Element = __webpack_require__(5);
       var helpers = __webpack_require__(1);
-      var Ticks = __webpack_require__(10);
+      var Ticks = __webpack_require__(11);
 
       defaults._set("scale", {
         display: true,
@@ -38750,7 +39138,7 @@
 
       /***/
     },
-    /* 247 */
+    /* 250 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -39827,7 +40215,7 @@
 
       /***/
     },
-    /* 248 */
+    /* 251 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40042,7 +40430,7 @@
 
       /***/
     },
-    /* 249 */
+    /* 252 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40199,13 +40587,13 @@
 
       /***/
     },
-    /* 250 */
+    /* 253 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
-      var Ticks = __webpack_require__(10);
+      var Ticks = __webpack_require__(11);
 
       module.exports = function(Chart) {
         var defaultConfig = {
@@ -40417,12 +40805,12 @@
 
       /***/
     },
-    /* 251 */
+    /* 254 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var helpers = __webpack_require__(1);
-      var Ticks = __webpack_require__(10);
+      var Ticks = __webpack_require__(11);
 
       /**
        * Generate a set of logarithmic ticks
@@ -40794,13 +41182,13 @@
 
       /***/
     },
-    /* 252 */
+    /* 255 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
-      var Ticks = __webpack_require__(10);
+      var Ticks = __webpack_require__(11);
 
       module.exports = function(Chart) {
         var globalDefaults = defaults.global;
@@ -41463,7 +41851,7 @@
 
       /***/
     },
-    /* 253 */
+    /* 256 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
@@ -42341,7 +42729,7 @@
 
       /***/
     },
-    /* 254 */
+    /* 257 */
     /***/ function(module, exports) {
       module.exports = function(module) {
         if (!module.webpackPolyfill) {
@@ -42368,253 +42756,253 @@
 
       /***/
     },
-    /* 255 */
+    /* 258 */
     /***/ function(module, exports, __webpack_require__) {
       var map = {
-        "./af": 43,
-        "./af.js": 43,
-        "./ar": 44,
-        "./ar-dz": 45,
-        "./ar-dz.js": 45,
-        "./ar-kw": 46,
-        "./ar-kw.js": 46,
-        "./ar-ly": 47,
-        "./ar-ly.js": 47,
-        "./ar-ma": 48,
-        "./ar-ma.js": 48,
-        "./ar-sa": 49,
-        "./ar-sa.js": 49,
-        "./ar-tn": 50,
-        "./ar-tn.js": 50,
-        "./ar.js": 44,
-        "./az": 51,
-        "./az.js": 51,
-        "./be": 52,
-        "./be.js": 52,
-        "./bg": 53,
-        "./bg.js": 53,
-        "./bm": 54,
-        "./bm.js": 54,
-        "./bn": 55,
-        "./bn.js": 55,
-        "./bo": 56,
-        "./bo.js": 56,
-        "./br": 57,
-        "./br.js": 57,
-        "./bs": 58,
-        "./bs.js": 58,
-        "./ca": 59,
-        "./ca.js": 59,
-        "./cs": 60,
-        "./cs.js": 60,
-        "./cv": 61,
-        "./cv.js": 61,
-        "./cy": 62,
-        "./cy.js": 62,
-        "./da": 63,
-        "./da.js": 63,
-        "./de": 64,
-        "./de-at": 65,
-        "./de-at.js": 65,
-        "./de-ch": 66,
-        "./de-ch.js": 66,
-        "./de.js": 64,
-        "./dv": 67,
-        "./dv.js": 67,
-        "./el": 68,
-        "./el.js": 68,
-        "./en-au": 69,
-        "./en-au.js": 69,
-        "./en-ca": 70,
-        "./en-ca.js": 70,
-        "./en-gb": 71,
-        "./en-gb.js": 71,
-        "./en-ie": 72,
-        "./en-ie.js": 72,
-        "./en-il": 73,
-        "./en-il.js": 73,
-        "./en-nz": 74,
-        "./en-nz.js": 74,
-        "./eo": 75,
-        "./eo.js": 75,
-        "./es": 76,
-        "./es-do": 77,
-        "./es-do.js": 77,
-        "./es-us": 78,
-        "./es-us.js": 78,
-        "./es.js": 76,
-        "./et": 79,
-        "./et.js": 79,
-        "./eu": 80,
-        "./eu.js": 80,
-        "./fa": 81,
-        "./fa.js": 81,
-        "./fi": 82,
-        "./fi.js": 82,
-        "./fo": 83,
-        "./fo.js": 83,
-        "./fr": 84,
-        "./fr-ca": 85,
-        "./fr-ca.js": 85,
-        "./fr-ch": 86,
-        "./fr-ch.js": 86,
-        "./fr.js": 84,
-        "./fy": 87,
-        "./fy.js": 87,
-        "./gd": 88,
-        "./gd.js": 88,
-        "./gl": 89,
-        "./gl.js": 89,
-        "./gom-latn": 90,
-        "./gom-latn.js": 90,
-        "./gu": 91,
-        "./gu.js": 91,
-        "./he": 92,
-        "./he.js": 92,
-        "./hi": 93,
-        "./hi.js": 93,
-        "./hr": 94,
-        "./hr.js": 94,
-        "./hu": 95,
-        "./hu.js": 95,
-        "./hy-am": 96,
-        "./hy-am.js": 96,
-        "./id": 97,
-        "./id.js": 97,
-        "./is": 98,
-        "./is.js": 98,
-        "./it": 99,
-        "./it.js": 99,
-        "./ja": 100,
-        "./ja.js": 100,
-        "./jv": 101,
-        "./jv.js": 101,
-        "./ka": 102,
-        "./ka.js": 102,
-        "./kk": 103,
-        "./kk.js": 103,
-        "./km": 104,
-        "./km.js": 104,
-        "./kn": 105,
-        "./kn.js": 105,
-        "./ko": 106,
-        "./ko.js": 106,
-        "./ky": 107,
-        "./ky.js": 107,
-        "./lb": 108,
-        "./lb.js": 108,
-        "./lo": 109,
-        "./lo.js": 109,
-        "./lt": 110,
-        "./lt.js": 110,
-        "./lv": 111,
-        "./lv.js": 111,
-        "./me": 112,
-        "./me.js": 112,
-        "./mi": 113,
-        "./mi.js": 113,
-        "./mk": 114,
-        "./mk.js": 114,
-        "./ml": 115,
-        "./ml.js": 115,
-        "./mr": 116,
-        "./mr.js": 116,
-        "./ms": 117,
-        "./ms-my": 118,
-        "./ms-my.js": 118,
-        "./ms.js": 117,
-        "./mt": 119,
-        "./mt.js": 119,
-        "./my": 120,
-        "./my.js": 120,
-        "./nb": 121,
-        "./nb.js": 121,
-        "./ne": 122,
-        "./ne.js": 122,
-        "./nl": 123,
-        "./nl-be": 124,
-        "./nl-be.js": 124,
-        "./nl.js": 123,
-        "./nn": 125,
-        "./nn.js": 125,
-        "./pa-in": 126,
-        "./pa-in.js": 126,
-        "./pl": 127,
-        "./pl.js": 127,
-        "./pt": 128,
-        "./pt-br": 129,
-        "./pt-br.js": 129,
-        "./pt.js": 128,
-        "./ro": 130,
-        "./ro.js": 130,
-        "./ru": 131,
-        "./ru.js": 131,
-        "./sd": 132,
-        "./sd.js": 132,
-        "./se": 133,
-        "./se.js": 133,
-        "./si": 134,
-        "./si.js": 134,
-        "./sk": 135,
-        "./sk.js": 135,
-        "./sl": 136,
-        "./sl.js": 136,
-        "./sq": 137,
-        "./sq.js": 137,
-        "./sr": 138,
-        "./sr-cyrl": 139,
-        "./sr-cyrl.js": 139,
-        "./sr.js": 138,
-        "./ss": 140,
-        "./ss.js": 140,
-        "./sv": 141,
-        "./sv.js": 141,
-        "./sw": 142,
-        "./sw.js": 142,
-        "./ta": 143,
-        "./ta.js": 143,
-        "./te": 144,
-        "./te.js": 144,
-        "./tet": 145,
-        "./tet.js": 145,
-        "./tg": 146,
-        "./tg.js": 146,
-        "./th": 147,
-        "./th.js": 147,
-        "./tl-ph": 148,
-        "./tl-ph.js": 148,
-        "./tlh": 149,
-        "./tlh.js": 149,
-        "./tr": 150,
-        "./tr.js": 150,
-        "./tzl": 151,
-        "./tzl.js": 151,
-        "./tzm": 152,
-        "./tzm-latn": 153,
-        "./tzm-latn.js": 153,
-        "./tzm.js": 152,
-        "./ug-cn": 154,
-        "./ug-cn.js": 154,
-        "./uk": 155,
-        "./uk.js": 155,
-        "./ur": 156,
-        "./ur.js": 156,
-        "./uz": 157,
-        "./uz-latn": 158,
-        "./uz-latn.js": 158,
-        "./uz.js": 157,
-        "./vi": 159,
-        "./vi.js": 159,
-        "./x-pseudo": 160,
-        "./x-pseudo.js": 160,
-        "./yo": 161,
-        "./yo.js": 161,
-        "./zh-cn": 162,
-        "./zh-cn.js": 162,
-        "./zh-hk": 163,
-        "./zh-hk.js": 163,
-        "./zh-tw": 164,
-        "./zh-tw.js": 164
+        "./af": 46,
+        "./af.js": 46,
+        "./ar": 47,
+        "./ar-dz": 48,
+        "./ar-dz.js": 48,
+        "./ar-kw": 49,
+        "./ar-kw.js": 49,
+        "./ar-ly": 50,
+        "./ar-ly.js": 50,
+        "./ar-ma": 51,
+        "./ar-ma.js": 51,
+        "./ar-sa": 52,
+        "./ar-sa.js": 52,
+        "./ar-tn": 53,
+        "./ar-tn.js": 53,
+        "./ar.js": 47,
+        "./az": 54,
+        "./az.js": 54,
+        "./be": 55,
+        "./be.js": 55,
+        "./bg": 56,
+        "./bg.js": 56,
+        "./bm": 57,
+        "./bm.js": 57,
+        "./bn": 58,
+        "./bn.js": 58,
+        "./bo": 59,
+        "./bo.js": 59,
+        "./br": 60,
+        "./br.js": 60,
+        "./bs": 61,
+        "./bs.js": 61,
+        "./ca": 62,
+        "./ca.js": 62,
+        "./cs": 63,
+        "./cs.js": 63,
+        "./cv": 64,
+        "./cv.js": 64,
+        "./cy": 65,
+        "./cy.js": 65,
+        "./da": 66,
+        "./da.js": 66,
+        "./de": 67,
+        "./de-at": 68,
+        "./de-at.js": 68,
+        "./de-ch": 69,
+        "./de-ch.js": 69,
+        "./de.js": 67,
+        "./dv": 70,
+        "./dv.js": 70,
+        "./el": 71,
+        "./el.js": 71,
+        "./en-au": 72,
+        "./en-au.js": 72,
+        "./en-ca": 73,
+        "./en-ca.js": 73,
+        "./en-gb": 74,
+        "./en-gb.js": 74,
+        "./en-ie": 75,
+        "./en-ie.js": 75,
+        "./en-il": 76,
+        "./en-il.js": 76,
+        "./en-nz": 77,
+        "./en-nz.js": 77,
+        "./eo": 78,
+        "./eo.js": 78,
+        "./es": 79,
+        "./es-do": 80,
+        "./es-do.js": 80,
+        "./es-us": 81,
+        "./es-us.js": 81,
+        "./es.js": 79,
+        "./et": 82,
+        "./et.js": 82,
+        "./eu": 83,
+        "./eu.js": 83,
+        "./fa": 84,
+        "./fa.js": 84,
+        "./fi": 85,
+        "./fi.js": 85,
+        "./fo": 86,
+        "./fo.js": 86,
+        "./fr": 87,
+        "./fr-ca": 88,
+        "./fr-ca.js": 88,
+        "./fr-ch": 89,
+        "./fr-ch.js": 89,
+        "./fr.js": 87,
+        "./fy": 90,
+        "./fy.js": 90,
+        "./gd": 91,
+        "./gd.js": 91,
+        "./gl": 92,
+        "./gl.js": 92,
+        "./gom-latn": 93,
+        "./gom-latn.js": 93,
+        "./gu": 94,
+        "./gu.js": 94,
+        "./he": 95,
+        "./he.js": 95,
+        "./hi": 96,
+        "./hi.js": 96,
+        "./hr": 97,
+        "./hr.js": 97,
+        "./hu": 98,
+        "./hu.js": 98,
+        "./hy-am": 99,
+        "./hy-am.js": 99,
+        "./id": 100,
+        "./id.js": 100,
+        "./is": 101,
+        "./is.js": 101,
+        "./it": 102,
+        "./it.js": 102,
+        "./ja": 103,
+        "./ja.js": 103,
+        "./jv": 104,
+        "./jv.js": 104,
+        "./ka": 105,
+        "./ka.js": 105,
+        "./kk": 106,
+        "./kk.js": 106,
+        "./km": 107,
+        "./km.js": 107,
+        "./kn": 108,
+        "./kn.js": 108,
+        "./ko": 109,
+        "./ko.js": 109,
+        "./ky": 110,
+        "./ky.js": 110,
+        "./lb": 111,
+        "./lb.js": 111,
+        "./lo": 112,
+        "./lo.js": 112,
+        "./lt": 113,
+        "./lt.js": 113,
+        "./lv": 114,
+        "./lv.js": 114,
+        "./me": 115,
+        "./me.js": 115,
+        "./mi": 116,
+        "./mi.js": 116,
+        "./mk": 117,
+        "./mk.js": 117,
+        "./ml": 118,
+        "./ml.js": 118,
+        "./mr": 119,
+        "./mr.js": 119,
+        "./ms": 120,
+        "./ms-my": 121,
+        "./ms-my.js": 121,
+        "./ms.js": 120,
+        "./mt": 122,
+        "./mt.js": 122,
+        "./my": 123,
+        "./my.js": 123,
+        "./nb": 124,
+        "./nb.js": 124,
+        "./ne": 125,
+        "./ne.js": 125,
+        "./nl": 126,
+        "./nl-be": 127,
+        "./nl-be.js": 127,
+        "./nl.js": 126,
+        "./nn": 128,
+        "./nn.js": 128,
+        "./pa-in": 129,
+        "./pa-in.js": 129,
+        "./pl": 130,
+        "./pl.js": 130,
+        "./pt": 131,
+        "./pt-br": 132,
+        "./pt-br.js": 132,
+        "./pt.js": 131,
+        "./ro": 133,
+        "./ro.js": 133,
+        "./ru": 134,
+        "./ru.js": 134,
+        "./sd": 135,
+        "./sd.js": 135,
+        "./se": 136,
+        "./se.js": 136,
+        "./si": 137,
+        "./si.js": 137,
+        "./sk": 138,
+        "./sk.js": 138,
+        "./sl": 139,
+        "./sl.js": 139,
+        "./sq": 140,
+        "./sq.js": 140,
+        "./sr": 141,
+        "./sr-cyrl": 142,
+        "./sr-cyrl.js": 142,
+        "./sr.js": 141,
+        "./ss": 143,
+        "./ss.js": 143,
+        "./sv": 144,
+        "./sv.js": 144,
+        "./sw": 145,
+        "./sw.js": 145,
+        "./ta": 146,
+        "./ta.js": 146,
+        "./te": 147,
+        "./te.js": 147,
+        "./tet": 148,
+        "./tet.js": 148,
+        "./tg": 149,
+        "./tg.js": 149,
+        "./th": 150,
+        "./th.js": 150,
+        "./tl-ph": 151,
+        "./tl-ph.js": 151,
+        "./tlh": 152,
+        "./tlh.js": 152,
+        "./tr": 153,
+        "./tr.js": 153,
+        "./tzl": 154,
+        "./tzl.js": 154,
+        "./tzm": 155,
+        "./tzm-latn": 156,
+        "./tzm-latn.js": 156,
+        "./tzm.js": 155,
+        "./ug-cn": 157,
+        "./ug-cn.js": 157,
+        "./uk": 158,
+        "./uk.js": 158,
+        "./ur": 159,
+        "./ur.js": 159,
+        "./uz": 160,
+        "./uz-latn": 161,
+        "./uz-latn.js": 161,
+        "./uz.js": 160,
+        "./vi": 162,
+        "./vi.js": 162,
+        "./x-pseudo": 163,
+        "./x-pseudo.js": 163,
+        "./yo": 164,
+        "./yo.js": 164,
+        "./zh-cn": 165,
+        "./zh-cn.js": 165,
+        "./zh-hk": 166,
+        "./zh-hk.js": 166,
+        "./zh-tw": 167,
+        "./zh-tw.js": 167
       };
       function webpackContext(req) {
         return __webpack_require__(webpackContextResolve(req));
@@ -42631,11 +43019,11 @@
       };
       webpackContext.resolve = webpackContextResolve;
       module.exports = webpackContext;
-      webpackContext.id = 255;
+      webpackContext.id = 258;
 
       /***/
     },
-    /* 256 */
+    /* 259 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -43217,7 +43605,7 @@
 
       /***/
     },
-    /* 257 */
+    /* 260 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -43434,7 +43822,7 @@
 
       /***/
     },
-    /* 258 */
+    /* 261 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -43850,7 +44238,7 @@
 
       /***/
     },
-    /* 259 */
+    /* 262 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44334,7 +44722,7 @@
 
       /***/
     },
-    /* 260 */
+    /* 263 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44616,7 +45004,7 @@
 
       /***/
     },
-    /* 261 */
+    /* 264 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44932,7 +45320,7 @@
 
       /***/
     },
-    /* 262 */
+    /* 265 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44981,7 +45369,7 @@
 
       /***/
     },
-    /* 263 */
+    /* 266 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44995,7 +45383,7 @@
 
       /***/
     },
-    /* 264 */
+    /* 267 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45008,7 +45396,7 @@
 
       /***/
     },
-    /* 265 */
+    /* 268 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45022,7 +45410,7 @@
 
       /***/
     },
-    /* 266 */
+    /* 269 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45036,7 +45424,7 @@
 
       /***/
     },
-    /* 267 */
+    /* 270 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45050,7 +45438,7 @@
 
       /***/
     },
-    /* 268 */
+    /* 271 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45064,7 +45452,7 @@
 
       /***/
     },
-    /* 269 */
+    /* 272 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45077,18 +45465,18 @@
 
       /***/
     },
-    /* 270 */
+    /* 273 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       module.exports = {};
-      module.exports.filler = __webpack_require__(271);
-      module.exports.legend = __webpack_require__(272);
-      module.exports.title = __webpack_require__(273);
+      module.exports.filler = __webpack_require__(274);
+      module.exports.legend = __webpack_require__(275);
+      module.exports.title = __webpack_require__(276);
 
       /***/
     },
-    /* 271 */
+    /* 274 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /**
@@ -45413,14 +45801,14 @@
 
       /***/
     },
-    /* 272 */
+    /* 275 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var Element = __webpack_require__(5);
       var helpers = __webpack_require__(1);
-      var layouts = __webpack_require__(9);
+      var layouts = __webpack_require__(10);
 
       var noop = helpers.noop;
 
@@ -46075,14 +46463,14 @@
 
       /***/
     },
-    /* 273 */
+    /* 276 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var Element = __webpack_require__(5);
       var helpers = __webpack_require__(1);
-      var layouts = __webpack_require__(9);
+      var layouts = __webpack_require__(10);
 
       var noop = helpers.noop;
 
@@ -46354,7 +46742,57 @@
 
       /***/
     },
-    /* 274 */
+    /* 277 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var ColorGeneratorService = (exports.ColorGeneratorService = (function() {
+        function ColorGeneratorService() {
+          _classCallCheck(this, ColorGeneratorService);
+        }
+
+        _createClass(ColorGeneratorService, null, [
+          {
+            key: "get",
+            value: function get() {
+              return "#" + (Math.random().toString(16) + "0000000").slice(2, 8);
+            }
+          }
+        ]);
+
+        return ColorGeneratorService;
+      })());
+
+      /***/
+    },
+    /* 278 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46380,13 +46818,15 @@
         };
       })();
 
-      var _barChart = __webpack_require__(275);
+      var _barChart = __webpack_require__(279);
 
       var _barChart2 = _interopRequireDefault(_barChart);
 
-      var _chart = __webpack_require__(38);
+      var _chart = __webpack_require__(41);
 
       var _chart2 = _interopRequireDefault(_chart);
+
+      var _currencyConverterUah = __webpack_require__(168);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -46404,28 +46844,87 @@
 
           this.mountPoint = mountPoint;
           this.props = props;
+          this.dataset = { income: 0, expence: 0 };
         }
 
         _createClass(BarChartComponent, [
           {
             key: "querySelectors",
             value: function querySelectors() {
-              this.barChartCtx = this.mountPoint.querySelector(
-                ".chart__visual"
-              );
+              this.chartCtx = this.mountPoint.querySelector(".chart__visual");
             }
           },
           {
-            key: "createBarChart",
-            value: function createBarChart() {
-              this.barChart = new _chart2.default(this.barChartCtx, {
+            key: "update",
+            value: function update(action, data) {
+              if (action === "add") {
+                this.dataset = this.addCurrData(this.dataset, data);
+              } else if (action === "del") {
+                this.dataset = this.delCurrData(this.dataset, data);
+              }
+              this.drawChanged();
+            }
+          },
+          {
+            key: "createFromList",
+            value: function createFromList(list) {
+              this.dataset = list.reduce(this.addCurrData, this.dataset);
+              this.drawChanged();
+            }
+          },
+          {
+            key: "addCurrData",
+            value: function addCurrData(data, item) {
+              var amount = item.amount;
+              if (item.account.currency !== "UAH") {
+                amount = _currencyConverterUah.CurrencyConverterUAHService.convert(
+                  item.account.currency,
+                  amount
+                );
+              }
+              item.type === "-"
+                ? (data.expence += amount)
+                : (data.income += amount);
+              return data;
+            }
+          },
+          {
+            key: "delCurrData",
+            value: function delCurrData(data, item) {
+              var amount = item.amount;
+              if (item.account.currency !== "UAH") {
+                amount = _currencyConverterUah.CurrencyConverterUAHService.convert(
+                  item.account.currency,
+                  amount
+                );
+              }
+              item.type === "-"
+                ? (data.expence -= amount)
+                : (data.income -= amount);
+              return data;
+            }
+          },
+          {
+            key: "drawChanged",
+            value: function drawChanged() {
+              this.chart.data.datasets[0].data = [
+                this.dataset.income,
+                this.dataset.expence
+              ];
+              this.chart.update();
+            }
+          },
+          {
+            key: "draw",
+            value: function draw() {
+              this.chart = new _chart2.default(this.chartCtx, {
                 type: "bar",
                 data: {
                   labels: ["Income", "Expense"],
                   datasets: [
                     {
                       label: "Value",
-                      data: [5000, 3000],
+                      data: [this.dataset.income, this.dataset.expence],
                       backgroundColor: ["#4caf50", "#f44336"]
                     }
                   ]
@@ -46463,7 +46962,7 @@
             value: function mount() {
               this.mountPoint.innerHTML = (0, _barChart2.default)();
               this.querySelectors();
-              this.createBarChart();
+              this.draw();
             }
           }
         ]);
@@ -46473,7 +46972,7 @@
 
       /***/
     },
-    /* 275 */
+    /* 279 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -46488,7 +46987,7 @@
 
       /***/
     },
-    /* 276 */
+    /* 280 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46514,9 +47013,17 @@
         };
       })();
 
-      var _tableTransactions = __webpack_require__(277);
+      var _tableTransactions = __webpack_require__(281);
 
       var _tableTransactions2 = _interopRequireDefault(_tableTransactions);
+
+      var _tableTransactionsTr = __webpack_require__(282);
+
+      var _tableTransactionsTr2 = _interopRequireDefault(_tableTransactionsTr);
+
+      var _buttonMore = __webpack_require__(15);
+
+      var _confirmDialog = __webpack_require__(283);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -46529,17 +47036,121 @@
       }
 
       var TableTransactionsComponent = (exports.TableTransactionsComponent = (function() {
-        function TableTransactionsComponent(mountPoint) {
+        function TableTransactionsComponent(mountPoint, props) {
           _classCallCheck(this, TableTransactionsComponent);
 
           this.mountPoint = mountPoint;
+          this.props = props;
         }
 
         _createClass(TableTransactionsComponent, [
           {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.transactionPoint = this.mountPoint.querySelector(
+                ".table-transaction__tbody"
+              );
+
+              this.confirmDialogMountPoint = this.mountPoint.querySelector(
+                ".table-transactions__confirm-dialog"
+              );
+            }
+          },
+          {
+            key: "addStoredTransactions",
+            value: function addStoredTransactions(list) {
+              var html = list
+                ? list
+                    .map(function(data) {
+                      return (0, _tableTransactionsTr2.default)({ row: data });
+                    })
+                    .join("")
+                : "";
+              this.transactionPoint.innerHTML = html;
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "addTransaction",
+            value: function addTransaction(data) {
+              this.transactionPoint.innerHTML =
+                (0, _tableTransactionsTr2.default)({
+                  row: data
+                }) + this.transactionPoint.innerHTML;
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "delTransaction",
+            value: function delTransaction(elem) {
+              var id = elem.dataset.id;
+              this.props.onDataDelete(id);
+              this.transactionPoint.removeChild(elem);
+            }
+          },
+          {
+            key: "querySelectorsButtons",
+            value: function querySelectorsButtons() {
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".table-transactions__more-button"
+              );
+            }
+          },
+          {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.confirmDialog = new _confirmDialog.ConfirmDialogComponent(
+                this.confirmDialogMountPoint,
+                {
+                  onOkClick: this.handleDeleteConfirm.bind(this)
+                }
+              );
+              this.confirmDialog.mount();
+            }
+          },
+          {
+            key: "handleDeleteConfirm",
+            value: function handleDeleteConfirm() {
+              this.delTransaction(this.rowToDelete);
+            }
+          },
+          {
+            key: "initMoreBtns",
+            value: function initMoreBtns() {
+              var _this = this;
+
+              this.querySelectorsButtons();
+              Array.from(this.moreBtnMountPoints).forEach(function(point) {
+                new _buttonMore.ButtonMoreComponent(point, {
+                  position: "left",
+                  onDeleteClick: _this.handleDeleteClick.bind(_this),
+                  onEditClick: _this.handleEditClick.bind(_this)
+                }).mount();
+              });
+            }
+          },
+          {
+            key: "handleEditClick",
+            value: function handleEditClick() {
+              console.log("handleEditClick");
+            }
+          },
+          {
+            key: "handleDeleteClick",
+            value: function handleDeleteClick(e) {
+              this.rowToDelete = e.target.closest(".table-transactions__tr");
+              var elemDescription = this.rowToDelete.querySelector(
+                ".table-transactions__td--desc"
+              ).innerHTML;
+              this.confirmDialog.showDialog("transaction", elemDescription);
+            }
+          },
+          {
             key: "mount",
             value: function mount() {
               this.mountPoint.innerHTML = (0, _tableTransactions2.default)();
+              this.querySelectors();
+              this.mountChildren();
             }
           }
         ]);
@@ -46549,7 +47160,7 @@
 
       /***/
     },
-    /* 277 */
+    /* 281 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -46557,7 +47168,1261 @@
           __p = "";
         with (obj) {
           __p +=
-            '<table class="table-transactions mdc-elevation--z2">\n  <thead class="table-transactions__thead">\n    <tr class="table-transactions__tr">\n      <th class="table-transactions__th">Date</th>\n      <th class="table-transactions__th">Amount</th>\n      <th class="table-transactions__th">Description</th>\n      <th class="table-transactions__th">Tags</th>\n      <th class="table-transactions__th">Account</th>\n    </tr>\n  </thead>\n  <tbody class="table-transaction__tbody">\n    <tr class="table-transactions__tr table-transactions__highlighted">\n      <td class="table-transactions__td">12 Mar</td>\n      <td class="table-transactions__td">+ 5,742.29</td>\n      <td class="table-transactions__td">Google Paycheck</td>\n      <td class="table-transactions__td">Salary</td>\n      <td class="table-transactions__td">\n        <span class="table-transactions__span">BoA Checking</span>\n        <button class="table-transactions__button mdc-button">\n          <i class="material-icons mdc-button__icon table-transactions__icon">more_vert</i>\n        </button>\n      </td>\n    </tr>\n    <tr class="table-transactions__tr table-transactions__highlighted">\n      <td class="table-transactions__td">9 Mar</td>\n      <td class="table-transactions__td">- 1,400.00</td>\n      <td class="table-transactions__td">Rent</td>\n      <td class="table-transactions__td">Rent</td>\n      <td class="table-transactions__td ">\n          <span class="table-transactions__span">Chase credit card</span>\n          <button class="table-transactions__button mdc-button">\n            <i class="material-icons mdc-button__icon table-transactions__icon">more_vert</i>\n          </button>\n      </td>\n    </tr>\n    <tr class="table-transactions__tr table-transactions__highlighted">\n      <td class="table-transactions__td">25 Feb</td>\n      <td class="table-transactions__td">- 1,420.74</td>\n      <td class="table-transactions__td">Birch Creek Apartments</td>\n      <td class="table-transactions__td">Rent</td>\n      <td class="table-transactions__td">\n          <span class="table-transactions__span">Amex cradi card</span>\n          <button class="table-transactions__button mdc-button">\n            <i class="material-icons mdc-button__icon table-transactions__icon">more_vert</i>\n          </button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n';
+            '<div class="table-transactions">\n  <table class="table-transactions__table mdc-elevation--z2">\n    <thead class="table-transactions__thead">\n      <tr class="table-transactions__tr">\n        <th class="table-transactions__th">Date</th>\n        <th class="table-transactions__th">Amount</th>\n        <th class="table-transactions__th">Description</th>\n        <th class="table-transactions__th">Tags</th>\n        <th class="table-transactions__th">Account</th>\n      </tr>\n    </thead>\n    <tbody class="table-transaction__tbody">\n    </tbody>\n  </table>\n  <div class="table-transactions__confirm-dialog"></div>\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 282 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<tr class="table-transactions__tr table-transactions__highlighted" data-id="' +
+            ((__t = row.id) == null ? "" : __t) +
+            '">\n  <td class="table-transactions__td">\n    ' +
+            ((__t = row.date) == null ? "" : __t) +
+            '\n  </td>\n  <td class="table-transactions__td">\n    <span>' +
+            ((__t = row.type) == null ? "" : __t) +
+            "</span>\n    <span>" +
+            ((__t = row.amount) == null ? "" : __t) +
+            "</span>\n    <span>" +
+            ((__t = row.account.currency) == null ? "" : __t) +
+            '</span>\n  </td>\n  <td class="table-transactions__td table-transactions__td--desc">\n    ' +
+            ((__t = row.desc) == null ? "" : __t) +
+            '\n  </td>\n  <td class="table-transactions__td">\n    ' +
+            ((__t = row.tag) == null ? "" : __t) +
+            '\n  </td>\n  <td class="table-transactions__td">\n    <span class="table-transactions__span">' +
+            ((__t = row.account.name) == null ? "" : __t) +
+            '</span>,\n    <span class="table-transactions__span">' +
+            ((__t = row.account.type) == null ? "" : __t) +
+            '</span>\n    <div class="table-transactions__more-button"></div>\n  </td>\n</tr>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 283 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.ConfirmDialogComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _confirmDialog = __webpack_require__(284);
+
+      var _confirmDialog2 = _interopRequireDefault(_confirmDialog);
+
+      var _dialog = __webpack_require__(8);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var ConfirmDialogComponent = (exports.ConfirmDialogComponent = (function() {
+        function ConfirmDialogComponent(mountPoint, props) {
+          _classCallCheck(this, ConfirmDialogComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(ConfirmDialogComponent, [
+          {
+            key: "showDialog",
+            value: function showDialog(type, name) {
+              Array.from(this.confirmDialogTypes).forEach(function(el) {
+                el.innerHTML = type;
+              });
+              this.confirmDialogName.innerHTML = name;
+              this.dialog.show();
+            }
+          },
+          {
+            key: "handleOkClick",
+            value: function handleOkClick() {
+              this.props.onOkClick();
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.confirmDialog = this.mountPoint.querySelector(
+                ".confirm-dialog"
+              );
+              this.confirmDialogTypes = this.mountPoint.querySelectorAll(
+                ".confirm-dialog__type"
+              );
+              this.confirmDialogName = this.mountPoint.querySelector(
+                ".confirm-dialog__name"
+              );
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.dialog = new _dialog.MDCDialog(this.confirmDialog);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.dialog.listen(
+                "MDCDialog:accept",
+                this.handleOkClick.bind(this)
+              );
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _confirmDialog2.default)();
+              this.querySelectors();
+              this.initMDC();
+              this.addEventListeners();
+            }
+          }
+        ]);
+
+        return ConfirmDialogComponent;
+      })());
+
+      /***/
+    },
+    /* 284 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<aside class="confirm-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Delete\n        <span class="confirm-dialog__type"></span>\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div>\n        Are you sure you want to delete\n        <span class="confirm-dialog__type"></span> &quot;\n        <span class="confirm-dialog__name"></span>&quot;?\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 285 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AddTransactionComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _addTransactionDialog = __webpack_require__(286);
+
+      var _addTransactionDialog2 = _interopRequireDefault(
+        _addTransactionDialog
+      );
+
+      var _dialog = __webpack_require__(8);
+
+      var _select = __webpack_require__(25);
+
+      var _textfield = __webpack_require__(19);
+
+      var _radio = __webpack_require__(287);
+
+      var _customSelect = __webpack_require__(291);
+
+      var _accountService = __webpack_require__(28);
+
+      var _tagService = __webpack_require__(294);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var AddTransactionComponent = (exports.AddTransactionComponent = (function() {
+        function AddTransactionComponent(mountPoint, props) {
+          _classCallCheck(this, AddTransactionComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(AddTransactionComponent, [
+          {
+            key: "getStoredAccounts",
+            value: function getStoredAccounts() {
+              var _this = this;
+
+              _accountService.AccountListService.get().then(function(accounts) {
+                return _this.showAccounts(accounts);
+              });
+            }
+          },
+          {
+            key: "showAccounts",
+            value: function showAccounts(accounts) {
+              if (accounts && accounts.length > 0) {
+                this.accounts = accounts;
+                this.accountSelect.addItems(
+                  accounts.map(function(item) {
+                    return item.name;
+                  })
+                );
+              }
+            }
+          },
+          {
+            key: "getStoredTags",
+            value: function getStoredTags() {
+              var _this2 = this;
+
+              _tagService.TagListService.get().then(function(tags) {
+                return _this2.showTags(tags);
+              });
+            }
+          },
+          {
+            key: "showTags",
+            value: function showTags(tags) {
+              if (tags && tags.length > 0) {
+                this.tagSelect.addItems(tags);
+              }
+            }
+          },
+          {
+            key: "showDialog",
+            value: function showDialog() {
+              this.getStoredAccounts();
+              this.getStoredTags();
+              this.dialog.show();
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.addTransactionDialog = this.mountPoint.querySelector(
+                ".add-transaction-dialog"
+              );
+              this.accountSelectMountPoint = this.mountPoint.querySelector(
+                ".add-transaction-dialog__account-point"
+              );
+              this.tagSelectMountPoint = this.mountPoint.querySelector(
+                ".add-transaction-dialog__tag-point"
+              );
+              this.descriptionTextField = this.mountPoint.querySelector(
+                ".add-transaction-dialog__description"
+              );
+              this.amountTextField = this.mountPoint.querySelector(
+                ".add-transaction-dialog__amount"
+              );
+              this.dateTextField = this.mountPoint.querySelector(
+                ".add-transaction-dialog__date"
+              );
+              this.incomeRadio = this.mountPoint.querySelector(
+                ".add-transaction-dialog__income"
+              );
+              this.expenceRadio = this.mountPoint.querySelector(
+                ".add-transaction-dialog__expence"
+              );
+            }
+          },
+          {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.tagSelect = new _customSelect.CustomSelectComponent(
+                this.tagSelectMountPoint,
+                {
+                  type: "tag"
+                }
+              );
+              this.tagSelect.mount();
+              this.accountSelect = new _customSelect.CustomSelectComponent(
+                this.accountSelectMountPoint,
+                {
+                  type: "account"
+                }
+              );
+              this.accountSelect.mount();
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.dialog = new _dialog.MDCDialog(this.addTransactionDialog);
+              this.description = new _textfield.MDCTextField(
+                this.descriptionTextField
+              );
+              this.amount = new _textfield.MDCTextField(this.amountTextField);
+              this.date = new _textfield.MDCTextField(this.dateTextField);
+              this.income = new _radio.MDCRadio(this.incomeRadio);
+              this.expence = new _radio.MDCRadio(this.expenceRadio);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+              this.dialog.listen(
+                "MDCDialog:cancel",
+                this.handleCancel.bind(this)
+              );
+            }
+          },
+          {
+            key: "getType",
+            value: function getType() {
+              return this.income.checked ? "+" : "-";
+            }
+          },
+          {
+            key: "getAccount",
+            value: function getAccount() {
+              var _this3 = this;
+
+              return this.accounts.find(function(item) {
+                return _this3.accountSelect.getValue() === item.name;
+              });
+            }
+          },
+          {
+            key: "handleOk",
+            value: function handleOk() {
+              this.props.addTransaction({
+                type: this.getType(),
+                date: this.date.value,
+                amount: parseInt(this.amount.value),
+                desc: this.description.value,
+                tag: this.tagSelect.getValue(),
+                account: this.getAccount(),
+                id: Date.now().toString()
+              });
+              this.cleanDialog();
+            }
+          },
+          {
+            key: "handleCancel",
+            value: function handleCancel() {
+              this.cleanDialog();
+            }
+          },
+          {
+            key: "cleanDialog",
+            value: function cleanDialog() {
+              this.expence.checked = true;
+              this.date.value = "";
+              this.amount.value = "";
+              this.description.value = "";
+              this.tagSelect.clean();
+              this.accountSelect.clean();
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _addTransactionDialog2.default)();
+              this.querySelectors();
+              this.mountChildren();
+              this.initMDC();
+              this.addEventListeners();
+            }
+          }
+        ]);
+
+        return AddTransactionComponent;
+      })());
+
+      /***/
+    },
+    /* 286 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n  <div class="mdc-dialog__surface">\n\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add transaction\n      </h2>\n    </header>\n\n    <section class="mdc-dialog__body">\n      <div class="add-transaction-dialog__row">\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__expence">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-expense">Expence</label>\n        </div>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__income">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios">\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-income">Income</label>\n        </div>\n      </div>\n      <div class="add-transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Description">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\n      <div class="add-transaction-dialog__row add-transaction-dialog__row--col">\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="mdc-text-field__input" placeholder="Amount">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>\n          <div class="add-transaction-dialog__account-point"></div>\n        </div>\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="date" class="mdc-text-field__input" placeholder="Date">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\n          <div class="add-transaction-dialog__tag-point"></div>\n        </div>\n      </div>\n    </section>\n\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 287 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "MDCRadio",
+        function() {
+          return MDCRadio;
+        }
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_component__ = __webpack_require__(
+        4
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_selection_control_index__ = __webpack_require__(
+        26
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
+        288
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__ = __webpack_require__(
+        9
+      );
+      /* harmony reexport (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "MDCRadioFoundation",
+        function() {
+          return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"];
+        }
+      );
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /* eslint-disable no-unused-vars */
+
+      /* eslint-enable no-unused-vars */
+
+      /**
+       * @extends MDCComponent<!MDCRadioFoundation>
+       * @implements {MDCSelectionControl}
+       */
+      class MDCRadio extends __WEBPACK_IMPORTED_MODULE_0__material_base_component__[
+        "a" /* default */
+      ] {
+        static attachTo(root) {
+          return new MDCRadio(root);
+        }
+
+        /** @return {boolean} */
+        get checked() {
+          return this.foundation_.isChecked();
+        }
+
+        /** @param {boolean} checked */
+        set checked(checked) {
+          this.foundation_.setChecked(checked);
+        }
+
+        /** @return {boolean} */
+        get disabled() {
+          return this.foundation_.isDisabled();
+        }
+
+        /** @param {boolean} disabled */
+        set disabled(disabled) {
+          this.foundation_.setDisabled(disabled);
+        }
+
+        /** @return {?string} */
+        get value() {
+          return this.foundation_.getValue();
+        }
+
+        /** @param {?string} value */
+        set value(value) {
+          this.foundation_.setValue(value);
+        }
+
+        /** @return {!MDCRipple} */
+        get ripple() {
+          return this.ripple_;
+        }
+
+        constructor(...args) {
+          super(...args);
+
+          /** @private {!MDCRipple} */
+          this.ripple_ = this.initRipple_();
+        }
+
+        /**
+         * @return {!MDCRipple}
+         * @private
+         */
+        initRipple_() {
+          const adapter = Object.assign(
+            __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__[
+              "a" /* MDCRipple */
+            ].createAdapter(this),
+            {
+              isUnbounded: () => true,
+              // Radio buttons technically go "active" whenever there is *any* keyboard interaction. This is not the
+              // UI we desire.
+              isSurfaceActive: () => false,
+              registerInteractionHandler: (type, handler) =>
+                this.nativeControl_.addEventListener(type, handler),
+              deregisterInteractionHandler: (type, handler) =>
+                this.nativeControl_.removeEventListener(type, handler)
+            }
+          );
+          const foundation = new __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__[
+            "b" /* MDCRippleFoundation */
+          ](adapter);
+          return new __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__[
+            "a" /* MDCRipple */
+          ](this.root_, foundation);
+        }
+
+        /**
+         * Returns the state of the native control element, or null if the native control element is not present.
+         * @return {?MDCSelectionControlState}
+         * @private
+         */
+        get nativeControl_() {
+          const {
+            NATIVE_CONTROL_SELECTOR
+          } = __WEBPACK_IMPORTED_MODULE_2__foundation__[
+            "a" /* default */
+          ].strings;
+          const el = /** @type {?MDCSelectionControlState} */ (this.root_.querySelector(
+            NATIVE_CONTROL_SELECTOR
+          ));
+          return el;
+        }
+
+        destroy() {
+          this.ripple_.destroy();
+          super.destroy();
+        }
+
+        /** @return {!MDCRadioFoundation} */
+        getDefaultFoundation() {
+          return new __WEBPACK_IMPORTED_MODULE_2__foundation__[
+            "a" /* default */
+          ]({
+            addClass: className => this.root_.classList.add(className),
+            removeClass: className => this.root_.classList.remove(className),
+            getNativeControl: () =>
+              this.root_.querySelector(
+                __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* default */]
+                  .strings.NATIVE_CONTROL_SELECTOR
+              )
+          });
+        }
+      }
+
+      /***/
+    },
+    /* 288 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
+        3
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_selection_control_index__ = __webpack_require__(
+        26
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter__ = __webpack_require__(
+        289
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
+        290
+      );
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /* eslint-disable no-unused-vars */
+
+      /* eslint-enable no-unused-vars */
+
+      /**
+       * @extends {MDCFoundation<!MDCRadioAdapter>}
+       */
+      class MDCRadioFoundation extends __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__[
+        "a" /* default */
+      ] {
+        /** @return enum {cssClasses} */
+        static get cssClasses() {
+          return __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* cssClasses */];
+        }
+
+        /** @return enum {strings} */
+        static get strings() {
+          return __WEBPACK_IMPORTED_MODULE_3__constants__["b" /* strings */];
+        }
+
+        /** @return {!MDCRadioAdapter} */
+        static get defaultAdapter() {
+          return /** @type {!MDCRadioAdapter} */ ({
+            addClass: (/* className: string */) => {},
+            removeClass: (/* className: string */) => {},
+            getNativeControl: () => /* !MDCSelectionControlState */ {}
+          });
+        }
+
+        /** @return {boolean} */
+        isChecked() {
+          return this.getNativeControl_().checked;
+        }
+
+        /** @param {boolean} checked */
+        setChecked(checked) {
+          this.getNativeControl_().checked = checked;
+        }
+
+        /** @return {boolean} */
+        isDisabled() {
+          return this.getNativeControl_().disabled;
+        }
+
+        /** @param {boolean} disabled */
+        setDisabled(disabled) {
+          const { DISABLED } = MDCRadioFoundation.cssClasses;
+          this.getNativeControl_().disabled = disabled;
+          if (disabled) {
+            this.adapter_.addClass(DISABLED);
+          } else {
+            this.adapter_.removeClass(DISABLED);
+          }
+        }
+
+        /** @return {?string} */
+        getValue() {
+          return this.getNativeControl_().value;
+        }
+
+        /** @param {?string} value */
+        setValue(value) {
+          this.getNativeControl_().value = value;
+        }
+
+        /**
+         * @return {!MDCSelectionControlState}
+         * @private
+         */
+        getNativeControl_() {
+          return (
+            this.adapter_.getNativeControl() || {
+              checked: false,
+              disabled: false,
+              value: null
+            }
+          );
+        }
+      }
+
+      /* harmony default export */ __webpack_exports__[
+        "a"
+      ] = MDCRadioFoundation;
+
+      /***/
+    },
+    /* 289 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_selection_control_index__ = __webpack_require__(
+        26
+      );
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /* eslint-disable no-unused-vars */
+
+      /* eslint no-unused-vars: [2, {"args": "none"}] */
+
+      /**
+       * Adapter for MDC Radio. Provides an interface for managing
+       * - classes
+       * - dom
+       *
+       * Additionally, provides type information for the adapter to the Closure
+       * compiler.
+       *
+       * Implement this adapter for your framework of choice to delegate updates to
+       * the component in your framework of choice. See architecture documentation
+       * for more details.
+       * https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md
+       *
+       * @record
+       */
+      class MDCRadioAdapter {
+        /** @param {string} className */
+        addClass(className) {}
+
+        /** @param {string} className */
+        removeClass(className) {}
+
+        /** @return {!MDCSelectionControlState} */
+        getNativeControl() {}
+      }
+
+      /* unused harmony default export */ var _unused_webpack_default_export = MDCRadioAdapter;
+
+      /***/
+    },
+    /* 290 */
+    /***/ function(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "b",
+        function() {
+          return strings;
+        }
+      );
+      /* harmony export (binding) */ __webpack_require__.d(
+        __webpack_exports__,
+        "a",
+        function() {
+          return cssClasses;
+        }
+      );
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      /** @enum {string} */
+      const strings = {
+        NATIVE_CONTROL_SELECTOR: ".mdc-radio__native-control"
+      };
+
+      /** @enum {string} */
+      const cssClasses = {
+        ROOT: "mdc-radio",
+        DISABLED: "mdc-radio--disabled"
+      };
+
+      /***/
+    },
+    /* 291 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.CustomSelectComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _customSelect = __webpack_require__(292);
+
+      var _customSelect2 = _interopRequireDefault(_customSelect);
+
+      var _customSelectItems = __webpack_require__(293);
+
+      var _customSelectItems2 = _interopRequireDefault(_customSelectItems);
+
+      var _select = __webpack_require__(25);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var CustomSelectComponent = (exports.CustomSelectComponent = (function() {
+        function CustomSelectComponent(mountPoint, props) {
+          _classCallCheck(this, CustomSelectComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(CustomSelectComponent, [
+          {
+            key: "addItems",
+            value: function addItems(list) {
+              this.menu.innerHTML = (0, _customSelectItems2.default)({
+                list: list
+              });
+              this.checkList();
+            }
+          },
+          {
+            key: "clean",
+            value: function clean() {
+              this.select.selectedIndex = -1;
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.selectPoint = this.mountPoint.querySelector(
+                ".custom-select"
+              );
+              this.menu = this.mountPoint.querySelector(
+                ".custom-select__menu-items"
+              );
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.select = new _select.MDCSelect(this.selectPoint);
+            }
+          },
+          {
+            key: "getValue",
+            value: function getValue() {
+              return this.select.value.replace(/\r|\n|\s/g, "");
+            }
+          },
+          {
+            key: "checkList",
+            value: function checkList() {
+              if (!this.select.options.length) {
+                this.select.disabled = true;
+              } else {
+                this.select.disabled = false;
+              }
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _customSelect2.default)({
+                type:
+                  this.props.type[0].toUpperCase() + this.props.type.slice(1)
+              });
+              this.querySelectors();
+              this.initMDC();
+              this.checkList();
+            }
+          }
+        ]);
+
+        return CustomSelectComponent;
+      })());
+
+      /***/
+    },
+    /* 292 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<div class="mdc-select custom-select" role="listbox">\n  <div class="mdc-select__surface" tabindex="0">\n    <div class="mdc-select__label">\n      ' +
+            ((__t = type) == null ? "" : __t) +
+            '\n    </div>\n    <div class="mdc-select__selected-text"></div>\n    <div class="mdc-select__bottom-line"></div>\n  </div>\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\n  </div>\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 293 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "",
+          __j = Array.prototype.join;
+        function print() {
+          __p += __j.call(arguments, "");
+        }
+        with (obj) {
+          for (let i = 0; i < list.length; i++) {
+            __p +=
+              '\n  <li class="mdc-list-item" role="option" tabindex="0">\n    ' +
+              ((__t = list[i]) == null ? "" : __t) +
+              "\n  </li>\n  ";
+          }
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 294 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TagListService = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _storage = __webpack_require__(17);
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TagListService = (exports.TagListService = (function() {
+        function TagListService() {
+          _classCallCheck(this, TagListService);
+        }
+
+        _createClass(TagListService, null, [
+          {
+            key: "get",
+            value: function get() {
+              return _storage.StorageService.get("tagList");
+            }
+          },
+          {
+            key: "set",
+            value: function set(value) {
+              return _storage.StorageService.set("tagList", value);
+            }
+          }
+        ]);
+
+        return TagListService;
+      })());
+
+      /***/
+    },
+    /* 295 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TransactionListService = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _storage = __webpack_require__(17);
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TransactionListService = (exports.TransactionListService = (function() {
+        function TransactionListService() {
+          _classCallCheck(this, TransactionListService);
+        }
+
+        _createClass(TransactionListService, null, [
+          {
+            key: "get",
+            value: function get() {
+              return _storage.StorageService.get("transactionList");
+            }
+          },
+          {
+            key: "set",
+            value: function set(value) {
+              return _storage.StorageService.set("transactionList", value);
+            }
+          },
+          {
+            key: "add",
+            value: function add(data) {
+              var _this = this;
+
+              return this.get().then(function(list) {
+                var newList = list ? [data].concat(list) : [data];
+                _this.set(newList);
+                return newList;
+              });
+            }
+          },
+          {
+            key: "del",
+            value: function del(id) {
+              var _this2 = this;
+
+              return this.get().then(function(list) {
+                var newList = list.filter(function(elem) {
+                  return elem.id !== id;
+                });
+                _this2.set(newList);
+                return newList;
+              });
+            }
+          }
+        ]);
+
+        return TransactionListService;
+      })());
+
+      /***/
+    },
+    /* 296 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AddTagComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _addTagDialog = __webpack_require__(297);
+
+      var _addTagDialog2 = _interopRequireDefault(_addTagDialog);
+
+      var _dialog = __webpack_require__(8);
+
+      var _textfield = __webpack_require__(19);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var AddTagComponent = (exports.AddTagComponent = (function() {
+        function AddTagComponent(mountPoint) {
+          _classCallCheck(this, AddTagComponent);
+
+          this.mountPoint = mountPoint;
+        }
+
+        _createClass(AddTagComponent, [
+          {
+            key: "showDialog",
+            value: function showDialog() {
+              this.dialog.show();
+            }
+          },
+          {
+            key: "handleOk",
+            value: function handleOk() {
+              console.log("accepted");
+            }
+          },
+          {
+            key: "handleCancel",
+            value: function handleCancel() {
+              console.log("declined");
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.addTagDialog = this.mountPoint.querySelector(
+                ".add-tag-dialog"
+              );
+              this.tagTextField = this.mountPoint.querySelector(
+                ".add-tag-dialog__tag"
+              );
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.dialog = new _dialog.MDCDialog(this.addTagDialog);
+              this.tag = new _textfield.MDCTextField(this.tagTextField);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+              this.dialog.listen(
+                "MDCDialog:cancel",
+                this.handleCancel.bind(this)
+              );
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _addTagDialog2.default)();
+              this.querySelectors();
+              this.initMDC();
+              this.addEventListeners();
+            }
+          }
+        ]);
+
+        return AddTagComponent;
+      })());
+
+      /***/
+    },
+    /* 297 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add tag\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\n        Type tag name\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
