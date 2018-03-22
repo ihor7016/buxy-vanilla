@@ -56,6 +56,7 @@ export class TagsComponent {
     tags.forEach(item => {
       this.addTag(item);
     });
+    this.initMoreBtns();
   }
 
   initData() {
@@ -84,7 +85,6 @@ export class TagsComponent {
 
   addTag(tag) {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
-    this.initMoreBtns();
   }
 
   handleEditClick() {
