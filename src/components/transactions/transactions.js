@@ -28,6 +28,12 @@ export class TransactionsComponent {
     TransactionListService.del(id).then(list => this.updateList(list));
   }
 
+  editStoredData(oldId, newData) {
+    TransactionListService.edit(oldId, newData).then(list =>
+      this.updateList(list)
+    );
+  }
+
   updateList(newList) {
     this.list = newList;
     this.checkEmptyState();
@@ -60,6 +66,13 @@ export class TransactionsComponent {
     this.props.onTransactionDelete(data);
     this.updateCharts("del", data);
     this.delStoredData(id);
+  }
+
+  handleTransacitonEdit(oldId, newData) {
+    const oldData = this.list.find(elem => elem.id === oldId);
+    // this.props.onTtransactionEdit(oldData, newData);
+    // this.updateCharts("edit", {old: oldData, new: newData});
+    this.editStoredData(oldId, newData);
   }
 
   handleAddTransactionClick() {
@@ -111,7 +124,8 @@ export class TransactionsComponent {
     this.tableTransactionsComponent = new TableTransactionsComponent(
       this.tableTransactionsMountPoint,
       {
-        onDataDelete: this.handleTransactionDelete.bind(this)
+        onDataDelete: this.handleTransactionDelete.bind(this),
+        onTransactionEdit: this.handleTransacitonEdit.bind(this)
       }
     );
     this.tableTransactionsComponent.mount();

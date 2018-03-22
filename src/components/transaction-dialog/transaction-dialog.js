@@ -127,7 +127,7 @@ export class TransactionDialogComponent {
   }
 
   handleOk() {
-    this.props.addTransaction({
+    const data = {
       type: this.getType(),
       date: this.date.value,
       amount: parseInt(this.amount.value),
@@ -135,7 +135,10 @@ export class TransactionDialogComponent {
       tag: this.tagSelect.getValue(),
       account: this.getAccount(),
       id: Date.now().toString()
-    });
+    };
+    this.props.type === "Add"
+      ? this.props.addTransaction(data)
+      : this.props.editTransaction(data);
     this.cleanDialog();
   }
 

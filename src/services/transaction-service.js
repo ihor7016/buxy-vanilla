@@ -25,6 +25,20 @@ export class TransactionListService {
     });
   }
 
+  static edit(oldId, newData) {
+    return this.get().then(list => {
+      const newList = list.map(elem => {
+        if (elem.id !== oldId) {
+          return elem;
+        } else {
+          return newData;
+        }
+      });
+      this.set(newList);
+      return newList;
+    });
+  }
+
   static deleteByAccountId(accountId) {
     return TransactionListService.get().then(transactions => {
       if (transactions) {

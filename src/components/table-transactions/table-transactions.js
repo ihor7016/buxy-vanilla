@@ -70,8 +70,8 @@ export class TableTransactionsComponent {
     this.editTransactionDialogComponent.mount();
   }
 
-  handleEditTransactionSubmit() {
-    //..
+  handleEditTransactionSubmit(data) {
+    this.props.onTransactionEdit(this.rowToEdit.dataset.id, data);
   }
 
   handleDeleteConfirm() {
