@@ -9,6 +9,13 @@ export class CustomSelectComponent {
     this.props = props;
   }
 
+  makeSelected(value) {
+    const item = this.select.nameditem(value);
+    this.select.selectedIndex = Array.from(item.parentNode.children).indexOf(
+      item
+    );
+  }
+
   addItems(list) {
     this.menu.innerHTML = templateItems({ list: list });
     this.checkList();

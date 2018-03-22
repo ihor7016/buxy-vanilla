@@ -48,6 +48,8 @@ export class TransactionDialogComponent {
     } else {
       this.expence.checked = true;
     }
+    this.accountSelect.makeSelected(data.account);
+    this.tagSelect.makeSelected(data.tag);
   }
 
   showDialog(data) {
@@ -55,7 +57,7 @@ export class TransactionDialogComponent {
       .then(() => this.getStoredTags())
       .then(() => {
         if (data) {
-          this.fillData(data);
+          return this.fillData(data);
         }
       })
       .then(() => this.dialog.show());

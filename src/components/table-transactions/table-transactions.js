@@ -91,18 +91,20 @@ export class TableTransactionsComponent {
 
   handleEditClick(e) {
     this.rowToEdit = e.target.closest(".table-transactions__tr");
-    this.values = {
-      date: this.rowToEdit.querySelector(".table-transactions__date").innerHTML,
-      type: this.rowToEdit.querySelector(".table-transactions__type").innerHTML,
-      amount: this.rowToEdit.querySelector(".table-transactions__amount")
-        .innerHTML,
-      desc: this.rowToEdit.querySelector(".table-transactions__td--desc")
-        .innerHTML,
-      tag: this.rowToEdit.querySelector(".table-transactions__tag").innerHTML,
-      account: this.rowToEdit.querySelector(".table-transactions__tag")
-        .innerHTML
+    this.editTransactionDialogComponent.showDialog(
+      this.getDataToEdit(this.rowToEdit)
+    );
+  }
+
+  getDataToEdit(row) {
+    return {
+      date: row.querySelector(".table-transactions__date").innerText,
+      type: row.querySelector(".table-transactions__type").innerText,
+      amount: row.querySelector(".table-transactions__amount").innerText,
+      desc: row.querySelector(".table-transactions__td--desc").innerText,
+      tag: row.querySelector(".table-transactions__tag").innerText,
+      account: row.querySelector(".table-transactions__account").innerText
     };
-    this.editTransactionDialogComponent.showDialog(values);
   }
 
   handleDeleteClick(e) {
