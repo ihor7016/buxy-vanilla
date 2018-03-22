@@ -1,7 +1,8 @@
 import template from "./about-dialog.html";
 import { MDCDialog } from "@material/dialog";
+import packageFile from "../../../package";
 
-export class AboutComponent {
+export class AboutDialogComponent {
   constructor(mountPoint) {
     this.mountPoint = mountPoint;
   }
@@ -10,26 +11,17 @@ export class AboutComponent {
     this.dialog.show();
   }
 
-  handleOk() {
-    console.log("accepted");
-  }
-
   querySelectors() {
-    this.addTagDialog = this.mountPoint.querySelector(".about-dialog");
+    this.aboutDialog = this.mountPoint.querySelector(".about-dialog");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagDialog);
-  }
-
-  addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+    this.dialog = new MDCDialog(this.aboutDialog);
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({ version: packageFile.version });
     this.querySelectors();
     this.initMDC();
-    this.addEventListeners();
   }
 }

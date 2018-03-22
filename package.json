@@ -1,7 +1,7 @@
 {
-  "name": "task5",
-  "version": "1.0.0",
-  "description": "",
+  "name": "buxy-vanilla",
+  "version": "0.0.2",
+  "description": "Simple finance tracking app",
   "private": true,
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json,css,scss}\"",
@@ -23,6 +23,7 @@
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "js-beautify": "^1.7.5",
+    "json-loader": "^0.5.7",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.7.2",
     "prettier": "^1.11.1",
@@ -33,6 +34,7 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "@material/animation": "^0.25.0",
     "@material/button": "^0.32.0",
     "@material/card": "^0.32.0",
     "@material/dialog": "^0.32.0",
