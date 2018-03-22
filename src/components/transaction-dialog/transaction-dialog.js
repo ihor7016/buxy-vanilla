@@ -53,14 +53,12 @@ export class TransactionDialogComponent {
   }
 
   showDialog(data) {
-    this.getStoredAccounts()
-      .then(() => this.getStoredTags())
-      .then(() => {
-        if (data) {
-          return this.fillData(data);
-        }
-      })
-      .then(() => this.dialog.show());
+    Promise.all([this.getStoredAccounts(), this.getStoredTags()]).then(() => {
+      if (data) {
+        this.fillData(data);
+      }
+      this.dialog.show();
+    });
   }
 
   querySelectors() {
