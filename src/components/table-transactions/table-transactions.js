@@ -89,7 +89,19 @@ export class TableTransactionsComponent {
     });
   }
 
-  handleEditClick() {
+  handleEditClick(e) {
+    this.rowToEdit = e.target.closest(".table-transactions__tr");
+    this.values = {
+      date: this.rowToEdit.querySelector(".table-transactions__date").innerHTML,
+      type: this.rowToEdit.querySelector(".table-transactions__type").innerHTML,
+      amount: this.rowToEdit.querySelector(".table-transactions__amount")
+        .innerHTML,
+      desc: this.rowToEdit.querySelector(".table-transactions__td--desc")
+        .innerHTML,
+      tag: this.rowToEdit.querySelector(".table-transactions__tag").innerHTML,
+      account: this.rowToEdit.querySelector(".table-transactions__tag")
+        .innerHTML
+    };
     this.editTransactionDialogComponent.showDialog();
   }
 
