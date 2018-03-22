@@ -29,8 +29,6 @@ export class DrawerComponent {
   }
 
   mountChildren() {
-    this.accountsComponent = new AccountsComponent(this.accountsMountPoint);
-    this.accountsComponent.mount();
     this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
