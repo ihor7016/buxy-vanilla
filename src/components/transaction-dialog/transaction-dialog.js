@@ -17,7 +17,9 @@ export class TransactionDialogComponent {
   }
 
   getStoredAccounts() {
-    AccountListService.get().then(accounts => this.showAccounts(accounts));
+    return AccountListService.get().then(accounts =>
+      this.showAccounts(accounts)
+    );
   }
 
   showAccounts(accounts) {
@@ -28,7 +30,7 @@ export class TransactionDialogComponent {
   }
 
   getStoredTags() {
-    TagListService.get().then(tags => this.showTags(tags));
+    return TagListService.get().then(tags => this.showTags(tags));
   }
 
   showTags(tags) {
@@ -37,10 +39,26 @@ export class TransactionDialogComponent {
     }
   }
 
-  showDialog() {
-    this.getStoredAccounts();
-    this.getStoredTags();
-    this.dialog.show();
+  fillData(data) {
+    this.description.value = data.desc;
+    this.amount.value = data.amount;
+    this.date.value = data.date;
+    if (data.type === "+") {
+      this.income.checked = true;
+    } else {
+      this.expence.checked = true;
+    }
+  }
+
+  showDialog(data) {
+    this.getStoredAccounts()
+      .then(() => this.getStoredTags())
+      .then(() => {
+        if (data) {
+          this.fillData(data);
+        }
+      })
+      .then(() => this.dialog.show());
   }
 
   querySelectors() {
