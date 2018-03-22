@@ -40,6 +40,10 @@ export class AppComponent {
     this.drawerComponent.mount();
   }
 
+  handleAccountDelete() {
+    this.transactionsComponent.loadStoredData();
+  }
+
   handleTransactionAdded(data) {
     this.drawerComponent.updateAccountData(data);
   }
