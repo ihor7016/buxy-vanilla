@@ -53,7 +53,7 @@ export class AddAccountDialogComponent {
       ".add-account-dialog__account-helper-text"
     );
     this.balanceNameHelperText = this.mountPoint.querySelector(
-      ".add-account-dialog__account-helper-text"
+      ".add-account-dialog__balance-helper-text"
     );
     this.buttonOk = this.mountPoint.querySelector(
       ".add-account-dialog__button-ok"
@@ -74,12 +74,18 @@ export class AddAccountDialogComponent {
     this.accountNameInput.onkeyup = this.handleAccountNameKeyBoardEvent.bind(
       this
     );
+    this.accountNameInput.onkeydown = this.handleAccountNameKeyBoardEvent.bind(
+      this
+    );
     this.balanceNameInput.onkeyup = this.handleBalanceKeyBoardEvent.bind(this);
+    this.balanceNameInput.onkeydown = this.handleBalanceKeyBoardEvent.bind(
+      this
+    );
   }
 
   handleBalanceKeyBoardEvent(event) {
     let balanceValue = this.balanceNameInput.value;
-    if (!this.isNumber(balanceValue)) {
+    if (!this.isNumber(balanceValue) && !this.isFloatNumber(balanceValue)) {
       this.showBalanceError("Enter the number");
     } else {
       this.hideBalanceError();
@@ -87,7 +93,11 @@ export class AddAccountDialogComponent {
   }
 
   isNumber(value) {
-    let pattern = /^\d+$/;
+    let pattern = /^\d+$/gi;
+    return pattern.test(value);
+  }
+  isFloatNumber(value) {
+    let pattern = /^\d+\.\d+$/gi;
     return pattern.test(value);
   }
 
