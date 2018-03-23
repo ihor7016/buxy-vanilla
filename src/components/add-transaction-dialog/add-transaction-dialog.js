@@ -111,21 +111,20 @@ export class AddTransactionComponent {
   }
 
   handleOk(e) {
-    if (!this.validate(data)) {
-      return;
+    if (this.validate()) {
+      const data = {
+        type: this.getType(),
+        date: this.date.value,
+        amount: parseInt(this.amount.value),
+        desc: this.description.value,
+        tag: this.tagSelect.getValue(),
+        account: this.getAccount(),
+        id: Date.now().toString()
+      };
+      this.props.addTransaction(data);
+      this.dialog.close();
+      this.cleanDialog();
     }
-    const data = {
-      type: this.getType(),
-      date: this.date.value,
-      amount: parseInt(this.amount.value),
-      desc: this.description.value,
-      tag: this.tagSelect.getValue(),
-      account: this.getAccount(),
-      id: Date.now().toString()
-    };
-    this.props.addTransaction(data);
-    this.dialog.close();
-    this.cleanDialog();
   }
 
   handleCancel() {
@@ -136,15 +135,17 @@ export class AddTransactionComponent {
     let valid = true;
     if (!this.description.valid) {
       valid = false;
-      // this.description.valid = false;
+      this.descriptionTextField.firstElementChild.dispatchEvent(
+        new Event("input")
+      );
     }
-    if (!this.date.valid) {
+    if (!this.date.valid || !this.date.value) {
       valid = false;
-      // this.date.valid = false;
+      this.dateTextField.firstElementChild.dispatchEvent(new Event("click"));
     }
     if (!this.amount.valid) {
       valid = false;
-      // this.amount.valid = false;
+      this.amountTextField.firstElementChild.dispatchEvent(new Event("input"));
     }
     if (!this.tagSelect.getValue()) {
       valid = false;
