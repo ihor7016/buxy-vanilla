@@ -69,6 +69,7 @@ export class AddTransactionComponent {
     this.expenceRadio = this.mountPoint.querySelector(
       ".add-transaction-dialog__expence"
     );
+    this.submit = this.mountPoint.querySelector(".transaction-dialog__submit");
   }
 
   mountChildren() {
@@ -95,8 +96,8 @@ export class AddTransactionComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+    this.submit.addEventListener("click", this.handleOk.bind(this));
   }
 
   getType() {
@@ -109,8 +110,11 @@ export class AddTransactionComponent {
     );
   }
 
-  handleOk() {
-    this.props.addTransaction({
+  handleOk(e) {
+    if (!this.validate(data)) {
+      return;
+    }
+    const data = {
       type: this.getType(),
       date: this.date.value,
       amount: parseInt(this.amount.value),
@@ -118,12 +122,39 @@ export class AddTransactionComponent {
       tag: this.tagSelect.getValue(),
       account: this.getAccount(),
       id: Date.now().toString()
-    });
+    };
+    this.props.addTransaction(data);
+    this.dialog.close();
     this.cleanDialog();
   }
 
   handleCancel() {
     this.cleanDialog();
+  }
+
+  validate() {
+    let valid = true;
+    if (!this.description.valid) {
+      valid = false;
+      // this.description.valid = false;
+    }
+    if (!this.date.valid) {
+      valid = false;
+      // this.date.valid = false;
+    }
+    if (!this.amount.valid) {
+      valid = false;
+      // this.amount.valid = false;
+    }
+    if (!this.tagSelect.getValue()) {
+      valid = false;
+    }
+    this.tagSelect.toggleValid();
+    if (!this.getAccount()) {
+      valid = false;
+    }
+    this.accountSelect.toggleValid();
+    return valid;
   }
 
   cleanDialog() {
