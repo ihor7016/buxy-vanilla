@@ -104,7 +104,15 @@ export class AddAccountDialogComponent {
     let isBalanceValid = this.validator.isBalanceValid(
       this.balanceNameInput.value
     );
-    if (isAccountValid && isBalanceValid) {
+    let isTypeSelected = this.type.value !== "";
+    let isCurrencySelected = this.currency.value !== "";
+
+    if (
+      isAccountValid &&
+      isBalanceValid &&
+      isTypeSelected &&
+      isCurrencySelected
+    ) {
       this.enableOkButton();
     }
     if (!isAccountValid) {
