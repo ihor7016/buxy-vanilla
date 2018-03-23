@@ -9,7 +9,8 @@ export class AddTagDialogComponent {
     this.props = props;
   }
 
-  showDialog() {
+  showDialog(tagsArray) {
+    console.log(tagsArray);
     this.dialog.show();
   }
 
@@ -42,7 +43,7 @@ export class AddTagDialogComponent {
   }
 
   handleOk() {
-    if (!(this.tagNameInput.value == "")) {
+    if (!(this.tagNameInput.value === "")) {
       this.props.onAddTagConfirm(this.tagNameInput.value);
       this.clean();
       this.dialog.close();

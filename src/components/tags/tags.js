@@ -26,7 +26,13 @@ export class TagsComponent {
   }
 
   handleAddTagClicked() {
-    this.addTagDialogComponent.showDialog();
+    console.log();
+    this.addTagDialogComponent.showDialog(this.tagsValue());
+  }
+
+  tagsValue() {
+    this.allTags = this.mountPoint.querySelectorAll(".tags__list-item-name");
+    return Array.from(this.allTags).map(el => el.innerText);
   }
 
   initMoreBtns() {
