@@ -2,8 +2,8 @@
   width: 100%;
 
   &__bottom-line {
-    &--invalid {
-      background-color: red !important;
+    .mdc-select &--invalid.mdc-select__bottom-line {
+      background-color: red;
     }
   }
 
