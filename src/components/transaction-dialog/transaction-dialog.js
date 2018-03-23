@@ -136,9 +136,7 @@ export class TransactionDialogComponent {
       account: this.getAccount(),
       id: Date.now().toString()
     };
-    this.props.type === "Add"
-      ? this.props.addTransaction(data)
-      : this.props.editTransaction(data);
+    this.props.onDialogSubmit(data);
     this.cleanDialog();
   }
 

@@ -72,7 +72,7 @@ export class TableTransactionsComponent {
     this.editTransactionDialogComponent = new TransactionDialogComponent(
       this.editTransactionDialogMountPoint,
       {
-        editTransaction: this.handleEditSubmit.bind(this),
+        onDialogSubmit: this.handleEditSubmit.bind(this),
         type: "Edit"
       }
     );

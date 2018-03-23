@@ -134,7 +134,7 @@ export class TransactionsComponent {
     this.addTransactionDialogComponent = new TransactionDialogComponent(
       this.addTransactionDialogMountPoint,
       {
-        addTransaction: this.handleAddTransactionSubmit.bind(this),
+        onDialogSubmit: this.handleAddTransactionSubmit.bind(this),
         type: "Add"
       }
     );
