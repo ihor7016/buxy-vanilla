@@ -30,7 +30,7 @@ export class AccountsComponent {
   }
 
   handleAddAccountClicked() {
-    this.addAccountDialogComponent.showDialog();
+    this.addAccountDialogComponent.showDialog(this.accounts);
   }
 
   initMoreBtns() {
@@ -69,6 +69,7 @@ export class AccountsComponent {
         accounts = [];
         AccountListService.set(accounts);
       }
+      this.accounts = accounts;
       this.initAccounts(accounts);
     });
   }

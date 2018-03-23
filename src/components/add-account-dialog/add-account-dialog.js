@@ -10,7 +10,8 @@ export class AddAccountDialogComponent {
     this.props = props;
   }
 
-  showDialog() {
+  showDialog(accounts) {
+    this.accounts = accounts;
     this.dialog.show();
   }
 
@@ -48,6 +49,9 @@ export class AddAccountDialogComponent {
     this.accountNameHelperText = this.mountPoint.querySelector(
       ".add-account-dialog__account-helper-text"
     );
+    this.buttonOk = this.mountPoint.querySelector(
+      ".add-account-dialog__button-ok"
+    );
   }
 
   initMDC() {
@@ -61,28 +65,37 @@ export class AddAccountDialogComponent {
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
-    this.accountNameInput.onkeydown = this.handleKeyBoardEvent.bind(this);
     this.accountNameInput.onkeyup = this.handleKeyBoardEvent.bind(this);
-    this.accountNameInput.onkeypress = this.handleKeyBoardEvent.bind(this);
-    this.balanceNameInput.onkeydown = this.handleKeyBoardEvent.bind(this);
     this.balanceNameInput.onkeyup = this.handleKeyBoardEvent.bind(this);
-    this.balanceNameInput.onkeypress = this.handleKeyBoardEvent.bind(this);
   }
 
   handleKeyBoardEvent(event) {
     let accountName = this.accountNameInput.value;
-    if (accountName.length < 3) {
-      this.accountNameRipple.classList.add(
-        "add-account-dialog__input-ripple-error"
-      );
-      this.accountNameHelperText.innerText =
-        "Name should be more than 3 symbols";
-    } else {
-      this.accountNameRipple.classList.remove(
-        "add-account-dialog__input-ripple-error"
-      );
-      this.accountNameHelperText.innerText = "";
-    }
+    this.accounts.forEach(item => {
+      if (item.name === accountName) {
+        this.showAccountError("This account already exists");
+      } else if (accountName.length < 3) {
+        this.showAccountError("Name should be more than 3 symbols");
+      } else {
+        this.hideAccountError();
+      }
+    });
+  }
+
+  hideAccountError() {
+    this.accountNameRipple.classList.remove(
+      "add-account-dialog__input-ripple-error"
+    );
+    this.buttonOk.removeAttribute("disabled");
+    this.accountNameHelperText.innerText = "";
+  }
+
+  showAccountError(msg) {
+    this.buttonOk.setAttribute("disabled", "");
+    this.accountNameRipple.classList.add(
+      "add-account-dialog__input-ripple-error"
+    );
+    this.accountNameHelperText.innerText = msg;
   }
 
   clean() {
