@@ -25,8 +25,10 @@ export class AccountsComponent {
   }
 
   handleAddAccountConfirmed(account) {
-    AccountListService.add(account);
-    this.addAccountToHead(account);
+    AccountListService.add(account).then(() => {
+      this.addAccountToHead(account);
+      this.accounts.push(account);
+    });
   }
 
   handleAddAccountClicked() {

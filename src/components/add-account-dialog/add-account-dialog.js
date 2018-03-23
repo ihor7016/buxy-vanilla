@@ -71,17 +71,28 @@ export class AddAccountDialogComponent {
 
   handleKeyBoardEvent(event) {
     let accountName = this.accountNameInput.value;
-    this.accounts.forEach(item => {
-      if (item.name === accountName) {
-        this.showAccountError("This account already exists");
-      } else if (accountName.length < 3) {
+
+    if (this.accounts.length > 0) {
+      this.accounts.some(item => {
+        if (item.name === accountName) {
+          this.showAccountError("This account already exists");
+          return true;
+        } else if (accountName.length < 3) {
+          this.showAccountError("Name should be more than 3 symbols");
+          return false;
+        } else {
+          this.hideAccountError();
+          return false;
+        }
+      });
+    } else {
+      if (accountName.length < 3) {
         this.showAccountError("Name should be more than 3 symbols");
       } else {
         this.hideAccountError();
       }
-    });
+    }
   }
-
   hideAccountError() {
     this.accountNameRipple.classList.remove(
       "add-account-dialog__input-ripple-error"
