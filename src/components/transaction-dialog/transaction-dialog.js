@@ -63,28 +63,28 @@ export class TransactionDialogComponent {
 
   querySelectors() {
     this.addTransactionDialog = this.mountPoint.querySelector(
-      ".add-transaction-dialog"
+      ".transaction-dialog"
     );
     this.accountSelectMountPoint = this.mountPoint.querySelector(
-      ".add-transaction-dialog__account-point"
+      ".transaction-dialog__account-point"
     );
     this.tagSelectMountPoint = this.mountPoint.querySelector(
-      ".add-transaction-dialog__tag-point"
+      ".transaction-dialog__tag-point"
     );
     this.descriptionTextField = this.mountPoint.querySelector(
-      ".add-transaction-dialog__description"
+      ".transaction-dialog__description"
     );
     this.amountTextField = this.mountPoint.querySelector(
-      ".add-transaction-dialog__amount"
+      ".transaction-dialog__amount"
     );
     this.dateTextField = this.mountPoint.querySelector(
-      ".add-transaction-dialog__date"
+      ".transaction-dialog__date"
     );
     this.incomeRadio = this.mountPoint.querySelector(
-      ".add-transaction-dialog__income"
+      ".transaction-dialog__income"
     );
     this.expenceRadio = this.mountPoint.querySelector(
-      ".add-transaction-dialog__expence"
+      ".transaction-dialog__expence"
     );
   }
 
