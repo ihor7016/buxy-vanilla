@@ -7,6 +7,10 @@
   &__input-ripple-error.mdc-line-ripple {
     background-color: red;
   }
+  &__balance-input-ripple-error,
+  &__balance-input-ripple-error.mdc-line-ripple {
+    background-color: red;
+  }
 
   &__row {
     display: flex;

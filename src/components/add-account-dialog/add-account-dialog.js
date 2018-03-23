@@ -46,7 +46,13 @@ export class AddAccountDialogComponent {
     this.accountNameRipple = this.mountPoint.querySelector(
       ".add-account-dialog__input-ripple"
     );
+    this.balanceNameRipple = this.mountPoint.querySelector(
+      ".add-account-dialog__balance-input-ripple"
+    );
     this.accountNameHelperText = this.mountPoint.querySelector(
+      ".add-account-dialog__account-helper-text"
+    );
+    this.balanceNameHelperText = this.mountPoint.querySelector(
       ".add-account-dialog__account-helper-text"
     );
     this.buttonOk = this.mountPoint.querySelector(
@@ -65,11 +71,27 @@ export class AddAccountDialogComponent {
   addEventListeners() {
     this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
-    this.accountNameInput.onkeyup = this.handleKeyBoardEvent.bind(this);
-    this.balanceNameInput.onkeyup = this.handleKeyBoardEvent.bind(this);
+    this.accountNameInput.onkeyup = this.handleAccountNameKeyBoardEvent.bind(
+      this
+    );
+    this.balanceNameInput.onkeyup = this.handleBalanceKeyBoardEvent.bind(this);
   }
 
-  handleKeyBoardEvent(event) {
+  handleBalanceKeyBoardEvent(event) {
+    let balanceValue = this.balanceNameInput.value;
+    if (!this.isNumber(balanceValue)) {
+      this.showBalanceError("Enter the number");
+    } else {
+      this.hideBalanceError();
+    }
+  }
+
+  isNumber(value) {
+    let pattern = /^\d+$/;
+    return pattern.test(value);
+  }
+
+  handleAccountNameKeyBoardEvent(event) {
     let accountName = this.accountNameInput.value;
 
     if (this.accounts.length > 0) {
@@ -93,6 +115,7 @@ export class AddAccountDialogComponent {
       }
     }
   }
+
   hideAccountError() {
     this.accountNameRipple.classList.remove(
       "add-account-dialog__input-ripple-error"
@@ -107,6 +130,22 @@ export class AddAccountDialogComponent {
       "add-account-dialog__input-ripple-error"
     );
     this.accountNameHelperText.innerText = msg;
+  }
+
+  hideBalanceError() {
+    this.balanceNameRipple.classList.remove(
+      "add-account-dialog__balance-input-ripple-error"
+    );
+    this.buttonOk.removeAttribute("disabled");
+    this.balanceNameHelperText.innerText = "";
+  }
+
+  showBalanceError(msg) {
+    this.buttonOk.setAttribute("disabled", "");
+    this.balanceNameRipple.classList.add(
+      "add-account-dialog__balance-input-ripple-error"
+    );
+    this.balanceNameHelperText.innerText = msg;
   }
 
   clean() {
