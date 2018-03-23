@@ -41,7 +41,7 @@ export class AccountsComponent {
     });
   }
 
-  handleAddAccountClicked() {
+  handleAddAccountClick() {
     this.addAccountDialogComponent.showDialog(this.accounts);
   }
 
