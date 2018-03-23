@@ -1,0 +1,20 @@
+.add-tag-dialog__error-text {
+  color: red;
+  display: none;
+
+  .add-tag-dialog__tag--error & {
+    display: block;
+  }
+}
+
+.add-tag-dialog__tag--error {
+  border-color: red !important;
+
+  .mdc-text-field__input {
+    color: red !important;
+
+    &::placeholder {
+      color: red !important;
+    }
+  }
+}

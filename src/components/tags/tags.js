@@ -26,7 +26,6 @@ export class TagsComponent {
   }
 
   handleAddTagClicked() {
-    console.log();
     this.addTagDialogComponent.showDialog(this.tagsValue());
   }
 
