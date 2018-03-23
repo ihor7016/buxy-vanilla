@@ -3,6 +3,8 @@ import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountListService } from "../../services/account-service";
 import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
+import { TransactionListService } from "../../services/transaction-service";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class AccountsComponent {
   constructor(mountPoint, props) {
@@ -11,17 +13,25 @@ export class AccountsComponent {
   }
 
   querySelectors() {
-    this.accountsRoot = this.mountPoint.querySelector(".accounts");
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
       ".accounts__more-button"
     );
     this.addAccountButton = this.mountPoint.querySelector(
       ".accounts__add-account-dialog-activation"
     );
-    this.addAccountMountPoint = document.querySelector(
+    this.addAccountMountPoint = this.mountPoint.querySelector(
       ".accounts__add-account-dialog"
     );
+
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".accounts__delete-confirm-dialog"
+    );
     this.accountsList = this.mountPoint.querySelector(".accounts__list-items");
+  }
+
+  mountChildren() {
+    this.initAddAccountDialogComponent();
+    this.initConfirmDialog();
   }
 
   handleAddAccountConfirmed(account) {
@@ -97,7 +107,7 @@ export class AccountsComponent {
   addEventListeners() {
     this.addAccountButton.addEventListener(
       "click",
-      this.handleAddAccountClicked.bind(this)
+      this.handleAddAccountClick.bind(this)
     );
   }
 
@@ -116,16 +126,48 @@ export class AccountsComponent {
     console.log("handleEditClick");
   }
 
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
+  handleDeleteClick(event) {
+    let moreButton = event.target.closest(".button-more");
+    this.listItem = moreButton.closest(".accounts__list-item");
+    let accountName = this.listItem.querySelector(".accounts__list-item-name")
+      .innerText;
+    this.confirmDialog.showDialog("account", accountName);
+  }
+
+  initConfirmDialog() {
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint,
+      {
+        onOkClick: this.handleDeleteConfirm.bind(this)
+      }
+    );
+    this.confirmDialog.mount();
+  }
+
+  handleDeleteConfirm() {
+    this.delAccount(this.listItem);
+  }
+
+  delAccount(listItem) {
+    let accountId = listItem.dataset.id;
+    TransactionListService.deleteByAccountId(accountId)
+      .then(() => {
+        let index = Array.from(this.accountsList.children).indexOf(listItem);
+        return AccountListService.del(index).then(() => {
+          this.accountsList.removeChild(listItem);
+        });
+      })
+      .then(() => {
+        this.props.onAccountDelete();
+      });
   }
 
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
+    this.mountChildren();
     this.initMoreBtns();
     this.addEventListeners();
-    this.initAddAccountDialogComponent();
     this.initData();
   }
 }

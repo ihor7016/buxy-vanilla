@@ -169,7 +169,10 @@ export class AddAccountDialogComponent {
       name: this.accountNameInput.value,
       balance: parseInt(this.balanceNameInput.value),
       type: this.accountType.innerText,
-      currency: this.accountCurrency.innerText
+      currency: this.accountCurrency.innerText,
+      id: Math.random()
+        .toString(36)
+        .substring(2)
     });
     this.clean();
   }
