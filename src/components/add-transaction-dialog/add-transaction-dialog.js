@@ -40,6 +40,7 @@ export class AddTransactionComponent {
   showDialog() {
     this.getStoredAccounts();
     this.getStoredTags();
+    this.date.value = new Date().toISOString().slice(0, 10);
     this.dialog.show();
   }
 
