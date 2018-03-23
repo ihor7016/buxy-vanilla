@@ -14,14 +14,33 @@ export class PieChartComponent {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  update(action, data) {
+  updateAdd(data) {
     if (data.type === "+") {
       return;
     }
-    if (action === "add") {
-      this.dataset = this.addCurrData(this.dataset, data);
-    } else if (action === "del") {
-      this.dataset = this.delCurrData(this.dataset, data);
+    this.dataset = this.addCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  updateDel(data) {
+    if (data.type === "+") {
+      return;
+    }
+    this.dataset = this.delCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  updateEdit(oldData, newData) {
+    if (oldData.type === "+" && newData.type === "+") {
+      return;
+    }
+    if (oldData.type === "+" && newData.type === "-") {
+      this.dataset = this.addCurrData(this.dataset, newData);
+    } else if (oldData.type === "-" && newData.type === "+") {
+      this.dataset = this.delCurrData(this.dataset, oldData);
+    } else {
+      this.dataset = this.addCurrData(this.dataset, newData);
+      this.dataset = this.delCurrData(this.dataset, oldData);
     }
     this.drawChanged();
   }
@@ -67,6 +86,31 @@ export class PieChartComponent {
       data.colors.splice(i, 1);
     }
     return data;
+  }
+
+  editCurrData(data, oldItem, newItem) {
+    // let oldAmount = oldItem.amount;
+    // let newAmount = newItem.amount;
+    // if (oldItem.account.currency !== "UAH") {
+    //   amount = CurrencyConverterUAHService.convert(
+    //     item.account.currency,
+    //     oldAmount
+    //   );
+    // }
+    // if (newItem.account.currency !== "UAH") {
+    //   amount = CurrencyConverterUAHService.convert(
+    //     item.account.currency,
+    //     newAmount
+    //   );
+    // }
+    // const oldI = data.tags.indexOf(oldItem.tag);
+    // data.amounts[oldI] -= oldAmount;
+    // if (data.amounts[i] < 0.01) {
+    //   data.tags.splice(i, 1);
+    //   data.amounts.splice(i, 1);
+    //   data.colors.splice(i, 1);
+    // }
+    // return data;
   }
 
   drawChanged() {

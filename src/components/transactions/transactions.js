@@ -69,7 +69,7 @@ export class TransactionsComponent {
     const oldData = this.list.find(elem => elem.id === oldId);
     // this.props.onTtransactionEdit(oldData, newData);
     this.barChartComponent.updateEdit(oldData, newData);
-    // this.pieChartComponent.updateEdit(oldData, newData);
+    this.pieChartComponent.updateEdit(oldData, newData);
     this.editStoredData(oldId, newData);
   }
 
