@@ -20,12 +20,16 @@ export class DrawerComponent {
     );
   }
 
-  updateAccountData(transaction) {
-    this.accountsComponent.updateAccountData(transaction);
+  updateAccountDataAdd(transaction) {
+    this.accountsComponent.updateAccountDataAdd(transaction);
   }
 
   updateAccountDataDelete(transaction) {
     this.accountsComponent.updateAccountDataDelete(transaction);
+  }
+
+  updateAccountDataEdit(oldTrans, newTrans) {
+    this.accountsComponent.updateAccountDataEdit(oldTrans, newTrans);
   }
 
   mountChildren() {

@@ -88,31 +88,6 @@ export class PieChartComponent {
     return data;
   }
 
-  editCurrData(data, oldItem, newItem) {
-    // let oldAmount = oldItem.amount;
-    // let newAmount = newItem.amount;
-    // if (oldItem.account.currency !== "UAH") {
-    //   amount = CurrencyConverterUAHService.convert(
-    //     item.account.currency,
-    //     oldAmount
-    //   );
-    // }
-    // if (newItem.account.currency !== "UAH") {
-    //   amount = CurrencyConverterUAHService.convert(
-    //     item.account.currency,
-    //     newAmount
-    //   );
-    // }
-    // const oldI = data.tags.indexOf(oldItem.tag);
-    // data.amounts[oldI] -= oldAmount;
-    // if (data.amounts[i] < 0.01) {
-    //   data.tags.splice(i, 1);
-    //   data.amounts.splice(i, 1);
-    //   data.colors.splice(i, 1);
-    // }
-    // return data;
-  }
-
   drawChanged() {
     this.chart.data.datasets[0].data = this.dataset.amounts;
     this.chart.data.datasets[0].backgroundColor = this.dataset.colors;
