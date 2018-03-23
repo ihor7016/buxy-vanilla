@@ -34,16 +34,24 @@ export class TableTransactionsComponent {
 
   addTransaction(data) {
     this.transactionPoint.innerHTML =
-      templateRow({
-        row: data
-      }) + this.transactionPoint.innerHTML;
+      this.makeRow(data) + this.transactionPoint.innerHTML;
     this.initMoreBtns();
   }
 
   delTransaction(elem) {
     const id = elem.dataset.id;
     this.props.onDataDelete(id);
-    this.transactionPoint.removeChild(elem);
+  }
+
+  editTransaction(newData) {
+    const id = this.rowToEdit.dataset.id;
+    this.props.onTransactionEdit(id, newData);
+    this.rowToEdit.outerHTML = this.makeRow(newData);
+    this.initMoreBtns();
+  }
+
+  makeRow(data) {
+    return templateRow({ row: data });
   }
 
   querySelectorsButtons() {
@@ -63,15 +71,15 @@ export class TableTransactionsComponent {
     this.editTransactionDialogComponent = new TransactionDialogComponent(
       this.editTransactionDialogMountPoint,
       {
-        editTransaction: this.handleEditTransactionSubmit.bind(this),
+        editTransaction: this.handleEditSubmit.bind(this),
         type: "Edit"
       }
     );
     this.editTransactionDialogComponent.mount();
   }
 
-  handleEditTransactionSubmit(data) {
-    this.props.onTransactionEdit(this.rowToEdit.dataset.id, data);
+  handleEditSubmit(data) {
+    this.editTransaction(data);
   }
 
   handleDeleteConfirm() {
