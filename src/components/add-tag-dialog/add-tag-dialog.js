@@ -19,6 +19,9 @@ export class AddTagDialogComponent {
     );
     this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
     this.tagNameInput = this.mountPoint.querySelector(".mdc-text-field__input");
+    this.dialogButtonConfirm = this.mountPoint.querySelector(
+      ".mdc-dialog__footer__button--confirm"
+    );
   }
 
   initMDC() {
@@ -27,7 +30,10 @@ export class AddTagDialogComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+    this.dialogButtonConfirm.addEventListener(
+      "click",
+      this.handleOk.bind(this)
+    );
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
   }
 
@@ -36,9 +42,14 @@ export class AddTagDialogComponent {
   }
 
   handleOk() {
-    this.props.onAddTagConfirm(this.tagNameInput.value);
-    this.clean();
+    if (!(this.tagNameInput.value == "")) {
+      this.props.onAddTagConfirm(this.tagNameInput.value);
+      this.clean();
+      this.dialog.close();
+    }
   }
+
+  isValid() {}
 
   handleCancel() {
     this.clean();
