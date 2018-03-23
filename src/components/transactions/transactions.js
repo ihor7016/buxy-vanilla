@@ -49,14 +49,10 @@ export class TransactionsComponent {
     this.checkEmptyState();
   }
 
-  updateCharts(action, data) {
-    this.barChartComponent.update(action, data);
-    this.pieChartComponent.update(action, data);
-  }
-
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.updateCharts("add", data);
+    this.barChartComponent.updateAdd(data);
+    this.pieChartComponent.updateAdd(data);
     this.addStoredData(data);
     this.props.onTransactionAdded(data);
   }
@@ -64,14 +60,16 @@ export class TransactionsComponent {
   handleTransactionDelete(id) {
     const data = this.list.find(elem => elem.id === id);
     this.props.onTransactionDelete(data);
-    this.updateCharts("del", data);
+    this.barChartComponent.updateDel(data);
+    this.pieChartComponent.updateDel(data);
     this.delStoredData(id);
   }
 
   handleTransacitonEdit(oldId, newData) {
     const oldData = this.list.find(elem => elem.id === oldId);
     // this.props.onTtransactionEdit(oldData, newData);
-    // this.updateCharts("edit", {old: oldData, new: newData});
+    this.barChartComponent.updateEdit(oldData, newData);
+    // this.pieChartComponent.updateEdit(oldData, newData);
     this.editStoredData(oldId, newData);
   }
 
