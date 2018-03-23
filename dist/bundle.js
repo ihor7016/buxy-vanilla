@@ -68,7 +68,7 @@
   /******/
   /******/ /******/ __webpack_require__.p = "/dist/"; // Load entry module and return exports
   /******/
-  /******/ /******/ return __webpack_require__((__webpack_require__.s = 171));
+  /******/ /******/ return __webpack_require__((__webpack_require__.s = 172));
   /******/
 })(
   /************************************************************************/
@@ -2189,7 +2189,7 @@
               try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(261)("./" + name);
+                __webpack_require__(267)("./" + name);
                 getSetGlobalLocale(oldLocale);
               } catch (e) {}
             }
@@ -5181,7 +5181,7 @@
         });
 
         /* WEBPACK VAR INJECTION */
-      }.call(exports, __webpack_require__(260)(module)));
+      }.call(exports, __webpack_require__(266)(module)));
 
       /***/
     },
@@ -5190,9 +5190,9 @@
       "use strict";
 
       module.exports = __webpack_require__(13);
-      module.exports.easing = __webpack_require__(234);
-      module.exports.canvas = __webpack_require__(235);
-      module.exports.options = __webpack_require__(236);
+      module.exports.easing = __webpack_require__(240);
+      module.exports.canvas = __webpack_require__(241);
+      module.exports.options = __webpack_require__(242);
 
       /***/
     },
@@ -5429,7 +5429,7 @@
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
-      var color = __webpack_require__(44);
+      var color = __webpack_require__(45);
       var helpers = __webpack_require__(1);
 
       function interpolate(start, view, model, ease) {
@@ -5555,10 +5555,10 @@
       "use strict";
 
       module.exports = {};
-      module.exports.Arc = __webpack_require__(242);
-      module.exports.Line = __webpack_require__(243);
-      module.exports.Point = __webpack_require__(244);
-      module.exports.Rectangle = __webpack_require__(245);
+      module.exports.Arc = __webpack_require__(248);
+      module.exports.Line = __webpack_require__(249);
+      module.exports.Point = __webpack_require__(250);
+      module.exports.Rectangle = __webpack_require__(251);
 
       /***/
     },
@@ -5615,10 +5615,10 @@
         9
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        201
+        202
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
-        203
+        204
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -5775,7 +5775,7 @@
         29
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        199
+        200
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
         18
@@ -6528,7 +6528,7 @@
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(
-        184
+        185
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -6538,7 +6538,7 @@
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        185
+        186
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -7073,7 +7073,7 @@
         };
       })();
 
-      var _buttonMore = __webpack_require__(190);
+      var _buttonMore = __webpack_require__(194);
 
       var _buttonMore2 = _interopRequireDefault(_buttonMore);
 
@@ -7205,10 +7205,10 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(
-        191
+        195
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        192
+        196
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
         27
@@ -7750,22 +7750,22 @@
         31
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
-        210
-      );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_line_ripple_index__ = __webpack_require__(
         211
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_text_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_line_ripple_index__ = __webpack_require__(
         212
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__icon_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_text_index__ = __webpack_require__(
         213
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__material_floating_label_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__icon_index__ = __webpack_require__(
         214
       );
-      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__outline_index__ = __webpack_require__(
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__material_floating_label_index__ = __webpack_require__(
         215
+      );
+      /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__outline_index__ = __webpack_require__(
+        216
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -8323,7 +8323,7 @@
         32
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        206
+        207
       );
       /**
        * @license
@@ -8471,7 +8471,7 @@
         33
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        207
+        208
       );
       /**
        * @license
@@ -8645,7 +8645,7 @@
         34
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        208
+        209
       );
       /**
        * @license
@@ -8763,7 +8763,7 @@
         35
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        209
+        210
       );
       /**
        * @license
@@ -9069,13 +9069,13 @@
         16
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bottom_line_index__ = __webpack_require__(
-        216
+        217
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__label_index__ = __webpack_require__(
-        219
+        220
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
-        222
+        223
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(
         40
@@ -10616,7 +10616,7 @@
         };
       })();
 
-      var _confirmDialog = __webpack_require__(223);
+      var _confirmDialog = __webpack_require__(224);
 
       var _confirmDialog2 = _interopRequireDefault(_confirmDialog);
 
@@ -10704,31 +10704,98 @@
     },
     /* 43 */
     /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TagListService = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _storage = __webpack_require__(17);
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TagListService = (exports.TagListService = (function() {
+        function TagListService() {
+          _classCallCheck(this, TagListService);
+        }
+
+        _createClass(TagListService, null, [
+          {
+            key: "add",
+            value: function add(tag) {
+              var _this = this;
+
+              return this.get().then(function(tags) {
+                if (!tags) {
+                  _this.set([tag]);
+                } else {
+                  var updatedTags = [tag].concat(tags);
+                  _this.set(updatedTags);
+                }
+              });
+            }
+          },
+          {
+            key: "get",
+            value: function get() {
+              return _storage.StorageService.get("tagList");
+            }
+          },
+          {
+            key: "set",
+            value: function set(value) {
+              return _storage.StorageService.set("tagList", value);
+            }
+          }
+        ]);
+
+        return TagListService;
+      })());
+
+      /***/
+    },
+    /* 44 */
+    /***/ function(module, exports, __webpack_require__) {
       /**
        * @namespace Chart
        */
-      var Chart = __webpack_require__(233)();
+      var Chart = __webpack_require__(239)();
 
       Chart.helpers = __webpack_require__(1);
 
       // @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
-      __webpack_require__(237)(Chart);
+      __webpack_require__(243)(Chart);
 
       Chart.defaults = __webpack_require__(2);
       Chart.Element = __webpack_require__(5);
       Chart.elements = __webpack_require__(6);
-      Chart.Interaction = __webpack_require__(45);
+      Chart.Interaction = __webpack_require__(46);
       Chart.layouts = __webpack_require__(10);
-      Chart.platform = __webpack_require__(46);
-      Chart.plugins = __webpack_require__(47);
+      Chart.platform = __webpack_require__(47);
+      Chart.plugins = __webpack_require__(48);
       Chart.Ticks = __webpack_require__(11);
-
-      __webpack_require__(248)(Chart);
-      __webpack_require__(249)(Chart);
-      __webpack_require__(250)(Chart);
-      __webpack_require__(251)(Chart);
-      __webpack_require__(252)(Chart);
-      __webpack_require__(253)(Chart);
 
       __webpack_require__(254)(Chart);
       __webpack_require__(255)(Chart);
@@ -10737,26 +10804,33 @@
       __webpack_require__(258)(Chart);
       __webpack_require__(259)(Chart);
 
-      // Controllers must be loaded after elements
-      // See Chart.core.datasetController.dataElementType
+      __webpack_require__(260)(Chart);
+      __webpack_require__(261)(Chart);
       __webpack_require__(262)(Chart);
       __webpack_require__(263)(Chart);
       __webpack_require__(264)(Chart);
       __webpack_require__(265)(Chart);
-      __webpack_require__(266)(Chart);
-      __webpack_require__(267)(Chart);
-      __webpack_require__(268)(Chart);
 
+      // Controllers must be loaded after elements
+      // See Chart.core.datasetController.dataElementType
+      __webpack_require__(268)(Chart);
       __webpack_require__(269)(Chart);
       __webpack_require__(270)(Chart);
       __webpack_require__(271)(Chart);
       __webpack_require__(272)(Chart);
       __webpack_require__(273)(Chart);
       __webpack_require__(274)(Chart);
+
       __webpack_require__(275)(Chart);
+      __webpack_require__(276)(Chart);
+      __webpack_require__(277)(Chart);
+      __webpack_require__(278)(Chart);
+      __webpack_require__(279)(Chart);
+      __webpack_require__(280)(Chart);
+      __webpack_require__(281)(Chart);
 
       // Loading built-it plugins
-      var plugins = __webpack_require__(276);
+      var plugins = __webpack_require__(282);
       for (var k in plugins) {
         if (plugins.hasOwnProperty(k)) {
           Chart.plugins.register(plugins[k]);
@@ -10829,11 +10903,11 @@
 
       /***/
     },
-    /* 44 */
+    /* 45 */
     /***/ function(module, exports, __webpack_require__) {
       /* MIT license */
-      var convert = __webpack_require__(238);
-      var string = __webpack_require__(240);
+      var convert = __webpack_require__(244);
+      var string = __webpack_require__(246);
 
       var Color = function(obj) {
         if (obj instanceof Color) {
@@ -11323,7 +11397,7 @@
 
       /***/
     },
-    /* 45 */
+    /* 46 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -11667,13 +11741,13 @@
 
       /***/
     },
-    /* 46 */
+    /* 47 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var helpers = __webpack_require__(1);
-      var basic = __webpack_require__(246);
-      var dom = __webpack_require__(247);
+      var basic = __webpack_require__(252);
+      var dom = __webpack_require__(253);
 
       // @TODO Make possible to select another platform at build time.
       var implementation = dom._enabled ? dom : basic;
@@ -11748,7 +11822,7 @@
 
       /***/
     },
-    /* 47 */
+    /* 48 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -12135,7 +12209,7 @@
 
       /***/
     },
-    /* 48 */
+    /* 49 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12221,7 +12295,7 @@
 
       /***/
     },
-    /* 49 */
+    /* 50 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12419,7 +12493,7 @@
 
       /***/
     },
-    /* 50 */
+    /* 51 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12488,7 +12562,7 @@
 
       /***/
     },
-    /* 51 */
+    /* 52 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12557,7 +12631,7 @@
 
       /***/
     },
-    /* 52 */
+    /* 53 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12739,7 +12813,7 @@
 
       /***/
     },
-    /* 53 */
+    /* 54 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12808,7 +12882,7 @@
 
       /***/
     },
-    /* 54 */
+    /* 55 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12927,7 +13001,7 @@
 
       /***/
     },
-    /* 55 */
+    /* 56 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -12996,7 +13070,7 @@
 
       /***/
     },
-    /* 56 */
+    /* 57 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13112,7 +13186,7 @@
 
       /***/
     },
-    /* 57 */
+    /* 58 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13271,7 +13345,7 @@
 
       /***/
     },
-    /* 58 */
+    /* 59 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13371,7 +13445,7 @@
 
       /***/
     },
-    /* 59 */
+    /* 60 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13437,7 +13511,7 @@
 
       /***/
     },
-    /* 60 */
+    /* 61 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13568,7 +13642,7 @@
 
       /***/
     },
-    /* 61 */
+    /* 62 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13703,7 +13777,7 @@
 
       /***/
     },
-    /* 62 */
+    /* 63 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13819,7 +13893,7 @@
 
       /***/
     },
-    /* 63 */
+    /* 64 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -13980,7 +14054,7 @@
 
       /***/
     },
-    /* 64 */
+    /* 65 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14086,7 +14160,7 @@
 
       /***/
     },
-    /* 65 */
+    /* 66 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14284,7 +14358,7 @@
 
       /***/
     },
-    /* 66 */
+    /* 67 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14359,7 +14433,7 @@
 
       /***/
     },
-    /* 67 */
+    /* 68 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14468,7 +14542,7 @@
 
       /***/
     },
-    /* 68 */
+    /* 69 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14538,7 +14612,7 @@
 
       /***/
     },
-    /* 69 */
+    /* 70 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14624,7 +14698,7 @@
 
       /***/
     },
-    /* 70 */
+    /* 71 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14710,7 +14784,7 @@
 
       /***/
     },
-    /* 71 */
+    /* 72 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14796,7 +14870,7 @@
 
       /***/
     },
-    /* 72 */
+    /* 73 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -14899,7 +14973,7 @@
 
       /***/
     },
-    /* 73 */
+    /* 74 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15018,7 +15092,7 @@
 
       /***/
     },
-    /* 74 */
+    /* 75 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15095,7 +15169,7 @@
 
       /***/
     },
-    /* 75 */
+    /* 76 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15168,7 +15242,7 @@
 
       /***/
     },
-    /* 76 */
+    /* 77 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15245,7 +15319,7 @@
 
       /***/
     },
-    /* 77 */
+    /* 78 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15322,7 +15396,7 @@
 
       /***/
     },
-    /* 78 */
+    /* 79 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15394,7 +15468,7 @@
 
       /***/
     },
-    /* 79 */
+    /* 80 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15471,7 +15545,7 @@
 
       /***/
     },
-    /* 80 */
+    /* 81 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15552,7 +15626,7 @@
 
       /***/
     },
-    /* 81 */
+    /* 82 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15673,7 +15747,7 @@
 
       /***/
     },
-    /* 82 */
+    /* 83 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15794,7 +15868,7 @@
 
       /***/
     },
-    /* 83 */
+    /* 84 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15893,7 +15967,7 @@
 
       /***/
     },
-    /* 84 */
+    /* 85 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -15983,7 +16057,7 @@
 
       /***/
     },
-    /* 85 */
+    /* 86 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16059,7 +16133,7 @@
 
       /***/
     },
-    /* 86 */
+    /* 87 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16182,7 +16256,7 @@
 
       /***/
     },
-    /* 87 */
+    /* 88 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16313,7 +16387,7 @@
 
       /***/
     },
-    /* 88 */
+    /* 89 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16383,7 +16457,7 @@
 
       /***/
     },
-    /* 89 */
+    /* 90 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16476,7 +16550,7 @@
 
       /***/
     },
-    /* 90 */
+    /* 91 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16560,7 +16634,7 @@
 
       /***/
     },
-    /* 91 */
+    /* 92 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16648,7 +16722,7 @@
 
       /***/
     },
-    /* 92 */
+    /* 93 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16738,7 +16812,7 @@
 
       /***/
     },
-    /* 93 */
+    /* 94 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16850,7 +16924,7 @@
 
       /***/
     },
-    /* 94 */
+    /* 95 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -16939,7 +17013,7 @@
 
       /***/
     },
-    /* 95 */
+    /* 96 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17072,7 +17146,7 @@
 
       /***/
     },
-    /* 96 */
+    /* 97 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17206,7 +17280,7 @@
 
       /***/
     },
-    /* 97 */
+    /* 98 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17311,7 +17385,7 @@
 
       /***/
     },
-    /* 98 */
+    /* 99 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17445,7 +17519,7 @@
 
       /***/
     },
-    /* 99 */
+    /* 100 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17611,7 +17685,7 @@
 
       /***/
     },
-    /* 100 */
+    /* 101 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17744,7 +17818,7 @@
 
       /***/
     },
-    /* 101 */
+    /* 102 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17851,7 +17925,7 @@
 
       /***/
     },
-    /* 102 */
+    /* 103 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -17941,7 +18015,7 @@
 
       /***/
     },
-    /* 103 */
+    /* 104 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18094,7 +18168,7 @@
 
       /***/
     },
-    /* 104 */
+    /* 105 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18173,7 +18247,7 @@
 
       /***/
     },
-    /* 105 */
+    /* 106 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18263,7 +18337,7 @@
 
       /***/
     },
-    /* 106 */
+    /* 107 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18353,7 +18427,7 @@
 
       /***/
     },
-    /* 107 */
+    /* 108 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18460,7 +18534,7 @@
 
       /***/
     },
-    /* 108 */
+    /* 109 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18557,7 +18631,7 @@
 
       /***/
     },
-    /* 109 */
+    /* 110 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18627,7 +18701,7 @@
 
       /***/
     },
-    /* 110 */
+    /* 111 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18763,7 +18837,7 @@
 
       /***/
     },
-    /* 111 */
+    /* 112 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18854,7 +18928,7 @@
 
       /***/
     },
-    /* 112 */
+    /* 113 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -18951,7 +19025,7 @@
 
       /***/
     },
-    /* 113 */
+    /* 114 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19098,7 +19172,7 @@
 
       /***/
     },
-    /* 114 */
+    /* 115 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19176,7 +19250,7 @@
 
       /***/
     },
-    /* 115 */
+    /* 116 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19313,7 +19387,7 @@
 
       /***/
     },
-    /* 116 */
+    /* 117 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19424,7 +19498,7 @@
 
       /***/
     },
-    /* 117 */
+    /* 118 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19553,7 +19627,7 @@
 
       /***/
     },
-    /* 118 */
+    /* 119 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19627,7 +19701,7 @@
 
       /***/
     },
-    /* 119 */
+    /* 120 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19727,7 +19801,7 @@
 
       /***/
     },
-    /* 120 */
+    /* 121 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -19820,7 +19894,7 @@
 
       /***/
     },
-    /* 121 */
+    /* 122 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20036,7 +20110,7 @@
 
       /***/
     },
-    /* 122 */
+    /* 123 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20126,7 +20200,7 @@
 
       /***/
     },
-    /* 123 */
+    /* 124 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20216,7 +20290,7 @@
 
       /***/
     },
-    /* 124 */
+    /* 125 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20286,7 +20360,7 @@
 
       /***/
     },
-    /* 125 */
+    /* 126 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20390,7 +20464,7 @@
 
       /***/
     },
-    /* 126 */
+    /* 127 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20462,7 +20536,7 @@
 
       /***/
     },
-    /* 127 */
+    /* 128 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20595,7 +20669,7 @@
 
       /***/
     },
-    /* 128 */
+    /* 129 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20710,7 +20784,7 @@
 
       /***/
     },
-    /* 129 */
+    /* 130 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20825,7 +20899,7 @@
 
       /***/
     },
-    /* 130 */
+    /* 131 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -20895,7 +20969,7 @@
 
       /***/
     },
-    /* 131 */
+    /* 132 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21029,7 +21103,7 @@
 
       /***/
     },
-    /* 132 */
+    /* 133 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21173,7 +21247,7 @@
 
       /***/
     },
-    /* 133 */
+    /* 134 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21248,7 +21322,7 @@
 
       /***/
     },
-    /* 134 */
+    /* 135 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21319,7 +21393,7 @@
 
       /***/
     },
-    /* 135 */
+    /* 136 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21404,7 +21478,7 @@
 
       /***/
     },
-    /* 136 */
+    /* 137 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21622,7 +21696,7 @@
 
       /***/
     },
-    /* 137 */
+    /* 138 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21716,7 +21790,7 @@
 
       /***/
     },
-    /* 138 */
+    /* 139 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21786,7 +21860,7 @@
 
       /***/
     },
-    /* 139 */
+    /* 140 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -21867,7 +21941,7 @@
 
       /***/
     },
-    /* 140 */
+    /* 141 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22033,7 +22107,7 @@
 
       /***/
     },
-    /* 141 */
+    /* 142 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22218,7 +22292,7 @@
 
       /***/
     },
-    /* 142 */
+    /* 143 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22296,7 +22370,7 @@
 
       /***/
     },
-    /* 143 */
+    /* 144 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22424,7 +22498,7 @@
 
       /***/
     },
-    /* 144 */
+    /* 145 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22552,7 +22626,7 @@
 
       /***/
     },
-    /* 145 */
+    /* 146 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22650,7 +22724,7 @@
 
       /***/
     },
-    /* 146 */
+    /* 147 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22729,7 +22803,7 @@
 
       /***/
     },
-    /* 147 */
+    /* 148 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22798,7 +22872,7 @@
 
       /***/
     },
-    /* 148 */
+    /* 149 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -22940,7 +23014,7 @@
 
       /***/
     },
-    /* 149 */
+    /* 150 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23039,7 +23113,7 @@
 
       /***/
     },
-    /* 150 */
+    /* 151 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23116,7 +23190,7 @@
 
       /***/
     },
-    /* 151 */
+    /* 152 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23242,7 +23316,7 @@
 
       /***/
     },
-    /* 152 */
+    /* 153 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23319,7 +23393,7 @@
 
       /***/
     },
-    /* 153 */
+    /* 154 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23391,7 +23465,7 @@
 
       /***/
     },
-    /* 154 */
+    /* 155 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23531,7 +23605,7 @@
 
       /***/
     },
-    /* 155 */
+    /* 156 */
     /***/ function(module, exports, __webpack_require__) {
       (function(global, factory) {
         true
@@ -23636,7 +23710,7 @@
 
       /***/
     },
-    /* 156 */
+    /* 157 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23739,7 +23813,7 @@
 
       /***/
     },
-    /* 157 */
+    /* 158 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23811,7 +23885,7 @@
 
       /***/
     },
-    /* 158 */
+    /* 159 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -23883,7 +23957,7 @@
 
       /***/
     },
-    /* 159 */
+    /* 160 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js language configuration
 
@@ -24006,7 +24080,7 @@
 
       /***/
     },
-    /* 160 */
+    /* 161 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24181,7 +24255,7 @@
 
       /***/
     },
-    /* 161 */
+    /* 162 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24275,7 +24349,7 @@
 
       /***/
     },
-    /* 162 */
+    /* 163 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24343,7 +24417,7 @@
 
       /***/
     },
-    /* 163 */
+    /* 164 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24411,7 +24485,7 @@
 
       /***/
     },
-    /* 164 */
+    /* 165 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24500,7 +24574,7 @@
 
       /***/
     },
-    /* 165 */
+    /* 166 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24578,7 +24652,7 @@
 
       /***/
     },
-    /* 166 */
+    /* 167 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24646,7 +24720,7 @@
 
       /***/
     },
-    /* 167 */
+    /* 168 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24769,7 +24843,7 @@
 
       /***/
     },
-    /* 168 */
+    /* 169 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -24886,7 +24960,7 @@
 
       /***/
     },
-    /* 169 */
+    /* 170 */
     /***/ function(module, exports, __webpack_require__) {
       //! moment.js locale configuration
 
@@ -25003,7 +25077,7 @@
 
       /***/
     },
-    /* 170 */
+    /* 171 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25059,22 +25133,22 @@
 
       /***/
     },
-    /* 171 */
+    /* 172 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
-      __webpack_require__(172);
+      __webpack_require__(173);
 
-      var _app = __webpack_require__(177);
+      var _app = __webpack_require__(178);
 
       var root = document.querySelector("#root");
       new _app.AppComponent(root).mount();
 
       /***/
     },
-    /* 172 */
+    /* 173 */
     /***/ function(module, exports, __webpack_require__) {
-      var content = __webpack_require__(173);
+      var content = __webpack_require__(174);
 
       if (typeof content === "string") content = [[module.i, content, ""]];
 
@@ -25086,7 +25160,7 @@
       options.transform = transform;
       options.insertInto = undefined;
 
-      var update = __webpack_require__(175)(content, options);
+      var update = __webpack_require__(176)(content, options);
 
       if (content.locals) module.exports = content.locals;
 
@@ -25129,15 +25203,15 @@
 
       /***/
     },
-    /* 173 */
+    /* 174 */
     /***/ function(module, exports, __webpack_require__) {
-      exports = module.exports = __webpack_require__(174)(false);
+      exports = module.exports = __webpack_require__(175)(false);
       // imports
 
       // module
       exports.push([
         module.i,
-        '/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers.\n */\nbody {\n  margin: 0; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Remove the gray background on active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10.\n */\nimg {\n  border-style: none; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\n[type="button"],\n[type="reset"],\n[type="submit"] {\n  -webkit-appearance: button; }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type="button"]::-moz-focus-inner,\n[type="reset"]::-moz-focus-inner,\n[type="submit"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type="button"]:-moz-focusring,\n[type="reset"]:-moz-focusring,\n[type="submit"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n[type="checkbox"],\n[type="radio"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type="number"]::-webkit-inner-spin-button,\n[type="number"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type="search"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n[type="search"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\ndetails {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Misc\n   ========================================================================== */\n/**\n * Add the correct display in IE 10+.\n */\ntemplate {\n  display: none; }\n\n/**\n * Add the correct display in IE 10.\n */\n[hidden] {\n  display: none; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-toolbar {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee);\n  color: white;\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  justify-content: space-between;\n  box-sizing: border-box;\n  width: 100%; }\n\n.mdc-toolbar .mdc-toolbar__icon {\n  color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon::before, .mdc-toolbar .mdc-toolbar__icon::after {\n  background-color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon:hover::before {\n  opacity: 0.08; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):focus::before, .mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-toolbar__row {\n  display: flex;\n  position: relative;\n  align-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n  min-height: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__row {\n    min-height: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__row {\n    min-height: 56px; } }\n\n.mdc-toolbar__section {\n  display: inline-flex;\n  flex: 1;\n  align-items: start;\n  justify-content: center;\n  box-sizing: border-box;\n  min-width: 0;\n  height: 100%;\n  padding: 8px;\n  z-index: 1; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section {\n    padding: 0 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section {\n    padding: 4px 0; } }\n\n.mdc-toolbar__section--align-start {\n  padding-left: 12px;\n  padding-right: 0;\n  justify-content: flex-start;\n  order: -1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n  padding-left: 0;\n  padding-right: 12px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n.mdc-toolbar__section--align-end {\n  padding-left: 0;\n  padding-right: 12px;\n  justify-content: flex-end;\n  order: 1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 0; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n.mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin-left: 24px;\n  margin-right: 0;\n  align-self: center;\n  padding: 12px 0;\n  line-height: 1.5rem;\n  z-index: 1; }\n\n[dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 24px; }\n\n.mdc-toolbar__icon, .mdc-toolbar__menu-icon {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  position: relative;\n  align-items: start;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  padding: 12px;\n  border: none;\n  outline: none;\n  background-color: transparent;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__menu-icon::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--unbounded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-activation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-deactivation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__menu-icon + .mdc-toolbar__title {\n  margin-left: 8px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 8px; }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n    margin-left: 0;\n    margin-right: 16px; } }\n\n.mdc-toolbar--fixed {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 4; }\n\n.mdc-toolbar--flexible {\n  --mdc-toolbar-ratio-to-extend-flexible: 4; }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n  height: 256px;\n  height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }\n\n@media (max-width: 599px) {\n  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n    height: 224px;\n    height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {\n  position: absolute;\n  content: ""; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n  align-self: flex-end;\n  line-height: 1.5rem; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  transition: opacity .2s ease;\n  opacity: 1; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {\n  opacity: 0; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {\n  font-weight: 500; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar-fixed-adjust {\n  margin-top: 64px; }\n\n@media (max-width: 959px) and (max-height: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 56px; } }\n\n.mdc-toolbar__section--shrink-to-fit {\n  flex: none; }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--persistent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  width: 0; }\n\n.mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--persistent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--persistent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--persistent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--persistent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--persistent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--persistent.mdc-drawer--permanent,\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n.mdc-drawer--persistent.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--open {\n  width: 240px;\n  pointer-events: auto; }\n\n.mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--persistent.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-drawer--permanent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-flex: 0;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden; }\n\n.mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--permanent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--permanent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--permanent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--permanent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--permanent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--permanent.mdc-drawer--permanent,\n.mdc-drawer--permanent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-drawer--permanent--floating {\n  border-left: 0;\n  border-right: none;\n  background: none; }\n\n[dir="rtl"] .mdc-drawer--permanent--floating, .mdc-drawer--permanent--floating[dir="rtl"] {\n  border-left: none;\n  border-right: 0; }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--temporary {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  position: fixed;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  overflow: hidden;\n  contain: strict;\n  z-index: 5;\n  /* Shaded background */ }\n\n.mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--temporary .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--temporary .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--temporary .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--temporary .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--temporary .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--temporary.mdc-drawer--permanent,\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--temporary::before {\n  background-color: rgba(0, 0, 0, 0.6); }\n\n.mdc-drawer--temporary::before {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  opacity: var(--mdc-temporary-drawer-opacity, 0);\n  content: "";\n  will-change: opacity; }\n\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: calc(100% - 56px);\n  max-width: 280px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none;\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__drawer {\n    width: calc(100% - 64px);\n    max-width: 320px; } }\n\n.mdc-drawer--temporary .mdc-drawer__content {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  margin: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y; }\n\n.mdc-drawer--temporary .mdc-drawer__footer {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  -ms-flex-negative: 0;\n  flex-shrink: 0; }\n\n.mdc-drawer--temporary.mdc-drawer--animating::before {\n  -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open {\n  pointer-events: auto; }\n\n.mdc-drawer--temporary.mdc-drawer--open::before {\n  opacity: 1;\n  opacity: var(--mdc-temporary-drawer-opacity, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--temporary.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n.mdc-drawer-scroll-lock {\n  overflow: hidden; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 0;\n  line-height: 1.5rem;\n  list-style-type: none; }\n\n.mdc-list-item__secondary-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-list-item__graphic {\n  background-color: transparent; }\n\n.mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list-item__meta {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  padding-bottom: 4px;\n  font-size: .812rem; }\n\n.mdc-list-item {\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  height: 48px;\n  padding: 0 16px;\n  overflow: hidden; }\n\n.mdc-list-item:focus {\n  outline: none; }\n\n.mdc-list-item--selected,\n.mdc-list-item--activated {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item--selected .mdc-list-item__graphic,\n.mdc-list-item--activated .mdc-list-item__graphic {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 32px;\n  width: 24px;\n  height: 24px;\n  display: inline-flex;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list-item__graphic {\n  margin-left: 32px;\n  margin-right: 0; }\n\n.mdc-list-item__meta {\n  margin-left: auto;\n  margin-right: 0; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__meta,\n[dir="rtl"] .mdc-list-item .mdc-list-item__meta {\n  margin-left: 0;\n  margin-right: auto; }\n\n.mdc-list-item__text,\n.mdc-list-item__secondary-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: block; }\n\n.mdc-list-item__secondary-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-list--dense .mdc-list-item__secondary-text {\n  font-size: inherit; }\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px; }\n\n.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 36px;\n  width: 20px;\n  height: 20px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 36px;\n  margin-right: 0; }\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px; }\n\n.mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 16px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 16px;\n  margin-right: 0; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  background-color: black; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before {\n  opacity: 0.04; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before {\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before {\n  opacity: 0.08; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.2; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.24; }\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px; }\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item {\n  height: 48px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 20px;\n  width: 36px;\n  height: 36px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 20px;\n  margin-right: 0; }\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; }\n\n.mdc-list-divider {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-list-divider--padded {\n  margin: 0 16px; }\n\n.mdc-list-divider--inset {\n  margin-left: 72px;\n  margin-right: 0;\n  width: calc(100% - 72px); }\n\n.mdc-list-group[dir="rtl"] .mdc-list-divider--inset,\n[dir="rtl"] .mdc-list-group .mdc-list-divider--inset {\n  margin-left: 0;\n  margin-right: 72px; }\n\n.mdc-list-divider--inset.mdc-list-divider--padded {\n  width: calc(100% - 72px - 16px); }\n\n.mdc-list-group .mdc-list {\n  padding: 0; }\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0.75rem 16px; }\n\n.mdc-list-group__subheader {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n.mdc-fab {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  display: inline-flex;\n  position: relative;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 56px;\n  height: 56px;\n  padding: 0;\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  border: none;\n  border-radius: 50%;\n  fill: currentColor;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  /* @alternate */\n  background-color: #018786;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-secondary, white); }\n\n.mdc-fab::before, .mdc-fab::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-fab::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-fab.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-fab.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab::before, .mdc-fab::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-fab::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-fab:hover, .mdc-fab:focus {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active, .mdc-fab:focus {\n  outline: none; }\n\n.mdc-fab:hover {\n  cursor: pointer; }\n\n.mdc-fab > svg {\n  width: 100%; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-fab::before, .mdc-fab::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab::before, .mdc-fab::after {\n    background-color: var(--mdc-theme-text-primary-on-secondary, white); } }\n\n.mdc-fab:hover::before {\n  opacity: 0.08; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):focus::before, .mdc-fab.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-fab:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-fab.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-fab--mini {\n  width: 40px;\n  height: 40px; }\n\n.mdc-fab__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  transition: -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  will-change: transform; }\n\n.mdc-fab--exited {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: opacity 15ms linear 150ms, -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  opacity: 0; }\n\n.mdc-fab--exited .mdc-fab__icon {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1); }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  line-height: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  line-height: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.8125rem;\n  line-height: 3rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  line-height: 2rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  line-height: 1.5rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase; }\n\n.mdc-typography--adjust-margin.mdc-typography--button {\n  margin: inherit; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-dialog {\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  visibility: hidden;\n  z-index: 5; }\n\n.mdc-dialog__backdrop {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87);\n  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  z-index: -1; }\n\n.mdc-dialog__surface {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: inline-flex;\n  flex-direction: column;\n  width: calc(100% - 30px);\n  min-width: 640px;\n  max-width: 865px;\n  -webkit-transform: translateY(150px) scale(0.8);\n  transform: translateY(150px) scale(0.8);\n  border-radius: 2px;\n  opacity: 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__surface,\n[dir="rtl"] .mdc-dialog .mdc-dialog__surface {\n  text-align: right; }\n\n.mdc-dialog__header {\n  display: flex;\n  align-items: center;\n  padding: 24px 24px 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__header,\n[dir="rtl"] .mdc-dialog .mdc-dialog__header {\n  text-align: right; }\n\n.mdc-dialog__header__empty {\n  padding: 0; }\n\n.mdc-dialog__header__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  flex: 1;\n  margin: 0; }\n\n.mdc-dialog__body {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin-top: 20px;\n  padding: 0 24px 24px; }\n\n.mdc-dialog__body--scrollable {\n  max-height: 195px;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  overflow-x: auto;\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch; }\n\n.mdc-dialog__footer {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-end;\n  padding: 8px; }\n\n.mdc-dialog__footer__button {\n  margin-left: 0;\n  margin-right: 8px; }\n\n[dir="rtl"] .mdc-dialog__footer__button, .mdc-dialog__footer__button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-dialog__footer__button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-dialog__footer__button:last-child, .mdc-dialog__footer__button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-dialog__action {\n  /* @alternate */\n  color: #018786;\n  color: var(--mdc-theme-secondary, #018786); }\n\n@media (max-width: 640px) {\n  .mdc-dialog {\n    min-width: 280px; }\n  .mdc-dialog__surface {\n    min-width: 280px; }\n  .mdc-dialog__body {\n    line-height: 24px; } }\n\n.mdc-dialog--animating {\n  visibility: visible; }\n\n.mdc-dialog--animating .mdc-dialog__backdrop {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--animating .mdc-dialog__surface {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--open {\n  visibility: visible; }\n\n.mdc-dialog--open .mdc-dialog__backdrop {\n  opacity: .3; }\n\n.mdc-dialog--open .mdc-dialog__surface {\n  -webkit-transform: translateY(0) scale(1);\n  transform: translateY(0) scale(1);\n  opacity: 1; }\n\n.mdc-dialog-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  min-width: 64px;\n  height: 36px;\n  padding: 0 16px;\n  border: none;\n  outline: none;\n  text-align: center;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  vertical-align: middle;\n  border-radius: 2px; }\n\n.mdc-button::before, .mdc-button::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-button::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-button.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-button.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-button.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-button.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button::before, .mdc-button::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-button:active {\n  outline: none; }\n\n.mdc-button:hover {\n  cursor: pointer; }\n\n.mdc-button:disabled {\n  background-color: transparent;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-button:not(:disabled) {\n  background-color: transparent; }\n\n.mdc-button:not(:disabled) {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button::before, .mdc-button::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button::before, .mdc-button::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button:hover::before {\n  opacity: 0.04; }\n\n.mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-button:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-button.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-button .mdc-button__icon {\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  margin-right: 8px;\n  font-size: 18px;\n  line-height: inherit;\n  vertical-align: top; }\n\n.mdc-button--raised:disabled,\n.mdc-button--unelevated:disabled {\n  background-color: rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised:not(:disabled),\n  .mdc-button--unelevated:not(:disabled) {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white); }\n\n.mdc-button--raised::before, .mdc-button--raised::after,\n.mdc-button--unelevated::before,\n.mdc-button--unelevated::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised::before, .mdc-button--raised::after,\n  .mdc-button--unelevated::before,\n  .mdc-button--unelevated::after {\n    background-color: var(--mdc-theme-text-primary-on-primary, white); } }\n\n.mdc-button--raised:hover::before,\n.mdc-button--unelevated:hover::before {\n  opacity: 0.08; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-ripple-upgraded--background-focused::before,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):focus::before,\n.mdc-button--unelevated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded)::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):active::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-button--raised.mdc-ripple-upgraded,\n.mdc-button--unelevated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-button--raised {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-button--raised:hover, .mdc-button--raised:focus {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:active {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:disabled {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--stroked {\n  border-style: solid;\n  padding-right: 14px;\n  padding-left: 14px;\n  border-width: 2px;\n  line-height: 32px; }\n\n.mdc-button--stroked:disabled {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.38);\n  border-color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--stroked.mdc-button--dense {\n  line-height: 27px; }\n\n.mdc-button--stroked.mdc-button--compact {\n  padding-right: 6px;\n  padding-left: 6px; }\n\n.mdc-button--stroked:not(:disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button--compact {\n  padding: 0 8px; }\n\n.mdc-button--dense {\n  height: 32px;\n  font-size: .8125rem;\n  line-height: 32px; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* stylelint-disable selector-max-type */\n.mdc-form-field {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  display: inline-flex;\n  align-items: center;\n  vertical-align: middle; }\n\n.mdc-form-field > label {\n  order: 0;\n  margin-right: auto;\n  padding-left: 4px; }\n\n[dir="rtl"] .mdc-form-field > label, .mdc-form-field[dir="rtl"] > label {\n  margin-left: auto;\n  padding-right: 4px; }\n\n.mdc-form-field--align-end > label {\n  order: -1;\n  margin-left: auto;\n  padding-right: 4px; }\n\n[dir="rtl"] .mdc-form-field--align-end > label, .mdc-form-field--align-end[dir="rtl"] > label {\n  margin-right: auto;\n  padding-left: 4px; }\n\n/* stylelint-enable selector-max-type */\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-floating-label {\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  cursor: text; }\n\n[dir="rtl"] .mdc-floating-label, .mdc-floating-label[dir="rtl"] {\n  right: 0;\n  left: auto;\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-floating-label--float-above {\n  cursor: auto; }\n\n.mdc-floating-label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-standard 250ms 1;\n  animation: mdc-floating-label-shake-float-above-standard 250ms 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n.mdc-line-ripple {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  z-index: 2; }\n\n.mdc-line-ripple--active {\n  -webkit-transform: scaleX(1);\n  transform: scaleX(1);\n  opacity: 1; }\n\n.mdc-line-ripple--deactivating {\n  opacity: 0; }\n\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-text-field-helper-text {\n  margin: 0;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  font-size: .75rem;\n  will-change: opacity; }\n\n.mdc-text-field + .mdc-text-field-helper-text {\n  margin-bottom: 8px; }\n\n.mdc-text-field-helper-text--persistent {\n  transition: none;\n  opacity: 1;\n  will-change: initial; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  position: absolute;\n  bottom: 16px;\n  cursor: pointer; }\n\n.mdc-text-field__icon:not([tabindex]),\n.mdc-text-field__icon[tabindex="-1"] {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-text-field__idle-outline {\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 4px);\n  height: calc(100% - 4px);\n  transition: opacity 100ms ease;\n  border: 1px solid;\n  opacity: 1; }\n\n.mdc-text-field__outline {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 1px);\n  height: calc(100% - 2px);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  overflow: hidden; }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field__outline::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field__outline::before, .mdc-text-field__outline::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field__outline svg {\n  position: absolute;\n  width: 100%;\n  height: 100%; }\n\n.mdc-text-field__outline-path {\n  stroke-width: 1px;\n  transition: stroke 180ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  fill: transparent; }\n\n.mdc-text-field {\n  display: inline-block;\n  position: relative;\n  margin-bottom: 8px;\n  will-change: opacity, transform, color; }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: black; }\n\n.mdc-text-field .mdc-line-ripple {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {\n  color: black; }\n\n.mdc-text-field__input {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  width: 100%;\n  padding: 0 0 8px;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  border: none;\n  border-bottom: 1px solid;\n  border-radius: 0;\n  background: none;\n  font-size: inherit;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.mdc-text-field__input::-webkit-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:focus {\n  outline: none; }\n\n.mdc-text-field__input:invalid {\n  box-shadow: none; }\n\n.mdc-text-field__input:-webkit-autofill + .mdc-floating-label {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75);\n  cursor: auto; }\n\n.mdc-text-field--outlined {\n  height: 56px;\n  border: none; }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  /* @alternate */\n  stroke: #6200ee;\n  stroke: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) scale(0.75);\n  transform: translateY(-130%) scale(0.75); }\n\n.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1; }\n\n.mdc-text-field--outlined .mdc-text-field__input {\n  display: flex;\n  height: 30px;\n  padding: 12px;\n  border: none;\n  background-color: transparent;\n  z-index: 1; }\n\n.mdc-text-field--outlined .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  transition: -webkit-transform 260ms ease;\n  transition: transform 260ms ease;\n  transition: transform 260ms ease, -webkit-transform 260ms ease; }\n\n[dir="rtl"] .mdc-text-field--outlined .mdc-floating-label, .mdc-text-field--outlined .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--outlined .mdc-text-field__icon {\n  z-index: 2; }\n\n.mdc-text-field--outlined .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid; }\n\n.mdc-text-field--outlined .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined.mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke-width: 2px; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  color: rgba(0, 0, 0, 0.38); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled:not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: none; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__outline-path {\n  stroke-width: 1px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense {\n  height: 48px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) scale(0.923);\n  transform: translateY(-145%) scale(0.923); }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 7px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label {\n  bottom: 18px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__icon {\n  top: 12px; }\n\n.mdc-text-field--box {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px 4px 0 0;\n  display: inline-flex;\n  position: relative;\n  height: 56px;\n  margin-top: 16px;\n  overflow: hidden; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field--box::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field--box::before, .mdc-text-field--box::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field--box:hover::before {\n  opacity: 0.04; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):focus::before, .mdc-text-field--box:not(.mdc-ripple-upgraded):focus-within::before, .mdc-text-field--box.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field--box.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field--box:not(.mdc-text-field--disabled) {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n.mdc-text-field--box .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.75);\n  transform: translateY(-50%) scale(0.75); }\n\n.mdc-text-field--box .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1; }\n\n.mdc-text-field--box .mdc-text-field__input {\n  align-self: flex-end;\n  box-sizing: border-box;\n  height: 100%;\n  padding: 20px 16px 0; }\n\n.mdc-text-field--box .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  width: calc(100% - 48px);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  pointer-events: none;\n  overflow: hidden;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-text-field--box .mdc-floating-label, .mdc-text-field--box .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--box.mdc-text-field--disabled {\n  background-color: rgba(0, 0, 0, 0.02);\n  border-bottom: none; }\n\n.mdc-text-field--box.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-90%) scale(0.923);\n  transform: translateY(-90%) scale(0.923); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1; }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 0; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon {\n  left: 15px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__icon, .mdc-text-field--with-leading-icon .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 15px; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__input {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__input, .mdc-text-field--with-leading-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n.mdc-text-field--with-leading-icon .mdc-floating-label {\n  left: 48px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-floating-label, .mdc-text-field--with-leading-icon .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 48px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) translateX(-32px) scale(0.75);\n  transform: translateY(-130%) translateX(-32px) scale(0.75); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-130%) translateX(32px) scale(0.75);\n  transform: translateY(-130%) translateX(32px) scale(0.75); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) translateX(-21px) scale(0.923);\n  transform: translateY(-145%) translateX(-21px) scale(0.923); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-145%) translateX(21px) scale(0.923);\n  transform: translateY(-145%) translateX(21px) scale(0.923); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  left: initial;\n  right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__icon, .mdc-text-field--with-trailing-icon .mdc-text-field__icon[dir="rtl"] {\n  left: 15px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__input {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__input, .mdc-text-field--with-trailing-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  bottom: 16px;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: 12px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 12px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label {\n  left: 38px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 38px; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: initial;\n  right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: 12px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) {\n  display: inline-flex;\n  position: relative;\n  align-items: flex-end;\n  box-sizing: border-box;\n  margin-top: 16px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box):not(.mdc-text-field--textarea):not(.mdc-text-field--outlined) {\n  height: 48px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) .mdc-floating-label {\n  pointer-events: none; }\n\n.mdc-text-field--dense {\n  margin-top: 12px;\n  margin-bottom: 4px;\n  font-size: .813rem; }\n\n.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-110%) scale(0.923);\n  transform: translateY(-110%) scale(0.923); }\n\n.mdc-text-field__input:required + .mdc-floating-label::after {\n  margin-left: 1px;\n  content: "*"; }\n\n.mdc-text-field--textarea {\n  border-radius: 4px;\n  display: flex;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: initial;\n  transition: none;\n  border: 1px solid;\n  overflow: hidden; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  border-radius: 4px 4px 0 0; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  border-radius: 2px; }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.923);\n  transform: translateY(-50%) scale(0.923); }\n\n.mdc-text-field--textarea .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-textarea 250ms 1;\n  animation: mdc-floating-label-shake-float-above-textarea 250ms 1; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  margin: 0;\n  padding: 16px;\n  padding-top: 32px;\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  left: 1px;\n  right: initial;\n  background-color: white;\n  top: 18px;\n  bottom: auto;\n  margin-top: 2px;\n  margin-left: 8px;\n  padding: 8px;\n  line-height: 1.15; }\n\n[dir="rtl"] .mdc-text-field--textarea .mdc-floating-label, .mdc-text-field--textarea .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 1px; }\n\n.mdc-text-field--fullwidth {\n  width: 100%; }\n\n.mdc-text-field--fullwidth .mdc-text-field__input {\n  resize: vertical; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) {\n  display: block;\n  box-sizing: border-box;\n  height: 56px;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid;\n  outline: none; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) .mdc-text-field__input {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  resize: none;\n  border: none !important; }\n\n.mdc-text-field--fullwidth.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--dense + .mdc-text-field-helper-text {\n  margin-bottom: 4px; }\n\n.mdc-text-field--box + .mdc-text-field-helper-text,\n.mdc-text-field--outlined + .mdc-text-field-helper-text {\n  margin-right: 16px;\n  margin-left: 16px; }\n\n.mdc-form-field > .mdc-text-field + label {\n  align-self: flex-start; }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused .mdc-text-field__input:required + .mdc-floating-label::after {\n  color: #d50000; }\n\n.mdc-text-field--focused + .mdc-text-field-helper-text:not(.mdc-text-field-helper-text--validation-msg) {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-line-ripple {\n  background-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  color: #d50000; }\n\n.mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) {\n  border-color: #d50000; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--disabled {\n  pointer-events: none; }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__icon {\n  color: rgba(0, 0, 0, 0.3); }\n\n.mdc-text-field--disabled:not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: 1px dotted; }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  cursor: default; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled {\n  border-color: rgba(35, 31, 32, 0.26);\n  background-color: #f9f9f9;\n  border-style: solid; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input:focus {\n  border-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input {\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-floating-label {\n  background-color: #f9f9f9; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__idle-outline {\n  opacity: 0; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__outline {\n  opacity: 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n.mdc-radio {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  flex: 0 0 auto;\n  box-sizing: border-box;\n  width: 40px;\n  height: 40px;\n  padding: 10px;\n  cursor: pointer;\n  will-change: opacity, transform, border-color, background-color, color; }\n\n.mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.54);\n  border-color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-radio .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: #018786;\n  border-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {\n  /* @alternate */\n  background-color: #018786;\n  background-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__background::before {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio .mdc-radio__background::before {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio::before, .mdc-radio::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-radio.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio::before, .mdc-radio::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-radio.mdc-ripple-upgraded::before, .mdc-radio.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio::before, .mdc-radio::after {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio::before, .mdc-radio::after {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio:hover::before {\n  opacity: 0.04; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):focus::before, .mdc-radio.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-radio:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-radio.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-radio__background {\n  display: inline-block;\n  position: absolute;\n  left: 10px;\n  box-sizing: border-box;\n  width: 50%;\n  height: 50%; }\n\n.mdc-radio__background::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio__outer-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 50%; }\n\n.mdc-radio__inner-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%; }\n\n.mdc-radio__native-control {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  opacity: 0;\n  cursor: inherit;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded .mdc-radio__background::before {\n  content: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background,\n.mdc-radio__native-control:disabled + .mdc-radio__background {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle {\n  transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle {\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio--disabled {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background {\n  cursor: default; }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {\n  border-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {\n  background-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:focus + .mdc-radio__background::before {\n  -webkit-transform: scale(2, 2);\n  transform: scale(2, 2);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .26; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-menu {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: none;\n  position: absolute;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  min-width: 170px;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  border-radius: 2px;\n  opacity: 0;\n  white-space: nowrap;\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform, opacity;\n  z-index: 4; }\n\n.mdc-menu:focus {\n  outline: none; }\n\n.mdc-menu--animating-open {\n  display: inline-block;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8);\n  -webkit-transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu--open {\n  display: inline-block;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1; }\n\n.mdc-menu--animating-closed {\n  display: inline-block;\n  -webkit-transition: opacity 0.075s linear;\n  transition: opacity 0.075s linear;\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu__items {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform; }\n\n.mdc-menu__items > .mdc-list-item {\n  cursor: pointer; }\n\n.mdc-menu--animating .mdc-menu__items {\n  overflow-y: hidden; }\n\n.mdc-menu--animating-open > .mdc-menu__items {\n  -webkit-transform: scale(1.25);\n  transform: scale(1.25); }\n\n.mdc-menu--open > .mdc-menu__items {\n  -webkit-transform: scale(1);\n  transform: scale(1); }\n\n[dir="rtl"] .mdc-menu {\n  -webkit-transform-origin: top right;\n  transform-origin: top right; }\n\n.mdc-menu .mdc-list-group,\n.mdc-menu .mdc-list {\n  padding: 8px 0; }\n\n.mdc-menu .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-menu .mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"] {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"]:focus::before {\n  opacity: 0; }\n\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-select__label {\n  left: 0;\n  right: initial;\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  pointer-events: none;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-select__label, .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-select[dir="rtl"] .mdc-select__label,\n[dir="rtl"] .mdc-select .mdc-select__label {\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-select__label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-select__bottom-line {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleY(1);\n  transform: scaleY(1);\n  -webkit-transform-origin: bottom;\n  transform-origin: bottom;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-select__bottom-line::after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  content: "";\n  z-index: 2; }\n\n.mdc-select__bottom-line--active::after {\n  opacity: 1; }\n\n.mdc-select {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  display: inline-flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  box-sizing: border-box;\n  height: 48px;\n  border: none;\n  outline: none;\n  background-repeat: no-repeat;\n  background-position: right 8px bottom 8px;\n  cursor: pointer;\n  overflow: visible; }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface,\n.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line {\n  background-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line::after {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__label, .mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__label {\n  color: rgba(98, 0, 238, 0.87); }\n\n[dir="rtl"] .mdc-select, .mdc-select[dir="rtl"] {\n  background-position: left 8px bottom 8px; }\n\n.mdc-select__menu {\n  position: fixed;\n  top: 0;\n  left: 0;\n  max-height: 100%;\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  z-index: 4; }\n\n.mdc-select__surface {\n  padding-left: 0;\n  padding-right: 26px;\n  display: flex;\n  position: relative;\n  flex-grow: 1;\n  width: 100%;\n  height: 48px;\n  padding-bottom: 8px;\n  border: none;\n  outline: none;\n  overflow: hidden; }\n\n[dir="rtl"] .mdc-select__surface, .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 0; }\n\n.mdc-select__surface::before, .mdc-select__surface::after {\n  background-color: black; }\n\n.mdc-select__surface:hover::before {\n  opacity: 0.04; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):focus::before, .mdc-select__surface.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-select__surface.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-select__selected-text {\n  display: flex;\n  position: absolute;\n  bottom: 8px;\n  align-items: flex-end;\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  white-space: nowrap;\n  overflow: hidden; }\n\n.mdc-select .mdc-select__surface:focus .mdc-select__bottom-line::after {\n  -webkit-transform: scale(1, 2);\n  transform: scale(1, 2);\n  opacity: 1; }\n\n.mdc-select--box {\n  height: 56px;\n  border-radius: 4px 4px 0 0;\n  background-position: right 10px center; }\n\n.mdc-select--box:not(.mdc-select--disabled) .mdc-select__surface {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n[dir="rtl"] .mdc-select--box, .mdc-select--box[dir="rtl"] {\n  background-position: left 10px center; }\n\n.mdc-select--box .mdc-select__surface {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  padding-left: 16px;\n  padding-right: 26px;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  height: 56px;\n  padding-bottom: 0;\n  border-radius: 4px 4px 0 0; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__surface, .mdc-select--box .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 16px; }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-select--box .mdc-select__surface::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-select--box .mdc-select__label {\n  left: 16px;\n  right: initial;\n  bottom: 12px; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__label, .mdc-select--box .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-select--box .mdc-select__label--float-above {\n  -webkit-transform: translateY(-40%) scale(0.75, 0.75);\n  transform: translateY(-40%) scale(0.75, 0.75); }\n\n.mdc-select--box .mdc-select__selected-text {\n  position: inherit;\n  bottom: 0;\n  margin-bottom: 6px; }\n\n.mdc-select--open .mdc-select__surface::before {\n  opacity: 0.12; }\n\n.mdc-select--open .mdc-select__selected-text {\n  -webkit-transform: translateY(8px);\n  transform: translateY(8px);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0; }\n\n.mdc-select--open .mdc-select__bottom-line::after {\n  -webkit-transform: scaleY(2);\n  transform: scaleY(2);\n  opacity: 1; }\n\n.mdc-select--disabled {\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  border-bottom-width: 1px;\n  border-bottom-style: dotted;\n  opacity: .38;\n  cursor: default;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-select--disabled .mdc-select__label {\n  color: black; }\n\n.mdc-select--disabled .mdc-select__bottom-line {\n  display: none; }\n\n.mdc-select-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-card {\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  border-radius: 2px;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box; }\n\n.mdc-card--stroked {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  border: 1px solid #dbdbdb; }\n\n.mdc-card__media {\n  position: relative;\n  box-sizing: border-box;\n  background-repeat: no-repeat;\n  background-size: cover; }\n\n.mdc-card__media::before {\n  display: block;\n  content: ""; }\n\n.mdc-card__media:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__media:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__media--square::before {\n  margin-top: 100%; }\n\n.mdc-card__media--16-9::before {\n  margin-top: 56.25%; }\n\n.mdc-card__media-content {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  box-sizing: border-box; }\n\n.mdc-card__primary-action {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer;\n  overflow: hidden; }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-card__primary-action::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  background-color: black; }\n\n.mdc-card__primary-action:hover::before {\n  opacity: 0.04; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):focus::before, .mdc-card__primary-action.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-card__primary-action:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__primary-action:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__actions {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  min-height: 52px;\n  padding: 8px; }\n\n.mdc-card__actions--full-bleed {\n  padding: 0; }\n\n.mdc-card__action-buttons,\n.mdc-card__action-icons {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box; }\n\n.mdc-card__action-icons {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));\n  flex-grow: 1;\n  justify-content: flex-end; }\n\n.mdc-card__action-buttons + .mdc-card__action-icons {\n  margin-left: 16px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action-buttons + .mdc-card__action-icons, .mdc-card__action-buttons + .mdc-card__action-icons[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 16px; }\n\n.mdc-card__action {\n  display: inline-flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  justify-content: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-card__action:focus {\n  outline: none; }\n\n.mdc-card__action--button {\n  margin-left: 0;\n  margin-right: 8px;\n  padding: 0 8px; }\n\n[dir="rtl"] .mdc-card__action--button, .mdc-card__action--button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-card__action--button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action--button:last-child, .mdc-card__action--button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-card__actions--full-bleed .mdc-card__action--button {\n  justify-content: space-between;\n  width: 100%;\n  height: auto;\n  max-height: none;\n  margin: 0;\n  padding: 8px 16px;\n  text-align: left; }\n\n[dir="rtl"] .mdc-card__actions--full-bleed .mdc-card__action--button, .mdc-card__actions--full-bleed .mdc-card__action--button[dir="rtl"] {\n  text-align: right; }\n\n.mdc-card__action--icon {\n  margin: -6px 0;\n  padding: 12px; }\n\n.mdc-card__action--icon:not(:disabled) {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n:root {\n  --mdc-layout-grid-margin-desktop: 24px;\n  --mdc-layout-grid-gutter-desktop: 24px;\n  --mdc-layout-grid-column-width-desktop: 72px;\n  --mdc-layout-grid-margin-tablet: 16px;\n  --mdc-layout-grid-gutter-tablet: 16px;\n  --mdc-layout-grid-column-width-tablet: 72px;\n  --mdc-layout-grid-margin-phone: 16px;\n  --mdc-layout-grid-gutter-phone: 16px;\n  --mdc-layout-grid-column-width-phone: 72px; }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 24px;\n    padding: var(--mdc-layout-grid-margin-desktop, 24px); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-tablet, 16px); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-phone, 16px); } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 24px;\n      grid-gap: var(--mdc-layout-grid-gutter-desktop, 24px);\n      grid-template-columns: repeat(12, minmax(0, 1fr)); } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);\n      grid-template-columns: repeat(8, minmax(0, 1fr)); } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-phone, 16px);\n      grid-template-columns: repeat(4, minmax(0, 1fr)); } } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__cell {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n    width: calc(8.33333% - 24px);\n    width: calc(8.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n    width: calc(16.66667% - 24px);\n    width: calc(16.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n    width: calc(25% - 24px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n    width: calc(41.66667% - 24px);\n    width: calc(41.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n    width: calc(50% - 24px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n    width: calc(58.33333% - 24px);\n    width: calc(58.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n    width: calc(66.66667% - 24px);\n    width: calc(66.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n    width: calc(75% - 24px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n      width: auto;\n      grid-column-end: span 9; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n    width: calc(83.33333% - 24px);\n    width: calc(83.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n      width: auto;\n      grid-column-end: span 10; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n    width: calc(91.66667% - 24px);\n    width: calc(91.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n      width: auto;\n      grid-column-end: span 11; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n    width: calc(100% - 24px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n      width: auto;\n      grid-column-end: span 12; } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__cell {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n    width: calc(12.5% - 16px);\n    width: calc(12.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n    width: calc(37.5% - 16px);\n    width: calc(37.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n    width: calc(62.5% - 16px);\n    width: calc(62.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n    width: calc(87.5% - 16px);\n    width: calc(87.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n      width: auto;\n      grid-column-end: span 8; } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__cell {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n      width: auto;\n      grid-column-end: span 4; } } }\n\n.mdc-layout-grid__cell--order-1 {\n  -webkit-box-ordinal-group: 2;\n  -ms-flex-order: 1;\n  order: 1; }\n\n.mdc-layout-grid__cell--order-2 {\n  -webkit-box-ordinal-group: 3;\n  -ms-flex-order: 2;\n  order: 2; }\n\n.mdc-layout-grid__cell--order-3 {\n  -webkit-box-ordinal-group: 4;\n  -ms-flex-order: 3;\n  order: 3; }\n\n.mdc-layout-grid__cell--order-4 {\n  -webkit-box-ordinal-group: 5;\n  -ms-flex-order: 4;\n  order: 4; }\n\n.mdc-layout-grid__cell--order-5 {\n  -webkit-box-ordinal-group: 6;\n  -ms-flex-order: 5;\n  order: 5; }\n\n.mdc-layout-grid__cell--order-6 {\n  -webkit-box-ordinal-group: 7;\n  -ms-flex-order: 6;\n  order: 6; }\n\n.mdc-layout-grid__cell--order-7 {\n  -webkit-box-ordinal-group: 8;\n  -ms-flex-order: 7;\n  order: 7; }\n\n.mdc-layout-grid__cell--order-8 {\n  -webkit-box-ordinal-group: 9;\n  -ms-flex-order: 8;\n  order: 8; }\n\n.mdc-layout-grid__cell--order-9 {\n  -webkit-box-ordinal-group: 10;\n  -ms-flex-order: 9;\n  order: 9; }\n\n.mdc-layout-grid__cell--order-10 {\n  -webkit-box-ordinal-group: 11;\n  -ms-flex-order: 10;\n  order: 10; }\n\n.mdc-layout-grid__cell--order-11 {\n  -webkit-box-ordinal-group: 12;\n  -ms-flex-order: 11;\n  order: 11; }\n\n.mdc-layout-grid__cell--order-12 {\n  -webkit-box-ordinal-group: 13;\n  -ms-flex-order: 12;\n  order: 12; }\n\n.mdc-layout-grid__cell--align-top {\n  -ms-flex-item-align: start;\n  align-self: flex-start; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-top {\n    -ms-flex-item-align: start;\n    align-self: start; } }\n\n.mdc-layout-grid__cell--align-middle {\n  -ms-flex-item-align: center;\n  align-self: center; }\n\n.mdc-layout-grid__cell--align-bottom {\n  -ms-flex-item-align: end;\n  align-self: flex-end; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-bottom {\n    -ms-flex-item-align: end;\n    align-self: end; } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 1176px;\n    width: calc( var(--mdc-layout-grid-column-width-desktop, 72px) * 12 + var(--mdc-layout-grid-gutter-desktop, 24px) * 11 + var(--mdc-layout-grid-margin-desktop, 24px) * 2); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 720px;\n    width: calc( var(--mdc-layout-grid-column-width-tablet, 72px) * 8 + var(--mdc-layout-grid-gutter-tablet, 16px) * 7 + var(--mdc-layout-grid-margin-tablet, 16px) * 2); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 368px;\n    width: calc( var(--mdc-layout-grid-column-width-phone, 72px) * 4 + var(--mdc-layout-grid-gutter-phone, 16px) * 3 + var(--mdc-layout-grid-margin-phone, 16px) * 2); } }\n\n.mdc-layout-grid--align-left {\n  margin-right: auto;\n  margin-left: 0; }\n\n.mdc-layout-grid--align-right {\n  margin-right: 0;\n  margin-left: auto; }\n\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n.mdc-elevation--z0 {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z1 {\n  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z2 {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z3 {\n  -webkit-box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z4 {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z5 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z6 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z7 {\n  -webkit-box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z8 {\n  -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z9 {\n  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z10 {\n  -webkit-box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z11 {\n  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z12 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z13 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z14 {\n  -webkit-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z15 {\n  -webkit-box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z16 {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z17 {\n  -webkit-box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z18 {\n  -webkit-box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z19 {\n  -webkit-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z20 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z21 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z22 {\n  -webkit-box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z23 {\n  -webkit-box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z24 {\n  -webkit-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation-transition {\n  -webkit-transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.page {\n  padding: 0; }\n\n.app {\n  display: flex;\n  min-height: 100vh; }\n  .app__container {\n    width: 100%;\n    display: flex;\n    flex-direction: column; }\n    .app__container-content {\n      height: 100%;\n      background-color: #eeeeee; }\n\n.drawer {\n  height: 100%; }\n  .drawer__more-button {\n    position: absolute;\n    right: 10px;\n    top: 12px; }\n  .drawer__list-item:hover {\n    background-color: #eeeeee; }\n  .drawer__list-item, .drawer__list-item.mdc-list-item {\n    overflow: visible; }\n  .drawer__nav, .drawer__nav.mdc-drawer__drawer {\n    overflow: visible;\n    will-change: unset; }\n\n.toolbar {\n  display: inline-flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box; }\n  .toolbar__button, .toolbar__button:not(:disabled) {\n    color: white; }\n\n.transactions {\n  display: flex;\n  flex-direction: column;\n  padding: 15px 40px 15px 40px;\n  height: 100%; }\n  .transactions__block--hidden {\n    display: none; }\n  .transactions__empty-state {\n    margin: auto;\n    text-align: center;\n    color: rgba(0, 0, 0, 0.26); }\n  .transactions__add-transaction-dialog-activation {\n    position: fixed;\n    right: 12px;\n    bottom: 12px; }\n\n.add-transaction-dialog__row {\n  display: flex;\n  flex-direction: row; }\n  .add-transaction-dialog__row--col {\n    justify-content: space-between; }\n\n.add-transaction-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__select-menu {\n  top: inherit !important;\n  left: inherit !important; }\n\n.add-account-dialog__row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.add-account-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__type, .add-account-dialog__currency {\n  width: 100%; }\n\n.button-more__popup-right {\n  margin-top: 26px;\n  margin-left: 25px; }\n\n.button-more__popup-left {\n  margin-top: 26px;\n  margin-right: 25px; }\n\n.button-more__more {\n  width: 24px;\n  padding-left: 0;\n  padding-right: 0;\n  min-width: 0;\n  height: 24px; }\n\n.table-transactions__table {\n  border: 1px solid #ddd;\n  border-collapse: collapse;\n  width: 100%;\n  min-width: 600px;\n  text-align: left;\n  box-sizing: border-box;\n  background-color: #fff;\n  margin-top: 30px; }\n\n.table-transactions__tr {\n  height: 40px; }\n\n.table-transactions__highlighted:hover {\n  background-color: #f5f5f5; }\n\n.table-transactions__th {\n  border-bottom: 1px solid #ddd;\n  padding-left: 15px;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54); }\n\n.table-transactions__td {\n  border-bottom: 1px solid #ddd;\n  padding-left: 15px;\n  font-size: 13px;\n  color: #757575; }\n  .table-transactions__td--desc {\n    text-transform: capitalize; }\n\n.table-transactions__span {\n  line-height: 35px; }\n\n.table-transactions__button {\n  position: relative;\n  float: right;\n  padding-left: 0;\n  padding-right: 0;\n  width: 24px;\n  min-width: 0;\n  height: 24px;\n  margin-right: 5px;\n  margin-top: 5px; }\n\n.table-transactions__icon {\n  position: absolute;\n  top: -6px;\n  right: -5px; }\n\n.table-transactions__more-button {\n  position: relative;\n  float: right;\n  margin-right: 5px;\n  margin-top: 5px; }\n\n.chart {\n  padding: 20px; }\n  .chart__visual {\n    margin: 0 auto; }\n\n.accounts__more-button {\n  position: absolute;\n  right: 10px;\n  top: 12px; }\n\n.accounts__list-item, .accounts__list-item.mdc-list-item {\n  overflow: visible; }\n\n.accounts__list-item:hover {\n  background-color: #eeeeee; }\n\n.custom-select {\n  width: 100%; }\n  .custom-select__menu {\n    top: inherit !important;\n    left: inherit !important; }\n\n.about-dialog__header {\n  color: black; }\n',
+        '/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers.\n */\nbody {\n  margin: 0; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Remove the gray background on active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10.\n */\nimg {\n  border-style: none; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\n[type="button"],\n[type="reset"],\n[type="submit"] {\n  -webkit-appearance: button; }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type="button"]::-moz-focus-inner,\n[type="reset"]::-moz-focus-inner,\n[type="submit"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type="button"]:-moz-focusring,\n[type="reset"]:-moz-focusring,\n[type="submit"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n[type="checkbox"],\n[type="radio"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type="number"]::-webkit-inner-spin-button,\n[type="number"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type="search"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n[type="search"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\ndetails {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Misc\n   ========================================================================== */\n/**\n * Add the correct display in IE 10+.\n */\ntemplate {\n  display: none; }\n\n/**\n * Add the correct display in IE 10.\n */\n[hidden] {\n  display: none; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-toolbar {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee);\n  color: white;\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  justify-content: space-between;\n  box-sizing: border-box;\n  width: 100%; }\n\n.mdc-toolbar .mdc-toolbar__icon {\n  color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon::before, .mdc-toolbar .mdc-toolbar__icon::after {\n  background-color: white; }\n\n.mdc-toolbar .mdc-toolbar__icon:hover::before {\n  opacity: 0.08; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):focus::before, .mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-toolbar__row {\n  display: flex;\n  position: relative;\n  align-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n  min-height: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__row {\n    min-height: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__row {\n    min-height: 56px; } }\n\n.mdc-toolbar__section {\n  display: inline-flex;\n  flex: 1;\n  align-items: start;\n  justify-content: center;\n  box-sizing: border-box;\n  min-width: 0;\n  height: 100%;\n  padding: 8px;\n  z-index: 1; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section {\n    padding: 0 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section {\n    padding: 4px 0; } }\n\n.mdc-toolbar__section--align-start {\n  padding-left: 12px;\n  padding-right: 0;\n  justify-content: flex-start;\n  order: -1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n  padding-left: 0;\n  padding-right: 12px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-start {\n    padding-left: 4px;\n    padding-right: 0; }\n  [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {\n    padding-left: 0;\n    padding-right: 4px; } }\n\n.mdc-toolbar__section--align-end {\n  padding-left: 0;\n  padding-right: 12px;\n  justify-content: flex-end;\n  order: 1; }\n\n[dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 0; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__section--align-end {\n    padding-left: 0;\n    padding-right: 4px; }\n  [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {\n    padding-left: 4px;\n    padding-right: 0; } }\n\n.mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin-left: 24px;\n  margin-right: 0;\n  align-self: center;\n  padding: 12px 0;\n  line-height: 1.5rem;\n  z-index: 1; }\n\n[dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 24px; }\n\n.mdc-toolbar__icon, .mdc-toolbar__menu-icon {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  position: relative;\n  align-items: start;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  padding: 12px;\n  border: none;\n  outline: none;\n  background-color: transparent;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__menu-icon::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--unbounded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-activation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded--foreground-deactivation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-toolbar__menu-icon + .mdc-toolbar__title {\n  margin-left: 8px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 8px; }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n    margin-left: 0;\n    margin-right: 16px; } }\n\n.mdc-toolbar--fixed {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 4; }\n\n.mdc-toolbar--flexible {\n  --mdc-toolbar-ratio-to-extend-flexible: 4; }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n  height: 256px;\n  height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }\n\n@media (max-width: 599px) {\n  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n    height: 224px;\n    height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {\n  position: absolute;\n  content: ""; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n  align-self: flex-end;\n  line-height: 1.5rem; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  transition: opacity .2s ease;\n  opacity: 1; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {\n  opacity: 0; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {\n  font-weight: 500; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar-fixed-adjust {\n  margin-top: 64px; }\n\n@media (max-width: 959px) and (max-height: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 56px; } }\n\n.mdc-toolbar__section--shrink-to-fit {\n  flex: none; }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--persistent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  width: 0; }\n\n.mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--persistent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--persistent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--persistent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--persistent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--persistent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--persistent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--persistent.mdc-drawer--permanent,\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--persistent .mdc-drawer__drawer {\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--persistent .mdc-drawer__drawer, .mdc-drawer--persistent .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n.mdc-drawer--persistent.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--persistent.mdc-drawer--open {\n  width: 240px;\n  pointer-events: auto; }\n\n.mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--persistent.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-drawer--permanent {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-flex: 0;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden; }\n\n.mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--permanent .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--permanent .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--permanent .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--permanent .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--permanent .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--permanent .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--permanent.mdc-drawer--permanent,\n.mdc-drawer--permanent .mdc-drawer__drawer {\n  background-color: #fff; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-drawer--permanent, .mdc-drawer--permanent[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-drawer--permanent--floating {\n  border-left: 0;\n  border-right: none;\n  background: none; }\n\n[dir="rtl"] .mdc-drawer--permanent--floating, .mdc-drawer--permanent--floating[dir="rtl"] {\n  border-left: none;\n  border-right: 0; }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-drawer--temporary {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  color: rgba(0, 0, 0, 0.87);\n  position: fixed;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  overflow: hidden;\n  contain: strict;\n  z-index: 5;\n  /* Shaded background */ }\n\n.mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-drawer--temporary .mdc-drawer__header {\n  position: relative; }\n\n.mdc-drawer--temporary .mdc-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-drawer--temporary .mdc-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-drawer--temporary .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-drawer--temporary .mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-drawer--temporary.mdc-drawer--permanent,\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  background-color: #fff; }\n\n.mdc-drawer--temporary::before {\n  background-color: rgba(0, 0, 0, 0.6); }\n\n.mdc-drawer--temporary::before {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  opacity: var(--mdc-temporary-drawer-opacity, 0);\n  content: "";\n  will-change: opacity; }\n\n.mdc-drawer--temporary .mdc-drawer__drawer {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: calc(100% - 56px);\n  max-width: 280px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none;\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n[dir="rtl"] .mdc-drawer--temporary .mdc-drawer__drawer, .mdc-drawer--temporary .mdc-drawer__drawer[dir="rtl"] {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n@media (min-width: 600px) {\n  .mdc-drawer--temporary .mdc-drawer__drawer {\n    width: calc(100% - 64px);\n    max-width: 320px; } }\n\n.mdc-drawer--temporary .mdc-drawer__content {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  margin: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y; }\n\n.mdc-drawer--temporary .mdc-drawer__footer {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  -ms-flex-negative: 0;\n  flex-shrink: 0; }\n\n.mdc-drawer--temporary.mdc-drawer--animating::before {\n  -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--animating .mdc-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open {\n  pointer-events: auto; }\n\n.mdc-drawer--temporary.mdc-drawer--open::before {\n  opacity: 1;\n  opacity: var(--mdc-temporary-drawer-opacity, 1); }\n\n.mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-drawer--temporary.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--temporary.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n.mdc-drawer-scroll-lock {\n  overflow: hidden; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 0;\n  line-height: 1.5rem;\n  list-style-type: none; }\n\n.mdc-list-item__secondary-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-list-item__graphic {\n  background-color: transparent; }\n\n.mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list-item__meta {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  padding-bottom: 4px;\n  font-size: .812rem; }\n\n.mdc-list-item {\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  height: 48px;\n  padding: 0 16px;\n  overflow: hidden; }\n\n.mdc-list-item:focus {\n  outline: none; }\n\n.mdc-list-item--selected,\n.mdc-list-item--activated {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item--selected .mdc-list-item__graphic,\n.mdc-list-item--activated .mdc-list-item__graphic {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 32px;\n  width: 24px;\n  height: 24px;\n  display: inline-flex;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list-item__graphic {\n  margin-left: 32px;\n  margin-right: 0; }\n\n.mdc-list-item__meta {\n  margin-left: auto;\n  margin-right: 0; }\n\n.mdc-list-item[dir="rtl"] .mdc-list-item__meta,\n[dir="rtl"] .mdc-list-item .mdc-list-item__meta {\n  margin-left: 0;\n  margin-right: auto; }\n\n.mdc-list-item__text,\n.mdc-list-item__secondary-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: block; }\n\n.mdc-list-item__secondary-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-list--dense .mdc-list-item__secondary-text {\n  font-size: inherit; }\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px; }\n\n.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 36px;\n  width: 20px;\n  height: 20px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 36px;\n  margin-right: 0; }\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px; }\n\n.mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 16px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic {\n  margin-left: 16px;\n  margin-right: 0; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  background-color: black; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before {\n  opacity: 0.04; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before {\n  opacity: 0.16; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.28; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before {\n  opacity: 0.08; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before {\n  opacity: 0.12; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.2; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.24; }\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px; }\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item {\n  height: 48px; }\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 0;\n  margin-right: 20px;\n  width: 36px;\n  height: 36px; }\n\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic,\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  margin-left: 20px;\n  margin-right: 0; }\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; }\n\n.mdc-list-divider {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-list-divider--padded {\n  margin: 0 16px; }\n\n.mdc-list-divider--inset {\n  margin-left: 72px;\n  margin-right: 0;\n  width: calc(100% - 72px); }\n\n.mdc-list-group[dir="rtl"] .mdc-list-divider--inset,\n[dir="rtl"] .mdc-list-group .mdc-list-divider--inset {\n  margin-left: 0;\n  margin-right: 72px; }\n\n.mdc-list-divider--inset.mdc-list-divider--padded {\n  width: calc(100% - 72px - 16px); }\n\n.mdc-list-group .mdc-list {\n  padding: 0; }\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0.75rem 16px; }\n\n.mdc-list-group__subheader {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n.mdc-fab {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  display: inline-flex;\n  position: relative;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 56px;\n  height: 56px;\n  padding: 0;\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  border: none;\n  border-radius: 50%;\n  fill: currentColor;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  /* @alternate */\n  background-color: #018786;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-secondary, white); }\n\n.mdc-fab::before, .mdc-fab::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-fab::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-fab.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-fab.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-fab.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-fab::before, .mdc-fab::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-fab.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-fab::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-fab:hover, .mdc-fab:focus {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-fab:active, .mdc-fab:focus {\n  outline: none; }\n\n.mdc-fab:hover {\n  cursor: pointer; }\n\n.mdc-fab > svg {\n  width: 100%; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-fab::before, .mdc-fab::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-fab::before, .mdc-fab::after {\n    background-color: var(--mdc-theme-text-primary-on-secondary, white); } }\n\n.mdc-fab:hover::before {\n  opacity: 0.08; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):focus::before, .mdc-fab.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-fab:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-fab:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-fab.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-fab--mini {\n  width: 40px;\n  height: 40px; }\n\n.mdc-fab__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  transition: -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);\n  will-change: transform; }\n\n.mdc-fab--exited {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: opacity 15ms linear 150ms, -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: opacity 15ms linear 150ms, transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  opacity: 0; }\n\n.mdc-fab--exited .mdc-fab__icon {\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  transition: -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 135ms 0ms cubic-bezier(0.4, 0, 1, 1); }\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  line-height: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  line-height: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.8125rem;\n  line-height: 3rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  line-height: 2rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  line-height: 1.5rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.5rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase; }\n\n.mdc-typography--adjust-margin.mdc-typography--button {\n  margin: inherit; }\n\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-dialog {\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  visibility: hidden;\n  z-index: 5; }\n\n.mdc-dialog__backdrop {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87);\n  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  position: fixed;\n  top: 0;\n  left: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  z-index: -1; }\n\n.mdc-dialog__surface {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: inline-flex;\n  flex-direction: column;\n  width: calc(100% - 30px);\n  min-width: 640px;\n  max-width: 865px;\n  -webkit-transform: translateY(150px) scale(0.8);\n  transform: translateY(150px) scale(0.8);\n  border-radius: 2px;\n  opacity: 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__surface,\n[dir="rtl"] .mdc-dialog .mdc-dialog__surface {\n  text-align: right; }\n\n.mdc-dialog__header {\n  display: flex;\n  align-items: center;\n  padding: 24px 24px 0; }\n\n.mdc-dialog[dir="rtl"] .mdc-dialog__header,\n[dir="rtl"] .mdc-dialog .mdc-dialog__header {\n  text-align: right; }\n\n.mdc-dialog__header__empty {\n  padding: 0; }\n\n.mdc-dialog__header__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  flex: 1;\n  margin: 0; }\n\n.mdc-dialog__body {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin-top: 20px;\n  padding: 0 24px 24px; }\n\n.mdc-dialog__body--scrollable {\n  max-height: 195px;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  overflow-x: auto;\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch; }\n\n.mdc-dialog__footer {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-end;\n  padding: 8px; }\n\n.mdc-dialog__footer__button {\n  margin-left: 0;\n  margin-right: 8px; }\n\n[dir="rtl"] .mdc-dialog__footer__button, .mdc-dialog__footer__button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-dialog__footer__button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-dialog__footer__button:last-child, .mdc-dialog__footer__button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-dialog__action {\n  /* @alternate */\n  color: #018786;\n  color: var(--mdc-theme-secondary, #018786); }\n\n@media (max-width: 640px) {\n  .mdc-dialog {\n    min-width: 280px; }\n  .mdc-dialog__surface {\n    min-width: 280px; }\n  .mdc-dialog__body {\n    line-height: 24px; } }\n\n.mdc-dialog--animating {\n  visibility: visible; }\n\n.mdc-dialog--animating .mdc-dialog__backdrop {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--animating .mdc-dialog__surface {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-dialog--open {\n  visibility: visible; }\n\n.mdc-dialog--open .mdc-dialog__backdrop {\n  opacity: .3; }\n\n.mdc-dialog--open .mdc-dialog__surface {\n  -webkit-transform: translateY(0) scale(1);\n  transform: translateY(0) scale(1);\n  opacity: 1; }\n\n.mdc-dialog-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  text-decoration: none;\n  text-transform: uppercase;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  min-width: 64px;\n  height: 36px;\n  padding: 0 16px;\n  border: none;\n  outline: none;\n  text-align: center;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-appearance: none;\n  overflow: hidden;\n  vertical-align: middle;\n  border-radius: 2px; }\n\n.mdc-button::before, .mdc-button::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-button::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-button.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-button.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-button.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-button.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-button::before, .mdc-button::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-button.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.mdc-button:active {\n  outline: none; }\n\n.mdc-button:hover {\n  cursor: pointer; }\n\n.mdc-button:disabled {\n  background-color: transparent;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-button:not(:disabled) {\n  background-color: transparent; }\n\n.mdc-button:not(:disabled) {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button::before, .mdc-button::after {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button::before, .mdc-button::after {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button:hover::before {\n  opacity: 0.04; }\n\n.mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-button:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-button.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-button .mdc-button__icon {\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  margin-right: 8px;\n  font-size: 18px;\n  line-height: inherit;\n  vertical-align: top; }\n\n.mdc-button--raised:disabled,\n.mdc-button--unelevated:disabled {\n  background-color: rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  background-color: #6200ee; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised:not(:disabled),\n  .mdc-button--unelevated:not(:disabled) {\n    background-color: var(--mdc-theme-primary, #6200ee); } }\n\n.mdc-button--raised:not(:disabled),\n.mdc-button--unelevated:not(:disabled) {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white); }\n\n.mdc-button--raised::before, .mdc-button--raised::after,\n.mdc-button--unelevated::before,\n.mdc-button--unelevated::after {\n  /* @alternate */\n  background-color: white; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-button--raised::before, .mdc-button--raised::after,\n  .mdc-button--unelevated::before,\n  .mdc-button--unelevated::after {\n    background-color: var(--mdc-theme-text-primary-on-primary, white); } }\n\n.mdc-button--raised:hover::before,\n.mdc-button--unelevated:hover::before {\n  opacity: 0.08; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-ripple-upgraded--background-focused::before,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):focus::before,\n.mdc-button--unelevated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded)::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-button--raised:not(.mdc-ripple-upgraded):active::after,\n.mdc-button--unelevated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.32; }\n\n.mdc-button--raised.mdc-ripple-upgraded,\n.mdc-button--unelevated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.32; }\n\n.mdc-button--raised {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-button--raised:hover, .mdc-button--raised:focus {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:active {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--raised:disabled {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-button--stroked {\n  border-style: solid;\n  padding-right: 14px;\n  padding-left: 14px;\n  border-width: 2px;\n  line-height: 32px; }\n\n.mdc-button--stroked:disabled {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.38);\n  border-color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-button--stroked.mdc-button--dense {\n  line-height: 27px; }\n\n.mdc-button--stroked.mdc-button--compact {\n  padding-right: 6px;\n  padding-left: 6px; }\n\n.mdc-button--stroked:not(:disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-button--compact {\n  padding: 0 8px; }\n\n.mdc-button--dense {\n  height: 32px;\n  font-size: .8125rem;\n  line-height: 32px; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* stylelint-disable selector-max-type */\n.mdc-form-field {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  display: inline-flex;\n  align-items: center;\n  vertical-align: middle; }\n\n.mdc-form-field > label {\n  order: 0;\n  margin-right: auto;\n  padding-left: 4px; }\n\n[dir="rtl"] .mdc-form-field > label, .mdc-form-field[dir="rtl"] > label {\n  margin-left: auto;\n  padding-right: 4px; }\n\n.mdc-form-field--align-end > label {\n  order: -1;\n  margin-left: auto;\n  padding-right: 4px; }\n\n[dir="rtl"] .mdc-form-field--align-end > label, .mdc-form-field--align-end[dir="rtl"] > label {\n  margin-right: auto;\n  padding-left: 4px; }\n\n/* stylelint-enable selector-max-type */\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-floating-label {\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  cursor: text; }\n\n[dir="rtl"] .mdc-floating-label, .mdc-floating-label[dir="rtl"] {\n  right: 0;\n  left: auto;\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-floating-label--float-above {\n  cursor: auto; }\n\n.mdc-floating-label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-standard 250ms 1;\n  animation: mdc-floating-label-shake-float-above-standard 250ms 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-standard {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-100%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-100%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-100%) scale(0.75); } }\n\n.mdc-line-ripple {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  z-index: 2; }\n\n.mdc-line-ripple--active {\n  -webkit-transform: scaleX(1);\n  transform: scaleX(1);\n  opacity: 1; }\n\n.mdc-line-ripple--deactivating {\n  opacity: 0; }\n\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-text-field-helper-text {\n  margin: 0;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  font-size: .75rem;\n  will-change: opacity; }\n\n.mdc-text-field + .mdc-text-field-helper-text {\n  margin-bottom: 8px; }\n\n.mdc-text-field-helper-text--persistent {\n  transition: none;\n  opacity: 1;\n  will-change: initial; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  position: absolute;\n  bottom: 16px;\n  cursor: pointer; }\n\n.mdc-text-field__icon:not([tabindex]),\n.mdc-text-field__icon[tabindex="-1"] {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-text-field__idle-outline {\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 4px);\n  height: calc(100% - 4px);\n  transition: opacity 100ms ease;\n  border: 1px solid;\n  opacity: 1; }\n\n.mdc-text-field__outline {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(100% - 1px);\n  height: calc(100% - 2px);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  overflow: hidden; }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field__outline::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field__outline::before, .mdc-text-field__outline::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field__outline::before, .mdc-text-field__outline::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field__outline:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field__outline.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field__outline svg {\n  position: absolute;\n  width: 100%;\n  height: 100%; }\n\n.mdc-text-field__outline-path {\n  stroke-width: 1px;\n  transition: stroke 180ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  fill: transparent; }\n\n.mdc-text-field {\n  display: inline-block;\n  position: relative;\n  margin-bottom: 8px;\n  will-change: opacity, transform, color; }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: black; }\n\n.mdc-text-field .mdc-line-ripple {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {\n  color: black; }\n\n.mdc-text-field__input {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  width: 100%;\n  padding: 0 0 8px;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  border: none;\n  border-bottom: 1px solid;\n  border-radius: 0;\n  background: none;\n  font-size: inherit;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.mdc-text-field__input::-webkit-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::-ms-input-placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input::placeholder {\n  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 1; }\n\n.mdc-text-field__input:focus {\n  outline: none; }\n\n.mdc-text-field__input:invalid {\n  box-shadow: none; }\n\n.mdc-text-field__input:-webkit-autofill + .mdc-floating-label {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75);\n  cursor: auto; }\n\n.mdc-text-field--outlined {\n  height: 56px;\n  border: none; }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  /* @alternate */\n  stroke: #6200ee;\n  stroke: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) scale(0.75);\n  transform: translateY(-130%) scale(0.75); }\n\n.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined 250ms 1; }\n\n.mdc-text-field--outlined .mdc-text-field__input {\n  display: flex;\n  height: 30px;\n  padding: 12px;\n  border: none;\n  background-color: transparent;\n  z-index: 1; }\n\n.mdc-text-field--outlined .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  transition: -webkit-transform 260ms ease;\n  transition: transform 260ms ease;\n  transition: transform 260ms ease, -webkit-transform 260ms ease; }\n\n[dir="rtl"] .mdc-text-field--outlined .mdc-floating-label, .mdc-text-field--outlined .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--outlined .mdc-text-field__icon {\n  z-index: 2; }\n\n.mdc-text-field--outlined .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid; }\n\n.mdc-text-field--outlined .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border: 1px solid rgba(0, 0, 0, 0.87); }\n\n.mdc-text-field--outlined.mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke-width: 2px; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  color: rgba(0, 0, 0, 0.38); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__idle-outline {\n  border-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled:not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: none; }\n\n.mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__outline-path {\n  stroke-width: 1px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense {\n  height: 48px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) scale(0.923);\n  transform: translateY(-145%) scale(0.923); }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-dense 250ms 1; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 7px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label {\n  bottom: 18px; }\n\n.mdc-text-field--outlined.mdc-text-field--dense .mdc-text-field__icon {\n  top: 12px; }\n\n.mdc-text-field--box {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  border-radius: 4px 4px 0 0;\n  display: inline-flex;\n  position: relative;\n  height: 56px;\n  margin-top: 16px;\n  overflow: hidden; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-text-field--box::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-text-field--box.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  /* @alternate */\n  background-color: rgba(0, 0, 0, 0.87); }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-text-field--box::before, .mdc-text-field--box::after {\n    background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }\n\n.mdc-text-field--box:hover::before {\n  opacity: 0.04; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):focus::before, .mdc-text-field--box:not(.mdc-ripple-upgraded):focus-within::before, .mdc-text-field--box.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-text-field--box:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-text-field--box.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-text-field--box::before, .mdc-text-field--box::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-text-field--box.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-text-field--box:not(.mdc-text-field--disabled) {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n.mdc-text-field--box .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.75);\n  transform: translateY(-50%) scale(0.75); }\n\n.mdc-text-field--box .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box 250ms 1; }\n\n.mdc-text-field--box .mdc-text-field__input {\n  align-self: flex-end;\n  box-sizing: border-box;\n  height: 100%;\n  padding: 20px 16px 0; }\n\n.mdc-text-field--box .mdc-floating-label {\n  left: 16px;\n  right: initial;\n  position: absolute;\n  bottom: 20px;\n  width: calc(100% - 48px);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  pointer-events: none;\n  overflow: hidden;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-text-field--box .mdc-floating-label, .mdc-text-field--box .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-text-field--box.mdc-text-field--disabled {\n  background-color: rgba(0, 0, 0, 0.02);\n  border-bottom: none; }\n\n.mdc-text-field--box.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(0, 0, 0, 0.06); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--disabled:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-90%) scale(0.923);\n  transform: translateY(-90%) scale(0.923); }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-box-dense 250ms 1; }\n\n.mdc-text-field--box.mdc-text-field--dense .mdc-text-field__input {\n  padding: 12px 12px 0; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__icon {\n  left: 15px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__icon, .mdc-text-field--with-leading-icon .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 15px; }\n\n.mdc-text-field--with-leading-icon .mdc-text-field__input {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-text-field__input, .mdc-text-field--with-leading-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n.mdc-text-field--with-leading-icon .mdc-floating-label {\n  left: 48px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon .mdc-floating-label, .mdc-text-field--with-leading-icon .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 48px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-130%) translateX(-32px) scale(0.75);\n  transform: translateY(-130%) translateX(-32px) scale(0.75); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-130%) translateX(32px) scale(0.75);\n  transform: translateY(-130%) translateX(32px) scale(0.75); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon 250ms 1; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-145%) translateX(-21px) scale(0.923);\n  transform: translateY(-145%) translateX(-21px) scale(0.923); }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above, .mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--float-above[dir="rtl"] {\n  -webkit-transform: translateY(-145%) translateX(21px) scale(0.923);\n  transform: translateY(-145%) translateX(21px) scale(0.923); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--outlined.mdc-text-field--dense .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1;\n  animation: mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense 250ms 1; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__icon {\n  left: initial;\n  right: 15px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__icon, .mdc-text-field--with-trailing-icon .mdc-text-field__icon[dir="rtl"] {\n  left: 15px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon .mdc-text-field__input {\n  padding-left: 15px;\n  padding-right: 48px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon .mdc-text-field__input, .mdc-text-field--with-trailing-icon .mdc-text-field__input[dir="rtl"] {\n  padding-left: 48px;\n  padding-right: 15px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon,\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  bottom: 16px;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8); }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: 12px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: initial;\n  right: 12px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n.mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label {\n  left: 38px;\n  right: initial; }\n\n[dir="rtl"] .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label, .mdc-text-field--with-leading-icon.mdc-text-field--dense .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 38px; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon {\n  left: initial;\n  right: 12px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__icon[dir="rtl"] {\n  left: 12px;\n  right: initial; }\n\n.mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input {\n  padding-left: 12px;\n  padding-right: 38px; }\n\n[dir="rtl"] .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input, .mdc-text-field--with-trailing-icon.mdc-text-field--dense .mdc-text-field__input[dir="rtl"] {\n  padding-left: 38px;\n  padding-right: 12px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) {\n  display: inline-flex;\n  position: relative;\n  align-items: flex-end;\n  box-sizing: border-box;\n  margin-top: 16px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box):not(.mdc-text-field--textarea):not(.mdc-text-field--outlined) {\n  height: 48px; }\n\n.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) .mdc-floating-label {\n  pointer-events: none; }\n\n.mdc-text-field--dense {\n  margin-top: 12px;\n  margin-bottom: 4px;\n  font-size: .813rem; }\n\n.mdc-text-field--dense .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-110%) scale(0.923);\n  transform: translateY(-110%) scale(0.923); }\n\n.mdc-text-field__input:required + .mdc-floating-label::after {\n  margin-left: 1px;\n  content: "*"; }\n\n.mdc-text-field--textarea {\n  border-radius: 4px;\n  display: flex;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: initial;\n  transition: none;\n  border: 1px solid;\n  overflow: hidden; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  border-radius: 4px 4px 0 0; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  border-radius: 2px; }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: rgba(0, 0, 0, 0.73); }\n\n.mdc-text-field--textarea .mdc-floating-label--float-above {\n  -webkit-transform: translateY(-50%) scale(0.923);\n  transform: translateY(-50%) scale(0.923); }\n\n.mdc-text-field--textarea .mdc-floating-label--shake {\n  -webkit-animation: mdc-floating-label-shake-float-above-textarea 250ms 1;\n  animation: mdc-floating-label-shake-float-above-textarea 250ms 1; }\n\n.mdc-text-field--textarea .mdc-text-field__input {\n  margin: 0;\n  padding: 16px;\n  padding-top: 32px;\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea .mdc-floating-label {\n  left: 1px;\n  right: initial;\n  background-color: white;\n  top: 18px;\n  bottom: auto;\n  margin-top: 2px;\n  margin-left: 8px;\n  padding: 8px;\n  line-height: 1.15; }\n\n[dir="rtl"] .mdc-text-field--textarea .mdc-floating-label, .mdc-text-field--textarea .mdc-floating-label[dir="rtl"] {\n  left: initial;\n  right: 1px; }\n\n.mdc-text-field--fullwidth {\n  width: 100%; }\n\n.mdc-text-field--fullwidth .mdc-text-field__input {\n  resize: vertical; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) {\n  display: block;\n  box-sizing: border-box;\n  height: 56px;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid;\n  outline: none; }\n\n.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) .mdc-text-field__input {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  resize: none;\n  border: none !important; }\n\n.mdc-text-field--fullwidth.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--textarea) {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--dense + .mdc-text-field-helper-text {\n  margin-bottom: 4px; }\n\n.mdc-text-field--box + .mdc-text-field-helper-text,\n.mdc-text-field--outlined + .mdc-text-field-helper-text {\n  margin-right: 16px;\n  margin-left: 16px; }\n\n.mdc-form-field > .mdc-text-field + label {\n  align-self: flex-start; }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: #6200ee;\n  color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--focused .mdc-text-field__input:required + .mdc-floating-label::after {\n  color: #d50000; }\n\n.mdc-text-field--focused + .mdc-text-field-helper-text:not(.mdc-text-field-helper-text--validation-msg) {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--textarea.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  /* @alternate */\n  border-color: #6200ee;\n  border-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {\n  border-bottom-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-line-ripple {\n  background-color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::-ms-input-placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {\n  color: #d50000; }\n\n.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  color: #d50000; }\n\n.mdc-text-field--invalid + .mdc-text-field-helper-text--validation-msg {\n  opacity: 1; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) {\n  border-color: #d50000; }\n\n.mdc-text-field--textarea.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__outline .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input:hover ~ .mdc-text-field__idle-outline,\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__icon:hover ~ .mdc-text-field__idle-outline {\n  border-color: #d50000; }\n\n.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-text-field__outline-path {\n  stroke: #d50000; }\n\n.mdc-text-field--disabled {\n  pointer-events: none; }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-webkit-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input:-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::-ms-input-placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__input::placeholder {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled + .mdc-text-field-helper-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)); }\n\n.mdc-text-field--disabled .mdc-text-field__icon {\n  color: rgba(0, 0, 0, 0.3); }\n\n.mdc-text-field--disabled:not(.mdc-text-field--textarea) {\n  border-bottom-color: rgba(0, 0, 0, 0.12); }\n\n.mdc-text-field--disabled .mdc-text-field__input {\n  border-bottom: 1px dotted; }\n\n.mdc-text-field--disabled .mdc-floating-label {\n  cursor: default; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled {\n  border-color: rgba(35, 31, 32, 0.26);\n  background-color: #f9f9f9;\n  border-style: solid; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input:focus {\n  border-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-text-field__input {\n  border: 1px solid transparent; }\n\n.mdc-text-field--textarea.mdc-text-field--disabled .mdc-floating-label {\n  background-color: #f9f9f9; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__idle-outline {\n  opacity: 0; }\n\n.mdc-floating-label--float-above ~ .mdc-text-field__outline {\n  opacity: 1; }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-box-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-90%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-90%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-90%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 0%)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 0%)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon {\n  0% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(4% - 32px)) translateY(-130%) scale(0.75); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(-4% - 32px)) translateY(-130%) scale(0.75); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75);\n    transform: translateX(calc(0 - 32px)) translateY(-130%) scale(0.75); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-text-field-outlined-leading-icon-dense {\n  0% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(4% - 21px)) translateY(-145%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(-4% - 21px)) translateY(-145%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923);\n    transform: translateX(calc(0 - 21px)) translateY(-145%) scale(0.923); } }\n\n@-webkit-keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n\n@keyframes mdc-floating-label-shake-float-above-textarea {\n  0% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); }\n  33% {\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);\n    -webkit-transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(4% - 0%)) translateY(-50%) scale(0.923); }\n  66% {\n    -webkit-animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);\n    -webkit-transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(-4% - 0%)) translateY(-50%) scale(0.923); }\n  100% {\n    -webkit-transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923);\n    transform: translateX(calc(0 - 0%)) translateY(-50%) scale(0.923); } }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n.mdc-radio {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: inline-block;\n  position: relative;\n  flex: 0 0 auto;\n  box-sizing: border-box;\n  width: 40px;\n  height: 40px;\n  padding: 10px;\n  cursor: pointer;\n  will-change: opacity, transform, border-color, background-color, color; }\n\n.mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: rgba(0, 0, 0, 0.54);\n  border-color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-radio .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {\n  /* @alternate */\n  border-color: #018786;\n  border-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {\n  /* @alternate */\n  background-color: #018786;\n  background-color: var(--mdc-theme-secondary, #018786); }\n\n.mdc-radio .mdc-radio__background::before {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio .mdc-radio__background::before {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio::before, .mdc-radio::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-radio.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-radio.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-radio::before, .mdc-radio::after {\n  top: calc(50% - 50%);\n  left: calc(50% - 50%);\n  width: 100%;\n  height: 100%; }\n\n.mdc-radio.mdc-ripple-upgraded::before, .mdc-radio.mdc-ripple-upgraded::after {\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-radio::before, .mdc-radio::after {\n  /* @alternate */\n  background-color: #018786; }\n\n@supports not (-ms-ime-align: auto) {\n  .mdc-radio::before, .mdc-radio::after {\n    background-color: var(--mdc-theme-secondary, #018786); } }\n\n.mdc-radio:hover::before {\n  opacity: 0.04; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):focus::before, .mdc-radio.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-radio:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-radio:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-radio.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-radio__background {\n  display: inline-block;\n  position: absolute;\n  left: 10px;\n  box-sizing: border-box;\n  width: 50%;\n  height: 50%; }\n\n.mdc-radio__background::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-radio__outer-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 50%; }\n\n.mdc-radio__inner-circle {\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  -webkit-transform: scale(0, 0);\n  transform: scale(0, 0);\n  transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: 50%; }\n\n.mdc-radio__native-control {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  opacity: 0;\n  cursor: inherit;\n  z-index: 1; }\n\n.mdc-radio.mdc-ripple-upgraded .mdc-radio__background::before {\n  content: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background,\n.mdc-radio__native-control:disabled + .mdc-radio__background {\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle {\n  transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle,\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle {\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio--disabled {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background {\n  cursor: default; }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {\n  border-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,\n[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {\n  background-color: rgba(0, 0, 0, 0.26); }\n\n.mdc-radio__native-control:focus + .mdc-radio__background::before {\n  -webkit-transform: scale(2, 2);\n  transform: scale(2, 2);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .26; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-menu {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  display: none;\n  position: absolute;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  min-width: 170px;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  border-radius: 2px;\n  opacity: 0;\n  white-space: nowrap;\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform, opacity;\n  z-index: 4; }\n\n.mdc-menu:focus {\n  outline: none; }\n\n.mdc-menu--animating-open {\n  display: inline-block;\n  -webkit-transform: scale(0.8);\n  transform: scale(0.8);\n  -webkit-transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu--open {\n  display: inline-block;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1; }\n\n.mdc-menu--animating-closed {\n  display: inline-block;\n  -webkit-transition: opacity 0.075s linear;\n  transition: opacity 0.075s linear;\n  opacity: 0;\n  overflow-y: hidden; }\n\n.mdc-menu__items {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  overflow-x: hidden;\n  overflow-y: auto;\n  will-change: transform; }\n\n.mdc-menu__items > .mdc-list-item {\n  cursor: pointer; }\n\n.mdc-menu--animating .mdc-menu__items {\n  overflow-y: hidden; }\n\n.mdc-menu--animating-open > .mdc-menu__items {\n  -webkit-transform: scale(1.25);\n  transform: scale(1.25); }\n\n.mdc-menu--open > .mdc-menu__items {\n  -webkit-transform: scale(1);\n  transform: scale(1); }\n\n[dir="rtl"] .mdc-menu {\n  -webkit-transform-origin: top right;\n  transform-origin: top right; }\n\n.mdc-menu .mdc-list-group,\n.mdc-menu .mdc-list {\n  padding: 8px 0; }\n\n.mdc-menu .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-menu .mdc-list-item__graphic {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"] {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38));\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-menu .mdc-list-item[aria-disabled="true"]:focus::before {\n  opacity: 0; }\n\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0.16); }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-select__label {\n  left: 0;\n  right: initial;\n  position: absolute;\n  bottom: 8px;\n  left: 0;\n  -webkit-transform-origin: left top;\n  transform-origin: left top;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  pointer-events: none;\n  will-change: transform; }\n\n[dir="rtl"] .mdc-select__label, .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-select[dir="rtl"] .mdc-select__label,\n[dir="rtl"] .mdc-select .mdc-select__label {\n  -webkit-transform-origin: right top;\n  transform-origin: right top; }\n\n.mdc-select__label--float-above {\n  -webkit-transform: translateY(-100%) scale(0.75);\n  transform: translateY(-100%) scale(0.75); }\n\n.mdc-select__bottom-line {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleY(1);\n  transform: scaleY(1);\n  -webkit-transform-origin: bottom;\n  transform-origin: bottom;\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-select__bottom-line::after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  -webkit-transform: scaleX(0);\n  transform: scaleX(0);\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  opacity: 0;\n  content: "";\n  z-index: 2; }\n\n.mdc-select__bottom-line--active::after {\n  opacity: 1; }\n\n.mdc-select {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  letter-spacing: 0.04em;\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  display: inline-flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  box-sizing: border-box;\n  height: 48px;\n  border: none;\n  outline: none;\n  background-repeat: no-repeat;\n  background-position: right 8px bottom 8px;\n  cursor: pointer;\n  overflow: visible; }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface,\n.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__label {\n  color: rgba(0, 0, 0, 0.6); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line {\n  background-color: rgba(0, 0, 0, 0.5); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__bottom-line {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__bottom-line::after {\n  /* @alternate */\n  background-color: #6200ee;\n  background-color: var(--mdc-theme-primary, #6200ee); }\n\n.mdc-select:not(.mdc-select--disabled) .mdc-select__surface:focus .mdc-select__label, .mdc-select:not(.mdc-select--disabled).mdc-select--open .mdc-select__label {\n  color: rgba(98, 0, 238, 0.87); }\n\n[dir="rtl"] .mdc-select, .mdc-select[dir="rtl"] {\n  background-position: left 8px bottom 8px; }\n\n.mdc-select__menu {\n  position: fixed;\n  top: 0;\n  left: 0;\n  max-height: 100%;\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  z-index: 4; }\n\n.mdc-select__surface {\n  padding-left: 0;\n  padding-right: 26px;\n  display: flex;\n  position: relative;\n  flex-grow: 1;\n  width: 100%;\n  height: 48px;\n  padding-bottom: 8px;\n  border: none;\n  outline: none;\n  overflow: hidden; }\n\n[dir="rtl"] .mdc-select__surface, .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 0; }\n\n.mdc-select__surface::before, .mdc-select__surface::after {\n  background-color: black; }\n\n.mdc-select__surface:hover::before {\n  opacity: 0.04; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):focus::before, .mdc-select__surface.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-select__surface:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-select__surface.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-select__selected-text {\n  display: flex;\n  position: absolute;\n  bottom: 8px;\n  align-items: flex-end;\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  white-space: nowrap;\n  overflow: hidden; }\n\n.mdc-select .mdc-select__surface:focus .mdc-select__bottom-line::after {\n  -webkit-transform: scale(1, 2);\n  transform: scale(1, 2);\n  opacity: 1; }\n\n.mdc-select--box {\n  height: 56px;\n  border-radius: 4px 4px 0 0;\n  background-position: right 10px center; }\n\n.mdc-select--box:not(.mdc-select--disabled) .mdc-select__surface {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n[dir="rtl"] .mdc-select--box, .mdc-select--box[dir="rtl"] {\n  background-position: left 10px center; }\n\n.mdc-select--box .mdc-select__surface {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  padding-left: 16px;\n  padding-right: 26px;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  height: 56px;\n  padding-bottom: 0;\n  border-radius: 4px 4px 0 0; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__surface, .mdc-select--box .mdc-select__surface[dir="rtl"] {\n  padding-left: 26px;\n  padding-right: 16px; }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-select--box .mdc-select__surface::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-select--box .mdc-select__surface::before, .mdc-select--box .mdc-select__surface::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-select--box .mdc-select__surface.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-select--box .mdc-select__label {\n  left: 16px;\n  right: initial;\n  bottom: 12px; }\n\n[dir="rtl"] .mdc-select--box .mdc-select__label, .mdc-select--box .mdc-select__label[dir="rtl"] {\n  left: initial;\n  right: 16px; }\n\n.mdc-select--box .mdc-select__label--float-above {\n  -webkit-transform: translateY(-40%) scale(0.75, 0.75);\n  transform: translateY(-40%) scale(0.75, 0.75); }\n\n.mdc-select--box .mdc-select__selected-text {\n  position: inherit;\n  bottom: 0;\n  margin-bottom: 6px; }\n\n.mdc-select--open .mdc-select__surface::before {\n  opacity: 0.12; }\n\n.mdc-select--open .mdc-select__selected-text {\n  -webkit-transform: translateY(8px);\n  transform: translateY(8px);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0; }\n\n.mdc-select--open .mdc-select__bottom-line::after {\n  -webkit-transform: scaleY(2);\n  transform: scaleY(2);\n  opacity: 1; }\n\n.mdc-select--disabled {\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  border-bottom-width: 1px;\n  border-bottom-style: dotted;\n  opacity: .38;\n  cursor: default;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-select--disabled .mdc-select__label {\n  color: black; }\n\n.mdc-select--disabled .mdc-select__bottom-line {\n  display: none; }\n\n.mdc-select-scroll-lock {\n  overflow: hidden; }\n/*!\n Material Components for the Web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   <!-- ... -->\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-card {\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff);\n  border-radius: 2px;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box; }\n\n.mdc-card--stroked {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  border: 1px solid #dbdbdb; }\n\n.mdc-card__media {\n  position: relative;\n  box-sizing: border-box;\n  background-repeat: no-repeat;\n  background-size: cover; }\n\n.mdc-card__media::before {\n  display: block;\n  content: ""; }\n\n.mdc-card__media:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__media:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__media--square::before {\n  margin-top: 100%; }\n\n.mdc-card__media--16-9::before {\n  margin-top: 56.25%; }\n\n.mdc-card__media-content {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  box-sizing: border-box; }\n\n.mdc-card__primary-action {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  position: relative;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer;\n  overflow: hidden; }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-card__primary-action::before {\n  transition: opacity 15ms linear;\n  z-index: 1; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::before {\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));\n  transform: scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  left: var(--mdc-ripple-left, 0); }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards;\n  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 150ms mdc-ripple-fg-opacity-out;\n  animation: 150ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%); }\n\n.mdc-card__primary-action::before, .mdc-card__primary-action::after {\n  background-color: black; }\n\n.mdc-card__primary-action:hover::before {\n  opacity: 0.04; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):focus::before, .mdc-card__primary-action.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear; }\n\n.mdc-card__primary-action:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16; }\n\n.mdc-card__primary-action.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16; }\n\n.mdc-card__primary-action:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit; }\n\n.mdc-card__primary-action:last-child {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit; }\n\n.mdc-card__actions {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  min-height: 52px;\n  padding: 8px; }\n\n.mdc-card__actions--full-bleed {\n  padding: 0; }\n\n.mdc-card__action-buttons,\n.mdc-card__action-icons {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box; }\n\n.mdc-card__action-icons {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));\n  flex-grow: 1;\n  justify-content: flex-end; }\n\n.mdc-card__action-buttons + .mdc-card__action-icons {\n  margin-left: 16px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action-buttons + .mdc-card__action-icons, .mdc-card__action-buttons + .mdc-card__action-icons[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 16px; }\n\n.mdc-card__action {\n  display: inline-flex;\n  flex-direction: row;\n  align-items: center;\n  box-sizing: border-box;\n  justify-content: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n.mdc-card__action:focus {\n  outline: none; }\n\n.mdc-card__action--button {\n  margin-left: 0;\n  margin-right: 8px;\n  padding: 0 8px; }\n\n[dir="rtl"] .mdc-card__action--button, .mdc-card__action--button[dir="rtl"] {\n  margin-left: 8px;\n  margin-right: 0; }\n\n.mdc-card__action--button:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__action--button:last-child, .mdc-card__action--button:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-card__actions--full-bleed .mdc-card__action--button {\n  justify-content: space-between;\n  width: 100%;\n  height: auto;\n  max-height: none;\n  margin: 0;\n  padding: 8px 16px;\n  text-align: left; }\n\n[dir="rtl"] .mdc-card__actions--full-bleed .mdc-card__action--button, .mdc-card__actions--full-bleed .mdc-card__action--button[dir="rtl"] {\n  text-align: right; }\n\n.mdc-card__action--icon {\n  margin: -6px 0;\n  padding: 12px; }\n\n.mdc-card__action--icon:not(:disabled) {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)); }\n/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n:root {\n  --mdc-layout-grid-margin-desktop: 24px;\n  --mdc-layout-grid-gutter-desktop: 24px;\n  --mdc-layout-grid-column-width-desktop: 72px;\n  --mdc-layout-grid-margin-tablet: 16px;\n  --mdc-layout-grid-gutter-tablet: 16px;\n  --mdc-layout-grid-column-width-tablet: 72px;\n  --mdc-layout-grid-margin-phone: 16px;\n  --mdc-layout-grid-gutter-phone: 16px;\n  --mdc-layout-grid-column-width-phone: 72px; }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 24px;\n    padding: var(--mdc-layout-grid-margin-desktop, 24px); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-tablet, 16px); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-phone, 16px); } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 24px;\n      grid-gap: var(--mdc-layout-grid-gutter-desktop, 24px);\n      grid-template-columns: repeat(12, minmax(0, 1fr)); } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);\n      grid-template-columns: repeat(8, minmax(0, 1fr)); } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__inner {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -webkit-box-align: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2 * -1); }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-phone, 16px);\n      grid-template-columns: repeat(4, minmax(0, 1fr)); } } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__cell {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n    width: calc(8.33333% - 24px);\n    width: calc(8.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n    width: calc(16.66667% - 24px);\n    width: calc(16.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n    width: calc(25% - 24px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n    width: calc(41.66667% - 24px);\n    width: calc(41.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n    width: calc(50% - 24px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n    width: calc(58.33333% - 24px);\n    width: calc(58.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n    width: calc(66.66667% - 24px);\n    width: calc(66.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n    width: calc(75% - 24px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n      width: auto;\n      grid-column-end: span 9; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n    width: calc(83.33333% - 24px);\n    width: calc(83.33333% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n      width: auto;\n      grid-column-end: span 10; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n    width: calc(91.66667% - 24px);\n    width: calc(91.66667% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n      width: auto;\n      grid-column-end: span 11; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n    width: calc(100% - 24px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-desktop, 24px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n      width: auto;\n      grid-column-end: span 12; } } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__cell {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n    width: calc(12.5% - 16px);\n    width: calc(12.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n    width: calc(37.5% - 16px);\n    width: calc(37.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n    width: calc(62.5% - 16px);\n    width: calc(62.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n      width: auto;\n      grid-column-end: span 5; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n      width: auto;\n      grid-column-end: span 6; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n    width: calc(87.5% - 16px);\n    width: calc(87.5% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n      width: auto;\n      grid-column-end: span 7; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n      width: auto;\n      grid-column-end: span 8; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n      width: auto;\n      grid-column-end: span 8; } } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__cell {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4; } }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0; } }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n      width: auto;\n      grid-column-end: span 1; } }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n      width: auto;\n      grid-column-end: span 2; } }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n      width: auto;\n      grid-column-end: span 3; } }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n      width: auto;\n      grid-column-end: span 4; } }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px)); }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n      width: auto;\n      grid-column-end: span 4; } } }\n\n.mdc-layout-grid__cell--order-1 {\n  -webkit-box-ordinal-group: 2;\n  -ms-flex-order: 1;\n  order: 1; }\n\n.mdc-layout-grid__cell--order-2 {\n  -webkit-box-ordinal-group: 3;\n  -ms-flex-order: 2;\n  order: 2; }\n\n.mdc-layout-grid__cell--order-3 {\n  -webkit-box-ordinal-group: 4;\n  -ms-flex-order: 3;\n  order: 3; }\n\n.mdc-layout-grid__cell--order-4 {\n  -webkit-box-ordinal-group: 5;\n  -ms-flex-order: 4;\n  order: 4; }\n\n.mdc-layout-grid__cell--order-5 {\n  -webkit-box-ordinal-group: 6;\n  -ms-flex-order: 5;\n  order: 5; }\n\n.mdc-layout-grid__cell--order-6 {\n  -webkit-box-ordinal-group: 7;\n  -ms-flex-order: 6;\n  order: 6; }\n\n.mdc-layout-grid__cell--order-7 {\n  -webkit-box-ordinal-group: 8;\n  -ms-flex-order: 7;\n  order: 7; }\n\n.mdc-layout-grid__cell--order-8 {\n  -webkit-box-ordinal-group: 9;\n  -ms-flex-order: 8;\n  order: 8; }\n\n.mdc-layout-grid__cell--order-9 {\n  -webkit-box-ordinal-group: 10;\n  -ms-flex-order: 9;\n  order: 9; }\n\n.mdc-layout-grid__cell--order-10 {\n  -webkit-box-ordinal-group: 11;\n  -ms-flex-order: 10;\n  order: 10; }\n\n.mdc-layout-grid__cell--order-11 {\n  -webkit-box-ordinal-group: 12;\n  -ms-flex-order: 11;\n  order: 11; }\n\n.mdc-layout-grid__cell--order-12 {\n  -webkit-box-ordinal-group: 13;\n  -ms-flex-order: 12;\n  order: 12; }\n\n.mdc-layout-grid__cell--align-top {\n  -ms-flex-item-align: start;\n  align-self: flex-start; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-top {\n    -ms-flex-item-align: start;\n    align-self: start; } }\n\n.mdc-layout-grid__cell--align-middle {\n  -ms-flex-item-align: center;\n  align-self: center; }\n\n.mdc-layout-grid__cell--align-bottom {\n  -ms-flex-item-align: end;\n  align-self: flex-end; }\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-bottom {\n    -ms-flex-item-align: end;\n    align-self: end; } }\n\n@media (min-width: 840px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 1176px;\n    width: calc( var(--mdc-layout-grid-column-width-desktop, 72px) * 12 + var(--mdc-layout-grid-gutter-desktop, 24px) * 11 + var(--mdc-layout-grid-margin-desktop, 24px) * 2); } }\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 720px;\n    width: calc( var(--mdc-layout-grid-column-width-tablet, 72px) * 8 + var(--mdc-layout-grid-gutter-tablet, 16px) * 7 + var(--mdc-layout-grid-margin-tablet, 16px) * 2); } }\n\n@media (max-width: 479px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 368px;\n    width: calc( var(--mdc-layout-grid-column-width-phone, 72px) * 4 + var(--mdc-layout-grid-gutter-phone, 16px) * 3 + var(--mdc-layout-grid-margin-phone, 16px) * 2); } }\n\n.mdc-layout-grid--align-left {\n  margin-right: auto;\n  margin-left: 0; }\n\n.mdc-layout-grid--align-right {\n  margin-right: 0;\n  margin-left: auto; }\n\n/*!\n Material Components for the web\n Copyright (c) 2018 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use\n * $opacity-boost.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-value(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n.mdc-elevation--z0 {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z1 {\n  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z2 {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z3 {\n  -webkit-box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z4 {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z5 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z6 {\n  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z7 {\n  -webkit-box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z8 {\n  -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z9 {\n  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z10 {\n  -webkit-box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z11 {\n  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z12 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z13 {\n  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z14 {\n  -webkit-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z15 {\n  -webkit-box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z16 {\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z17 {\n  -webkit-box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z18 {\n  -webkit-box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z19 {\n  -webkit-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z20 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z21 {\n  -webkit-box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z22 {\n  -webkit-box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z23 {\n  -webkit-box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z24 {\n  -webkit-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation-transition {\n  -webkit-transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.page {\n  padding: 0; }\n\n.app {\n  display: flex;\n  min-height: 100vh; }\n  .app__container {\n    width: 100%;\n    display: flex;\n    flex-direction: column; }\n    .app__container-content {\n      height: 100%;\n      background-color: #eeeeee; }\n\n.drawer {\n  height: 100%; }\n  .drawer__more-button {\n    position: absolute;\n    right: 10px;\n    top: 12px; }\n  .drawer__list-item:hover {\n    background-color: #eeeeee; }\n  .drawer__list-item, .drawer__list-item.mdc-list-item {\n    overflow: visible; }\n  .drawer__nav, .drawer__nav.mdc-drawer__drawer {\n    overflow: visible;\n    will-change: unset; }\n\n.toolbar {\n  display: inline-flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box; }\n  .toolbar__button, .toolbar__button:not(:disabled) {\n    color: white; }\n\n.transactions {\n  display: flex;\n  flex-direction: column;\n  padding: 15px 40px 15px 40px;\n  height: 100%; }\n  .transactions__block--hidden {\n    display: none; }\n  .transactions__empty-state {\n    margin: auto;\n    text-align: center;\n    color: rgba(0, 0, 0, 0.26); }\n  .transactions__add-transaction-dialog-activation {\n    position: fixed;\n    right: 12px;\n    bottom: 12px; }\n\n.add-transaction-dialog__row {\n  display: flex;\n  flex-direction: row; }\n  .add-transaction-dialog__row--col {\n    justify-content: space-between; }\n\n.add-transaction-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__select-menu {\n  top: inherit !important;\n  left: inherit !important; }\n\n.add-account-dialog__row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.add-account-dialog__col {\n  display: flex;\n  flex-direction: column;\n  flex-basis: 45%; }\n\n.add-account-dialog__type, .add-account-dialog__currency {\n  width: 100%; }\n\n.button-more__popup-right {\n  margin-top: 26px;\n  margin-left: 25px; }\n\n.button-more__popup-left {\n  margin-top: 26px;\n  margin-right: 25px; }\n\n.button-more__more {\n  width: 24px;\n  padding-left: 0;\n  padding-right: 0;\n  min-width: 0;\n  height: 24px; }\n\n.table-transactions__table {\n  border: 1px solid #ddd;\n  border-collapse: collapse;\n  width: 100%;\n  min-width: 600px;\n  text-align: left;\n  box-sizing: border-box;\n  background-color: #fff;\n  margin-top: 30px; }\n\n.table-transactions__tr {\n  height: 40px; }\n\n.table-transactions__highlighted:hover {\n  background-color: #f5f5f5; }\n\n.table-transactions__th {\n  border-bottom: 1px solid #ddd;\n  padding-left: 15px;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54); }\n\n.table-transactions__td {\n  border-bottom: 1px solid #ddd;\n  padding-left: 15px;\n  font-size: 13px;\n  color: #757575; }\n  .table-transactions__td--desc {\n    text-transform: capitalize; }\n\n.table-transactions__span {\n  line-height: 35px; }\n\n.table-transactions__button {\n  position: relative;\n  float: right;\n  padding-left: 0;\n  padding-right: 0;\n  width: 24px;\n  min-width: 0;\n  height: 24px;\n  margin-right: 5px;\n  margin-top: 5px; }\n\n.table-transactions__icon {\n  position: absolute;\n  top: -6px;\n  right: -5px; }\n\n.table-transactions__more-button {\n  position: relative;\n  float: right;\n  margin-right: 5px;\n  margin-top: 5px; }\n\n.chart {\n  padding: 20px; }\n  .chart__visual {\n    margin: 0 auto; }\n\n.custom-select {\n  width: 100%; }\n  .custom-select__menu {\n    top: inherit !important;\n    left: inherit !important; }\n\n.about-dialog__header {\n  color: black; }\n\n.drawer-menu__more-button {\n  position: absolute;\n  right: 10px;\n  top: 12px; }\n\n.drawer-menu__list-item, .drawer-menu__list-item.mdc-list-item {\n  overflow: visible; }\n\n.drawer-menu__list-item:hover {\n  background-color: #eeeeee; }\n',
         ""
       ]);
 
@@ -25145,7 +25219,7 @@
 
       /***/
     },
-    /* 174 */
+    /* 175 */
     /***/ function(module, exports) {
       /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -25234,7 +25308,7 @@
 
       /***/
     },
-    /* 175 */
+    /* 176 */
     /***/ function(module, exports, __webpack_require__) {
       /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -25302,7 +25376,7 @@
       var singletonCounter = 0;
       var stylesInsertedAtTop = [];
 
-      var fixUrls = __webpack_require__(176);
+      var fixUrls = __webpack_require__(177);
 
       module.exports = function(list, options) {
         if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -25640,7 +25714,7 @@
 
       /***/
     },
-    /* 176 */
+    /* 177 */
     /***/ function(module, exports) {
       /**
        * When source maps are enabled, `style-loader` uses a link element with a data-uri to
@@ -25744,7 +25818,7 @@
 
       /***/
     },
-    /* 177 */
+    /* 178 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25770,17 +25844,15 @@
         };
       })();
 
-      var _app = __webpack_require__(178);
+      var _app = __webpack_require__(179);
 
       var _app2 = _interopRequireDefault(_app);
 
-      var _drawer = __webpack_require__(179);
+      var _drawer = __webpack_require__(180);
 
-      var _toolbar = __webpack_require__(224);
+      var _toolbar = __webpack_require__(230);
 
-      var _transactions = __webpack_require__(229);
-
-      var _addTagDialog = __webpack_require__(296);
+      var _transactions = __webpack_require__(235);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -25812,9 +25884,6 @@
               this.transactionsMountPoint = this.mountPoint.querySelector(
                 ".app__container-content"
               );
-              this.addTagMountPoint = this.mountPoint.querySelector(
-                ".app__add-tag-dialog"
-              );
             }
           },
           {
@@ -25827,11 +25896,13 @@
                 }
               );
               this.toolBarComponent.mount();
-              this.initDrawer();
-              this.addTagDialog = new _addTagDialog.AddTagComponent(
-                this.addTagMountPoint
+              this.drawerComponent = new _drawer.DrawerComponent(
+                this.drawerMountPoint,
+                {
+                  onAccountDelete: this.handleAccountDelete.bind(this)
+                }
               );
-              this.addTagDialog.mount();
+              this.drawerComponent.mount();
               this.transactionsComponent = new _transactions.TransactionsComponent(
                 this.transactionsMountPoint,
                 {
@@ -25840,19 +25911,6 @@
                 }
               );
               this.transactionsComponent.mount();
-            }
-          },
-          {
-            key: "initDrawer",
-            value: function initDrawer() {
-              this.drawerComponent = new _drawer.DrawerComponent(
-                this.drawerMountPoint,
-                {
-                  onAddTagClick: this.handleAddTagOnclick.bind(this),
-                  onAccountDelete: this.handleAccountDelete.bind(this)
-                }
-              );
-              this.drawerComponent.mount();
             }
           },
           {
@@ -25880,12 +25938,6 @@
             }
           },
           {
-            key: "handleAddTagOnclick",
-            value: function handleAddTagOnclick() {
-              this.addTagDialog.showDialog();
-            }
-          },
-          {
             key: "mount",
             value: function mount() {
               this.mountPoint.innerHTML = (0, _app2.default)();
@@ -25900,7 +25952,7 @@
 
       /***/
     },
-    /* 178 */
+    /* 179 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -25908,14 +25960,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="app mdc-typography">\r\n  <div class="app__drawer-point"></div>\r\n  <div class="app__container">\r\n    <div class="app__container-toolbar-point"></div>\r\n    <div class="app__container-content"></div>\r\n    <div class="app__add-tag-dialog"></div>\r\n  </div>\r\n</div>';
+            '<div class="app mdc-typography">\n  <div class="app__drawer-point"></div>\n  <div class="app__container">\n    <div class="app__container-toolbar-point"></div>\n    <div class="app__container-content"></div>\n  </div>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 179 */
+    /* 180 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -25941,15 +25993,15 @@
         };
       })();
 
-      var _drawer = __webpack_require__(180);
+      var _drawer = __webpack_require__(181);
 
       var _drawer2 = _interopRequireDefault(_drawer);
 
-      var _drawer3 = __webpack_require__(181);
+      var _drawer3 = __webpack_require__(182);
 
-      var _buttonMore = __webpack_require__(15);
+      var _accounts = __webpack_require__(191);
 
-      var _accounts = __webpack_require__(194);
+      var _tags = __webpack_require__(225);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -25977,14 +26029,11 @@
                 ".mdc-drawer--persistent"
               );
               this.menu = this.mountPoint.querySelector(".toolbar__menu");
-              this.addTagButton = this.mountPoint.querySelector(
-                ".drawer__add-tag-dialog-activation"
-              );
               this.accountsMountPoint = this.mountPoint.querySelector(
                 ".drawer__accounts-mountpoint"
               );
-              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-                ".drawer__more-button"
+              this.tagsMountPoint = this.mountPoint.querySelector(
+                ".drawer__tags-mountpoint"
               );
             }
           },
@@ -26001,8 +26050,10 @@
             }
           },
           {
-            key: "initAccountComponent",
-            value: function initAccountComponent() {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.tagsComponent = new _tags.TagsComponent(this.tagsMountPoint);
+              this.tagsComponent.mount();
               this.accountsComponent = new _accounts.AccountsComponent(
                 this.accountsMountPoint,
                 {
@@ -26019,46 +26070,6 @@
             }
           },
           {
-            key: "initMoreBtns",
-            value: function initMoreBtns() {
-              var _this = this;
-
-              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-                ".drawer__more-button"
-              );
-              Array.from(this.moreBtnMountPoints).forEach(function(point) {
-                new _buttonMore.ButtonMoreComponent(point, {
-                  position: "right",
-                  onDeleteClicked: _this.handleDeleteClick.bind(_this),
-                  onEditClicked: _this.handleEditClick.bind(_this)
-                }).mount();
-              });
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.addTagButton.addEventListener(
-                "click",
-                this.handleAddTagOnclick.bind(this)
-              );
-            }
-          },
-          {
-            key: "handleEditClick",
-            value: function handleEditClick() {}
-          },
-          {
-            key: "handleDeleteClick",
-            value: function handleDeleteClick() {}
-          },
-          {
-            key: "handleAddTagOnclick",
-            value: function handleAddTagOnclick() {
-              this.props.onAddTagClick();
-            }
-          },
-          {
             key: "toggleDrawer",
             value: function toggleDrawer() {
               this.drawer.open = !this.drawer.open;
@@ -26069,10 +26080,8 @@
             value: function mount() {
               this.mountPoint.innerHTML = (0, _drawer2.default)();
               this.querySelectors();
-              this.initMoreBtns();
               this.initMDC();
-              this.addEventListeners();
-              this.initAccountComponent();
+              this.mountChildren();
             }
           }
         ]);
@@ -26082,7 +26091,7 @@
 
       /***/
     },
-    /* 180 */
+    /* 181 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -26090,14 +26099,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\r\n  <nav class="mdc-drawer__drawer drawer__nav">\r\n    <div class="drawer__group mdc-list-group">\r\n      <div class="drawer__accounts-mountpoint"></div>\r\n      <hr class="mdc-list-divider">\r\n      <nav class="mdc-list--non-interactive">\r\n        <a class="drawer__list-item mdc-list-item drawer__add-tag-dialog-activation" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\r\n          Add new tag\r\n        </a>\r\n        <a class="drawer__list-item mdc-list-item" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\r\n          </i>Transport\r\n          <div class="drawer__more-button"></div>\r\n\r\n        </a>\r\n        <a class="drawer__list-item mdc-list-item" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\r\n          </i>Groceries\r\n          <div class="drawer__more-button"></div>\r\n        </a>\r\n        <a class="drawer__list-item mdc-list-item" href="#">\r\n          <i class="drawer__icon material-icons mdc-list-item__graphic" aria-hidden="true">local_offer\r\n          </i>Entertainment\r\n          <div class="drawer__more-button"></div>\r\n        </a>\r\n      </nav>\r\n    </div>\r\n  </nav>\r\n</aside>';
+            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\n  <nav class="mdc-drawer__drawer drawer__nav">\n    <div class="drawer__group mdc-list-group">\n      <div class="drawer__accounts-mountpoint"></div>\n      <hr class="mdc-list-divider">\n      <div class="drawer__tags-mountpoint"></div>\n    </div>\n  </nav>\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 181 */
+    /* 182 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -26105,7 +26114,7 @@
         14
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__temporary__ = __webpack_require__(
-        182
+        183
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -26122,7 +26131,7 @@
         }
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__persistent__ = __webpack_require__(
-        187
+        188
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -26163,14 +26172,14 @@
 
       /***/
     },
-    /* 182 */
+    /* 183 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        183
+        184
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(
         14
@@ -26323,14 +26332,14 @@
 
       /***/
     },
-    /* 183 */
+    /* 184 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
         12
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        186
+        187
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -26480,7 +26489,7 @@
 
       /***/
     },
-    /* 184 */
+    /* 185 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -26508,7 +26517,7 @@
 
       /***/
     },
-    /* 185 */
+    /* 186 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
@@ -26796,7 +26805,7 @@
 
       /***/
     },
-    /* 186 */
+    /* 187 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
@@ -26840,14 +26849,14 @@
 
       /***/
     },
-    /* 187 */
+    /* 188 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(
-        188
+        189
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(
         14
@@ -26985,14 +26994,14 @@
 
       /***/
     },
-    /* 188 */
+    /* 189 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
         12
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        189
+        190
       );
       /**
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -27054,7 +27063,7 @@
 
       /***/
     },
-    /* 189 */
+    /* 190 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slidable_index__ = __webpack_require__(
@@ -27096,7 +27105,295 @@
 
       /***/
     },
-    /* 190 */
+    /* 191 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AccountsComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _accounts = __webpack_require__(192);
+
+      var _accounts2 = _interopRequireDefault(_accounts);
+
+      var _accountItem = __webpack_require__(193);
+
+      var _accountItem2 = _interopRequireDefault(_accountItem);
+
+      var _buttonMore = __webpack_require__(15);
+
+      var _accountService = __webpack_require__(28);
+
+      var _addAccountDialog = __webpack_require__(198);
+
+      var _transactionService = __webpack_require__(41);
+
+      var _confirmDialog = __webpack_require__(42);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var AccountsComponent = (exports.AccountsComponent = (function() {
+        function AccountsComponent(mountPoint, props) {
+          _classCallCheck(this, AccountsComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(AccountsComponent, [
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".accounts__more-button"
+              );
+              this.addAccountButton = this.mountPoint.querySelector(
+                ".accounts__add-account-dialog-activation"
+              );
+              this.addAccountMountPoint = this.mountPoint.querySelector(
+                ".accounts__add-account-dialog"
+              );
+
+              this.confirmDialogMountPoint = this.mountPoint.querySelector(
+                ".accounts__delete-confirm-dialog"
+              );
+              this.accountsList = this.mountPoint.querySelector(
+                ".accounts__list-items"
+              );
+            }
+          },
+          {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.initAddAccountDialogComponent();
+              this.initConfirmDialog();
+            }
+          },
+          {
+            key: "handleAddAccountConfirmed",
+            value: function handleAddAccountConfirmed(account) {
+              _accountService.AccountListService.add(account);
+              this.addAccountToHead(account);
+            }
+          },
+          {
+            key: "handleAddAccountClick",
+            value: function handleAddAccountClick() {
+              this.addAccountDialogComponent.showDialog();
+            }
+          },
+          {
+            key: "initMoreBtns",
+            value: function initMoreBtns() {
+              var _this = this;
+
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".accounts__more-button"
+              );
+              Array.from(this.moreBtnMountPoints).forEach(function(point) {
+                new _buttonMore.ButtonMoreComponent(point, {
+                  position: "right",
+                  onDeleteClick: _this.handleDeleteClick.bind(_this),
+                  onEditClick: _this.handleEditClick.bind(_this)
+                }).mount();
+              });
+            }
+          },
+          {
+            key: "initAddAccountDialogComponent",
+            value: function initAddAccountDialogComponent() {
+              this.addAccountDialogComponent = new _addAccountDialog.AddAccountDialogComponent(
+                this.addAccountMountPoint,
+                {
+                  onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+                }
+              );
+              this.addAccountDialogComponent.mount();
+            }
+          },
+          {
+            key: "initAccounts",
+            value: function initAccounts(accounts) {
+              var _this2 = this;
+
+              accounts.forEach(function(item) {
+                _this2.addAccount(item);
+              });
+            }
+          },
+          {
+            key: "initData",
+            value: function initData() {
+              var _this3 = this;
+
+              this.accountsList.innerHTML = "";
+              _accountService.AccountListService.get().then(function(accounts) {
+                if (!accounts) {
+                  accounts = [];
+                  _accountService.AccountListService.set(accounts);
+                }
+                _this3.initAccounts(accounts);
+              });
+            }
+          },
+          {
+            key: "updateAccountData",
+            value: function updateAccountData(transaction) {
+              var _this4 = this;
+
+              _accountService.AccountListService.update(
+                transaction.account,
+                parseInt(transaction.type + transaction.amount)
+              ).then(function() {
+                _this4.initData();
+              });
+            }
+          },
+          {
+            key: "updateAccountDataDelete",
+            value: function updateAccountDataDelete(transaction) {
+              var _this5 = this;
+
+              _accountService.AccountListService.update(
+                transaction.account,
+                -parseInt(transaction.type + transaction.amount)
+              ).then(function() {
+                _this5.initData();
+              });
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.addAccountButton.addEventListener(
+                "click",
+                this.handleAddAccountClick.bind(this)
+              );
+            }
+          },
+          {
+            key: "addAccountToHead",
+            value: function addAccountToHead(account) {
+              this.accountsList.innerHTML =
+                (0, _accountItem2.default)({ account: account }) +
+                this.accountsList.innerHTML;
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "addAccount",
+            value: function addAccount(account) {
+              this.accountsList.innerHTML += (0, _accountItem2.default)({
+                account: account
+              });
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "handleEditClick",
+            value: function handleEditClick() {
+              console.log("handleEditClick");
+            }
+          },
+          {
+            key: "handleDeleteClick",
+            value: function handleDeleteClick(event) {
+              var moreButton = event.target.closest(".button-more");
+              this.listItem = moreButton.closest(".accounts__list-item");
+              var accountName = this.listItem.querySelector(
+                ".accounts__list-item-name"
+              ).innerText;
+              this.confirmDialog.showDialog("account", accountName);
+            }
+          },
+          {
+            key: "initConfirmDialog",
+            value: function initConfirmDialog() {
+              this.confirmDialog = new _confirmDialog.ConfirmDialogComponent(
+                this.confirmDialogMountPoint,
+                {
+                  onOkClick: this.handleDeleteConfirm.bind(this)
+                }
+              );
+              this.confirmDialog.mount();
+            }
+          },
+          {
+            key: "handleDeleteConfirm",
+            value: function handleDeleteConfirm() {
+              this.delAccount(this.listItem);
+            }
+          },
+          {
+            key: "delAccount",
+            value: function delAccount(listItem) {
+              var _this6 = this;
+
+              var accountId = listItem.dataset.id;
+              _transactionService.TransactionListService.deleteByAccountId(
+                accountId
+              )
+                .then(function() {
+                  var index = Array.from(_this6.accountsList.children).indexOf(
+                    listItem
+                  );
+                  return _accountService.AccountListService.del(index).then(
+                    function() {
+                      _this6.accountsList.removeChild(listItem);
+                    }
+                  );
+                })
+                .then(function() {
+                  _this6.props.onAccountDelete();
+                });
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _accounts2.default)();
+              this.querySelectors();
+              this.mountChildren();
+              this.initMoreBtns();
+              this.addEventListeners();
+              this.initData();
+            }
+          }
+        ]);
+
+        return AccountsComponent;
+      })());
+
+      /***/
+    },
+    /* 192 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -27104,14 +27401,52 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="button-more mdc-menu-anchor">\r\n  <button class="button-more__more button-more mdc-button">\r\n    <i\r\n      class="button-more__more-icon  material-icons"\r\n      title="More options">more_vert</i></button>\r\n  <div class="mdc-menu menu" tabindex="-1">\r\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\r\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\r\n        Edit\r\n      </li>\r\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\r\n        Delete\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>';
+            '<div class="accounts drawer-menu">\n  <nav class="mdc-list--non-interactive">\n    <a class="drawer-menu__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\n      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n      Add new account\n    </a>\n  </nav>\n  <nav class="accounts__list-items  mdc-list--non-interactive">\n  </nav>\n  <div class="accounts__add-account-dialog"></div>\n  <div class="accounts__delete-confirm-dialog"></div>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 191 */
+    /* 193 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<a class="accounts__list-item drawer-menu__list-item mdc-list-item" data-id="' +
+            ((__t = account.id) == null ? "" : __t) +
+            '" href="#">\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\n  <p class="accounts__list-item-name">\n    ' +
+            ((__t = account.name) == null ? "" : __t) +
+            " &nbsp;\n  </p>\n  " +
+            ((__t = account.balance) == null ? "" : __t) +
+            "\n  " +
+            ((__t = account.currency) == null ? "" : __t) +
+            '\n  <div class="accounts__more-button drawer-menu__more-button"></div>\n</a>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 194 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<div class="button-more mdc-menu-anchor">\n  <button class="button-more__more button-more mdc-button">\n    <i\n      class="button-more__more-icon  material-icons"\n      title="More options">more_vert</i></button>\n  <div class="mdc-menu menu" tabindex="-1">\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\n        Edit\n      </li>\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\n        Delete\n      </li>\n    </ul>\n  </div>\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 195 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -27288,7 +27623,7 @@
 
       /***/
     },
-    /* 192 */
+    /* 196 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -27309,7 +27644,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        193
+        197
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         27
@@ -28124,7 +28459,7 @@
 
       /***/
     },
-    /* 193 */
+    /* 197 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* unused harmony export MDCMenuAdapter */
@@ -28293,330 +28628,7 @@
 
       /***/
     },
-    /* 194 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.AccountsComponent = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _accounts = __webpack_require__(195);
-
-      var _accounts2 = _interopRequireDefault(_accounts);
-
-      var _accountItem = __webpack_require__(196);
-
-      var _accountItem2 = _interopRequireDefault(_accountItem);
-
-      var _buttonMore = __webpack_require__(15);
-
-      var _accountService = __webpack_require__(28);
-
-      var _addAccountDialog = __webpack_require__(197);
-
-      var _transactionService = __webpack_require__(41);
-
-      var _confirmDialog = __webpack_require__(42);
-
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-      }
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var AccountsComponent = (exports.AccountsComponent = (function() {
-        function AccountsComponent(mountPoint, props) {
-          _classCallCheck(this, AccountsComponent);
-
-          this.mountPoint = mountPoint;
-          this.props = props;
-        }
-
-        _createClass(AccountsComponent, [
-          {
-            key: "querySelectors",
-            value: function querySelectors() {
-              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-                ".accounts__more-button"
-              );
-              this.addAccountButton = this.mountPoint.querySelector(
-                ".accounts__add-account-dialog-activation"
-              );
-              this.addAccountMountPoint = document.querySelector(
-                ".accounts__add-account-dialog"
-              );
-
-              this.confirmDialogMountPoint = this.mountPoint.querySelector(
-                ".accounts__delete-confirm-dialog"
-              );
-              this.accountsList = this.mountPoint.querySelector(
-                ".accounts__list-items"
-              );
-            }
-          },
-          {
-            key: "mountChildren",
-            value: function mountChildren() {
-              this.initAddAccountDialogComponent();
-              this.initConfirmDialog();
-            }
-          },
-          {
-            key: "handleAddAccountConfirmed",
-            value: function handleAddAccountConfirmed(account) {
-              _accountService.AccountListService.add(account);
-              this.addAccountToHead(account);
-            }
-          },
-          {
-            key: "handleAddAccountClick",
-            value: function handleAddAccountClick() {
-              this.addAccountDialogComponent.showDialog();
-            }
-          },
-          {
-            key: "initMoreBtns",
-            value: function initMoreBtns() {
-              var _this = this;
-
-              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-                ".accounts__more-button"
-              );
-              Array.from(this.moreBtnMountPoints).forEach(function(point) {
-                new _buttonMore.ButtonMoreComponent(point, {
-                  position: "right",
-                  onDeleteClick: _this.handleDeleteClick.bind(_this),
-                  onEditClick: _this.handleEditClick.bind(_this)
-                }).mount();
-              });
-            }
-          },
-          {
-            key: "initAddAccountDialogComponent",
-            value: function initAddAccountDialogComponent() {
-              this.addAccountDialogComponent = new _addAccountDialog.AddAccountDialogComponent(
-                this.addAccountMountPoint,
-                {
-                  onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
-                }
-              );
-              this.addAccountDialogComponent.mount();
-            }
-          },
-          {
-            key: "initAccounts",
-            value: function initAccounts(accounts) {
-              var _this2 = this;
-
-              accounts.forEach(function(item) {
-                _this2.addAccount(item);
-              });
-            }
-          },
-          {
-            key: "initData",
-            value: function initData() {
-              var _this3 = this;
-
-              this.accountsList.innerHTML = "";
-              _accountService.AccountListService.get().then(function(accounts) {
-                if (!accounts) {
-                  accounts = [];
-                  _accountService.AccountListService.set(accounts);
-                }
-                _this3.initAccounts(accounts);
-              });
-            }
-          },
-          {
-            key: "updateAccountData",
-            value: function updateAccountData(transaction) {
-              var _this4 = this;
-
-              _accountService.AccountListService.update(
-                transaction.account,
-                parseInt(transaction.type + transaction.amount)
-              ).then(function() {
-                _this4.initData();
-              });
-            }
-          },
-          {
-            key: "updateAccountDataDelete",
-            value: function updateAccountDataDelete(transaction) {
-              var _this5 = this;
-
-              _accountService.AccountListService.update(
-                transaction.account,
-                -parseInt(transaction.type + transaction.amount)
-              ).then(function() {
-                _this5.initData();
-              });
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.addAccountButton.addEventListener(
-                "click",
-                this.handleAddAccountClick.bind(this)
-              );
-            }
-          },
-          {
-            key: "addAccountToHead",
-            value: function addAccountToHead(account) {
-              this.accountsList.innerHTML =
-                (0, _accountItem2.default)({ account: account }) +
-                this.accountsList.innerHTML;
-              this.initMoreBtns();
-            }
-          },
-          {
-            key: "addAccount",
-            value: function addAccount(account) {
-              this.accountsList.innerHTML += (0, _accountItem2.default)({
-                account: account
-              });
-              this.initMoreBtns();
-            }
-          },
-          {
-            key: "handleEditClick",
-            value: function handleEditClick() {
-              console.log("handleEditClick");
-            }
-          },
-          {
-            key: "handleDeleteClick",
-            value: function handleDeleteClick(event) {
-              var moreButton = event.target.closest(".button-more");
-              this.listItem = moreButton.closest(".accounts__list-item");
-              this.confirmDialog.showDialog("account", this.listItem.innerText);
-            }
-          },
-          {
-            key: "initConfirmDialog",
-            value: function initConfirmDialog() {
-              this.confirmDialog = new _confirmDialog.ConfirmDialogComponent(
-                this.confirmDialogMountPoint,
-                {
-                  onOkClick: this.handleDeleteConfirm.bind(this)
-                }
-              );
-              this.confirmDialog.mount();
-            }
-          },
-          {
-            key: "handleDeleteConfirm",
-            value: function handleDeleteConfirm() {
-              this.delAccount(this.listItem);
-            }
-          },
-          {
-            key: "delAccount",
-            value: function delAccount(listItem) {
-              var _this6 = this;
-
-              var accountId = listItem.dataset.id;
-              _transactionService.TransactionListService.deleteByAccountId(
-                accountId
-              )
-                .then(function() {
-                  var index = Array.from(_this6.accountsList.children).indexOf(
-                    listItem
-                  );
-                  return _accountService.AccountListService.del(index).then(
-                    function() {
-                      _this6.accountsList.removeChild(listItem);
-                    }
-                  );
-                })
-                .then(function() {
-                  _this6.props.onAccountDelete();
-                });
-            }
-          },
-          {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _accounts2.default)();
-              this.querySelectors();
-              this.mountChildren();
-              this.initMoreBtns();
-              this.addEventListeners();
-              this.initData();
-            }
-          }
-        ]);
-
-        return AccountsComponent;
-      })());
-
-      /***/
-    },
-    /* 195 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "";
-        with (obj) {
-          __p +=
-            '<div class="accounts">\r\n  <nav class="accounts__list  mdc-list--non-interactive">\r\n    <a class="accounts__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\r\n      <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\r\n      Add new account\r\n    </a>\r\n  </nav>\r\n  <nav class="accounts__list-items  mdc-list--non-interactive">\r\n  </nav>\r\n  <div class="accounts__add-account-dialog"></div>\r\n  <div class="accounts__delete-confirm-dialog"></div>\r\n</div>';
-        }
-        return __p;
-      };
-
-      /***/
-    },
-    /* 196 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "";
-        with (obj) {
-          __p +=
-            '<a class="accounts__list-item mdc-list-item" data-id="' +
-            ((__t = account.id) == null ? "" : __t) +
-            '" href="#">\r\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\r\n  ' +
-            ((__t = account.name) == null ? "" : __t) +
-            "\r\n  " +
-            ((__t = account.balance) == null ? "" : __t) +
-            "\r\n  " +
-            ((__t = account.currency) == null ? "" : __t) +
-            '\r\n  <div class="accounts__more-button"></div>\r\n</a>';
-        }
-        return __p;
-      };
-
-      /***/
-    },
-    /* 197 */
+    /* 198 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -28642,7 +28654,7 @@
         };
       })();
 
-      var _addAccountDialog = __webpack_require__(198);
+      var _addAccountDialog = __webpack_require__(199);
 
       var _addAccountDialog2 = _interopRequireDefault(_addAccountDialog);
 
@@ -28792,7 +28804,7 @@
 
       /***/
     },
-    /* 198 */
+    /* 199 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -28804,30 +28816,30 @@
         }
         with (obj) {
           __p +=
-            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add account\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="add-account-dialog__row">\r\n        <div class="add-account-dialog__col">\r\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n        </div>\r\n        <div class="add-account-dialog__col">\r\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\r\n      <div class="add-account-dialog__row">\r\n        <div class="add-account-dialog__col">\r\n          <div class="mdc-select add-account-dialog__type" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Type</div>\r\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
+            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
           for (let i = 0; i < types.length; i++) {
             __p +=
-              '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
+              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
               ((__t = types[i]) == null ? "" : __t) +
-              "\r\n                  </li>\r\n                  ";
+              "\n                  </li>\n                  ";
           }
           __p +=
-            '\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class="add-account-dialog__col">\r\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Currency</div>\r\n              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
+            '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Currency</div>\n              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
           for (let i = 0; i < currencies.length; i++) {
             __p +=
-              '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
+              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
               ((__t = currencies[i]) == null ? "" : __t) +
-              "\r\n                  </li>\r\n                  ";
+              "\n                  </li>\n                  ";
           }
           __p +=
-            '\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\r\n      </button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\n      </button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 199 */
+    /* 200 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -28837,7 +28849,7 @@
         29
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        200
+        201
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(
         18
@@ -29498,7 +29510,7 @@
 
       /***/
     },
-    /* 200 */
+    /* 201 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -29569,14 +29581,14 @@
 
       /***/
     },
-    /* 201 */
+    /* 202 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        202
+        203
       );
       /**
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -29795,7 +29807,7 @@
 
       /***/
     },
-    /* 202 */
+    /* 203 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -29836,7 +29848,7 @@
 
       /***/
     },
-    /* 203 */
+    /* 204 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -29844,7 +29856,7 @@
         "createFocusTrapInstance"
       ] = createFocusTrapInstance;
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(
-        204
+        205
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap___default = __webpack_require__.n(
         __WEBPACK_IMPORTED_MODULE_0_focus_trap__
@@ -29878,9 +29890,9 @@
 
       /***/
     },
-    /* 204 */
+    /* 205 */
     /***/ function(module, exports, __webpack_require__) {
-      var tabbable = __webpack_require__(205);
+      var tabbable = __webpack_require__(206);
 
       var listeningFocusTrap = null;
 
@@ -30152,7 +30164,7 @@
 
       /***/
     },
-    /* 205 */
+    /* 206 */
     /***/ function(module, exports) {
       module.exports = function(el, options) {
         options = options || {};
@@ -30284,7 +30296,7 @@
 
       /***/
     },
-    /* 206 */
+    /* 207 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30319,7 +30331,7 @@
 
       /***/
     },
-    /* 207 */
+    /* 208 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30367,7 +30379,7 @@
 
       /***/
     },
-    /* 208 */
+    /* 209 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30401,7 +30413,7 @@
 
       /***/
     },
-    /* 209 */
+    /* 210 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -30436,7 +30448,7 @@
 
       /***/
     },
-    /* 210 */
+    /* 211 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -30938,7 +30950,7 @@
 
       /***/
     },
-    /* 211 */
+    /* 212 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31036,7 +31048,7 @@
 
       /***/
     },
-    /* 212 */
+    /* 213 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31124,7 +31136,7 @@
 
       /***/
     },
-    /* 213 */
+    /* 214 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31216,7 +31228,7 @@
 
       /***/
     },
-    /* 214 */
+    /* 215 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31313,7 +31325,7 @@
 
       /***/
     },
-    /* 215 */
+    /* 216 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31416,7 +31428,7 @@
 
       /***/
     },
-    /* 216 */
+    /* 217 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31433,7 +31445,7 @@
         38
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        217
+        218
       );
       /* unused harmony reexport MDCSelectBottomLineFoundation */
       /**
@@ -31497,7 +31509,7 @@
 
       /***/
     },
-    /* 217 */
+    /* 218 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -31507,7 +31519,7 @@
         38
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        218
+        219
       );
       /**
        * @license
@@ -31586,7 +31598,7 @@
 
       /***/
     },
-    /* 218 */
+    /* 219 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -31612,7 +31624,7 @@
 
       /***/
     },
-    /* 219 */
+    /* 220 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -31629,7 +31641,7 @@
         39
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        220
+        221
       );
       /* unused harmony reexport MDCSelectLabelFoundation */
       /**
@@ -31687,7 +31699,7 @@
 
       /***/
     },
-    /* 220 */
+    /* 221 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -31697,7 +31709,7 @@
         39
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        221
+        222
       );
       /**
        * @license
@@ -31770,7 +31782,7 @@
 
       /***/
     },
-    /* 221 */
+    /* 222 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       const cssClasses = {
@@ -31780,7 +31792,7 @@
 
       /***/
     },
-    /* 222 */
+    /* 223 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_index__ = __webpack_require__(
@@ -32170,7 +32182,7 @@
 
       /***/
     },
-    /* 223 */
+    /* 224 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32178,14 +32190,379 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="confirm-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Delete\r\n        <span class="confirm-dialog__type"></span>\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div>\r\n        Are you sure you want to delete\r\n        <span class="confirm-dialog__type"></span> &quot;\r\n        <span class="confirm-dialog__name"></span>&quot;?\r\n      </div>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '<aside class="confirm-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Delete\n        <span class="confirm-dialog__type"></span>\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div>\n        Are you sure you want to delete\n        <span class="confirm-dialog__type"></span> &quot;\n        <span class="confirm-dialog__name"></span>&quot;?\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 224 */
+    /* 225 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TagsComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _tags = __webpack_require__(226);
+
+      var _tags2 = _interopRequireDefault(_tags);
+
+      var _tagItem = __webpack_require__(227);
+
+      var _tagItem2 = _interopRequireDefault(_tagItem);
+
+      var _buttonMore = __webpack_require__(15);
+
+      var _tagService = __webpack_require__(43);
+
+      var _addTagDialog = __webpack_require__(228);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TagsComponent = (exports.TagsComponent = (function() {
+        function TagsComponent(mountPoint) {
+          _classCallCheck(this, TagsComponent);
+
+          this.mountPoint = mountPoint;
+        }
+
+        _createClass(TagsComponent, [
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.tagsRoot = this.mountPoint.querySelector(".tags");
+              this.addTagButton = this.mountPoint.querySelector(
+                ".tags__add-tag-dialog-activation"
+              );
+              this.addTagMountPoint = this.mountPoint.querySelector(
+                ".tags__add-tag-dialog"
+              );
+              this.tagsList = this.mountPoint.querySelector(
+                ".tags__list-items"
+              );
+            }
+          },
+          {
+            key: "handleAddTagConfirmed",
+            value: function handleAddTagConfirmed(tag) {
+              _tagService.TagListService.add(tag);
+              this.addTagToHead(tag);
+            }
+          },
+          {
+            key: "handleAddTagClicked",
+            value: function handleAddTagClicked() {
+              this.addTagDialogComponent.showDialog();
+            }
+          },
+          {
+            key: "initMoreBtns",
+            value: function initMoreBtns() {
+              var _this = this;
+
+              this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+                ".tags__more-button"
+              );
+              Array.from(this.moreBtnMountPoints).forEach(function(point) {
+                new _buttonMore.ButtonMoreComponent(point, {
+                  position: "right",
+                  onDeleteClick: _this.handleDeleteClick.bind(_this),
+                  onEditClick: _this.handleEditClick.bind(_this)
+                }).mount();
+              });
+            }
+          },
+          {
+            key: "mountChildren",
+            value: function mountChildren() {
+              this.addTagDialogComponent = new _addTagDialog.AddTagDialogComponent(
+                this.addTagMountPoint,
+                {
+                  onAddTagConfirm: this.handleAddTagConfirmed.bind(this)
+                }
+              );
+              this.addTagDialogComponent.mount();
+            }
+          },
+          {
+            key: "initTags",
+            value: function initTags(tags) {
+              var _this2 = this;
+
+              tags.forEach(function(item) {
+                _this2.addTag(item);
+              });
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "initData",
+            value: function initData() {
+              var _this3 = this;
+
+              this.tagsList.innerHTML = "";
+              _tagService.TagListService.get().then(function(tags) {
+                if (!tags) {
+                  tags = [];
+                  _tagService.TagListService.set(tags);
+                }
+                _this3.initTags(tags);
+              });
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.addTagButton.addEventListener(
+                "click",
+                this.handleAddTagClicked.bind(this)
+              );
+            }
+          },
+          {
+            key: "addTagToHead",
+            value: function addTagToHead(tag) {
+              this.tagsList.innerHTML =
+                (0, _tagItem2.default)({ tag: tag }) + this.tagsList.innerHTML;
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "addTag",
+            value: function addTag(tag) {
+              this.tagsList.innerHTML += (0, _tagItem2.default)({ tag: tag });
+            }
+          },
+          {
+            key: "handleEditClick",
+            value: function handleEditClick() {
+              console.log("handleEditClick");
+            }
+          },
+          {
+            key: "handleDeleteClick",
+            value: function handleDeleteClick() {
+              console.log("handleDeleteClick");
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _tags2.default)();
+              this.querySelectors();
+              this.mountChildren();
+              this.addEventListeners();
+              this.initData();
+            }
+          }
+        ]);
+
+        return TagsComponent;
+      })());
+
+      /***/
+    },
+    /* 226 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<div class="tags drawer-menu">\n  <nav class="mdc-list--non-interactive">\n    <a class="drawer-menu__list-item mdc-list-item tags__add-tag-dialog-activation" href="#">\n      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n      Add new tag\n    </a>\n  </nav>\n  <nav class="tags__list-items  mdc-list--non-interactive">\n  </nav>\n  <div class="tags__add-tag-dialog"></div>\n</div>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 227 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<a class="tags__list-item drawer-menu__list-item mdc-list-item" href="#">\n  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_offer</i>\n  ' +
+            ((__t = tag) == null ? "" : __t) +
+            '\n  <div class="tags__more-button drawer-menu__more-button"></div>\n</a>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 228 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.AddTagDialogComponent = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _addTagDialog = __webpack_require__(229);
+
+      var _addTagDialog2 = _interopRequireDefault(_addTagDialog);
+
+      var _dialog = __webpack_require__(8);
+
+      var _textfield = __webpack_require__(19);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var AddTagDialogComponent = (exports.AddTagDialogComponent = (function() {
+        function AddTagDialogComponent(mountPoint, props) {
+          _classCallCheck(this, AddTagDialogComponent);
+
+          this.mountPoint = mountPoint;
+          this.props = props;
+        }
+
+        _createClass(AddTagDialogComponent, [
+          {
+            key: "showDialog",
+            value: function showDialog() {
+              this.dialog.show();
+            }
+          },
+          {
+            key: "querySelectors",
+            value: function querySelectors() {
+              this.addTagDialogComponent = this.mountPoint.querySelector(
+                ".add-tag-dialog"
+              );
+              this.tagTextField = this.mountPoint.querySelector(
+                ".add-tag-dialog__tag"
+              );
+              this.tagNameInput = this.mountPoint.querySelector(
+                ".mdc-text-field__input"
+              );
+            }
+          },
+          {
+            key: "initMDC",
+            value: function initMDC() {
+              this.dialog = new _dialog.MDCDialog(this.addTagDialogComponent);
+              this.tag = new _textfield.MDCTextField(this.tagTextField);
+            }
+          },
+          {
+            key: "addEventListeners",
+            value: function addEventListeners() {
+              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+              this.dialog.listen(
+                "MDCDialog:cancel",
+                this.handleCancel.bind(this)
+              );
+            }
+          },
+          {
+            key: "clean",
+            value: function clean() {
+              this.tagNameInput.value = "";
+            }
+          },
+          {
+            key: "handleOk",
+            value: function handleOk() {
+              this.props.onAddTagConfirm(this.tagNameInput.value);
+              this.clean();
+            }
+          },
+          {
+            key: "handleCancel",
+            value: function handleCancel() {
+              this.clean();
+            }
+          },
+          {
+            key: "mount",
+            value: function mount() {
+              this.mountPoint.innerHTML = (0, _addTagDialog2.default)();
+              this.querySelectors();
+              this.initMDC();
+              this.addEventListeners();
+            }
+          }
+        ]);
+
+        return AddTagDialogComponent;
+      })());
+
+      /***/
+    },
+    /* 229 */
+    /***/ function(module, exports) {
+      module.exports = function(obj) {
+        obj || (obj = {});
+        var __t,
+          __p = "";
+        with (obj) {
+          __p +=
+            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add tag\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\n        Type tag name\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+        }
+        return __p;
+      };
+
+      /***/
+    },
+    /* 230 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32211,11 +32588,11 @@
         };
       })();
 
-      var _toolbar = __webpack_require__(225);
+      var _toolbar = __webpack_require__(231);
 
       var _toolbar2 = _interopRequireDefault(_toolbar);
 
-      var _aboutDialog = __webpack_require__(226);
+      var _aboutDialog = __webpack_require__(232);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32298,7 +32675,7 @@
 
       /***/
     },
-    /* 225 */
+    /* 231 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32306,14 +32683,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\r\n  <div class="toolbar__container mdc-toolbar__row">\r\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\r\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\r\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\r\n    </section>\r\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\r\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\r\n        About\r\n      </button>\r\n    </section>\r\n  </div>\r\n  <div class="toolbar__about-dialog"></div>\r\n</header>';
+            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\n  <div class="toolbar__container mdc-toolbar__row">\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\n    </section>\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\n        About\n      </button>\n    </section>\n  </div>\n  <div class="toolbar__about-dialog"></div>\n</header>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 226 */
+    /* 232 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32339,13 +32716,13 @@
         };
       })();
 
-      var _aboutDialog = __webpack_require__(227);
+      var _aboutDialog = __webpack_require__(233);
 
       var _aboutDialog2 = _interopRequireDefault(_aboutDialog);
 
       var _dialog = __webpack_require__(8);
 
-      var _package = __webpack_require__(228);
+      var _package = __webpack_require__(234);
 
       var _package2 = _interopRequireDefault(_package);
 
@@ -32402,7 +32779,7 @@
 
       /***/
     },
-    /* 227 */
+    /* 233 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32410,16 +32787,16 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="about-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header about-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        About\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <p>Buxy - a simple finance tracking app</p>\r\n      <p>\r\n        Version\r\n        ' +
+            '<aside class="about-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header about-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        About\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <p>Buxy - a simple finance tracking app</p>\n      <p>\n        Version\n        ' +
             ((__t = version) == null ? "" : __t) +
-            '\r\n      </p>\r\n      <p>Developed by:\r\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\r\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\r\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\r\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\r\n        <a href="https://github.com/gift-a">@gift-a</a>\r\n      </p>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '\n      </p>\n      <p>Developed by:\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\n        <a href="https://github.com/gift-a">@gift-a</a>\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 228 */
+    /* 234 */
     /***/ function(module, exports) {
       module.exports = {
         name: "buxy-vanilla",
@@ -32481,7 +32858,7 @@
 
       /***/
     },
-    /* 229 */
+    /* 235 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32507,17 +32884,17 @@
         };
       })();
 
-      var _transactions = __webpack_require__(230);
+      var _transactions = __webpack_require__(236);
 
       var _transactions2 = _interopRequireDefault(_transactions);
 
-      var _pieChart = __webpack_require__(231);
+      var _pieChart = __webpack_require__(237);
 
-      var _barChart = __webpack_require__(281);
+      var _barChart = __webpack_require__(287);
 
-      var _tableTransactions = __webpack_require__(283);
+      var _tableTransactions = __webpack_require__(289);
 
-      var _addTransactionDialog = __webpack_require__(286);
+      var _addTransactionDialog = __webpack_require__(292);
 
       var _transactionService = __webpack_require__(41);
 
@@ -32726,7 +33103,7 @@
 
       /***/
     },
-    /* 230 */
+    /* 236 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32734,14 +33111,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="transactions mdc-layout-grid">\r\n  <div class="transactions__content transactions__block">\r\n    <div class="mdc-layout-grid__inner">\r\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\r\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\r\n    </div>\r\n    <div class="transactions__table-transactions"></div>\r\n  </div>\r\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\r\n    <p>You don\'t have any transactions</p>\r\n  </div>\r\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\r\n    <span class="mdc-fab__icon">add</span>\r\n  </button>\r\n  <div class="transactions__add-transaction-dialog"></div>\r\n</div>';
+            '<div class="transactions mdc-layout-grid">\n  <div class="transactions__content transactions__block">\n    <div class="mdc-layout-grid__inner">\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n    </div>\n    <div class="transactions__table-transactions"></div>\n  </div>\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\n    <p>You don\'t have any transactions</p>\n  </div>\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\n    <span class="mdc-fab__icon">add</span>\n  </button>\n  <div class="transactions__add-transaction-dialog"></div>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 231 */
+    /* 237 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32767,17 +33144,17 @@
         };
       })();
 
-      var _pieChart = __webpack_require__(232);
+      var _pieChart = __webpack_require__(238);
 
       var _pieChart2 = _interopRequireDefault(_pieChart);
 
-      var _chart = __webpack_require__(43);
+      var _chart = __webpack_require__(44);
 
       var _chart2 = _interopRequireDefault(_chart);
 
-      var _currencyConverterUah = __webpack_require__(170);
+      var _currencyConverterUah = __webpack_require__(171);
 
-      var _colorGenerator = __webpack_require__(280);
+      var _colorGenerator = __webpack_require__(286);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32921,7 +33298,7 @@
 
       /***/
     },
-    /* 232 */
+    /* 238 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -32929,14 +33306,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="chart">\r\n  <canvas class="chart__visual"></canvas>\r\n</div>';
+            '<div class="chart">\n  <canvas class="chart__visual"></canvas>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 233 */
+    /* 239 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -32989,7 +33366,7 @@
 
       /***/
     },
-    /* 234 */
+    /* 240 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -33261,7 +33638,7 @@
 
       /***/
     },
-    /* 235 */
+    /* 241 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -33510,7 +33887,7 @@
 
       /***/
     },
-    /* 236 */
+    /* 242 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -33613,13 +33990,13 @@
 
       /***/
     },
-    /* 237 */
+    /* 243 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
       /* global document: false */
 
-      var color = __webpack_require__(44);
+      var color = __webpack_require__(45);
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
 
@@ -34344,9 +34721,9 @@
 
       /***/
     },
-    /* 238 */
+    /* 244 */
     /***/ function(module, exports, __webpack_require__) {
-      var conversions = __webpack_require__(239);
+      var conversions = __webpack_require__(245);
 
       var convert = function() {
         return new Converter();
@@ -34438,7 +34815,7 @@
 
       /***/
     },
-    /* 239 */
+    /* 245 */
     /***/ function(module, exports) {
       /* MIT license */
 
@@ -35184,10 +35561,10 @@
 
       /***/
     },
-    /* 240 */
+    /* 246 */
     /***/ function(module, exports, __webpack_require__) {
       /* MIT license */
-      var colorNames = __webpack_require__(241);
+      var colorNames = __webpack_require__(247);
 
       module.exports = {
         getRgba: getRgba,
@@ -35438,7 +35815,7 @@
 
       /***/
     },
-    /* 241 */
+    /* 247 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35595,7 +35972,7 @@
 
       /***/
     },
-    /* 242 */
+    /* 248 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35719,7 +36096,7 @@
 
       /***/
     },
-    /* 243 */
+    /* 249 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35825,7 +36202,7 @@
 
       /***/
     },
-    /* 244 */
+    /* 250 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -35952,7 +36329,7 @@
 
       /***/
     },
-    /* 245 */
+    /* 251 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -36185,7 +36562,7 @@
 
       /***/
     },
-    /* 246 */
+    /* 252 */
     /***/ function(module, exports) {
       /**
        * Platform fallback implementation (minimal).
@@ -36205,7 +36582,7 @@
 
       /***/
     },
-    /* 247 */
+    /* 253 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /**
@@ -36698,7 +37075,7 @@
 
       /***/
     },
-    /* 248 */
+    /* 254 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
@@ -36884,16 +37261,16 @@
 
       /***/
     },
-    /* 249 */
+    /* 255 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       var defaults = __webpack_require__(2);
       var helpers = __webpack_require__(1);
-      var Interaction = __webpack_require__(45);
+      var Interaction = __webpack_require__(46);
       var layouts = __webpack_require__(10);
-      var platform = __webpack_require__(46);
-      var plugins = __webpack_require__(47);
+      var platform = __webpack_require__(47);
+      var plugins = __webpack_require__(48);
 
       module.exports = function(Chart) {
         // Create a dictionary of chart types, to allow for extension of existing types
@@ -37930,7 +38307,7 @@
 
       /***/
     },
-    /* 250 */
+    /* 256 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -38310,7 +38687,7 @@
 
       /***/
     },
-    /* 251 */
+    /* 257 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -38364,7 +38741,7 @@
 
       /***/
     },
-    /* 252 */
+    /* 258 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -39448,7 +39825,7 @@
 
       /***/
     },
-    /* 253 */
+    /* 259 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40525,7 +40902,7 @@
 
       /***/
     },
-    /* 254 */
+    /* 260 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40740,7 +41117,7 @@
 
       /***/
     },
-    /* 255 */
+    /* 261 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -40897,7 +41274,7 @@
 
       /***/
     },
-    /* 256 */
+    /* 262 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -41115,7 +41492,7 @@
 
       /***/
     },
-    /* 257 */
+    /* 263 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -41492,7 +41869,7 @@
 
       /***/
     },
-    /* 258 */
+    /* 264 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -42161,7 +42538,7 @@
 
       /***/
     },
-    /* 259 */
+    /* 265 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /* global window: false */
@@ -43039,7 +43416,7 @@
 
       /***/
     },
-    /* 260 */
+    /* 266 */
     /***/ function(module, exports) {
       module.exports = function(module) {
         if (!module.webpackPolyfill) {
@@ -43066,253 +43443,253 @@
 
       /***/
     },
-    /* 261 */
+    /* 267 */
     /***/ function(module, exports, __webpack_require__) {
       var map = {
-        "./af": 48,
-        "./af.js": 48,
-        "./ar": 49,
-        "./ar-dz": 50,
-        "./ar-dz.js": 50,
-        "./ar-kw": 51,
-        "./ar-kw.js": 51,
-        "./ar-ly": 52,
-        "./ar-ly.js": 52,
-        "./ar-ma": 53,
-        "./ar-ma.js": 53,
-        "./ar-sa": 54,
-        "./ar-sa.js": 54,
-        "./ar-tn": 55,
-        "./ar-tn.js": 55,
-        "./ar.js": 49,
-        "./az": 56,
-        "./az.js": 56,
-        "./be": 57,
-        "./be.js": 57,
-        "./bg": 58,
-        "./bg.js": 58,
-        "./bm": 59,
-        "./bm.js": 59,
-        "./bn": 60,
-        "./bn.js": 60,
-        "./bo": 61,
-        "./bo.js": 61,
-        "./br": 62,
-        "./br.js": 62,
-        "./bs": 63,
-        "./bs.js": 63,
-        "./ca": 64,
-        "./ca.js": 64,
-        "./cs": 65,
-        "./cs.js": 65,
-        "./cv": 66,
-        "./cv.js": 66,
-        "./cy": 67,
-        "./cy.js": 67,
-        "./da": 68,
-        "./da.js": 68,
-        "./de": 69,
-        "./de-at": 70,
-        "./de-at.js": 70,
-        "./de-ch": 71,
-        "./de-ch.js": 71,
-        "./de.js": 69,
-        "./dv": 72,
-        "./dv.js": 72,
-        "./el": 73,
-        "./el.js": 73,
-        "./en-au": 74,
-        "./en-au.js": 74,
-        "./en-ca": 75,
-        "./en-ca.js": 75,
-        "./en-gb": 76,
-        "./en-gb.js": 76,
-        "./en-ie": 77,
-        "./en-ie.js": 77,
-        "./en-il": 78,
-        "./en-il.js": 78,
-        "./en-nz": 79,
-        "./en-nz.js": 79,
-        "./eo": 80,
-        "./eo.js": 80,
-        "./es": 81,
-        "./es-do": 82,
-        "./es-do.js": 82,
-        "./es-us": 83,
-        "./es-us.js": 83,
-        "./es.js": 81,
-        "./et": 84,
-        "./et.js": 84,
-        "./eu": 85,
-        "./eu.js": 85,
-        "./fa": 86,
-        "./fa.js": 86,
-        "./fi": 87,
-        "./fi.js": 87,
-        "./fo": 88,
-        "./fo.js": 88,
-        "./fr": 89,
-        "./fr-ca": 90,
-        "./fr-ca.js": 90,
-        "./fr-ch": 91,
-        "./fr-ch.js": 91,
-        "./fr.js": 89,
-        "./fy": 92,
-        "./fy.js": 92,
-        "./gd": 93,
-        "./gd.js": 93,
-        "./gl": 94,
-        "./gl.js": 94,
-        "./gom-latn": 95,
-        "./gom-latn.js": 95,
-        "./gu": 96,
-        "./gu.js": 96,
-        "./he": 97,
-        "./he.js": 97,
-        "./hi": 98,
-        "./hi.js": 98,
-        "./hr": 99,
-        "./hr.js": 99,
-        "./hu": 100,
-        "./hu.js": 100,
-        "./hy-am": 101,
-        "./hy-am.js": 101,
-        "./id": 102,
-        "./id.js": 102,
-        "./is": 103,
-        "./is.js": 103,
-        "./it": 104,
-        "./it.js": 104,
-        "./ja": 105,
-        "./ja.js": 105,
-        "./jv": 106,
-        "./jv.js": 106,
-        "./ka": 107,
-        "./ka.js": 107,
-        "./kk": 108,
-        "./kk.js": 108,
-        "./km": 109,
-        "./km.js": 109,
-        "./kn": 110,
-        "./kn.js": 110,
-        "./ko": 111,
-        "./ko.js": 111,
-        "./ky": 112,
-        "./ky.js": 112,
-        "./lb": 113,
-        "./lb.js": 113,
-        "./lo": 114,
-        "./lo.js": 114,
-        "./lt": 115,
-        "./lt.js": 115,
-        "./lv": 116,
-        "./lv.js": 116,
-        "./me": 117,
-        "./me.js": 117,
-        "./mi": 118,
-        "./mi.js": 118,
-        "./mk": 119,
-        "./mk.js": 119,
-        "./ml": 120,
-        "./ml.js": 120,
-        "./mr": 121,
-        "./mr.js": 121,
-        "./ms": 122,
-        "./ms-my": 123,
-        "./ms-my.js": 123,
-        "./ms.js": 122,
-        "./mt": 124,
-        "./mt.js": 124,
-        "./my": 125,
-        "./my.js": 125,
-        "./nb": 126,
-        "./nb.js": 126,
-        "./ne": 127,
-        "./ne.js": 127,
-        "./nl": 128,
-        "./nl-be": 129,
-        "./nl-be.js": 129,
-        "./nl.js": 128,
-        "./nn": 130,
-        "./nn.js": 130,
-        "./pa-in": 131,
-        "./pa-in.js": 131,
-        "./pl": 132,
-        "./pl.js": 132,
-        "./pt": 133,
-        "./pt-br": 134,
-        "./pt-br.js": 134,
-        "./pt.js": 133,
-        "./ro": 135,
-        "./ro.js": 135,
-        "./ru": 136,
-        "./ru.js": 136,
-        "./sd": 137,
-        "./sd.js": 137,
-        "./se": 138,
-        "./se.js": 138,
-        "./si": 139,
-        "./si.js": 139,
-        "./sk": 140,
-        "./sk.js": 140,
-        "./sl": 141,
-        "./sl.js": 141,
-        "./sq": 142,
-        "./sq.js": 142,
-        "./sr": 143,
-        "./sr-cyrl": 144,
-        "./sr-cyrl.js": 144,
-        "./sr.js": 143,
-        "./ss": 145,
-        "./ss.js": 145,
-        "./sv": 146,
-        "./sv.js": 146,
-        "./sw": 147,
-        "./sw.js": 147,
-        "./ta": 148,
-        "./ta.js": 148,
-        "./te": 149,
-        "./te.js": 149,
-        "./tet": 150,
-        "./tet.js": 150,
-        "./tg": 151,
-        "./tg.js": 151,
-        "./th": 152,
-        "./th.js": 152,
-        "./tl-ph": 153,
-        "./tl-ph.js": 153,
-        "./tlh": 154,
-        "./tlh.js": 154,
-        "./tr": 155,
-        "./tr.js": 155,
-        "./tzl": 156,
-        "./tzl.js": 156,
-        "./tzm": 157,
-        "./tzm-latn": 158,
-        "./tzm-latn.js": 158,
-        "./tzm.js": 157,
-        "./ug-cn": 159,
-        "./ug-cn.js": 159,
-        "./uk": 160,
-        "./uk.js": 160,
-        "./ur": 161,
-        "./ur.js": 161,
-        "./uz": 162,
-        "./uz-latn": 163,
-        "./uz-latn.js": 163,
-        "./uz.js": 162,
-        "./vi": 164,
-        "./vi.js": 164,
-        "./x-pseudo": 165,
-        "./x-pseudo.js": 165,
-        "./yo": 166,
-        "./yo.js": 166,
-        "./zh-cn": 167,
-        "./zh-cn.js": 167,
-        "./zh-hk": 168,
-        "./zh-hk.js": 168,
-        "./zh-tw": 169,
-        "./zh-tw.js": 169
+        "./af": 49,
+        "./af.js": 49,
+        "./ar": 50,
+        "./ar-dz": 51,
+        "./ar-dz.js": 51,
+        "./ar-kw": 52,
+        "./ar-kw.js": 52,
+        "./ar-ly": 53,
+        "./ar-ly.js": 53,
+        "./ar-ma": 54,
+        "./ar-ma.js": 54,
+        "./ar-sa": 55,
+        "./ar-sa.js": 55,
+        "./ar-tn": 56,
+        "./ar-tn.js": 56,
+        "./ar.js": 50,
+        "./az": 57,
+        "./az.js": 57,
+        "./be": 58,
+        "./be.js": 58,
+        "./bg": 59,
+        "./bg.js": 59,
+        "./bm": 60,
+        "./bm.js": 60,
+        "./bn": 61,
+        "./bn.js": 61,
+        "./bo": 62,
+        "./bo.js": 62,
+        "./br": 63,
+        "./br.js": 63,
+        "./bs": 64,
+        "./bs.js": 64,
+        "./ca": 65,
+        "./ca.js": 65,
+        "./cs": 66,
+        "./cs.js": 66,
+        "./cv": 67,
+        "./cv.js": 67,
+        "./cy": 68,
+        "./cy.js": 68,
+        "./da": 69,
+        "./da.js": 69,
+        "./de": 70,
+        "./de-at": 71,
+        "./de-at.js": 71,
+        "./de-ch": 72,
+        "./de-ch.js": 72,
+        "./de.js": 70,
+        "./dv": 73,
+        "./dv.js": 73,
+        "./el": 74,
+        "./el.js": 74,
+        "./en-au": 75,
+        "./en-au.js": 75,
+        "./en-ca": 76,
+        "./en-ca.js": 76,
+        "./en-gb": 77,
+        "./en-gb.js": 77,
+        "./en-ie": 78,
+        "./en-ie.js": 78,
+        "./en-il": 79,
+        "./en-il.js": 79,
+        "./en-nz": 80,
+        "./en-nz.js": 80,
+        "./eo": 81,
+        "./eo.js": 81,
+        "./es": 82,
+        "./es-do": 83,
+        "./es-do.js": 83,
+        "./es-us": 84,
+        "./es-us.js": 84,
+        "./es.js": 82,
+        "./et": 85,
+        "./et.js": 85,
+        "./eu": 86,
+        "./eu.js": 86,
+        "./fa": 87,
+        "./fa.js": 87,
+        "./fi": 88,
+        "./fi.js": 88,
+        "./fo": 89,
+        "./fo.js": 89,
+        "./fr": 90,
+        "./fr-ca": 91,
+        "./fr-ca.js": 91,
+        "./fr-ch": 92,
+        "./fr-ch.js": 92,
+        "./fr.js": 90,
+        "./fy": 93,
+        "./fy.js": 93,
+        "./gd": 94,
+        "./gd.js": 94,
+        "./gl": 95,
+        "./gl.js": 95,
+        "./gom-latn": 96,
+        "./gom-latn.js": 96,
+        "./gu": 97,
+        "./gu.js": 97,
+        "./he": 98,
+        "./he.js": 98,
+        "./hi": 99,
+        "./hi.js": 99,
+        "./hr": 100,
+        "./hr.js": 100,
+        "./hu": 101,
+        "./hu.js": 101,
+        "./hy-am": 102,
+        "./hy-am.js": 102,
+        "./id": 103,
+        "./id.js": 103,
+        "./is": 104,
+        "./is.js": 104,
+        "./it": 105,
+        "./it.js": 105,
+        "./ja": 106,
+        "./ja.js": 106,
+        "./jv": 107,
+        "./jv.js": 107,
+        "./ka": 108,
+        "./ka.js": 108,
+        "./kk": 109,
+        "./kk.js": 109,
+        "./km": 110,
+        "./km.js": 110,
+        "./kn": 111,
+        "./kn.js": 111,
+        "./ko": 112,
+        "./ko.js": 112,
+        "./ky": 113,
+        "./ky.js": 113,
+        "./lb": 114,
+        "./lb.js": 114,
+        "./lo": 115,
+        "./lo.js": 115,
+        "./lt": 116,
+        "./lt.js": 116,
+        "./lv": 117,
+        "./lv.js": 117,
+        "./me": 118,
+        "./me.js": 118,
+        "./mi": 119,
+        "./mi.js": 119,
+        "./mk": 120,
+        "./mk.js": 120,
+        "./ml": 121,
+        "./ml.js": 121,
+        "./mr": 122,
+        "./mr.js": 122,
+        "./ms": 123,
+        "./ms-my": 124,
+        "./ms-my.js": 124,
+        "./ms.js": 123,
+        "./mt": 125,
+        "./mt.js": 125,
+        "./my": 126,
+        "./my.js": 126,
+        "./nb": 127,
+        "./nb.js": 127,
+        "./ne": 128,
+        "./ne.js": 128,
+        "./nl": 129,
+        "./nl-be": 130,
+        "./nl-be.js": 130,
+        "./nl.js": 129,
+        "./nn": 131,
+        "./nn.js": 131,
+        "./pa-in": 132,
+        "./pa-in.js": 132,
+        "./pl": 133,
+        "./pl.js": 133,
+        "./pt": 134,
+        "./pt-br": 135,
+        "./pt-br.js": 135,
+        "./pt.js": 134,
+        "./ro": 136,
+        "./ro.js": 136,
+        "./ru": 137,
+        "./ru.js": 137,
+        "./sd": 138,
+        "./sd.js": 138,
+        "./se": 139,
+        "./se.js": 139,
+        "./si": 140,
+        "./si.js": 140,
+        "./sk": 141,
+        "./sk.js": 141,
+        "./sl": 142,
+        "./sl.js": 142,
+        "./sq": 143,
+        "./sq.js": 143,
+        "./sr": 144,
+        "./sr-cyrl": 145,
+        "./sr-cyrl.js": 145,
+        "./sr.js": 144,
+        "./ss": 146,
+        "./ss.js": 146,
+        "./sv": 147,
+        "./sv.js": 147,
+        "./sw": 148,
+        "./sw.js": 148,
+        "./ta": 149,
+        "./ta.js": 149,
+        "./te": 150,
+        "./te.js": 150,
+        "./tet": 151,
+        "./tet.js": 151,
+        "./tg": 152,
+        "./tg.js": 152,
+        "./th": 153,
+        "./th.js": 153,
+        "./tl-ph": 154,
+        "./tl-ph.js": 154,
+        "./tlh": 155,
+        "./tlh.js": 155,
+        "./tr": 156,
+        "./tr.js": 156,
+        "./tzl": 157,
+        "./tzl.js": 157,
+        "./tzm": 158,
+        "./tzm-latn": 159,
+        "./tzm-latn.js": 159,
+        "./tzm.js": 158,
+        "./ug-cn": 160,
+        "./ug-cn.js": 160,
+        "./uk": 161,
+        "./uk.js": 161,
+        "./ur": 162,
+        "./ur.js": 162,
+        "./uz": 163,
+        "./uz-latn": 164,
+        "./uz-latn.js": 164,
+        "./uz.js": 163,
+        "./vi": 165,
+        "./vi.js": 165,
+        "./x-pseudo": 166,
+        "./x-pseudo.js": 166,
+        "./yo": 167,
+        "./yo.js": 167,
+        "./zh-cn": 168,
+        "./zh-cn.js": 168,
+        "./zh-hk": 169,
+        "./zh-hk.js": 169,
+        "./zh-tw": 170,
+        "./zh-tw.js": 170
       };
       function webpackContext(req) {
         return __webpack_require__(webpackContextResolve(req));
@@ -43329,11 +43706,11 @@
       };
       webpackContext.resolve = webpackContextResolve;
       module.exports = webpackContext;
-      webpackContext.id = 261;
+      webpackContext.id = 267;
 
       /***/
     },
-    /* 262 */
+    /* 268 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -43915,7 +44292,7 @@
 
       /***/
     },
-    /* 263 */
+    /* 269 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44132,7 +44509,7 @@
 
       /***/
     },
-    /* 264 */
+    /* 270 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -44548,7 +44925,7 @@
 
       /***/
     },
-    /* 265 */
+    /* 271 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45032,7 +45409,7 @@
 
       /***/
     },
-    /* 266 */
+    /* 272 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45314,7 +45691,7 @@
 
       /***/
     },
-    /* 267 */
+    /* 273 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45630,7 +46007,7 @@
 
       /***/
     },
-    /* 268 */
+    /* 274 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45679,7 +46056,7 @@
 
       /***/
     },
-    /* 269 */
+    /* 275 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45693,7 +46070,7 @@
 
       /***/
     },
-    /* 270 */
+    /* 276 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45706,7 +46083,7 @@
 
       /***/
     },
-    /* 271 */
+    /* 277 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45720,7 +46097,7 @@
 
       /***/
     },
-    /* 272 */
+    /* 278 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45734,7 +46111,7 @@
 
       /***/
     },
-    /* 273 */
+    /* 279 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45748,7 +46125,7 @@
 
       /***/
     },
-    /* 274 */
+    /* 280 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45762,7 +46139,7 @@
 
       /***/
     },
-    /* 275 */
+    /* 281 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -45775,18 +46152,18 @@
 
       /***/
     },
-    /* 276 */
+    /* 282 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
       module.exports = {};
-      module.exports.filler = __webpack_require__(277);
-      module.exports.legend = __webpack_require__(278);
-      module.exports.title = __webpack_require__(279);
+      module.exports.filler = __webpack_require__(283);
+      module.exports.legend = __webpack_require__(284);
+      module.exports.title = __webpack_require__(285);
 
       /***/
     },
-    /* 277 */
+    /* 283 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
       /**
@@ -46111,7 +46488,7 @@
 
       /***/
     },
-    /* 278 */
+    /* 284 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -46773,7 +47150,7 @@
 
       /***/
     },
-    /* 279 */
+    /* 285 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47052,7 +47429,7 @@
 
       /***/
     },
-    /* 280 */
+    /* 286 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47102,7 +47479,7 @@
 
       /***/
     },
-    /* 281 */
+    /* 287 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47128,15 +47505,15 @@
         };
       })();
 
-      var _barChart = __webpack_require__(282);
+      var _barChart = __webpack_require__(288);
 
       var _barChart2 = _interopRequireDefault(_barChart);
 
-      var _chart = __webpack_require__(43);
+      var _chart = __webpack_require__(44);
 
       var _chart2 = _interopRequireDefault(_chart);
 
-      var _currencyConverterUah = __webpack_require__(170);
+      var _currencyConverterUah = __webpack_require__(171);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -47282,7 +47659,7 @@
 
       /***/
     },
-    /* 282 */
+    /* 288 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47290,14 +47667,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="chart">\r\n  <canvas class="chart__visual"></canvas>\r\n</div>';
+            '<div class="chart">\n  <canvas class="chart__visual"></canvas>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 283 */
+    /* 289 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47323,11 +47700,11 @@
         };
       })();
 
-      var _tableTransactions = __webpack_require__(284);
+      var _tableTransactions = __webpack_require__(290);
 
       var _tableTransactions2 = _interopRequireDefault(_tableTransactions);
 
-      var _tableTransactionsTr = __webpack_require__(285);
+      var _tableTransactionsTr = __webpack_require__(291);
 
       var _tableTransactionsTr2 = _interopRequireDefault(_tableTransactionsTr);
 
@@ -47470,7 +47847,7 @@
 
       /***/
     },
-    /* 284 */
+    /* 290 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47478,14 +47855,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="table-transactions">\r\n  <table class="table-transactions__table mdc-elevation--z2">\r\n    <thead class="table-transactions__thead">\r\n      <tr class="table-transactions__tr">\r\n        <th class="table-transactions__th">Date</th>\r\n        <th class="table-transactions__th">Amount</th>\r\n        <th class="table-transactions__th">Description</th>\r\n        <th class="table-transactions__th">Tags</th>\r\n        <th class="table-transactions__th">Account</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody class="table-transaction__tbody">\r\n    </tbody>\r\n  </table>\r\n  <div class="table-transactions__confirm-dialog"></div>\r\n</div>';
+            '<div class="table-transactions">\n  <table class="table-transactions__table mdc-elevation--z2">\n    <thead class="table-transactions__thead">\n      <tr class="table-transactions__tr">\n        <th class="table-transactions__th">Date</th>\n        <th class="table-transactions__th">Amount</th>\n        <th class="table-transactions__th">Description</th>\n        <th class="table-transactions__th">Tags</th>\n        <th class="table-transactions__th">Account</th>\n      </tr>\n    </thead>\n    <tbody class="table-transaction__tbody">\n    </tbody>\n  </table>\n  <div class="table-transactions__confirm-dialog"></div>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 285 */
+    /* 291 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47495,30 +47872,30 @@
           __p +=
             '<tr class="table-transactions__tr table-transactions__highlighted" data-id="' +
             ((__t = row.id) == null ? "" : __t) +
-            '">\r\n  <td class="table-transactions__td">\r\n    ' +
+            '">\n  <td class="table-transactions__td">\n    ' +
             ((__t = row.date) == null ? "" : __t) +
-            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    <span>' +
+            '\n  </td>\n  <td class="table-transactions__td">\n    <span>' +
             ((__t = row.type) == null ? "" : __t) +
-            "</span>\r\n    <span>" +
+            "</span>\n    <span>" +
             ((__t = row.amount) == null ? "" : __t) +
-            "</span>\r\n    <span>" +
+            "</span>\n    <span>" +
             ((__t = row.account.currency) == null ? "" : __t) +
-            '</span>\r\n  </td>\r\n  <td class="table-transactions__td table-transactions__td--desc">\r\n    ' +
+            '</span>\n  </td>\n  <td class="table-transactions__td table-transactions__td--desc">\n    ' +
             ((__t = row.desc) == null ? "" : __t) +
-            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    ' +
+            '\n  </td>\n  <td class="table-transactions__td">\n    ' +
             ((__t = row.tag) == null ? "" : __t) +
-            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    <span class="table-transactions__span">' +
+            '\n  </td>\n  <td class="table-transactions__td">\n    <span class="table-transactions__span">' +
             ((__t = row.account.name) == null ? "" : __t) +
-            '</span>,\r\n    <span class="table-transactions__span">' +
+            '</span>,\n    <span class="table-transactions__span">' +
             ((__t = row.account.type) == null ? "" : __t) +
-            '</span>\r\n    <div class="table-transactions__more-button"></div>\r\n  </td>\r\n</tr>';
+            '</span>\n    <div class="table-transactions__more-button"></div>\n  </td>\n</tr>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 286 */
+    /* 292 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -47544,7 +47921,7 @@
         };
       })();
 
-      var _addTransactionDialog = __webpack_require__(287);
+      var _addTransactionDialog = __webpack_require__(293);
 
       var _addTransactionDialog2 = _interopRequireDefault(
         _addTransactionDialog
@@ -47556,13 +47933,13 @@
 
       var _textfield = __webpack_require__(19);
 
-      var _radio = __webpack_require__(288);
+      var _radio = __webpack_require__(294);
 
-      var _customSelect = __webpack_require__(292);
+      var _customSelect = __webpack_require__(298);
 
       var _accountService = __webpack_require__(28);
 
-      var _tagService = __webpack_require__(295);
+      var _tagService = __webpack_require__(43);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -47768,7 +48145,7 @@
 
       /***/
     },
-    /* 287 */
+    /* 293 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -47776,14 +48153,14 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\r\n  <div class="mdc-dialog__surface">\r\n\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add transaction\r\n      </h2>\r\n    </header>\r\n\r\n    <section class="mdc-dialog__body">\r\n      <div class="add-transaction-dialog__row">\r\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\r\n        <div class="mdc-form-field">\r\n          <div class="mdc-radio add-transaction-dialog__expence">\r\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>\r\n            <div class="mdc-radio__background">\r\n              <div class="mdc-radio__outer-circle"></div>\r\n              <div class="mdc-radio__inner-circle"></div>\r\n            </div>\r\n          </div>\r\n          <label for="add-transaction-dialog-expense">Expence</label>\r\n        </div>\r\n        <div class="mdc-form-field">\r\n          <div class="mdc-radio add-transaction-dialog__income">\r\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios">\r\n            <div class="mdc-radio__background">\r\n              <div class="mdc-radio__outer-circle"></div>\r\n              <div class="mdc-radio__inner-circle"></div>\r\n            </div>\r\n          </div>\r\n          <label for="add-transaction-dialog-income">Income</label>\r\n        </div>\r\n      </div>\r\n      <div class="add-transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n        <input type="text" class="mdc-text-field__input" placeholder="Description">\r\n        <div class="mdc-line-ripple"></div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\r\n      <div class="add-transaction-dialog__row add-transaction-dialog__row--col">\r\n        <div class="add-transaction-dialog__col">\r\n          <div class="add-transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="mdc-text-field__input" placeholder="Amount">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>\r\n          <div class="add-transaction-dialog__account-point"></div>\r\n        </div>\r\n        <div class="add-transaction-dialog__col">\r\n          <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="date" class="mdc-text-field__input" placeholder="Date">\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\r\n          <div class="add-transaction-dialog__tag-point"></div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '<aside class="mdc-dialog add-transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n  <div class="mdc-dialog__surface">\n\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add transaction\n      </h2>\n    </header>\n\n    <section class="mdc-dialog__body">\n      <div class="add-transaction-dialog__row">\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__expence">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-expense" name="radios" checked>\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-expense">Expence</label>\n        </div>\n        <div class="mdc-form-field">\n          <div class="mdc-radio add-transaction-dialog__income">\n            <input class="mdc-radio__native-control" type="radio" id="add-transaction-dialog-income" name="radios">\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="add-transaction-dialog-income">Income</label>\n        </div>\n      </div>\n      <div class="add-transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Description">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\n      <div class="add-transaction-dialog__row add-transaction-dialog__row--col">\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="mdc-text-field__input" placeholder="Amount">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction</p>\n          <div class="add-transaction-dialog__account-point"></div>\n        </div>\n        <div class="add-transaction-dialog__col">\n          <div class="add-transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="date" class="mdc-text-field__input" placeholder="Date">\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\n          <div class="add-transaction-dialog__tag-point"></div>\n        </div>\n      </div>\n    </section>\n\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 288 */
+    /* 294 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -47801,7 +48178,7 @@
         26
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
-        289
+        295
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_ripple_index__ = __webpack_require__(
         9
@@ -47955,7 +48332,7 @@
 
       /***/
     },
-    /* 289 */
+    /* 295 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base_foundation__ = __webpack_require__(
@@ -47965,10 +48342,10 @@
         26
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter__ = __webpack_require__(
-        290
+        296
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
-        291
+        297
       );
       /**
        * @license
@@ -48073,7 +48450,7 @@
 
       /***/
     },
-    /* 290 */
+    /* 296 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_selection_control_index__ = __webpack_require__(
@@ -48130,7 +48507,7 @@
 
       /***/
     },
-    /* 291 */
+    /* 297 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -48177,7 +48554,7 @@
 
       /***/
     },
-    /* 292 */
+    /* 298 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -48203,11 +48580,11 @@
         };
       })();
 
-      var _customSelect = __webpack_require__(293);
+      var _customSelect = __webpack_require__(299);
 
       var _customSelect2 = _interopRequireDefault(_customSelect);
 
-      var _customSelectItems = __webpack_require__(294);
+      var _customSelectItems = __webpack_require__(300);
 
       var _customSelectItems2 = _interopRequireDefault(_customSelectItems);
 
@@ -48299,7 +48676,7 @@
 
       /***/
     },
-    /* 293 */
+    /* 299 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -48307,16 +48684,16 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="mdc-select custom-select" role="listbox">\r\n  <div class="mdc-select__surface" tabindex="0">\r\n    <div class="mdc-select__label">\r\n      ' +
+            '<div class="mdc-select custom-select" role="listbox">\n  <div class="mdc-select__surface" tabindex="0">\n    <div class="mdc-select__label">\n      ' +
             ((__t = type) == null ? "" : __t) +
-            '\r\n    </div>\r\n    <div class="mdc-select__selected-text"></div>\r\n    <div class="mdc-select__bottom-line"></div>\r\n  </div>\r\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\r\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\r\n  </div>\r\n</div>';
+            '\n    </div>\n    <div class="mdc-select__selected-text"></div>\n    <div class="mdc-select__bottom-line"></div>\n  </div>\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\n  </div>\n</div>';
         }
         return __p;
       };
 
       /***/
     },
-    /* 294 */
+    /* 300 */
     /***/ function(module, exports) {
       module.exports = function(obj) {
         obj || (obj = {});
@@ -48329,198 +48706,10 @@
         with (obj) {
           for (let i = 0; i < list.length; i++) {
             __p +=
-              '\r\n  <li class="mdc-list-item" role="option" tabindex="0">\r\n    ' +
+              '\n  <li class="mdc-list-item" role="option" tabindex="0">\n    ' +
               ((__t = list[i]) == null ? "" : __t) +
-              "\r\n  </li>\r\n  ";
+              "\n  </li>\n  ";
           }
-        }
-        return __p;
-      };
-
-      /***/
-    },
-    /* 295 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.TagListService = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _storage = __webpack_require__(17);
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var TagListService = (exports.TagListService = (function() {
-        function TagListService() {
-          _classCallCheck(this, TagListService);
-        }
-
-        _createClass(TagListService, null, [
-          {
-            key: "get",
-            value: function get() {
-              return _storage.StorageService.get("tagList");
-            }
-          },
-          {
-            key: "set",
-            value: function set(value) {
-              return _storage.StorageService.set("tagList", value);
-            }
-          }
-        ]);
-
-        return TagListService;
-      })());
-
-      /***/
-    },
-    /* 296 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.AddTagComponent = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _addTagDialog = __webpack_require__(297);
-
-      var _addTagDialog2 = _interopRequireDefault(_addTagDialog);
-
-      var _dialog = __webpack_require__(8);
-
-      var _textfield = __webpack_require__(19);
-
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-      }
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var AddTagComponent = (exports.AddTagComponent = (function() {
-        function AddTagComponent(mountPoint) {
-          _classCallCheck(this, AddTagComponent);
-
-          this.mountPoint = mountPoint;
-        }
-
-        _createClass(AddTagComponent, [
-          {
-            key: "showDialog",
-            value: function showDialog() {
-              this.dialog.show();
-            }
-          },
-          {
-            key: "handleOk",
-            value: function handleOk() {
-              console.log("accepted");
-            }
-          },
-          {
-            key: "handleCancel",
-            value: function handleCancel() {
-              console.log("declined");
-            }
-          },
-          {
-            key: "querySelectors",
-            value: function querySelectors() {
-              this.addTagDialog = this.mountPoint.querySelector(
-                ".add-tag-dialog"
-              );
-              this.tagTextField = this.mountPoint.querySelector(
-                ".add-tag-dialog__tag"
-              );
-            }
-          },
-          {
-            key: "initMDC",
-            value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.addTagDialog);
-              this.tag = new _textfield.MDCTextField(this.tagTextField);
-            }
-          },
-          {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
-              this.dialog.listen(
-                "MDCDialog:cancel",
-                this.handleCancel.bind(this)
-              );
-            }
-          },
-          {
-            key: "mount",
-            value: function mount() {
-              this.mountPoint.innerHTML = (0, _addTagDialog2.default)();
-              this.querySelectors();
-              this.initMDC();
-              this.addEventListeners();
-            }
-          }
-        ]);
-
-        return AddTagComponent;
-      })());
-
-      /***/
-    },
-    /* 297 */
-    /***/ function(module, exports) {
-      module.exports = function(obj) {
-        obj || (obj = {});
-        var __t,
-          __p = "";
-        with (obj) {
-          __p +=
-            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add tag\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\r\n        <div class="mdc-line-ripple"></div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\r\n        Type tag name\r\n      </p>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
         }
         return __p;
       };
