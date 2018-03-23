@@ -41,11 +41,12 @@ export class TableTransactionsComponent {
   delTransaction(elem) {
     const id = elem.dataset.id;
     this.props.onDataDelete(id);
+    this.transactionPoint.removeChild(elem);
   }
 
   editTransaction(newData) {
     const id = this.rowToEdit.dataset.id;
-    this.props.onTransactionEdit(id, newData);
+    this.props.onDataEdit(id, newData);
     this.rowToEdit.outerHTML = this.makeRow(newData);
     this.initMoreBtns();
   }

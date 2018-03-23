@@ -123,7 +123,7 @@ export class TransactionsComponent {
       this.tableTransactionsMountPoint,
       {
         onDataDelete: this.handleTransactionDelete.bind(this),
-        onTransactionEdit: this.handleTransacitonEdit.bind(this)
+        onDataEdit: this.handleTransacitonEdit.bind(this)
       }
     );
     this.tableTransactionsComponent.mount();
