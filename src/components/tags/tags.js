@@ -6,8 +6,9 @@ import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TagsComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -19,6 +20,9 @@ export class TagsComponent {
       ".tags__add-tag-dialog"
     );
     this.tagsList = this.mountPoint.querySelector(".tags__list-items");
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".tags__delete-confirm-dialog"
+    );
   }
 
   handleAddTagConfirmed(tag) {
@@ -94,6 +98,16 @@ export class TagsComponent {
 
   handleDeleteClick() {
     this.confirmDialog.showDialog();
+  }
+
+  initConfirmDialog() {
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint,
+      {
+        onOkClick: this.handleDeleteConfirm.bind(this)
+      }
+    );
+    this.confirmDialog.mount();
   }
 
   mount() {
