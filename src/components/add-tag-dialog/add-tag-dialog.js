@@ -19,9 +19,9 @@ export class AddTagDialogComponent {
       ".add-tag-dialog"
     );
     this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
-    this.tagNameInput = this.mountPoint.querySelector(".mdc-text-field__input");
+    this.tagNameInput = this.mountPoint.querySelector(".add-tag-dialog__input");
     this.dialogButtonConfirm = this.mountPoint.querySelector(
-      ".mdc-dialog__footer__button--confirm"
+      ".add-tag-dialog__submit"
     );
   }
 
@@ -48,7 +48,7 @@ export class AddTagDialogComponent {
   }
 
   removeErrorClass() {
-    this.tagTextField.classList.remove("add-tag-dialog__tag--error");
+    this.tagTextField.classList.remove("mdc-text-field--invalid");
   }
 
   handleOk() {
@@ -57,7 +57,7 @@ export class AddTagDialogComponent {
       this.clean();
       this.dialog.close();
     } else {
-      this.tagTextField.classList.add("add-tag-dialog__tag--error");
+      this.tagTextField.classList.add("mdc-text-field--invalid");
     }
   }
 
