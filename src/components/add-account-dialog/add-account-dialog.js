@@ -14,6 +14,20 @@ export class AddAccountDialogComponent {
     this.dialog.show();
   }
 
+  showDialogEdit(account) {
+    this.account.value = account.name;
+    this.balance.value = account.balance;
+
+    this.currency.selectedIndex = this.getCurrencies().findIndex(item => {
+      return item === account.currency;
+    });
+    this.type.selectedIndex = this.getTypes().findIndex(item => {
+      return item === account.type;
+    });
+    // this.type.selectedIndex = account.type;
+    this.dialog.show();
+  }
+
   querySelectors() {
     this.addAccountDialogComponent = this.mountPoint.querySelector(
       ".add-account-dialog"
@@ -81,22 +95,30 @@ export class AddAccountDialogComponent {
     this.clean();
   }
 
+  getTypes() {
+    return [
+      "checking",
+      "savings",
+      "credit card",
+      "cash",
+      "investiment",
+      "loan",
+      "cd",
+      "real estate",
+      "vehicle",
+      "insurance",
+      "other"
+    ];
+  }
+
+  getCurrencies() {
+    return ["UAH", "USD", "EUR"];
+  }
+
   mount() {
     this.mountPoint.innerHTML = template({
-      types: [
-        "checking",
-        "savings",
-        "credit card",
-        "cash",
-        "investiment",
-        "loan",
-        "cd",
-        "real estate",
-        "vehicle",
-        "insurance",
-        "other"
-      ],
-      currencies: ["UAH", "USD", "EUR"]
+      types: this.getTypes(),
+      currencies: this.getCurrencies()
     });
     this.querySelectors();
     this.initMDC();

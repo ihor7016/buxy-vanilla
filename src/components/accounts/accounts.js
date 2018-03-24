@@ -37,6 +37,7 @@ export class AccountsComponent {
   handleAddAccountConfirmed(account) {
     AccountListService.add(account);
     this.addAccountToHead(account);
+    this.accounts.push(account);
   }
 
   handleAddAccountClick() {
@@ -67,6 +68,7 @@ export class AccountsComponent {
   }
 
   initAccounts(accounts) {
+    this.accounts = accounts;
     accounts.forEach(item => {
       this.addAccount(item);
     });
@@ -119,8 +121,14 @@ export class AccountsComponent {
     this.initMoreBtns();
   }
 
-  handleEditClick() {
-    console.log("handleEditClick");
+  handleEditClick(event) {
+    let moreButton = event.target.closest(".button-more");
+    this.listItem = moreButton.closest(".accounts__list-item");
+    let id = this.listItem.dataset.id;
+    let account = this.accounts.find(item => {
+      return item.id === id;
+    });
+    this.addAccountDialogComponent.showDialogEdit(account);
   }
 
   handleDeleteClick(event) {
