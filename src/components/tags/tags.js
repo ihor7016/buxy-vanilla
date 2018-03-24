@@ -3,6 +3,7 @@ import tagItemTemplate from "./tag-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagListService } from "../../services/tag-service";
 import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TagsComponent {
   constructor(mountPoint) {
@@ -92,7 +93,7 @@ export class TagsComponent {
   }
 
   handleDeleteClick() {
-    console.log("handleDeleteClick");
+    this.confirmDialog.showDialog();
   }
 
   mount() {
