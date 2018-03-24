@@ -40,9 +40,14 @@ export class AccountsComponent {
     this.accounts.push(account);
   }
   handleEditAccountConfirmed(account) {
-    AccountListService.replace(account).then(() => {
-      this.initData();
-    });
+    AccountListService.replace(account)
+      .then(() => {
+        this.initData();
+        return TransactionListService.updateAccountsData(account);
+      })
+      .then(() => {
+        this.props.onAccountUpdate();
+      });
   }
 
   handleAddAccountClick() {

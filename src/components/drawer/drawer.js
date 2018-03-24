@@ -32,7 +32,8 @@ export class DrawerComponent {
     this.tagsComponent = new TagsComponent(this.tagsMountPoint);
     this.tagsComponent.mount();
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
-      onAccountDelete: this.props.onAccountDelete
+      onAccountDelete: this.props.onAccountDelete,
+      onAccountUpdate: this.props.onAccountUpdate
     });
     this.accountsComponent.mount();
   }
