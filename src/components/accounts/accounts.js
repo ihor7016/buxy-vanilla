@@ -40,9 +40,9 @@ export class AccountsComponent {
     this.accounts.push(account);
   }
   handleEditAccountConfirmed(account) {
-    AccountListService.replace(account);
-    // this.addAccountToHead(account);
-    // this.accounts.push(account);
+    AccountListService.replace(account).then(() => {
+      this.initData();
+    });
   }
 
   handleAddAccountClick() {
