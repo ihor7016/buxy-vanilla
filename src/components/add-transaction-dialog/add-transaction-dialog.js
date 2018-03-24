@@ -135,17 +135,15 @@ export class AddTransactionComponent {
     let valid = true;
     if (!this.description.valid) {
       valid = false;
-      this.descriptionTextField.firstElementChild.dispatchEvent(
-        new Event("input")
-      );
+      this.descriptionTextField.classList.add("mdc-text-field--invalid");
     }
     if (!this.date.valid || !this.date.value) {
       valid = false;
-      this.dateTextField.firstElementChild.dispatchEvent(new Event("click"));
+      this.dateTextField.classList.add("mdc-text-field--invalid");
     }
     if (!this.amount.valid) {
       valid = false;
-      this.amountTextField.firstElementChild.dispatchEvent(new Event("input"));
+      this.amountTextField.classList.add("mdc-text-field--invalid");
     }
     if (!this.tagSelect.getValue()) {
       valid = false;
@@ -160,9 +158,11 @@ export class AddTransactionComponent {
 
   cleanDialog() {
     this.expence.checked = true;
-    this.date.value = "";
     this.amount.value = "";
     this.description.value = "";
+    this.amountTextField.classList.remove("mdc-text-field--invalid");
+    this.descriptionTextField.classList.remove("mdc-text-field--invalid");
+    this.dateTextField.classList.remove("mdc-text-field--invalid");
     this.tagSelect.clean();
     this.accountSelect.clean();
   }
