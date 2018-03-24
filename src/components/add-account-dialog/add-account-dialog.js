@@ -10,12 +10,15 @@ export class AddAccountDialogComponent {
     this.props = props;
   }
 
-  showDialog() {
+  showAddDialog() {
+    this.accountTitle.innerText = "Add account";
     this.dialog.show();
   }
 
   showDialogEdit(account) {
-    this.account.value = account.name;
+    this.account = account;
+    this.accountTitle.innerText = "Edit";
+    this.accountName.value = account.name;
     this.balance.value = account.balance;
 
     this.currency.selectedIndex = this.getCurrencies().findIndex(item => {
@@ -24,7 +27,6 @@ export class AddAccountDialogComponent {
     this.type.selectedIndex = this.getTypes().findIndex(item => {
       return item === account.type;
     });
-    // this.type.selectedIndex = account.type;
     this.dialog.show();
   }
 
@@ -56,11 +58,14 @@ export class AddAccountDialogComponent {
     this.accountCurrency = this.mountPoint.querySelector(
       ".add-account-dialog__currency-text"
     );
+    this.accountTitle = this.mountPoint.querySelector(
+      ".add-account-dialog-title"
+    );
   }
 
   initMDC() {
     this.dialog = new MDCDialog(this.addAccountDialogComponent);
-    this.account = new MDCTextField(this.accountTextField);
+    this.accountName = new MDCTextField(this.accountTextField);
     this.balance = new MDCTextField(this.balanceTextField);
     this.type = new MDCSelect(this.typeAccountSelect);
     this.currency = new MDCSelect(this.currencyAccountSelect);
@@ -79,16 +84,26 @@ export class AddAccountDialogComponent {
   }
 
   handleOk() {
-    this.props.onAddAccountConfirm({
-      name: this.accountNameInput.value,
-      balance: parseInt(this.balanceNameInput.value),
-      type: this.accountType.innerText,
-      currency: this.accountCurrency.innerText,
-      id: Math.random()
-        .toString(36)
-        .substring(2)
-    });
-    this.clean();
+    if (this.accountTitle.innerText === "Add account") {
+      this.props.onAddAccountConfirm({
+        name: this.accountNameInput.value,
+        balance: parseInt(this.balanceNameInput.value),
+        type: this.accountType.innerText,
+        currency: this.accountCurrency.innerText,
+        id: Math.random()
+          .toString(36)
+          .substring(2)
+      });
+      this.clean();
+    } else {
+      this.props.onEditAccountConfirm({
+        name: this.accountNameInput.value,
+        balance: parseInt(this.balanceNameInput.value),
+        type: this.accountType.innerText,
+        currency: this.accountCurrency.innerText,
+        id: this.account.id
+      });
+    }
   }
 
   handleCancel() {

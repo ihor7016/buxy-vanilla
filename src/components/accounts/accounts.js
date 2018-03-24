@@ -39,9 +39,14 @@ export class AccountsComponent {
     this.addAccountToHead(account);
     this.accounts.push(account);
   }
+  handleEditAccountConfirmed(account) {
+    AccountListService.replace(account);
+    // this.addAccountToHead(account);
+    // this.accounts.push(account);
+  }
 
   handleAddAccountClick() {
-    this.addAccountDialogComponent.showDialog();
+    this.addAccountDialogComponent.showAddDialog();
   }
 
   initMoreBtns() {
@@ -61,7 +66,8 @@ export class AccountsComponent {
     this.addAccountDialogComponent = new AddAccountDialogComponent(
       this.addAccountMountPoint,
       {
-        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this),
+        onEditAccountConfirm: this.handleEditAccountConfirmed.bind(this)
       }
     );
     this.addAccountDialogComponent.mount();
