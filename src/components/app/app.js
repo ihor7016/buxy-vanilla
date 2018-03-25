@@ -25,7 +25,8 @@ export class AppComponent {
     });
     this.toolBarComponent.mount();
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
-      onAccountDelete: this.handleAccountDelete.bind(this)
+      onAccountDelete: this.handleAccountDelete.bind(this),
+      onTagDelete: this.handleTagDelete.bind(this)
     });
     this.drawerComponent.mount();
     this.transactionsComponent = new TransactionsComponent(
@@ -39,6 +40,10 @@ export class AppComponent {
   }
 
   handleAccountDelete() {
+    this.transactionsComponent.loadStoredData();
+  }
+
+  handleTagDelete() {
     this.transactionsComponent.loadStoredData();
   }
 
