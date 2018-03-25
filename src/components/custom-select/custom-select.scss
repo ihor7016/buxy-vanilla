@@ -4,6 +4,7 @@
   &__bottom-line {
     .mdc-select &--invalid.mdc-select__bottom-line {
       background-color: red;
+      display: block;
     }
   }
 
