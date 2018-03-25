@@ -12,6 +12,13 @@ export class TagListService {
     });
   }
 
+  static del(index) {
+    return this.get().then(tags => {
+      tags.splice(index, 1);
+      this.set(tags);
+    });
+  }
+
   static get() {
     return StorageService.get("tagList");
   }

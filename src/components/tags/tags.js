@@ -3,6 +3,7 @@ import tagItemTemplate from "./tag-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagListService } from "../../services/tag-service";
 import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
+import { TransactionListService } from "../../services/transaction-service";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TagsComponent {
@@ -12,7 +13,9 @@ export class TagsComponent {
   }
 
   querySelectors() {
-    this.tagsRoot = this.mountPoint.querySelector(".tags");
+    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
+      ".tags__more-button"
+    );
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
@@ -23,6 +26,11 @@ export class TagsComponent {
     this.confirmDialogMountPoint = this.mountPoint.querySelector(
       ".tags__delete-confirm-dialog"
     );
+  }
+
+  mountChildren() {
+    this.initAddTagDialogComponent();
+    this.initConfirmDialog();
   }
 
   handleAddTagConfirmed(tag) {
@@ -47,7 +55,7 @@ export class TagsComponent {
     });
   }
 
-  mountChildren() {
+  initAddTagDialogComponent() {
     this.addTagDialogComponent = new AddTagDialogComponent(
       this.addTagMountPoint,
       {
@@ -61,7 +69,6 @@ export class TagsComponent {
     tags.forEach(item => {
       this.addTag(item);
     });
-    this.initMoreBtns();
   }
 
   initData() {
@@ -90,14 +97,19 @@ export class TagsComponent {
 
   addTag(tag) {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
+    this.initMoreBtns();
   }
 
   handleEditClick() {
     console.log("handleEditClick");
   }
 
-  handleDeleteClick() {
-    this.confirmDialog.showDialog();
+  handleDeleteClick(event) {
+    let moreButton = event.target.closest(".button-more");
+    this.listItem = moreButton.closest(".tags__list-item");
+    let tagName = this.listItem.querySelector(".tags__list-item-name")
+      .innerText;
+    this.confirmDialog.showDialog("tag", tagName);
   }
 
   initConfirmDialog() {
@@ -110,10 +122,29 @@ export class TagsComponent {
     this.confirmDialog.mount();
   }
 
+  handleDeleteConfirm() {
+    this.delTag(this.listItem);
+  }
+
+  delTag(listItem) {
+    let tagId = listItem.dataset.id;
+    TransactionListService.deleteByTagId(tagId)
+      .then(() => {
+        let index = Array.from(this.tagsList.children).indexOf(listItem);
+        return TagListService.del(index).then(() => {
+          this.tagsList.removeChild(listItem);
+        });
+      })
+      .then(() => {
+        this.props.onTagDelete();
+      });
+  }
+
   mount() {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.mountChildren();
+    this.initMoreBtns();
     this.addEventListeners();
     this.initData();
   }
