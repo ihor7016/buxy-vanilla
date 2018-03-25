@@ -64,9 +64,14 @@ describe("AccountListService", () => {
 
   const accountToDeleteIndex = 1;
 
-  beforeAll(() => {
+  beforeEach(() => {
     StorageService.get.mockImplementation(() => Promise.resolve(mockAccounts));
     StorageService.set.mockImplementation(() => Promise.resolve());
+  });
+
+  afterEach(() => {
+    StorageService.get.mockClear();
+    StorageService.set.mockClear();
   });
 
   test("get()", () => {
