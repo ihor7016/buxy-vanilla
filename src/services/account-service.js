@@ -15,7 +15,7 @@ export class AccountListService {
   static del(index) {
     return this.get().then(accounts => {
       accounts.splice(index, 1);
-      this.set(accounts);
+      return this.set(accounts);
     });
   }
 
@@ -31,7 +31,7 @@ export class AccountListService {
         let account = accounts[index];
         account.balance = account.balance + amount;
         accounts[index] = account;
-        this.set(accounts);
+        return this.set(accounts);
       });
   }
 
