@@ -62,6 +62,10 @@ export class AddTagDialogComponent {
   }
 
   isValid() {
+    if (this.tagNameInput.value === "") {
+      return false;
+    }
+
     if (this.tagsValue.indexOf(this.tagNameInput.value) !== -1) {
       return false;
     }
