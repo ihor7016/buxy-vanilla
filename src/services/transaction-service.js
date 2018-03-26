@@ -25,7 +25,7 @@ export class TransactionListService {
     });
   }
 
-  static edit(oldId, newData) {
+  static update(oldId, newData) {
     return this.get().then(list => {
       const newList = list.map(elem => {
         if (elem.id !== oldId) {

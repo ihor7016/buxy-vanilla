@@ -29,7 +29,7 @@ export class TransactionsComponent {
   }
 
   editStoredData(oldId, newData) {
-    TransactionListService.edit(oldId, newData).then(list =>
+    TransactionListService.update(oldId, newData).then(list =>
       this.updateList(list)
     );
   }
