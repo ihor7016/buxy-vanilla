@@ -133,7 +133,7 @@ export class AccountsComponent {
   }
 
   handleEditClick(event) {
-    let moreButton = event.target.closest(".button-more");
+    let moreButton = event.target.closest(".accounts__more-button ");
     this.listItem = moreButton.closest(".accounts__list-item");
     let id = this.listItem.dataset.id;
     let account = this.accounts.find(item => {
