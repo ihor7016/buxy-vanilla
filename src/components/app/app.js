@@ -32,7 +32,8 @@ export class AppComponent {
       this.transactionsMountPoint,
       {
         onTransactionAdded: this.handleTransactionAdded.bind(this),
-        onTransactionDelete: this.handleTransactionDelete.bind(this)
+        onTransactionDelete: this.handleTransactionDelete.bind(this),
+        onTransactionEdit: this.handleTransactionEdit.bind(this)
       }
     );
     this.transactionsComponent.mount();
@@ -43,11 +44,15 @@ export class AppComponent {
   }
 
   handleTransactionAdded(data) {
-    this.drawerComponent.updateAccountData(data);
+    this.drawerComponent.updateAccountDataAdd(data);
   }
 
   handleTransactionDelete(data) {
     this.drawerComponent.updateAccountDataDelete(data);
+  }
+
+  handleTransactionEdit(oldData, newData) {
+    this.drawerComponent.updateAccountDataEdit(oldData, newData);
   }
 
   handleToolbarMenuClick() {

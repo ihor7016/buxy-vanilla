@@ -3,7 +3,7 @@ import template from "./transactions.html";
 import { PieChartComponent } from "../pie-chart/pie-chart";
 import { BarChartComponent } from "../bar-chart/bar-chart";
 import { TableTransactionsComponent } from "../table-transactions/table-transactions";
-import { AddTransactionComponent } from "../add-transaction-dialog/add-transaction-dialog";
+import { TransactionDialogComponent } from "../transaction-dialog/transaction-dialog";
 
 import { TransactionListService } from "../../services/transaction-service";
 
@@ -28,6 +28,12 @@ export class TransactionsComponent {
     TransactionListService.del(id).then(list => this.updateList(list));
   }
 
+  editStoredData(oldId, newData) {
+    TransactionListService.update(oldId, newData).then(list =>
+      this.updateList(list)
+    );
+  }
+
   updateList(newList) {
     this.list = newList;
     this.checkEmptyState();
@@ -43,14 +49,10 @@ export class TransactionsComponent {
     this.checkEmptyState();
   }
 
-  updateCharts(action, data) {
-    this.barChartComponent.update(action, data);
-    this.pieChartComponent.update(action, data);
-  }
-
   handleAddTransactionSubmit(data) {
     this.tableTransactionsComponent.addTransaction(data);
-    this.updateCharts("add", data);
+    this.barChartComponent.updateAdd(data);
+    this.pieChartComponent.updateAdd(data);
     this.addStoredData(data);
     this.props.onTransactionAdded(data);
   }
@@ -58,8 +60,17 @@ export class TransactionsComponent {
   handleTransactionDelete(id) {
     const data = this.list.find(elem => elem.id === id);
     this.props.onTransactionDelete(data);
-    this.updateCharts("del", data);
+    this.barChartComponent.updateDel(data);
+    this.pieChartComponent.updateDel(data);
     this.delStoredData(id);
+  }
+
+  handleTransacitonEdit(oldId, newData) {
+    const oldData = this.list.find(elem => elem.id === oldId);
+    this.props.onTransactionEdit(oldData, newData);
+    this.barChartComponent.updateEdit(oldData, newData);
+    this.pieChartComponent.updateEdit(oldData, newData);
+    this.editStoredData(oldId, newData);
   }
 
   handleAddTransactionClick() {
@@ -111,7 +122,8 @@ export class TransactionsComponent {
     this.tableTransactionsComponent = new TableTransactionsComponent(
       this.tableTransactionsMountPoint,
       {
-        onDataDelete: this.handleTransactionDelete.bind(this)
+        onDataDelete: this.handleTransactionDelete.bind(this),
+        onDataEdit: this.handleTransacitonEdit.bind(this)
       }
     );
     this.tableTransactionsComponent.mount();
@@ -119,10 +131,11 @@ export class TransactionsComponent {
     this.pieChartComponent.mount();
     this.barChartComponent = new BarChartComponent(this.barChartMountPoint);
     this.barChartComponent.mount();
-    this.addTransactionDialogComponent = new AddTransactionComponent(
+    this.addTransactionDialogComponent = new TransactionDialogComponent(
       this.addTransactionDialogMountPoint,
       {
-        addTransaction: this.handleAddTransactionSubmit.bind(this)
+        onDialogSubmit: this.handleAddTransactionSubmit.bind(this),
+        type: "Add"
       }
     );
     this.addTransactionDialogComponent.mount();

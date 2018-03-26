@@ -3,6 +3,7 @@ import templateRow from "./table-transactions-tr.html";
 
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
+import { TransactionDialogComponent } from "../transaction-dialog/transaction-dialog";
 
 export class TableTransactionsComponent {
   constructor(mountPoint, props) {
@@ -18,6 +19,9 @@ export class TableTransactionsComponent {
     this.confirmDialogMountPoint = this.mountPoint.querySelector(
       ".table-transactions__confirm-dialog"
     );
+    this.editTransactionDialogMountPoint = this.mountPoint.querySelector(
+      ".table-transactions__edit-transaction-dialog"
+    );
   }
 
   addStoredTransactions(list) {
@@ -30,9 +34,7 @@ export class TableTransactionsComponent {
 
   addTransaction(data) {
     this.transactionPoint.innerHTML =
-      templateRow({
-        row: data
-      }) + this.transactionPoint.innerHTML;
+      this.makeRow(data) + this.transactionPoint.innerHTML;
     this.initMoreBtns();
   }
 
@@ -40,6 +42,17 @@ export class TableTransactionsComponent {
     const id = elem.dataset.id;
     this.props.onDataDelete(id);
     this.transactionPoint.removeChild(elem);
+  }
+
+  editTransaction(newData) {
+    const id = this.rowToEdit.dataset.id;
+    this.props.onDataEdit(id, newData);
+    this.rowToEdit.outerHTML = this.makeRow(newData);
+    this.initMoreBtns();
+  }
+
+  makeRow(data) {
+    return templateRow({ row: data });
   }
 
   querySelectorsButtons() {
@@ -56,6 +69,18 @@ export class TableTransactionsComponent {
       }
     );
     this.confirmDialog.mount();
+    this.editTransactionDialogComponent = new TransactionDialogComponent(
+      this.editTransactionDialogMountPoint,
+      {
+        onDialogSubmit: this.handleEditSubmit.bind(this),
+        type: "Edit"
+      }
+    );
+    this.editTransactionDialogComponent.mount();
+  }
+
+  handleEditSubmit(data) {
+    this.editTransaction(data);
   }
 
   handleDeleteConfirm() {
@@ -73,8 +98,22 @@ export class TableTransactionsComponent {
     });
   }
 
-  handleEditClick() {
-    console.log("handleEditClick");
+  handleEditClick(e) {
+    this.rowToEdit = e.target.closest(".table-transactions__tr");
+    this.editTransactionDialogComponent.showDialog(
+      this.getDataToEdit(this.rowToEdit)
+    );
+  }
+
+  getDataToEdit(row) {
+    return {
+      date: row.querySelector(".table-transactions__date").innerText,
+      type: row.querySelector(".table-transactions__type").innerText,
+      amount: row.querySelector(".table-transactions__amount").innerText,
+      desc: row.querySelector(".table-transactions__td--desc").innerText,
+      tag: row.querySelector(".table-transactions__tag").innerText,
+      account: row.querySelector(".table-transactions__account").innerText
+    };
   }
 
   handleDeleteClick(e) {

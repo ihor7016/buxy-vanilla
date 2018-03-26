@@ -1,4 +1,4 @@
-import template from "./add-transaction-dialog.html";
+import template from "./transaction-dialog.html";
 
 import { MDCDialog } from "@material/dialog";
 import { MDCSelect } from "@material/select";
@@ -10,14 +10,16 @@ import { CustomSelectComponent } from "../custom-select/custom-select";
 import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
 
-export class AddTransactionComponent {
+export class TransactionDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
   }
 
   getStoredAccounts() {
-    AccountListService.get().then(accounts => this.showAccounts(accounts));
+    return AccountListService.get().then(accounts =>
+      this.showAccounts(accounts)
+    );
   }
 
   showAccounts(accounts) {
@@ -28,7 +30,7 @@ export class AddTransactionComponent {
   }
 
   getStoredTags() {
-    TagListService.get().then(tags => this.showTags(tags));
+    return TagListService.get().then(tags => this.showTags(tags));
   }
 
   showTags(tags) {
@@ -37,37 +39,53 @@ export class AddTransactionComponent {
     }
   }
 
-  showDialog() {
-    this.getStoredAccounts();
-    this.getStoredTags();
-    this.date.value = new Date().toISOString().slice(0, 10);
-    this.dialog.show();
+  fillData(data) {
+    this.description.value = data.desc;
+    this.amount.value = data.amount;
+    this.date.value = data.date;
+    if (data.type === "+") {
+      this.income.checked = true;
+    } else {
+      this.expence.checked = true;
+    }
+    this.accountSelect.makeSelected(data.account);
+    this.tagSelect.makeSelected(data.tag);
+  }
+
+  showDialog(data) {
+    Promise.all([this.getStoredAccounts(), this.getStoredTags()]).then(() => {
+      if (data) {
+        this.fillData(data);
+      }
+      this.date.value = new Date().toISOString().slice(0, 10);
+      this.dialog.show();
+    });
   }
 
   querySelectors() {
     this.addTransactionDialog = this.mountPoint.querySelector(
-      ".add-transaction-dialog"
+      ".transaction-dialog"
     );
     this.accountSelectMountPoint = this.mountPoint.querySelector(
-      ".add-transaction-dialog__account-point"
+      ".transaction-dialog__account-point"
     );
     this.tagSelectMountPoint = this.mountPoint.querySelector(
-      ".add-transaction-dialog__tag-point"
+      ".transaction-dialog__tag-point"
     );
     this.descriptionTextField = this.mountPoint.querySelector(
-      ".add-transaction-dialog__description"
+      ".transaction-dialog__description"
     );
     this.amountTextField = this.mountPoint.querySelector(
-      ".add-transaction-dialog__amount"
+      ".transaction-dialog__amount"
     );
     this.dateTextField = this.mountPoint.querySelector(
-      ".add-transaction-dialog__date"
+      ".transaction-dialog__date"
     );
     this.incomeRadio = this.mountPoint.querySelector(
-      ".add-transaction-dialog__income"
+      ".transaction-dialog__income"
     );
     this.expenceRadio = this.mountPoint.querySelector(
-      ".add-transaction-dialog__expence"
+      ".transaction-dialog__expence"
     );
     this.submit = this.mountPoint.querySelector(".transaction-dialog__submit");
   }
@@ -121,7 +139,7 @@ export class AddTransactionComponent {
         account: this.getAccount(),
         id: Date.now().toString()
       };
-      this.props.addTransaction(data);
+      this.props.onDialogSubmit(data);
       this.dialog.close();
       this.cleanDialog();
     }
@@ -168,7 +186,7 @@ export class AddTransactionComponent {
   }
 
   mount() {
-    this.mountPoint.innerHTML = template();
+    this.mountPoint.innerHTML = template({ type: this.props.type });
     this.querySelectors();
     this.mountChildren();
     this.initMDC();
