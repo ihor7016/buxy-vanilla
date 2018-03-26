@@ -1,7 +1,7 @@
 <aside class="add-account-dialog mdc-dialog" role="alertdialog">
   <div class="mdc-dialog__surface">
     <header class="mdc-dialog__header">
-      <h2 class="mdc-dialog__header__title">
+      <h2 class="add-account-dialog__title mdc-dialog__header__title">
         Add account
       </h2>
     </header>
@@ -32,7 +32,7 @@
             <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">
               <ul class="mdc-list mdc-menu__items">
                 <% for(let i=0; i<types.length; i++) {%>
-                  <li class="mdc-list-item" role="option" tabindex="0">
+                  <li class="add-account-dialog__types mdc-list-item" role="option" tabindex="0">
                     <%= types[i] %>
                   </li>
                   <% } %>
@@ -52,7 +52,7 @@
                 <% for(let i=0; i
                 <currencies.length
                 ; i++) {%>
-                  <li class="mdc-list-item" role="option" tabindex="0">
+                  <li class="add-account-dialog__currencies mdc-list-item" role="option" tabindex="0">
                     <%= currencies[i] %>
                   </li>
                   <% } %>
