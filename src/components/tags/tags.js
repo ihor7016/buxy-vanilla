@@ -1,12 +1,16 @@
 import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
+
 import { ButtonMoreComponent } from "../button-more/button-more";
-import { TagListService } from "../../services/tag-service";
 import { TagDialogComponent } from "../tag-dialog/tag-dialog";
 
+import { TagListService } from "../../services/tag-service";
+import { TransactionListService } from "../../services/transaction-service";
+
 export class TagsComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -27,7 +31,9 @@ export class TagsComponent {
 
   handleEditTagConfirm(newTag) {
     const oldTag = this.tagToEdit.dataset.name;
-    TagListService.update(oldTag, newTag);
+    TagListService.update(oldTag, newTag)
+      .then(() => TransactionListService.updateTags(oldTag, newTag))
+      .then(() => this.props.onTagChange());
     this.tagToEdit.outerHTML = tagItemTemplate({ tag: newTag });
     this.initMoreBtns();
   }
