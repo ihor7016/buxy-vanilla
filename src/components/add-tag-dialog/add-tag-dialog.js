@@ -10,7 +10,6 @@ export class AddTagDialogComponent {
   }
 
   showDialog(existingTagNames) {
-    console.log(existingTagNames);
     this.existingTagNames = existingTagNames;
     this.dialog.show();
   }
