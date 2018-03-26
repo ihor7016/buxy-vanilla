@@ -59,7 +59,7 @@ export class AddAccountDialogComponent {
       ".add-account-dialog__currency-text"
     );
     this.accountTitle = this.mountPoint.querySelector(
-      ".add-account-dialog-title"
+      ".add-account-dialog__title"
     );
   }
 
