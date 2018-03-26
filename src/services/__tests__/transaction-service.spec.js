@@ -1,27 +1,21 @@
 import { StorageService } from "../storage";
 import { TransactionListService } from "../transaction-service";
 
-// jest.mock("../storage");
-
 describe("Transactions storage service", () => {
   const key = "transactionList";
   const transId = "1521743892606";
-  const accId = "jayhzea75g";
+  const accId = "k1y7iof0ywh";
   const sample = [
     {
       desc: "Shell",
       tag: "Fuel",
-      account: {
-        id: "jayhzea75g"
-      },
+      account: { id: "jayhzea75g" },
       id: "1521743949202"
     },
     {
       desc: "Salary",
       tag: "Salary",
-      account: {
-        id: "jayhzea75g"
-      },
+      account: { id: "k1y7iof0ywh" },
       id: "1521743892606"
     }
   ];
@@ -49,7 +43,7 @@ describe("Transactions storage service", () => {
     {
       desc: "Salary",
       tag: "Salary",
-      account: { id: "jayhzea75g" },
+      account: { id: "k1y7iof0ywh" },
       id: "1521743892606"
     }
   ];
@@ -64,7 +58,7 @@ describe("Transactions storage service", () => {
     }
   ];
 
-  beforeAll(() => {
+  beforeEach(() => {
     StorageService.get = jest.fn(() => Promise.resolve(sample));
     StorageService.set = jest.fn(() => Promise.resolve());
   });
@@ -87,6 +81,14 @@ describe("Transactions storage service", () => {
   });
 
   describe("add method", () => {
+    it("should add, send and return array with only dataToAdd when list is null", () => {
+      StorageService.get = jest.fn(() => Promise.resolve(null));
+      return TransactionListService.add(dataToAdd).then(arr => {
+        expect(StorageService.set).toHaveBeenCalledWith(key, [dataToAdd]);
+        expect(arr).toEqual([dataToAdd]);
+      });
+    });
+
     it("should add, send and return correct data", () => {
       return TransactionListService.add(dataToAdd).then(arr => {
         expect(StorageService.set).toHaveBeenCalledWith(key, addRes);
@@ -105,7 +107,14 @@ describe("Transactions storage service", () => {
   });
 
   describe("deleteByAccountId method", () => {
-    it(" should del and send correct data", () => {
+    it("should do nothing when list is null", () => {
+      StorageService.get = jest.fn(() => Promise.resolve(null));
+      return TransactionListService.deleteByAccountId(accId).then(arr => {
+        expect(StorageService.set).not.toBeCalled();
+      });
+    });
+
+    it("should del and send correct data", () => {
       return TransactionListService.deleteByAccountId(accId).then(arr => {
         expect(StorageService.set).toHaveBeenCalledWith(key, delRes);
       });

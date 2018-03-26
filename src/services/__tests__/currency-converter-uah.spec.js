@@ -13,8 +13,8 @@ describe("converts in UAH", () => {
     expect(CurrencyConverterUAHService.convert(curr, amount)).toBe(270);
   });
 
-  it("should return 0 with UAH", () => {
-    const curr = "UAH";
+  it("should return 0 with neither 'EUR' nor 'USD' currency", () => {
+    const curr = "PLN";
     const amount = 10;
     expect(CurrencyConverterUAHService.convert(curr, amount)).toBe(0);
   });
