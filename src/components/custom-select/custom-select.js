@@ -9,6 +9,13 @@ export class CustomSelectComponent {
     this.props = props;
   }
 
+  makeSelected(value) {
+    const item = this.select.nameditem(value);
+    this.select.selectedIndex = Array.from(item.parentNode.children).indexOf(
+      item
+    );
+  }
+
   addItems(list) {
     this.menu.innerHTML = templateItems({ list: list });
     this.checkList();
@@ -18,9 +25,16 @@ export class CustomSelectComponent {
     this.select.selectedIndex = -1;
   }
 
+  toggleValid() {
+    this.getValue()
+      ? this.line.classList.remove("custom-select__bottom-line--invalid")
+      : this.line.classList.add("custom-select__bottom-line--invalid");
+  }
+
   querySelectors() {
     this.selectPoint = this.mountPoint.querySelector(".custom-select");
     this.menu = this.mountPoint.querySelector(".custom-select__menu-items");
+    this.line = this.mountPoint.querySelector(".custom-select__bottom-line");
   }
 
   initMDC() {
@@ -28,7 +42,11 @@ export class CustomSelectComponent {
   }
 
   getValue() {
-    return this.select.value.replace(/\r|\n|\s/g, "");
+    return this.select.value.trim();
+  }
+
+  addEventListeners() {
+    this.select.listen("MDCSelect:change", this.toggleValid.bind(this));
   }
 
   checkList() {
@@ -45,6 +63,7 @@ export class CustomSelectComponent {
     });
     this.querySelectors();
     this.initMDC();
+    this.addEventListeners();
     this.checkList();
   }
 }
