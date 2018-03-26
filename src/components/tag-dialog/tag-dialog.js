@@ -9,10 +9,13 @@ export class TagDialogComponent {
     this.props = props;
   }
 
-  showDialog(type, tagToEdit) {
+  showDialog(type, existingTagNames, tagToEdit) {
+    if (tagToEdit) {
+      this.tag.value = tagToEdit;
+    }
     this.type = type;
     this.header.innerHTML = `${type} tag`;
-    this.tag.value = tagToEdit || "";
+    this.existingTagNames = existingTagNames;
     this.dialog.show();
   }
 
@@ -20,6 +23,9 @@ export class TagDialogComponent {
     this.tagDialogComponent = this.mountPoint.querySelector(".tag-dialog");
     this.tagTextField = this.mountPoint.querySelector(".tag-dialog__tag");
     this.header = this.mountPoint.querySelector(".tag-dialog__header");
+    this.dialogButtonConfirm = this.mountPoint.querySelector(
+      ".tag-dialog__submit"
+    );
   }
 
   initMDC() {
@@ -28,22 +34,41 @@ export class TagDialogComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+    this.dialogButtonConfirm.addEventListener(
+      "click",
+      this.handleOk.bind(this)
+    );
   }
 
   clean() {
     this.tag.value = "";
+    this.tagTextField.classList.remove("mdc-text-field--invalid");
   }
 
   handleOk() {
-    if (this.type === "Edit") {
-      this.props.onEditTagConfirm(this.tag.value);
+    if (this.isValid()) {
+      if (this.type === "Edit") {
+        this.props.onEditTagConfirm(this.tag.value);
+      }
+      if (this.type === "Add") {
+        this.props.onAddTagConfirm(this.tag.value);
+      }
+      this.clean();
+      this.dialog.close();
+    } else {
+      this.tagTextField.classList.add("mdc-text-field--invalid");
     }
-    if (this.type === "Add") {
-      this.props.onAddTagConfirm(this.tag.value);
+  }
+
+  isValid() {
+    if (!this.tag.value) {
+      return false;
     }
-    this.clean();
+    if (this.existingTagNames.indexOf(this.tag.value) !== -1) {
+      return false;
+    }
+    return true;
   }
 
   handleCancel() {

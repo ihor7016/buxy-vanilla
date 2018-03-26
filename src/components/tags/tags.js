@@ -39,7 +39,9 @@ export class TagsComponent {
   }
 
   handleAddTagClick() {
-    this.tagDialogComponent.showDialog("Add");
+    TagListService.get().then(tags =>
+      this.tagDialogComponent.showDialog("Add", tags)
+    );
   }
 
   initMoreBtns() {
@@ -100,7 +102,13 @@ export class TagsComponent {
 
   handleEditClick(e) {
     this.tagToEdit = e.target.closest(".tags__list-item");
-    this.tagDialogComponent.showDialog("Edit", this.tagToEdit.dataset.name);
+    TagListService.get().then(tags =>
+      this.tagDialogComponent.showDialog(
+        "Edit",
+        tags,
+        this.tagToEdit.dataset.name
+      )
+    );
   }
 
   handleDeleteClick() {
