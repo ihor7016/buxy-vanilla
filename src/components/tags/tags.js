@@ -105,7 +105,7 @@ export class TagsComponent {
   }
 
   handleDeleteClick(event) {
-    let moreButton = event.target.closest(".button-more");
+    let moreButton = event.target.closest(".mdc-menu-anchor");
     this.listItem = moreButton.closest(".tags__list-item");
     let tagName = this.listItem.querySelector(".tags__list-item-name")
       .innerText;
