@@ -9,8 +9,9 @@ export class AddTagDialogComponent {
     this.props = props;
   }
 
-  showDialog(tagsValue) {
-    this.tagsValue = tagsValue;
+  showDialog(existingTagNames) {
+    console.log(existingTagNames);
+    this.existingTagNames = existingTagNames;
     this.dialog.show();
   }
 
@@ -37,7 +38,7 @@ export class AddTagDialogComponent {
     );
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
     this.tagNameInput.addEventListener(
-      "focus",
+      "input",
       this.removeErrorClass.bind(this)
     );
   }
@@ -62,11 +63,11 @@ export class AddTagDialogComponent {
   }
 
   isValid() {
-    if (this.tagNameInput.value === "") {
+    if (!this.tagNameInput.value) {
       return false;
     }
 
-    if (this.tagsValue.indexOf(this.tagNameInput.value) !== -1) {
+    if (this.existingTagNames.indexOf(this.tagNameInput.value) !== -1) {
       return false;
     }
 

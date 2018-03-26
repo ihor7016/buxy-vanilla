@@ -26,13 +26,27 @@ export class TagsComponent {
   }
 
   handleAddTagClicked() {
-    this.addTagDialogComponent.showDialog(this.tagsValue());
+    this.addTagDialogComponent.showDialog(this.getTagsValues());
   }
 
-  tagsValue() {
+  getTagsValues() {
     this.allTags = this.mountPoint.querySelectorAll(".tags__list-item-name");
     return Array.from(this.allTags).map(el => el.innerText);
+
+    // TagListService.get().then(tags => {
+    //   this.initTags(tags);
+    // });
   }
+
+  // getStoredTags() {
+  //   return TagListService.get().then(tags => this.showTags(tags));
+  // }
+
+  // showTags(tags) {
+  //   if (tags && tags.length > 0) {
+  //     this.tagSelect.addItems(tags);
+  //   }
+  // }
 
   initMoreBtns() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
