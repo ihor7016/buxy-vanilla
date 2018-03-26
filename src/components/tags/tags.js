@@ -127,8 +127,8 @@ export class TagsComponent {
   }
 
   delTag(listItem) {
-    let tagId = listItem.dataset.id;
-    TransactionListService.deleteByTagId(tagId)
+    let tag = listItem.querySelector(".tags__list-item-name").innerText;
+    TransactionListService.deleteByTagId(tag)
       .then(() => {
         let index = Array.from(this.tagsList.children).indexOf(listItem);
         return TagListService.del(index).then(() => {

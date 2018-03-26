@@ -37,12 +37,12 @@ export class TransactionListService {
     });
   }
 
-  static deleteByTagId(tagId) {
+  static deleteByTagId(tag) {
     return TransactionListService.get().then(transactions => {
       if (transactions) {
         return TransactionListService.set(
           transactions.filter(item => {
-            return item.tag.id !== tagId;
+            return item.tag !== tag;
           })
         );
       }
