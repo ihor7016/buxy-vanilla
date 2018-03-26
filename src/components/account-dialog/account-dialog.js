@@ -172,22 +172,22 @@ export class AddAccountDialogComponent {
           this.accountErrorMessage = "This account already exists";
           result = false;
           return true;
-        } else if (accountName.length < 3) {
-          this.accountErrorMessage = "Name should be more than 3 symbols";
-          result = false;
-          return false;
         } else {
-          this.accountErrorMessage = "";
-          return false;
+          this.checkForEmptyStringAndLength(accountName, result);
         }
       });
     } else {
-      if (accountName.length < 3 || this.isEmpty(accountName)) {
-        this.accountErrorMessage = "Name should be more than 3 symbols";
-        result = false;
-      } else {
-        this.accountErrorMessage = "";
-      }
+      result = this.checkForEmptyStringAndLength(accountName, result);
+    }
+    return result;
+  }
+
+  checkForEmptyStringAndLength(accountName, result) {
+    if (accountName.length < 3 || this.isEmpty(accountName)) {
+      this.accountErrorMessage = "Name should be more than 3 symbols";
+      result = false;
+    } else {
+      this.accountErrorMessage = "";
     }
     return result;
   }
