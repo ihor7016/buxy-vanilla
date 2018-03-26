@@ -25,6 +25,20 @@ export class TransactionListService {
     });
   }
 
+  static update(oldId, newData) {
+    return this.get().then(list => {
+      const newList = list.map(elem => {
+        if (elem.id !== oldId) {
+          return elem;
+        } else {
+          return newData;
+        }
+      });
+      this.set(newList);
+      return newList;
+    });
+  }
+
   static deleteByAccountId(accountId) {
     return TransactionListService.get().then(transactions => {
       if (transactions) {
@@ -49,6 +63,19 @@ export class TransactionListService {
           })
         );
       }
+    });
+  }
+
+  static updateTags(oldTag, newTag) {
+    return this.get().then(list => {
+      const newList = list.map(elem => {
+        let item = elem;
+        if (item.tag === oldTag) {
+          item.tag = newTag;
+        }
+        return item;
+      });
+      return this.set(newList);
     });
   }
 }

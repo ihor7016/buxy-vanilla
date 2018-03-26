@@ -96,7 +96,7 @@ export class AccountsComponent {
     });
   }
 
-  updateAccountData(transaction) {
+  updateAccountDataAdd(transaction) {
     AccountListService.update(
       transaction.account,
       parseInt(transaction.type + transaction.amount)
@@ -112,6 +112,29 @@ export class AccountsComponent {
     ).then(() => {
       this.initData();
     });
+  }
+
+  updateAccountDataEdit(oldTrans, newTrans) {
+    if (oldTrans.account.name === newTrans.account.name) {
+      const delta =
+        parseInt(newTrans.type + newTrans.amount) -
+        parseInt(oldTrans.type + oldTrans.amount);
+      AccountListService.update(oldTrans.account, delta).then(() => {
+        this.initData();
+      });
+    } else {
+      AccountListService.update(
+        newTrans.account,
+        parseInt(newTrans.type + newTrans.amount)
+      )
+        .then(() =>
+          AccountListService.update(
+            oldTrans.account,
+            -parseInt(oldTrans.type + oldTrans.amount)
+          )
+        )
+        .then(() => this.initData());
+    }
   }
 
   addEventListeners() {

@@ -12,6 +12,19 @@ export class TagListService {
     });
   }
 
+  static update(oldTag, newTag) {
+    return this.get().then(tags => {
+      const updatedTags = tags.map(elem => {
+        if (elem === oldTag) {
+          return newTag;
+        } else {
+          return elem;
+        }
+      });
+      this.set(updatedTags);
+    });
+  }
+
   static get() {
     return StorageService.get("tagList");
   }

@@ -20,16 +20,22 @@ export class DrawerComponent {
     );
   }
 
-  updateAccountData(transaction) {
-    this.accountsComponent.updateAccountData(transaction);
+  updateAccountDataAdd(transaction) {
+    this.accountsComponent.updateAccountDataAdd(transaction);
   }
 
   updateAccountDataDelete(transaction) {
     this.accountsComponent.updateAccountDataDelete(transaction);
   }
 
+  updateAccountDataEdit(oldTrans, newTrans) {
+    this.accountsComponent.updateAccountDataEdit(oldTrans, newTrans);
+  }
+
   mountChildren() {
-    this.tagsComponent = new TagsComponent(this.tagsMountPoint);
+    this.tagsComponent = new TagsComponent(this.tagsMountPoint, {
+      onTagChange: this.props.onTagChange
+    });
     this.tagsComponent.mount();
     this.accountsComponent = new AccountsComponent(this.accountsMountPoint, {
       onAccountDelete: this.props.onAccountDelete,
