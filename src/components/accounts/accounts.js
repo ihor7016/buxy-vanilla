@@ -2,7 +2,7 @@ import template from "./accounts.html";
 import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountListService } from "../../services/account-service";
-import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
+import { AddAccountDialogComponent } from "../account-dialog/account-dialog";
 import { TransactionListService } from "../../services/transaction-service";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 

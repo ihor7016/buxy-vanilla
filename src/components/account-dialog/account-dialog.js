@@ -1,4 +1,4 @@
-import template from "./add-account-dialog.html";
+import template from "./account-dialog.html";
 
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
@@ -19,47 +19,45 @@ export class AddAccountDialogComponent {
 
   querySelectors() {
     this.addAccountDialogComponent = this.mountPoint.querySelector(
-      ".add-account-dialog"
+      ".account-dialog"
     );
     this.accountTextField = this.mountPoint.querySelector(
-      ".add-account-dialog__account"
+      ".account-dialog__account"
     );
     this.balanceTextField = this.mountPoint.querySelector(
-      ".add-account-dialog__balance"
+      ".account-dialog__balance"
     );
     this.accountNameInput = this.mountPoint.querySelector(
-      ".add-account-dialog__account-input"
+      ".account-dialog__account-input"
     );
     this.balanceNameInput = this.mountPoint.querySelector(
-      ".add-account-dialog__balance-input"
+      ".account-dialog__balance-input"
     );
     this.typeAccountSelect = this.mountPoint.querySelector(
-      ".add-account-dialog__type"
+      ".account-dialog__type"
     );
     this.currencyAccountSelect = this.mountPoint.querySelector(
-      ".add-account-dialog__currency"
+      ".account-dialog__currency"
     );
     this.accountType = this.mountPoint.querySelector(
-      ".add-account-dialog__type-text"
+      ".account-dialog__type-text"
     );
     this.accountCurrency = this.mountPoint.querySelector(
-      ".add-account-dialog__currency-text"
+      ".account-dialog__currency-text"
     );
     this.accountNameRipple = this.mountPoint.querySelector(
-      ".add-account-dialog__input-ripple"
+      ".account-dialog__input-ripple"
     );
     this.balanceNameRipple = this.mountPoint.querySelector(
-      ".add-account-dialog__balance-input-ripple"
+      ".account-dialog__balance-input-ripple"
     );
     this.accountNameHelperText = this.mountPoint.querySelector(
-      ".add-account-dialog__account-helper-text"
+      ".account-dialog__account-helper-text"
     );
     this.balanceNameHelperText = this.mountPoint.querySelector(
-      ".add-account-dialog__balance-helper-text"
+      ".account-dialog__balance-helper-text"
     );
-    this.buttonOk = this.mountPoint.querySelector(
-      ".add-account-dialog__button-ok"
-    );
+    this.buttonOk = this.mountPoint.querySelector(".account-dialog__button-ok");
   }
 
   initMDC() {
@@ -111,28 +109,26 @@ export class AddAccountDialogComponent {
 
   hideAccountError() {
     this.accountNameRipple.classList.remove(
-      "add-account-dialog__input-ripple-error"
+      "account-dialog__input-ripple-error"
     );
     this.accountNameHelperText.innerText = "";
   }
 
   showAccountError(msg) {
-    this.accountNameRipple.classList.add(
-      "add-account-dialog__input-ripple-error"
-    );
+    this.accountNameRipple.classList.add("account-dialog__input-ripple-error");
     this.accountNameHelperText.innerText = msg;
   }
 
   hideBalanceError() {
     this.balanceNameRipple.classList.remove(
-      "add-account-dialog__balance-input-ripple-error"
+      "account-dialog__balance-input-ripple-error"
     );
     this.balanceNameHelperText.innerText = "";
   }
 
   showBalanceError(msg) {
     this.balanceNameRipple.classList.add(
-      "add-account-dialog__balance-input-ripple-error"
+      "account-dialog__balance-input-ripple-error"
     );
     this.balanceNameHelperText.innerText = msg;
   }
