@@ -65,8 +65,8 @@ describe("AccountListService", () => {
   const accountToDeleteIndex = 1;
 
   beforeEach(() => {
-    StorageService.get.mockImplementation(() => Promise.resolve(mockAccounts));
-    StorageService.set.mockImplementation(() => Promise.resolve());
+    StorageService.set = jest.fn(() => Promise.resolve());
+    StorageService.get = jest.fn(() => Promise.resolve(mockAccounts));
   });
 
   afterEach(() => {
