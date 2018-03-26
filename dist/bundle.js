@@ -47984,7 +47984,8 @@
             value: function updateEdit(oldData, newData) {
               if (
                 newData.type === oldData.type &&
-                newData.amount === oldData.amount
+                newData.amount === oldData.amount &&
+                newData.account.currency === oldData.account.currency
               ) {
                 return;
               }
