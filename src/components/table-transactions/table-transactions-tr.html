@@ -1,20 +1,20 @@
 <tr class="table-transactions__tr table-transactions__highlighted" data-id="<%= row.id %>">
-  <td class="table-transactions__td">
+  <td class="table-transactions__td table-transactions__date">
     <%= row.date %>
   </td>
   <td class="table-transactions__td">
-    <span><%= row.type %></span>
-    <span><%= row.amount %></span>
+    <span class="table-transactions__type"><%= row.type %></span>
+    <span class="table-transactions__amount"><%= row.amount %></span>
     <span><%= row.account.currency %></span>
   </td>
   <td class="table-transactions__td table-transactions__td--desc">
     <%= row.desc %>
   </td>
-  <td class="table-transactions__td">
+  <td class="table-transactions__td table-transactions__tag">
     <%= row.tag %>
   </td>
   <td class="table-transactions__td">
-    <span class="table-transactions__span"><%= row.account.name %></span>,
+    <span class="table-transactions__span table-transactions__account"><%= row.account.name %></span>,
     <span class="table-transactions__span"><%= row.account.type %></span>
     <div class="table-transactions__more-button"></div>
   </td>
