@@ -25,8 +25,11 @@ export class TagsComponent {
     this.addTagToHead(tag);
   }
 
-  handleEditTagConfirm(tag) {
-    //
+  handleEditTagConfirm(newTag) {
+    const oldTag = this.tagToEdit.dataset.name;
+    TagListService.update(oldTag, newTag);
+    this.tagToEdit.outerHTML = tagItemTemplate({ tag: newTag });
+    this.initMoreBtns();
   }
 
   handleAddTagClick() {
@@ -90,8 +93,8 @@ export class TagsComponent {
   }
 
   handleEditClick(e) {
-    this.tagToEdit = e.target.closest(".tags__list-item").dataset.name;
-    this.tagDialogComponent.showDialog("Edit", this.tagToEdit);
+    this.tagToEdit = e.target.closest(".tags__list-item");
+    this.tagDialogComponent.showDialog("Edit", this.tagToEdit.dataset.name);
   }
 
   handleDeleteClick() {

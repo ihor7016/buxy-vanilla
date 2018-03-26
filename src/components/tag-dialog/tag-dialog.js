@@ -10,6 +10,7 @@ export class TagDialogComponent {
   }
 
   showDialog(type, tagToEdit) {
+    this.type = type;
     this.header.innerHTML = `${type} tag`;
     this.tag.value = tagToEdit || "";
     this.dialog.show();
@@ -36,8 +37,12 @@ export class TagDialogComponent {
   }
 
   handleOk() {
-    // this.props.onEditTagConfirm();
-    this.props.onAddTagConfirm(this.tag.value);
+    if (this.type === "Edit") {
+      this.props.onEditTagConfirm(this.tag.value);
+    }
+    if (this.type === "Add") {
+      this.props.onAddTagConfirm(this.tag.value);
+    }
     this.clean();
   }
 
