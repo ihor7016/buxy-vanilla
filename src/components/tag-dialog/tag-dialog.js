@@ -1,59 +1,59 @@
-import template from "./add-tag-dialog.html";
+import template from "./tag-dialog.html";
 
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 
-export class AddTagDialogComponent {
+export class TagDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
   }
 
-  showDialog(existingTagNames) {
+  showDialog(type, existingTagNames, tagToEdit) {
+    if (tagToEdit) {
+      this.tag.value = tagToEdit;
+    }
+    this.type = type;
+    this.header.innerHTML = `${type} tag`;
     this.existingTagNames = existingTagNames;
     this.dialog.show();
   }
 
   querySelectors() {
-    this.addTagDialogComponent = this.mountPoint.querySelector(
-      ".add-tag-dialog"
-    );
-    this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
-    this.tagNameInput = this.mountPoint.querySelector(".add-tag-dialog__input");
+    this.tagDialogComponent = this.mountPoint.querySelector(".tag-dialog");
+    this.tagTextField = this.mountPoint.querySelector(".tag-dialog__tag");
+    this.header = this.mountPoint.querySelector(".tag-dialog__header");
     this.dialogButtonConfirm = this.mountPoint.querySelector(
-      ".add-tag-dialog__submit"
+      ".tag-dialog__submit"
     );
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagDialogComponent);
+    this.dialog = new MDCDialog(this.tagDialogComponent);
     this.tag = new MDCTextField(this.tagTextField);
   }
 
   addEventListeners() {
+    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
     this.dialogButtonConfirm.addEventListener(
       "click",
       this.handleOk.bind(this)
     );
-    this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
-    this.tagNameInput.addEventListener(
-      "input",
-      this.removeErrorClass.bind(this)
-    );
   }
 
   clean() {
-    this.tagNameInput.value = "";
-    this.removeErrorClass();
-  }
-
-  removeErrorClass() {
+    this.tag.value = "";
     this.tagTextField.classList.remove("mdc-text-field--invalid");
   }
 
   handleOk() {
     if (this.isValid()) {
-      this.props.onAddTagConfirm(this.tagNameInput.value);
+      if (this.type === "Edit") {
+        this.props.onEditTagConfirm(this.tag.value);
+      }
+      if (this.type === "Add") {
+        this.props.onAddTagConfirm(this.tag.value);
+      }
       this.clean();
       this.dialog.close();
     } else {
@@ -62,14 +62,12 @@ export class AddTagDialogComponent {
   }
 
   isValid() {
-    if (!this.tagNameInput.value) {
+    if (!this.tag.value) {
       return false;
     }
-
-    if (this.existingTagNames.indexOf(this.tagNameInput.value) !== -1) {
+    if (this.existingTagNames.indexOf(this.tag.value) !== -1) {
       return false;
     }
-
     return true;
   }
 

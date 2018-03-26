@@ -50,4 +50,17 @@ export class TransactionListService {
       }
     });
   }
+
+  static updateTags(oldTag, newTag) {
+    return this.get().then(list => {
+      const newList = list.map(elem => {
+        let item = elem;
+        if (item.tag === oldTag) {
+          item.tag = newTag;
+        }
+        return item;
+      });
+      return this.set(newList);
+    });
+  }
 }

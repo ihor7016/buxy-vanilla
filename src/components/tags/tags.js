@@ -1,12 +1,16 @@
 import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
+
 import { ButtonMoreComponent } from "../button-more/button-more";
+import { TagDialogComponent } from "../tag-dialog/tag-dialog";
+
 import { TagListService } from "../../services/tag-service";
-import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
+import { TransactionListService } from "../../services/transaction-service";
 
 export class TagsComponent {
-  constructor(mountPoint) {
+  constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
+    this.props = props;
   }
 
   querySelectors() {
@@ -14,20 +18,29 @@ export class TagsComponent {
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
-    this.addTagMountPoint = this.mountPoint.querySelector(
+    this.tagDialogMountPoint = this.mountPoint.querySelector(
       ".tags__add-tag-dialog"
     );
     this.tagsList = this.mountPoint.querySelector(".tags__list-items");
   }
 
-  handleAddTagConfirmed(tag) {
+  handleAddTagConfirm(tag) {
     TagListService.add(tag);
     this.addTagToHead(tag);
   }
 
-  handleAddTagClicked() {
+  handleEditTagConfirm(newTag) {
+    const oldTag = this.tagToEdit.dataset.name;
+    TagListService.update(oldTag, newTag)
+      .then(() => TransactionListService.updateTags(oldTag, newTag))
+      .then(() => this.props.onTagChange());
+    this.tagToEdit.outerHTML = tagItemTemplate({ tag: newTag });
+    this.initMoreBtns();
+  }
+
+  handleAddTagClick() {
     TagListService.get().then(tags =>
-      this.addTagDialogComponent.showDialog(tags)
+      this.tagDialogComponent.showDialog("Add", tags)
     );
   }
 
@@ -45,13 +58,11 @@ export class TagsComponent {
   }
 
   mountChildren() {
-    this.addTagDialogComponent = new AddTagDialogComponent(
-      this.addTagMountPoint,
-      {
-        onAddTagConfirm: this.handleAddTagConfirmed.bind(this)
-      }
-    );
-    this.addTagDialogComponent.mount();
+    this.tagDialogComponent = new TagDialogComponent(this.tagDialogMountPoint, {
+      onAddTagConfirm: this.handleAddTagConfirm.bind(this),
+      onEditTagConfirm: this.handleEditTagConfirm.bind(this)
+    });
+    this.tagDialogComponent.mount();
   }
 
   initTags(tags) {
@@ -75,7 +86,7 @@ export class TagsComponent {
   addEventListeners() {
     this.addTagButton.addEventListener(
       "click",
-      this.handleAddTagClicked.bind(this)
+      this.handleAddTagClick.bind(this)
     );
   }
 
@@ -89,8 +100,15 @@ export class TagsComponent {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
   }
 
-  handleEditClick() {
-    console.log("handleEditClick");
+  handleEditClick(e) {
+    this.tagToEdit = e.target.closest(".tags__list-item");
+    TagListService.get().then(tags =>
+      this.tagDialogComponent.showDialog(
+        "Edit",
+        tags,
+        this.tagToEdit.dataset.name
+      )
+    );
   }
 
   handleDeleteClick() {
