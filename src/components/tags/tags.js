@@ -26,27 +26,17 @@ export class TagsComponent {
   }
 
   handleAddTagClicked() {
+    this.getStoredTags();
     this.addTagDialogComponent.showDialog(this.getTagsValues());
   }
 
-  getTagsValues() {
-    this.allTags = this.mountPoint.querySelectorAll(".tags__list-item-name");
-    return Array.from(this.allTags).map(el => el.innerText);
-
-    // TagListService.get().then(tags => {
-    //   this.initTags(tags);
-    // });
+  getTagsValues(tags) {
+    this.allTags = tags;
   }
 
-  // getStoredTags() {
-  //   return TagListService.get().then(tags => this.showTags(tags));
-  // }
-
-  // showTags(tags) {
-  //   if (tags && tags.length > 0) {
-  //     this.tagSelect.addItems(tags);
-  //   }
-  // }
+  getStoredTags() {
+    return TagListService.get().then(tags => this.getTagsValues(tags));
+  }
 
   initMoreBtns() {
     this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
