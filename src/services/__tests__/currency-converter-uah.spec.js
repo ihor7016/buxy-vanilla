@@ -1,6 +1,6 @@
 import { CurrencyConverterUAHService } from "../currency-converter-uah";
 
-describe("converts in UAH", () => {
+describe("Currency converter service", () => {
   it("should convert 10 EUR in 330 UAH", () => {
     const curr = "EUR";
     const amount = 10;
