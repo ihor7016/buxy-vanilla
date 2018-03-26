@@ -131,11 +131,10 @@ export class TagsComponent {
     TransactionListService.deleteByTagId(tag)
       .then(() => {
         let index = Array.from(this.tagsList.children).indexOf(listItem);
-        return TagListService.del(index).then(() => {
-          this.tagsList.removeChild(listItem);
-        });
+        return TagListService.del(index);
       })
       .then(() => {
+        this.tagsList.removeChild(listItem);
         this.props.onTagDelete();
       });
   }
