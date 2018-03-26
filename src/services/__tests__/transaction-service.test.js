@@ -1,7 +1,7 @@
 import { StorageService } from "../storage";
 import { TransactionListService } from "../transaction-service";
 
-jest.mock("../storage");
+// jest.mock("../storage");
 
 describe("Transactions storage service", () => {
   const key = "transactionList";
@@ -65,8 +65,8 @@ describe("Transactions storage service", () => {
   ];
 
   beforeAll(() => {
-    StorageService.get.mockImplementation(() => Promise.resolve(sample));
-    StorageService.set.mockImplementation(() => Promise.resolve());
+    StorageService.get = jest.fn(() => Promise.resolve(sample));
+    StorageService.set = jest.fn(() => Promise.resolve());
   });
 
   describe("get method", () => {
