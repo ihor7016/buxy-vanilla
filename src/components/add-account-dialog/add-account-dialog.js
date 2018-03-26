@@ -3,7 +3,6 @@ import template from "./add-account-dialog.html";
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
-import { AccountValidator } from "./validation/account-validator";
 
 export class AddAccountDialogComponent {
   constructor(mountPoint, props) {
@@ -14,10 +13,8 @@ export class AddAccountDialogComponent {
   showDialog(accounts) {
     this.accounts = accounts;
     this.dialog.show();
-  }
-
-  initValidator() {
-    this.validator = new AccountValidator();
+    this.type.selectedIndex = 0;
+    this.currency.selectedIndex = 0;
   }
 
   querySelectors() {
@@ -74,38 +71,19 @@ export class AddAccountDialogComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
-    this.accountNameInput.onkeyup = this.handleAccountNameKeyBoardEvent.bind(
-      this
-    );
-    this.accountNameInput.onkeydown = this.handleAccountNameKeyBoardEvent.bind(
-      this
-    );
-    this.balanceNameInput.onkeyup = this.handleBalanceKeyBoardEvent.bind(this);
-    this.balanceNameInput.onkeydown = this.handleBalanceKeyBoardEvent.bind(
-      this
-    );
-  }
-
-  handleBalanceKeyBoardEvent() {
-    this.checkValidation();
-  }
-
-  handleAccountNameKeyBoardEvent() {
-    this.checkValidation();
+    this.buttonOk.addEventListener("click", this.handleOk.bind(this));
   }
 
   checkValidation() {
-    let isAccountValid = this.validator.isAccountValid(
+    let result = false;
+    let isAccountValid = this.isAccountValid(
       this.accountNameInput.value,
       this.accounts
     );
-    let isBalanceValid = this.validator.isBalanceValid(
-      this.balanceNameInput.value
-    );
-    let isTypeSelected = this.type.value !== "";
-    let isCurrencySelected = this.currency.value !== "";
+    let isBalanceValid = this.isBalanceValid(this.balanceNameInput.value);
+    let isTypeSelected = !!this.type.value;
+    let isCurrencySelected = !!this.currency.value;
 
     if (
       isAccountValid &&
@@ -113,28 +91,22 @@ export class AddAccountDialogComponent {
       isTypeSelected &&
       isCurrencySelected
     ) {
-      this.enableOkButton();
+      result = true;
     }
     if (!isAccountValid) {
-      this.disableOkButton();
-      this.showAccountError(this.validator.getAccountErrorMessage());
+      this.showAccountError(this.getAccountErrorMessage());
+
+      result = false;
     } else {
       this.hideAccountError();
     }
     if (!isBalanceValid) {
-      this.disableOkButton();
-      this.showBalanceError(this.validator.getBalanceErrorMessage());
+      this.showBalanceError(this.getBalanceErrorMessage());
+      result = false;
     } else {
       this.hideBalanceError();
     }
-  }
-
-  enableOkButton() {
-    this.buttonOk.removeAttribute("disabled");
-  }
-
-  disableOkButton() {
-    this.buttonOk.setAttribute("disabled", "");
+    return result;
   }
 
   hideAccountError() {
@@ -173,20 +145,92 @@ export class AddAccountDialogComponent {
   }
 
   handleOk() {
-    this.props.onAddAccountConfirm({
-      name: this.accountNameInput.value,
-      balance: parseInt(this.balanceNameInput.value),
-      type: this.accountType.innerText,
-      currency: this.accountCurrency.innerText,
-      id: Math.random()
-        .toString(36)
-        .substring(2)
-    });
-    this.clean();
+    if (this.checkValidation()) {
+      this.props.onAddAccountConfirm({
+        name: this.accountNameInput.value,
+        balance: parseInt(this.balanceNameInput.value),
+        type: this.accountType.innerText,
+        currency: this.accountCurrency.innerText,
+        id: Math.random()
+          .toString(36)
+          .substring(2)
+      });
+      this.dialog.close();
+      this.clean();
+    }
   }
 
   handleCancel() {
     this.clean();
+  }
+
+  isAccountValid(accountName, accounts) {
+    let result = true;
+    if (this.isEmpty(accountName)) {
+      this.accountErrorMessage = "Enter account name";
+      result = false;
+    }
+    if (accounts && accounts.length > 0) {
+      accounts.some(item => {
+        if (item.name === accountName) {
+          this.accountErrorMessage = "This account already exists";
+          result = false;
+          return true;
+        } else if (accountName.length < 3) {
+          this.accountErrorMessage = "Name should be more than 3 symbols";
+          result = false;
+          return false;
+        } else {
+          this.accountErrorMessage = "";
+          return false;
+        }
+      });
+    } else {
+      if (accountName.length < 3 || this.isEmpty(accountName)) {
+        this.accountErrorMessage = "Name should be more than 3 symbols";
+        result = false;
+      } else {
+        this.accountErrorMessage = "";
+      }
+    }
+    return result;
+  }
+
+  isBalanceValid(balanceValue) {
+    let result = true;
+    if (this.isEmpty(balanceValue)) {
+      this.balanceErrorMessage = "Enter the balance";
+      result = false;
+    }
+    if (!this.isNumber(balanceValue) && !this.isFloatNumber(balanceValue)) {
+      this.balanceErrorMessage = "Enter the number";
+      result = false;
+    } else {
+      this.balanceErrorMessage = "";
+    }
+    return result;
+  }
+
+  isNumber(value) {
+    let pattern = /^\d+$/gi;
+    return pattern.test(value);
+  }
+
+  isEmpty(value) {
+    return !value || value.length == 0;
+  }
+
+  isFloatNumber(value) {
+    let pattern = /^\d+\.\d+$/gi;
+    return pattern.test(value);
+  }
+
+  getAccountErrorMessage() {
+    return this.accountErrorMessage;
+  }
+
+  getBalanceErrorMessage() {
+    return this.balanceErrorMessage;
   }
 
   mount() {
@@ -209,7 +253,5 @@ export class AddAccountDialogComponent {
     this.querySelectors();
     this.initMDC();
     this.addEventListeners();
-    this.initValidator();
-    this.checkValidation();
   }
 }

@@ -9,17 +9,17 @@
       <div class="add-account-dialog__row">
         <div class="add-account-dialog__col">
           <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
-            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">
+            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" pattern="^[A-Za-z0-9_.]+$" placeholder="Account" required>
             <div class="add-account-dialog__input-ripple mdc-line-ripple"></div>
           </div>
-          <p class="add-account-dialog__account-helper-text mdc-text-field-helper-text" aria-hidden="true"></p>
+          <p class="add-account-dialog__account-helper-text" aria-hidden="true"></p>
         </div>
         <div class="add-account-dialog__col">
           <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
-            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">
+            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" pattern="^[0-9]+$" placeholder="Initial balance" required>
             <div class="add-account-dialog__balance-input-ripple mdc-line-ripple"></div>
           </div>
-          <p class="add-account-dialog__balance-helper-text mdc-text-field-helper-text" aria-hidden="true"></p>
+          <p class="add-account-dialog__balance-helper-text" aria-hidden="true"></p>
         </div>
       </div>
       <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>
@@ -47,7 +47,7 @@
             <div class="mdc-select__surface" tabindex="0">
               <div class="mdc-select__label">Currency</div>
               <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>
-              <div class="mdc-select__bottom-line"></div>
+              <div class="add-account-dialog__select-bottom-line mdc-select__bottom-line"></div>
             </div>
             <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">
               <ul class="mdc-list mdc-menu__items">
@@ -67,7 +67,7 @@
     <footer class="mdc-dialog__footer">
       <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel
       </button>
-      <button disabled type="button" class="add-account-dialog__button-ok mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
+      <button type="button" class="add-account-dialog__button-ok mdc-button mdc-dialog__footer__button">OK</button>
     </footer>
   </div>
   <div class="mdc-dialog__backdrop"></div>
