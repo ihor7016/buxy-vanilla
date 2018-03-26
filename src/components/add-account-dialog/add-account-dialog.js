@@ -27,6 +27,7 @@ export class AddAccountDialogComponent {
     this.type.selectedIndex = this.getTypes().findIndex(item => {
       return item === account.type;
     });
+    this.isEditMode = true;
     this.dialog.show();
   }
 
@@ -84,7 +85,7 @@ export class AddAccountDialogComponent {
   }
 
   handleOk() {
-    if (this.accountTitle.innerText === "Add account") {
+    if (!this.isEditMode) {
       this.props.onAddAccountConfirm({
         name: this.accountNameInput.value,
         balance: parseInt(this.balanceNameInput.value),
@@ -94,7 +95,6 @@ export class AddAccountDialogComponent {
           .toString(36)
           .substring(2)
       });
-      this.clean();
     } else {
       this.props.onEditAccountConfirm({
         name: this.accountNameInput.value,
@@ -104,6 +104,7 @@ export class AddAccountDialogComponent {
         id: this.account.id
       });
     }
+    this.clean();
   }
 
   handleCancel() {
