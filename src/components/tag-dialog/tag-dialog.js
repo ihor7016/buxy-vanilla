@@ -1,28 +1,27 @@
-import template from "./add-tag-dialog.html";
+import template from "./tag-dialog.html";
 
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 
-export class AddTagDialogComponent {
+export class TagDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
   }
 
-  showDialog() {
+  showDialog(type) {
+    this.header.innerHTML = `${type} tag`;
     this.dialog.show();
   }
 
   querySelectors() {
-    this.addTagDialogComponent = this.mountPoint.querySelector(
-      ".add-tag-dialog"
-    );
-    this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
-    this.tagNameInput = this.mountPoint.querySelector(".mdc-text-field__input");
+    this.tagDialogComponent = this.mountPoint.querySelector(".tag-dialog");
+    this.tagTextField = this.mountPoint.querySelector(".tag-dialog__tag");
+    this.header = this.mountPoint.querySelector(".tag-dialog__header");
   }
 
   initMDC() {
-    this.dialog = new MDCDialog(this.addTagDialogComponent);
+    this.dialog = new MDCDialog(this.tagDialogComponent);
     this.tag = new MDCTextField(this.tagTextField);
   }
 
@@ -32,11 +31,12 @@ export class AddTagDialogComponent {
   }
 
   clean() {
-    this.tagNameInput.value = "";
+    this.tag.value = "";
   }
 
   handleOk() {
-    this.props.onAddTagConfirm(this.tagNameInput.value);
+    // this.props.onEditTagConfirm();
+    this.props.onAddTagConfirm(this.tag.value);
     this.clean();
   }
 

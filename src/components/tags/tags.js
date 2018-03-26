@@ -2,7 +2,7 @@ import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagListService } from "../../services/tag-service";
-import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
+import { TagDialogComponent } from "../tag-dialog/tag-dialog";
 
 export class TagsComponent {
   constructor(mountPoint) {
@@ -14,7 +14,7 @@ export class TagsComponent {
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
-    this.addTagMountPoint = this.mountPoint.querySelector(
+    this.tagDialogMountPoint = this.mountPoint.querySelector(
       ".tags__add-tag-dialog"
     );
     this.tagsList = this.mountPoint.querySelector(".tags__list-items");
@@ -25,8 +25,12 @@ export class TagsComponent {
     this.addTagToHead(tag);
   }
 
+  handleEditTagConfirmed(tag) {
+    //
+  }
+
   handleAddTagClicked() {
-    this.addTagDialogComponent.showDialog();
+    this.tagDialogComponent.showDialog("Add");
   }
 
   initMoreBtns() {
@@ -43,13 +47,11 @@ export class TagsComponent {
   }
 
   mountChildren() {
-    this.addTagDialogComponent = new AddTagDialogComponent(
-      this.addTagMountPoint,
-      {
-        onAddTagConfirm: this.handleAddTagConfirmed.bind(this)
-      }
-    );
-    this.addTagDialogComponent.mount();
+    this.tagDialogComponent = new TagDialogComponent(this.tagDialogMountPoint, {
+      onAddTagConfirm: this.handleAddTagConfirmed.bind(this),
+      onEditTagConfirm: this.handleEditTagConfirmed.bind(this)
+    });
+    this.tagDialogComponent.mount();
   }
 
   initTags(tags) {
@@ -88,7 +90,7 @@ export class TagsComponent {
   }
 
   handleEditClick() {
-    console.log("handleEditClick");
+    this.tagDialogComponent.showDialog("Edit");
   }
 
   handleDeleteClick() {
