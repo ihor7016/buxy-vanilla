@@ -26,7 +26,9 @@ export class TagsComponent {
   }
 
   handleAddTagClicked() {
-    this.addTagDialogComponent.showDialog();
+    TagListService.get().then(tags =>
+      this.addTagDialogComponent.showDialog(tags)
+    );
   }
 
   initMoreBtns() {

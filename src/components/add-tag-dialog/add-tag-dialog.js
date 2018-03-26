@@ -9,7 +9,8 @@ export class AddTagDialogComponent {
     this.props = props;
   }
 
-  showDialog() {
+  showDialog(existingTagNames) {
+    this.existingTagNames = existingTagNames;
     this.dialog.show();
   }
 
@@ -18,7 +19,10 @@ export class AddTagDialogComponent {
       ".add-tag-dialog"
     );
     this.tagTextField = this.mountPoint.querySelector(".add-tag-dialog__tag");
-    this.tagNameInput = this.mountPoint.querySelector(".mdc-text-field__input");
+    this.tagNameInput = this.mountPoint.querySelector(".add-tag-dialog__input");
+    this.dialogButtonConfirm = this.mountPoint.querySelector(
+      ".add-tag-dialog__submit"
+    );
   }
 
   initMDC() {
@@ -27,17 +31,46 @@ export class AddTagDialogComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
+    this.dialogButtonConfirm.addEventListener(
+      "click",
+      this.handleOk.bind(this)
+    );
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+    this.tagNameInput.addEventListener(
+      "input",
+      this.removeErrorClass.bind(this)
+    );
   }
 
   clean() {
     this.tagNameInput.value = "";
+    this.removeErrorClass();
+  }
+
+  removeErrorClass() {
+    this.tagTextField.classList.remove("mdc-text-field--invalid");
   }
 
   handleOk() {
-    this.props.onAddTagConfirm(this.tagNameInput.value);
-    this.clean();
+    if (this.isValid()) {
+      this.props.onAddTagConfirm(this.tagNameInput.value);
+      this.clean();
+      this.dialog.close();
+    } else {
+      this.tagTextField.classList.add("mdc-text-field--invalid");
+    }
+  }
+
+  isValid() {
+    if (!this.tagNameInput.value) {
+      return false;
+    }
+
+    if (this.existingTagNames.indexOf(this.tagNameInput.value) !== -1) {
+      return false;
+    }
+
+    return true;
   }
 
   handleCancel() {

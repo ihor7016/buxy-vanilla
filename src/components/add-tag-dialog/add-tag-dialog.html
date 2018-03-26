@@ -6,17 +6,17 @@
       </h2>
     </header>
     <section class="mdc-dialog__body">
-      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
-        <input type="text" class="mdc-text-field__input" placeholder="Tag">
+      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth" aria-controls="tag-helper-text">
+        <input type="text" class="mdc-text-field__input add-tag-dialog__input" placeholder="Tag" required>
         <div class="mdc-line-ripple"></div>
       </div>
-      <p class="mdc-text-field-helper-text" aria-hidden="true">
-        Type tag name
+      <p class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true" id="tag-helper-text">
+        You need to enter a non-repeating name for the tag
       </p>
     </section>
     <footer class="mdc-dialog__footer">
       <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>
-      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
+      <button type="button" class="mdc-button mdc-dialog__footer__button add-tag-dialog__submit">OK</button>
     </footer>
   </div>
   <div class="mdc-dialog__backdrop"></div>
