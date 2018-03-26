@@ -40,6 +40,7 @@ export class AddTransactionComponent {
   showDialog() {
     this.getStoredAccounts();
     this.getStoredTags();
+    this.date.value = new Date().toISOString().slice(0, 10);
     this.dialog.show();
   }
 
@@ -68,6 +69,7 @@ export class AddTransactionComponent {
     this.expenceRadio = this.mountPoint.querySelector(
       ".add-transaction-dialog__expence"
     );
+    this.submit = this.mountPoint.querySelector(".transaction-dialog__submit");
   }
 
   mountChildren() {
@@ -94,8 +96,8 @@ export class AddTransactionComponent {
   }
 
   addEventListeners() {
-    this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
     this.dialog.listen("MDCDialog:cancel", this.handleCancel.bind(this));
+    this.submit.addEventListener("click", this.handleOk.bind(this));
   }
 
   getType() {
@@ -108,28 +110,59 @@ export class AddTransactionComponent {
     );
   }
 
-  handleOk() {
-    this.props.addTransaction({
-      type: this.getType(),
-      date: this.date.value,
-      amount: parseInt(this.amount.value),
-      desc: this.description.value,
-      tag: this.tagSelect.getValue(),
-      account: this.getAccount(),
-      id: Date.now().toString()
-    });
-    this.cleanDialog();
+  handleOk(e) {
+    if (this.validate()) {
+      const data = {
+        type: this.getType(),
+        date: this.date.value,
+        amount: parseInt(this.amount.value),
+        desc: this.description.value,
+        tag: this.tagSelect.getValue(),
+        account: this.getAccount(),
+        id: Date.now().toString()
+      };
+      this.props.addTransaction(data);
+      this.dialog.close();
+      this.cleanDialog();
+    }
   }
 
   handleCancel() {
     this.cleanDialog();
   }
 
+  validate() {
+    let valid = true;
+    if (!this.description.valid) {
+      valid = false;
+      this.descriptionTextField.classList.add("mdc-text-field--invalid");
+    }
+    if (!this.date.valid || !this.date.value) {
+      valid = false;
+      this.dateTextField.classList.add("mdc-text-field--invalid");
+    }
+    if (!this.amount.valid) {
+      valid = false;
+      this.amountTextField.classList.add("mdc-text-field--invalid");
+    }
+    if (!this.tagSelect.getValue()) {
+      valid = false;
+    }
+    this.tagSelect.toggleValid();
+    if (!this.getAccount()) {
+      valid = false;
+    }
+    this.accountSelect.toggleValid();
+    return valid;
+  }
+
   cleanDialog() {
     this.expence.checked = true;
-    this.date.value = "";
     this.amount.value = "";
     this.description.value = "";
+    this.amountTextField.classList.remove("mdc-text-field--invalid");
+    this.descriptionTextField.classList.remove("mdc-text-field--invalid");
+    this.dateTextField.classList.remove("mdc-text-field--invalid");
     this.tagSelect.clean();
     this.accountSelect.clean();
   }
