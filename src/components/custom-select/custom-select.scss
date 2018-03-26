@@ -1,6 +1,13 @@
 .custom-select {
   width: 100%;
 
+  &__bottom-line {
+    .mdc-select &--invalid.mdc-select__bottom-line {
+      background-color: red;
+      display: block;
+    }
+  }
+
   &__menu {
     top: inherit !important;
     left: inherit !important;
