@@ -25,7 +25,11 @@ export class BarChartComponent {
   }
 
   updateEdit(oldData, newData) {
-    if (newData.type === oldData.type && newData.amount === oldData.amount) {
+    if (
+      newData.type === oldData.type &&
+      newData.amount === oldData.amount &&
+      newData.account.currency === oldData.account.currency
+    ) {
       return;
     }
     this.dataset = this.delCurrData(this.dataset, oldData);
