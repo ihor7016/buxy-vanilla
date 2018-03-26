@@ -26,16 +26,9 @@ export class TagsComponent {
   }
 
   handleAddTagClicked() {
-    this.getStoredTags();
-    this.addTagDialogComponent.showDialog(this.getTagsValues());
-  }
-
-  getTagsValues(tags) {
-    this.allTags = tags;
-  }
-
-  getStoredTags() {
-    return TagListService.get().then(tags => this.getTagsValues(tags));
+    TagListService.get().then(tags =>
+      this.addTagDialogComponent.showDialog(tags)
+    );
   }
 
   initMoreBtns() {
