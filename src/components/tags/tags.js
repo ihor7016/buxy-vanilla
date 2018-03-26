@@ -20,16 +20,16 @@ export class TagsComponent {
     this.tagsList = this.mountPoint.querySelector(".tags__list-items");
   }
 
-  handleAddTagConfirmed(tag) {
+  handleAddTagConfirm(tag) {
     TagListService.add(tag);
     this.addTagToHead(tag);
   }
 
-  handleEditTagConfirmed(tag) {
+  handleEditTagConfirm(tag) {
     //
   }
 
-  handleAddTagClicked() {
+  handleAddTagClick() {
     this.tagDialogComponent.showDialog("Add");
   }
 
@@ -48,8 +48,8 @@ export class TagsComponent {
 
   mountChildren() {
     this.tagDialogComponent = new TagDialogComponent(this.tagDialogMountPoint, {
-      onAddTagConfirm: this.handleAddTagConfirmed.bind(this),
-      onEditTagConfirm: this.handleEditTagConfirmed.bind(this)
+      onAddTagConfirm: this.handleAddTagConfirm.bind(this),
+      onEditTagConfirm: this.handleEditTagConfirm.bind(this)
     });
     this.tagDialogComponent.mount();
   }
@@ -75,7 +75,7 @@ export class TagsComponent {
   addEventListeners() {
     this.addTagButton.addEventListener(
       "click",
-      this.handleAddTagClicked.bind(this)
+      this.handleAddTagClick.bind(this)
     );
   }
 
@@ -89,8 +89,9 @@ export class TagsComponent {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
   }
 
-  handleEditClick() {
-    this.tagDialogComponent.showDialog("Edit");
+  handleEditClick(e) {
+    this.tagToEdit = e.target.closest(".tags__list-item").dataset.name;
+    this.tagDialogComponent.showDialog("Edit", this.tagToEdit);
   }
 
   handleDeleteClick() {

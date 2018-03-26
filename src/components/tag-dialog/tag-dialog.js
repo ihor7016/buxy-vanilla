@@ -9,8 +9,9 @@ export class TagDialogComponent {
     this.props = props;
   }
 
-  showDialog(type) {
+  showDialog(type, tagToEdit) {
     this.header.innerHTML = `${type} tag`;
+    this.tag.value = tagToEdit || "";
     this.dialog.show();
   }
 
