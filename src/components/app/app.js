@@ -28,7 +28,6 @@ export class AppComponent {
       onAccountDelete: this.handleAccountDelete.bind(this),
       onAccountUpdate: this.handleAccountUpdate.bind(this),
       onTagChange: this.handleTagChange.bind(this)
-
     });
     this.drawerComponent.mount();
     this.transactionsComponent = new TransactionsComponent(
