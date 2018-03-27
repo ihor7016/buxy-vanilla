@@ -74,7 +74,7 @@ describe("AccountListService", () => {
     StorageService.set.mockClear();
   });
 
-  describe("get()", () => {
+  describe("get method", () => {
     it("should return correct items", () => {
       return AccountListService.get().then(res => {
         expect(res).toEqual(mockAccounts);
@@ -83,7 +83,7 @@ describe("AccountListService", () => {
     });
   });
 
-  describe("set(accounts)", () => {
+  describe("set method", () => {
     it("should set correct items", () => {
       return AccountListService.set(mockAccounts).then(() => {
         expect(StorageService.set).toHaveBeenCalledWith(
@@ -94,7 +94,7 @@ describe("AccountListService", () => {
     });
   });
 
-  describe("del(account)", () => {
+  describe("del method", () => {
     it("should delete correct item", () => {
       return AccountListService.del(accountToDeleteIndex).then(() => {
         expect(StorageService.set).toHaveBeenCalledWith(
@@ -105,7 +105,7 @@ describe("AccountListService", () => {
     });
   });
 
-  describe("add(account)", () => {
+  describe("add method", () => {
     it("should add correct item", () => {
       return AccountListService.add(mockAccount).then(() => {
         expect(StorageService.set.mock.calls[0][1]).toContain(mockAccount);
@@ -113,7 +113,7 @@ describe("AccountListService", () => {
     });
   });
 
-  describe("update(transactionAccount,amount)", () => {
+  describe("update method", () => {
     it("should update correct item", () => {
       return AccountListService.update(transactionAccount, amount).then(() => {
         expect(StorageService.set.mock.calls[0][1][0].balance).toBe(121);
