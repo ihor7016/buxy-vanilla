@@ -108,28 +108,22 @@ export class AddAccountDialogComponent {
   }
 
   hideAccountError() {
-    this.accountNameRipple.classList.remove(
-      "account-dialog__input-ripple-error"
-    );
+    this.accountTextField.classList.remove("mdc-text-field--invalid");
     this.accountNameHelperText.innerText = "";
   }
 
   showAccountError(msg) {
-    this.accountNameRipple.classList.add("account-dialog__input-ripple-error");
+    this.accountTextField.classList.add("mdc-text-field--invalid");
     this.accountNameHelperText.innerText = msg;
   }
 
   hideBalanceError() {
-    this.balanceNameRipple.classList.remove(
-      "account-dialog__balance-input-ripple-error"
-    );
+    this.balanceTextField.classList.remove("mdc-text-field--invalid");
     this.balanceNameHelperText.innerText = "";
   }
 
   showBalanceError(msg) {
-    this.balanceNameRipple.classList.add(
-      "account-dialog__balance-input-ripple-error"
-    );
+    this.balanceTextField.classList.add("mdc-text-field--invalid");
     this.balanceNameHelperText.innerText = msg;
   }
 
