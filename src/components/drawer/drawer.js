@@ -34,6 +34,7 @@ export class DrawerComponent {
 
   mountChildren() {
     this.tagsComponent = new TagsComponent(this.tagsMountPoint, {
+      onTagDelete: this.handleTagDelete.bind(this),
       onTagChange: this.props.onTagChange
     });
     this.tagsComponent.mount();
@@ -42,6 +43,11 @@ export class DrawerComponent {
       onAccountUpdate: this.props.onAccountUpdate
     });
     this.accountsComponent.mount();
+  }
+
+  handleTagDelete() {
+    this.props.onTagDelete();
+    this.accountsComponent.initData();
   }
 
   initMDC() {

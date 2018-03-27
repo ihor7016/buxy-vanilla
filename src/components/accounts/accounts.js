@@ -193,11 +193,10 @@ export class AccountsComponent {
     TransactionListService.deleteByAccountId(accountId)
       .then(() => {
         let index = Array.from(this.accountsList.children).indexOf(listItem);
-        return AccountListService.del(index).then(() => {
-          this.accountsList.removeChild(listItem);
-        });
+        return AccountListService.del(index);
       })
       .then(() => {
+        this.accountsList.removeChild(listItem);
         this.props.onAccountDelete();
       });
   }
