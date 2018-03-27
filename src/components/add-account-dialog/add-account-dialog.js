@@ -10,7 +10,24 @@ export class AddAccountDialogComponent {
     this.props = props;
   }
 
-  showDialog() {
+  showAddDialog() {
+    this.accountTitle.innerText = "Add account";
+    this.dialog.show();
+  }
+
+  showDialogEdit(account) {
+    this.account = account;
+    this.accountTitle.innerText = "Edit";
+    this.accountName.value = account.name;
+    this.balance.value = account.balance;
+
+    this.currency.selectedIndex = this.getCurrencies().findIndex(item => {
+      return item === account.currency;
+    });
+    this.type.selectedIndex = this.getTypes().findIndex(item => {
+      return item === account.type;
+    });
+    this.isEditMode = true;
     this.dialog.show();
   }
 
@@ -42,11 +59,14 @@ export class AddAccountDialogComponent {
     this.accountCurrency = this.mountPoint.querySelector(
       ".add-account-dialog__currency-text"
     );
+    this.accountTitle = this.mountPoint.querySelector(
+      ".add-account-dialog__title"
+    );
   }
 
   initMDC() {
     this.dialog = new MDCDialog(this.addAccountDialogComponent);
-    this.account = new MDCTextField(this.accountTextField);
+    this.accountName = new MDCTextField(this.accountTextField);
     this.balance = new MDCTextField(this.balanceTextField);
     this.type = new MDCSelect(this.typeAccountSelect);
     this.currency = new MDCSelect(this.currencyAccountSelect);
@@ -65,15 +85,25 @@ export class AddAccountDialogComponent {
   }
 
   handleOk() {
-    this.props.onAddAccountConfirm({
-      name: this.accountNameInput.value,
-      balance: parseInt(this.balanceNameInput.value),
-      type: this.accountType.innerText,
-      currency: this.accountCurrency.innerText,
-      id: Math.random()
-        .toString(36)
-        .substring(2)
-    });
+    if (!this.isEditMode) {
+      this.props.onAddAccountConfirm({
+        name: this.accountNameInput.value,
+        balance: parseInt(this.balanceNameInput.value),
+        type: this.accountType.innerText,
+        currency: this.accountCurrency.innerText,
+        id: Math.random()
+          .toString(36)
+          .substring(2)
+      });
+    } else {
+      this.props.onEditAccountConfirm({
+        name: this.accountNameInput.value,
+        balance: parseInt(this.balanceNameInput.value),
+        type: this.accountType.innerText,
+        currency: this.accountCurrency.innerText,
+        id: this.account.id
+      });
+    }
     this.clean();
   }
 
@@ -81,22 +111,30 @@ export class AddAccountDialogComponent {
     this.clean();
   }
 
+  getTypes() {
+    return [
+      "checking",
+      "savings",
+      "credit card",
+      "cash",
+      "investiment",
+      "loan",
+      "cd",
+      "real estate",
+      "vehicle",
+      "insurance",
+      "other"
+    ];
+  }
+
+  getCurrencies() {
+    return ["UAH", "USD", "EUR"];
+  }
+
   mount() {
     this.mountPoint.innerHTML = template({
-      types: [
-        "checking",
-        "savings",
-        "credit card",
-        "cash",
-        "investiment",
-        "loan",
-        "cd",
-        "real estate",
-        "vehicle",
-        "insurance",
-        "other"
-      ],
-      currencies: ["UAH", "USD", "EUR"]
+      types: this.getTypes(),
+      currencies: this.getCurrencies()
     });
     this.querySelectors();
     this.initMDC();
