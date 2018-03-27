@@ -37,10 +37,21 @@ export class AccountsComponent {
   handleAddAccountConfirmed(account) {
     AccountListService.add(account);
     this.addAccountToHead(account);
+    this.accounts.push(account);
+  }
+  handleEditAccountConfirmed(account) {
+    AccountListService.replace(account)
+      .then(() => {
+        this.initData();
+        return TransactionListService.updateAccountsData(account);
+      })
+      .then(() => {
+        this.props.onAccountUpdate();
+      });
   }
 
   handleAddAccountClick() {
-    this.addAccountDialogComponent.showDialog();
+    this.addAccountDialogComponent.showAddDialog();
   }
 
   initMoreBtns() {
@@ -60,13 +71,15 @@ export class AccountsComponent {
     this.addAccountDialogComponent = new AddAccountDialogComponent(
       this.addAccountMountPoint,
       {
-        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this),
+        onEditAccountConfirm: this.handleEditAccountConfirmed.bind(this)
       }
     );
     this.addAccountDialogComponent.mount();
   }
 
   initAccounts(accounts) {
+    this.accounts = accounts;
     accounts.forEach(item => {
       this.addAccount(item);
     });
@@ -83,7 +96,7 @@ export class AccountsComponent {
     });
   }
 
-  updateAccountData(transaction) {
+  updateAccountDataAdd(transaction) {
     AccountListService.update(
       transaction.account,
       parseInt(transaction.type + transaction.amount)
@@ -99,6 +112,29 @@ export class AccountsComponent {
     ).then(() => {
       this.initData();
     });
+  }
+
+  updateAccountDataEdit(oldTrans, newTrans) {
+    if (oldTrans.account.name === newTrans.account.name) {
+      const delta =
+        parseInt(newTrans.type + newTrans.amount) -
+        parseInt(oldTrans.type + oldTrans.amount);
+      AccountListService.update(oldTrans.account, delta).then(() => {
+        this.initData();
+      });
+    } else {
+      AccountListService.update(
+        newTrans.account,
+        parseInt(newTrans.type + newTrans.amount)
+      )
+        .then(() =>
+          AccountListService.update(
+            oldTrans.account,
+            -parseInt(oldTrans.type + oldTrans.amount)
+          )
+        )
+        .then(() => this.initData());
+    }
   }
 
   addEventListeners() {
@@ -119,8 +155,14 @@ export class AccountsComponent {
     this.initMoreBtns();
   }
 
-  handleEditClick() {
-    console.log("handleEditClick");
+  handleEditClick(event) {
+    let moreButton = event.target.closest(".accounts__more-button ");
+    this.listItem = moreButton.closest(".accounts__list-item");
+    let id = this.listItem.dataset.id;
+    let account = this.accounts.find(item => {
+      return item.id === id;
+    });
+    this.addAccountDialogComponent.showDialogEdit(account);
   }
 
   handleDeleteClick(event) {

@@ -1,0 +1,66 @@
+<aside class="mdc-dialog transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
+  <div class="mdc-dialog__surface">
+
+    <header class="mdc-dialog__header">
+      <h2 class="mdc-dialog__header__title">
+        <%= type %> transaction
+      </h2>
+    </header>
+
+    <section class="mdc-dialog__body">
+      <div class="transaction-dialog__row">
+        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>
+        <div class="mdc-form-field">
+          <div class="mdc-radio transaction-dialog__expence">
+            <input class="mdc-radio__native-control" type="radio" id="transaction-dialog-expense" name="radios" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+          </div>
+          <label for="transaction-dialog-expense">Expence</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio transaction-dialog__income">
+            <input class="mdc-radio__native-control" type="radio" id="transaction-dialog-income" name="radios">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+          </div>
+          <label for="transaction-dialog-income">Income</label>
+        </div>
+      </div>
+      <div class="transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
+        <input type="text" class="mdc-text-field__input" placeholder="Description" required>
+        <div class="mdc-line-ripple"></div>
+      </div>
+      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>
+      <div class="transaction-dialog__row transaction-dialog__row--col">
+        <div class="transaction-dialog__col">
+          <div class="transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
+            <input type="text" class="mdc-text-field__input" placeholder="Amount" pattern="^[0-9]+$" required>
+            <div class="mdc-line-ripple"></div>
+          </div>
+          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction (number)</p>
+          <div class="transaction-dialog__account-point"></div>
+        </div>
+        <div class="transaction-dialog__col">
+          <div class="transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
+            <input type="date" class="mdc-text-field__input" placeholder="Date" required>
+            <div class="mdc-line-ripple"></div>
+          </div>
+          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>
+          <div class="transaction-dialog__tag-point"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mdc-dialog__footer">
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>
+      <button type="button" class="mdc-button mdc-dialog__footer__button transaction-dialog__submit">OK</button>
+    </footer>
+
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside>

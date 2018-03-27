@@ -26,17 +26,24 @@ export class AppComponent {
     this.toolBarComponent.mount();
     this.drawerComponent = new DrawerComponent(this.drawerMountPoint, {
       onAccountDelete: this.handleAccountDelete.bind(this),
-      onTagDelete: this.handleTagDelete.bind(this)
+      onTagDelete: this.handleTagDelete.bind(this),
+      onAccountUpdate: this.handleAccountUpdate.bind(this),
+      onTagChange: this.handleTagChange.bind(this)
     });
     this.drawerComponent.mount();
     this.transactionsComponent = new TransactionsComponent(
       this.transactionsMountPoint,
       {
         onTransactionAdded: this.handleTransactionAdded.bind(this),
-        onTransactionDelete: this.handleTransactionDelete.bind(this)
+        onTransactionDelete: this.handleTransactionDelete.bind(this),
+        onTransactionEdit: this.handleTransactionEdit.bind(this)
       }
     );
     this.transactionsComponent.mount();
+  }
+
+  handleTagChange() {
+    this.transactionsComponent.loadStoredData();
   }
 
   handleAccountDelete() {
@@ -46,13 +53,20 @@ export class AppComponent {
   handleTagDelete() {
     this.transactionsComponent.loadStoredData();
   }
+  handleAccountUpdate() {
+    this.transactionsComponent.loadStoredData();
+  }
 
   handleTransactionAdded(data) {
-    this.drawerComponent.updateAccountData(data);
+    this.drawerComponent.updateAccountDataAdd(data);
   }
 
   handleTransactionDelete(data) {
     this.drawerComponent.updateAccountDataDelete(data);
+  }
+
+  handleTransactionEdit(oldData, newData) {
+    this.drawerComponent.updateAccountDataEdit(oldData, newData);
   }
 
   handleToolbarMenuClick() {

@@ -14,16 +14,32 @@ export class BarChartComponent {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  update(action, data) {
-    if (action === "add") {
-      this.dataset = this.addCurrData(this.dataset, data);
-    } else if (action === "del") {
-      this.dataset = this.delCurrData(this.dataset, data);
+  updateAdd(data) {
+    this.dataset = this.addCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  updateDel(data) {
+    this.dataset = this.delCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  updateEdit(oldData, newData) {
+    if (
+      newData.type === oldData.type &&
+      newData.amount === oldData.amount &&
+      newData.account.currency === oldData.account.currency
+    ) {
+      return;
     }
+    this.dataset = this.delCurrData(this.dataset, oldData);
+    this.dataset = this.addCurrData(this.dataset, newData);
     this.drawChanged();
   }
 
   createFromList(list) {
+    this.dataset.income = 0;
+    this.dataset.expence = 0;
     this.dataset = list.reduce(this.addCurrData, this.dataset);
     this.drawChanged();
   }

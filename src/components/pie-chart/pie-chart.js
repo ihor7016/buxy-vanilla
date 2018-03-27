@@ -14,19 +14,40 @@ export class PieChartComponent {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
   }
 
-  update(action, data) {
+  updateAdd(data) {
     if (data.type === "+") {
       return;
     }
-    if (action === "add") {
-      this.dataset = this.addCurrData(this.dataset, data);
-    } else if (action === "del") {
-      this.dataset = this.delCurrData(this.dataset, data);
+    this.dataset = this.addCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  updateDel(data) {
+    if (data.type === "+") {
+      return;
+    }
+    this.dataset = this.delCurrData(this.dataset, data);
+    this.drawChanged();
+  }
+
+  updateEdit(oldData, newData) {
+    if (oldData.type === "+" && newData.type === "+") {
+      return;
+    }
+    if (oldData.type === "+" && newData.type === "-") {
+      this.dataset = this.addCurrData(this.dataset, newData);
+    } else if (oldData.type === "-" && newData.type === "+") {
+      this.dataset = this.delCurrData(this.dataset, oldData);
+    } else {
+      this.dataset = this.addCurrData(this.dataset, newData);
+      this.dataset = this.delCurrData(this.dataset, oldData);
     }
     this.drawChanged();
   }
 
   createFromList(list) {
+    this.dataset.tags = [];
+    this.dataset.amounts = [];
     let expenceList = list.filter(item => item.type === "-").reverse();
     this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
     this.drawChanged();
