@@ -50,7 +50,6 @@ export class AccountListService {
   }
 
   static updateMultDel(list) {
-    console.log(list);
     return this.get().then(accounts => {
       const newList = accounts.map(acc => {
         list.forEach(trans => {
