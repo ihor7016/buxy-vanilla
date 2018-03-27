@@ -38,6 +38,8 @@ export class BarChartComponent {
   }
 
   createFromList(list) {
+    this.dataset.income = 0;
+    this.dataset.expence = 0;
     this.dataset = list.reduce(this.addCurrData, this.dataset);
     this.drawChanged();
   }
