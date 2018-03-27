@@ -74,38 +74,50 @@ describe("AccountListService", () => {
     StorageService.set.mockClear();
   });
 
-  test("get()", () => {
-    return AccountListService.get().then(res => {
-      expect(res).toEqual(mockAccounts);
-      expect(StorageService.get).toHaveBeenCalledWith(storageDbName);
-    });
-  });
-  test("set(accounts)", () => {
-    return AccountListService.set(mockAccounts).then(() => {
-      expect(StorageService.set).toHaveBeenCalledWith(
-        storageDbName,
-        mockAccounts
-      );
+  describe("get()", () => {
+    it("should return correct items", () => {
+      return AccountListService.get().then(res => {
+        expect(res).toEqual(mockAccounts);
+        expect(StorageService.get).toHaveBeenCalledWith(storageDbName);
+      });
     });
   });
 
-  test("del(account)", () => {
-    return AccountListService.del(accountToDeleteIndex).then(() => {
-      expect(StorageService.set).toHaveBeenCalledWith(
-        storageDbName,
-        mockAccountsWithoutElement1
-      );
+  describe("set(accounts)", () => {
+    it("should set correct items", () => {
+      return AccountListService.set(mockAccounts).then(() => {
+        expect(StorageService.set).toHaveBeenCalledWith(
+          storageDbName,
+          mockAccounts
+        );
+      });
     });
   });
 
-  test("add(account)", () => {
-    return AccountListService.add(mockAccount).then(() => {
-      expect(StorageService.set.mock.calls[0][1]).toContain(mockAccount);
+  describe("del(account)", () => {
+    it("should delete correct item", () => {
+      return AccountListService.del(accountToDeleteIndex).then(() => {
+        expect(StorageService.set).toHaveBeenCalledWith(
+          storageDbName,
+          mockAccountsWithoutElement1
+        );
+      });
     });
   });
-  test("update(transactionAccount,amount)", () => {
-    return AccountListService.update(transactionAccount, amount).then(() => {
-      expect(StorageService.set.mock.calls[0][1][0].balance).toBe(121);
+
+  describe("add(account)", () => {
+    it("should add correct item", () => {
+      return AccountListService.add(mockAccount).then(() => {
+        expect(StorageService.set.mock.calls[0][1]).toContain(mockAccount);
+      });
+    });
+  });
+
+  describe("update(transactionAccount,amount)", () => {
+    it("should update correct item", () => {
+      return AccountListService.update(transactionAccount, amount).then(() => {
+        expect(StorageService.set.mock.calls[0][1][0].balance).toBe(121);
+      });
     });
   });
 });
