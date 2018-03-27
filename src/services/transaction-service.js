@@ -58,7 +58,11 @@ export class TransactionListService {
           transactions.filter(item => {
             return item.tag !== tag;
           })
-        );
+        ).then(() => {
+          return transactions.filter(item => {
+            return item.tag === tag;
+          });
+        });
       }
     });
   }

@@ -4,6 +4,7 @@ import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagDialogComponent } from "../tag-dialog/tag-dialog";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
+import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
 import { TransactionListService } from "../../services/transaction-service";
 
@@ -133,8 +134,9 @@ export class TagsComponent {
   delTag() {
     const tag = this.tagToDel.dataset.name;
     TransactionListService.deleteByTag(tag)
-      .then(() => {
+      .then(listToDel => {
         TagListService.del(tag);
+        return AccountListService.updateMultDel(listToDel);
       })
       .then(() => {
         this.tagsList.removeChild(this.tagToDel);
