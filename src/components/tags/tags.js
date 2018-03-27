@@ -2,9 +2,10 @@ import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagDialogComponent } from "../tag-dialog/tag-dialog";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
+
 import { TagListService } from "../../services/tag-service";
 import { TransactionListService } from "../../services/transaction-service";
-import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
 export class TagsComponent {
   constructor(mountPoint, props) {
@@ -64,7 +65,6 @@ export class TagsComponent {
       onEditTagConfirm: this.handleEditTagConfirm.bind(this)
     });
     this.tagDialogComponent.mount();
-    this.initConfirmDialog();
     this.confirmDialog = new ConfirmDialogComponent(
       this.confirmDialogMountPoint,
       {
@@ -78,6 +78,7 @@ export class TagsComponent {
     tags.forEach(item => {
       this.addTag(item);
     });
+    this.initMoreBtns();
   }
 
   initData() {
@@ -130,7 +131,6 @@ export class TagsComponent {
   }
 
   delTag() {
-    let tag = listItem.querySelector(".tags__list-item-name").innerText;
     const tag = this.tagToDel.dataset.name;
     TransactionListService.deleteByTag(tag)
       .then(() => {

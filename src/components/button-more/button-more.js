@@ -1,12 +1,6 @@
 import template from "./button-more.html";
 import { MDCMenu } from "@material/menu";
 
-import { TagListService } from "../../services/tag-service";
-import { TransactionListService } from "../../services/transaction-service";
-
-import { TagDialogComponent } from "../tag-dialog/tag-dialog";
-import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
-
 export class ButtonMoreComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
