@@ -1,0 +1,72 @@
+<aside class="add-account-dialog mdc-dialog" role="alertdialog">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 class="add-account-dialog__title mdc-dialog__header__title">
+        Add account
+      </h2>
+    </header>
+    <section class="mdc-dialog__body">
+      <div class="add-account-dialog__row">
+        <div class="add-account-dialog__col">
+          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
+            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">
+            <div class="mdc-line-ripple"></div>
+          </div>
+        </div>
+        <div class="add-account-dialog__col">
+          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
+            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">
+            <div class="mdc-line-ripple"></div>
+          </div>
+        </div>
+      </div>
+      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>
+      <div class="add-account-dialog__row">
+        <div class="add-account-dialog__col">
+          <div class="mdc-select add-account-dialog__type" role="listbox">
+            <div class="mdc-select__surface" tabindex="0">
+              <div class="mdc-select__label">Type</div>
+              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>
+              <div class="mdc-select__bottom-line"></div>
+            </div>
+            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">
+              <ul class="mdc-list mdc-menu__items">
+                <% for(let i=0; i<types.length; i++) {%>
+                  <li class="add-account-dialog__types mdc-list-item" role="option" tabindex="0">
+                    <%= types[i] %>
+                  </li>
+                  <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="add-account-dialog__col">
+          <div class="mdc-select add-account-dialog__currency" role="listbox">
+            <div class="mdc-select__surface" tabindex="0">
+              <div class="mdc-select__label">Currency</div>
+              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>
+              <div class="mdc-select__bottom-line"></div>
+            </div>
+            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">
+              <ul class="mdc-list mdc-menu__items">
+                <% for(let i=0; i
+                <currencies.length
+                ; i++) {%>
+                  <li class="add-account-dialog__currencies mdc-list-item" role="option" tabindex="0">
+                    <%= currencies[i] %>
+                  </li>
+                  <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="mdc-dialog__footer">
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel
+      </button>
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
+    </footer>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside>

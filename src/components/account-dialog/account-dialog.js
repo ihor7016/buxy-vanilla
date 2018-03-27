@@ -10,7 +10,7 @@ export class AccountDialogComponent {
     this.props = props;
   }
 
-  showAddDialog(accounts) {
+  showDialog(accounts) {
     this.accounts = accounts;
     this.dialog.show();
     this.type.selectedIndex = 0;
