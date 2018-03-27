@@ -49,6 +49,20 @@ export class AccountListService {
       });
   }
 
+  static updateMultDel(list) {
+    return this.get().then(accounts => {
+      const newList = accounts.map(acc => {
+        list.forEach(trans => {
+          if (trans.account.id === acc.id) {
+            acc.balance -= parseInt(trans.type + trans.amount);
+          }
+        });
+        return acc;
+      });
+      return this.set(newList);
+    });
+  }
+
   static get() {
     return StorageService.get("accountList");
   }

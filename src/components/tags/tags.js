@@ -1,9 +1,10 @@
 import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
-
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagDialogComponent } from "../tag-dialog/tag-dialog";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
+import { AccountListService } from "../../services/account-service";
 import { TagListService } from "../../services/tag-service";
 import { TransactionListService } from "../../services/transaction-service";
 
@@ -14,7 +15,6 @@ export class TagsComponent {
   }
 
   querySelectors() {
-    this.tagsRoot = this.mountPoint.querySelector(".tags");
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
@@ -22,6 +22,9 @@ export class TagsComponent {
       ".tags__add-tag-dialog"
     );
     this.tagsList = this.mountPoint.querySelector(".tags__list-items");
+    this.confirmDialogMountPoint = this.mountPoint.querySelector(
+      ".tags__delete-confirm-dialog"
+    );
   }
 
   handleAddTagConfirm(tag) {
@@ -63,6 +66,13 @@ export class TagsComponent {
       onEditTagConfirm: this.handleEditTagConfirm.bind(this)
     });
     this.tagDialogComponent.mount();
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint,
+      {
+        onOkClick: this.handleDeleteConfirm.bind(this)
+      }
+    );
+    this.confirmDialog.mount();
   }
 
   initTags(tags) {
@@ -111,8 +121,27 @@ export class TagsComponent {
     );
   }
 
-  handleDeleteClick() {
-    console.log("handleDeleteClick");
+  handleDeleteClick(event) {
+    this.tagToDel = event.target.closest(".tags__list-item");
+    const tagName = this.tagToDel.dataset.name;
+    this.confirmDialog.showDialog("tag", tagName);
+  }
+
+  handleDeleteConfirm() {
+    this.delTag();
+  }
+
+  delTag() {
+    const tag = this.tagToDel.dataset.name;
+    TransactionListService.deleteByTag(tag)
+      .then(listToDel => {
+        TagListService.del(tag);
+        return AccountListService.updateMultDel(listToDel);
+      })
+      .then(() => {
+        this.tagsList.removeChild(this.tagToDel);
+        this.props.onTagDelete();
+      });
   }
 
   mount() {
