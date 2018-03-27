@@ -4,7 +4,7 @@ import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCSelect } from "@material/select";
 
-export class AddAccountDialogComponent {
+export class AccountDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
