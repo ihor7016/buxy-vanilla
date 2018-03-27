@@ -50,4 +50,32 @@ export class TransactionListService {
       }
     });
   }
+
+  static updateAccountsData(account) {
+    return TransactionListService.get().then(transactions => {
+      if (transactions) {
+        return TransactionListService.set(
+          transactions.map(item => {
+            if (item.account.id === account.id) {
+              item.account = account;
+            }
+            return item;
+          })
+        );
+      }
+    });
+  }
+
+  static updateTags(oldTag, newTag) {
+    return this.get().then(list => {
+      const newList = list.map(elem => {
+        let item = elem;
+        if (item.tag === oldTag) {
+          item.tag = newTag;
+        }
+        return item;
+      });
+      return this.set(newList);
+    });
+  }
 }

@@ -46,6 +46,8 @@ export class PieChartComponent {
   }
 
   createFromList(list) {
+    this.dataset.tags = [];
+    this.dataset.amounts = [];
     let expenceList = list.filter(item => item.type === "-").reverse();
     this.dataset = expenceList.reduce(this.addCurrData, this.dataset);
     this.drawChanged();

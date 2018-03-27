@@ -35,14 +35,23 @@ export class AccountsComponent {
   }
 
   handleAddAccountConfirmed(account) {
-    AccountListService.add(account).then(() => {
-      this.addAccountToHead(account);
-      this.accounts.push(account);
-    });
+    AccountListService.add(account);
+    this.addAccountToHead(account);
+    this.accounts.push(account);
+  }
+  handleEditAccountConfirmed(account) {
+    AccountListService.replace(account)
+      .then(() => {
+        this.initData();
+        return TransactionListService.updateAccountsData(account);
+      })
+      .then(() => {
+        this.props.onAccountUpdate();
+      });
   }
 
   handleAddAccountClick() {
-    this.addAccountDialogComponent.showDialog(this.accounts);
+    this.addAccountDialogComponent.showAddDialog();
   }
 
   initMoreBtns() {
@@ -62,13 +71,15 @@ export class AccountsComponent {
     this.addAccountDialogComponent = new AddAccountDialogComponent(
       this.addAccountMountPoint,
       {
-        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+        onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this),
+        onEditAccountConfirm: this.handleEditAccountConfirmed.bind(this)
       }
     );
     this.addAccountDialogComponent.mount();
   }
 
   initAccounts(accounts) {
+    this.accounts = accounts;
     accounts.forEach(item => {
       this.addAccount(item);
     });
@@ -145,8 +156,14 @@ export class AccountsComponent {
     this.initMoreBtns();
   }
 
-  handleEditClick() {
-    console.log("handleEditClick");
+  handleEditClick(event) {
+    let moreButton = event.target.closest(".accounts__more-button ");
+    this.listItem = moreButton.closest(".accounts__list-item");
+    let id = this.listItem.dataset.id;
+    let account = this.accounts.find(item => {
+      return item.id === id;
+    });
+    this.addAccountDialogComponent.showDialogEdit(account);
   }
 
   handleDeleteClick(event) {

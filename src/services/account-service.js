@@ -35,6 +35,20 @@ export class AccountListService {
       });
   }
 
+  static replace(account) {
+    return this.get()
+      .then(accounts => {
+        return accounts || [];
+      })
+      .then(accounts => {
+        let index = accounts.findIndex(item => {
+          return item.id === account.id;
+        });
+        accounts[index] = account;
+        this.set(accounts);
+      });
+  }
+
   static get() {
     return StorageService.get("accountList");
   }
