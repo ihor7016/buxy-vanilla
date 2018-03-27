@@ -2,7 +2,7 @@ import template from "./accounts.html";
 import accountItemTemplate from "./account-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { AccountListService } from "../../services/account-service";
-import { AddAccountDialogComponent } from "../add-account-dialog/add-account-dialog";
+import { AccountDialogComponent } from "../account-dialog/account-dialog";
 import { TransactionListService } from "../../services/transaction-service";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
@@ -68,7 +68,7 @@ export class AccountsComponent {
   }
 
   initAddAccountDialogComponent() {
-    this.addAccountDialogComponent = new AddAccountDialogComponent(
+    this.addAccountDialogComponent = new AccountDialogComponent(
       this.addAccountMountPoint,
       {
         onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this),
@@ -92,6 +92,7 @@ export class AccountsComponent {
         accounts = [];
         AccountListService.set(accounts);
       }
+      this.accounts = accounts;
       this.initAccounts(accounts);
     });
   }
@@ -192,11 +193,10 @@ export class AccountsComponent {
     TransactionListService.deleteByAccountId(accountId)
       .then(() => {
         let index = Array.from(this.accountsList.children).indexOf(listItem);
-        return AccountListService.del(index).then(() => {
-          this.accountsList.removeChild(listItem);
-        });
+        return AccountListService.del(index);
       })
       .then(() => {
+        this.accountsList.removeChild(listItem);
         this.props.onAccountDelete();
       });
   }

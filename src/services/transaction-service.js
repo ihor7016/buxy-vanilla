@@ -51,6 +51,22 @@ export class TransactionListService {
     });
   }
 
+  static deleteByTag(tag) {
+    return TransactionListService.get().then(transactions => {
+      if (transactions) {
+        return TransactionListService.set(
+          transactions.filter(item => {
+            return item.tag !== tag;
+          })
+        ).then(() => {
+          return transactions.filter(item => {
+            return item.tag === tag;
+          });
+        });
+      }
+    });
+  }
+
   static updateAccountsData(account) {
     return TransactionListService.get().then(transactions => {
       if (transactions) {
