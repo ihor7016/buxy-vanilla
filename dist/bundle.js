@@ -5772,7 +5772,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        29
+        30
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         201
@@ -7211,7 +7211,7 @@
         197
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
-        27
+        28
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -7744,10 +7744,10 @@
         18
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(
-        30
+        31
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adapter__ = __webpack_require__(
-        31
+        32
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__foundation__ = __webpack_require__(
         212
@@ -8320,7 +8320,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        32
+        33
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         208
@@ -8468,7 +8468,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        33
+        34
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         209
@@ -8642,7 +8642,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        34
+        35
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         210
@@ -8760,7 +8760,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        35
+        36
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         211
@@ -8898,10 +8898,10 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        36
+        37
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        37
+        38
       );
       /**
        * @license
@@ -9078,7 +9078,7 @@
         224
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(
-        40
+        41
       );
       /* harmony reexport (binding) */ __webpack_require__.d(
         __webpack_exports__,
@@ -9295,6 +9295,157 @@
       /***/
     },
     /* 26 */
+    /***/ function(module, exports, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.TransactionListService = undefined;
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      var _storage = __webpack_require__(17);
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      var TransactionListService = (exports.TransactionListService = (function() {
+        function TransactionListService() {
+          _classCallCheck(this, TransactionListService);
+        }
+
+        _createClass(TransactionListService, null, [
+          {
+            key: "get",
+            value: function get() {
+              return _storage.StorageService.get("transactionList");
+            }
+          },
+          {
+            key: "set",
+            value: function set(value) {
+              return _storage.StorageService.set("transactionList", value);
+            }
+          },
+          {
+            key: "add",
+            value: function add(data) {
+              var _this = this;
+
+              return this.get().then(function(list) {
+                var newList = list ? [data].concat(list) : [data];
+                _this.set(newList);
+                return newList;
+              });
+            }
+          },
+          {
+            key: "del",
+            value: function del(id) {
+              var _this2 = this;
+
+              return this.get().then(function(list) {
+                var newList = list.filter(function(elem) {
+                  return elem.id !== id;
+                });
+                _this2.set(newList);
+                return newList;
+              });
+            }
+          },
+          {
+            key: "update",
+            value: function update(oldId, newData) {
+              var _this3 = this;
+
+              return this.get().then(function(list) {
+                var newList = list.map(function(elem) {
+                  if (elem.id !== oldId) {
+                    return elem;
+                  } else {
+                    return newData;
+                  }
+                });
+                _this3.set(newList);
+                return newList;
+              });
+            }
+          },
+          {
+            key: "deleteByAccountId",
+            value: function deleteByAccountId(accountId) {
+              return TransactionListService.get().then(function(transactions) {
+                if (transactions) {
+                  return TransactionListService.set(
+                    transactions.filter(function(item) {
+                      return item.account.id !== accountId;
+                    })
+                  );
+                }
+              });
+            }
+          },
+          {
+            key: "updateAccountsData",
+            value: function updateAccountsData(account) {
+              return TransactionListService.get().then(function(transactions) {
+                if (transactions) {
+                  return TransactionListService.set(
+                    transactions.map(function(item) {
+                      if (item.account.id === account.id) {
+                        item.account = account;
+                      }
+                      return item;
+                    })
+                  );
+                }
+              });
+            }
+          },
+          {
+            key: "updateTags",
+            value: function updateTags(oldTag, newTag) {
+              var _this4 = this;
+
+              return this.get().then(function(list) {
+                var newList = list.map(function(elem) {
+                  var item = elem;
+                  if (item.tag === oldTag) {
+                    item.tag = newTag;
+                  }
+                  return item;
+                });
+                return _this4.set(newList);
+              });
+            }
+          }
+        ]);
+
+        return TransactionListService;
+      })());
+
+      /***/
+    },
+    /* 27 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* unused harmony export MDCSelectionControlState */
@@ -9343,7 +9494,7 @@
 
       /***/
     },
-    /* 27 */
+    /* 28 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -9466,7 +9617,7 @@
 
       /***/
     },
-    /* 28 */
+    /* 29 */
     /***/ function(module, exports, __webpack_require__) {
       "use strict";
 
@@ -9553,6 +9704,24 @@
             }
           },
           {
+            key: "replace",
+            value: function replace(account) {
+              var _this4 = this;
+
+              return this.get()
+                .then(function(accounts) {
+                  return accounts || [];
+                })
+                .then(function(accounts) {
+                  var index = accounts.findIndex(function(item) {
+                    return item.id === account.id;
+                  });
+                  accounts[index] = account;
+                  _this4.set(accounts);
+                });
+            }
+          },
+          {
             key: "get",
             value: function get() {
               return _storage.StorageService.get("accountList");
@@ -9571,7 +9740,7 @@
 
       /***/
     },
-    /* 29 */
+    /* 30 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -9687,7 +9856,7 @@
 
       /***/
     },
-    /* 30 */
+    /* 31 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -9758,7 +9927,7 @@
 
       /***/
     },
-    /* 31 */
+    /* 32 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* unused harmony export MDCTextFieldAdapter */
@@ -9966,7 +10135,7 @@
 
       /***/
     },
-    /* 32 */
+    /* 33 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10043,7 +10212,7 @@
 
       /***/
     },
-    /* 33 */
+    /* 34 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10119,7 +10288,7 @@
 
       /***/
     },
-    /* 34 */
+    /* 35 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10183,7 +10352,7 @@
 
       /***/
     },
-    /* 35 */
+    /* 36 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10253,7 +10422,7 @@
 
       /***/
     },
-    /* 36 */
+    /* 37 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10317,7 +10486,7 @@
 
       /***/
     },
-    /* 37 */
+    /* 38 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony export (binding) */ __webpack_require__.d(
@@ -10352,7 +10521,7 @@
 
       /***/
     },
-    /* 38 */
+    /* 39 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10402,7 +10571,7 @@
 
       /***/
     },
-    /* 39 */
+    /* 40 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10452,7 +10621,7 @@
 
       /***/
     },
-    /* 40 */
+    /* 41 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /**
@@ -10488,123 +10657,6 @@
         SELECTED_TEXT_SELECTOR: ".mdc-select__selected-text"
       };
       /* harmony export (immutable) */ __webpack_exports__["b"] = strings;
-
-      /***/
-    },
-    /* 41 */
-    /***/ function(module, exports, __webpack_require__) {
-      "use strict";
-
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.TransactionListService = undefined;
-
-      var _createClass = (function() {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-        return function(Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      })();
-
-      var _storage = __webpack_require__(17);
-
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      var TransactionListService = (exports.TransactionListService = (function() {
-        function TransactionListService() {
-          _classCallCheck(this, TransactionListService);
-        }
-
-        _createClass(TransactionListService, null, [
-          {
-            key: "get",
-            value: function get() {
-              return _storage.StorageService.get("transactionList");
-            }
-          },
-          {
-            key: "set",
-            value: function set(value) {
-              return _storage.StorageService.set("transactionList", value);
-            }
-          },
-          {
-            key: "add",
-            value: function add(data) {
-              var _this = this;
-
-              return this.get().then(function(list) {
-                var newList = list ? [data].concat(list) : [data];
-                _this.set(newList);
-                return newList;
-              });
-            }
-          },
-          {
-            key: "del",
-            value: function del(id) {
-              var _this2 = this;
-
-              return this.get().then(function(list) {
-                var newList = list.filter(function(elem) {
-                  return elem.id !== id;
-                });
-                _this2.set(newList);
-                return newList;
-              });
-            }
-          },
-          {
-            key: "update",
-            value: function update(oldId, newData) {
-              var _this3 = this;
-
-              return this.get().then(function(list) {
-                var newList = list.map(function(elem) {
-                  if (elem.id !== oldId) {
-                    return elem;
-                  } else {
-                    return newData;
-                  }
-                });
-                _this3.set(newList);
-                return newList;
-              });
-            }
-          },
-          {
-            key: "deleteByAccountId",
-            value: function deleteByAccountId(accountId) {
-              return TransactionListService.get().then(function(transactions) {
-                if (transactions) {
-                  return TransactionListService.set(
-                    transactions.filter(function(item) {
-                      return item.account.id !== accountId;
-                    })
-                  );
-                }
-              });
-            }
-          }
-        ]);
-
-        return TransactionListService;
-      })());
 
       /***/
     },
@@ -10772,6 +10824,23 @@
                   var updatedTags = [tag].concat(tags);
                   _this.set(updatedTags);
                 }
+              });
+            }
+          },
+          {
+            key: "update",
+            value: function update(oldTag, newTag) {
+              var _this2 = this;
+
+              return this.get().then(function(tags) {
+                var updatedTags = tags.map(function(elem) {
+                  if (elem === oldTag) {
+                    return newTag;
+                  } else {
+                    return elem;
+                  }
+                });
+                _this2.set(updatedTags);
               });
             }
           },
@@ -25191,7 +25260,7 @@
 
       var _customSelect = __webpack_require__(298);
 
-      var _accountService = __webpack_require__(28);
+      var _accountService = __webpack_require__(29);
 
       var _tagService = __webpack_require__(43);
 
@@ -26233,7 +26302,9 @@
               this.drawerComponent = new _drawer.DrawerComponent(
                 this.drawerMountPoint,
                 {
-                  onAccountDelete: this.handleAccountDelete.bind(this)
+                  onAccountDelete: this.handleAccountDelete.bind(this),
+                  onAccountUpdate: this.handleAccountUpdate.bind(this),
+                  onTagChange: this.handleTagChange.bind(this)
                 }
               );
               this.drawerComponent.mount();
@@ -26249,8 +26320,20 @@
             }
           },
           {
+            key: "handleTagChange",
+            value: function handleTagChange() {
+              this.transactionsComponent.loadStoredData();
+            }
+          },
+          {
             key: "handleAccountDelete",
             value: function handleAccountDelete() {
+              this.transactionsComponent.loadStoredData();
+            }
+          },
+          {
+            key: "handleAccountUpdate",
+            value: function handleAccountUpdate() {
               this.transactionsComponent.loadStoredData();
             }
           },
@@ -26399,12 +26482,18 @@
           {
             key: "mountChildren",
             value: function mountChildren() {
-              this.tagsComponent = new _tags.TagsComponent(this.tagsMountPoint);
+              this.tagsComponent = new _tags.TagsComponent(
+                this.tagsMountPoint,
+                {
+                  onTagChange: this.props.onTagChange
+                }
+              );
               this.tagsComponent.mount();
               this.accountsComponent = new _accounts.AccountsComponent(
                 this.accountsMountPoint,
                 {
-                  onAccountDelete: this.props.onAccountDelete
+                  onAccountDelete: this.props.onAccountDelete,
+                  onAccountUpdate: this.props.onAccountUpdate
                 }
               );
               this.accountsComponent.mount();
@@ -27488,11 +27577,11 @@
 
       var _buttonMore = __webpack_require__(15);
 
-      var _accountService = __webpack_require__(28);
+      var _accountService = __webpack_require__(29);
 
       var _addAccountDialog = __webpack_require__(199);
 
-      var _transactionService = __webpack_require__(41);
+      var _transactionService = __webpack_require__(26);
 
       var _confirmDialog = __webpack_require__(42);
 
@@ -27548,18 +27637,36 @@
             value: function handleAddAccountConfirmed(account) {
               _accountService.AccountListService.add(account);
               this.addAccountToHead(account);
+              this.accounts.push(account);
+            }
+          },
+          {
+            key: "handleEditAccountConfirmed",
+            value: function handleEditAccountConfirmed(account) {
+              var _this = this;
+
+              _accountService.AccountListService.replace(account)
+                .then(function() {
+                  _this.initData();
+                  return _transactionService.TransactionListService.updateAccountsData(
+                    account
+                  );
+                })
+                .then(function() {
+                  _this.props.onAccountUpdate();
+                });
             }
           },
           {
             key: "handleAddAccountClick",
             value: function handleAddAccountClick() {
-              this.addAccountDialogComponent.showDialog();
+              this.addAccountDialogComponent.showAddDialog();
             }
           },
           {
             key: "initMoreBtns",
             value: function initMoreBtns() {
-              var _this = this;
+              var _this2 = this;
 
               this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
                 ".accounts__more-button"
@@ -27567,8 +27674,8 @@
               Array.from(this.moreBtnMountPoints).forEach(function(point) {
                 new _buttonMore.ButtonMoreComponent(point, {
                   position: "right",
-                  onDeleteClick: _this.handleDeleteClick.bind(_this),
-                  onEditClick: _this.handleEditClick.bind(_this)
+                  onDeleteClick: _this2.handleDeleteClick.bind(_this2),
+                  onEditClick: _this2.handleEditClick.bind(_this2)
                 }).mount();
               });
             }
@@ -27579,7 +27686,12 @@
               this.addAccountDialogComponent = new _addAccountDialog.AddAccountDialogComponent(
                 this.addAccountMountPoint,
                 {
-                  onAddAccountConfirm: this.handleAddAccountConfirmed.bind(this)
+                  onAddAccountConfirm: this.handleAddAccountConfirmed.bind(
+                    this
+                  ),
+                  onEditAccountConfirm: this.handleEditAccountConfirmed.bind(
+                    this
+                  )
                 }
               );
               this.addAccountDialogComponent.mount();
@@ -27588,17 +27700,18 @@
           {
             key: "initAccounts",
             value: function initAccounts(accounts) {
-              var _this2 = this;
+              var _this3 = this;
 
+              this.accounts = accounts;
               accounts.forEach(function(item) {
-                _this2.addAccount(item);
+                _this3.addAccount(item);
               });
             }
           },
           {
             key: "initData",
             value: function initData() {
-              var _this3 = this;
+              var _this4 = this;
 
               this.accountsList.innerHTML = "";
               _accountService.AccountListService.get().then(function(accounts) {
@@ -27606,40 +27719,40 @@
                   accounts = [];
                   _accountService.AccountListService.set(accounts);
                 }
-                _this3.initAccounts(accounts);
+                _this4.initAccounts(accounts);
               });
             }
           },
           {
             key: "updateAccountDataAdd",
             value: function updateAccountDataAdd(transaction) {
-              var _this4 = this;
-
-              _accountService.AccountListService.update(
-                transaction.account,
-                parseInt(transaction.type + transaction.amount)
-              ).then(function() {
-                _this4.initData();
-              });
-            }
-          },
-          {
-            key: "updateAccountDataDelete",
-            value: function updateAccountDataDelete(transaction) {
               var _this5 = this;
 
               _accountService.AccountListService.update(
                 transaction.account,
-                -parseInt(transaction.type + transaction.amount)
+                parseInt(transaction.type + transaction.amount)
               ).then(function() {
                 _this5.initData();
               });
             }
           },
           {
+            key: "updateAccountDataDelete",
+            value: function updateAccountDataDelete(transaction) {
+              var _this6 = this;
+
+              _accountService.AccountListService.update(
+                transaction.account,
+                -parseInt(transaction.type + transaction.amount)
+              ).then(function() {
+                _this6.initData();
+              });
+            }
+          },
+          {
             key: "updateAccountDataEdit",
             value: function updateAccountDataEdit(oldTrans, newTrans) {
-              var _this6 = this;
+              var _this7 = this;
 
               if (oldTrans.account.name === newTrans.account.name) {
                 var delta =
@@ -27649,7 +27762,7 @@
                   oldTrans.account,
                   delta
                 ).then(function() {
-                  _this6.initData();
+                  _this7.initData();
                 });
               } else {
                 _accountService.AccountListService.update(
@@ -27663,7 +27776,7 @@
                     );
                   })
                   .then(function() {
-                    return _this6.initData();
+                    return _this7.initData();
                   });
               }
             }
@@ -27697,8 +27810,14 @@
           },
           {
             key: "handleEditClick",
-            value: function handleEditClick() {
-              console.log("handleEditClick");
+            value: function handleEditClick(event) {
+              var moreButton = event.target.closest(".accounts__more-button ");
+              this.listItem = moreButton.closest(".accounts__list-item");
+              var id = this.listItem.dataset.id;
+              var account = this.accounts.find(function(item) {
+                return item.id === id;
+              });
+              this.addAccountDialogComponent.showDialogEdit(account);
             }
           },
           {
@@ -27733,24 +27852,24 @@
           {
             key: "delAccount",
             value: function delAccount(listItem) {
-              var _this7 = this;
+              var _this8 = this;
 
               var accountId = listItem.dataset.id;
               _transactionService.TransactionListService.deleteByAccountId(
                 accountId
               )
                 .then(function() {
-                  var index = Array.from(_this7.accountsList.children).indexOf(
+                  var index = Array.from(_this8.accountsList.children).indexOf(
                     listItem
                   );
                   return _accountService.AccountListService.del(index).then(
                     function() {
-                      _this7.accountsList.removeChild(listItem);
+                      _this8.accountsList.removeChild(listItem);
                     }
                   );
                 })
                 .then(function() {
-                  _this7.props.onAccountDelete();
+                  _this8.props.onAccountDelete();
                 });
             }
           },
@@ -27799,11 +27918,11 @@
             ((__t = account.id) == null ? "" : __t) +
             '" href="#">\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\n  <p class="accounts__list-item-name">\n    ' +
             ((__t = account.name) == null ? "" : __t) +
-            " &nbsp;\n  </p>\n  " +
+            ' &nbsp;\n  </p>\n  <p class="accounts__list-item-balance">\n  ' +
             ((__t = account.balance) == null ? "" : __t) +
-            "\n  " +
+            '\n  </p>\n  <p class="accounts__list-item-currency">\n  ' +
             ((__t = account.currency) == null ? "" : __t) +
-            '\n  <div class="accounts__more-button drawer-menu__more-button"></div>\n</a>';
+            '\n  </p>\n  <div class="accounts__more-button drawer-menu__more-button"></div>\n</a>';
         }
         return __p;
       };
@@ -28026,7 +28145,7 @@
         198
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
-        27
+        28
       );
       /**
        * @license
@@ -29063,8 +29182,31 @@
 
         _createClass(AddAccountDialogComponent, [
           {
-            key: "showDialog",
-            value: function showDialog() {
+            key: "showAddDialog",
+            value: function showAddDialog() {
+              this.accountTitle.innerText = "Add account";
+              this.dialog.show();
+            }
+          },
+          {
+            key: "showDialogEdit",
+            value: function showDialogEdit(account) {
+              this.account = account;
+              this.accountTitle.innerText = "Edit";
+              this.accountName.value = account.name;
+              this.balance.value = account.balance;
+
+              this.currency.selectedIndex = this.getCurrencies().findIndex(
+                function(item) {
+                  return item === account.currency;
+                }
+              );
+              this.type.selectedIndex = this.getTypes().findIndex(function(
+                item
+              ) {
+                return item === account.type;
+              });
+              this.isEditMode = true;
               this.dialog.show();
             }
           },
@@ -29098,6 +29240,9 @@
               this.accountCurrency = this.mountPoint.querySelector(
                 ".add-account-dialog__currency-text"
               );
+              this.accountTitle = this.mountPoint.querySelector(
+                ".add-account-dialog__title"
+              );
             }
           },
           {
@@ -29106,7 +29251,9 @@
               this.dialog = new _dialog.MDCDialog(
                 this.addAccountDialogComponent
               );
-              this.account = new _textfield.MDCTextField(this.accountTextField);
+              this.accountName = new _textfield.MDCTextField(
+                this.accountTextField
+              );
               this.balance = new _textfield.MDCTextField(this.balanceTextField);
               this.type = new _select.MDCSelect(this.typeAccountSelect);
               this.currency = new _select.MDCSelect(this.currencyAccountSelect);
@@ -29134,15 +29281,25 @@
           {
             key: "handleOk",
             value: function handleOk() {
-              this.props.onAddAccountConfirm({
-                name: this.accountNameInput.value,
-                balance: parseInt(this.balanceNameInput.value),
-                type: this.accountType.innerText,
-                currency: this.accountCurrency.innerText,
-                id: Math.random()
-                  .toString(36)
-                  .substring(2)
-              });
+              if (!this.isEditMode) {
+                this.props.onAddAccountConfirm({
+                  name: this.accountNameInput.value,
+                  balance: parseInt(this.balanceNameInput.value),
+                  type: this.accountType.innerText,
+                  currency: this.accountCurrency.innerText,
+                  id: Math.random()
+                    .toString(36)
+                    .substring(2)
+                });
+              } else {
+                this.props.onEditAccountConfirm({
+                  name: this.accountNameInput.value,
+                  balance: parseInt(this.balanceNameInput.value),
+                  type: this.accountType.innerText,
+                  currency: this.accountCurrency.innerText,
+                  id: this.account.id
+                });
+              }
               this.clean();
             }
           },
@@ -29153,23 +29310,35 @@
             }
           },
           {
+            key: "getTypes",
+            value: function getTypes() {
+              return [
+                "checking",
+                "savings",
+                "credit card",
+                "cash",
+                "investiment",
+                "loan",
+                "cd",
+                "real estate",
+                "vehicle",
+                "insurance",
+                "other"
+              ];
+            }
+          },
+          {
+            key: "getCurrencies",
+            value: function getCurrencies() {
+              return ["UAH", "USD", "EUR"];
+            }
+          },
+          {
             key: "mount",
             value: function mount() {
               this.mountPoint.innerHTML = (0, _addAccountDialog2.default)({
-                types: [
-                  "checking",
-                  "savings",
-                  "credit card",
-                  "cash",
-                  "investiment",
-                  "loan",
-                  "cd",
-                  "real estate",
-                  "vehicle",
-                  "insurance",
-                  "other"
-                ],
-                currencies: ["UAH", "USD", "EUR"]
+                types: this.getTypes(),
+                currencies: this.getCurrencies()
               });
               this.querySelectors();
               this.initMDC();
@@ -29195,10 +29364,10 @@
         }
         with (obj) {
           __p +=
-            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
+            '<aside class="add-account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="add-account-dialog__title mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__account-input mdc-text-field__input" placeholder="Account">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="add-account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="add-account-dialog__balance-input mdc-text-field__input" placeholder="Initial balance">\n            <div class="mdc-line-ripple"></div>\n          </div>\n        </div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="add-account-dialog__row">\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="add-account-dialog__type-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
           for (let i = 0; i < types.length; i++) {
             __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
+              '\n                  <li class="add-account-dialog__types mdc-list-item" role="option" tabindex="0">\n                    ' +
               ((__t = types[i]) == null ? "" : __t) +
               "\n                  </li>\n                  ";
           }
@@ -29206,7 +29375,7 @@
             '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="add-account-dialog__col">\n          <div class="mdc-select add-account-dialog__currency" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Currency</div>\n              <div class="add-account-dialog__currency-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu add-account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
           for (let i = 0; i < currencies.length; i++) {
             __p +=
-              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
+              '\n                  <li class="add-account-dialog__currencies mdc-list-item" role="option" tabindex="0">\n                    ' +
               ((__t = currencies[i]) == null ? "" : __t) +
               "\n                  </li>\n                  ";
           }
@@ -29225,7 +29394,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        29
+        30
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         202
@@ -30834,7 +31003,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        31
+        32
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_line_ripple_foundation__ = __webpack_require__(
         20
@@ -30852,7 +31021,7 @@
         24
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constants__ = __webpack_require__(
-        30
+        31
       );
       /**
        * @license
@@ -31343,7 +31512,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        32
+        33
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         20
@@ -31441,7 +31610,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        33
+        34
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         21
@@ -31529,7 +31698,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        34
+        35
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         22
@@ -31621,7 +31790,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        35
+        36
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         23
@@ -31718,10 +31887,10 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        37
+        38
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter__ = __webpack_require__(
-        36
+        37
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(
         24
@@ -31821,7 +31990,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        38
+        39
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         219
@@ -31895,7 +32064,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        38
+        39
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         220
@@ -32017,7 +32186,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        39
+        40
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         222
@@ -32085,7 +32254,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter__ = __webpack_require__(
-        39
+        40
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(
         223
@@ -32178,7 +32347,7 @@
         7
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(
-        40
+        41
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_menu_index__ = __webpack_require__(
         16
@@ -32612,9 +32781,11 @@
 
       var _buttonMore = __webpack_require__(15);
 
+      var _tagDialog = __webpack_require__(229);
+
       var _tagService = __webpack_require__(43);
 
-      var _addTagDialog = __webpack_require__(229);
+      var _transactionService = __webpack_require__(26);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -32627,10 +32798,11 @@
       }
 
       var TagsComponent = (exports.TagsComponent = (function() {
-        function TagsComponent(mountPoint) {
+        function TagsComponent(mountPoint, props) {
           _classCallCheck(this, TagsComponent);
 
           this.mountPoint = mountPoint;
+          this.props = props;
         }
 
         _createClass(TagsComponent, [
@@ -32641,7 +32813,7 @@
               this.addTagButton = this.mountPoint.querySelector(
                 ".tags__add-tag-dialog-activation"
               );
-              this.addTagMountPoint = this.mountPoint.querySelector(
+              this.tagDialogMountPoint = this.mountPoint.querySelector(
                 ".tags__add-tag-dialog"
               );
               this.tagsList = this.mountPoint.querySelector(
@@ -32650,22 +32822,48 @@
             }
           },
           {
-            key: "handleAddTagConfirmed",
-            value: function handleAddTagConfirmed(tag) {
+            key: "handleAddTagConfirm",
+            value: function handleAddTagConfirm(tag) {
               _tagService.TagListService.add(tag);
               this.addTagToHead(tag);
             }
           },
           {
-            key: "handleAddTagClicked",
-            value: function handleAddTagClicked() {
-              this.addTagDialogComponent.showDialog();
+            key: "handleEditTagConfirm",
+            value: function handleEditTagConfirm(newTag) {
+              var _this = this;
+
+              var oldTag = this.tagToEdit.dataset.name;
+              _tagService.TagListService.update(oldTag, newTag)
+                .then(function() {
+                  return _transactionService.TransactionListService.updateTags(
+                    oldTag,
+                    newTag
+                  );
+                })
+                .then(function() {
+                  return _this.props.onTagChange();
+                });
+              this.tagToEdit.outerHTML = (0, _tagItem2.default)({
+                tag: newTag
+              });
+              this.initMoreBtns();
+            }
+          },
+          {
+            key: "handleAddTagClick",
+            value: function handleAddTagClick() {
+              var _this2 = this;
+
+              _tagService.TagListService.get().then(function(tags) {
+                return _this2.tagDialogComponent.showDialog("Add", tags);
+              });
             }
           },
           {
             key: "initMoreBtns",
             value: function initMoreBtns() {
-              var _this = this;
+              var _this3 = this;
 
               this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
                 ".tags__more-button"
@@ -32673,8 +32871,8 @@
               Array.from(this.moreBtnMountPoints).forEach(function(point) {
                 new _buttonMore.ButtonMoreComponent(point, {
                   position: "right",
-                  onDeleteClick: _this.handleDeleteClick.bind(_this),
-                  onEditClick: _this.handleEditClick.bind(_this)
+                  onDeleteClick: _this3.handleDeleteClick.bind(_this3),
+                  onEditClick: _this3.handleEditClick.bind(_this3)
                 }).mount();
               });
             }
@@ -32682,22 +32880,23 @@
           {
             key: "mountChildren",
             value: function mountChildren() {
-              this.addTagDialogComponent = new _addTagDialog.AddTagDialogComponent(
-                this.addTagMountPoint,
+              this.tagDialogComponent = new _tagDialog.TagDialogComponent(
+                this.tagDialogMountPoint,
                 {
-                  onAddTagConfirm: this.handleAddTagConfirmed.bind(this)
+                  onAddTagConfirm: this.handleAddTagConfirm.bind(this),
+                  onEditTagConfirm: this.handleEditTagConfirm.bind(this)
                 }
               );
-              this.addTagDialogComponent.mount();
+              this.tagDialogComponent.mount();
             }
           },
           {
             key: "initTags",
             value: function initTags(tags) {
-              var _this2 = this;
+              var _this4 = this;
 
               tags.forEach(function(item) {
-                _this2.addTag(item);
+                _this4.addTag(item);
               });
               this.initMoreBtns();
             }
@@ -32705,7 +32904,7 @@
           {
             key: "initData",
             value: function initData() {
-              var _this3 = this;
+              var _this5 = this;
 
               this.tagsList.innerHTML = "";
               _tagService.TagListService.get().then(function(tags) {
@@ -32713,7 +32912,7 @@
                   tags = [];
                   _tagService.TagListService.set(tags);
                 }
-                _this3.initTags(tags);
+                _this5.initTags(tags);
               });
             }
           },
@@ -32722,7 +32921,7 @@
             value: function addEventListeners() {
               this.addTagButton.addEventListener(
                 "click",
-                this.handleAddTagClicked.bind(this)
+                this.handleAddTagClick.bind(this)
               );
             }
           },
@@ -32742,8 +32941,17 @@
           },
           {
             key: "handleEditClick",
-            value: function handleEditClick() {
-              console.log("handleEditClick");
+            value: function handleEditClick(e) {
+              var _this6 = this;
+
+              this.tagToEdit = e.target.closest(".tags__list-item");
+              _tagService.TagListService.get().then(function(tags) {
+                return _this6.tagDialogComponent.showDialog(
+                  "Edit",
+                  tags,
+                  _this6.tagToEdit.dataset.name
+                );
+              });
             }
           },
           {
@@ -32792,7 +33000,9 @@
           __p = "";
         with (obj) {
           __p +=
-            '<a class="tags__list-item drawer-menu__list-item mdc-list-item" href="#">\n  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_offer</i>\n  ' +
+            '<a class="tags__list-item drawer-menu__list-item mdc-list-item" href="#" data-name="' +
+            ((__t = tag) == null ? "" : __t) +
+            '">\n  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_offer</i>\n  ' +
             ((__t = tag) == null ? "" : __t) +
             '\n  <div class="tags__more-button drawer-menu__more-button"></div>\n</a>';
         }
@@ -32808,7 +33018,7 @@
       Object.defineProperty(exports, "__esModule", {
         value: true
       });
-      exports.AddTagDialogComponent = undefined;
+      exports.TagDialogComponent = undefined;
 
       var _createClass = (function() {
         function defineProperties(target, props) {
@@ -32827,9 +33037,9 @@
         };
       })();
 
-      var _addTagDialog = __webpack_require__(230);
+      var _tagDialog = __webpack_require__(230);
 
-      var _addTagDialog2 = _interopRequireDefault(_addTagDialog);
+      var _tagDialog2 = _interopRequireDefault(_tagDialog);
 
       var _dialog = __webpack_require__(8);
 
@@ -32845,63 +33055,98 @@
         }
       }
 
-      var AddTagDialogComponent = (exports.AddTagDialogComponent = (function() {
-        function AddTagDialogComponent(mountPoint, props) {
-          _classCallCheck(this, AddTagDialogComponent);
+      var TagDialogComponent = (exports.TagDialogComponent = (function() {
+        function TagDialogComponent(mountPoint, props) {
+          _classCallCheck(this, TagDialogComponent);
 
           this.mountPoint = mountPoint;
           this.props = props;
         }
 
-        _createClass(AddTagDialogComponent, [
+        _createClass(TagDialogComponent, [
           {
             key: "showDialog",
-            value: function showDialog() {
+            value: function showDialog(type, existingTagNames, tagToEdit) {
+              if (tagToEdit) {
+                this.tag.value = tagToEdit;
+              }
+              this.type = type;
+              this.header.innerHTML = type + " tag";
+              this.existingTagNames = existingTagNames;
               this.dialog.show();
             }
           },
           {
             key: "querySelectors",
             value: function querySelectors() {
-              this.addTagDialogComponent = this.mountPoint.querySelector(
-                ".add-tag-dialog"
+              this.tagDialogComponent = this.mountPoint.querySelector(
+                ".tag-dialog"
               );
               this.tagTextField = this.mountPoint.querySelector(
-                ".add-tag-dialog__tag"
+                ".tag-dialog__tag"
               );
-              this.tagNameInput = this.mountPoint.querySelector(
-                ".mdc-text-field__input"
+              this.header = this.mountPoint.querySelector(
+                ".tag-dialog__header"
+              );
+              this.dialogButtonConfirm = this.mountPoint.querySelector(
+                ".tag-dialog__submit"
               );
             }
           },
           {
             key: "initMDC",
             value: function initMDC() {
-              this.dialog = new _dialog.MDCDialog(this.addTagDialogComponent);
+              this.dialog = new _dialog.MDCDialog(this.tagDialogComponent);
               this.tag = new _textfield.MDCTextField(this.tagTextField);
             }
           },
           {
             key: "addEventListeners",
             value: function addEventListeners() {
-              this.dialog.listen("MDCDialog:accept", this.handleOk.bind(this));
               this.dialog.listen(
                 "MDCDialog:cancel",
                 this.handleCancel.bind(this)
+              );
+              this.dialogButtonConfirm.addEventListener(
+                "click",
+                this.handleOk.bind(this)
               );
             }
           },
           {
             key: "clean",
             value: function clean() {
-              this.tagNameInput.value = "";
+              this.tag.value = "";
+              this.tagTextField.classList.remove("mdc-text-field--invalid");
             }
           },
           {
             key: "handleOk",
             value: function handleOk() {
-              this.props.onAddTagConfirm(this.tagNameInput.value);
-              this.clean();
+              if (this.isValid()) {
+                if (this.type === "Edit") {
+                  this.props.onEditTagConfirm(this.tag.value);
+                }
+                if (this.type === "Add") {
+                  this.props.onAddTagConfirm(this.tag.value);
+                }
+                this.clean();
+                this.dialog.close();
+              } else {
+                this.tagTextField.classList.add("mdc-text-field--invalid");
+              }
+            }
+          },
+          {
+            key: "isValid",
+            value: function isValid() {
+              if (!this.tag.value) {
+                return false;
+              }
+              if (this.existingTagNames.indexOf(this.tag.value) !== -1) {
+                return false;
+              }
+              return true;
             }
           },
           {
@@ -32913,7 +33158,7 @@
           {
             key: "mount",
             value: function mount() {
-              this.mountPoint.innerHTML = (0, _addTagDialog2.default)();
+              this.mountPoint.innerHTML = (0, _tagDialog2.default)();
               this.querySelectors();
               this.initMDC();
               this.addEventListeners();
@@ -32921,7 +33166,7 @@
           }
         ]);
 
-        return AddTagDialogComponent;
+        return TagDialogComponent;
       })());
 
       /***/
@@ -32934,7 +33179,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="add-tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        Add tag\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="add-tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag">\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">\n        Type tag name\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
+            '<aside class="tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title tag-dialog__header"></h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag" required>\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true">\n        You need to enter a non-repeating name for the tag\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button tag-dialog__submit">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
@@ -33275,7 +33520,7 @@
 
       var _transactionDialog = __webpack_require__(172);
 
-      var _transactionService = __webpack_require__(41);
+      var _transactionService = __webpack_require__(26);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -33622,6 +33867,8 @@
           {
             key: "createFromList",
             value: function createFromList(list) {
+              this.dataset.tags = [];
+              this.dataset.amounts = [];
               var expenceList = list
                 .filter(function(item) {
                   return item.type === "-";
@@ -48420,7 +48667,7 @@
         4
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_selection_control_index__ = __webpack_require__(
-        26
+        27
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(
         295
@@ -48584,7 +48831,7 @@
         3
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_selection_control_index__ = __webpack_require__(
-        26
+        27
       );
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter__ = __webpack_require__(
         296
@@ -48699,7 +48946,7 @@
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       "use strict";
       /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_selection_control_index__ = __webpack_require__(
-        26
+        27
       );
       /**
        * @license
