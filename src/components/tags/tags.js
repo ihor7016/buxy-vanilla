@@ -1,11 +1,8 @@
 import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
-
 import { ButtonMoreComponent } from "../button-more/button-more";
 import { TagDialogComponent } from "../tag-dialog/tag-dialog";
-
 import { TagListService } from "../../services/tag-service";
-import { AddTagDialogComponent } from "../add-tag-dialog/add-tag-dialog";
 import { TransactionListService } from "../../services/transaction-service";
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
 
@@ -61,24 +58,20 @@ export class TagsComponent {
     });
   }
 
-  initAddTagDialogComponent() {
-    this.addTagDialogComponent = new AddTagDialogComponent(
-      this.addTagMountPoint,
-      {
-        onAddTagConfirm: this.handleAddTagConfirmed.bind(this)
-      }
-    );
-    this.addTagDialogComponent.mount();
-  }
-
   mountChildren() {
     this.tagDialogComponent = new TagDialogComponent(this.tagDialogMountPoint, {
       onAddTagConfirm: this.handleAddTagConfirm.bind(this),
       onEditTagConfirm: this.handleEditTagConfirm.bind(this)
     });
     this.tagDialogComponent.mount();
-    this.initAddTagDialogComponent();
     this.initConfirmDialog();
+    this.confirmDialog = new ConfirmDialogComponent(
+      this.confirmDialogMountPoint,
+      {
+        onOkClick: this.handleDeleteConfirm.bind(this)
+      }
+    );
+    this.confirmDialog.mount();
   }
 
   initTags(tags) {
@@ -113,7 +106,6 @@ export class TagsComponent {
 
   addTag(tag) {
     this.tagsList.innerHTML += tagItemTemplate({ tag: tag });
-    this.initMoreBtns();
   }
 
   handleEditClick(e) {
@@ -128,36 +120,24 @@ export class TagsComponent {
   }
 
   handleDeleteClick(event) {
-    let moreButton = event.target.closest(".button-more");
-    this.listItem = moreButton.closest(".tags__list-item");
-    let tagName = this.listItem.querySelector(".tags__list-item-name")
-      .innerText;
+    this.tagToDel = event.target.closest(".tags__list-item");
+    const tagName = this.tagToDel.dataset.name;
     this.confirmDialog.showDialog("tag", tagName);
   }
 
-  initConfirmDialog() {
-    this.confirmDialog = new ConfirmDialogComponent(
-      this.confirmDialogMountPoint,
-      {
-        onOkClick: this.handleDeleteConfirm.bind(this)
-      }
-    );
-    this.confirmDialog.mount();
-  }
-
   handleDeleteConfirm() {
-    this.delTag(this.listItem);
+    this.delTag();
   }
 
-  delTag(listItem) {
+  delTag() {
     let tag = listItem.querySelector(".tags__list-item-name").innerText;
+    const tag = this.tagToDel.dataset.name;
     TransactionListService.deleteByTag(tag)
       .then(() => {
-        let index = Array.from(this.tagsList.children).indexOf(listItem);
-        return TagListService.del(index);
+        TagListService.del(tag);
       })
       .then(() => {
-        this.tagsList.removeChild(listItem);
+        this.tagsList.removeChild(this.tagToDel);
         this.props.onTagDelete();
       });
   }

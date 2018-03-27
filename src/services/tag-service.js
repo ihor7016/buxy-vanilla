@@ -12,10 +12,10 @@ export class TagListService {
     });
   }
 
-  static del(index) {
+  static del(tag) {
     return this.get().then(tags => {
-      tags.splice(index, 1);
-      this.set(tags);
+      const updatedTags = tags.filter(elem => elem !== tag);
+      this.set(updatedTags);
     });
   }
 
