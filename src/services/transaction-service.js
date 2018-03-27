@@ -37,7 +37,7 @@ export class TransactionListService {
     });
   }
 
-  static deleteByTagId(tag) {
+  static deleteByTag(tag) {
     return TransactionListService.get().then(transactions => {
       if (transactions) {
         return TransactionListService.set(

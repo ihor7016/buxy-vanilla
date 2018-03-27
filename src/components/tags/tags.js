@@ -13,9 +13,6 @@ export class TagsComponent {
   }
 
   querySelectors() {
-    this.moreBtnMountPoints = this.mountPoint.querySelectorAll(
-      ".tags__more-button"
-    );
     this.addTagButton = this.mountPoint.querySelector(
       ".tags__add-tag-dialog-activation"
     );
@@ -105,7 +102,7 @@ export class TagsComponent {
   }
 
   handleDeleteClick(event) {
-    let moreButton = event.target.closest(".mdc-menu-anchor");
+    let moreButton = event.target.closest(".button-more");
     this.listItem = moreButton.closest(".tags__list-item");
     let tagName = this.listItem.querySelector(".tags__list-item-name")
       .innerText;
@@ -128,7 +125,7 @@ export class TagsComponent {
 
   delTag(listItem) {
     let tag = listItem.querySelector(".tags__list-item-name").innerText;
-    TransactionListService.deleteByTagId(tag)
+    TransactionListService.deleteByTag(tag)
       .then(() => {
         let index = Array.from(this.tagsList.children).indexOf(listItem);
         return TagListService.del(index);
@@ -143,7 +140,6 @@ export class TagsComponent {
     this.mountPoint.innerHTML = template();
     this.querySelectors();
     this.mountChildren();
-    this.initMoreBtns();
     this.addEventListeners();
     this.initData();
   }
