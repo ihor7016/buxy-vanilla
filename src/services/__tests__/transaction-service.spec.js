@@ -198,6 +198,7 @@ describe("Transactions storage service", () => {
     it("should del and send correct data", () => {
       return TransactionListService.deleteByTag(tag).then(arr => {
         expect(StorageService.set).toHaveBeenCalledWith(key, delRes);
+        expect(arr).toEqual(listToDelByTag);
       });
     });
   });
