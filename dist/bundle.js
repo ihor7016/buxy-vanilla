@@ -7542,7 +7542,7 @@
 
               return this.get().then(function(accounts) {
                 accounts.splice(index, 1);
-                _this2.set(accounts);
+                return _this2.set(accounts);
               });
             }
           },
@@ -7562,7 +7562,7 @@
                   var account = accounts[index];
                   account.balance = account.balance + amount;
                   accounts[index] = account;
-                  _this3.set(accounts);
+                  return _this3.set(accounts);
                 });
             }
           },
@@ -27724,7 +27724,7 @@
           {
             key: "handleAddAccountClick",
             value: function handleAddAccountClick() {
-              this.addAccountDialogComponent.showAddDialog();
+              this.addAccountDialogComponent.showAddDialog(this.accounts);
             }
           },
           {
@@ -27882,7 +27882,10 @@
               var account = this.accounts.find(function(item) {
                 return item.id === id;
               });
-              this.addAccountDialogComponent.showDialogEdit(account);
+              this.addAccountDialogComponent.showDialogEdit(
+                account,
+                this.accounts
+              );
             }
           },
           {
@@ -29247,9 +29250,33 @@
             key: "showAddDialog",
             value: function showAddDialog(accounts) {
               this.accounts = accounts;
+              this.accountTitle.innerText = "Add account";
               this.dialog.show();
               this.type.selectedIndex = 0;
               this.currency.selectedIndex = 0;
+            }
+          },
+          {
+            key: "showDialogEdit",
+            value: function showDialogEdit(account, accounts) {
+              this.account = account;
+              this.accounts = accounts;
+              this.accountTitle.innerText = "Edit";
+              this.accountName.value = account.name;
+              this.balance.value = account.balance;
+
+              this.currency.selectedIndex = this.getCurrencies().findIndex(
+                function(item) {
+                  return item === account.currency;
+                }
+              );
+              this.type.selectedIndex = this.getTypes().findIndex(function(
+                item
+              ) {
+                return item === account.type;
+              });
+              this.isEditMode = true;
+              this.dialog.show();
             }
           },
           {
@@ -29282,8 +29309,8 @@
               this.accountCurrency = this.mountPoint.querySelector(
                 ".account-dialog__currency-text"
               );
-              this.accountNameRipple = this.mountPoint.querySelector(
-                ".account-dialog__input-ripple"
+              this.accountTitle = this.mountPoint.querySelector(
+                ".account-dialog__title"
               );
               this.balanceNameRipple = this.mountPoint.querySelector(
                 ".account-dialog__balance-input-ripple"
@@ -29305,7 +29332,9 @@
               this.dialog = new _dialog.MDCDialog(
                 this.addAccountDialogComponent
               );
-              this.account = new _textfield.MDCTextField(this.accountTextField);
+              this.accountName = new _textfield.MDCTextField(
+                this.accountTextField
+              );
               this.balance = new _textfield.MDCTextField(this.balanceTextField);
               this.type = new _select.MDCSelect(this.typeAccountSelect);
               this.currency = new _select.MDCSelect(this.currencyAccountSelect);
@@ -29400,17 +29429,27 @@
             key: "handleOk",
             value: function handleOk() {
               if (this.checkValidation()) {
-                this.props.onAddAccountConfirm({
-                  name: this.accountNameInput.value,
-                  balance: parseInt(this.balanceNameInput.value),
-                  type: this.accountType.innerText,
-                  currency: this.accountCurrency.innerText,
-                  id: Math.random()
-                    .toString(36)
-                    .substring(2)
-                });
-                this.dialog.close();
+                if (!this.isEditMode) {
+                  this.props.onAddAccountConfirm({
+                    name: this.accountNameInput.value,
+                    balance: parseInt(this.balanceNameInput.value),
+                    type: this.accountType.innerText,
+                    currency: this.accountCurrency.innerText,
+                    id: Math.random()
+                      .toString(36)
+                      .substring(2)
+                  });
+                } else {
+                  this.props.onEditAccountConfirm({
+                    name: this.accountNameInput.value,
+                    balance: parseInt(this.balanceNameInput.value),
+                    type: this.accountType.innerText,
+                    currency: this.accountCurrency.innerText,
+                    id: this.account.id
+                  });
+                }
                 this.clean();
+                this.dialog.close();
               }
             }
           },
@@ -29511,23 +29550,35 @@
             }
           },
           {
+            key: "getTypes",
+            value: function getTypes() {
+              return [
+                "checking",
+                "savings",
+                "credit card",
+                "cash",
+                "investiment",
+                "loan",
+                "cd",
+                "real estate",
+                "vehicle",
+                "insurance",
+                "other"
+              ];
+            }
+          },
+          {
+            key: "getCurrencies",
+            value: function getCurrencies() {
+              return ["UAH", "USD", "EUR"];
+            }
+          },
+          {
             key: "mount",
             value: function mount() {
               this.mountPoint.innerHTML = (0, _accountDialog2.default)({
-                types: [
-                  "checking",
-                  "savings",
-                  "credit card",
-                  "cash",
-                  "investiment",
-                  "loan",
-                  "cd",
-                  "real estate",
-                  "vehicle",
-                  "insurance",
-                  "other"
-                ],
-                currencies: ["UAH", "USD", "EUR"]
+                types: this.getTypes(),
+                currencies: this.getCurrencies()
               });
               this.querySelectors();
               this.initMDC();
@@ -29553,7 +29604,7 @@
         }
         with (obj) {
           __p +=
-            '<aside class="account-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        Add account\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="account-dialog__row">\r\n        <div class="account-dialog__col">\r\n          <div class="account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="account-dialog__account-input mdc-text-field__input" pattern="^[A-Za-z0-9_.]+$" placeholder="Account" required>\r\n            <div class="account-dialog__input-ripple mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="account-dialog__account-helper-text" aria-hidden="true"></p>\r\n        </div>\r\n        <div class="account-dialog__col">\r\n          <div class="account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="account-dialog__balance-input mdc-text-field__input" pattern="^[0-9]+$" placeholder="Initial balance" required>\r\n            <div class="account-dialog__balance-input-ripple mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="account-dialog__balance-helper-text" aria-hidden="true"></p>\r\n        </div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\r\n      <div class="account-dialog__row">\r\n        <div class="account-dialog__col">\r\n          <div class="mdc-select account-dialog__type" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Type</div>\r\n              <div class="account-dialog__type-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
+            '<aside class="account-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="account-dialog__title mdc-dialog__header__title">\r\n        Add account\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="account-dialog__row">\r\n        <div class="account-dialog__col">\r\n          <div class="account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="account-dialog__account-input mdc-text-field__input" pattern="^[A-Za-z0-9_.]+$" placeholder="Account" required>\r\n            <div class="account-dialog__input-ripple mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="account-dialog__account-helper-text" aria-hidden="true"></p>\r\n        </div>\r\n        <div class="account-dialog__col">\r\n          <div class="account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="account-dialog__balance-input mdc-text-field__input" pattern="^[0-9]+$" placeholder="Initial balance" required>\r\n            <div class="account-dialog__balance-input-ripple mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="account-dialog__balance-helper-text" aria-hidden="true"></p>\r\n        </div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\r\n      <div class="account-dialog__row">\r\n        <div class="account-dialog__col">\r\n          <div class="mdc-select account-dialog__type" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Type</div>\r\n              <div class="account-dialog__type-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
           for (let i = 0; i < types.length; i++) {
             __p +=
               '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
@@ -33674,7 +33725,7 @@
           "css-loader": "^0.28.10",
           "ejs-loader": "^0.3.1",
           husky: "^0.14.3",
-          jest: "^22.4.2",
+          jest: "^22.4.3",
           "js-beautify": "^1.7.5",
           "json-loader": "^0.5.7",
           "lint-staged": "^7.0.0",
