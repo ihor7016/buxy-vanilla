@@ -21,7 +21,7 @@
     "css-loader": "^0.28.10",
     "ejs-loader": "^0.3.1",
     "husky": "^0.14.3",
-    "jest": "^22.4.2",
+    "jest": "^22.4.3",
     "js-beautify": "^1.7.5",
     "json-loader": "^0.5.7",
     "lint-staged": "^7.0.0",
