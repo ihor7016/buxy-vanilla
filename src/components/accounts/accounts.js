@@ -51,7 +51,7 @@ export class AccountsComponent {
   }
 
   handleAddAccountClick() {
-    this.addAccountDialogComponent.showAddDialog();
+    this.addAccountDialogComponent.showAddDialog(this.accounts);
   }
 
   initMoreBtns() {
@@ -163,7 +163,7 @@ export class AccountsComponent {
     let account = this.accounts.find(item => {
       return item.id === id;
     });
-    this.addAccountDialogComponent.showDialogEdit(account);
+    this.addAccountDialogComponent.showDialogEdit(account, this.accounts);
   }
 
   handleDeleteClick(event) {
