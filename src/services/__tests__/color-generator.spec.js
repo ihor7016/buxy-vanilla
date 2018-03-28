@@ -7,7 +7,7 @@ describe("ColorGeneratorService", () => {
 
   describe("method get", () => {
     it("should return rgb string", () => {
-      expect(ColorGeneratorService.get()).toMatch(/^#[a-f0-9]{6}$/);
+      expect(ColorGeneratorService.get()).toBe("#800000");
     });
   });
 });
