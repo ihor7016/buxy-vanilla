@@ -12,6 +12,7 @@ export class PieChartComponent {
 
   querySelectors() {
     this.chartCtx = this.mountPoint.querySelector(".chart__visual");
+    this.emptyState = this.mountPoint.querySelector(".chart__empty-state");
   }
 
   updateAdd(data) {
@@ -91,6 +92,13 @@ export class PieChartComponent {
   }
 
   drawChanged() {
+    if (!this.dataset.amounts.length) {
+      this.chartCtx.classList.add("chart__block--hidden");
+      this.emptyState.classList.remove("chart__block--hidden");
+    } else {
+      this.chartCtx.classList.remove("chart__block--hidden");
+      this.emptyState.classList.add("chart__block--hidden");
+    }
     this.chart.data.datasets[0].data = this.dataset.amounts;
     this.chart.data.datasets[0].backgroundColor = this.dataset.colors;
     this.chart.data.labels = this.dataset.tags;

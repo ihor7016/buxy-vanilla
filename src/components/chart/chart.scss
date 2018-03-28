@@ -1,7 +1,23 @@
 .chart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
   padding: 20px;
 
   &__visual {
     margin: 0 auto;
+  }
+
+  &__block {
+    &--hidden {
+      display: none !important;
+    }
+  }
+
+  &__empty-state {
+    text-align: center;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.26);
   }
 }
