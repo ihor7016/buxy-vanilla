@@ -187,13 +187,21 @@ export class AccountDialogComponent {
       result = false;
     }
     if (accounts && accounts.length > 0) {
+      if (this.isEditMode) {
+        accounts.splice(
+          Array.from(accounts).findIndex(item => {
+            return item.name === this.account.name;
+          }),
+          1
+        );
+      }
       accounts.some(item => {
         if (item.name === accountName) {
           this.accountErrorMessage = "This account already exists";
           result = false;
           return true;
         } else {
-          this.checkForEmptyStringAndLength(accountName, result);
+          result = this.checkForEmptyStringAndLength(accountName, result);
         }
       });
     } else {
@@ -268,6 +276,7 @@ export class AccountDialogComponent {
   getCurrencies() {
     return ["UAH", "USD", "EUR"];
   }
+
   mount() {
     this.mountPoint.innerHTML = template({
       types: this.getTypes(),
