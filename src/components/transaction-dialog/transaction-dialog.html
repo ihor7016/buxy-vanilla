@@ -12,23 +12,23 @@
         <h3 class="mdc-typography--subheading2">Type of transaction: </h3>
         <div class="mdc-form-field">
           <div class="mdc-radio transaction-dialog__expense">
-            <input class="mdc-radio__native-control" type="radio" id="transaction-dialog-expense" name="radios">
+            <input class="mdc-radio__native-control" type="radio" id="<%= type %>-transaction-dialog-expense" name="radios">
             <div class="mdc-radio__background">
               <div class="mdc-radio__outer-circle"></div>
               <div class="mdc-radio__inner-circle"></div>
             </div>
           </div>
-          <label for="transaction-dialog-expense">Expense</label>
+          <label for="<%= type %>-transaction-dialog-expense">Expense</label>
         </div>
         <div class="mdc-form-field">
           <div class="mdc-radio transaction-dialog__income">
-            <input class="mdc-radio__native-control" type="radio" id="transaction-dialog-income" name="radios">
+            <input class="mdc-radio__native-control" type="radio" id="<%= type %>-transaction-dialog-income" name="radios">
             <div class="mdc-radio__background">
               <div class="mdc-radio__outer-circle"></div>
               <div class="mdc-radio__inner-circle"></div>
             </div>
           </div>
-          <label for="transaction-dialog-income">Income</label>
+          <label for="<%= type %>-transaction-dialog-income">Income</label>
         </div>
       </div>
       <div class="transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">
