@@ -1,7 +1,27 @@
 .chart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
   padding: 20px;
 
   &__visual {
     margin: 0 auto;
+  }
+
+  &__box {
+    &--hidden {
+      height: 0px;
+      width: 0px;
+    }
+  }
+
+  &__empty-state {
+    text-align: center;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.26);
+    &--hidden {
+      display: none;
+    }
   }
 }
