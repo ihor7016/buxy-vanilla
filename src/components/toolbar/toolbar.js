@@ -1,6 +1,6 @@
 import template from "./toolbar.html";
 
-import { AboutDialogComponent } from "../about-dialog/about-dialog";
+import { AboutDialogComponent } from "../dialog/about-dialog/about-dialog";
 
 export class ToolbarComponent {
   constructor(mountPoint, props) {

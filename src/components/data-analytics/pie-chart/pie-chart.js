@@ -1,8 +1,8 @@
 import template from "./pie-chart.html";
 import Chart from "chart.js";
 
-import { CurrencyConverterUAHService } from "../../services/currency-converter-uah";
-import { ColorGeneratorService } from "../../services/color-generator";
+import { CurrencyConverterUAHService } from "../../../services/currency-converter-uah";
+import { ColorGeneratorService } from "../../../services/color-generator";
 
 export class PieChartComponent {
   constructor(mountPoint) {

@@ -1,6 +1,6 @@
 import template from "./about-dialog.html";
 import { MDCDialog } from "@material/dialog";
-import packageFile from "../../../package";
+import packageFile from "../../../../package";
 
 export class AboutDialogComponent {
   constructor(mountPoint) {

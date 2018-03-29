@@ -1,11 +1,11 @@
 import template from "./transactions.html";
 
-import { PieChartComponent } from "../pie-chart/pie-chart";
-import { BarChartComponent } from "../bar-chart/bar-chart";
-import { TableTransactionsComponent } from "../table-transactions/table-transactions";
+import { PieChartComponent } from "../../../data-analytics/pie-chart/pie-chart";
+import { BarChartComponent } from "../../../data-analytics/bar-chart/bar-chart";
+import { TableTransactionsComponent } from "../../../data-analytics/table-transactions/table-transactions";
 import { TransactionDialogComponent } from "../transaction-dialog/transaction-dialog";
 
-import { TransactionListService } from "../../services/transaction-service";
+import { TransactionListService } from "../../../../services/transaction-service";
 
 export class TransactionsComponent {
   constructor(mountPoint, props) {

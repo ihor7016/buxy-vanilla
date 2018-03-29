@@ -5,10 +5,10 @@ import { MDCSelect } from "@material/select";
 import { MDCTextField } from "@material/textfield";
 import { MDCRadio } from "@material/radio";
 
-import { CustomSelectComponent } from "../custom-select/custom-select";
+import { CustomSelectComponent } from "../../../custom-select/custom-select";
 
-import { AccountListService } from "../../services/account-service";
-import { TagListService } from "../../services/tag-service";
+import { AccountListService } from "../../../../services/account-service";
+import { TagListService } from "../../../../services/tag-service";
 
 export class TransactionDialogComponent {
   constructor(mountPoint, props) {

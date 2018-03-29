@@ -16,18 +16,18 @@
 @import "~@material/layout-grid/dist/mdc.layout-grid";
 @import "~@material/elevation/dist/mdc.elevation";
 
-@import "./components/variables";
+@import "./components/page/variables";
 
 @import "./components/page/page";
 @import "./components/app/app";
 @import "./components/drawer/drawer";
 @import "./components/toolbar/toolbar";
-@import "./components/transactions/transactions";
-@import "./components/transaction-dialog/transaction-dialog";
-@import "./components/account-dialog/account-dialog";
+@import "./components/data-entry/transaction/transactions/transactions";
+@import "./components/data-entry/transaction/transaction-dialog/transaction-dialog";
+@import "./components/data-entry/account/account-dialog/account-dialog";
 @import "./components/button-more/button-more";
-@import "./components/table-transactions/table-transactions";
-@import "./components/chart/chart";
+@import "./components/data-analytics/table-transactions/table-transactions";
+@import "./components/data-analytics/chart/chart";
 @import "./components/custom-select/custom-select";
-@import "./components/about-dialog/about-dialog";
-@import "./components/drawer-menu/drawer-menu";
+@import "./components/dialog/about-dialog/about-dialog";
+@import "./components/drawer/drawer-menu/drawer-menu";

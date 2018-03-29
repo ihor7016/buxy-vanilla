@@ -2,7 +2,7 @@ import template from "./app.html";
 
 import { DrawerComponent } from "../drawer/drawer";
 import { ToolbarComponent } from "../toolbar/toolbar";
-import { TransactionsComponent } from "../transactions/transactions";
+import { TransactionsComponent } from "../data-entry/transaction/transactions/transactions";
 
 export class AppComponent {
   constructor(mountPoint) {
