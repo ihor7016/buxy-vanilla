@@ -14,6 +14,7 @@ export class TransactionDialogComponent {
   constructor(mountPoint, props) {
     this.mountPoint = mountPoint;
     this.props = props;
+    this.accounts = [];
   }
 
   getStoredAccounts() {

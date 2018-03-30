@@ -22,7 +22,9 @@ export class CustomSelectComponent {
   }
 
   clean() {
+    this.menu.innerHTML = "";
     this.select.selectedIndex = -1;
+    this.checkList();
   }
 
   toggleValid() {
