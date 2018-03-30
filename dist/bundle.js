@@ -25385,7 +25385,7 @@
               if (data.type === "+") {
                 this.income.checked = true;
               } else {
-                this.expence.checked = true;
+                this.expense.checked = true;
               }
               this.accountSelect.makeSelected(data.account);
               this.tagSelect.makeSelected(data.tag);
@@ -25402,6 +25402,8 @@
               ]).then(function() {
                 if (data) {
                   _this3.fillData(data);
+                } else {
+                  _this3.expense.checked = true;
                 }
                 _this3.date.value = new Date().toISOString().slice(0, 10);
                 _this3.dialog.show();
@@ -25432,8 +25434,8 @@
               this.incomeRadio = this.mountPoint.querySelector(
                 ".transaction-dialog__income"
               );
-              this.expenceRadio = this.mountPoint.querySelector(
-                ".transaction-dialog__expence"
+              this.expenseRadio = this.mountPoint.querySelector(
+                ".transaction-dialog__expense"
               );
               this.submit = this.mountPoint.querySelector(
                 ".transaction-dialog__submit"
@@ -25469,7 +25471,7 @@
               this.amount = new _textfield.MDCTextField(this.amountTextField);
               this.date = new _textfield.MDCTextField(this.dateTextField);
               this.income = new _radio.MDCRadio(this.incomeRadio);
-              this.expence = new _radio.MDCRadio(this.expenceRadio);
+              this.expense = new _radio.MDCRadio(this.expenseRadio);
             }
           },
           {
@@ -25555,7 +25557,6 @@
           {
             key: "cleanDialog",
             value: function cleanDialog() {
-              this.expence.checked = true;
               this.amount.value = "";
               this.description.value = "";
               this.amountTextField.classList.remove("mdc-text-field--invalid");
@@ -26441,7 +26442,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="app mdc-typography">\r\n  <div class="app__drawer-point"></div>\r\n  <div class="app__container">\r\n    <div class="app__container-toolbar-point"></div>\r\n    <div class="app__container-content"></div>\r\n  </div>\r\n</div>';
+            '<div class="app mdc-typography">\n  <div class="app__drawer-point"></div>\n  <div class="app__container">\n    <div class="app__container-toolbar-point"></div>\n    <div class="app__container-content"></div>\n  </div>\n</div>';
         }
         return __p;
       };
@@ -26600,7 +26601,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\r\n  <nav class="mdc-drawer__drawer drawer__nav">\r\n    <div class="drawer__group mdc-list-group">\r\n      <div class="drawer__accounts-mountpoint"></div>\r\n      <hr class="mdc-list-divider">\r\n      <div class="drawer__tags-mountpoint"></div>\r\n    </div>\r\n  </nav>\r\n</aside>';
+            '<aside class="drawer mdc-drawer--open mdc-drawer--persistent mdc-typography">\n  <nav class="mdc-drawer__drawer drawer__nav">\n    <div class="drawer__group mdc-list-group">\n      <div class="drawer__accounts-mountpoint"></div>\n      <hr class="mdc-list-divider">\n      <div class="drawer__tags-mountpoint"></div>\n    </div>\n  </nav>\n</aside>';
         }
         return __p;
       };
@@ -27965,7 +27966,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="accounts drawer-menu">\r\n  <nav class="mdc-list--non-interactive">\r\n    <a class="drawer-menu__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\r\n      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\r\n      Add new account\r\n    </a>\r\n  </nav>\r\n  <nav class="accounts__list-items  mdc-list--non-interactive">\r\n  </nav>\r\n  <div class="accounts__add-account-dialog"></div>\r\n  <div class="accounts__delete-confirm-dialog"></div>\r\n</div>';
+            '<div class="accounts drawer-menu">\n  <nav class="mdc-list--non-interactive">\n    <a class="drawer-menu__list-item mdc-list-item accounts__add-account-dialog-activation" href="#">\n      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n      Add new account\n    </a>\n  </nav>\n  <nav class="accounts__list-items  mdc-list--non-interactive">\n  </nav>\n  <div class="accounts__add-account-dialog"></div>\n  <div class="accounts__delete-confirm-dialog"></div>\n</div>';
         }
         return __p;
       };
@@ -27982,13 +27983,13 @@
           __p +=
             '<a class="accounts__list-item drawer-menu__list-item mdc-list-item" data-id="' +
             ((__t = account.id) == null ? "" : __t) +
-            '" href="#">\r\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\r\n  <p class="accounts__list-item-name">\r\n    ' +
+            '" href="#">\n  <i class="accounts__icon material-icons mdc-list-item__graphic" aria-hidden="true">account_balance</i>\n  <p class="accounts__list-item-name">\n    ' +
             ((__t = account.name) == null ? "" : __t) +
-            ' &nbsp;\r\n  </p>\r\n  <p class="accounts__list-item-balance">\r\n  ' +
+            ' &nbsp;\n  </p>\n  <p class="accounts__list-item-balance">\n  ' +
             ((__t = account.balance) == null ? "" : __t) +
-            '\r\n  </p>\r\n  <p class="accounts__list-item-currency">\r\n  ' +
+            '\n  </p>\n  <p class="accounts__list-item-currency">\n  ' +
             ((__t = account.currency) == null ? "" : __t) +
-            '\r\n  </p>\r\n  <div class="accounts__more-button drawer-menu__more-button"></div>\r\n</a>';
+            '\n  </p>\n  <div class="accounts__more-button drawer-menu__more-button"></div>\n</a>';
         }
         return __p;
       };
@@ -28003,7 +28004,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="button-more mdc-menu-anchor">\r\n  <button class="button-more__more button-more mdc-button">\r\n    <i\r\n      class="button-more__more-icon  material-icons"\r\n      title="More options">more_vert</i></button>\r\n  <div class="mdc-menu menu" tabindex="-1">\r\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\r\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\r\n        Edit\r\n      </li>\r\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\r\n        Delete\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>';
+            '<div class="button-more mdc-menu-anchor">\n  <button class="button-more__more button-more mdc-button">\n    <i\n      class="button-more__more-icon  material-icons"\n      title="More options">more_vert</i></button>\n  <div class="mdc-menu menu" tabindex="-1">\n    <ul class="button-more__popup-menu mdc-menu__items mdc-list" role="menu" aria-hidden="true">\n      <li class="button-more__popup-item-edit mdc-list-item" role="menuitem" tabindex="0">\n        Edit\n      </li>\n      <li class="button-more__popup-item-delete  mdc-list-item" role="menuitem" tabindex="0">\n        Delete\n      </li>\n    </ul>\n  </div>\n</div>';
         }
         return __p;
       };
@@ -29616,23 +29617,23 @@
         }
         with (obj) {
           __p +=
-            '<aside class="account-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="account-dialog__title mdc-dialog__header__title">\r\n        Add account\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="account-dialog__row">\r\n        <div class="account-dialog__col">\r\n          <div class="account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="account-dialog__account-input mdc-text-field__input" pattern="^[A-Za-z0-9_.]+$" placeholder="Account" required>\r\n            <div class="account-dialog__input-ripple mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="account-dialog__account-helper-text" aria-hidden="true"></p>\r\n        </div>\r\n        <div class="account-dialog__col">\r\n          <div class="account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="account-dialog__balance-input mdc-text-field__input" pattern="^[0-9]+$" placeholder="Initial balance" required>\r\n            <div class="account-dialog__balance-input-ripple mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="account-dialog__balance-helper-text" aria-hidden="true"></p>\r\n        </div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\r\n      <div class="account-dialog__row">\r\n        <div class="account-dialog__col">\r\n          <div class="mdc-select account-dialog__type" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Type</div>\r\n              <div class="account-dialog__type-text mdc-select__selected-text"></div>\r\n              <div class="mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
+            '<aside class="account-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="account-dialog__title mdc-dialog__header__title">\n        Add account\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="account-dialog__row">\n        <div class="account-dialog__col">\n          <div class="account-dialog__account mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="account-dialog__account-input mdc-text-field__input" pattern="^[A-Za-z0-9_.]+$" placeholder="Account" required>\n            <div class="account-dialog__input-ripple mdc-line-ripple"></div>\n          </div>\n          <p class="account-dialog__account-helper-text" aria-hidden="true"></p>\n        </div>\n        <div class="account-dialog__col">\n          <div class="account-dialog__balance mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="account-dialog__balance-input mdc-text-field__input" pattern="^[0-9]+$" placeholder="Initial balance" required>\n            <div class="account-dialog__balance-input-ripple mdc-line-ripple"></div>\n          </div>\n          <p class="account-dialog__balance-helper-text" aria-hidden="true"></p>\n        </div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Type account name</p>\n      <div class="account-dialog__row">\n        <div class="account-dialog__col">\n          <div class="mdc-select account-dialog__type" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Type</div>\n              <div class="account-dialog__type-text mdc-select__selected-text"></div>\n              <div class="mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
           for (let i = 0; i < types.length; i++) {
             __p +=
-              '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
+              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
               ((__t = types[i]) == null ? "" : __t) +
-              "\r\n                  </li>\r\n                  ";
+              "\n                  </li>\n                  ";
           }
           __p +=
-            '\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class="account-dialog__col">\r\n          <div class="mdc-select account-dialog__currency" role="listbox">\r\n            <div class="mdc-select__surface" tabindex="0">\r\n              <div class="mdc-select__label">Currency</div>\r\n              <div class="account-dialog__currency-text mdc-select__selected-text"></div>\r\n              <div class="account-dialog__select-bottom-line mdc-select__bottom-line"></div>\r\n            </div>\r\n            <div class="mdc-menu mdc-select__menu account-dialog__select-menu">\r\n              <ul class="mdc-list mdc-menu__items">\r\n                ';
+            '\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class="account-dialog__col">\n          <div class="mdc-select account-dialog__currency" role="listbox">\n            <div class="mdc-select__surface" tabindex="0">\n              <div class="mdc-select__label">Currency</div>\n              <div class="account-dialog__currency-text mdc-select__selected-text"></div>\n              <div class="account-dialog__select-bottom-line mdc-select__bottom-line"></div>\n            </div>\n            <div class="mdc-menu mdc-select__menu account-dialog__select-menu">\n              <ul class="mdc-list mdc-menu__items">\n                ';
           for (let i = 0; i < currencies.length; i++) {
             __p +=
-              '\r\n                  <li class="mdc-list-item" role="option" tabindex="0">\r\n                    ' +
+              '\n                  <li class="mdc-list-item" role="option" tabindex="0">\n                    ' +
               ((__t = currencies[i]) == null ? "" : __t) +
-              "\r\n                  </li>\r\n                  ";
+              "\n                  </li>\n                  ";
           }
           __p +=
-            '\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\r\n      </button>\r\n      <button type="button" class="account-dialog__button-ok mdc-button mdc-dialog__footer__button">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel\n      </button>\n      <button type="button" class="account-dialog__button-ok mdc-button mdc-dialog__footer__button">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
@@ -33277,7 +33278,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="tags drawer-menu">\r\n  <nav class="mdc-list--non-interactive">\r\n    <a class="drawer-menu__list-item mdc-list-item tags__add-tag-dialog-activation" href="#">\r\n      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\r\n      Add new tag\r\n    </a>\r\n  </nav>\r\n  <nav class="tags__list-items  mdc-list--non-interactive">\r\n  </nav>\r\n  <div class="tags__add-tag-dialog"></div>\r\n  <div class="tags__delete-confirm-dialog"></div>\r\n</div>';
+            '<div class="tags drawer-menu">\n  <nav class="mdc-list--non-interactive">\n    <a class="drawer-menu__list-item mdc-list-item tags__add-tag-dialog-activation" href="#">\n      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>\n      Add new tag\n    </a>\n  </nav>\n  <nav class="tags__list-items  mdc-list--non-interactive">\n  </nav>\n  <div class="tags__add-tag-dialog"></div>\n  <div class="tags__delete-confirm-dialog"></div>\n</div>';
         }
         return __p;
       };
@@ -33294,9 +33295,9 @@
           __p +=
             '<a class="tags__list-item drawer-menu__list-item mdc-list-item" href="#" data-name="' +
             ((__t = tag) == null ? "" : __t) +
-            '">\r\n  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_offer</i>\r\n  ' +
+            '">\n  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_offer</i>\n  ' +
             ((__t = tag) == null ? "" : __t) +
-            '\r\n  <div class="tags__more-button drawer-menu__more-button"></div>\r\n</a>';
+            '\n  <div class="tags__more-button drawer-menu__more-button"></div>\n</a>';
         }
         return __p;
       };
@@ -33471,7 +33472,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="tag-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title tag-dialog__header"></h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <div class="tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n        <input type="text" class="mdc-text-field__input" placeholder="Tag" required>\r\n        <div class="mdc-line-ripple"></div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true">\r\n        You need to enter a non-repeating name for the tag\r\n      </p>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button tag-dialog__submit">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '<aside class="tag-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title tag-dialog__header"></h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <div class="tag-dialog__tag mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Tag" required>\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true">\n        You need to enter a non-repeating name for the tag\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button tag-dialog__submit">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
@@ -33599,7 +33600,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\r\n  <div class="toolbar__container mdc-toolbar__row">\r\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\r\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\r\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\r\n    </section>\r\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\r\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\r\n        About\r\n      </button>\r\n    </section>\r\n  </div>\r\n  <div class="toolbar__about-dialog"></div>\r\n</header>';
+            '<header class="toolbar mdc-toolbar mdc-elevation--z4">\n  <div class="toolbar__container mdc-toolbar__row">\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-start">\n      <a href="#" class="toolbar__menu material-icons mdc-toolbar__menu-icon">menu</a>\n      <span class="toolbar__title mdc-toolbar__title">Buxy</span>\n    </section>\n    <section class="toolbar__container-item mdc-toolbar__section mdc-toolbar__section--align-end">\n      <button class="toolbar__button mdc-button toolbar__about-dialog-activation">\n        About\n      </button>\n    </section>\n  </div>\n  <div class="toolbar__about-dialog"></div>\n</header>';
         }
         return __p;
       };
@@ -33703,9 +33704,9 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="about-dialog mdc-dialog" role="alertdialog">\r\n  <div class="mdc-dialog__surface">\r\n    <header class="mdc-dialog__header about-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        About\r\n      </h2>\r\n    </header>\r\n    <section class="mdc-dialog__body">\r\n      <p>Buxy - a simple finance tracking app</p>\r\n      <p>\r\n        Version\r\n        ' +
+            '<aside class="about-dialog mdc-dialog" role="alertdialog">\n  <div class="mdc-dialog__surface">\n    <header class="mdc-dialog__header about-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        About\n      </h2>\n    </header>\n    <section class="mdc-dialog__body">\n      <p>Buxy - a simple finance tracking app</p>\n      <p>\n        Version\n        ' +
             ((__t = version) == null ? "" : __t) +
-            '\r\n      </p>\r\n      <p>Developed by:\r\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\r\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\r\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\r\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\r\n        <a href="https://github.com/gift-a">@gift-a</a>\r\n      </p>\r\n    </section>\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\r\n    </footer>\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            '\n      </p>\n      <p>Developed by:\n        <a href="https://github.com/Vladyslav-Plakhuta">@Vladyslav-Plakhuta</a>,\n        <a href="https://github.com/OlgaOrlova">@OlgaOrlova</a>,\n        <a href="https://github.com/Konstanty-Ivashchenko">@Konstanty-Ivashchenko</a>,\n        <a href="https://github.com/ihor7016">@ihor7016</a>,\n        <a href="https://github.com/gift-a">@gift-a</a>\n      </p>\n    </section>\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>\n    </footer>\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
@@ -34049,7 +34050,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="transactions mdc-layout-grid">\r\n  <div class="transactions__content transactions__block">\r\n    <div class="mdc-layout-grid__inner">\r\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\r\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\r\n    </div>\r\n    <div class="transactions__table-transactions"></div>\r\n  </div>\r\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\r\n    <p>You don\'t have any transactions</p>\r\n  </div>\r\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\r\n    <span class="mdc-fab__icon">add</span>\r\n  </button>\r\n  <div class="transactions__add-transaction-dialog"></div>\r\n</div>';
+            '<div class="transactions mdc-layout-grid">\n  <div class="transactions__content transactions__block">\n    <div class="mdc-layout-grid__inner">\n      <div class="transactions__pie-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n      <div class="transactions__bar-chart mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6"></div>\n    </div>\n    <div class="transactions__table-transactions"></div>\n  </div>\n  <div class="transactions__empty-state transactions__block transactions__block--hidden mdc-typography mdc-typography--display2">\n    <p>You don\'t have any transactions</p>\n  </div>\n  <button class="mdc-fab material-icons transactions__add-transaction-dialog-activation" aria-label="Favorite">\n    <span class="mdc-fab__icon">add</span>\n  </button>\n  <div class="transactions__add-transaction-dialog"></div>\n</div>';
         }
         return __p;
       };
@@ -34280,7 +34281,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="chart">\r\n  <div class="chart__box chart__box--hidden">\r\n    <canvas class="chart__visual"></canvas>\r\n  </div>\r\n  <div class="chart__empty-state">\r\n    <p>You don\'t have any expenses</p>\r\n  </div>\r\n</div>';
+            '<div class="chart">\n  <div class="chart__box chart__box--hidden">\n    <canvas class="chart__visual"></canvas>\n  </div>\n  <div class="chart__empty-state">\n    <p>You don\'t have any expenses</p>\n  </div>\n</div>';
         }
         return __p;
       };
@@ -48661,7 +48662,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="chart">\r\n  <canvas class="chart__visual"></canvas>\r\n</div>';
+            '<div class="chart">\n  <canvas class="chart__visual"></canvas>\n</div>';
         }
         return __p;
       };
@@ -48900,7 +48901,7 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="table-transactions">\r\n  <table class="table-transactions__table mdc-elevation--z2">\r\n    <thead class="table-transactions__thead">\r\n      <tr class="table-transactions__tr">\r\n        <th class="table-transactions__th">Date</th>\r\n        <th class="table-transactions__th">Amount</th>\r\n        <th class="table-transactions__th">Description</th>\r\n        <th class="table-transactions__th">Tags</th>\r\n        <th class="table-transactions__th">Account</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody class="table-transaction__tbody">\r\n    </tbody>\r\n  </table>\r\n  <div class="table-transactions__confirm-dialog"></div>\r\n  <div class="table-transactions__edit-transaction-dialog"></div>\r\n</div>';
+            '<div class="table-transactions">\n  <table class="table-transactions__table mdc-elevation--z2">\n    <thead class="table-transactions__thead">\n      <tr class="table-transactions__tr">\n        <th class="table-transactions__th">Date</th>\n        <th class="table-transactions__th">Amount</th>\n        <th class="table-transactions__th">Description</th>\n        <th class="table-transactions__th">Tags</th>\n        <th class="table-transactions__th">Account</th>\n      </tr>\n    </thead>\n    <tbody class="table-transaction__tbody">\n    </tbody>\n  </table>\n  <div class="table-transactions__confirm-dialog"></div>\n  <div class="table-transactions__edit-transaction-dialog"></div>\n</div>';
         }
         return __p;
       };
@@ -48917,23 +48918,23 @@
           __p +=
             '<tr class="table-transactions__tr table-transactions__highlighted" data-id="' +
             ((__t = row.id) == null ? "" : __t) +
-            '">\r\n  <td class="table-transactions__td table-transactions__date">\r\n    ' +
+            '">\n  <td class="table-transactions__td table-transactions__date">\n    ' +
             ((__t = row.date) == null ? "" : __t) +
-            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    <span class="table-transactions__type">' +
+            '\n  </td>\n  <td class="table-transactions__td">\n    <span class="table-transactions__type">' +
             ((__t = row.type) == null ? "" : __t) +
-            '</span>\r\n    <span class="table-transactions__amount">' +
+            '</span>\n    <span class="table-transactions__amount">' +
             ((__t = row.amount) == null ? "" : __t) +
-            "</span>\r\n    <span>" +
+            "</span>\n    <span>" +
             ((__t = row.account.currency) == null ? "" : __t) +
-            '</span>\r\n  </td>\r\n  <td class="table-transactions__td table-transactions__td--desc">\r\n    ' +
+            '</span>\n  </td>\n  <td class="table-transactions__td table-transactions__td--desc">\n    ' +
             ((__t = row.desc) == null ? "" : __t) +
-            '\r\n  </td>\r\n  <td class="table-transactions__td table-transactions__tag">\r\n    ' +
+            '\n  </td>\n  <td class="table-transactions__td table-transactions__tag">\n    ' +
             ((__t = row.tag) == null ? "" : __t) +
-            '\r\n  </td>\r\n  <td class="table-transactions__td">\r\n    <span class="table-transactions__span table-transactions__account">' +
+            '\n  </td>\n  <td class="table-transactions__td">\n    <span class="table-transactions__span table-transactions__account">' +
             ((__t = row.account.name) == null ? "" : __t) +
-            '</span>,\r\n    <span class="table-transactions__span">' +
+            '</span>,\n    <span class="table-transactions__span">' +
             ((__t = row.account.type) == null ? "" : __t) +
-            '</span>\r\n    <div class="table-transactions__more-button"></div>\r\n  </td>\r\n</tr>';
+            '</span>\n    <div class="table-transactions__more-button"></div>\n  </td>\n</tr>';
         }
         return __p;
       };
@@ -48948,9 +48949,17 @@
           __p = "";
         with (obj) {
           __p +=
-            '<aside class="mdc-dialog transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\r\n  <div class="mdc-dialog__surface">\r\n\r\n    <header class="mdc-dialog__header">\r\n      <h2 class="mdc-dialog__header__title">\r\n        ' +
+            '<aside class="mdc-dialog transaction-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n  <div class="mdc-dialog__surface">\n\n    <header class="mdc-dialog__header">\n      <h2 class="mdc-dialog__header__title">\n        ' +
             ((__t = type) == null ? "" : __t) +
-            ' transaction\r\n      </h2>\r\n    </header>\r\n\r\n    <section class="mdc-dialog__body">\r\n      <div class="transaction-dialog__row">\r\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\r\n        <div class="mdc-form-field">\r\n          <div class="mdc-radio transaction-dialog__expence">\r\n            <input class="mdc-radio__native-control" type="radio" id="transaction-dialog-expense" name="radios" checked>\r\n            <div class="mdc-radio__background">\r\n              <div class="mdc-radio__outer-circle"></div>\r\n              <div class="mdc-radio__inner-circle"></div>\r\n            </div>\r\n          </div>\r\n          <label for="transaction-dialog-expense">Expence</label>\r\n        </div>\r\n        <div class="mdc-form-field">\r\n          <div class="mdc-radio transaction-dialog__income">\r\n            <input class="mdc-radio__native-control" type="radio" id="transaction-dialog-income" name="radios">\r\n            <div class="mdc-radio__background">\r\n              <div class="mdc-radio__outer-circle"></div>\r\n              <div class="mdc-radio__inner-circle"></div>\r\n            </div>\r\n          </div>\r\n          <label for="transaction-dialog-income">Income</label>\r\n        </div>\r\n      </div>\r\n      <div class="transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n        <input type="text" class="mdc-text-field__input" placeholder="Description" required>\r\n        <div class="mdc-line-ripple"></div>\r\n      </div>\r\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\r\n      <div class="transaction-dialog__row transaction-dialog__row--col">\r\n        <div class="transaction-dialog__col">\r\n          <div class="transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="text" class="mdc-text-field__input" placeholder="Amount" pattern="^[0-9]+$" required>\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction (number)</p>\r\n          <div class="transaction-dialog__account-point"></div>\r\n        </div>\r\n        <div class="transaction-dialog__col">\r\n          <div class="transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\r\n            <input type="date" class="mdc-text-field__input" placeholder="Date" required>\r\n            <div class="mdc-line-ripple"></div>\r\n          </div>\r\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\r\n          <div class="transaction-dialog__tag-point"></div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n\r\n    <footer class="mdc-dialog__footer">\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\r\n      <button type="button" class="mdc-button mdc-dialog__footer__button transaction-dialog__submit">OK</button>\r\n    </footer>\r\n\r\n  </div>\r\n  <div class="mdc-dialog__backdrop"></div>\r\n</aside>';
+            ' transaction\n      </h2>\n    </header>\n\n    <section class="mdc-dialog__body">\n      <div class="transaction-dialog__row">\n        <h3 class="mdc-typography--subheading2">Type of transaction: </h3>\n        <div class="mdc-form-field">\n          <div class="mdc-radio transaction-dialog__expense">\n            <input class="mdc-radio__native-control" type="radio" id="' +
+            ((__t = type) == null ? "" : __t) +
+            '-transaction-dialog-expense" name="radios">\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="' +
+            ((__t = type) == null ? "" : __t) +
+            '-transaction-dialog-expense">Expense</label>\n        </div>\n        <div class="mdc-form-field">\n          <div class="mdc-radio transaction-dialog__income">\n            <input class="mdc-radio__native-control" type="radio" id="' +
+            ((__t = type) == null ? "" : __t) +
+            '-transaction-dialog-income" name="radios">\n            <div class="mdc-radio__background">\n              <div class="mdc-radio__outer-circle"></div>\n              <div class="mdc-radio__inner-circle"></div>\n            </div>\n          </div>\n          <label for="' +
+            ((__t = type) == null ? "" : __t) +
+            '-transaction-dialog-income">Income</label>\n        </div>\n      </div>\n      <div class="transaction-dialog__description mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n        <input type="text" class="mdc-text-field__input" placeholder="Description" required>\n        <div class="mdc-line-ripple"></div>\n      </div>\n      <p class="mdc-text-field-helper-text" aria-hidden="true">Description of your transaction</p>\n      <div class="transaction-dialog__row transaction-dialog__row--col">\n        <div class="transaction-dialog__col">\n          <div class="transaction-dialog__amount mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="text" class="mdc-text-field__input" placeholder="Amount" pattern="^[0-9]+$" required>\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Amount of your transaction (number)</p>\n          <div class="transaction-dialog__account-point"></div>\n        </div>\n        <div class="transaction-dialog__col">\n          <div class="transaction-dialog__date mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth">\n            <input type="date" class="mdc-text-field__input" placeholder="Date" required>\n            <div class="mdc-line-ripple"></div>\n          </div>\n          <p class="mdc-text-field-helper-text" aria-hidden="true">Date of your transaction</p>\n          <div class="transaction-dialog__tag-point"></div>\n        </div>\n      </div>\n    </section>\n\n    <footer class="mdc-dialog__footer">\n      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>\n      <button type="button" class="mdc-button mdc-dialog__footer__button transaction-dialog__submit">OK</button>\n    </footer>\n\n  </div>\n  <div class="mdc-dialog__backdrop"></div>\n</aside>';
         }
         return __p;
       };
@@ -49428,6 +49437,7 @@
             key: "clean",
             value: function clean() {
               this.select.selectedIndex = -1;
+              this.line.classList.remove("custom-select__bottom-line--invalid");
             }
           },
           {
@@ -49515,9 +49525,9 @@
           __p = "";
         with (obj) {
           __p +=
-            '<div class="mdc-select custom-select" role="listbox">\r\n  <div class="mdc-select__surface" tabindex="0">\r\n    <div class="mdc-select__label">\r\n      ' +
+            '<div class="mdc-select custom-select" role="listbox">\n  <div class="mdc-select__surface" tabindex="0">\n    <div class="mdc-select__label">\n      ' +
             ((__t = type) == null ? "" : __t) +
-            '\r\n    </div>\r\n    <div class="mdc-select__selected-text"></div>\r\n    <div class="mdc-select__bottom-line custom-select__bottom-line"></div>\r\n  </div>\r\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\r\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\r\n  </div>\r\n</div>';
+            '\n    </div>\n    <div class="mdc-select__selected-text"></div>\n    <div class="mdc-select__bottom-line custom-select__bottom-line"></div>\n  </div>\n  <div class="mdc-menu mdc-select__menu custom-select__menu">\n    <ul class="mdc-list mdc-menu__items custom-select__menu-items"></ul>\n  </div>\n</div>';
         }
         return __p;
       };
@@ -49537,11 +49547,11 @@
         with (obj) {
           for (let i = 0; i < list.length; i++) {
             __p +=
-              '\r\n  <li class="mdc-list-item" name="' +
+              '\n  <li class="mdc-list-item" name="' +
               ((__t = list[i]) == null ? "" : __t) +
-              '" role="option" tabindex="0">\r\n    ' +
+              '" role="option" tabindex="0">\n    ' +
               ((__t = list[i]) == null ? "" : __t) +
-              "\r\n  </li>\r\n  ";
+              "\n  </li>\n  ";
           }
         }
         return __p;
