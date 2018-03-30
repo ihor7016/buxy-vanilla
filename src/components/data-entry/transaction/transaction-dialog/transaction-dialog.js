@@ -46,7 +46,7 @@ export class TransactionDialogComponent {
     if (data.type === "+") {
       this.income.checked = true;
     } else {
-      this.expence.checked = true;
+      this.expense.checked = true;
     }
     this.accountSelect.makeSelected(data.account);
     this.tagSelect.makeSelected(data.tag);
@@ -56,6 +56,8 @@ export class TransactionDialogComponent {
     Promise.all([this.getStoredAccounts(), this.getStoredTags()]).then(() => {
       if (data) {
         this.fillData(data);
+      } else {
+        this.expense.checked = true;
       }
       this.date.value = new Date().toISOString().slice(0, 10);
       this.dialog.show();
@@ -84,8 +86,8 @@ export class TransactionDialogComponent {
     this.incomeRadio = this.mountPoint.querySelector(
       ".transaction-dialog__income"
     );
-    this.expenceRadio = this.mountPoint.querySelector(
-      ".transaction-dialog__expence"
+    this.expenseRadio = this.mountPoint.querySelector(
+      ".transaction-dialog__expense"
     );
     this.submit = this.mountPoint.querySelector(".transaction-dialog__submit");
   }
@@ -110,7 +112,7 @@ export class TransactionDialogComponent {
     this.amount = new MDCTextField(this.amountTextField);
     this.date = new MDCTextField(this.dateTextField);
     this.income = new MDCRadio(this.incomeRadio);
-    this.expence = new MDCRadio(this.expenceRadio);
+    this.expense = new MDCRadio(this.expenseRadio);
   }
 
   addEventListeners() {
@@ -175,7 +177,6 @@ export class TransactionDialogComponent {
   }
 
   cleanDialog() {
-    this.expence.checked = true;
     this.amount.value = "";
     this.description.value = "";
     this.amountTextField.classList.remove("mdc-text-field--invalid");
