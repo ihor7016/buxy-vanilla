@@ -22,8 +22,10 @@ export class CustomSelectComponent {
   }
 
   clean() {
+    this.menu.innerHTML = "";
     this.select.selectedIndex = -1;
     this.line.classList.remove("custom-select__bottom-line--invalid");
+    this.checkList();
   }
 
   toggleValid() {
