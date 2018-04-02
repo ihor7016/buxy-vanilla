@@ -25330,6 +25330,7 @@
 
           this.mountPoint = mountPoint;
           this.props = props;
+          this.accounts = [];
         }
 
         _createClass(TransactionDialogComponent, [
@@ -49436,8 +49437,10 @@
           {
             key: "clean",
             value: function clean() {
+              this.menu.innerHTML = "";
               this.select.selectedIndex = -1;
               this.line.classList.remove("custom-select__bottom-line--invalid");
+              this.checkList();
             }
           },
           {
