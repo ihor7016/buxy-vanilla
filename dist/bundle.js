@@ -18503,7 +18503,9 @@
               (this.accountNameInput.value = ""),
                 (this.balanceNameInput.value = ""),
                 (this.type.selectedIndex = -1),
-                (this.currency.selectedIndex = -1);
+                (this.currency.selectedIndex = -1),
+                this.hideAccountError(),
+                this.hideBalanceError();
             }
           },
           {
@@ -21561,7 +21563,8 @@
                 (this.chart.data.datasets[0].data = this.dataset.amounts),
                 (this.chart.data.datasets[0].backgroundColor = this.dataset.colors),
                 (this.chart.data.labels = this.dataset.tags),
-                this.chart.update();
+                this.chart.update(),
+                this.chart.resize();
             }
           },
           {
@@ -30354,7 +30357,7 @@
         __p = "";
       with (obj)
         __p +=
-          '<div class="table-transactions">\n  <table class="table-transactions__table mdc-elevation--z2">\n    <thead class="table-transactions__thead">\n      <tr class="table-transactions__tr">\n        <th class="table-transactions__th">Date</th>\n        <th class="table-transactions__th">Amount</th>\n        <th class="table-transactions__th">Description</th>\n        <th class="table-transactions__th">Tags</th>\n        <th class="table-transactions__th">Account</th>\n      </tr>\n    </thead>\n    <tbody class="table-transaction__tbody">\n    </tbody>\n  </table>\n  <div class="table-transactions__confirm-dialog"></div>\n  <div class="table-transactions__edit-transaction-dialog"></div>\n</div>';
+          '<div class="table-transactions">\n  <table class="table-transactions__table mdc-elevation--z2">\n    <thead class="table-transactions__thead">\n      <tr class="table-transactions__tr">\n        <th class="table-transactions__th">Date</th>\n        <th class="table-transactions__th">Amount</th>\n        <th class="table-transactions__th">Description</th>\n        <th class="table-transactions__th">Tag</th>\n        <th class="table-transactions__th">Account</th>\n      </tr>\n    </thead>\n    <tbody class="table-transaction__tbody">\n    </tbody>\n  </table>\n  <div class="table-transactions__confirm-dialog"></div>\n  <div class="table-transactions__edit-transaction-dialog"></div>\n</div>';
       return __p;
     };
   },
