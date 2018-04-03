@@ -148,6 +148,8 @@ export class AccountDialogComponent {
     this.balanceNameInput.value = "";
     this.type.selectedIndex = -1;
     this.currency.selectedIndex = -1;
+    this.hideAccountError();
+    this.hideBalanceError();
   }
 
   handleOk() {
