@@ -104,6 +104,7 @@ export class PieChartComponent {
     this.chart.data.datasets[0].backgroundColor = this.dataset.colors;
     this.chart.data.labels = this.dataset.tags;
     this.chart.update();
+    this.chart.resize();
   }
 
   draw() {
