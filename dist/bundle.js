@@ -21561,7 +21561,8 @@
                 (this.chart.data.datasets[0].data = this.dataset.amounts),
                 (this.chart.data.datasets[0].backgroundColor = this.dataset.colors),
                 (this.chart.data.labels = this.dataset.tags),
-                this.chart.update();
+                this.chart.update(),
+                this.chart.resize();
             }
           },
           {
