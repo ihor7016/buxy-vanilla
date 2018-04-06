@@ -1,9 +1,9 @@
 import template from "./table-transactions.html";
 import templateRow from "./table-transactions-tr.html";
 
-import { ButtonMoreComponent } from "../../button-more/button-more";
-import { ConfirmDialogComponent } from "../../dialog/confirm-dialog/confirm-dialog";
-import { TransactionDialogComponent } from "../../data-entry/transaction/transaction-dialog/transaction-dialog";
+import { ButtonMoreComponent } from "../button-more/button-more";
+import { ConfirmDialogComponent } from "../../dialogs/confirm-dialog/confirm-dialog";
+import { TransactionDialogComponent } from "../../dialogs/transaction-dialog/transaction-dialog";
 
 export class TableTransactionsComponent {
   constructor(mountPoint, props) {

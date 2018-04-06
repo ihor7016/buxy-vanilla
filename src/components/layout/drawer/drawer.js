@@ -1,7 +1,7 @@
 import template from "./drawer.html";
 import { MDCPersistentDrawer } from "@material/drawer";
-import { AccountsComponent } from "../data-entry/account/accounts/accounts";
-import { TagsComponent } from "../data-entry/tag/tags/tags";
+import { AccountsComponent } from "../../ui/accounts/accounts";
+import { TagsComponent } from "../../ui/tags/tags";
 
 export class DrawerComponent {
   constructor(mountPoint, props) {
