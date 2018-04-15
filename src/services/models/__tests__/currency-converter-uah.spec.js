@@ -1,4 +1,4 @@
-import { CurrencyConverterUAHService } from "../currency-converter-uah";
+import { CurrencyConverterUAHService } from "../../common/currency-converter-uah";
 
 describe("Currency converter service", () => {
   it("should convert 10 EUR in 330 UAH", () => {

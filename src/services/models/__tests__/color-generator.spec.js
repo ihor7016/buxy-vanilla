@@ -1,4 +1,4 @@
-import { ColorGeneratorService } from "../color-generator";
+import { ColorGeneratorService } from "../../common/color-generator";
 
 describe("ColorGeneratorService", () => {
   beforeAll(() => {

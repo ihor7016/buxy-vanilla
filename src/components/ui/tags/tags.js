@@ -1,12 +1,12 @@
 import template from "./tags.html";
 import tagItemTemplate from "./tag-item.html";
 import { ButtonMoreComponent } from "../button-more/button-more";
-import { TagDialogComponent } from "../tag-dialog/tag-dialog";
-import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog";
+import { TagDialogComponent } from "../../dialogs/tag-dialog/tag-dialog";
+import { ConfirmDialogComponent } from "../../dialogs/confirm-dialog/confirm-dialog";
 
-import { AccountListService } from "../../services/account-service";
-import { TagListService } from "../../services/tag-service";
-import { TransactionListService } from "../../services/transaction-service";
+import { AccountListService } from "../../../services/models/account-service";
+import { TagListService } from "../../../services/models/tag-service";
+import { TransactionListService } from "../../../services/models/transaction-service";
 
 export class TagsComponent {
   constructor(mountPoint, props) {

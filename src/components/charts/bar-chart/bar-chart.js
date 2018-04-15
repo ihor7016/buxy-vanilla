@@ -1,7 +1,7 @@
 import template from "./bar-chart.html";
 import Chart from "chart.js";
 
-import { CurrencyConverterUAHService } from "../../services/currency-converter-uah";
+import { CurrencyConverterUAHService } from "../../../services/common/currency-converter-uah";
 
 export class BarChartComponent {
   constructor(mountPoint, props) {

@@ -1,8 +1,8 @@
 import template from "./app.html";
 
-import { DrawerComponent } from "../drawer/drawer";
-import { ToolbarComponent } from "../toolbar/toolbar";
-import { TransactionsComponent } from "../transactions/transactions";
+import { DrawerComponent } from "../layout/drawer/drawer";
+import { ToolbarComponent } from "../layout/toolbar/toolbar";
+import { TransactionsComponent } from "../ui/transactions/transactions";
 
 export class AppComponent {
   constructor(mountPoint) {
